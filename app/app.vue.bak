@@ -111,20 +111,6 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --brand-rgb: 225 29 72;
 }
 
-.scheme-neutral {
-  --brand-a: #64748b;
-  --brand-b: #475569;
-  --brand-c: #334155;
-  --brand-rgb: 100 116 139;
-}
-
-.theme-light.scheme-neutral {
-  --brand-a: #475569;
-  --brand-b: #334155;
-  --brand-c: #1e293b;
-  --brand-rgb: 71 85 105;
-}
-
 .text-main {
   color: var(--text-main);
 }

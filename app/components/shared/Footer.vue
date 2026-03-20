@@ -29,6 +29,33 @@
         </div>
       </div>
       <div class="border-subtle border-t pt-8">
+        <div class="mb-6">
+          <p class="text-muted mb-4 text-center text-xs font-semibold uppercase tracking-wider">Customize Experience</p>
+          <div class="flex flex-col items-center gap-4 md:flex-row md:justify-center">
+            <div class="flex flex-wrap items-center justify-center gap-2">
+              <button
+                v-for="option in schemeOptions"
+                :key="option.value"
+                type="button"
+                :class="[
+                  'rounded-full px-3 py-2 text-xs font-medium transition',
+                  scheme === option.value ? 'brand-gradient text-white shadow-sm' : 'border border-subtle text-soft hover:text-main'
+                ]"
+                :title="`${option.label} · ${option.accent}`"
+                @click="applyScheme(option.value)"
+              >
+                {{ option.label }}
+              </button>
+            </div>
+            <button
+              type="button"
+              class="border-subtle rounded-full border px-3 py-2 text-xs font-medium text-soft transition hover:text-main"
+              @click="toggleTheme"
+            >
+              {{ theme === 'dark' ? 'Light Mode' : 'Dark Mode' }}
+            </button>
+          </div>
+        </div>
         <p class="text-muted text-center text-sm">© 2026 Md Mohin Uddin. Built from public GitHub profile data.</p>
       </div>
     </div>
@@ -36,4 +63,6 @@
 </template>
 
 <script setup lang="ts">
+const { theme, toggleTheme } = useTheme()
+const { scheme, schemeOptions, applyScheme } = useBrandScheme()
 </script>

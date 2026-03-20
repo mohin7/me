@@ -1,17 +1,17 @@
 <template>
   <section id="top" class="hero-shell relative isolate min-h-screen overflow-hidden">
     <div class="pointer-events-none absolute inset-0" :class="theme === 'dark' ? 'hero-backdrop-dark' : 'hero-backdrop-light'"></div>
-    <div class="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-orange-500/15 blur-3xl"></div>
-    <div class="pointer-events-none absolute -right-28 bottom-20 h-80 w-80 rounded-full bg-pink-500/15 blur-3xl"></div>
+    <div class="hero-glow-left pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full blur-3xl"></div>
+    <div class="hero-glow-right pointer-events-none absolute -right-28 bottom-20 h-80 w-80 rounded-full blur-3xl"></div>
 
     <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
       <div class="hero-enter">
-        <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-orange-300/30 bg-orange-500/10 px-4 py-2">
+        <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-[color:var(--brand-a)]/30 bg-[color:var(--brand-a)]/10 px-4 py-2">
           <span class="relative flex h-2.5 w-2.5">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
             <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
           </span>
-          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-200">Available for selective consulting in 2026</span>
+          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-a)]">Available for selective consulting in 2026</span>
         </div>
 
         <h1 class="text-main max-w-4xl text-balance text-5xl font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">
@@ -106,15 +106,25 @@ const tools = ['Figma', 'Nuxt', 'Vue', 'Tailwind CSS', 'Design Systems']
 
 <style scoped>
 .hero-backdrop-dark {
-  background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.16), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.18), transparent 38%),
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.16), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.18), transparent 38%),
     linear-gradient(180deg, #0b0d12 0%, #07080b 80%);
 }
 
 .hero-backdrop-light {
-  background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.16), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.12), transparent 38%),
+  background: radial-gradient(circle at 20% 20%, rgba(2, 132, 199, 0.14), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(79, 70, 229, 0.1), transparent 38%),
     linear-gradient(180deg, #fdfefe 0%, #f2f5f9 90%);
+}
+
+.hero-glow-left {
+  background: var(--brand-a);
+  opacity: 0.12;
+}
+
+.hero-glow-right {
+  background: var(--brand-b);
+  opacity: 0.12;
 }
 
 .hero-enter {

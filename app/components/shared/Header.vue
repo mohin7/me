@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <a href="#top" class="group flex items-center gap-3">
-          <div class="brand-gradient relative grid h-9 w-9 place-items-center rounded-xl text-sm font-bold text-white shadow-lg shadow-orange-500/25">
+          <div class="brand-gradient relative grid h-9 w-9 place-items-center rounded-xl text-sm font-bold text-white shadow-lg shadow-black/20">
             M
             <span class="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border border-black/40 bg-emerald-400"></span>
           </div>
@@ -40,7 +40,7 @@
           </a>
           <a
             href="#contact"
-            class="brand-gradient rounded-full px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-orange-500/25 transition hover:scale-[1.02]"
+            class="brand-gradient rounded-full px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:scale-[1.02]"
           >
             Let us talk
           </a>

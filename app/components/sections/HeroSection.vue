@@ -67,9 +67,9 @@
               rel="noreferrer" 
               variant="solid"
               size="md"
-              class="aspect-square !px-0 flex items-center justify-center shadow-brand-a/20"
+              class="aspect-square !p-4 flex items-center justify-center shadow-brand-a/20"
             >
-              <Icon name="lucide:user" class="h-6 w-6" />
+              <Icon name="lucide:linkedin" class="h-6 w-6" />
             </SharedButton>
           </div>
         </div>

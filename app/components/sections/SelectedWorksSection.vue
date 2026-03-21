@@ -17,8 +17,13 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/30 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-a/10 hover:border-brand-a/30"
+          class="group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-gradient-to-br from-panel/70 via-panel/50 to-panel/10 transition-all duration-700 shadow-2xl shadow-black/5 hover:shadow-2xl hover:shadow-brand-a/20 hover:border-brand-a/50"
         >
+          <!-- Premium Grain Noise Overlay (Intensified) -->
+          <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0"></div>
+          
+          <!-- High-Intensity Brand Glow Layer -->
+          <div class="absolute -inset-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(var(--brand-rgb),0.2)_0%,transparent_50%)] mix-blend-soft-light z-0"></div>
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
             <img 

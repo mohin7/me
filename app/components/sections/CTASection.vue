@@ -9,7 +9,7 @@
     <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
       <p class="text-soft mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
       
-      <h2 class="text-main mb-12 text-balance text-6xl font-black italic tracking-tighter sm:text-7xl md:text-9xl uppercase">
+      <h2 class="text-main mb-12 text-balance text-6xl font-black tracking-tighter sm:text-7xl md:text-9xl uppercase">
         Let's bring it <br> <span class="text-[color:var(--brand-a)]">to life.</span>
       </h2>
       
@@ -30,7 +30,7 @@
     
     <!-- Giant Footer Marquee -->
     <div class="absolute bottom-0 left-0 w-full overflow-hidden opacity-5" style="pointer-events: none;">
-      <h2 class="whitespace-nowrap font-black uppercase italic tracking-tighter" style="font-size: 20rem; line-height: 0.8;">
+      <h2 class="whitespace-nowrap font-black uppercase tracking-tighter" style="font-size: 20rem; line-height: 0.8;">
         Mohin Uddin Mohin Uddin Mohin Uddin
       </h2>
     </div>

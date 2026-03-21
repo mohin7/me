@@ -1,27 +1,27 @@
 <template>
-  <section id="top" class="hero-shell relative isolate overflow-hidden pt-32 pb-16 md:pt-44 md:pb-24">
+  <section id="top" class="hero-shell relative isolate overflow-hidden min-h-screen flex items-center pt-24 pb-12 lg:pt-32 lg:pb-32">
     <!-- Immersive Background Gradients -->
     <div class="pointer-events-none absolute inset-0" :class="theme === 'dark' ? 'hero-backdrop-dark' : 'hero-backdrop-light'"></div>
     <div class="hero-glow-left pointer-events-none absolute -left-48 top-10 h-[50rem] w-[50rem] rounded-full blur-[120px] opacity-30 md:opacity-50"></div>
     <div class="hero-glow-right pointer-events-none absolute -right-20 top-40 h-[40rem] w-[40rem] rounded-full blur-[100px] opacity-20 md:opacity-40"></div>
 
-    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         
         <!-- Left Column: Content -->
         <div class="hero-enter relative z-20">
           <p class="text-soft mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest md:mb-6">
-            Hi, I'm Mohin 
+            Hire Your Next 
             <span class="text-[color:var(--brand-a)] text-2xl leading-none">•</span>
           </p>
 
-          <h1 class="text-main mb-6 text-balance font-extrabold leading-[0.9] tracking-tighter" style="font-size: clamp(4rem, 9vw, 8rem);">
-            Design<br>
-            Partner
+          <h1 class="text-main mb-6 font-black leading-[0.85] tracking-tighter" style="font-size: clamp(3.5rem, 11vw, 10rem);">
+            <span class="block whitespace-nowrap">Designer</span>
+            <span class="block whitespace-nowrap text-[color:var(--brand-a)]">& Coder</span>
           </h1>
 
           <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
-            Scaling startups with design-driven execution. Currently leading design at <span class="text-main italic font-semibold border-b-2 border-[color:var(--brand-a)]/30">AppsCode</span>.
+            Scaling startups with design-driven execution. Currently leading design at <span class="text-main font-semibold border-b-2 border-[color:var(--brand-a)]/30">AppsCode</span>.
           </p>
 
           <div class="flex items-center gap-4">
@@ -40,29 +40,29 @@
           </div>
         </div>
 
-        <!-- Right Column: Portrait -->
+        <!-- Right Column: Portrait (Cutout Style) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/50 backdrop-blur-sm shadow-2xl shadow-black/30 aspect-[4/5] group">
+          <div class="relative w-full max-w-lg">
             <img 
-              src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?auto=format&fit=crop&q=80&w=800" 
+              src="/img/mohin_cutout.png" 
               alt="Mohin Uddin" 
-              class="h-full w-full object-cover object-center mix-blend-luminosity opacity-80 transition duration-700 ease-out group-hover:mix-blend-normal group-hover:scale-105"
+              class="h-full w-full max-h-[55vh] object-contain pointer-events-none drop-shadow-[0_20px_50px_rgba(var(--brand-rgb),0.15)] transition duration-700 ease-out group-hover:scale-105"
+              style="mask-image: linear-gradient(to bottom, black 45%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[color:var(--bg-page)] via-[color:var(--bg-page)]/20 to-transparent opacity-90"></div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Marquee -->
-    <div class="mt-24 w-full overflow-hidden border-y border-subtle bg-panel/30 py-4 backdrop-blur-md md:mt-32 md:py-8 lg:absolute lg:bottom-10 lg:mt-0 lg:border-none lg:bg-transparent lg:backdrop-blur-none" style="z-index: 5;">
+    <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
       <div class="flex whitespace-nowrap">
         <div class="animate-marquee flex gap-12 items-center pr-12">
-          <h2 class="text-transparent font-black uppercase italic tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+          <h2 class="text-transparent font-black uppercase tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
             <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
             — 8-year UX veteran
           </h2>
-          <h2 class="text-transparent font-black uppercase italic tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+          <h2 class="text-transparent font-black uppercase tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
             <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
             — 8-year UX veteran
           </h2>

@@ -5,11 +5,11 @@
     </div>
     <div class="flex whitespace-nowrap">
       <div class="animate-marquee-slow flex gap-16 items-center pr-16">
-        <div v-for="logo in logos" :key="logo" class="text-muted text-2xl font-black italic tracking-tighter opacity-40 hover:opacity-100 transition-opacity uppercase">
+        <div v-for="logo in logos" :key="logo" class="text-muted text-2xl font-black tracking-tighter opacity-40 hover:opacity-100 transition-opacity uppercase">
           {{ logo }}
         </div>
         <!-- Duplicate for seamless loop -->
-        <div v-for="logo in logos" :key="`dup-${logo}`" class="text-muted text-2xl font-black italic tracking-tighter opacity-40 hover:opacity-100 transition-opacity uppercase">
+        <div v-for="logo in logos" :key="`dup-${logo}`" class="text-muted text-2xl font-black tracking-tighter opacity-40 hover:opacity-100 transition-opacity uppercase">
           {{ logo }}
         </div>
       </div>

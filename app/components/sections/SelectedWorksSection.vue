@@ -2,7 +2,7 @@
   <section id="work" class="py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight uppercase italic md:text-5xl">Selected Works</h2>
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight uppercase md:text-5xl">Selected Works</h2>
         <p class="text-soft max-w-2xl text-lg font-medium">Case studies on how I turn complex product ideas into high-converting MVPs.</p>
       </div>
       
@@ -20,7 +20,7 @@
                <span class="text-xs font-bold uppercase tracking-widest text-muted">{{ project.year }}</span>
             </div>
             
-            <h3 class="text-main mb-6 text-4xl font-black italic tracking-tighter uppercase leading-[0.9] md:text-6xl group-hover:text-[color:var(--brand-a)] transition-colors">
+            <h3 class="text-main mb-6 text-4xl font-black tracking-tighter uppercase leading-[0.9] md:text-6xl group-hover:text-[color:var(--brand-a)] transition-colors">
               {{ project.name }}
             </h3>
             
@@ -44,7 +44,7 @@
               class="!rounded-full px-8 py-5 text-sm font-bold shadow-md hover:shadow-brand-a/10"
             >
               View live experiment 
-              <span class="ml-2 font-normal text-xl leading-none italic opacity-50">↗</span>
+              <span class="ml-2 font-normal text-xl leading-none opacity-50">↗</span>
             </SharedButton>
           </div>
 
@@ -63,8 +63,8 @@
       </div>
       
       <div class="mt-24 text-center">
-         <p class="text-soft mb-8 text-xl font-bold italic uppercase tracking-tighter">My best work is often private — specially crafted for startup founders.</p>
-         <SharedButton tag="a" href="https://github.com/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg" class="!rounded-full px-12 py-5 text-lg font-black uppercase italic tracking-tight">Open Lab Profile</SharedButton>
+         <p class="text-soft mb-8 text-xl font-bold uppercase tracking-tighter">My best work is often private — specially crafted for startup founders.</p>
+         <SharedButton tag="a" href="https://github.com/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg" class="!rounded-full px-12 py-5 text-lg font-black uppercase tracking-tight">Open Lab Profile</SharedButton>
       </div>
     </div>
   </section>

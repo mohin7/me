@@ -17,7 +17,7 @@
             Most Popular
           </div>
           
-          <h3 class="text-main mb-2 text-2xl font-black italic tracking-tight">{{ pkg.name }}</h3>
+          <h3 class="text-main mb-2 text-2xl font-black tracking-tight">{{ pkg.name }}</h3>
           <p class="text-soft mb-8 text-sm font-medium leading-relaxed">{{ pkg.description }}</p>
           
           <div class="mb-10 flex-1">

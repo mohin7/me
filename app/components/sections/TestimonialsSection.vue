@@ -2,7 +2,7 @@
   <section id="testimonials" class="py-24 md:py-32 bg-panel/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight uppercase italic md:text-5xl">Founder Feedback</h2>
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight uppercase md:text-5xl">Founder Feedback</h2>
         <p class="text-soft max-w-2xl text-lg font-medium">What it's like to build an MVP with me as your design partner.</p>
       </div>
 
@@ -17,12 +17,12 @@
               <img :src="testimonial.avatar" :alt="testimonial.author" class="h-full w-full object-cover">
             </div>
             <div>
-              <p class="text-main text-lg font-black tracking-tight leading-none italic uppercase">{{ testimonial.author }}</p>
+              <p class="text-main text-lg font-black tracking-tight leading-none uppercase">{{ testimonial.author }}</p>
               <p class="text-muted mt-1 text-sm font-medium">{{ testimonial.role }}</p>
             </div>
           </div>
           
-          <blockquote class="text-soft text-xl font-medium leading-relaxed italic">
+          <blockquote class="text-soft text-xl font-medium leading-relaxed">
             "{{ testimonial.quote }}"
           </blockquote>
           

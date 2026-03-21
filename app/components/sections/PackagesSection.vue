@@ -1,12 +1,18 @@
 <template>
-  <section id="packages" class="py-24 md:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="packages" class="relative py-24 md:py-32 overflow-hidden bg-[radial-gradient(circle_at_50%_0%,rgba(var(--brand-rgb),0.03),transparent_70%)]">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.05]">
+       <Icon name="lucide:dollar-sign" class="absolute -left-10 top-[20%] h-64 w-64 -rotate-12" />
+       <Icon name="lucide:zap" class="absolute -right-10 bottom-[10%] h-80 w-80 rotate-12" />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-16">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Simple Packages</h2>
-        <p class="text-soft max-w-2xl text-lg font-medium">Transparent pricing and clear outcomes to help you move at startup speed.</p>
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Select Your Sprint</h2>
+        <p class="text-soft max-w-2xl text-lg font-medium opacity-80">Simple, fixed pricing for high-impact results.</p>
       </div>
       
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-8 lg:grid-cols-2">
         <div 
           v-for="(pkg, idx) in packages" 
           :key="idx"

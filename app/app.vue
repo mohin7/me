@@ -31,9 +31,34 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 <style>
 .site-shell {
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* Global Mesh Background */
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -20;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(var(--brand-rgb), 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(var(--brand-rgb), 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Global Noise Texture */
+.site-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .theme-dark {
@@ -44,7 +69,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --text-main: #f4f7ff;
   --text-soft: #d4dcec;
   --text-muted: #9aa7bf;
-  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.05);
 }
 
 .theme-light {

@@ -5,6 +5,29 @@
     <div class="hero-glow-left pointer-events-none absolute -left-48 top-10 h-[50rem] w-[50rem] rounded-full blur-[120px] opacity-30 md:opacity-50"></div>
     <div class="hero-glow-right pointer-events-none absolute -right-20 top-40 h-[40rem] w-[40rem] rounded-full blur-[100px] opacity-20 md:opacity-40"></div>
 
+    <!-- Decorative Background Elements -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.15]">
+      <!-- Floating Plus Signs -->
+      <span class="absolute top-[20%] left-[10%] text-brand-a/2 text-4xl font-light">+</span>
+      <span class="absolute top-[60%] left-[5%] text-brand-b/2 text-6xl font-light rotate-12">+</span>
+      <span class="absolute top-[30%] right-[15%] text-brand-a/2 text-5xl font-light -rotate-45">+</span>
+      
+      <!-- Abstract Circle Outlines -->
+      <div class="absolute -left-20 top-[40%] h-96 w-96 rounded-full border border-brand-a/2"></div>
+      <div class="absolute -right-20 top-[10%] h-[30rem] w-[30rem] rounded-full border border-brand-b/2"></div>
+      
+      <!-- Floating Dots Pattern -->
+      <div class="absolute top-[15%] right-[25%] opacity-[0.02]">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <circle cx="10" cy="10" r="2" fill="currentColor" class="text-brand-a" />
+          <circle cx="30" cy="10" r="2" fill="currentColor" class="text-brand-a" />
+          <circle cx="50" cy="10" r="2" fill="currentColor" class="text-brand-a" />
+          <circle cx="10" cy="30" r="2" fill="currentColor" class="text-brand-a" />
+          <circle cx="10" cy="50" r="4" fill="currentColor" class="text-brand-b" />
+        </svg>
+      </div>
+    </div>
+
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         
@@ -40,7 +63,7 @@
           </div>
         </div>
 
-        <!-- Right Column: Portrait (Cutout Style) -->
+        <!-- Right Column: Portrait (No Animation) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
           <div class="relative w-full max-w-lg">
             <img 
@@ -125,12 +148,7 @@ const { theme } = useTheme()
 }
 
 .hero-enter-delay {
-  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both, floatAnim 6s ease-in-out 950ms infinite;
-}
-
-@keyframes floatAnim {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
 }
 
 @keyframes heroRise {

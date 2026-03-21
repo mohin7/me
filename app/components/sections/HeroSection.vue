@@ -35,7 +35,7 @@
               rel="noreferrer" 
               class="border-subtle bg-panel text-main hover:text-[color:var(--brand-a)] flex h-14 w-14 items-center justify-center rounded-full border shadow-sm transition-all hover:scale-105"
             >
-              <SharedIcon name="user" class="h-6 w-6" />
+            <Icon name="lucide:user" class="h-6 w-6" />
             </a>
           </div>
         </div>

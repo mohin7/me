@@ -20,7 +20,7 @@
           size="lg" 
           class="!rounded-full px-12 py-8 text-2xl font-black shadow-2xl shadow-brand-a/40 transition-transform hover:scale-105"
         >
-          <SharedIcon name="chat" class="mr-3 h-8 w-8" />
+          <Icon name="lucide:message-circle" class="mr-3 h-8 w-8" />
           Book a 15-min call
         </SharedButton>
         

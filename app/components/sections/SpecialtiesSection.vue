@@ -12,7 +12,7 @@
           class="bg-panel/40 border-subtle hover:border-[color:var(--brand-a)]/40 group rounded-[2rem] border p-10 transition-all hover:bg-panel/60"
         >
           <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] transition group-hover:scale-110 group-hover:rotate-3">
-            <SharedIcon :name="specialty.icon" class="h-7 w-7" />
+            <Icon :name="`lucide:${specialty.icon}`" class="h-7 w-7" />
           </div>
           <h3 class="text-main mb-4 text-2xl font-black tracking-tight uppercase italic">{{ specialty.title }}</h3>
           <p class="text-soft font-medium leading-relaxed">{{ specialty.description }}</p>

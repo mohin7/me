@@ -10,7 +10,7 @@
         <!-- Big Bento Card: Main Hybrid Mission -->
         <div class="bg-panel/40 border-subtle md:col-span-8 md:row-span-2 rounded-[2.5rem] border p-12 transition-all hover:bg-panel group">
           <div class="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] group-hover:scale-105 group-hover:rotate-3">
-            <SharedIcon name="palette" class="h-8 w-8" />
+            <Icon name="lucide:palette" class="h-8 w-8" />
           </div>
           <h3 class="text-main mb-4 text-4xl font-extrabold tracking-tighter uppercase italic md:text-5xl">Bridging the gap <br> from Figma to Production</h3>
           <p class="text-soft max-w-xl text-xl font-medium leading-[1.4]">
@@ -24,7 +24,7 @@
 
         <!-- Small Bento Card: Location -->
         <div class="bg-panel border-subtle flex flex-col justify-center items-center md:col-span-4 rounded-[2.5rem] border p-8 transition-all hover:bg-soft">
-           <SharedIcon name="compass" class="h-10 w-10 text-[color:var(--brand-a)] mb-4" />
+           <Icon name="lucide:compass" class="h-10 w-10 text-[color:var(--brand-a)] mb-4" />
            <p class="text-main text-lg font-black uppercase italic tracking-tight">Dhaka, BD</p>
            <p class="text-muted text-xs font-bold uppercase tracking-widest mt-2">Remote Friendly</p>
         </div>

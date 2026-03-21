@@ -57,7 +57,7 @@
 
       <div class="mt-20 flex flex-col items-center gap-6">
           <div class="bg-soft border-subtle flex items-center gap-4 rounded-2xl border px-6 py-4">
-            <SharedIcon name="bolt" class="text-[color:var(--brand-a)] h-6 w-6" />
+            <Icon name="lucide:bolt" class="text-[color:var(--brand-a)] h-6 w-6" />
             <p class="text-soft text-sm font-bold uppercase tracking-widest">Speed + Clarity + Quality = Success</p>
           </div>
           <SharedButton tag="a" href="#contact" size="lg" class="!rounded-full px-10 py-5 text-lg font-bold">Start your sprint</SharedButton>

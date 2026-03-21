@@ -22,7 +22,7 @@
           :href="item.href"
           class="text-soft hover:text-main group flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:bg-soft"
         >
-          <SharedIcon :name="item.icon" class="text-soft/70 h-4 w-4 transition group-hover:text-main" />
+          <Icon :name="`lucide:${item.icon}`" class="text-soft/70 h-4 w-4 transition group-hover:text-main" />
           {{ item.label }}
         </a>
       </nav>
@@ -35,20 +35,20 @@
           @click="toggleTheme"
           aria-label="Toggle theme"
         >
-          <SharedIcon :name="theme === 'dark' ? 'sun' : 'moon'" class="h-5 w-5 transition group-hover:scale-110" />
+          <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5 transition group-hover:scale-110" />
         </button>
         <a
           href="mailto:hello.mohin4@gmail.com"
           class="text-soft hover:text-main group rounded-full p-2 transition-all hover:bg-soft"
           aria-label="Email me"
         >
-          <SharedIcon name="mail" class="h-5 w-5 transition group-hover:scale-110" />
+          <Icon name="lucide:mail" class="h-5 w-5 transition group-hover:scale-110" />
         </a>
         <a
           href="#contact"
           class="brand-gradient ml-2 flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-a/20 transition-all hover:scale-105"
         >
-          <SharedIcon name="chat" class="h-4 w-4" />
+          <Icon name="lucide:message-circle" class="h-4 w-4" />
           Let's talk
         </a>
       </div>
@@ -59,7 +59,7 @@
           href="#contact"
           class="brand-gradient flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-md transition-all hover:scale-105"
         >
-          <SharedIcon name="chat" class="h-3 w-3" />
+          <Icon name="lucide:message-circle" class="h-3 w-3" />
           Talk
         </a>
         <button
@@ -70,7 +70,7 @@
           aria-label="Toggle navigation menu"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         >
-          <SharedIcon :name="isMobileMenuOpen ? 'close' : 'menu'" class="h-5 w-5" />
+          <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" class="h-5 w-5" />
         </button>
       </div>
     </div>
@@ -97,10 +97,10 @@
           @click="isMobileMenuOpen = false"
         >
           <div class="flex items-center gap-3">
-            <SharedIcon :name="item.icon" class="h-5 w-5" />
+            <Icon :name="`lucide:${item.icon}`" class="h-5 w-5" />
             {{ item.label }}
           </div>
-          <SharedIcon name="chevron-right" class="h-4 w-4 opacity-50" />
+          <Icon name="lucide:chevron-right" class="h-4 w-4 opacity-50" />
         </a>
         
         <div class="mt-2 flex gap-2 border-t border-subtle pt-4">
@@ -109,7 +109,7 @@
             class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
             @click="toggleTheme"
           >
-            <SharedIcon :name="theme === 'dark' ? 'sun' : 'moon'" class="h-5 w-5" />
+            <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5" />
             {{ theme === 'dark' ? 'Light' : 'Dark' }}
           </button>
           
@@ -118,7 +118,7 @@
             class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
             @click="isMobileMenuOpen = false"
           >
-            <SharedIcon name="mail" class="h-5 w-5" />
+            <Icon name="lucide:mail" class="h-5 w-5" />
             Email
           </a>
         </div>
@@ -137,6 +137,6 @@ const navItems = [
   { label: 'Focus', href: '#focus', icon: 'target' },
   { label: 'Projects', href: '#work', icon: 'folder' },
   { label: 'Experience', href: '#experience', icon: 'briefcase' },
-  { label: 'FAQ', href: '#faq', icon: 'help' }
+  { label: 'FAQ', href: '#faq', icon: 'help-circle' }
 ]
 </script>

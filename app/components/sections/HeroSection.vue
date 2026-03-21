@@ -33,9 +33,9 @@
         
         <!-- Left Column: Content -->
         <div class="hero-enter relative z-20">
-          <p class="text-soft mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest md:mb-6">
+          <p class="handwriting text-brand-a mb-4 flex items-center gap-3 text-2xl md:text-3xl md:mb-6">
             Hire Your Next 
-            <span class="text-[color:var(--brand-a)] text-2xl leading-none">•</span>
+            <span class="text-main/20 text-sm leading-none font-sans font-black tracking-widest">•</span>
           </p>
 
           <h1 class="text-main mb-6 font-black leading-[0.9] tracking-tight relative" style="font-size: clamp(3.5rem, 11vw, 10rem);">

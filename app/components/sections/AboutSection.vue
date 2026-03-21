@@ -12,13 +12,13 @@
           <div class="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] group-hover:scale-105 group-hover:rotate-3">
             <Icon name="lucide:palette" class="h-8 w-8" />
           </div>
-          <h3 class="text-main mb-4 text-4xl font-extrabold tracking-tighter uppercase italic md:text-5xl">Bridging the gap <br> from Figma to Production</h3>
+          <h3 class="text-main mb-4 text-4xl font-extrabold tracking-tighter uppercase italic md:text-5xl">Design Leadership <br> & Technical Craft</h3>
           <p class="text-soft max-w-xl text-xl font-medium leading-[1.4]">
-             As Head of Design at AppsCode, I build scalable visual systems so teams can ship faster with consistency. My engineering background helps me design interfaces developers can build easily.
+             As Head of Design at <span class="text-main">AppsCode</span>, I scale product systems from Figma to Production. Formerly built foundations as a Frontend Developer at <span class="text-main opacity-60">Cloud Software Solutions</span>.
           </p>
           
           <div class="mt-12 flex flex-wrap gap-3">
-             <span v-for="skill in ['Nuxt', 'Vue', 'Figma', 'Product Strategy', 'Open Source']" :key="skill" class="bg-soft border-subtle px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-widest text-muted">{{ skill }}</span>
+             <span v-for="skill in ['NuxtJS', 'Vuejs', 'Tailwind', 'Bulma', 'Bootstrap', 'Design Systems']" :key="skill" class="bg-soft border-subtle px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-widest text-muted">{{ skill }}</span>
           </div>
         </div>
 
@@ -26,14 +26,14 @@
         <div class="bg-panel border-subtle flex flex-col justify-center items-center md:col-span-4 rounded-[2.5rem] border p-8 transition-all hover:bg-soft">
            <Icon name="lucide:compass" class="h-10 w-10 text-[color:var(--brand-a)] mb-4" />
            <p class="text-main text-lg font-black uppercase italic tracking-tight">Dhaka, BD</p>
-           <p class="text-muted text-xs font-bold uppercase tracking-widest mt-2">Remote Friendly</p>
+           <p class="text-muted text-xs font-bold uppercase tracking-widest mt-2">Home Base</p>
         </div>
 
-        <!-- Small Bento Card: Contribution -->
+        <!-- Small Bento Card: Experience -->
         <div class="bg-panel border-subtle md:col-span-4 rounded-[2.5rem] border p-10 transition-all hover:bg-soft">
-           <p class="text-[color:var(--brand-a)] text-5xl font-black tracking-tighter italic">79+</p>
-           <p class="text-main text-lg font-black uppercase italic tracking-tight mt-2">Public Repositories</p>
-           <p class="text-muted text-xs font-bold uppercase tracking-widest mt-2">Active Developer Ecosystem</p>
+           <p class="text-[color:var(--brand-a)] text-5xl font-black tracking-tighter italic">8+</p>
+           <p class="text-main text-lg font-black uppercase italic tracking-tight mt-2">Years of Experience</p>
+           <p class="text-muted text-xs font-bold uppercase tracking-widest mt-2">Industry Veteran</p>
         </div>
       </div>
     </div>

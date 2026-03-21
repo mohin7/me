@@ -73,20 +73,28 @@
 <script setup lang="ts">
 const projects = [
   {
-    name: "Advocase — Healthcare SaaS",
-    year: "2025",
-    description: "A comprehensive platform connecting patients with healthcare advocates through seamless data sharing and empathetic UX.",
-    tags: ["Nuxt 3", "System Design", "Healthcare UX"],
-    image: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=1200",
+    name: "E-commerce — Nuxt 3 & Tailwind",
+    year: "2024",
+    description: "A high-performance e-commerce storefront built with Nuxt 3, featuring a modern shopping experience and responsive UI.",
+    tags: ["Nuxt 3", "Tailwind CSS", "Storefront"],
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=1200",
     href: "https://github.com/mohin7/e-commerce-vuejs-nuxt3-tailwind"
   },
   {
-    name: "Covanant — Developer SaaS",
+    name: "Holy Quran — Vue 3 App",
     year: "2024",
-    description: "A specialized platform for programmers to ship code faster with real-time collaboration tools and integrated CI/CD flows.",
-    tags: ["Vue 3", "Tailwind", "Product Vision"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+    description: "An elegant, distraction-free reading experience for the Holy Quran, optimized for mobile and web with Vue 3.",
+    tags: ["Vue 3", "Tailwind CSS", "Web App"],
+    image: "https://images.unsplash.com/photo-1591154665851-5120668eb40a?auto=format&fit=crop&q=80&w=1200",
     href: "https://github.com/mohin7/quran-vue3-tailwind"
+  },
+  {
+    name: "Clean HTML — Bootstrap System",
+    year: "2023",
+    description: "A reusable, professional-grade HTML template system built with Bootstrap for rapid product prototyping.",
+    tags: ["Bootstrap", "HTML/CSS", "Design System"],
+    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200",
+    href: "https://github.com/mohin7/clean-html-template-with-bootstrap"
   }
 ]
 </script>

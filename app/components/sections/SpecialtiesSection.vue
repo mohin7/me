@@ -25,19 +25,19 @@
 <script setup lang="ts">
 const specialties = [
   {
-    icon: 'bolt',
-    title: 'Pitch Ready UI',
-    description: 'Transforming napkin ideas into investor-ready high-fidelity designs that secure funding and validate concepts.'
+    icon: 'code',
+    title: 'Interface Engineering',
+    description: 'Bridging the design gap by building high-performance, pixel-perfect interfaces with NuxtJS and Vuejs.'
   },
   {
     icon: 'palette',
-    title: 'Conversion UX',
-    description: 'Going beyond "pretty" screens. I design user journeys that reduce friction and drive actual product growth.'
+    title: 'Visual Systems',
+    description: 'Crafting scalable design systems that maintain consistency across large-scale enterprise applications.'
   },
   {
     icon: 'layers',
-    title: 'Scalable Systems',
-    description: 'Building lean design systems that grow with your product, ensuring consistency from the very first screen.'
+    title: 'Architecture & UX',
+    description: 'Focusing on product logic and user journeys to create tools that are as functional as they are beautiful.'
   }
 ]
 </script>

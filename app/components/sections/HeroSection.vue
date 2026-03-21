@@ -21,7 +21,7 @@
           </h1>
 
           <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
-            Specialized in <span class="text-main italic font-semibold border-b-2 border-[color:var(--brand-a)]/30">MVP Design</span> for Fast-Moving Startups & Ambitious Founders.
+            Scaling startups with design-driven execution. Currently leading design at <span class="text-main italic font-semibold border-b-2 border-[color:var(--brand-a)]/30">AppsCode</span>.
           </p>
 
           <div class="flex items-center gap-4">

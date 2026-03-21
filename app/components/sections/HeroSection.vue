@@ -87,13 +87,13 @@
     <!-- Marquee -->
     <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
       <div class="flex whitespace-nowrap">
-        <div class="animate-marquee flex gap-[12rem] items-center pr-[12rem]">
-          <h2 class="text-main/5 font-poppins font-black uppercase tracking-normal whitespace-nowrap" style="font-size: clamp(4rem, 10vw, 8rem);">
-            <span class="text-brand-a/40">Mohin</span> 
+        <div class="animate-marquee flex gap-48 items-center pr-48">
+          <h2 class="text-transparent font-black uppercase tracking-normal mix-blend-overlay whitespace-nowrap" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
             <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
           </h2>
-          <h2 class="text-main/5 font-poppins font-black uppercase tracking-normal whitespace-nowrap" style="font-size: clamp(4rem, 10vw, 8rem);">
-            <span class="text-brand-a/40">Mohin</span> 
+          <h2 class="text-transparent font-black uppercase tracking-normal mix-blend-overlay whitespace-nowrap" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
             <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
           </h2>
         </div>

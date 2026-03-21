@@ -1,94 +1,91 @@
 <template>
-  <section id="stack" class="py-20 md:py-28">
+  <section id="packages" class="py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SharedSectionHeader 
-        title="Core Stack"
-        description="The tools and methods I rely on most across design and front-end work."
-      />
+      <div class="mb-16">
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Simple Packages</h2>
+        <p class="text-soft max-w-2xl text-lg font-medium">Transparent pricing and clear outcomes to help you move at startup speed.</p>
+      </div>
       
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid gap-6 md:grid-cols-3">
         <div 
-          v-for="(package_, idx) in packages" 
+          v-for="(pkg, idx) in packages" 
           :key="idx"
-          :class="[
-            'rounded-xl border p-8 transition',
-            package_.featured 
-              ? 'gradient-border border-[color:var(--brand-a)]/50 bg-[linear-gradient(130deg,rgba(249,115,22,0.12),rgba(236,72,153,0.08))] transform scale-105'
-              : 'border-subtle bg-panel hover:border-[color:var(--brand-a)]/40'
-          ]"
+          class="flex flex-col rounded-[2rem] border border-subtle bg-panel/50 p-10 transition-all hover:border-[color:var(--brand-a)]/40 hover:bg-panel/80"
+          :class="{ 'ring-2 ring-[color:var(--brand-a)] scale-[1.02] shadow-2xl shadow-brand-a/10': pkg.featured }"
         >
-          <div v-if="package_.featured" class="brand-gradient mb-4 inline-block rounded-full px-3 py-1 text-xs font-bold text-white">
-            STRONGEST FIT
+          <div v-if="pkg.featured" class="brand-gradient mb-6 self-start rounded-full px-4 py-1.5 text-[0.7rem] font-black uppercase tracking-widest text-white">
+            Most Popular
           </div>
-          <h3 class="text-main mb-2 text-2xl font-bold">{{ package_.name }}</h3>
-          <p class="mb-6 text-lg font-bold text-[color:var(--brand-a)]">{{ package_.label }}</p>
-          <p class="text-muted mb-8 text-sm">{{ package_.description }}</p>
-          <ul class="space-y-3 mb-8">
-            <li v-for="feature in package_.features" :key="feature" class="text-soft flex items-start gap-2 text-sm">
-              <span class="mt-1 text-[color:var(--brand-a)]">✓</span>
-              <span>{{ feature }}</span>
-            </li>
-          </ul>
-          <SharedButton :variant="package_.featured ? 'primary' : 'outline'" class="w-full">
-            {{ package_.cta }}
+          
+          <h3 class="text-main mb-2 text-2xl font-black italic tracking-tight">{{ pkg.name }}</h3>
+          <p class="text-soft mb-8 text-sm font-medium leading-relaxed">{{ pkg.description }}</p>
+          
+          <div class="mb-10 flex-1">
+            <p class="text-muted mb-4 text-[0.65rem] font-bold uppercase tracking-[0.2em]">What you get:</p>
+            <ul class="space-y-4">
+              <li v-for="item in pkg.features" :key="item" class="text-soft flex items-center gap-3 text-sm font-medium">
+                <span class="brand-gradient h-1.5 w-1.5 rounded-full"></span>
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+
+          <SharedButton 
+            tag="a" 
+            href="#contact" 
+            :variant="pkg.featured ? 'primary' : 'outline'" 
+            class="!rounded-2xl py-4 text-sm font-bold tracking-tight"
+          >
+            {{ pkg.cta }}
           </SharedButton>
         </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-muted text-sm font-medium">Have something custom in mind? <a href="#contact" class="text-[color:var(--brand-a)] underline decoration-[color:var(--brand-a)]/30 underline-offset-4 hover:decoration-[color:var(--brand-a)]">Let's talk</a></p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-interface Package {
-  name: string
-  label: string
-  description: string
-  features: string[]
-  cta: string
-  featured?: boolean
-}
-
-const packages: Package[] = [
+const packages = [
   {
-    name: 'Design',
-    label: 'UX and visual systems',
-    description: 'The design side of my work blends product thinking with detailed interface craft.',
+    name: '⚡ Pitch Ready MVP',
+    description: 'Perfect for founders looking to secure funding or validate a core concept with a high-fidelity prototype.',
     features: [
-      'UI/UX Design',
-      'Wireframes & prototypes',
-      'Design systems',
-      'Interaction thinking',
-      'Interface refinement'
+      'Strategic Discovery',
+      'Core Flow Wireframing',
+      'High-Fidelity UI Design',
+      'Interactive Prototype',
+      'Investor-Ready Assets'
     ],
-    cta: 'Design Focus'
+    cta: 'Get Started'
   },
   {
-    name: 'Front-end',
-    label: 'Code-aware product execution',
-    description: 'My implementation background helps me move fluently between ideas, screens, and production-ready UI.',
+    name: '🚀 Production Ready MVP',
+    description: 'A complete end-to-end design system and set of screens ready to be handed off to developers for build.',
     features: [
-      'Vue.js',
-      'Nuxt.js',
-      'Tailwind CSS',
-      'Bootstrap & Bulma',
-      'JavaScript foundations',
-      'Developer handoff awareness'
+      'Full Responsive UI Design',
+      'End-to-End User Journeys',
+      'Scalable Design System',
+      'Developer Documentation',
+      'UX Copywriting Focus'
     ],
-    cta: 'Build Focus',
+    cta: 'Let\'s Launch',
     featured: true
   },
   {
-    name: 'Open Source',
-    label: 'Community and contribution',
-    description: 'Beyond client-facing design, I contribute inside real repositories and cross-functional product teams.',
+    name: '🧠 Full Product Partner',
+    description: 'Long-term collaboration for startups that need a dedicated design lead to scale their product vision.',
     features: [
-      'AppsCode ecosystem',
-      'Repository collaboration',
-      'Pull requests & reviews',
-      'Public portfolio repos',
-      'Visible contribution history'
+      'Monthly Retainer Basis',
+      'Ongoing Feature Design',
+      'User Testing & Iteration',
+      'Strategic Product Roadmap',
+      'Direct Slack Access'
     ],
-    cta: 'Community Focus'
+    cta: 'Partner Up'
   }
 ]
 </script>

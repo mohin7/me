@@ -1,22 +1,44 @@
 <template>
-  <section id="contact" class="py-20 md:py-28 relative overflow-hidden">
-    <!-- Background gradient -->
-    <div class="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(249,115,22,0.11),rgba(236,72,153,0.1))]"></div>
+  <section id="contact" class="relative isolate overflow-hidden py-32 md:py-48 mt-12">
+    <!-- Immersive Gradient Background -->
+    <div class="absolute inset-0 z-0 bg-black">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-a/20 via-brand-b/10 to-transparent"></div>
+      <div class="absolute bottom-0 left-1/2 h-[30rem] w-[50rem] -translate-x-1/2 rounded-full bg-brand-a/30 blur-[120px]"></div>
+    </div>
     
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <h2 class="text-main mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
-        Let’s connect.
+    <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-soft mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
+      
+      <h2 class="text-main mb-12 text-balance text-6xl font-black italic tracking-tighter sm:text-7xl md:text-9xl uppercase">
+        Let's bring it <br> <span class="text-[color:var(--brand-a)]">to life.</span>
       </h2>
-      <p class="text-soft mx-auto mb-8 max-w-2xl text-xl">
-        Find my work, profile links, and contact points across GitHub, LinkedIn, and Bento.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <SharedButton tag="a" href="mailto:hello.mohin4@gmail.com" size="lg">Email Mohin</SharedButton>
-        <SharedButton tag="a" href="https://bento.me/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg">Open Link Hub</SharedButton>
+      
+      <div class="flex flex-col items-center justify-center gap-6">
+        <SharedButton 
+          tag="a" 
+          href="mailto:hello.mohin4@gmail.com" 
+          size="lg" 
+          class="!rounded-full px-12 py-8 text-2xl font-black shadow-2xl shadow-brand-a/40 transition-transform hover:scale-105"
+        >
+          <SharedIcon name="chat" class="mr-3 h-8 w-8" />
+          Book a 15-min call
+        </SharedButton>
+        
+        <p class="text-muted text-lg font-medium">or email at <a href="mailto:hello.mohin4@gmail.com" class="text-main underline decoration-brand-a/30 underline-offset-8 transition hover:text-brand-a">hello.mohin4@gmail.com</a></p>
       </div>
+    </div>
+    
+    <!-- Giant Footer Marquee -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden opacity-5" style="pointer-events: none;">
+      <h2 class="whitespace-nowrap font-black uppercase italic tracking-tighter" style="font-size: 20rem; line-height: 0.8;">
+        Mohin Uddin Mohin Uddin Mohin Uddin
+      </h2>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+</style>

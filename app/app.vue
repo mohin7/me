@@ -4,11 +4,13 @@
     
     <main>
       <SectionsHeroSection />
+      <SectionsLogoMarqueeSection />
+      <SectionsAboutSection />
       <SectionsSpecialtiesSection />
       <SectionsSelectedWorksSection />
-      <SectionsMoreWorksSection />
-      <SectionsPackagesSection />
       <SectionsMVPSprintSection />
+      <SectionsPackagesSection />
+      <SectionsTestimonialsSection />
       <SectionsFAQSection />
       <SectionsCTASection />
     </main>

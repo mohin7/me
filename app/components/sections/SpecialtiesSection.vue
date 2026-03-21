@@ -1,22 +1,21 @@
 <template>
-  <section id="focus" class="py-20 md:py-28">
+  <section id="focus" class="py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <SharedSectionHeader 
-        title="What I Bring"
-        description="A hybrid profile across design leadership, UI craft, and front-end implementation."
-      />
+      <div class="mb-16">
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl uppercase italic">I specialize in MVP design <br><span class="text-[color:var(--brand-a)]">for startups</span></h2>
+      </div>
       
       <div class="grid md:grid-cols-3 gap-8">
         <div 
           v-for="(specialty, idx) in specialties" 
           :key="idx"
-          class="bg-panel border-subtle hover:border-[color:var(--brand-a)]/60 group rounded-xl border p-8 transition"
+          class="bg-panel/40 border-subtle hover:border-[color:var(--brand-a)]/40 group rounded-[2rem] border p-10 transition-all hover:bg-panel/60"
         >
-          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] transition group-hover:scale-105">
-            <SharedIcon :name="specialty.icon" class="h-6 w-6" />
+          <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] transition group-hover:scale-110 group-hover:rotate-3">
+            <SharedIcon :name="specialty.icon" class="h-7 w-7" />
           </div>
-          <h3 class="text-main mb-3 text-xl font-bold">{{ specialty.title }}</h3>
-          <p class="text-muted">{{ specialty.description }}</p>
+          <h3 class="text-main mb-4 text-2xl font-black tracking-tight uppercase italic">{{ specialty.title }}</h3>
+          <p class="text-soft font-medium leading-relaxed">{{ specialty.description }}</p>
         </div>
       </div>
     </div>
@@ -24,27 +23,21 @@
 </template>
 
 <script setup lang="ts">
-interface Specialty {
-  icon: string
-  title: string
-  description: string
-}
-
-const specialties: Specialty[] = [
+const specialties = [
+  {
+    icon: 'bolt',
+    title: 'Pitch Ready UI',
+    description: 'Transforming napkin ideas into investor-ready high-fidelity designs that secure funding and validate concepts.'
+  },
   {
     icon: 'palette',
-    title: 'Product UI & UX',
-    description: 'I design interfaces, flows, wireframes, and prototypes that make complex products easier to use.'
+    title: 'Conversion UX',
+    description: 'Going beyond "pretty" screens. I design user journeys that reduce friction and drive actual product growth.'
   },
   {
     icon: 'layers',
-    title: 'Design Systems',
-    description: 'I build scalable visual systems so teams can ship faster with consistency across products.'
-  },
-  {
-    icon: 'bolt',
-    title: 'Front-end Fluency',
-    description: 'My background in Vue, Nuxt, Tailwind, Bootstrap, and JavaScript helps bridge design and implementation.'
+    title: 'Scalable Systems',
+    description: 'Building lean design systems that grow with your product, ensuring consistency from the very first screen.'
   }
 ]
 </script>

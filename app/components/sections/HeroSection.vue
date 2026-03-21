@@ -1,91 +1,71 @@
 <template>
-  <section id="top" class="hero-shell relative isolate min-h-screen overflow-hidden">
+  <section id="top" class="hero-shell relative isolate overflow-hidden pt-32 pb-16 md:pt-44 md:pb-24">
+    <!-- Immersive Background Gradients -->
     <div class="pointer-events-none absolute inset-0" :class="theme === 'dark' ? 'hero-backdrop-dark' : 'hero-backdrop-light'"></div>
-    <div class="hero-glow-left pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full blur-3xl"></div>
-    <div class="hero-glow-right pointer-events-none absolute -right-28 bottom-20 h-80 w-80 rounded-full blur-3xl"></div>
+    <div class="hero-glow-left pointer-events-none absolute -left-48 top-10 h-[50rem] w-[50rem] rounded-full blur-[120px] opacity-30 md:opacity-50"></div>
+    <div class="hero-glow-right pointer-events-none absolute -right-20 top-40 h-[40rem] w-[40rem] rounded-full blur-[100px] opacity-20 md:opacity-40"></div>
 
-    <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-24 sm:px-6 md:pt-32 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-      <div class="hero-enter">
-        <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-[color:var(--brand-a)]/30 bg-[color:var(--brand-a)]/10 px-4 py-2">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
-            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
-          </span>
-          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-a)]">Available for selective consulting in 2026</span>
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        
+        <!-- Left Column: Content -->
+        <div class="hero-enter relative z-20">
+          <p class="text-soft mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest md:mb-6">
+            Hi, I'm Mohin 
+            <span class="text-[color:var(--brand-a)] text-2xl leading-none">•</span>
+          </p>
+
+          <h1 class="text-main mb-6 text-balance font-extrabold leading-[0.9] tracking-tighter" style="font-size: clamp(4rem, 9vw, 8rem);">
+            Design<br>
+            Partner
+          </h1>
+
+          <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
+            Specialized in <span class="text-main italic font-semibold border-b-2 border-[color:var(--brand-a)]/30">MVP Design</span> for Fast-Moving Startups & Ambitious Founders.
+          </p>
+
+          <div class="flex items-center gap-4">
+            <SharedButton tag="a" href="#contact" size="lg" class="!rounded-full px-8 py-6 text-lg font-bold shadow-xl shadow-brand-a/20">
+              Book a 15-min call 
+              <span class="ml-2 font-normal text-xl leading-none">↗</span>
+            </SharedButton>
+            <a 
+              href="https://linkedin.com/in/mohin7/" 
+              target="_blank" 
+              rel="noreferrer" 
+              class="border-subtle bg-panel text-main hover:text-[color:var(--brand-a)] flex h-14 w-14 items-center justify-center rounded-full border shadow-sm transition-all hover:scale-105"
+            >
+              <SharedIcon name="user" class="h-6 w-6" />
+            </a>
+          </div>
         </div>
 
-        <h1 class="text-main max-w-4xl text-balance text-5xl font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">
-          Building product clarity through
-          <span class="brand-text-gradient">
-            design systems + front-end craft
-          </span>
-        </h1>
-
-        <p class="text-soft mt-7 max-w-2xl text-base leading-relaxed sm:text-lg">
-          I am Md Mohin Uddin, Head of Design at AppsCode. I partner with product teams to ship thoughtful UX, scalable design systems, and performant interfaces from concept to production.
-        </p>
-
-        <div class="mt-9 flex flex-wrap items-center gap-4">
-          <SharedButton tag="a" href="mailto:hello.mohin4@gmail.com" size="lg">Book a call</SharedButton>
-          <SharedButton tag="a" href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noreferrer" variant="outline" size="lg">View LinkedIn</SharedButton>
-          <a
-            href="#work"
-            class="text-soft hover:text-main inline-flex items-center gap-2 text-sm font-medium transition"
-          >
-            See selected work
-            <span class="text-base">-></span>
-          </a>
-        </div>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div v-for="stat in stats" :key="stat.label" class="border-subtle bg-panel rounded-2xl border p-5 backdrop-blur-sm">
-            <p class="text-main text-3xl font-semibold">{{ stat.value }}</p>
-            <p class="text-muted mt-1 text-sm">{{ stat.label }}</p>
+        <!-- Right Column: Portrait -->
+        <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/50 backdrop-blur-sm shadow-2xl shadow-black/30 aspect-[4/5] group">
+            <img 
+              src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?auto=format&fit=crop&q=80&w=800" 
+              alt="Mohin Uddin" 
+              class="h-full w-full object-cover object-center mix-blend-luminosity opacity-80 transition duration-700 ease-out group-hover:mix-blend-normal group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[color:var(--bg-page)] via-[color:var(--bg-page)]/20 to-transparent opacity-90"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="hero-enter-delay lg:pl-4">
-        <div class="border-subtle bg-panel rounded-[1.75rem] border p-5 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-7">
-          <div class="border-subtle bg-panel-strong rounded-2xl border p-6 sm:p-7">
-            <div class="mb-7 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[0.68rem] uppercase tracking-[0.24em] text-[var(--brand-a)]">Profile Snapshot</p>
-                <h2 class="text-main mt-2 text-xl font-semibold">Design Leadership + Execution</h2>
-              </div>
-              <div class="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200">Open Source Native</div>
-            </div>
-
-            <div class="space-y-4">
-              <div class="border-subtle bg-soft rounded-xl border p-4">
-                <p class="text-muted text-xs uppercase tracking-[0.16em]">Current Role</p>
-                <p class="text-main mt-2 text-lg font-medium">Head of Design, AppsCode</p>
-              </div>
-
-              <div class="grid gap-3 sm:grid-cols-2">
-                <div class="border-subtle bg-soft rounded-xl border p-4">
-                  <p class="text-muted text-xs uppercase tracking-[0.16em]">Location</p>
-                  <p class="text-soft mt-1 text-sm font-medium">Dhaka, Bangladesh</p>
-                </div>
-                <div class="border-subtle bg-soft rounded-xl border p-4">
-                  <p class="text-muted text-xs uppercase tracking-[0.16em]">Primary Stack</p>
-                  <p class="text-soft mt-1 text-sm font-medium">Nuxt, Vue, Tailwind, Figma</p>
-                </div>
-              </div>
-
-              <div class="border-subtle bg-soft rounded-xl border p-4">
-                <p class="text-muted text-xs uppercase tracking-[0.16em]">Core Tools</p>
-                <div class="mt-3 flex flex-wrap gap-2">
-                  <span v-for="tool in tools" :key="tool" class="border-subtle text-soft rounded-full border bg-panel px-3 py-1 text-xs">{{ tool }}</span>
-                </div>
-              </div>
-
-              <a href="mailto:hello.mohin4@gmail.com" class="group flex items-center justify-between rounded-xl border border-[color:var(--brand-a)]/40 bg-[color:var(--brand-a)]/10 p-4 text-sm text-[color:var(--brand-a)] transition hover:bg-[color:var(--brand-a)]/15">
-                <span>hello.mohin4@gmail.com</span>
-                <span class="transition group-hover:translate-x-1">-></span>
-              </a>
-            </div>
-          </div>
+    <!-- Marquee -->
+    <div class="mt-24 w-full overflow-hidden border-y border-subtle bg-panel/30 py-4 backdrop-blur-md md:mt-32 md:py-8 lg:absolute lg:bottom-10 lg:mt-0 lg:border-none lg:bg-transparent lg:backdrop-blur-none" style="z-index: 5;">
+      <div class="flex whitespace-nowrap">
+        <div class="animate-marquee flex gap-12 items-center pr-12">
+          <h2 class="text-transparent font-black uppercase italic tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
+            — 8-year UX veteran
+          </h2>
+          <h2 class="text-transparent font-black uppercase italic tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
+            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
+            — 8-year UX veteran
+          </h2>
         </div>
       </div>
     </div>
@@ -93,56 +73,61 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtApp } from '#imports'
+
 const { theme } = useTheme()
-
-const stats = [
-  { value: '79+', label: 'Public repositories' },
-  { value: '714', label: 'Contributions last year' },
-  { value: '85+', label: 'GitHub followers' }
-]
-
-const tools = ['Figma', 'Nuxt', 'Vue', 'Tailwind CSS', 'Design Systems']
 </script>
 
 <style scoped>
 .hero-backdrop-dark {
-  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.16), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.18), transparent 38%),
-    linear-gradient(180deg, #0b0d12 0%, #07080b 80%);
+  background: radial-gradient(circle at 10% 20%, rgba(var(--brand-rgb), 0.15), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(var(--brand-rgb), 0.1), transparent 40%),
+    linear-gradient(180deg, var(--bg-page), #000 100%);
 }
 
 .hero-backdrop-light {
-  background: radial-gradient(circle at 20% 20%, rgba(2, 132, 199, 0.14), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(79, 70, 229, 0.1), transparent 38%),
-    linear-gradient(180deg, #fdfefe 0%, #f2f5f9 90%);
+  background: radial-gradient(circle at 10% 20%, rgba(var(--brand-rgb), 0.1), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(var(--brand-rgb), 0.05), transparent 40%),
+    linear-gradient(180deg, #fdfefe 0%, #f2f5f9 100%);
 }
 
 .hero-glow-left {
   background: var(--brand-a);
-  opacity: 0.12;
 }
 
 .hero-glow-right {
   background: var(--brand-b);
-  opacity: 0.12;
 }
 
 .hero-enter {
-  animation: heroRise 700ms ease-out both;
+  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-enter-delay {
-  animation: heroRise 900ms 120ms ease-out both;
+  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
 }
 
 @keyframes heroRise {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 </style>

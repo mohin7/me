@@ -38,13 +38,20 @@
             <span class="text-[color:var(--brand-a)] text-2xl leading-none">•</span>
           </p>
 
-          <h1 class="text-main mb-6 font-black leading-[0.85] tracking-tighter" style="font-size: clamp(3.5rem, 11vw, 10rem);">
+          <h1 class="text-main mb-6 font-black leading-[0.9] tracking-tight relative" style="font-size: clamp(3.5rem, 11vw, 10rem);">
             <span class="block whitespace-nowrap">Designer</span>
             <span class="block whitespace-nowrap text-[color:var(--brand-a)]">& Coder</span>
+            
+            <!-- Handwritten Note -->
+            <div class="absolute -right-8 -top-12 md:-right-24 md:-top-16 opacity-0 animate-fade-in-up" style="animation-delay: 1.2s;">
+               <p class="handwriting text-brand-a text-2xl md:text-3xl -rotate-12 whitespace-nowrap">
+                 Design-to-Production <br> <span class="text-xs tracking-widest uppercase font-black opacity-30 font-sans block mt-1">Efficiency focus</span>
+               </p>
+            </div>
           </h1>
 
           <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
-            Scaling startups with design-driven execution. Currently leading design at <span class="text-main font-semibold border-b-2 border-[color:var(--brand-a)]/30">AppsCode</span>.
+            Scaling startups with design-driven execution. Currently leading design at <span class="text-main font-semibold underline decoration-[color:var(--brand-a)]/30 underline-offset-[12px] decoration-4">AppsCode</span>.
           </p>
 
           <div class="flex items-center gap-4">
@@ -80,14 +87,14 @@
     <!-- Marquee -->
     <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
       <div class="flex whitespace-nowrap">
-        <div class="animate-marquee flex gap-12 items-center pr-12">
-          <h2 class="text-transparent font-black uppercase tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
-            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
-            — 8-year UX veteran
+        <div class="animate-marquee flex gap-[12rem] items-center pr-[12rem]">
+          <h2 class="text-main/5 font-poppins font-black uppercase tracking-normal whitespace-nowrap" style="font-size: clamp(4rem, 10vw, 8rem);">
+            <span class="text-brand-a/40">Mohin</span> 
+            <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
           </h2>
-          <h2 class="text-transparent font-black uppercase tracking-tighter mix-blend-overlay" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
-            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
-            — 8-year UX veteran
+          <h2 class="text-main/5 font-poppins font-black uppercase tracking-normal whitespace-nowrap" style="font-size: clamp(4rem, 10vw, 8rem);">
+            <span class="text-brand-a/40">Mohin</span> 
+            <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
           </h2>
         </div>
       </div>

@@ -6,9 +6,14 @@
     </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="mb-16">
+      <div class="mb-16 relative">
         <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Specialties</h2>
         <p class="text-soft max-w-2xl text-lg font-medium opacity-80">High-performance design and development for modern products.</p>
+        
+        <!-- Handwriting Accent -->
+        <div class="absolute -right-4 top-0 md:right-1/4">
+           <p class="handwriting text-brand-a text-3xl rotate-6 opacity-80">Built for scale</p>
+        </div>
       </div>
       
       <div class="grid gap-6 md:grid-cols-3">

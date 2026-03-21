@@ -29,6 +29,12 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.handwriting {
+  font-family: 'Caveat', cursive;
+}
+
 .site-shell {
   min-height: 100vh;
   position: relative;

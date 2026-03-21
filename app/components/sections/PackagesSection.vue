@@ -16,9 +16,17 @@
         <div 
           v-for="(pkg, idx) in packages" 
           :key="idx"
-          class="flex flex-col rounded-[2rem] border border-subtle bg-panel/50 p-10 transition-all hover:border-[color:var(--brand-a)]/40 hover:bg-panel/80"
+          class="flex flex-col rounded-[2rem] border border-subtle bg-panel/50 p-10 transition-all hover:border-[color:var(--brand-a)]/40 hover:bg-panel/80 relative"
           :class="{ 'ring-2 ring-[color:var(--brand-a)] scale-[1.02] shadow-2xl shadow-brand-a/10': pkg.featured }"
         >
+          <!-- Handwriting Note -->
+          <div v-if="idx === 0" class="absolute -top-6 left-1/4">
+             <p class="handwriting text-brand-a text-2xl rotate-3 whitespace-nowrap">Rapid launch focus</p>
+          </div>
+          <div v-if="idx === 1" class="absolute -top-6 right-1/4">
+             <p class="handwriting text-brand-b text-2xl -rotate-3 whitespace-nowrap">End-to-end craft</p>
+          </div>
+
           <div v-if="pkg.featured" class="brand-gradient mb-6 self-start rounded-full px-4 py-1.5 text-[0.7rem] font-black tracking-widest text-white">
             Most Popular
           </div>

@@ -53,7 +53,10 @@
            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-32 w-32 rounded-full bg-[color:var(--brand-a)]/[0.015] blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
            
            <div class="relative z-10">
-             <p class="text-[color:var(--brand-a)] text-6xl font-black tracking-tighter mb-2 group-hover:scale-110 transition-transform">8+</p>
+             <div class="relative inline-block">
+               <p class="text-[color:var(--brand-a)] text-6xl font-black tracking-tighter mb-2 group-hover:scale-110 transition-transform">8+</p>
+               <span class="handwriting absolute -right-16 top-0 text-brand-a text-2xl rotate-12 whitespace-nowrap opacity-70">Proven Results</span>
+             </div>
              <p class="text-main text-lg font-black tracking-tight mb-1">Years of Craft</p>
              <p class="text-muted text-xs font-bold uppercase tracking-widest">Industry Veteran</p>
            </div>

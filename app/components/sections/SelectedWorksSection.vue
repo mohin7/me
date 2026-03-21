@@ -20,7 +20,7 @@
         >
           <!-- Text Side -->
           <div :class="idx % 2 === 0 ? 'md:order-1' : 'md:order-2'">
-            <div class="mb-8 flex items-center gap-4">
+            <div class="mb-8 flex items-center gap-4 relative">
                <span class="text-brand-a text-xs font-black uppercase tracking-[0.2em] underline decoration-2 underline-offset-8">0{{ idx + 1 }}</span>
                <span class="text-muted text-xs font-bold uppercase tracking-widest">{{ project.year }}</span>
             </div>
@@ -77,9 +77,106 @@
         </div>
       </div>
       
-      <div class="mt-32 p-12 rounded-[3rem] bg-panel/30 border border-subtle backdrop-blur-md text-center">
-         <p class="text-soft mb-8 text-2xl font-black tracking-tighter opacity-80">My best work is often private — specially crafted for startup founders.</p>
-         <SharedButton tag="a" href="https://github.com/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg" class="!rounded-full px-12 py-5 text-lg font-black tracking-tight">Open Lab Profile</SharedButton>
+      <!-- Private Work Section -->
+      <!-- Compact Private Work Showcase -->
+      <div class="mt-24 relative">
+        <div class="relative group overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/40 backdrop-blur-3xl transition-all duration-700 hover:border-brand-a/30 shadow-2xl">
+          
+          <!-- Background Abstract Shapes & Gradients -->
+          <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-a/[0.08] blur-[80px] group-hover:bg-brand-a/15 transition-all duration-700 pointer-events-none"></div>
+          <div class="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-brand-b/[0.05] blur-[80px] pointer-events-none"></div>
+          
+          <!-- Architectural Grid Pattern -->
+          <div class="absolute inset-0 opacity-[0.02] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none">
+            <svg width="100%" height="100%" class="stroke-brand-a">
+              <defs>
+                <pattern id="secure-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke-width="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#secure-grid)" />
+            </svg>
+          </div>
+
+          <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center p-10 md:p-14">
+            <!-- Left Side: Content -->
+            <div class="md:col-span-7">
+              <div class="mb-6 inline-flex items-center gap-3 px-3 py-1 rounded-full bg-brand-a/10 border border-brand-a/20">
+                <Icon name="lucide:shield-check" class="h-4 w-4 text-brand-a" />
+                <span class="text-[0.6rem] font-black uppercase tracking-[0.2em] text-brand-a">Enterprise Security Protocol</span>
+              </div>
+              
+              <h3 class="text-main mb-4 text-4xl font-black tracking-tighter md:text-5xl leading-[0.9]">
+                 Production-Grade <br> <span class="brand-text-gradient">Private Solutions</span>
+              </h3>
+              
+              <p class="text-soft mb-10 max-w-xl text-lg font-medium leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity">
+                Deep-tech architectures and core product designs for startups moving at venture-scale. Secured under NDA to protect proprietary intellectual property.
+              </p>
+              
+              <div class="flex flex-wrap items-center gap-4">
+                <SharedButton 
+                  tag="a" 
+                  href="https://github.com/mohin7" 
+                  target="_blank" 
+                  variant="primary" 
+                  size="md" 
+                  class="!rounded-full px-8 py-4 text-sm font-bold tracking-tight shadow-brand-a/20"
+                >
+                  Technical Lab
+                  <Icon name="lucide:arrow-right" class="ml-2 h-4 w-4" />
+                </SharedButton>
+                
+                <SharedButton 
+                  tag="a" 
+                  href="mailto:hello.mohin4@gmail.com"
+                  variant="outline" 
+                  size="md" 
+                  class="!rounded-full px-8 py-4 text-sm font-bold tracking-tight border-subtle hover:border-brand-a/40"
+                >
+                  Request Full Deck
+                </SharedButton>
+              </div>
+            </div>
+
+            <!-- Right Side: Graphic Visualization -->
+            <div class="md:col-span-5 relative">
+              <div class="relative aspect-square max-w-[280px] mx-auto">
+                <!-- Outer Pulsating Rings -->
+                <div class="absolute inset-0 border border-brand-a/10 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50"></div>
+                <div class="absolute inset-4 border border-brand-b/10 rounded-full animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30"></div>
+                
+                <!-- Rotating Tech Lines -->
+                <svg class="absolute inset-0 w-full h-full animate-[spin_20s_linear_infinite] opacity-20" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-dasharray="1 10" stroke-width="0.5" class="text-brand-a" />
+                </svg>
+                <svg class="absolute inset-0 w-full h-full animate-[spin_15s_linear_infinite_reverse] opacity-20" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-dasharray="4 8" stroke-width="0.5" class="text-brand-b" />
+                </svg>
+
+                <!-- Central Core -->
+                <div class="absolute inset-8 rounded-[2rem] bg-panel-strong border border-subtle shadow-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                   <div class="text-center relative">
+                     <div class="absolute -inset-4 bg-brand-a/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
+                     <Icon name="lucide:lock" class="h-12 w-12 text-brand-a relative" />
+                     <p class="mt-4 text-[0.5rem] font-black uppercase tracking-[0.3em] text-muted block">Locked IP</p>
+                   </div>
+                </div>
+
+                <!-- Floating Data Nodes -->
+                <div class="absolute -top-4 -right-4 h-12 w-12 rounded-xl bg-panel border border-brand-a/20 shadow-lg flex items-center justify-center animate-bounce duration-[3000ms] delay-150">
+                   <Icon name="lucide:database" class="h-5 w-5 text-brand-a/60" />
+                </div>
+                <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-xl bg-panel border border-brand-b/20 shadow-lg flex items-center justify-center animate-bounce duration-[4000ms] delay-700">
+                   <Icon name="lucide:layers" class="h-4 w-4 text-brand-b/60" />
+                </div>
+                <div class="absolute top-1/2 -right-8 h-8 w-8 rounded-lg bg-panel border border-subtle shadow-lg flex items-center justify-center animate-pulse">
+                   <Icon name="lucide:zap" class="h-4 w-4 text-brand-c opacity-40" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

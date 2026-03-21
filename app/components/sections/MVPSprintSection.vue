@@ -2,7 +2,7 @@
   <section id="sprint" class="py-24 md:py-32 bg-panel/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16 text-center">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl uppercase">My 7-Days MVP Sprint</h2>
+        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">My 7-Days MVP Sprint</h2>
         <p class="text-soft mx-auto max-w-2xl text-lg font-medium leading-relaxed">
           Launch your startup with confidence—turning your complex vision into a high-fidelity, interactive prototype in just one week.
         </p>
@@ -21,7 +21,7 @@
                 {{ step.day }}
               </div>
               <div>
-                <h4 class="text-main text-lg font-black tracking-tight uppercase">{{ step.title }}</h4>
+                <h4 class="text-main text-lg font-black tracking-tight">{{ step.title }}</h4>
                 <p class="text-muted text-sm font-medium">{{ step.description }}</p>
               </div>
             </div>
@@ -47,7 +47,7 @@
                 {{ step.day }}
               </div>
               <div>
-                <h4 class="text-main text-lg font-black tracking-tight uppercase">{{ step.title }}</h4>
+                <h4 class="text-main text-lg font-black tracking-tight">{{ step.title }}</h4>
                 <p class="text-muted text-sm font-medium">{{ step.description }}</p>
               </div>
             </div>
@@ -58,7 +58,7 @@
       <div class="mt-20 flex flex-col items-center gap-6">
           <div class="bg-soft border-subtle flex items-center gap-4 rounded-2xl border px-6 py-4">
             <Icon name="lucide:bolt" class="text-[color:var(--brand-a)] h-6 w-6" />
-            <p class="text-soft text-sm font-bold uppercase tracking-widest">Speed + Clarity + Quality = Success</p>
+            <p class="text-soft text-sm font-bold tracking-widest">Speed + Clarity + Quality = Success</p>
           </div>
           <SharedButton tag="a" href="#contact" size="lg" class="!rounded-full px-10 py-5 text-lg font-bold">Start your sprint</SharedButton>
       </div>

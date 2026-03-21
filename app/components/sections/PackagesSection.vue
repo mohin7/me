@@ -13,7 +13,7 @@
           class="flex flex-col rounded-[2rem] border border-subtle bg-panel/50 p-10 transition-all hover:border-[color:var(--brand-a)]/40 hover:bg-panel/80"
           :class="{ 'ring-2 ring-[color:var(--brand-a)] scale-[1.02] shadow-2xl shadow-brand-a/10': pkg.featured }"
         >
-          <div v-if="pkg.featured" class="brand-gradient mb-6 self-start rounded-full px-4 py-1.5 text-[0.7rem] font-black uppercase tracking-widest text-white">
+          <div v-if="pkg.featured" class="brand-gradient mb-6 self-start rounded-full px-4 py-1.5 text-[0.7rem] font-black tracking-widest text-white">
             Most Popular
           </div>
           
@@ -21,7 +21,7 @@
           <p class="text-soft mb-8 text-sm font-medium leading-relaxed">{{ pkg.description }}</p>
           
           <div class="mb-10 flex-1">
-            <p class="text-muted mb-4 text-[0.65rem] font-bold uppercase tracking-[0.2em]">What you get:</p>
+          <p class="text-muted mb-4 text-[0.65rem] font-bold uppercase tracking-[0.2em]">What you get:</p>
             <ul class="space-y-4">
               <li v-for="item in pkg.features" :key="item" class="text-soft flex items-center gap-3 text-sm font-medium">
                 <span class="brand-gradient h-1.5 w-1.5 rounded-full"></span>

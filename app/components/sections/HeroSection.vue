@@ -1,5 +1,5 @@
 <template>
-  <section id="top" class="hero-shell relative isolate overflow-hidden min-h-screen flex items-center pt-24 pb-12 lg:pt-32 lg:pb-32">
+  <section id="top" class="hero-shell relative isolate overflow-hidden min-h-screen flex items-center py-24 md:py-32">
     <!-- Immersive Background Gradients -->
     <div class="pointer-events-none absolute inset-0" :class="theme === 'dark' ? 'hero-backdrop-dark' : 'hero-backdrop-light'"></div>
     <div class="hero-glow-left pointer-events-none absolute -left-48 top-10 h-[50rem] w-[50rem] rounded-full blur-[120px] opacity-30 md:opacity-50"></div>

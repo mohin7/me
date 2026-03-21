@@ -1,5 +1,5 @@
 <template>
-  <section id="sprint" class="py-32 md:py-72 bg-page relative overflow-hidden">
+  <section id="sprint" class="py-24 md:py-32 bg-page relative overflow-hidden">
     <!-- Immersive Background Accents -->
     <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[40rem] bg-[radial-gradient(circle_at_50%_50%,rgba(var(--brand-rgb),0.02),transparent_70%)] pointer-events-none"></div>
 

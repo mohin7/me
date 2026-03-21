@@ -93,10 +93,31 @@ const { theme } = useTheme()
 
 .hero-glow-left {
   background: var(--brand-a);
+  animation: liquidFlow 20s infinite alternate-reverse ease-in-out;
 }
 
 .hero-glow-right {
   background: var(--brand-b);
+  animation: liquidFlow 25s infinite alternate ease-in-out;
+}
+
+@keyframes liquidFlow {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 50%;
+  }
+  33% {
+    transform: translate(15%, -10%) scale(1.1) rotate(45deg);
+    border-radius: 40% 60% 50% 50%;
+  }
+  66% {
+    transform: translate(-10%, 15%) scale(0.9) rotate(90deg);
+    border-radius: 60% 40% 60% 40%;
+  }
+  100% {
+    transform: translate(5%, 5%) scale(1.05) rotate(135deg);
+    border-radius: 50%;
+  }
 }
 
 .hero-enter {
@@ -104,7 +125,12 @@ const { theme } = useTheme()
 }
 
 .hero-enter-delay {
-  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+  animation: heroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both, floatAnim 6s ease-in-out 950ms infinite;
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 @keyframes heroRise {

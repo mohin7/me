@@ -157,6 +157,14 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 
 .brand-gradient {
   background-image: linear-gradient(92deg, var(--brand-a), var(--brand-c) 45%, var(--brand-b));
+  background-size: 200% auto;
+  animation: liquidGradient 6s linear infinite;
+}
+
+@keyframes liquidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .brand-text-gradient {

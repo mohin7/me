@@ -2,7 +2,7 @@
   <component
     :is="tag"
     :class="[
-      'inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all',
+      'inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]',
       variantClasses,
       sizeClasses,
       disabled && 'opacity-50 cursor-not-allowed'

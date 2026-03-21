@@ -4,7 +4,7 @@
     <div class="hero-glow-left pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full blur-3xl"></div>
     <div class="hero-glow-right pointer-events-none absolute -right-28 bottom-20 h-80 w-80 rounded-full blur-3xl"></div>
 
-    <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+    <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-24 sm:px-6 md:pt-32 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
       <div class="hero-enter">
         <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-[color:var(--brand-a)]/30 bg-[color:var(--brand-a)]/10 px-4 py-2">
           <span class="relative flex h-2.5 w-2.5">

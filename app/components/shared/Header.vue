@@ -1,97 +1,129 @@
 <template>
-  <header class="sticky top-0 z-50 border-b border-subtle bg-panel backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-20 items-center justify-between">
-        <a href="#top" class="group flex items-center gap-3">
-          <div class="brand-gradient relative grid h-9 w-9 place-items-center rounded-xl text-sm font-bold text-white shadow-lg shadow-black/20">
-            M
-            <span class="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border border-black/40 bg-emerald-400"></span>
-          </div>
-          <div>
-            <p class="text-[0.7rem] uppercase tracking-[0.24em] text-[var(--brand-a)]">Portfolio</p>
-            <p class="text-main text-sm font-semibold transition group-hover:text-[var(--brand-a)]">Md Mohin Uddin</p>
-          </div>
-        </a>
-
-        <nav class="hidden items-center gap-2 rounded-full border border-subtle bg-soft px-3 py-2 md:flex">
-          <a
-            v-for="item in navItems"
-            :key="item.label"
-            :href="item.href"
-            class="text-soft hover:text-main rounded-full px-4 py-2 text-sm transition hover:bg-panel"
-          >
-            {{ item.label }}
-          </a>
-        </nav>
-
-        <div class="hidden items-center gap-3 md:flex">
-          <button
-            type="button"
-            class="border-subtle text-main rounded-full border px-3 py-2 text-sm transition hover:bg-soft"
-            @click="toggleTheme"
-          >
-            {{ theme === 'dark' ? 'Light' : 'Dark' }}
-          </button>
-          <a
-            href="mailto:hello.mohin4@gmail.com"
-            class="border-subtle text-soft hover:text-main rounded-full border px-4 py-2 text-sm transition hover:bg-soft"
-          >
-            Email
-          </a>
-          <a
-            href="#contact"
-            class="brand-gradient rounded-full px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:scale-[1.02]"
-          >
-            Let us talk
-          </a>
+  <header class="fixed left-0 right-0 top-4 z-50 flex justify-center px-4 md:top-6">
+    <div class="flex w-full max-w-5xl items-center justify-between gap-4 rounded-full border border-subtle bg-panel/80 p-2 pl-3 pr-4 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 dark:shadow-black/20 md:gap-8 lg:pr-3">
+      
+      <!-- Brand -->
+      <a href="#top" class="group flex items-center gap-3 border-subtle pr-2 md:border-r">
+        <div class="brand-gradient relative grid h-10 w-10 place-items-center rounded-full text-sm font-bold text-white shadow-md shadow-brand-a/20 transition-transform duration-300 group-hover:scale-105">
+          M
+          <span class="absolute right-0 top-0 h-2.5 w-2.5 rounded-full border border-black/40 bg-emerald-400"></span>
         </div>
+        <div class="hidden md:block">
+          <p class="text-[0.65rem] uppercase tracking-widest text-[var(--brand-a)]">Portfolio</p>
+          <p class="text-main text-sm font-semibold transition group-hover:text-[var(--brand-a)] text-nowrap">Md Mohin Uddin</p>
+        </div>
+      </a>
 
+      <!-- Desktop Nav -->
+      <nav class="hidden flex-1 items-center justify-center gap-1 md:flex">
+        <a
+          v-for="item in navItems"
+          :key="item.label"
+          :href="item.href"
+          class="text-soft hover:text-main group flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:bg-soft"
+        >
+          <SharedIcon :name="item.icon" class="text-soft/70 h-4 w-4 transition group-hover:text-main" />
+          {{ item.label }}
+        </a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden items-center gap-2 border-subtle pl-2 md:flex md:border-l">
         <button
           type="button"
-          class="border-subtle text-main inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-soft transition hover:bg-panel md:hidden"
+          class="text-soft hover:text-main group rounded-full p-2 transition-all hover:bg-soft"
+          @click="toggleTheme"
+          aria-label="Toggle theme"
+        >
+          <SharedIcon :name="theme === 'dark' ? 'sun' : 'moon'" class="h-5 w-5 transition group-hover:scale-110" />
+        </button>
+        <a
+          href="mailto:hello.mohin4@gmail.com"
+          class="text-soft hover:text-main group rounded-full p-2 transition-all hover:bg-soft"
+          aria-label="Email me"
+        >
+          <SharedIcon name="mail" class="h-5 w-5 transition group-hover:scale-110" />
+        </a>
+        <a
+          href="#contact"
+          class="brand-gradient ml-2 flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-a/20 transition-all hover:scale-105"
+        >
+          <SharedIcon name="chat" class="h-4 w-4" />
+          Let's talk
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="flex md:hidden ml-auto items-center gap-2">
+        <a
+          href="#contact"
+          class="brand-gradient flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-md transition-all hover:scale-105"
+        >
+          <SharedIcon name="chat" class="h-3 w-3" />
+          Talk
+        </a>
+        <button
+          type="button"
+          class="border-subtle text-main inline-flex h-10 w-10 items-center justify-center rounded-full border bg-soft transition hover:bg-panel"
           :aria-expanded="isMobileMenuOpen"
           aria-controls="mobile-navigation"
           aria-label="Toggle navigation menu"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         >
-          <span v-if="!isMobileMenuOpen" class="text-lg leading-none">+</span>
-          <span v-else class="text-lg leading-none">x</span>
+          <SharedIcon :name="isMobileMenuOpen ? 'close' : 'menu'" class="h-5 w-5" />
         </button>
       </div>
+    </div>
 
+    <!-- Mobile Navigation Menu -->
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="-translate-y-4 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="-translate-y-4 opacity-0"
+    >
       <div
+        v-if="isMobileMenuOpen"
         id="mobile-navigation"
-        class="border-subtle overflow-hidden border-t md:hidden"
-        :class="isMobileMenuOpen ? 'max-h-80 py-4' : 'max-h-0 py-0'
-        "
+        class="absolute left-4 right-4 top-20 flex flex-col gap-2 rounded-2xl border border-subtle bg-panel/95 p-4 shadow-xl shadow-black/10 backdrop-blur-xl md:hidden dark:bg-panel/98"
       >
-        <nav class="flex flex-col gap-2">
+        <a
+          v-for="item in navItems"
+          :key="`mobile-${item.label}`"
+          :href="item.href"
+          class="border-subtle hover:text-main flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-medium text-soft transition hover:bg-soft"
+          @click="isMobileMenuOpen = false"
+        >
+          <div class="flex items-center gap-3">
+            <SharedIcon :name="item.icon" class="h-5 w-5" />
+            {{ item.label }}
+          </div>
+          <SharedIcon name="chevron-right" class="h-4 w-4 opacity-50" />
+        </a>
+        
+        <div class="mt-2 flex gap-2 border-t border-subtle pt-4">
           <button
             type="button"
-            class="border-subtle text-main rounded-xl border px-4 py-3 text-left text-sm transition hover:bg-soft"
+            class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
             @click="toggleTheme"
           >
-            Switch to {{ theme === 'dark' ? 'light' : 'dark' }} mode
+            <SharedIcon :name="theme === 'dark' ? 'sun' : 'moon'" class="h-5 w-5" />
+            {{ theme === 'dark' ? 'Light' : 'Dark' }}
           </button>
+          
           <a
-            v-for="item in navItems"
-            :key="`mobile-${item.label}`"
-            :href="item.href"
-            class="border-subtle text-soft hover:text-main rounded-xl border px-4 py-3 text-sm transition hover:bg-soft"
+            href="mailto:hello.mohin4@gmail.com"
+            class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
             @click="isMobileMenuOpen = false"
           >
-            {{ item.label }}
+            <SharedIcon name="mail" class="h-5 w-5" />
+            Email
           </a>
-          <a
-            href="#contact"
-            class="brand-gradient mt-2 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white"
-            @click="isMobileMenuOpen = false"
-          >
-            Let us talk
-          </a>
-        </nav>
+        </div>
       </div>
-    </div>
+    </Transition>
   </header>
 </template>
 
@@ -102,9 +134,9 @@ const isMobileMenuOpen = ref(false)
 const { theme, toggleTheme } = useTheme()
 
 const navItems = [
-  { label: 'Focus', href: '#focus' },
-  { label: 'Projects', href: '#work' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'FAQ', href: '#faq' }
+  { label: 'Focus', href: '#focus', icon: 'target' },
+  { label: 'Projects', href: '#work', icon: 'folder' },
+  { label: 'Experience', href: '#experience', icon: 'briefcase' },
+  { label: 'FAQ', href: '#faq', icon: 'help' }
 ]
 </script>

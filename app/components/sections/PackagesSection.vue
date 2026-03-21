@@ -12,33 +12,36 @@
         <p class="text-soft max-w-2xl text-lg font-medium opacity-80">Simple, fixed pricing for high-impact results.</p>
       </div>
       
-      <div class="grid gap-8 lg:grid-cols-2">
+      <div class="grid gap-8 lg:grid-cols-3">
         <div 
           v-for="(pkg, idx) in packages" 
           :key="idx"
-          class="flex flex-col rounded-[2rem] border border-subtle bg-panel/50 p-10 transition-all hover:border-[color:var(--brand-a)]/40 hover:bg-panel/80 relative"
-          :class="{ 'ring-2 ring-[color:var(--brand-a)] scale-[1.02] shadow-2xl shadow-brand-a/10': pkg.featured }"
+          class="flex flex-col rounded-[2.5rem] border border-subtle bg-panel/30 p-8 transition-all duration-500 hover:border-brand-a/40 hover:bg-panel/40 relative group"
+          :class="{ 'ring-2 ring-brand-a/30 scale-[1.02] shadow-2xl shadow-brand-a/5 bg-panel/50': pkg.featured }"
         >
-          <!-- Handwriting Note -->
-          <div v-if="idx === 0" class="absolute -top-6 left-1/4">
-             <p class="handwriting text-brand-a text-2xl rotate-3 whitespace-nowrap">Rapid launch focus</p>
+          <!-- Handwriting Notes for specific cards -->
+          <div v-if="idx === 0" class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+             <p class="handwriting text-brand-a text-xl rotate-3">Rapid launch focus</p>
           </div>
-          <div v-if="idx === 1" class="absolute -top-6 right-1/4">
-             <p class="handwriting text-brand-b text-2xl -rotate-3 whitespace-nowrap">End-to-end craft</p>
+          <div v-if="idx === 1" class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-100">
+             <p class="handwriting text-brand-b text-xl -rotate-2">Founders' favorite</p>
+          </div>
+          <div v-if="idx === 2" class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+             <p class="handwriting text-brand-c text-xl -rotate-3">Strategic scale</p>
           </div>
 
-          <div v-if="pkg.featured" class="brand-gradient mb-6 self-start rounded-full px-4 py-1.5 text-[0.7rem] font-black tracking-widest text-white">
-            Most Popular
+          <div v-if="pkg.featured" class="brand-gradient mb-8 self-start rounded-full px-4 py-1 text-[0.65rem] font-black tracking-[0.2em] text-white">
+            RECOMMENDED
           </div>
           
-          <h3 class="text-main mb-2 text-2xl font-black tracking-tight">{{ pkg.name }}</h3>
-          <p class="text-soft mb-8 text-sm font-medium leading-relaxed">{{ pkg.description }}</p>
+          <h3 class="text-main mb-3 text-2xl font-black tracking-tight">{{ pkg.name }}</h3>
+          <p class="text-soft mb-10 text-sm font-medium leading-relaxed opacity-70">{{ pkg.description }}</p>
           
           <div class="mb-10 flex-1">
-          <p class="text-muted mb-4 text-[0.65rem] font-bold uppercase tracking-[0.2em]">What you get:</p>
+            <p class="text-muted mb-6 text-[0.6rem] font-black uppercase tracking-[0.2em]">Service Inclusions</p>
             <ul class="space-y-4">
-              <li v-for="item in pkg.features" :key="item" class="text-soft flex items-center gap-3 text-sm font-medium">
-                <span class="brand-gradient h-1.5 w-1.5 rounded-full"></span>
+              <li v-for="item in pkg.features" :key="item" class="text-soft flex items-start gap-4 text-xs font-medium group-hover:translate-x-1 transition-transform">
+                <Icon name="lucide:check-circle-2" class="h-4 w-4 text-brand-a shrink-0 mt-0.5 opacity-60" />
                 {{ item }}
               </li>
             </ul>
@@ -48,7 +51,7 @@
             tag="a" 
             href="#contact" 
             :variant="pkg.featured ? 'primary' : 'outline'" 
-            class="!rounded-2xl py-4 text-sm font-bold tracking-tight"
+            class="!rounded-2xl py-4 text-xs font-black uppercase tracking-widest shadow-lg shadow-brand-a/10"
           >
             {{ pkg.cta }}
           </SharedButton>

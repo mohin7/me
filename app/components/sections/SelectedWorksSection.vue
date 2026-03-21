@@ -12,66 +12,63 @@
         <p class="text-soft max-w-2xl text-xl font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
       </div>
 
-      <div class="space-y-32">
+      <!-- Redesigned Card Grid -->
+      <div class="grid gap-8 md:grid-cols-3">
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="group relative grid md:grid-cols-2 gap-12 lg:gap-24 items-center"
+          class="group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/30 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-a/10 hover:border-brand-a/30"
         >
-          <!-- Text Side -->
-          <div :class="idx % 2 === 0 ? 'md:order-1' : 'md:order-2'">
-            <div class="mb-8 flex items-center gap-4 relative">
-               <span class="text-brand-a text-xs font-black uppercase tracking-[0.2em] underline decoration-2 underline-offset-8">0{{ idx + 1 }}</span>
-               <span class="text-muted text-xs font-bold uppercase tracking-widest">{{ project.year }}</span>
+          <!-- Project Image Container -->
+          <div class="relative aspect-[16/11] overflow-hidden">
+            <img 
+              :src="project.image" 
+              :alt="project.name" 
+              class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+            
+            <!-- Floating Index / Year -->
+            <div class="absolute top-6 left-6 flex items-baseline gap-2">
+               <span class="text-white text-xs font-black uppercase tracking-[0.2em] opacity-40">0{{ idx + 1 }}</span>
+               <div class="h-px w-4 bg-white/20"></div>
+               <span class="text-white text-[0.6rem] font-bold uppercase tracking-widest opacity-80">{{ project.year }}</span>
             </div>
-            
-            <h3 class="text-main mb-6 text-4xl font-black tracking-tighter leading-none md:text-6xl group-hover:text-[color:var(--brand-a)] transition-colors duration-500">
-              {{ project.name }}
-            </h3>
-            
-            <p class="text-soft mb-10 text-xl font-medium leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-              {{ project.description }}
-            </p>
-            
-            <div class="flex flex-wrap gap-2 mb-12">
-              <span v-for="tag in project.tags" :key="tag" class="text-muted text-[0.65rem] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-subtle bg-soft/30 transition group-hover:border-[color:var(--brand-a)]/30 group-hover:text-main">
+
+            <!-- Absolute Hover Button -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+               <a 
+                 :href="project.href" 
+                 target="_blank" 
+                 class="px-6 py-3 rounded-full bg-white text-black text-sm font-black tracking-tight shadow-xl hover:scale-105 active:scale-95 transition-all"
+               >
+                 View Project ↗
+               </a>
+            </div>
+          </div>
+
+          <!-- Project Content -->
+          <div class="flex-1 p-8 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-black uppercase tracking-[0.1em] text-brand-a bg-brand-a/5 px-3 py-1 rounded-full border border-brand-a/10">
                 {{ tag }}
               </span>
             </div>
 
-            <SharedButton 
-              tag="a" 
-              :href="project.href" 
-              target="_blank" 
-              rel="noreferrer" 
-              variant="outline" 
-              size="lg" 
-              class="!rounded-full px-10 py-5 text-sm font-bold shadow-sm hover:shadow-brand-a/10"
-            >
-              Explore Project
-              <Icon name="lucide:arrow-up-right" class="ml-2 h-5 w-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-            </SharedButton>
-          </div>
+            <h3 class="text-main mb-4 text-2xl font-black tracking-tighter leading-tight group-hover:text-brand-a transition-colors">
+              {{ project.name }}
+            </h3>
+            
+            <p class="text-soft mb-8 text-sm font-medium leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity line-clamp-2">
+              {{ project.description }}
+            </p>
 
-          <!-- Image Side with Graphics -->
-          <div :class="idx % 2 === 0 ? 'md:order-2' : 'md:order-1'" class="relative">
-            <!-- Decorative Frames -->
-            <div class="absolute -inset-4 border border-brand-a/2 rounded-[3.5rem] -rotate-2 group-hover:rotate-0 transition-transform duration-700 pointer-events-none"></div>
-            <div class="absolute -right-8 -bottom-8 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-              <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                <path d="M0 120L120 0" stroke="currentColor" stroke-width="0.5" class="text-brand-a" />
-                <path d="M20 120L120 20" stroke="currentColor" stroke-width="0.5" class="text-brand-a" />
-                <path d="M40 120L120 40" stroke="currentColor" stroke-width="0.5" class="text-brand-a" />
-              </svg>
-            </div>
-
-            <div class="relative overflow-hidden rounded-[2.5rem] border border-subtle bg-panel shadow-2xl transition duration-700 group-hover:scale-[1.02] group-hover:shadow-brand-a/10 group-hover:border-[color:var(--brand-a)]/30">
-              <img 
-                :src="project.image" 
-                :alt="project.name" 
-                class="aspect-[16/10] w-full object-cover grayscale opacity-80 transition duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-              />
-              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="mt-auto pt-6 border-t border-subtle flex items-center justify-between">
+               <a :href="project.href" target="_blank" class="text-main text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all group/link">
+                 Live Preview
+                 <Icon name="lucide:arrow-right" class="h-4 w-4 text-brand-a transition-transform group-hover/link:translate-x-1" />
+               </a>
+               <div class="h-2 w-2 rounded-full bg-emerald-500/40 animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -197,7 +194,7 @@ const projects = [
     year: "2024",
     description: "An elegant, distraction-free reading experience for the Holy Quran, optimized for mobile and web with Vue 3.",
     tags: ["Vue 3", "Tailwind CSS", "Web App"],
-    image: "https://images.unsplash.com/photo-1591154665851-5120668eb40a?auto=format&fit=crop&q=80&w=1200",
+    image: "/img/quran_app.png",
     href: "https://github.com/mohin7/quran-vue3-tailwind"
   },
   {

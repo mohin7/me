@@ -5,7 +5,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-64 text-center px-4">
-        <h2 class="text-main mb-6 text-4xl font-black tracking-tight md:text-7xl leading-[1.05]">The 7-Day <span class="brand-text-gradient italic font-serif">Hyper-Sprint</span></h2>
+        <h2 class="text-main mb-6 text-4xl font-black tracking-tight md:text-7xl leading-[1.05]">The 7-Day <span class="brand-text-gradient">Hyper-Sprint</span></h2>
         <p class="text-soft mx-auto max-w-2xl text-xl font-medium leading-relaxed opacity-60">
           Scaling from concept to investor-ready prototype in 168 hours. No fluff, just execution.
         </p>
@@ -78,9 +78,11 @@
       </div>
 
       <div class="mt-64 flex justify-center">
-          <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="!rounded-full px-12 py-6 text-xl font-black uppercase tracking-widest shadow-2xl shadow-brand-a/20 hover:scale-105 active:scale-95 transition-all">
+          <SharedButton tag="a" href="#contact" variant="primary" size="xl">
              Start Your Sprint
-             <Icon name="lucide:zap" class="ml-3 h-5 w-5" />
+             <template #right>
+               <Icon name="lucide:zap" class="h-6 w-6" />
+             </template>
           </SharedButton>
       </div>
     </div>

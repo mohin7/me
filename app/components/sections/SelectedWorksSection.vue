@@ -7,7 +7,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-20">
         <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl leading-[0.9]">
-          Selected Works <br> <span class="text-soft opacity-40">& Experiments</span>
+          Selected <span class="brand-text-gradient">Works</span> <br> <span class="text-soft opacity-40">& Experiments</span>
         </h2>
         <p class="text-soft max-w-2xl text-xl font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
       </div>
@@ -117,19 +117,19 @@
                   href="https://github.com/mohin7" 
                   target="_blank" 
                   variant="primary" 
-                  size="md" 
-                  class="!rounded-full px-8 py-4 text-sm font-bold tracking-tight shadow-brand-a/20"
+                  size="md"
                 >
                   Technical Lab
-                  <Icon name="lucide:arrow-right" class="ml-2 h-4 w-4" />
+                  <template #right>
+                    <Icon name="lucide:arrow-right" class="h-4 w-4" />
+                  </template>
                 </SharedButton>
                 
                 <SharedButton 
                   tag="a" 
                   href="mailto:hello.mohin4@gmail.com"
                   variant="outline" 
-                  size="md" 
-                  class="!rounded-full px-8 py-4 text-sm font-bold tracking-tight border-subtle hover:border-brand-a/40"
+                  size="md"
                 >
                   Request Full Deck
                 </SharedButton>

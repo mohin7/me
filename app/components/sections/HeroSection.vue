@@ -53,20 +53,24 @@
           <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
             Scaling startups with design-driven execution. Currently leading design at <span class="text-main font-semibold underline decoration-[color:var(--brand-a)]/30 underline-offset-[12px] decoration-4">AppsCode</span>.
           </p>
-
           <div class="flex items-center gap-4">
-            <SharedButton tag="a" href="#contact" size="lg" class="!rounded-full px-8 py-6 text-lg font-bold shadow-xl shadow-brand-a/20">
+            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="shadow-2xl shadow-brand-a/20">
               Book a 15-min call 
-              <span class="ml-2 font-normal text-xl leading-none">↗</span>
+              <template #right>
+                <span class="text-xl leading-none italic">↗</span>
+              </template>
             </SharedButton>
-            <a 
+            <SharedButton 
+              tag="a"
               href="https://linkedin.com/in/mohin7/" 
               target="_blank" 
               rel="noreferrer" 
-              class="border-subtle bg-panel text-main hover:text-[color:var(--brand-a)] flex h-14 w-14 items-center justify-center rounded-full border shadow-sm transition-all hover:scale-105"
+              variant="solid"
+              size="md"
+              class="aspect-square !px-0 flex items-center justify-center shadow-brand-a/20"
             >
-            <Icon name="lucide:user" class="h-6 w-6" />
-            </a>
+              <Icon name="lucide:user" class="h-6 w-6" />
+            </SharedButton>
           </div>
         </div>
 

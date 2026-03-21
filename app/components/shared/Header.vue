@@ -28,40 +28,55 @@
       </nav>
 
       <!-- Desktop Actions -->
-      <div class="hidden items-center gap-2 border-subtle pl-2 md:flex md:border-l">
-        <button
+      <!-- Desktop Actions -->
+      <div class="hidden items-center gap-1 border-subtle pl-2 md:flex md:border-l">
+        <SharedButton
           type="button"
-          class="text-soft hover:text-main group rounded-full p-2 transition-all hover:bg-soft"
+          variant="ghost"
+          size="sm"
+          class="aspect-square !px-0"
           @click="toggleTheme"
           aria-label="Toggle theme"
         >
-          <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5 transition group-hover:scale-110" />
-        </button>
-        <a
+          <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5" />
+        </SharedButton>
+        <SharedButton
+          tag="a"
           href="mailto:hello.mohin4@gmail.com"
-          class="text-soft hover:text-main group rounded-full p-2 transition-all hover:bg-soft"
+          variant="ghost"
+          size="sm"
+          class="aspect-square !px-0"
           aria-label="Email me"
         >
-          <Icon name="lucide:mail" class="h-5 w-5 transition group-hover:scale-110" />
-        </a>
-        <a
+          <Icon name="lucide:mail" class="h-5 w-5" />
+        </SharedButton>
+        <SharedButton
+          tag="a"
           href="#contact"
-          class="brand-gradient ml-2 flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-a/20 transition-all hover:scale-105"
+          variant="primary"
+          size="sm"
+          class="ml-2"
         >
-          <Icon name="lucide:message-circle" class="h-4 w-4" />
+          <template #left>
+            <Icon name="lucide:message-circle" class="h-4 w-4" />
+          </template>
           Let's talk
-        </a>
+        </SharedButton>
       </div>
 
       <!-- Mobile Menu Toggle -->
       <div class="flex md:hidden ml-auto items-center gap-2">
-        <a
+        <SharedButton
+          tag="a"
           href="#contact"
-          class="brand-gradient flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-md transition-all hover:scale-105"
+          variant="primary"
+          size="xs"
         >
-          <Icon name="lucide:message-circle" class="h-3 w-3" />
+          <template #left>
+            <Icon name="lucide:message-circle" class="h-3 w-3" />
+          </template>
           Talk
-        </a>
+        </SharedButton>
         <button
           type="button"
           class="border-subtle text-main inline-flex h-10 w-10 items-center justify-center rounded-full border bg-soft transition hover:bg-panel"
@@ -89,38 +104,52 @@
         id="mobile-navigation"
         class="absolute left-4 right-4 top-20 flex flex-col gap-2 rounded-2xl border border-subtle bg-panel/95 p-4 shadow-xl shadow-black/10 backdrop-blur-xl md:hidden dark:bg-panel/98"
       >
-        <a
+        <SharedButton
           v-for="item in navItems"
           :key="`mobile-${item.label}`"
+          tag="a"
           :href="item.href"
-          class="border-subtle hover:text-main flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-medium text-soft transition hover:bg-soft"
+          variant="glass"
+          size="md"
+          class="justify-between !px-4"
           @click="isMobileMenuOpen = false"
         >
           <div class="flex items-center gap-3">
             <Icon :name="`lucide:${item.icon}`" class="h-5 w-5" />
             {{ item.label }}
           </div>
-          <Icon name="lucide:chevron-right" class="h-4 w-4 opacity-50" />
-        </a>
+          <template #right>
+            <Icon name="lucide:chevron-right" class="h-4 w-4 opacity-50" />
+          </template>
+        </SharedButton>
         
         <div class="mt-2 flex gap-2 border-t border-subtle pt-4">
-          <button
+          <SharedButton
             type="button"
-            class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
+            variant="ghost"
+            size="md"
+            class="flex-1"
             @click="toggleTheme"
           >
-            <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5" />
+            <template #left>
+              <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-5 w-5" />
+            </template>
             {{ theme === 'dark' ? 'Light' : 'Dark' }}
-          </button>
+          </SharedButton>
           
-          <a
+          <SharedButton
+            tag="a"
             href="mailto:hello.mohin4@gmail.com"
-            class="border-subtle text-main flex flex-1 items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:bg-soft"
+            variant="ghost"
+            size="md"
+            class="flex-1"
             @click="isMobileMenuOpen = false"
           >
-            <Icon name="lucide:mail" class="h-5 w-5" />
+            <template #left>
+              <Icon name="lucide:mail" class="h-5 w-5" />
+            </template>
             Email
-          </a>
+          </SharedButton>
         </div>
       </div>
     </Transition>

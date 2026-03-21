@@ -6,5 +6,19 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   components: true,
-  ssr: true
+  ssr: true,
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    }
+  },
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
+    }
+  }
 })

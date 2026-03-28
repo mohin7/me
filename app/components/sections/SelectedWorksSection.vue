@@ -55,7 +55,7 @@
           <!-- Project Content -->
           <div class="flex-1 p-8 flex flex-col">
             <div class="flex flex-wrap gap-2 mb-6">
-              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-black uppercase tracking-[0.1em] text-brand-a bg-brand-a/5 px-3 py-1 rounded-full border border-brand-a/10">
+              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-black uppercase tracking-[0.1em] text-brand-a bg-brand-a/5 px-3 py-1 rounded-full border border-brand-a/40">
                 {{ tag }}
               </span>
             </div>
@@ -145,8 +145,8 @@
             <div class="md:col-span-5 relative">
               <div class="relative aspect-square max-w-[280px] mx-auto">
                 <!-- Outer Pulsating Rings -->
-                <div class="absolute inset-0 border border-brand-a/10 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50"></div>
-                <div class="absolute inset-4 border border-brand-b/10 rounded-full animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30"></div>
+                <div class="absolute inset-0 border border-brand-a/5 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30"></div>
+              
                 
                 <!-- Rotating Tech Lines -->
                 <svg class="absolute inset-0 w-full h-full animate-[spin_20s_linear_infinite] opacity-20" viewBox="0 0 100 100">

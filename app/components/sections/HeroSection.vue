@@ -76,11 +76,11 @@
 
         <!-- Right Column: Portrait (No Animation) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-lg">
+          <div class="relative w-full max-w-2xl">
             <img 
               src="/img/mohin_cutout.png" 
               alt="Mohin Uddin" 
-              class="h-full w-full max-h-[55vh] object-contain pointer-events-none drop-shadow-[0_20px_50px_rgba(var(--brand-rgb),0.15)] transition duration-700 ease-out group-hover:scale-105"
+              class="h-full w-full max-h-[80vh] object-contain pointer-events-none drop-shadow-[0_20px_50px_rgba(var(--brand-rgb),0.15)] transition duration-700 ease-out group-hover:scale-105"
               style="mask-image: linear-gradient(to bottom, black 45%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);"
             />
           </div>

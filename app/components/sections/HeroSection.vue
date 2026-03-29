@@ -9,12 +9,9 @@
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.15]">
       <!-- Floating Plus Signs -->
       <span class="absolute top-[20%] left-[10%] text-brand-a/2 text-4xl font-light">+</span>
-      <span class="absolute top-[60%] left-[5%] text-brand-b/2 text-6xl font-light rotate-12">+</span>
-      <span class="absolute top-[30%] right-[15%] text-brand-a/2 text-5xl font-light -rotate-45">+</span>
       
       <!-- Abstract Circle Outlines -->
       <div class="absolute -left-20 top-[40%] h-96 w-96 rounded-full border border-brand-a/2"></div>
-      <div class="absolute -right-20 top-[10%] h-[30rem] w-[30rem] rounded-full border border-brand-b/2"></div>
       
       <!-- Floating Dots Pattern -->
       <div class="absolute top-[15%] right-[25%] opacity-[0.02]">
@@ -60,29 +57,40 @@
                 <span class="text-xl leading-none italic">↗</span>
               </template>
             </SharedButton>
-            <SharedButton 
-              tag="a"
-              href="https://linkedin.com/in/mohin7/" 
-              target="_blank" 
-              rel="noreferrer" 
-              variant="solid"
-              size="md"
-              class="aspect-square !p-4 flex items-center justify-center shadow-brand-a/20"
-            >
-              <Icon name="lucide:linkedin" class="h-6 w-6" />
-            </SharedButton>
           </div>
         </div>
 
-        <!-- Right Column: Portrait (No Animation) -->
+        <!-- Right Column: Profile Card (Key Hiring Points) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-2xl">
-            <img 
-              src="/img/mohin_cutout.png" 
-              alt="Mohin Uddin" 
-              class="h-full w-full max-h-[80vh] object-contain pointer-events-none drop-shadow-[0_20px_50px_rgba(var(--brand-rgb),0.15)] transition duration-700 ease-out group-hover:scale-105"
-              style="mask-image: linear-gradient(to bottom, black 45%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 100%);"
-            />
+          <div class="relative w-full max-w-md bg-panel border border-subtle rounded-2xl shadow-xl p-8 flex flex-col gap-6 justify-center text-left">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="inline-block rounded-full bg-brand-a/10 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a">Open to Work</span>
+              <span class="text-xs text-soft">Remote / Global</span>
+            </div>
+            <h2 class="text-main font-black text-xl md:text-2xl mb-1">Senior Product Designer</h2>
+            <div class="flex items-center gap-2 mb-2">
+              <Icon name="lucide:building" class="h-4 w-4 text-brand-a" />
+              <span class="text-soft text-sm">AppsCode (Current)</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">UX/UI</span>
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Product Design</span>
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Figma</span>
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Vue</span>
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Tailwind</span>
+              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">SaaS</span>
+            </div>
+            <ul class="text-sm text-main/90 space-y-2 mb-4 pl-2">
+              <li class="flex items-center gap-2"><Icon name="lucide:rocket" class="h-4 w-4 text-brand-a" /> Led design for 20+ startups</li>
+              <li class="flex items-center gap-2"><Icon name="lucide:layers" class="h-4 w-4 text-brand-a" /> SaaS, MVP, B2B expert</li>
+              <li class="flex items-center gap-2"><Icon name="lucide:code" class="h-4 w-4 text-brand-a" /> Design-to-code efficiency</li>
+            </ul>
+            <div class="flex flex-col items-center w-full mt-2 gap-1">
+              <span class="text-xs text-soft">Available for new opportunities</span>
+              <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-a text-white font-bold shadow hover:bg-brand-a/90 transition text-xs">
+                <Icon name="lucide:mail" class="h-4 w-4" /> Contact
+              </a>
+            </div>
           </div>
         </div>
       </div>

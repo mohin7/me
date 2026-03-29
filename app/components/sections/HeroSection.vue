@@ -106,20 +106,22 @@
       <div class="flex whitespace-nowrap">
         <div class="animate-marquee flex gap-48 items-center pr-48">
           <h2
-            class="font-extralight uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            class="font-light tracking-tight whitespace-nowrap hero-marquee-text-solid"
             :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
             :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
           >
-            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.7;">Mohin</span>
-            <span class="mx-12 opacity-10 font-light">/</span> <span class="hero-marquee-veteran-solid opacity-70">Your Partner in Product Growth</span>
+            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.9;">Here to Help You</span>
+            <span class="mx-8 opacity-10 font-light">•</span>
+            <span class="hero-marquee-veteran-solid opacity-90">Launch, Grow, and Succeed</span>
           </h2>
           <h2
-            class="font-extralight uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            class="font-light tracking-tight whitespace-nowrap hero-marquee-text-solid"
             :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
             :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
           >
-            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.7;">Mohin</span>
-            <span class="mx-12 opacity-10 font-light">/</span> <span class="hero-marquee-veteran-solid opacity-70">Your Partner in Product Growth</span>
+            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.9;">Here to Help You</span>
+            <span class="mx-8 opacity-10 font-light">•</span>
+            <span class="hero-marquee-veteran-solid opacity-90">Launch, Grow, and Succeed</span>
           </h2>
         </div>
       </div>

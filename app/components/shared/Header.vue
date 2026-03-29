@@ -29,7 +29,7 @@
 
       <!-- Desktop Actions -->
       <!-- Desktop Actions -->
-      <div class="hidden items-center gap-1 border-subtle pl-2 md:flex md:border-l">
+      <div class="hidden items-center gap-3 border-subtle pl-2 md:flex md:border-l">
         <SharedButton
           type="button"
           variant="ghost"
@@ -55,7 +55,7 @@
           href="#contact"
           variant="primary"
           size="sm"
-          class="ml-2"
+          class="ml-4"
         >
           <template #left>
             <Icon name="lucide:message-circle" class="h-4 w-4" />

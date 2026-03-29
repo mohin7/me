@@ -92,13 +92,13 @@
     <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
       <div class="flex whitespace-nowrap">
         <div class="animate-marquee flex gap-48 items-center pr-48">
-          <h2 class="text-transparent font-black uppercase tracking-normal mix-blend-overlay whitespace-nowrap" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
-            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
-            <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
+          <h2 class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid text-gray-700" style="font-size: clamp(3.5rem, 8vw, 6rem); color: #374151;">
+            <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
+            <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
           </h2>
-          <h2 class="text-transparent font-black uppercase tracking-normal mix-blend-overlay whitespace-nowrap" style="font-size: clamp(5rem, 12vw, 10rem); -webkit-text-stroke: 1.5px var(--text-muted); opacity: 0.3;">
-            <span class="text-[color:var(--brand-a)]" style="-webkit-text-stroke: 0; opacity: 1;">Mohin</span> 
-            <span class="mx-12 opacity-20">/</span> 8-Year UX Veteran
+          <h2 class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid" style="font-size: clamp(3.5rem, 8vw, 6rem); color: #fff;">
+            <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
+            <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
           </h2>
         </div>
       </div>
@@ -184,5 +184,16 @@ const { theme } = useTheme()
   100% {
     transform: translateX(-50%);
   }
+}
+/* Solid color and light font for 8-Year UX Veteran text in marquee */
+.hero-marquee-text-solid {
+  background: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+.hero-marquee-veteran-solid {
+  color: inherit;
+  font-weight: 300;
+  letter-spacing: 0.04em;
 }
 </style>

@@ -47,9 +47,18 @@
             </div>
           </h1>
 
-          <p class="text-soft mb-10 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
-            Scaling startups with design-driven execution. Currently leading design at <span class="text-main font-semibold underline decoration-[color:var(--brand-a)]/30 underline-offset-[12px] decoration-4">AppsCode</span>.
+          <p class="text-soft mb-4 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
+            I help startups turn complex ideas into intuitive, scalable products—delivering faster launches, happier users, and standout results.
           </p>
+          <!-- <p class="text-main/80 mb-4 max-w-lg text-base font-normal leading-[1.5]">
+            I design cloud-based, user-centric solutions at AppsCode, shaping products like <a href='https://appscode.com' class='underline text-brand-a' target='_blank'>appscode.com</a> and <a href='https://kubedb.com' class='underline text-brand-a' target='_blank'>kubedb.com</a>.<br>
+            7+ years in UI/UX design & development. Focused on micro-interactions, scalable UI, and user behavior insights. Design is about making technology feel human.
+          </p> -->
+          <ul class="text-main/70 text-base mb-6 space-y-1 pl-2">
+            <li class="flex items-center gap-2"><Icon name="lucide:star" class="h-4 w-4 text-brand-a" /> 7+ years in UI/UX design & dev</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:users" class="h-4 w-4 text-brand-a" /> Led design for cloud products</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:activity" class="h-4 w-4 text-brand-a" /> Focus on micro-interactions</li>
+          </ul>
           <div class="flex items-center gap-4">
             <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="shadow-2xl shadow-brand-a/20">
               Book a 15-min call 
@@ -62,35 +71,31 @@
 
         <!-- Right Column: Profile Card (Key Hiring Points) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-sm bg-panel border border-subtle rounded-2xl shadow-xl p-6 md:p-8 flex flex-col gap-6 justify-center text-left">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="inline-block rounded-full bg-brand-a/10 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a">Open to Work</span>
-              <span class="text-xs text-soft">Remote / Global</span>
-            </div>
-            <h2 class="text-main font-black text-xl md:text-2xl mb-1">Senior Product Designer</h2>
-            <div class="flex items-center gap-2 mb-2">
-              <Icon name="lucide:building" class="h-4 w-4 text-brand-a" />
-              <span class="text-soft text-sm">AppsCode (Current)</span>
-            </div>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">UX/UI</span>
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Product Design</span>
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Figma</span>
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Vue</span>
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Tailwind</span>
-              <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">SaaS</span>
-            </div>
-            <ul class="text-sm text-main/90 space-y-2 mb-4 pl-2">
-              <li class="flex items-center gap-2"><Icon name="lucide:rocket" class="h-4 w-4 text-brand-a" /> Led design for 20+ startups</li>
-              <li class="flex items-center gap-2"><Icon name="lucide:layers" class="h-4 w-4 text-brand-a" /> SaaS, MVP, B2B expert</li>
-              <li class="flex items-center gap-2"><Icon name="lucide:code" class="h-4 w-4 text-brand-a" /> Design-to-code efficiency</li>
-            </ul>
-            <div class="flex flex-col items-center w-full mt-2 gap-1">
-              <span class="text-xs text-soft">Available for new opportunities</span>
-              <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-a text-white font-bold shadow hover:bg-brand-a/90 transition text-xs">
-                <Icon name="lucide:mail" class="h-4 w-4" /> Contact
-              </a>
-            </div>
+              <div class="relative w-full max-w-sm bg-panel border border-subtle rounded-2xl shadow-xl p-6 md:p-8 flex flex-col gap-6 justify-center text-left">
+                <div class="flex flex-col gap-1 mb-2">
+                  <span class="text-xs text-soft">Dhaka, Bangladesh</span>
+                  <span class="inline-block rounded-full bg-brand-a/10 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a">Head of Design</span>
+                </div>
+                <h2 class="text-main font-black text-xl md:text-2xl mb-1">Md Mohin Uddin</h2>
+                <div class="flex items-center gap-2 mb-2">
+                  <Icon name="lucide:building" class="h-4 w-4 text-brand-a" />
+                  <span class="text-soft text-sm">AppsCode Inc.</span>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">UI/UX</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Product Design</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Cloud Apps</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Micro-interactions</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">User Research</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Tailwind CSS</span>
+                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Bulma</span>
+                </div>
+                <div class="flex flex-col items-center w-full mt-2 gap-1">
+                  <span class="text-xs text-soft">Open to collaboration & new opportunities</span>
+                  <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-a text-white font-bold shadow hover:bg-brand-a/90 transition text-xs">
+                    <Icon name="lucide:mail" class="h-4 w-4" /> Contact
+                  </a>
+                </div>
           </div>
         </div>
       </div>
@@ -101,20 +106,20 @@
       <div class="flex whitespace-nowrap">
         <div class="animate-marquee flex gap-48 items-center pr-48">
           <h2
-            class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
-            :class="theme === 'dark' ? 'text-white' : 'text-gray-700'"
+            class="font-extralight uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
             :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
           >
-            <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
-            <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
+            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.7;">Mohin</span>
+            <span class="mx-12 opacity-10 font-light">/</span> <span class="hero-marquee-veteran-solid opacity-70">Your Partner in Product Growth</span>
           </h2>
           <h2
-            class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
-            :class="theme === 'dark' ? 'text-white' : 'text-gray-700'"
+            class="font-extralight uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
             :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
           >
-            <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
-            <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
+            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.7;">Mohin</span>
+            <span class="mx-12 opacity-10 font-light">/</span> <span class="hero-marquee-veteran-solid opacity-70">Your Partner in Product Growth</span>
           </h2>
         </div>
       </div>

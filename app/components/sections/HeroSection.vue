@@ -62,7 +62,7 @@
 
         <!-- Right Column: Profile Card (Key Hiring Points) -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-md bg-panel border border-subtle rounded-2xl shadow-xl p-8 flex flex-col gap-6 justify-center text-left">
+          <div class="relative w-full max-w-sm bg-panel border border-subtle rounded-2xl shadow-xl p-6 md:p-8 flex flex-col gap-6 justify-center text-left">
             <div class="flex items-center gap-3 mb-2">
               <span class="inline-block rounded-full bg-brand-a/10 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a">Open to Work</span>
               <span class="text-xs text-soft">Remote / Global</span>

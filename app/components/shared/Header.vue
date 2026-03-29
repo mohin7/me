@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed left-0 right-0 top-4 z-50 flex justify-center px-4 md:top-6">
-    <div class="flex w-full max-w-5xl items-center justify-between gap-4 rounded-full border border-subtle bg-panel/80 p-2 pl-3 pr-4 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 dark:shadow-black/20 md:gap-8 lg:pr-3">
+  <header class="fixed left-0 right-0 top-4 z-50 flex justify-center px-4 sm:px-6 lg:px-8 md:top-6 mt-2">
+    <div class="flex w-full max-w-7xl items-center justify-between gap-2 rounded-full border border-subtle bg-panel/80 p-2 pl-3 pr-2 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 dark:shadow-black/20 md:gap-6 lg:pr-2">
       
       <!-- Brand -->
       <a href="#top" class="group flex items-center gap-3 border-subtle pr-2 md:border-r">
@@ -15,7 +15,7 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden flex-1 items-center justify-center gap-1 md:flex">
+      <nav class="hidden flex-1 items-center justify-center gap-2 md:flex">
         <a
           v-for="item in navItems"
           :key="item.label"
@@ -29,7 +29,7 @@
 
       <!-- Desktop Actions -->
       <!-- Desktop Actions -->
-      <div class="hidden items-center gap-3 border-subtle pl-2 md:flex md:border-l">
+      <div class="hidden items-center gap-2 border-subtle pl-2 md:flex md:border-l min-w-[180px] justify-end">
         <SharedButton
           type="button"
           variant="ghost"
@@ -55,7 +55,7 @@
           href="#contact"
           variant="primary"
           size="sm"
-          class="ml-4"
+          class="ml-2"
         >
           <template #left>
             <Icon name="lucide:message-circle" class="h-4 w-4" />

@@ -7,9 +7,9 @@
     </div>
     
     <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-      <p class="text-soft mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
+      <p class="text-white mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
       
-      <h2 class="text-main mb-12 text-balance text-6xl font-black tracking-tighter sm:text-7xl md:text-9xl">
+      <h2 class="text-white mb-12 text-balance text-6xl font-black tracking-tighter sm:text-7xl md:text-9xl">
         Let's bring it <br> <span class="text-[color:var(--brand-a)]">to life.</span>
       </h2>
       
@@ -24,7 +24,7 @@
           Book a 15-min call
         </SharedButton>
         
-        <p class="text-muted text-lg font-medium">or email at <a href="mailto:hello.mohin4@gmail.com" class="text-main underline decoration-brand-a/30 underline-offset-8 transition hover:text-brand-a">hello.mohin4@gmail.com</a></p>
+        <p class="text-white text-lg font-medium">or email at <a href="mailto:hello.mohin4@gmail.com" class="text-[color:var(--brand-a)] underline decoration-brand-a/30 underline-offset-8 transition hover:text-brand-a">hello.mohin4@gmail.com</a></p>
       </div>
     </div>
     

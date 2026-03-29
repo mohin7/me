@@ -92,11 +92,19 @@
     <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
       <div class="flex whitespace-nowrap">
         <div class="animate-marquee flex gap-48 items-center pr-48">
-          <h2 class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid text-gray-700" style="font-size: clamp(3.5rem, 8vw, 6rem); color: #374151;">
+          <h2
+            class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            :class="theme === 'dark' ? 'text-white' : 'text-gray-700'"
+            :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
+          >
             <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
             <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
           </h2>
-          <h2 class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid" style="font-size: clamp(3.5rem, 8vw, 6rem); color: #fff;">
+          <h2
+            class="font-light uppercase tracking-normal whitespace-nowrap hero-marquee-text-solid"
+            :class="theme === 'dark' ? 'text-white' : 'text-gray-700'"
+            :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
+          >
             <span class="text-[color:var(--brand-a)] font-black" style="opacity: 1;">Mohin</span>
             <span class="mx-12 opacity-20 font-light">/</span> <span class="hero-marquee-veteran-solid">8-Year UX Veteran</span>
           </h2>
@@ -108,8 +116,8 @@
 
 <script setup lang="ts">
 import { useNuxtApp } from '#imports'
-
 const { theme } = useTheme()
+const { scheme } = useBrandScheme()
 </script>
 
 <style scoped>

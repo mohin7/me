@@ -10,6 +10,11 @@ export const useTheme = () => {
     if (import.meta.client) {
       localStorage.setItem('site-theme', nextTheme)
       document.documentElement.setAttribute('data-theme', nextTheme)
+      // Also re-apply brand scheme to ensure both are always in sync
+      const scheme = localStorage.getItem('site-brand-scheme')
+      if (scheme) {
+        document.documentElement.setAttribute('data-brand-scheme', scheme)
+      }
     }
   }
 

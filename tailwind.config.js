@@ -4,6 +4,26 @@ export default {
   // tailwind.config.ts
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          'Roboto',
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        mono: [
+          'Inconsolata',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'Liberation Mono',
+          'Courier New',
+          'monospace',
+        ],
+      },
       colors: {
         brand: {
           DEFAULT: '#FF5C00', // Your main orange

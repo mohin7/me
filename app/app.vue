@@ -29,7 +29,10 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;700&family=Inconsolata:wght@400;700&family=Caveat:wght@400;700&display=swap');
+.inconsolata {
+  font-family: 'Inconsolata', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
 
 .handwriting {
   font-family: 'Caveat', cursive;
@@ -42,6 +45,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 240ms ease, color 240ms ease;
+  font-family: 'Roboto', 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Global Mesh Background */

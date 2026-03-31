@@ -69,33 +69,31 @@
           </div>
         </div>
 
-        <!-- Right Column: Profile Card (Key Hiring Points) -->
+        <!-- Right Column: Stylized Code Editor Presentation -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-              <div class="relative w-full max-w-sm bg-panel border border-subtle rounded-2xl shadow-xl p-6 md:p-8 flex flex-col gap-6 justify-center text-left">
-                <div class="flex flex-col gap-1 mb-2">
-                  <span class="text-xs text-soft">Dhaka, Bangladesh</span>
-                  <span class="inline-block rounded-full bg-brand-a/10 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a">Head of Design</span>
-                </div>
-                <h2 class="text-main font-black text-xl md:text-2xl mb-1">Md Mohin Uddin</h2>
-                <div class="flex items-center gap-2 mb-2">
-                  <Icon name="lucide:building" class="h-4 w-4 text-brand-a" />
-                  <span class="text-soft text-sm">AppsCode Inc.</span>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-3">
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">UI/UX</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Product Design</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Cloud Apps</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Micro-interactions</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">User Research</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Tailwind CSS</span>
-                  <span class="bg-panel px-3 py-1 rounded-full text-xs font-medium border border-subtle text-main/80">Bulma</span>
-                </div>
-                <div class="flex flex-col items-center w-full mt-2 gap-1">
-                  <span class="text-xs text-soft">Open to collaboration & new opportunities</span>
-                  <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-a text-white font-bold shadow hover:bg-brand-a/90 transition text-xs">
-                    <Icon name="lucide:mail" class="h-4 w-4" /> Contact
-                  </a>
-                </div>
+          <div class="relative w-full max-w-md rounded-2xl shadow-2xl p-0 overflow-hidden border border-[#23272f] bg-gradient-to-br from-[#181c24] via-[#20232b] to-[#23272f] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_80%_10%,rgba(37,99,235,0.08)_0%,transparent_60%)] before:pointer-events-none before:z-0">
+            <!-- Editor Header -->
+            <div class="flex items-center gap-2 px-4 py-2 bg-[#23272f] border-b border-[#23272f] relative z-10">
+              <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_6px_1px_rgba(239,68,68,0.3)]"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_6px_1px_rgba(251,191,36,0.3)]"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_6px_1px_rgba(34,197,94,0.3)]"></span>
+              <span class="ml-4 text-xs text-[#bfc7d5] font-mono select-none">hero.vue</span>
+            </div>
+            <!-- Code Block -->
+            <pre class="relative z-10 px-6 py-6 text-base leading-relaxed font-mono inconsolata text-[#e6eaf3] bg-transparent whitespace-pre overflow-x-auto rounded-b-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.25)] border-t border-[#23272f]/60 hide-scrollbar" style="backdrop-filter: blur(0.5px);">
+
+<span class="text-[#7dd3fc]">// Mohin Uddin — Head of Design & Interface Engineer</span>
+<span class="text-[#f472b6]">const</span> <span class="text-[#facc15]">whyWorkWithMe</span> <span class="text-[#e6eaf3]">=</span> <span class="text-[#a3e635]">&#123;</span>
+  <span class="text-[#facc15]">hybrid</span>: <span class="text-[#a3e635]">'Design × Code'</span>,
+  <span class="text-[#facc15]">velocity</span>: <span class="text-[#a3e635]">'Fast launches, scalable systems'</span>,
+  <span class="text-[#facc15]">specialties</span>: [<span class="text-[#a3e635]">'UI/UX', 'NuxtJS', 'Vue', 'Tailwind', 'Design Systems'</span>],
+  <span class="text-[#facc15]">approach</span>: <span class="text-[#a3e635]">'From Figma to Production'</span>,
+  <span class="text-[#facc15]">attracts</span>: <span class="text-[#a3e635]">'Clarity, reliability, and beautiful execution'</span>,
+  <span class="text-[#facc15]">location</span>: <span class="text-[#a3e635]">'Dhaka, Bangladesh'</span>
+<span class="text-[#a3e635]">&#125;</span>
+
+<span class="text-[#64748b]">// Let’s build something remarkable together.</span>
+            </pre>
           </div>
         </div>
       </div>

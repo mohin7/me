@@ -71,59 +71,48 @@
 
         <!-- Right Column: Stylized Code Editor Presentation -->
         <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <div class="relative w-full max-w-md rounded-2xl shadow-2xl p-0 overflow-hidden border border-[#23272f] bg-gradient-to-br from-[#181c24] via-[#20232b] to-[#23272f] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_80%_10%,rgba(37,99,235,0.08)_0%,transparent_60%)] before:pointer-events-none before:z-0">
-            <!-- Editor Header -->
-            <div class="flex items-center gap-2 px-4 py-2 bg-[#23272f] border-b border-[#23272f] relative z-10">
-              <span class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_6px_1px_rgba(239,68,68,0.3)]"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_6px_1px_rgba(251,191,36,0.3)]"></span>
-              <span class="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_6px_1px_rgba(34,197,94,0.3)]"></span>
-              <span class="ml-4 text-xs text-[#bfc7d5] font-mono select-none">hero.vue</span>
+          <!-- Gradient background behind the glass card -->
+          <div class="absolute inset-0 w-full h-full z-0 pointer-events-none">
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-brand-a via-pink-500/60 to-brand-b opacity-60 blur-[80px]"></div>
+          </div>
+          <div class="relative w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 bg-white/10/70 p-0 backdrop-blur-[18px] transition-transform duration-300 hover:scale-[1.025] hover:shadow-[0_12px_48px_0_rgba(255,92,0,0.10)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:pointer-events-none before:z-0 after:absolute after:inset-0 after:rounded-2xl after:pointer-events-none after:z-0 after:bg-[radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.18)_0%,transparent_70%)]">
+            <!-- Abstract/Avatar Visual -->
+            <div class="relative flex flex-col items-center justify-center py-12 px-8" style="background: linear-gradient(120deg, rgba(255,255,255,0.10) 0%, rgba(35,39,47,0.10) 100%); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);">
+              <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-brand-a/20 blur-[90px] z-0"></div>
+              <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-brand-b/20 blur-[90px] z-0"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <!-- Avatar (replace src with your image if available) -->
+                <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-white/30 shadow-xl mb-4 bg-white/20 flex items-center justify-center ring-4 ring-white/20 backdrop-blur-xl">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="40" fill="#23272f"/>
+                    <ellipse cx="40" cy="38" rx="18" ry="20" fill="#fbbf24"/>
+                    <ellipse cx="40" cy="60" rx="14" ry="8" fill="#fde68a"/>
+                    <ellipse cx="40" cy="38" rx="10" ry="12" fill="#fff" fill-opacity=".7"/>
+                  </svg>
+                </div>
+                <h2 class="text-main font-black text-2xl md:text-3xl mb-1 text-center drop-shadow">Md Mohin Uddin</h2>
+                <div class="flex items-center gap-2 mb-2">
+                  <Icon name="lucide:map-pin" class="h-4 w-4 text-brand-a" />
+                  <span class="text-soft text-sm">Dhaka, Bangladesh</span>
+                </div>
+                <span class="inline-block rounded-full bg-gradient-to-r from-brand-a/20 to-brand-b/20 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a/40 mb-4 shadow-sm">Head of Design</span>
+                <div class="flex flex-wrap gap-2 mb-3 justify-center">
+                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-a/30 text-main/90 shadow-sm">UI/UX</span>
+                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-b/30 text-main/90 shadow-sm">NuxtJS</span>
+                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-a/30 text-main/90 shadow-sm">Vue</span>
+                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-b/30 text-main/90 shadow-sm">Design Systems</span>
+                </div>
+                <div class="text-soft text-center text-base max-w-xs mb-4 font-medium">Hybrid designer & engineer. I help startups launch fast, scale smart, and delight users with beautiful, reliable products.</div>
+                <a href="#contact" class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-brand-a to-brand-b text-white font-bold shadow-lg hover:from-brand-b hover:to-brand-a transition text-sm mt-2">
+                  <Icon name="lucide:mail" class="h-4 w-4" /> Contact
+                </a>
+              </div>
             </div>
-            <!-- Code Block -->
-            <pre class="relative z-10 px-6 py-6 text-base leading-relaxed font-mono inconsolata text-[#e6eaf3] bg-transparent whitespace-pre overflow-x-auto rounded-b-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.25)] border-t border-[#23272f]/60 hide-scrollbar" style="backdrop-filter: blur(0.5px);">
-
-<span class="text-[#7dd3fc]">// Mohin Uddin — Head of Design & Interface Engineer</span>
-<span class="text-[#f472b6]">const</span> <span class="text-[#facc15]">whyWorkWithMe</span> <span class="text-[#e6eaf3]">=</span> <span class="text-[#a3e635]">&#123;</span>
-  <span class="text-[#facc15]">hybrid</span>: <span class="text-[#a3e635]">'Design × Code'</span>,
-  <span class="text-[#facc15]">velocity</span>: <span class="text-[#a3e635]">'Fast launches, scalable systems'</span>,
-  <span class="text-[#facc15]">specialties</span>: [<span class="text-[#a3e635]">'UI/UX', 'NuxtJS', 'Vue', 'Tailwind', 'Design Systems'</span>],
-  <span class="text-[#facc15]">approach</span>: <span class="text-[#a3e635]">'From Figma to Production'</span>,
-  <span class="text-[#facc15]">attracts</span>: <span class="text-[#a3e635]">'Clarity, reliability, and beautiful execution'</span>,
-  <span class="text-[#facc15]">location</span>: <span class="text-[#a3e635]">'Dhaka, Bangladesh'</span>
-<span class="text-[#a3e635]">&#125;</span>
-
-<span class="text-[#64748b]">// Let’s build something remarkable together.</span>
-            </pre>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Marquee -->
-    <div class="absolute bottom-8 left-0 w-full overflow-hidden" style="z-index: 5;">
-      <div class="flex whitespace-nowrap">
-        <div class="animate-marquee flex gap-48 items-center pr-48">
-          <h2
-            class="font-light tracking-tight whitespace-nowrap hero-marquee-text-solid"
-            :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
-            :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
-          >
-            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.9;">Here to Help You</span>
-            <span class="mx-8 opacity-10 font-light">•</span>
-            <span class="hero-marquee-veteran-solid opacity-90">Launch, Grow, and Succeed</span>
-          </h2>
-          <h2
-            class="font-light tracking-tight whitespace-nowrap hero-marquee-text-solid"
-            :class="theme === 'dark' ? 'text-white/70' : 'text-gray-500'"
-            :style="'font-size: clamp(3.5rem, 8vw, 6rem);'"
-          >
-            <span class="text-[color:var(--brand-a)] font-semibold" style="opacity: 0.9;">Here to Help You</span>
-            <span class="mx-8 opacity-10 font-light">•</span>
-            <span class="hero-marquee-veteran-solid opacity-90">Launch, Grow, and Succeed</span>
-          </h2>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -134,6 +123,10 @@ const { scheme } = useBrandScheme()
 </script>
 
 <style scoped>
+/* Hide scrollbar for code editor */
+.hero-shell pre::-webkit-scrollbar {
+  display: none;
+}
 .hero-backdrop-dark {
   background: radial-gradient(circle at 10% 20%, rgba(var(--brand-rgb), 0.15), transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(var(--brand-rgb), 0.1), transparent 40%),

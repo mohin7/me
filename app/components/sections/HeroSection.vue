@@ -55,9 +55,11 @@
             7+ years in UI/UX design & development. Focused on micro-interactions, scalable UI, and user behavior insights. Design is about making technology feel human.
           </p> -->
           <ul class="text-main/70 text-base mb-6 space-y-1 pl-2">
-            <li class="flex items-center gap-2"><Icon name="lucide:star" class="h-4 w-4 text-brand-a" /> 7+ years in UI/UX design & dev</li>
-            <li class="flex items-center gap-2"><Icon name="lucide:users" class="h-4 w-4 text-brand-a" /> Led design for cloud products</li>
-            <li class="flex items-center gap-2"><Icon name="lucide:activity" class="h-4 w-4 text-brand-a" /> Focus on micro-interactions</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:star" class="h-4 w-4 text-brand-a" /> 7+ years building delightful user experiences</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:cloud" class="h-4 w-4 text-brand-a" /> Shipped 20+ SaaS & cloud platforms</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:rocket" class="h-4 w-4 text-brand-a" /> Expert in rapid MVP launches & scaling</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:mouse-pointer-click" class="h-4 w-4 text-brand-a" /> Obsessed with usability and conversion</li>
+            <li class="flex items-center gap-2"><Icon name="lucide:smile" class="h-4 w-4 text-brand-a" /> Proven results: faster launches, happier users</li>
           </ul>
           <div class="flex items-center gap-4">
             <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="shadow-2xl shadow-brand-a/20">

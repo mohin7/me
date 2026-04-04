@@ -1,4 +1,4 @@
-export type BrandScheme = 'futuristic' | 'premium' | 'energetic' | 'editorial' | 'neutral'
+export type BrandScheme = 'futuristic' | 'premium' | 'energetic' | 'editorial' | 'neutral' | 'monochrome'
 
 export interface BrandSchemeOption {
   value: BrandScheme
@@ -12,7 +12,8 @@ const schemeOptions: BrandSchemeOption[] = [
   { value: 'premium', label: 'Premium', accent: 'Vivid Violet', pairing: 'Navy / Slate' },
   { value: 'energetic', label: 'Energetic', accent: 'Hyper Orange', pairing: 'White / Black' },
   { value: 'editorial', label: 'Editorial', accent: 'Raspberry', pairing: 'Off-black' },
-  { value: 'neutral', label: 'Neutral', accent: 'Cool Slate', pairing: 'Minimal' }
+  { value: 'neutral', label: 'Neutral', accent: 'Cool Slate', pairing: 'Minimal' },
+  { value: 'monochrome', label: 'Monochrome', accent: 'Pure Silver', pairing: 'Flat & Simple' }
 ]
 
 export const useBrandScheme = () => {

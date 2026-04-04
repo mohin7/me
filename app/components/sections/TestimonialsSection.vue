@@ -2,7 +2,7 @@
   <section id="testimonials" class="py-24 md:py-32 bg-panel/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Founder Feedback</h2>
+        <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl"><span class="metallic-text">Founder</span> <span class="brand-text-gradient">Feedback</span></h2>
         <p class="text-soft max-w-2xl text-lg font-medium">What it's like to build an MVP with me as your design partner.</p>
       </div>
 

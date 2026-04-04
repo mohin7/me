@@ -5,7 +5,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-64 text-center px-4">
-        <h2 class="text-main mb-6 text-4xl font-black tracking-tight md:text-7xl leading-[1.05]">The 7-Day <span class="brand-text-gradient">Hyper-Sprint</span></h2>
+        <h2 class="text-main mb-6 text-4xl font-black tracking-tight md:text-7xl leading-[1.05]"><span class="metallic-text">The 7-Day</span> <span class="brand-text-gradient">Hyper-Sprint</span></h2>
         <p class="text-soft mx-auto max-w-2xl text-xl font-medium leading-relaxed opacity-60">
           Scaling from concept to investor-ready prototype in 168 hours. No fluff, just execution.
         </p>

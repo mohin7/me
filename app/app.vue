@@ -30,7 +30,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;700&family=Inconsolata:wght@400;700&family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inconsolata:wght@400;700&family=Caveat:wght@400;700&display=swap');
 .inconsolata {
   font-family: 'Inconsolata', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
@@ -39,59 +39,82 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   font-family: 'Caveat', cursive;
 }
 
+/* ── Global reset for smoother rendering ── */
+*, *::before, *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .site-shell {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   background: var(--bg-page);
   color: var(--text-main);
-  transition: background-color 240ms ease, color 240ms ease;
-  font-family: 'Roboto', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 280ms ease, color 280ms ease;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-/* Global Mesh Background */
+/* Global Mesh Background — cooler, more directional */
 .site-shell::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -20;
-  background: 
-    radial-gradient(circle at 0% 0%, rgba(var(--brand-rgb), 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(var(--brand-rgb), 0.03) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(var(--brand-rgb), 0.035) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(var(--brand-rgb), 0.025) 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-end, var(--bg-page)) 100%);
   pointer-events: none;
 }
 
-/* Global Noise Texture */
+/* Global Noise Texture — brushed metal grain */
 .site-shell::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -10;
-  opacity: 0.03;
+  opacity: var(--noise-opacity, 0.035);
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }
 
 .theme-dark {
-  --bg-page: #080b10;
-  --bg-panel: rgba(255, 255, 255, 0.04);
-  --bg-panel-strong: #10151e;
-  --bg-soft: rgba(255, 255, 255, 0.03);
-  --text-main: #f4f7ff;
-  --text-soft: #d4dcec;
-  --text-muted: #9aa7bf;
-  --border-subtle: rgba(255, 255, 255, 0.05);
+  /* Titanium dark palette — cool blue-gray base */
+  --bg-page: #09090b;
+  --bg-page-end: #0c0d10;
+  --bg-panel: rgba(255, 255, 255, 0.035);
+  --bg-panel-strong: #111214;
+  --bg-soft: rgba(255, 255, 255, 0.025);
+  --text-main: #e8ecf4;
+  --text-soft: #a0aec0;
+  --text-muted: #64748b;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --noise-opacity: 0.04;
+  /* Metallic shimmer tokens - Upgraded to Premium Bright Silver */
+  --metallic-from: #ffffff;
+  --metallic-via: #f8fafc;
+  --metallic-to: #94a3b8;
+  --shimmer-white: rgba(255,255,255,0.07);
 }
 
 .theme-light {
-  --bg-page: #f7fafc;
-  --bg-panel: rgba(255, 255, 255, 0.9);
+  --bg-page: #f8f9fa;
+  --bg-page-end: #eef1f5;
+  --bg-panel: rgba(255, 255, 255, 0.85);
   --bg-panel-strong: #ffffff;
-  --bg-soft: rgba(15, 23, 42, 0.04);
-  --text-main: #101828;
-  --text-soft: #344054;
-  --text-muted: #667085;
-  --border-subtle: rgba(15, 23, 42, 0.14);
+  --bg-soft: rgba(15, 23, 42, 0.035);
+  --text-main: #0f172a;
+  --text-soft: #334155;
+  --text-muted: #64748b;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --noise-opacity: 0.025;
+  --metallic-from: #0f172a;
+  --metallic-via: #334155;
+  --metallic-to: #94a3b8;
+  --shimmer-white: rgba(255,255,255,0.5);
 }
 
 .scheme-futuristic {
@@ -209,5 +232,64 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-bottom: 0.1em;
+}
+
+/* ── Metallic / Titanium text gradient ── */
+.metallic-text {
+  background: linear-gradient(
+    170deg,
+    var(--metallic-from) 0%,
+    var(--metallic-via) 60%,
+    var(--metallic-to) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-bottom: 0.1em;
+  filter: drop-shadow(0 4px 12px rgba(255,255,255,0.08));
+}
+
+/* Lighter metallic shimmer for secondary headings */
+.metallic-text-soft {
+  background: linear-gradient(
+    170deg,
+    var(--text-soft) 0%,
+    var(--text-muted) 60%,
+    var(--text-soft) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Titanium card surface ── */
+.titanium-surface {
+  background:
+    linear-gradient(135deg, var(--shimmer-white) 0%, transparent 50%, var(--shimmer-white) 100%),
+    var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  box-shadow:
+    0 1px 0 0 var(--shimmer-white) inset,
+    0 -1px 0 0 rgba(0,0,0,0.05) inset,
+    0 16px 48px -12px rgba(0,0,0,0.2);
+}
+
+/* ── Refined section divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent 100%);
+}
+
+/* ── Metallic tag/badge ── */
+.metallic-badge {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 </style>

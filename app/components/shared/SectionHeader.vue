@@ -1,6 +1,6 @@
 <template>
   <div class="mb-12 md:mb-16">
-    <h2 class="text-main text-3xl md:text-4xl lg:text-5xl mb-4 font-bold">
+    <h2 class="metallic-text text-3xl md:text-4xl lg:text-5xl mb-4 font-bold">
       {{ title }}
     </h2>
     <p v-if="description" class="text-soft max-w-2xl text-lg">

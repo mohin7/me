@@ -5,19 +5,31 @@
     <div class="absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-brand-b/[0.03] blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="mb-20">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl leading-[0.9]">
-          Selected <span class="brand-text-gradient">Works</span> <br> <span class="text-soft opacity-40">& Experiments</span>
-        </h2>
-        <p class="text-soft max-w-2xl text-xl font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div>
+          <h2 class="mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl leading-[0.9]">
+            <span class="metallic-text">Selected</span> <span class="brand-text-gradient">Works</span> <br> <span class="metallic-text-soft">&amp; Experiments</span>
+          </h2>
+          <p class="text-soft max-w-2xl text-xl font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="flex items-center gap-4 shrink-0">
+          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel/50 text-main transition-colors hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a backdrop-blur-md" aria-label="Previous work">
+            <Icon name="lucide:arrow-left" class="h-5 w-5" />
+          </button>
+          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel/50 text-main transition-colors hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a backdrop-blur-md" aria-label="Next work">
+            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+          </button>
+        </div>
       </div>
 
-      <!-- Redesigned Card Grid -->
-      <div class="grid gap-8 md:grid-cols-3">
+      <!-- Carousel Track -->
+      <div ref="carouselRef" class="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-gradient-to-br from-panel/70 via-panel/50 to-panel/10 transition-all duration-700 shadow-2xl shadow-black/5 hover:shadow-2xl hover:shadow-brand-a/20 hover:border-brand-a/50"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-gradient-to-br from-panel/70 via-panel/50 to-panel/10 transition-all duration-700 shadow-2xl shadow-black/5 hover:shadow-2xl hover:shadow-brand-a/20 hover:border-brand-a/50"
         >
           <!-- Premium Grain Noise Overlay (Intensified) -->
           <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0"></div>
@@ -185,7 +197,39 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const carouselRef = ref<HTMLElement | null>(null)
+
+const scrollNext = () => {
+  if (!carouselRef.value || !carouselRef.value.children[0]) return
+  const cardWidth = (carouselRef.value.children[0] as HTMLElement).clientWidth
+  carouselRef.value.scrollBy({ left: cardWidth + 32, behavior: 'smooth' })
+}
+
+const scrollPrev = () => {
+  if (!carouselRef.value || !carouselRef.value.children[0]) return
+  const cardWidth = (carouselRef.value.children[0] as HTMLElement).clientWidth
+  carouselRef.value.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' })
+}
+
 const projects = [
+  {
+    name: "AppsCode.com Platform",
+    year: "2024",
+    description: "Designed and engineered the central cloud platform for AppsCode, streamlining Kubernetes-native deployments and toolchains for enterprise clients.",
+    tags: ["UI/UX Design", "Vue.js", "Cloud Platform"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
+    href: "https://appscode.com"
+  },
+  {
+    name: "KubeDB — Database Ops",
+    year: "2023",
+    description: "Built the comprehensive product website and user dashboard for KubeDB, simplifying production-grade database management on Kubernetes.",
+    tags: ["Product Design", "Nuxt", "Kubernetes"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
+    href: "https://kubedb.com"
+  },
   {
     name: "E-commerce — Nuxt 3 & Tailwind",
     year: "2024",
@@ -212,3 +256,13 @@ const projects = [
   }
 ]
 </script>
+
+<style scoped>
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+</style>

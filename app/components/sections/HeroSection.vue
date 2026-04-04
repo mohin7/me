@@ -35,9 +35,9 @@
             <span class="text-main/20 text-sm leading-none font-sans font-black tracking-widest">•</span>
           </p>
 
-          <h1 class="text-main mb-6 font-black leading-[0.9] tracking-tight relative" style="font-size: clamp(3.5rem, 11vw, 10rem);">
-            <span class="block whitespace-nowrap">Designer</span>
-            <span class="block whitespace-nowrap text-[color:var(--brand-a)]">& Coder</span>
+          <h1 class="mb-6 font-black leading-[1] tracking-tight relative" style="font-size: clamp(3.5rem, 10vw, 8rem);">
+            <span class="block metallic-text py-1">Designer</span>
+            <span class="block brand-text-gradient py-1">& Coder</span>
             
             <!-- Handwritten Note -->
             <div class="absolute -right-8 -top-12 md:-right-24 md:-top-16 opacity-0 animate-fade-in-up" style="animation-delay: 1.2s;">
@@ -50,6 +50,21 @@
           <p class="text-soft mb-4 max-w-lg text-lg font-medium leading-[1.3] sm:text-2xl">
             I help startups turn complex ideas into intuitive, scalable products—delivering faster launches, happier users, and standout results.
           </p>
+
+          <!-- Current Work Badges -->
+          <div class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-soft font-medium animate-fade-in-up" style="animation-delay: 0.5s;">
+            <span>Shaping cloud platforms at:</span>
+            <div class="flex items-center gap-2">
+              <a href="https://appscode.com" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-subtle bg-white/5 hover:bg-brand-a/10 hover:text-brand-a hover:border-brand-a/30 transition-colors group/link cursor-pointer">
+                <Icon name="lucide:server" class="h-3.5 w-3.5" />
+                <span>AppsCode</span>
+              </a>
+              <a href="https://kubedb.com" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-subtle bg-white/5 hover:bg-brand-a/10 hover:text-brand-a hover:border-brand-a/30 transition-colors group/link cursor-pointer">
+                <Icon name="lucide:database" class="h-3.5 w-3.5" />
+                <span>KubeDB</span>
+              </a>
+            </div>
+          </div>
           <!-- <p class="text-main/80 mb-4 max-w-lg text-base font-normal leading-[1.5]">
             I design cloud-based, user-centric solutions at AppsCode, shaping products like <a href='https://appscode.com' class='underline text-brand-a' target='_blank'>appscode.com</a> and <a href='https://kubedb.com' class='underline text-brand-a' target='_blank'>kubedb.com</a>.<br>
             7+ years in UI/UX design & development. Focused on micro-interactions, scalable UI, and user behavior insights. Design is about making technology feel human.
@@ -147,10 +162,9 @@
               </div>
 
               <!-- CTA button -->
-              <a href="#contact" class="hero-cta-btn w-full">
-                <Icon name="lucide:calendar" class="h-4 w-4" />
-                Book a Free Call
-                <span class="text-lg leading-none">↗</span>
+              <a href="#works" class="hero-secondary-btn w-full mt-2">
+                <Icon name="lucide:layout-grid" class="h-4 w-4" />
+                Explore Projects
               </a>
             </div>
           </div>
@@ -467,6 +481,30 @@ const { scheme } = useBrandScheme()
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 12px 32px rgba(var(--brand-rgb), 0.45), 0 4px 12px rgba(0,0,0,0.25);
   opacity: 0.95;
+}
+
+/* ─── Secondary Outline Button ─── */
+.hero-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.hero-secondary-btn:hover {
+  background: rgba(var(--brand-rgb), 0.1);
+  border-color: rgba(var(--brand-rgb), 0.3);
+  color: var(--brand-a);
+  transform: translateY(-2px);
 }
 
 /* ─── Floating stat badges ─── */

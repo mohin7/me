@@ -7,7 +7,7 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-16 relative">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl">Specialties</h2>
+        <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl"><span class="metallic-text">Specialties</span></h2>
         <p class="text-soft max-w-2xl text-lg font-medium opacity-80">High-performance design and development for modern products.</p>
         
         <!-- Handwriting Accent -->

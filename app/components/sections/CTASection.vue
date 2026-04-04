@@ -1,16 +1,16 @@
 <template>
   <section id="contact" class="relative isolate overflow-hidden py-32 md:py-48 mt-12">
     <!-- Immersive Gradient Background -->
-    <div class="absolute inset-0 z-0 bg-black">
-      <div class="absolute inset-0 bg-gradient-to-br from-brand-a/20 via-brand-b/10 to-transparent"></div>
-      <div class="absolute bottom-0 left-1/2 h-[30rem] w-[50rem] -translate-x-1/2 rounded-full bg-brand-a/30 blur-[120px]"></div>
+    <div class="absolute inset-0 z-0 bg-[#09090b]">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-a/15 via-brand-b/8 to-transparent"></div>
+      <div class="absolute bottom-0 left-1/2 h-[30rem] w-[50rem] -translate-x-1/2 rounded-full bg-brand-a/25 blur-[120px]"></div>
     </div>
     
     <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-      <p class="text-white mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
+      <p class="text-white/70 mb-6 text-sm font-black uppercase tracking-[0.3em]">I have an opening for 2026</p>
       
-      <h2 class="text-white mb-12 text-balance text-6xl font-black tracking-tighter sm:text-7xl md:text-9xl">
-        Let's bring it <br> <span class="text-[color:var(--brand-a)]">to life.</span>
+      <h2 class="mb-12 text-balance text-6xl font-black tracking-tighter sm:text-7xl md:text-9xl">
+        <span class="metallic-text">Let's bring it</span> <br> <span class="brand-text-gradient">to life.</span>
       </h2>
       
       <div class="flex flex-col items-center justify-center gap-6">

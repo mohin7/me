@@ -2,7 +2,7 @@
   <section id="about" class="py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16">
-        <h2 class="text-main mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl">Design & <span class="brand-text-gradient">Execution</span></h2>
+        <h2 class="mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl"><span class="metallic-text">Design</span> &amp; <span class="brand-text-gradient">Execution</span></h2>
         <p class="text-soft max-w-2xl text-lg font-medium">A hybrid approach to leading design and building robust interfaces.</p>
       </div>
 

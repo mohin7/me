@@ -16,8 +16,8 @@
             <Icon name="lucide:search" class="h-3.5 w-3.5 text-brand-a" />
             <span>Real Outcomes · Real Clients</span>
           </div>
-          <h2 class="text-main text-4xl md:text-5xl font-black tracking-tight leading-[0.9] mb-4">
-            Problems I Solved,<br>
+          <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-[0.9] mb-4">
+            <span class="metallic-text">Problems I Solved,</span><br>
             <span class="brand-text-gradient">Results That Speak</span>
           </h2>
           <p class="text-soft text-lg font-medium leading-relaxed opacity-80">

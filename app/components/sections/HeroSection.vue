@@ -71,44 +71,87 @@
           </div>
         </div>
 
-        <!-- Right Column: Stylized Code Editor Presentation -->
-        <div class="hero-enter-delay relative z-10 flex justify-center lg:justify-end">
-          <!-- Gradient background behind the glass card -->
-          <div class="absolute inset-0 w-full h-full z-0 pointer-events-none">
-            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-brand-a via-pink-500/60 to-brand-b opacity-60 blur-[80px]"></div>
+        <!-- Right Column: Premium Glass Profile Card -->
+        <div class="hero-enter-delay hero-right-col relative z-10 flex justify-center lg:justify-end">
+          <!-- Ambient glow blobs behind card -->
+          <div class="hero-right-glow-wrap pointer-events-none absolute inset-0 z-0">
+            <div class="hero-blob-a absolute w-[360px] h-[360px] rounded-full blur-[90px]"></div>
+            <div class="hero-blob-b absolute w-[260px] h-[260px] rounded-full blur-[70px]"></div>
           </div>
-          <div class="relative w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 bg-white/10/70 p-0 backdrop-blur-[18px] transition-transform duration-300 hover:scale-[1.025] hover:shadow-[0_12px_48px_0_rgba(255,92,0,0.10)] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:pointer-events-none before:z-0 after:absolute after:inset-0 after:rounded-2xl after:pointer-events-none after:z-0 after:bg-[radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.18)_0%,transparent_70%)]">
-            <!-- Abstract/Avatar Visual -->
-            <div class="relative flex flex-col items-center justify-center py-12 px-8" style="background: linear-gradient(120deg, rgba(255,255,255,0.10) 0%, rgba(35,39,47,0.10) 100%); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);">
-              <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-brand-a/20 blur-[90px] z-0"></div>
-              <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-brand-b/20 blur-[90px] z-0"></div>
-              <div class="relative z-10 flex flex-col items-center">
-                <!-- Avatar (replace src with your image if available) -->
-                <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-white/30 shadow-xl mb-4 bg-white/20 flex items-center justify-center ring-4 ring-white/20 backdrop-blur-xl">
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="40" cy="40" r="40" fill="#23272f"/>
-                    <ellipse cx="40" cy="38" rx="18" ry="20" fill="#fbbf24"/>
-                    <ellipse cx="40" cy="60" rx="14" ry="8" fill="#fde68a"/>
-                    <ellipse cx="40" cy="38" rx="10" ry="12" fill="#fff" fill-opacity=".7"/>
-                  </svg>
+
+
+          <!-- Main glass card -->
+          <div class="hero-glass-card group relative z-10 w-full max-w-[400px]">
+            <!-- Inner highlight rim -->
+            <div class="hero-card-rim" aria-hidden="true"></div>
+
+            <!-- Photo section -->
+            <div class="relative px-8 pt-10 pb-6 flex flex-col items-center">
+              <!-- Availability pill -->
+              <div class="hero-avail-pill mb-6">
+                <span class="hero-avail-dot"></span>
+                <span class="text-[11px] font-semibold tracking-wide text-main/80">Available for projects</span>
+              </div>
+
+              <!-- Photo frame -->
+              <div class="hero-photo-frame mb-6">
+                <div class="hero-photo-ring"></div>
+                <div class="hero-photo-ring hero-photo-ring-2"></div>
+                <div class="hero-photo-inner">
+                  <img
+                    src="/img/mohin_cutout.png"
+                    alt="Md Mohin Uddin"
+                    class="hero-photo-img"
+                  />
                 </div>
-                <h2 class="text-main font-black text-2xl md:text-3xl mb-1 text-center drop-shadow">Md Mohin Uddin</h2>
-                <div class="flex items-center gap-2 mb-2">
-                  <Icon name="lucide:map-pin" class="h-4 w-4 text-brand-a" />
-                  <span class="text-soft text-sm">Dhaka, Bangladesh</span>
-                </div>
-                <span class="inline-block rounded-full bg-gradient-to-r from-brand-a/20 to-brand-b/20 text-brand-a px-3 py-1 text-xs font-bold uppercase tracking-widest border border-brand-a/40 mb-4 shadow-sm">Head of Design</span>
-                <div class="flex flex-wrap gap-2 mb-3 justify-center">
-                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-a/30 text-main/90 shadow-sm">UI/UX</span>
-                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-b/30 text-main/90 shadow-sm">NuxtJS</span>
-                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-a/30 text-main/90 shadow-sm">Vue</span>
-                  <span class="bg-panel/80 px-3 py-1 rounded-full text-xs font-semibold border border-brand-b/30 text-main/90 shadow-sm">Design Systems</span>
-                </div>
-                <div class="text-soft text-center text-base max-w-xs mb-4 font-medium">Hybrid designer & engineer. I help startups launch fast, scale smart, and delight users with beautiful, reliable products.</div>
-                <a href="#contact" class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-brand-a to-brand-b text-white font-bold shadow-lg hover:from-brand-b hover:to-brand-a transition text-sm mt-2">
-                  <Icon name="lucide:mail" class="h-4 w-4" /> Contact
+              </div>
+
+              <!-- Name & role -->
+              <h2 class="text-main font-black text-2xl md:text-[1.6rem] mb-1 text-center tracking-tight">Md Mohin Uddin</h2>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="hero-role-badge">Head of Design</span>
+              </div>
+
+              <!-- Location -->
+              <div class="flex items-center gap-1.5 mb-5 text-soft text-sm">
+                <Icon name="lucide:map-pin" class="h-3.5 w-3.5 text-brand-a" />
+                <span>Dhaka, Bangladesh</span>
+              </div>
+
+              <!-- Divider -->
+              <div class="hero-divider mb-5"></div>
+
+              <!-- Skill chips -->
+              <div class="flex flex-wrap gap-2 justify-center mb-5">
+                <span class="hero-chip">UI/UX</span>
+                <span class="hero-chip">NuxtJS</span>
+                <span class="hero-chip">Vue</span>
+                <span class="hero-chip">Figma</span>
+                <span class="hero-chip">Design Systems</span>
+              </div>
+
+              <!-- Social links row -->
+              <div class="flex items-center gap-3 mb-6">
+                <a href="https://github.com" target="_blank" class="hero-social-icon" aria-label="GitHub">
+                  <Icon name="lucide:github" class="h-4 w-4" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="hero-social-icon" aria-label="LinkedIn">
+                  <Icon name="lucide:linkedin" class="h-4 w-4" />
+                </a>
+                <a href="https://twitter.com" target="_blank" class="hero-social-icon" aria-label="Twitter/X">
+                  <Icon name="lucide:twitter" class="h-4 w-4" />
+                </a>
+                <a href="mailto:me@mohin.dev" class="hero-social-icon" aria-label="Email">
+                  <Icon name="lucide:mail" class="h-4 w-4" />
                 </a>
               </div>
+
+              <!-- CTA button -->
+              <a href="#contact" class="hero-cta-btn w-full">
+                <Icon name="lucide:calendar" class="h-4 w-4" />
+                Book a Free Call
+                <span class="text-lg leading-none">↗</span>
+              </a>
             </div>
           </div>
         </div>
@@ -194,14 +237,9 @@ const { scheme } = useBrandScheme()
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
-/* Solid color and light font for 8-Year UX Veteran text in marquee */
 .hero-marquee-text-solid {
   background: none;
   mix-blend-mode: normal;
@@ -211,5 +249,264 @@ const { scheme } = useBrandScheme()
   color: inherit;
   font-weight: 300;
   letter-spacing: 0.04em;
+}
+
+/* ─── Right column positioning ─── */
+.hero-right-col {
+  position: relative;
+}
+
+/* ─── Ambient glow blobs ─── */
+.hero-blob-a {
+  background: radial-gradient(circle, var(--brand-a), transparent 70%);
+  top: 5%;
+  left: 50%;
+  transform: translateX(-30%);
+  opacity: 0.45;
+  animation: blobDrift 18s ease-in-out infinite alternate;
+}
+.hero-blob-b {
+  background: radial-gradient(circle, var(--brand-b), transparent 70%);
+  bottom: 0%;
+  right: 10%;
+  opacity: 0.30;
+  animation: blobDrift 22s ease-in-out infinite alternate-reverse;
+}
+@keyframes blobDrift {
+  0%   { transform: translateX(-30%) scale(1); }
+  50%  { transform: translateX(-20%) scale(1.12) translateY(-8%); }
+  100% { transform: translateX(-35%) scale(0.95) translateY(5%); }
+}
+
+/* ─── Main glass card ─── */
+.hero-glass-card {
+  border-radius: 28px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 2px 0 0 rgba(255,255,255,0.18) inset,
+    0 32px 80px -16px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(0,0,0,0.08),
+    0 8px 32px rgba(var(--brand-rgb), 0.08);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+  overflow: hidden;
+}
+.hero-glass-card:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow:
+    0 2px 0 0 rgba(255,255,255,0.22) inset,
+    0 40px 100px -16px rgba(0,0,0,0.50),
+    0 0 0 1px rgba(0,0,0,0.10),
+    0 12px 48px rgba(var(--brand-rgb), 0.15);
+}
+
+/* Top highlight rim (specular line) */
+.hero-card-rim {
+  position: absolute;
+  top: 0; left: 16px; right: 16px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55) 50%, transparent);
+  border-radius: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ─── Availability pill ─── */
+.hero-avail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px 5px 8px;
+  border-radius: 100px;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.25);
+  backdrop-filter: blur(8px);
+}
+.hero-avail-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.25);
+  animation: pulseGreen 2s ease-in-out infinite;
+}
+@keyframes pulseGreen {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.25); }
+  50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0.10); }
+}
+
+/* ─── Photo frame & rings ─── */
+.hero-photo-frame {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--bg-page, #0e0e0e), var(--bg-page, #0e0e0e)) padding-box,
+    conic-gradient(from 0deg, var(--brand-a) 0%, var(--brand-b) 50%, var(--brand-a) 100%) border-box;
+  animation: ringRotate 4s linear infinite;
+}
+.hero-photo-ring-2 {
+  inset: -14px;
+  border-width: 1.5px;
+  opacity: 0.35;
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
+}
+.hero-photo-inner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 0 3px rgba(var(--brand-rgb),0.15);
+  background: var(--bg-panel, #18181b);
+  z-index: 2;
+  position: relative;
+}
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: brightness(1.05) contrast(1.02);
+}
+
+/* ─── Role badge ─── */
+.hero-role-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(var(--brand-rgb),0.22) 0%, rgba(var(--brand-b-rgb, 99,102,241),0.15) 100%);
+  border: 1px solid rgba(var(--brand-rgb), 0.35);
+  color: var(--brand-a);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── Divider ─── */
+.hero-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10) 50%, transparent);
+}
+
+/* ─── Skill chips ─── */
+.hero-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-soft, #a1a1aa);
+  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.hero-chip:hover {
+  background: rgba(var(--brand-rgb),0.12);
+  border-color: rgba(var(--brand-rgb),0.30);
+  color: var(--brand-a);
+}
+
+/* ─── Social icons ─── */
+.hero-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--text-soft, #a1a1aa);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.hero-social-icon:hover {
+  background: rgba(var(--brand-rgb),0.14);
+  border-color: rgba(var(--brand-rgb),0.35);
+  color: var(--brand-a);
+  transform: translateY(-2px);
+}
+
+/* ─── CTA button ─── */
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(var(--brand-rgb), 0.35), 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease, opacity 0.2s;
+  text-decoration: none;
+}
+.hero-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(var(--brand-rgb), 0.45), 0 4px 12px rgba(0,0,0,0.25);
+  opacity: 0.95;
+}
+
+/* ─── Floating stat badges ─── */
+.hero-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+  z-index: 20;
+  min-width: 90px;
+}
+.hero-badge-top-left {
+  top: 6%;
+  left: -4%;
+}
+.hero-badge-bottom-right {
+  bottom: 10%;
+  right: -4%;
+}
+
+/* ─── Float animations for badges ─── */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes floatDelayed {
+  0%, 100% { transform: translateY(0px) rotate(1deg); }
+  50%       { transform: translateY(-8px) rotate(-1.5deg); }
+}
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: floatDelayed 6s ease-in-out 1.5s infinite;
 }
 </style>

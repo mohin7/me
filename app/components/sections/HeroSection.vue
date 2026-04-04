@@ -83,32 +83,32 @@
             </div>
 
             <!-- Organized Tech Dock (Vertical) -->
-            <div class="absolute -left-5 top-16 md:-left-8 md:top-24 hidden sm:flex flex-col gap-4 p-3.5 rounded-[20px] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_8s_ease-in-out_infinite] z-20">
+            <div class="absolute -left-5 top-16 md:-left-8 md:top-24 hidden sm:flex flex-col gap-4 p-3.5 rounded-[20px] bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.1),inset_0_1px_rgba(255,255,255,1)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_8s_ease-in-out_infinite] z-20">
               <Icon name="logos:figma" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
-              <div class="w-full h-px bg-white/10"></div>
+              <div class="w-full h-px bg-black/5 dark:bg-white/10"></div>
               <Icon name="logos:vue" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
-              <div class="w-full h-px bg-white/10"></div>
+              <div class="w-full h-px bg-black/5 dark:bg-white/10"></div>
               <Icon name="logos:nuxt-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
-              <div class="w-full h-px bg-white/10"></div>
+              <div class="w-full h-px bg-black/5 dark:bg-white/10"></div>
               <Icon name="logos:tailwindcss-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
-              <div class="w-full h-px bg-white/10"></div>
+              <div class="w-full h-px bg-black/5 dark:bg-white/10"></div>
               <Icon name="logos:typescript-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
             </div>
 
             <!-- Floating Premium Badge (Horizontal Pill) -->
-            <div class="absolute -right-4 -top-4 md:-right-8 md:-top-4 hidden sm:flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-3xl border border-brand-a/20 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6s_ease-in-out_1s_infinite_reverse] z-20 group/badge hover:border-brand-a/40 transition-colors cursor-default">
+            <div class="absolute -right-4 -top-4 md:-right-8 md:-top-4 hidden sm:flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/60 dark:bg-[#0a0a0a]/80 backdrop-blur-3xl border border-black/5 dark:border-brand-a/20 shadow-[0_16px_32px_rgba(0,0,0,0.1),inset_0_1px_rgba(255,255,255,1)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6s_ease-in-out_1s_infinite_reverse] z-20 group/badge hover:border-brand-a/40 transition-colors cursor-default">
                <div class="relative flex items-center justify-center">
                  <Icon name="lucide:hexagon" class="w-6 h-6 text-brand-a/80 animate-[spin_10s_linear_infinite]" />
                  <div class="absolute w-1.5 h-1.5 bg-brand-a rounded-full animate-pulse shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)]"></div>
                </div>
-               <div class="flex flex-col">
-                 <span class="text-[8px] font-bold text-soft uppercase tracking-[0.2em] leading-none mb-1 opacity-80">Architecture</span>
-                 <span class="text-xs font-black text-main leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 group-hover/badge:to-brand-a transition-all duration-300">Scalable UI</span>
-               </div>
+                <div class="flex flex-col">
+                  <span class="text-[8px] font-bold text-soft uppercase tracking-[0.2em] leading-none mb-1 opacity-80">Architecture</span>
+                  <span class="text-xs font-black leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#09090b] to-[#52525b] dark:from-white dark:to-white/70 group-hover/badge:from-brand-a group-hover/badge:to-brand-a transition-all duration-300">Scalable UI</span>
+                </div>
             </div>
 
             <!-- Main glass card -->
-            <div class="group relative w-full rounded-[28px] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.18),0_32px_80px_-16px_rgba(0,0,0,0.45),0_0_0_1px_rgba(0,0,0,0.08),0_8px_32px_rgba(var(--brand-rgb),0.08)] transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden hover:-translate-y-[6px] hover:scale-[1.012] hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.22),0_40px_100px_-16px_rgba(0,0,0,0.50),0_0_0_1px_rgba(0,0,0,0.10),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
+            <div class="group relative w-full rounded-[28px] bg-white/80 dark:bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-black/5 dark:border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.9),0_32px_80px_-16px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.18),0_32px_80px_-16px_rgba(0,0,0,0.45),0_0_0_1px_rgba(0,0,0,0.08),0_8px_32px_rgba(var(--brand-rgb),0.08)] transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden hover:-translate-y-[6px] hover:scale-[1.012] hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,1),0_40px_100px_-16px_rgba(0,0,0,0.12)] dark:hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.22),0_40px_100px_-16px_rgba(0,0,0,0.50),0_0_0_1px_rgba(0,0,0,0.10),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
             <!-- Inner highlight rim -->
             <div class="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full z-10 pointer-events-none" aria-hidden="true"></div>
 

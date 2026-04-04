@@ -117,23 +117,53 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 }
 
 .theme-light {
-  --bg-page: #f8f9fa;
-  --bg-page-end: #eef1f5;
-  --bg-panel: rgba(255, 255, 255, 0.85);
+  --bg-page: #fafafa;
+  --bg-page-end: #fdfdfd;
+  --bg-panel: rgba(255, 255, 255, 0.75);
   --bg-panel-strong: #ffffff;
-  --bg-soft: rgba(15, 23, 42, 0.035);
-  --text-main: #0f172a;
-  --text-soft: #334155;
-  --text-muted: #64748b;
-  --border-subtle: rgba(15, 23, 42, 0.08);
-  --noise-opacity: 0.03;
+  --bg-soft: #f4f4f5;
+  --text-main: #18181b;
+  --text-soft: #52525b;
+  --text-muted: #a1a1aa;
+  --border-subtle: #e4e4e7;
+  --noise-opacity: 0.008;
   --grid-color: 0, 0, 0;
-  --grid-opacity: 0.03;
-  --metallic-from: #0f172a;
-  --metallic-via: #334155;
-  --metallic-to: #94a3b8;
-  --shimmer-white: rgba(255,255,255,0.5);
+  --grid-opacity: 0.01;
+  --metallic-from: #18181b;
+  --metallic-via: #3f3f46;
+  --metallic-to: #71717a;
+  --shimmer-white: rgba(255,255,255,1);
 }
+
+/* Silk light mode aesthetics */
+.theme-light .site-shell::before {
+  opacity: 0.1;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(var(--brand-rgb), 0.04) 0%, transparent 60%);
+}
+
+.theme-light .bg-white\/5,
+.theme-light .bg-white\/\[0\.03\] { 
+  background-color: rgba(0, 0, 0, 0.02) !important; 
+}
+
+.theme-light .border-white\/10,
+.theme-light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.theme-light .shadow-\[inset_0_2px_0_0_rgba\(255\,255\,255\,0\.18\)\] {
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,1), 0 16px 32px -8px rgba(0,0,0,0.05) !important;
+}
+
+.theme-light .group:hover {
+  border-color: rgba(var(--brand-rgb), 0.3) !important;
+}
+
+.theme-light .metallic-text {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
 
 .scheme-futuristic {
   --brand-a: #bef264;
@@ -213,10 +243,10 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
 }
 
 .theme-light.scheme-monochrome {
-  --brand-a: #09090b;
-  --brand-b: #71717a;
+  --brand-a: #18181b;
+  --brand-b: #52525b;
   --brand-c: #27272a;
-  --brand-rgb: 9 9 11;
+  --brand-rgb: 24 24 27;
 }
 
 .text-main {

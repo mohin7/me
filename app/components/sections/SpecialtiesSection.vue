@@ -20,13 +20,16 @@
         <div 
           v-for="(specialty, idx) in specialties" 
           :key="idx"
-          class="bg-panel/40 border-subtle hover:border-[color:var(--brand-a)]/40 group rounded-[2rem] border p-10 transition-all hover:bg-panel/60"
+          class="group relative overflow-hidden rounded-[2.5rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_32px_80px_-16px_rgba(0,0,0,0.3)] p-10 transition-all duration-700 hover:-translate-y-2 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]"
         >
-          <div class="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] transition group-hover:scale-110 group-hover:rotate-3">
+          <!-- Hover Highlight Rim -->
+          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-brand-a/10 border border-brand-a/20 text-brand-a transition-all duration-500 group-hover:scale-110 group-hover:bg-brand-a/20">
             <Icon :name="`lucide:${specialty.icon}`" class="h-7 w-7" />
           </div>
-          <h3 class="text-main mb-4 text-2xl font-black tracking-tight">{{ specialty.title }}</h3>
-          <p class="text-soft font-medium leading-relaxed">{{ specialty.description }}</p>
+          <h3 class="text-main mb-4 text-2xl font-black tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-a transition-all duration-500">{{ specialty.title }}</h3>
+          <p class="text-soft text-sm font-medium leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity duration-500">{{ specialty.description }}</p>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
       <span class="absolute top-[20%] left-[10%] text-brand-a/2 text-4xl font-light">+</span>
       
       <!-- Abstract Circle Outlines -->
-      <div class="absolute -left-20 top-[40%] h-96 w-96 rounded-full border border-brand-a/2"></div>
+      <div class="absolute -left-20 top-[40%] h-96 w-96 rounded-full border border-brand-a/5"></div>
       
       <!-- Floating Dots Pattern -->
       <div class="absolute top-[15%] right-[25%] opacity-[0.02]">
@@ -91,46 +91,38 @@
 
           <!-- Card Wrapper for Floating Elements -->
           <div class="relative w-full max-w-[380px] z-10 mt-12 md:mt-0">
-            
-            <!-- Floating Figma Badge (Large, Left) -->
-            <div class="absolute -left-6 top-16 md:-left-12 md:top-20 hidden sm:flex items-center justify-center w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6s_ease-in-out_infinite] z-20 hover:scale-110 transition-transform cursor-pointer">
-              <Icon name="logos:figma" class="w-6 h-6 drop-shadow-md" />
+            <!-- Geometric Background Layers -->
+            <div class="absolute -inset-10 z-0 pointer-events-none hidden md:block">
+              <!-- Animated dashed ring -->
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border-[0.5px] border-white/10 border-dashed animate-[spin_40s_linear_infinite] opacity-50"></div>
+              
+              <!-- Offset geometric glass panel -->
+              <div class="absolute top-[8%] -left-[4%] w-full h-[90%] rounded-[32px] bg-gradient-to-tr from-brand-a/5 to-brand-b/5 border border-white/5 backdrop-blur-md rotate-[-5deg] opacity-60 shadow-2xl z-0 transition-transform duration-700 group-hover:rotate-[-8deg]"></div>
             </div>
 
-            <!-- Floating Tailwind Badge (Medium, Left Bottom) -->
-            <div class="absolute -left-2 bottom-24 md:-left-8 md:bottom-28 hidden sm:flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_7s_ease-in-out_1s_infinite_reverse] z-20 hover:scale-110 transition-transform cursor-pointer">
-              <Icon name="logos:tailwindcss-icon" class="w-6 h-6 drop-shadow-md" />
+            <!-- Organized Tech Dock (Vertical) -->
+            <div class="absolute -left-5 top-16 md:-left-8 md:top-24 hidden sm:flex flex-col gap-4 p-3.5 rounded-[20px] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_8s_ease-in-out_infinite] z-20">
+              <Icon name="logos:figma" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
+              <div class="w-full h-px bg-white/10"></div>
+              <Icon name="logos:vue" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
+              <div class="w-full h-px bg-white/10"></div>
+              <Icon name="logos:nuxt-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
+              <div class="w-full h-px bg-white/10"></div>
+              <Icon name="logos:tailwindcss-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
+              <div class="w-full h-px bg-white/10"></div>
+              <Icon name="logos:typescript-icon" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
             </div>
 
-            <!-- Floating TypeScript Badge (Small, Back Left) -->
-            <div class="absolute -left-1 md:-left-4 top-40 md:top-48 hidden sm:flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 backdrop-blur-xl border border-white/5 shadow-lg animate-[floatSlow_5s_ease-in-out_2s_infinite] z-0 opacity-70 hover:opacity-100 hover:z-30 transition-all cursor-pointer">
-              <Icon name="logos:typescript-icon" class="w-4 h-4 rounded-sm" />
-            </div>
-
-            <!-- Floating Nuxt Badge (Pill, Top Right) -->
-            <div class="absolute -right-4 -top-6 md:-right-6 md:-top-4 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_5s_ease-in-out_0.5s_infinite] z-20 hover:scale-105 transition-transform cursor-pointer">
-              <Icon name="logos:nuxt-icon" class="w-4 h-4 drop-shadow-md" />
-              <span class="text-[0.65rem] font-bold text-main uppercase tracking-widest drop-shadow-sm">Nuxt</span>
-            </div>
-
-            <!-- Floating Vue Badge (Medium, Right) -->
-            <div class="absolute -right-2 top-24 md:-right-8 md:top-32 hidden sm:flex items-center justify-center w-11 h-11 rounded-[14px] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6.5s_ease-in-out_1.5s_infinite_reverse] z-20 hover:scale-110 transition-transform cursor-pointer">
-              <Icon name="logos:vue" class="w-5 h-5 drop-shadow-md" />
-            </div>
-
-            <!-- Floating JavaScript Badge (Small, Right Bottom) -->
-            <div class="absolute -right-1 md:-right-4 bottom-32 md:bottom-40 hidden sm:flex items-center justify-center w-10 h-10 rounded-[12px] bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_16px_rgba(0,0,0,0.2),inset_0_1px_rgba(255,255,255,0.1)] animate-[floatSlow_5.5s_ease-in-out_0.8s_infinite] z-20 hover:scale-110 transition-transform cursor-pointer">
-              <Icon name="logos:javascript" class="w-5 h-5 drop-shadow-sm rounded-[2px]" />
-            </div>
-
-            <!-- Floating Bulma Badge (Very Small, Top Center Back) -->
-            <div class="absolute left-1/4 -top-8 hidden sm:flex items-center justify-center w-8 h-8 rounded-lg bg-white/5 backdrop-blur-md border border-white/5 shadow-lg animate-[floatSlow_6s_ease-in-out_2.5s_infinite_reverse] z-0 opacity-60 hover:opacity-100 hover:z-30 transition-all cursor-pointer">
-              <Icon name="logos:bulma" class="w-4 h-4" />
-            </div>
-
-            <!-- Floating Hugo Badge (Small, Bottom Left) -->
-            <div class="absolute left-12 -bottom-6 hidden sm:flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl animate-[floatSlow_7.5s_ease-in-out_1.2s_infinite] z-20 opacity-90 hover:opacity-100 hover:scale-110 transition-all cursor-pointer">
-              <Icon name="logos:hugo" class="w-5 h-5" />
+            <!-- Floating Premium Badge (Horizontal Pill) -->
+            <div class="absolute -right-4 -top-4 md:-right-8 md:-top-4 hidden sm:flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-3xl border border-brand-a/20 shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6s_ease-in-out_1s_infinite_reverse] z-20 group/badge hover:border-brand-a/40 transition-colors cursor-default">
+               <div class="relative flex items-center justify-center">
+                 <Icon name="lucide:hexagon" class="w-6 h-6 text-brand-a/80 animate-[spin_10s_linear_infinite]" />
+                 <div class="absolute w-1.5 h-1.5 bg-brand-a rounded-full animate-pulse shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)]"></div>
+               </div>
+               <div class="flex flex-col">
+                 <span class="text-[8px] font-bold text-soft uppercase tracking-[0.2em] leading-none mb-1 opacity-80">Architecture</span>
+                 <span class="text-xs font-black text-main leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 group-hover/badge:to-brand-a transition-all duration-300">Scalable UI</span>
+               </div>
             </div>
 
             <!-- Main glass card -->
@@ -171,13 +163,7 @@
                 <span>Dhaka, Bangladesh</span>
               </div>
 
-              <!-- Skill chips -->
-              <div class="flex flex-wrap gap-2 justify-center mb-6">
-                <span class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.65rem] font-semibold text-soft tracking-[0.02em] transition-colors duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a">UI/UX</span>
-                <span class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.65rem] font-semibold text-soft tracking-[0.02em] transition-colors duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a">NuxtJS</span>
-                <span class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.65rem] font-semibold text-soft tracking-[0.02em] transition-colors duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a">Vue</span>
-                <span class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[0.65rem] font-semibold text-soft tracking-[0.02em] transition-colors duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a">Figma</span>
-              </div>
+
 
               <!-- Social links row -->
               <div class="flex items-center gap-3 mb-6">
@@ -198,7 +184,7 @@
               <!-- CTA button -->
               <a href="#works" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-white/[0.03] border border-white/10 text-main font-semibold text-xs tracking-[0.02em] transition-all duration-200 no-underline hover:bg-white/[0.06] hover:border-white/20 hover:text-white hover:-translate-y-[2px] w-full">
                 <Icon name="lucide:layout-grid" class="h-3.5 w-3.5 opacity-70" />
-                Explore Projects
+                View Selected Works
               </a>
             </div>
           </div>

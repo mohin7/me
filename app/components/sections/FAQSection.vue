@@ -1,5 +1,11 @@
 <template>
-  <section id="faq" class="py-20 md:py-28">
+  <section id="faq" class="relative py-20 md:py-28 overflow-hidden">
+    <!-- Geometric Background Architecture -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.3]">
+       <div class="absolute left-[5%] md:left-[15%] top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+       <div class="absolute right-[5%] md:right-[15%] top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+       <div class="absolute top-[20%] -left-64 w-[800px] h-[800px] border-[0.5px] border-white/5 border-dashed rounded-full animate-[spin_140s_linear_infinite]"></div>
+    </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <SharedSectionHeader 
         title="Quick Profile Notes"
@@ -10,7 +16,7 @@
         <div 
           v-for="(item, idx) in faqs" 
           :key="idx"
-          class="border-subtle hover:border-[color:var(--brand-a)]/35 overflow-hidden rounded-lg border transition"
+          class="group overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 hover:border-brand-a/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"
         >
           <button
             @click="toggleFaq(idx)"
@@ -22,8 +28,8 @@
             </span>
           </button>
           <transition name="expand">
-            <div v-if="activeFaq === idx" class="border-subtle bg-soft border-t px-6 pb-4">
-              <p class="text-soft leading-relaxed">{{ item.answer }}</p>
+            <div v-if="activeFaq === idx" class="border-white/10 bg-black/20 border-t px-6 pb-6 pt-2">
+              <p class="text-soft leading-relaxed text-sm">{{ item.answer }}</p>
             </div>
           </transition>
         </div>

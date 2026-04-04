@@ -1,9 +1,11 @@
 <template>
   <section id="contact" class="relative isolate overflow-hidden py-32 md:py-48 mt-12">
-    <!-- Immersive Gradient Background -->
-    <div class="absolute inset-0 z-0 bg-[#09090b]">
-      <div class="absolute inset-0 bg-gradient-to-br from-brand-a/15 via-brand-b/8 to-transparent"></div>
-      <div class="absolute bottom-0 left-1/2 h-[30rem] w-[50rem] -translate-x-1/2 rounded-full bg-brand-a/25 blur-[120px]"></div>
+    <!-- Architectural Geometric Background -->
+    <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-40">
+       <div class="absolute w-[1800px] h-[1800px] border-[0.5px] border-white/5 border-dashed rounded-full animate-[spin_200s_linear_infinite]"></div>
+       <div class="absolute w-[1200px] h-[1200px] border-[0.5px] border-white/5 rounded-full"></div>
+       <div class="absolute w-[800px] h-[800px] border-[0.5px] border-brand-a/10 border-dashed rounded-full animate-[spin_100s_linear_infinite_reverse]"></div>
+       <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none"></div>
     </div>
     
     <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">

@@ -1,7 +1,8 @@
 <template>
   <section id="sprint" class="py-24 md:py-32 bg-page relative overflow-hidden">
-    <!-- Immersive Background Accents -->
-    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[40rem] bg-[radial-gradient(circle_at_50%_50%,rgba(var(--brand-rgb),0.02),transparent_70%)] pointer-events-none"></div>
+    <!-- Geometric Background Accents -->
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border-[0.5px] border-white/5 border-dashed rounded-full pointer-events-none opacity-30 animate-[spin_100s_linear_infinite_reverse]"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="mb-64 text-center px-4">
@@ -58,12 +59,15 @@
 
             <!-- Alternating Content Card (Responsive Positioning) -->
             <div 
-              class="w-full md:absolute md:left-1/2 md:-translate-x-1/2 max-w-[400px] md:w-[260px] p-8 md:p-8 rounded-[2rem] border border-subtle bg-panel/50 backdrop-blur-3xl transition-all duration-700 group-hover:border-brand-a/40 group-hover:bg-panel/70 group-hover:scale-[1.02] z-40 text-left md:text-center shadow-2xl relative"
+              class="w-full md:absolute md:left-1/2 md:-translate-x-1/2 max-w-[400px] md:w-[260px] p-8 md:p-8 rounded-[2.5rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_24px_64px_-16px_rgba(0,0,0,0.3)] transition-all duration-700 group-hover:border-brand-a/40 group-hover:scale-[1.02] group-hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)] z-40 text-left md:text-center overflow-hidden"
               :class="idx % 2 === 0 
                 ? 'md:-top-[220px]' 
                 : 'md:-bottom-[220px]'"
             >
-              <div class="mb-4 flex flex-col items-start md:items-center gap-2">
+              <!-- Hover Highlight Rim -->
+              <div class="absolute top-0 inset-x-6 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 w-[80%] mx-auto"></div>
+              
+              <div class="relative z-20 mb-4 flex flex-col items-start md:items-center gap-2">
                 <span class="text-brand-a text-[0.7rem] font-black uppercase tracking-[0.3em]">Phase 0{{ idx + 1 }}</span>
                 <div class="h-px w-12 bg-brand-a/50"></div>
               </div>

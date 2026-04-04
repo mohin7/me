@@ -1,9 +1,10 @@
 <template>
   <section id="packages" class="relative py-24 md:py-32 overflow-hidden bg-[radial-gradient(circle_at_50%_0%,rgba(var(--brand-rgb),0.03),transparent_70%)]">
-    <!-- Background Decor -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.05]">
-       <Icon name="lucide:dollar-sign" class="absolute -left-10 top-[20%] h-64 w-64 -rotate-12" />
-       <Icon name="lucide:zap" class="absolute -right-10 bottom-[10%] h-80 w-80 rotate-12" />
+    <!-- Geometric Background Architecture -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.2]">
+       <div class="absolute -left-40 top-[20%] w-[600px] h-[600px] border border-white/5 border-dashed rounded-full animate-[spin_80s_linear_infinite]"></div>
+       <div class="absolute -right-40 bottom-[10%] w-[800px] h-[800px] border-[0.5px] border-brand-a/10 rounded-full animate-[spin_120s_linear_infinite_reverse]"></div>
+       <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/[0.02] to-transparent"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -16,9 +17,11 @@
         <div 
           v-for="(pkg, idx) in packages" 
           :key="idx"
-          class="flex flex-col rounded-[2.5rem] border border-subtle bg-panel/30 p-8 transition-all duration-500 hover:border-brand-a/40 hover:bg-panel/40 relative group"
-          :class="{ 'ring-2 ring-brand-a/30 scale-[1.02] shadow-2xl shadow-brand-a/5 bg-panel/50': pkg.featured }"
+          class="flex flex-col rounded-[2.5rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_24px_64px_-16px_rgba(0,0,0,0.3)] p-8 transition-all duration-700 hover:-translate-y-2 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)] hover:border-brand-a/40 relative group overflow-hidden"
+          :class="{ 'ring-1 ring-brand-a/40 scale-[1.02] shadow-[0_32px_80px_rgba(var(--brand-rgb),0.15),inset_0_2px_0_0_rgba(255,255,255,0.2)] border-brand-a/30 z-10': pkg.featured }"
         >
+          <!-- Hover Highlight Rim -->
+          <div class="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" :class="pkg.featured ? 'via-brand-a opacity-80' : ''"></div>
           <!-- Handwriting Notes for specific cards -->
           <div v-if="idx === 0" class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
              <p class="handwriting text-brand-a text-xl rotate-3">Rapid launch focus</p>

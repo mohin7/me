@@ -29,9 +29,12 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-subtle bg-gradient-to-br from-panel/70 via-panel/50 to-panel/10 transition-all duration-700 shadow-2xl shadow-black/5 hover:shadow-2xl hover:shadow-brand-a/20 hover:border-brand-a/50"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_24px_64px_-16px_rgba(0,0,0,0.3)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]"
         >
-          <!-- Premium Grain Noise Overlay (Intensified) -->
+          <!-- Hover Highlight Rim -->
+          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
+          
+          <!-- Premium Grain Noise Overlay -->
           <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0"></div>
           
           <!-- High-Intensity Brand Glow Layer -->
@@ -94,11 +97,13 @@
       <!-- Private Work Section -->
       <!-- Compact Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[2.5rem] border border-subtle bg-panel/40 backdrop-blur-3xl transition-all duration-700 hover:border-brand-a/30 shadow-2xl">
+        <div class="relative group overflow-hidden rounded-[2.5rem] bg-white/5 backdrop-blur-3xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_32px_80px_-16px_rgba(0,0,0,0.3)] transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
+          <!-- Hover Highlight Rim -->
+          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
           
-          <!-- Background Abstract Shapes & Gradients -->
-          <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-a/[0.08] blur-[80px] group-hover:bg-brand-a/15 transition-all duration-700 pointer-events-none"></div>
-          <div class="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-brand-b/[0.05] blur-[80px] pointer-events-none"></div>
+          <!-- Architectural Background Geometry -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[0.5px] border-white/10 border-dashed rounded-full pointer-events-none opacity-20 animate-[spin_60s_linear_infinite]"></div>
+          <div class="absolute right-0 top-0 h-full w-[400px] bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
           
           <!-- Architectural Grid Pattern -->
           <div class="absolute inset-0 opacity-[0.02] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none">

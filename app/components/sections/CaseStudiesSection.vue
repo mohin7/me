@@ -1,10 +1,9 @@
 <template>
   <section id="case-studies" class="relative py-24 md:py-36 overflow-hidden">
-    <!-- Background -->
-    <div class="absolute inset-0 pointer-events-none z-0">
-      <div class="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-brand-a/[0.04] blur-[120px]"></div>
-      <div class="absolute right-0 bottom-1/4 h-[400px] w-[400px] rounded-full bg-brand-b/[0.04] blur-[100px]"></div>
-      <div class="absolute inset-0 opacity-[0.015] [background-image:radial-gradient(rgba(var(--brand-rgb),1)_1px,transparent_1px)] [background-size:32px_32px]"></div>
+    <!-- Geometric Background Structure -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border-[0.5px] border-white/10 border-dashed rounded-full pointer-events-none opacity-40 animate-[spin_120s_linear_infinite]"></div>
+      <div class="absolute right-[-10%] bottom-0 w-[600px] h-[600px] border-[0.5px] border-brand-a/10 rounded-full pointer-events-none opacity-20"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,9 +44,9 @@
       <!-- Carousel track -->
       <div class="cs-carousel-wrap">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="cs-card group">
-            <!-- Top specular -->
-            <div class="cs-light-leak"></div>
+          <div :key="active" class="group relative rounded-[2.5rem] bg-white/5 backdrop-blur-3xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_32px_80px_-16px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
+            <!-- Top specular Hover Highlight Rim -->
+            <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 w-[80%] mx-auto"></div>
 
             <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-14 items-start p-8 md:p-12">
 
@@ -160,10 +159,10 @@
       </div>
 
       <!-- Bottom CTA strip -->
-      <div class="mt-16 cs-bottom-strip">
-        <div class="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-a/10 via-transparent to-brand-b/5"></div>
-          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-a/40 to-transparent"></div>
+      <div class="mt-16 relative rounded-[2rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1)] overflow-hidden group transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_24px_64px_-12px_rgba(0,0,0,0.3),0_0_0_1px_rgba(0,0,0,0.1),0_8px_32px_rgba(var(--brand-rgb),0.15)]">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-a/10 via-transparent to-brand-b/5 opacity-50"></div>
+          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12">
           <div>
@@ -314,28 +313,6 @@ function goTo(i: number) {
   position: relative;
 }
 
-/* ─── Card ─── */
-.cs-card {
-  position: relative;
-  border-radius: 2.5rem;
-  border: 1px solid var(--border-subtle);
-  background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(255,255,255,0.02) 100%);
-  overflow: hidden;
-  box-shadow: 0 24px 64px -16px rgba(0,0,0,0.18);
-  transition: border-color 0.4s, box-shadow 0.4s;
-}
-.cs-card:hover {
-  border-color: rgba(var(--brand-rgb), 0.22);
-  box-shadow: 0 32px 80px -16px rgba(0,0,0,0.25), 0 0 0 1px rgba(var(--brand-rgb), 0.05);
-}
-.cs-light-leak {
-  position: absolute;
-  top: 0; left: 20px; right: 20px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14) 50%, transparent);
-  z-index: 5;
-  pointer-events: none;
-}
 
 /* ─── Slide transitions ─── */
 .slide-left-enter-active,
@@ -507,16 +484,6 @@ function goTo(i: number) {
   border: 1px solid rgba(var(--brand-rgb), 0.20);
 }
 
-/* ─── Bottom strip ─── */
-.cs-bottom-strip {
-  position: relative;
-  border-radius: 2rem;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-panel);
-  overflow: hidden;
-  transition: border-color 0.4s;
-}
-.cs-bottom-strip:hover { border-color: rgba(var(--brand-rgb), 0.22); }
 
 /* ─── Main CTA ─── */
 .cs-main-cta {

@@ -15,14 +15,14 @@
           <!-- Premium Grain Noise Overlay (Intensified) -->
           <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
           
-          <!-- Unique Feature: Multi-Colored Drifting Brand Glows -->
-          <div class="absolute -top-[40%] -right-[40%] h-[120%] w-[120%] opacity-20 group-hover:opacity-40 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb),0.3)_0%,transparent_70%)] blur-[120px] animate-[pulse_8s_ease-in-out_infinite]"></div>
-          <div class="absolute -bottom-[40%] -left-[40%] h-[120%] w-[120%] opacity-15 group-hover:opacity-30 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb-b,37,99,235),0.2)_0%,transparent_70%)] blur-[100px] animate-[pulse_12s_ease-in-out_infinite_reverse]"></div>
+          <!-- Sharp Architectural Geometry layered in the background -->
+          <div class="absolute -top-40 -right-40 w-[500px] h-[500px] border-[0.5px] border-white/10 border-dashed rounded-full pointer-events-none opacity-30 animate-[spin_60s_linear_infinite]"></div>
+          <div class="absolute -bottom-20 -left-20 w-[300px] h-[300px] border-[0.5px] border-brand-a/20 rounded-full pointer-events-none opacity-20"></div>
           
-          <!-- Architectural Light Leak (Lens Flare) -->
-          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-a/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-          <!-- Floating Brand Blob -->
-          <div class="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[color:var(--brand-a)]/[0.03] blur-[100px] pointer-events-none group-hover:bg-[color:var(--brand-a)]/10 transition-all duration-700"></div>
+          <div class="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
+
+          <!-- Glass Hover Highlight -->
+          <div class="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
           
           <div class="relative z-10">
             <div class="mb-12 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)] group-hover:scale-110 group-hover:rotate-6 transition-all">
@@ -51,12 +51,12 @@
            <!-- Premium Grain Noise Overlay (Intensified) -->
            <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
            
-           <!-- Unique Feature: Multi-Colored Drifting Brand Glows -->
-           <div class="absolute -top-[40%] -right-[40%] h-[120%] w-[120%] opacity-15 group-hover:opacity-30 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb),0.3)_0%,transparent_70%)] blur-[100px] animate-[pulse_8s_ease-in-out_infinite]"></div>
-           <div class="absolute -bottom-[40%] -left-[40%] h-[120%] w-[120%] opacity-10 group-hover:opacity-25 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb-b,37,99,235),0.2)_0%,transparent_70%)] blur-[80px] animate-[pulse_12s_ease-in-out_infinite_reverse]"></div>
-           
-           <!-- Architectural Light Leak (Lens Flare) -->
-           <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-a/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+           <!-- Minimalist Geometric Core -->
+           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border-[2px] border-white/5 border-dashed rounded-full pointer-events-none opacity-20 animate-[spin_30s_linear_infinite_reverse]"></div>
+           <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-a/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+           <!-- Sleek Highlights -->
+           <div class="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
            <!-- Abstract Lines -->
            <svg class="absolute right-0 bottom-0 opacity-[0.015] group-hover:opacity-[0.05] transition-opacity" width="120" height="120" viewBox="0 0 120 120" fill="none">
              <circle cx="120" cy="120" r="100" stroke="currentColor" stroke-width="2" />
@@ -79,14 +79,12 @@
            <!-- Premium Grain Noise Overlay (Intensified) -->
            <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
            
-           <!-- Unique Feature: Multi-Colored Drifting Brand Glows -->
-           <div class="absolute -top-[40%] -right-[40%] h-[120%] w-[120%] opacity-15 group-hover:opacity-30 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb),0.3)_0%,transparent_70%)] blur-[100px] animate-[pulse_8s_ease-in-out_infinite]"></div>
-           <div class="absolute -bottom-[40%] -left-[40%] h-[120%] w-[120%] opacity-10 group-hover:opacity-25 transition-opacity duration-1000 pointer-events-none rounded-full bg-[radial-gradient(circle_at_center,rgba(var(--brand-rgb-b,37,99,235),0.2)_0%,transparent_70%)] blur-[80px] animate-[pulse_12s_ease-in-out_infinite_reverse]"></div>
-           
-           <!-- Architectural Light Leak (Lens Flare) -->
-           <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-a/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-           <!-- Subtle Pulse Shape -->
-           <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-32 w-32 rounded-full bg-[color:var(--brand-a)]/[0.015] blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
+           <!-- Minimalist Geometric Core -->
+           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-brand-a/10 rounded-[28px] rotate-45 pointer-events-none opacity-30 group-hover:rotate-90 transition-transform duration-[2000ms] ease-out"></div>
+           <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white-[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+           <!-- Sleek Highlights -->
+           <div class="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
            
            <div class="relative z-10">
              <div class="relative inline-block">

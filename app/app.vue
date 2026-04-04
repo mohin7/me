@@ -8,6 +8,7 @@
       <SectionsAboutSection />
       <SectionsSpecialtiesSection />
       <SectionsSelectedWorksSection />
+      <SectionsCaseStudiesSection />
       <!-- <SectionsExperienceSection /> -->
       <SectionsMVPSprintSection />
       <SectionsPackagesSection />

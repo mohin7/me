@@ -5,25 +5,7 @@
     <div class="hero-glow-left pointer-events-none absolute -left-48 top-10 h-[50rem] w-[50rem] rounded-full blur-[120px] opacity-30 md:opacity-50"></div>
     <div class="hero-glow-right pointer-events-none absolute -right-20 top-40 h-[40rem] w-[40rem] rounded-full blur-[100px] opacity-20 md:opacity-40"></div>
 
-    <!-- Decorative Background Elements -->
-    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-[0.15]">
-      <!-- Floating Plus Signs -->
-      <span class="absolute top-[20%] left-[10%] text-brand-a/2 text-4xl font-light">+</span>
-      
-      <!-- Abstract Circle Outlines -->
-      <div class="absolute -left-20 top-[40%] h-96 w-96 rounded-full border border-brand-a/5"></div>
-      
-      <!-- Floating Dots Pattern -->
-      <div class="absolute top-[15%] right-[25%] opacity-[0.02]">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          <circle cx="10" cy="10" r="2" fill="currentColor" class="text-brand-a" />
-          <circle cx="30" cy="10" r="2" fill="currentColor" class="text-brand-a" />
-          <circle cx="50" cy="10" r="2" fill="currentColor" class="text-brand-a" />
-          <circle cx="10" cy="30" r="2" fill="currentColor" class="text-brand-a" />
-          <circle cx="10" cy="50" r="4" fill="currentColor" class="text-brand-b" />
-        </svg>
-      </div>
-    </div>
+    <!-- Clean Professional Space -->
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
       <div class="grid items-center gap-12 lg:grid-cols-2">
@@ -138,16 +120,16 @@
                 <span class="text-[10px] font-semibold tracking-wide text-main/80">Available for projects</span>
               </div>
 
-              <!-- Photo frame -->
-              <div class="relative w-[116px] h-[116px] flex items-center justify-center mb-5">
-                <div class="absolute -inset-2 rounded-full border-2 border-transparent bg-[linear-gradient(var(--bg-page,#0e0e0e),var(--bg-page,#0e0e0e))_padding-box,conic-gradient(from_0deg,var(--brand-a)_0%,var(--brand-b)_50%,var(--brand-a)_100%)_border-box] animate-[ringRotate_4s_linear_infinite]"></div>
-                <div class="absolute -inset-[14px] border-[1.5px] border-transparent rounded-full opacity-35 bg-[linear-gradient(var(--bg-page,#0e0e0e),var(--bg-page,#0e0e0e))_padding-box,conic-gradient(from_0deg,var(--brand-a)_0%,var(--brand-b)_50%,var(--brand-a)_100%)_border-box] animate-[ringRotate_8s_linear_infinite_reverse]"></div>
-                <div class="w-[106px] h-[106px] rounded-full overflow-hidden border-[3px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.35),0_0_0_3px_rgba(var(--brand-rgb),0.15)] bg-panel z-[2] relative">
-                  <img
-                    src="/img/mohin_cutout.png"
-                    alt="Md Mohin Uddin"
-                    class="w-full h-full object-cover object-top brightness-105 contrast-100"
-                  />
+              <!-- Sleek Architectural Photo Frame -->
+              <div class="relative flex items-center justify-center mb-6">
+                <div class="relative w-[116px] h-[116px] rounded-[1.75rem] overflow-hidden bg-white/[0.03] border border-white/10 shadow-[inset_0_2px_4px_rgba(255,255,255,0.05),0_16px_32px_rgba(0,0,0,0.4)] backdrop-blur-md flex items-center justify-center p-1.5 transition-transform duration-500 group-hover:scale-105">
+                  <div class="w-full h-full rounded-[1.5rem] overflow-hidden bg-panel relative">
+                    <img
+                      src="/img/mohin_cutout.png"
+                      alt="Md Mohin Uddin"
+                      class="w-full h-full object-cover object-top brightness-105 contrast-100"
+                    />
+                  </div>
                 </div>
               </div>
 

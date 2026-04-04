@@ -1,5 +1,6 @@
 <template>
   <div class="site-shell" :class="[themeClass, schemeClass]">
+    <div class="global-tactile-grid"></div>
     <SharedHeader />
     
     <main>
@@ -56,15 +57,16 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   letter-spacing: -0.01em;
 }
 
-/* Global Mesh Background — cooler, more directional */
+/* Cinematic Ambient Mesh Background — softer, deeper, richer */
 .site-shell::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -20;
   background:
-    radial-gradient(ellipse 70% 50% at 0% 0%, rgba(var(--brand-rgb), 0.035) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(var(--brand-rgb), 0.025) 0%, transparent 55%),
+    radial-gradient(circle at 0% 0%, rgba(var(--brand-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 100% 20%, rgba(var(--brand-rgb), 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(var(--brand-rgb), 0.04) 0%, transparent 60%),
     linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-end, var(--bg-page)) 100%);
   pointer-events: none;
 }
@@ -81,10 +83,22 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   mix-blend-mode: overlay;
 }
 
+/* Tactile Architectural Dot Grid */
+.global-tactile-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -15;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(var(--grid-color), var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
+}
+
 .theme-dark {
-  /* Titanium dark palette — cool blue-gray base */
-  --bg-page: #09090b;
-  --bg-page-end: #0c0d10;
+  /* Titanium dark palette — softer midnight base */
+  --bg-page: #050507;
+  --bg-page-end: #0a0b10;
   --bg-panel: rgba(255, 255, 255, 0.035);
   --bg-panel-strong: #111214;
   --bg-soft: rgba(255, 255, 255, 0.025);
@@ -92,7 +106,9 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --text-soft: #a0aec0;
   --text-muted: #64748b;
   --border-subtle: rgba(255, 255, 255, 0.06);
-  --noise-opacity: 0.04;
+  --noise-opacity: 0.05;
+  --grid-color: 255, 255, 255;
+  --grid-opacity: 0.04;
   /* Metallic shimmer tokens - Upgraded to Premium Bright Silver */
   --metallic-from: #ffffff;
   --metallic-via: #f8fafc;
@@ -110,7 +126,9 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --text-soft: #334155;
   --text-muted: #64748b;
   --border-subtle: rgba(15, 23, 42, 0.08);
-  --noise-opacity: 0.025;
+  --noise-opacity: 0.03;
+  --grid-color: 0, 0, 0;
+  --grid-opacity: 0.03;
   --metallic-from: #0f172a;
   --metallic-via: #334155;
   --metallic-to: #94a3b8;

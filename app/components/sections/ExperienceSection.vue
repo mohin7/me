@@ -5,6 +5,12 @@
         
         <!-- Sidebar Title -->
         <div class="lg:sticky lg:top-32 h-fit">
+          <div class="mb-10">
+            <span class="text-brand-a text-6xl font-black tracking-tighter">7+</span>
+            <p class="text-main text-xl font-bold tracking-tight">Years Expertise</p>
+            <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60">Industry Veteran</p>
+          </div>
+
           <h2 class="text-main mb-6 text-4xl font-black tracking-tighter md:text-5xl border-l-4 border-brand-a pl-6">
             Career <br> <span class="text-brand-a">Journey</span>
           </h2>

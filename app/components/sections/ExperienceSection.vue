@@ -1,13 +1,13 @@
 <template>
-  <section id="experience" class="py-24 md:py-32 bg-page relative overflow-hidden">
+  <section id="experience" class="py-24 md:py-32 bg-page relative overflow-visible">
     <!-- Geometric Background Decorative -->
     <div class="absolute top-0 right-0 h-full w-1/3 opacity-[0.02] pointer-events-none border-l border-brand-a border-dashed hidden lg:block"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-[340px_1fr] gap-16 md:gap-24">
+      <div class="grid lg:grid-cols-[340px_1fr] gap-16 md:gap-24 items-start">
         
         <!-- Sticky Sidebar: The Metric & Title -->
-        <div class="lg:sticky lg:top-36 h-fit">
+        <div class="lg:sticky lg:top-36 h-fit z-30">
           <div class="inline-flex flex-col mb-12">
             <div class="flex items-baseline gap-2">
               <span class="text-brand-a text-7xl font-black tracking-tighter leading-none">7+</span>

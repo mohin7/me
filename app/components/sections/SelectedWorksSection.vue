@@ -1,24 +1,22 @@
 <template>
-  <section id="works" class="relative py-24 md:py-32 overflow-hidden bg-[radial-gradient(rgba(var(--brand-rgb),0.005)_1px,transparent_1px)] [background-size:40px_40px]">
-    <!-- Background Abstract Shapes -->
-    <div class="absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-brand-a/[0.03] blur-[120px] pointer-events-none"></div>
-    <div class="absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-brand-b/[0.03] blur-[120px] pointer-events-none"></div>
-
+  <section id="works" class="relative py-24 md:py-32 overflow-hidden bg-page">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
         <div>
-          <h2 class="mb-4 text-4xl font-black tracking-tight md:text-6xl max-w-4xl leading-[0.9]">
-            <span class="metallic-text">Selected</span> <span class="brand-text-gradient">Works</span> <br> <span class="metallic-text-soft">&amp; Experiments</span>
+          <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl max-w-4xl text-main leading-tight">
+            Selected <span class="text-brand-a">Works</span> <br> & Experiments
           </h2>
-          <p class="text-soft max-w-2xl text-xl font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
+          <p class="text-soft max-w-2xl text-lg font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
         </div>
 
         <!-- Carousel Navigation -->
         <div class="flex items-center gap-4 shrink-0">
-          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel/50 text-main transition-colors hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a backdrop-blur-md" aria-label="Previous work">
+          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Previous work">
             <Icon name="lucide:arrow-left" class="h-5 w-5" />
           </button>
-          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel/50 text-main transition-colors hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a backdrop-blur-md" aria-label="Next work">
+          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Next work">
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </button>
         </div>
@@ -29,30 +27,20 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_24px_64px_-16px_rgba(0,0,0,0.3)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-brand-a/30"
         >
-          <!-- Hover Highlight Rim -->
-          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
-          
-          <!-- Premium Grain Noise Overlay -->
-          <div class="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0"></div>
-          
-          <!-- High-Intensity Brand Glow Layer -->
-          <div class="absolute -inset-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(var(--brand-rgb),0.2)_0%,transparent_50%)] mix-blend-soft-light z-0"></div>
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
             <img 
               :src="project.image" 
               :alt="project.name" 
-              class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+              class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
             
-            <!-- Floating Index / Year -->
-            <div class="absolute top-6 left-6 flex items-baseline gap-2">
-               <span class="text-white text-xs font-black uppercase tracking-[0.2em] opacity-40">0{{ idx + 1 }}</span>
-               <div class="h-px w-4 bg-white/20"></div>
-               <span class="text-white text-[0.6rem] font-bold uppercase tracking-widest opacity-80">{{ project.year }}</span>
+            <!-- Metadata Badge -->
+            <div class="absolute top-6 left-6 flex items-center gap-2">
+               <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.6rem] font-bold px-2 py-1 rounded-full uppercase tracking-widest">{{ project.year }}</span>
             </div>
 
             <!-- Absolute Hover Button -->
@@ -60,7 +48,7 @@
                <a 
                  :href="project.href" 
                  target="_blank" 
-                 class="px-6 py-3 rounded-full bg-white text-black text-sm font-black tracking-tight shadow-xl hover:scale-105 active:scale-95 transition-all"
+                 class="px-6 py-2 rounded-full bg-white text-black text-[0.8rem] font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"
                >
                  View Project ↗
                </a>
@@ -70,66 +58,47 @@
           <!-- Project Content -->
           <div class="flex-1 p-8 flex flex-col">
             <div class="flex flex-wrap gap-2 mb-6">
-              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-black uppercase tracking-[0.1em] text-brand-a bg-brand-a/5 px-3 py-1 rounded-full border border-brand-a/40">
+              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-muted bg-soft px-3 py-1 rounded-full border border-subtle">
                 {{ tag }}
               </span>
             </div>
 
-            <h3 class="text-main mb-4 text-2xl font-black tracking-tighter leading-tight group-hover:text-brand-a transition-colors">
+            <h3 class="text-main mb-4 text-2xl font-bold tracking-tight group-hover:text-brand-a transition-colors">
               {{ project.name }}
             </h3>
             
-            <p class="text-soft mb-8 text-sm font-medium leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity line-clamp-2">
+            <p class="text-soft mb-8 text-sm font-medium leading-relaxed opacity-80 line-clamp-2">
               {{ project.description }}
             </p>
 
             <div class="mt-auto pt-6 border-t border-subtle flex items-center justify-between">
-               <a :href="project.href" target="_blank" class="text-main text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:gap-3 transition-all group/link">
+               <a :href="project.href" target="_blank" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
                  Live Preview
                  <Icon name="lucide:arrow-right" class="h-4 w-4 text-brand-a transition-transform group-hover/link:translate-x-1" />
                </a>
-               <div class="h-2 w-2 rounded-full bg-emerald-500/40 animate-pulse"></div>
+               <div class="h-2 w-2 rounded-full bg-emerald-500/40"></div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Private Work Section -->
-      <!-- Compact Private Work Showcase -->
+      <!-- Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[2.5rem] bg-white/5 backdrop-blur-3xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_32px_80px_-16px_rgba(0,0,0,0.3)] transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
-          <!-- Hover Highlight Rim -->
-          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
-          
-          <!-- Architectural Background Geometry -->
-          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border-[0.5px] border-white/10 border-dashed rounded-full pointer-events-none opacity-20 animate-[spin_60s_linear_infinite]"></div>
-          <div class="absolute right-0 top-0 h-full w-[400px] bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
-          
-          <!-- Architectural Grid Pattern -->
-          <div class="absolute inset-0 opacity-[0.02] [mask-image:linear-gradient(to_bottom,black,transparent)] pointer-events-none">
-            <svg width="100%" height="100%" class="stroke-brand-a">
-              <defs>
-                <pattern id="secure-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke-width="0.5" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#secure-grid)" />
-            </svg>
-          </div>
-
-          <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center p-10 md:p-14">
+        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-brand-a/40">
+          <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+            
             <!-- Left Side: Content -->
             <div class="md:col-span-7">
-              <div class="mb-6 inline-flex items-center gap-3 px-3 py-1 rounded-full bg-brand-a/10 border border-brand-a/20">
+              <div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-subtle">
                 <Icon name="lucide:shield-check" class="h-4 w-4 text-brand-a" />
-                <span class="text-[0.6rem] font-black uppercase tracking-[0.2em] text-brand-a">Enterprise Security Protocol</span>
+                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-muted">Secured via Protocol</span>
               </div>
               
-              <h3 class="text-main mb-4 text-4xl font-black tracking-tighter md:text-5xl leading-[0.9]">
-                 Production-Grade <br> <span class="brand-text-gradient">Private Solutions</span>
+              <h3 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl leading-tight">
+                 Production-Grade <br> <span class="text-brand-a">Private Solutions</span>
               </h3>
               
-              <p class="text-soft mb-10 max-w-xl text-lg font-medium leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity">
+              <p class="text-soft mb-10 max-w-xl text-lg font-medium leading-relaxed opacity-80">
                 Deep-tech architectures and core product designs for startups moving at venture-scale. Secured under NDA to protect proprietary intellectual property.
               </p>
               
@@ -161,39 +130,31 @@
             <!-- Right Side: Graphic Visualization -->
             <div class="md:col-span-5 relative">
               <div class="relative aspect-square max-w-[280px] mx-auto">
-                <!-- Outer Pulsating Rings -->
-                <div class="absolute inset-0 border border-brand-a/5 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-30"></div>
-              
+                <!-- Architectural Visual -->
+                <div class="absolute inset-0 border border-subtle rounded-full opacity-20"></div>
                 
-                <!-- Rotating Tech Lines -->
-                <svg class="absolute inset-0 w-full h-full animate-[spin_20s_linear_infinite] opacity-20" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-dasharray="1 10" stroke-width="0.5" class="text-brand-a" />
-                </svg>
-                <svg class="absolute inset-0 w-full h-full animate-[spin_15s_linear_infinite_reverse] opacity-20" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-dasharray="4 8" stroke-width="0.5" class="text-brand-b" />
-                </svg>
-
                 <!-- Central Core -->
-                <div class="absolute inset-8 rounded-[2rem] bg-panel-strong border border-subtle shadow-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                   <div class="text-center relative">
-                     <div class="absolute -inset-4 bg-brand-a/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-                     <Icon name="lucide:lock" class="h-12 w-12 text-brand-a relative" />
-                     <p class="mt-4 text-[0.5rem] font-black uppercase tracking-[0.3em] text-muted block">Locked IP</p>
+                <div class="absolute inset-8 rounded-full bg-soft border border-subtle shadow-sm flex items-center justify-center">
+                   <div class="text-center">
+                     <Icon name="lucide:lock" class="h-10 w-10 text-brand-a opacity-80" />
+                     <p class="mt-3 text-[0.5rem] font-bold uppercase tracking-widest text-muted">Locked IP</p>
                    </div>
                 </div>
 
-                <!-- Floating Data Nodes -->
-                <div class="absolute -top-4 -right-4 h-12 w-12 rounded-xl bg-panel border border-brand-a/20 shadow-lg flex items-center justify-center animate-bounce duration-[3000ms] delay-150">
-                   <Icon name="lucide:database" class="h-5 w-5 text-brand-a/60" />
+                <!-- Floating Accents -->
+                <div class="absolute -top-4 -right-4 h-12 w-12 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
+                   <Icon name="lucide:database" class="h-5 w-5 text-brand-a opacity-40" />
                 </div>
-                <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-xl bg-panel border border-brand-b/20 shadow-lg flex items-center justify-center animate-bounce duration-[4000ms] delay-700">
-                   <Icon name="lucide:layers" class="h-4 w-4 text-brand-b/60" />
-                </div>
-                <div class="absolute top-1/2 -right-8 h-8 w-8 rounded-lg bg-panel border border-subtle shadow-lg flex items-center justify-center animate-pulse">
-                   <Icon name="lucide:zap" class="h-4 w-4 text-brand-c opacity-40" />
+                <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
+                   <Icon name="lucide:layers" class="h-4 w-4 text-brand-a opacity-40" />
                 </div>
               </div>
             </div>
+          </div>
+          
+          <!-- Subtle Accent Pattern -->
+          <div class="absolute -right-20 -bottom-20 opacity-[0.02] pointer-events-none group-hover:opacity-[0.05] transition-opacity">
+            <Icon name="lucide:layout" class="h-96 w-96 rotate-12" />
           </div>
         </div>
       </div>
@@ -236,7 +197,7 @@ const projects = [
     href: "https://kubedb.com"
   },
   {
-    name: "E-commerce — Nuxt 3 & Tailwind",
+    name: "E-commerce Storefront",
     year: "2024",
     description: "A high-performance e-commerce storefront built with Nuxt 3, featuring a modern shopping experience and responsive UI.",
     tags: ["Nuxt 3", "Tailwind CSS", "Storefront"],
@@ -244,15 +205,15 @@ const projects = [
     href: "https://github.com/mohin7/e-commerce-vuejs-nuxt3-tailwind"
   },
   {
-    name: "Holy Quran — Vue 3 App",
+    name: "Holy Quran App",
     year: "2024",
     description: "An elegant, distraction-free reading experience for the Holy Quran, optimized for mobile and web with Vue 3.",
     tags: ["Vue 3", "Tailwind CSS", "Web App"],
-    image: "/img/quran_app.png",
+    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=1200",
     href: "https://github.com/mohin7/quran-vue3-tailwind"
   },
   {
-    name: "Clean HTML — Bootstrap System",
+    name: "Clean HTML System",
     year: "2023",
     description: "A reusable, professional-grade HTML template system built with Bootstrap for rapid product prototyping.",
     tags: ["Bootstrap", "HTML/CSS", "Design System"],
@@ -264,10 +225,10 @@ const projects = [
 
 <style scoped>
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
 }
 </style>

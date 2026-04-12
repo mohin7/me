@@ -1,10 +1,7 @@
 <template>
   <section id="case-studies" class="relative py-24 md:py-36 overflow-hidden">
     <!-- Geometric Background Structure -->
-    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border-[0.5px] border-white/10 border-dashed rounded-full pointer-events-none opacity-40 animate-[spin_120s_linear_infinite]"></div>
-      <div class="absolute right-[-10%] bottom-0 w-[600px] h-[600px] border-[0.5px] border-brand-a/10 rounded-full pointer-events-none opacity-20"></div>
-    </div>
+
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -44,9 +41,7 @@
       <!-- Carousel track -->
       <div class="cs-carousel-wrap">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[2.5rem] bg-white/5 backdrop-blur-3xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1),0_32px_80px_-16px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_40px_100px_-16px_rgba(0,0,0,0.5),0_0_0_1px_rgba(0,0,0,0.1),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
-            <!-- Top specular Hover Highlight Rim -->
-            <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 w-[80%] mx-auto"></div>
+          <div :key="active" class="group relative rounded-[24px] bg-panel border border-subtle shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-gray-300">
 
             <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-14 items-start p-8 md:p-12">
 
@@ -159,21 +154,17 @@
       </div>
 
       <!-- Bottom CTA strip -->
-      <div class="mt-16 relative rounded-[2rem] bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1)] overflow-hidden group transition-all duration-700 hover:border-brand-a/30 hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.2),0_24px_64px_-12px_rgba(0,0,0,0.3),0_0_0_1px_rgba(0,0,0,0.1),0_8px_32px_rgba(var(--brand-rgb),0.15)]">
-        <div class="absolute inset-0 pointer-events-none">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-a/10 via-transparent to-brand-b/5 opacity-50"></div>
-          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        </div>
-        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12">
+      <div class="mt-16 rounded-[24px] bg-panel border border-subtle overflow-hidden p-8 md:p-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 class="text-main text-2xl md:text-3xl font-black tracking-tight mb-2">Have a problem worth solving?</h3>
             <p class="text-soft text-base leading-relaxed opacity-70 max-w-lg">I work with founders and product teams to turn messy challenges into clean, scalable solutions. Let's build something people love.</p>
           </div>
           <div class="flex shrink-0 items-center gap-3">
-            <a href="#contact" class="cs-main-cta">
-              <Icon name="lucide:calendar" class="h-4 w-4" />
+            <SharedButton tag="a" href="#contact" variant="primary" size="md">
+              <template #left><Icon name="lucide:calendar" class="h-4 w-4" /></template>
               Start a Conversation
-            </a>
+            </SharedButton>
           </div>
         </div>
       </div>
@@ -270,13 +261,13 @@ function goTo(i: number) {
   gap: 8px;
   padding: 5px 14px;
   border-radius: 100px;
-  background: rgba(var(--brand-rgb), 0.08);
-  border: 1px solid rgba(var(--brand-rgb), 0.20);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--brand-a);
+  color: var(--accent, var(--text-soft));
 }
 
 /* ─── Slide counter ─── */
@@ -294,37 +285,33 @@ function goTo(i: number) {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: 14px;
-  background: var(--bg-soft);
+  border-radius: 9999px;            /* PILL */
+  background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
   color: var(--text-soft);
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  transition: all 0.2s;
 }
 .cs-nav-btn:hover {
-  background: rgba(var(--brand-rgb), 0.10);
-  border-color: rgba(var(--brand-rgb), 0.25);
-  color: var(--brand-a);
-  transform: scale(1.07);
+  background: var(--bg-soft);
+  border-color: var(--text-muted);
+  color: var(--text-main);
 }
 
 /* ─── Carousel wrapper ─── */
-.cs-carousel-wrap {
-  position: relative;
-}
-
+.cs-carousel-wrap { position: relative; }
 
 /* ─── Slide transitions ─── */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: opacity 0.38s ease, transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.32s ease, transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.slide-left-enter-from  { opacity: 0; transform: translateX(60px); }
-.slide-left-leave-to    { opacity: 0; transform: translateX(-60px); }
-.slide-right-enter-from { opacity: 0; transform: translateX(-60px); }
-.slide-right-leave-to   { opacity: 0; transform: translateX(60px); }
+.slide-left-enter-from  { opacity: 0; transform: translateX(40px); }
+.slide-left-leave-to    { opacity: 0; transform: translateX(-40px); }
+.slide-right-enter-from { opacity: 0; transform: translateX(-40px); }
+.slide-right-leave-to   { opacity: 0; transform: translateX(40px); }
 
 /* ─── Dot indicators ─── */
 .cs-dot {
@@ -339,37 +326,30 @@ function goTo(i: number) {
 .cs-dot--active {
   width: 28px;
   border-radius: 100px;
-  background: var(--brand-a);
-  border-color: var(--brand-a);
+  background: var(--accent, var(--text-main));
+  border-color: var(--accent, var(--text-main));
 }
 
 /* ─── Tags ─── */
 .cs-tag {
   display: inline-block;
-  padding: 3px 10px;
-  border-radius: 100px;
-  background: rgba(var(--brand-rgb), 0.08);
-  border: 1px solid rgba(var(--brand-rgb), 0.18);
-  font-size: 0.62rem;
+  padding: 3px 12px;
+  border-radius: 9999px;            /* PILL */
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brand-a);
+  color: var(--text-soft);
 }
 
 /* ─── Problem/Solution blocks ─── */
 .cs-block {
   padding: 16px;
-  border-radius: 16px;
-  border: 1px solid;
-}
-.cs-block--problem {
-  background: rgba(239,68,68,0.04);
-  border-color: rgba(239,68,68,0.12);
-}
-.cs-block--solution {
-  background: rgba(var(--brand-rgb), 0.04);
-  border-color: rgba(var(--brand-rgb), 0.14);
+  border-radius: 20px;              /* 20px — secondary block */
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
 }
 .cs-block-label {
   display: flex;
@@ -382,27 +362,24 @@ function goTo(i: number) {
   color: var(--text-muted);
   margin-bottom: 8px;
 }
-.cs-block--problem .cs-block-label { color: rgba(239,68,68,0.70); }
-.cs-block--solution .cs-block-label { color: var(--brand-a); opacity: 0.85; }
 
 /* ─── Process steps ─── */
 .cs-process-step {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px 4px 5px;
-  border-radius: 100px;
-  background: var(--bg-soft);
+  padding: 4px 12px 4px 6px;
+  border-radius: 9999px;            /* PILL */
+  background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
   font-size: 0.68rem;
   font-weight: 600;
   color: var(--text-soft);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: all 0.2s;
 }
 .cs-process-step:hover {
-  background: rgba(var(--brand-rgb), 0.08);
-  border-color: rgba(var(--brand-rgb), 0.20);
-  color: var(--brand-a);
+  border-color: var(--text-muted);
+  color: var(--text-main);
 }
 .cs-process-num {
   display: inline-flex;
@@ -410,8 +387,8 @@ function goTo(i: number) {
   justify-content: center;
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: rgba(var(--brand-rgb), 0.12);
-  color: var(--brand-a);
+  background: var(--border-subtle);
+  color: var(--text-soft);
   font-size: 0.6rem;
   font-weight: 900;
 }
@@ -421,27 +398,24 @@ function goTo(i: number) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--brand-a);
   text-decoration: none;
-  transition: gap 0.2s;
+  transition: all 0.2s;
 }
 .cs-cta-link:hover { gap: 10px; }
 
 /* ─── Metric cards ─── */
 .cs-metric {
   padding: 16px;
-  border-radius: 16px;
-  background: var(--bg-soft);
+  border-radius: 20px;              /* 20px — secondary block */
+  background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
-  transition: border-color 0.25s, background 0.25s;
+  transition: all 0.25s;
 }
-.cs-metric:hover {
-  background: rgba(var(--brand-rgb), 0.04);
-  border-color: rgba(var(--brand-rgb), 0.16);
-}
+.cs-metric:hover { border-color: var(--text-muted); }
 .cs-metric-value {
   font-size: 1.6rem;
   font-weight: 900;
@@ -453,24 +427,24 @@ function goTo(i: number) {
 /* ─── Tools box ─── */
 .cs-tools-box {
   padding: 16px;
-  border-radius: 16px;
-  background: var(--bg-soft);
+  border-radius: 20px;              /* 20px — secondary block */
+  background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
 }
 .cs-tool-chip {
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 8px;
-  background: rgba(var(--brand-rgb), 0.06);
-  border: 1px solid rgba(var(--brand-rgb), 0.12);
+  padding: 4px 12px;
+  border-radius: 9999px;            /* PILL */
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
   font-size: 0.68rem;
   font-weight: 600;
   color: var(--text-soft);
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s;
 }
 .cs-tool-chip:hover {
-  background: rgba(var(--brand-rgb), 0.12);
-  color: var(--brand-a);
+  border-color: var(--text-muted);
+  color: var(--text-main);
 }
 
 /* ─── Impact badge ─── */
@@ -479,31 +453,8 @@ function goTo(i: number) {
   align-items: flex-start;
   gap: 12px;
   padding: 16px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(var(--brand-rgb), 0.08) 0%, rgba(var(--brand-rgb), 0.03) 100%);
-  border: 1px solid rgba(var(--brand-rgb), 0.20);
-}
-
-
-/* ─── Main CTA ─── */
-.cs-main-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 100px;
-  background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 8px 24px rgba(var(--brand-rgb), 0.30);
-  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
-}
-.cs-main-cta:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 12px 32px rgba(var(--brand-rgb), 0.42);
+  border-radius: 20px;              /* 20px — secondary block */
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
 }
 </style>

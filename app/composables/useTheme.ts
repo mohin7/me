@@ -1,20 +1,13 @@
 type Theme = 'light' | 'dark'
 
 export const useTheme = () => {
-  const theme = useState<Theme>('site-theme', () => 'dark')
+  const theme = useState<Theme>('site-theme', () => 'light')
   const initialized = useState('site-theme-initialized', () => false)
 
   const applyTheme = (nextTheme: Theme) => {
     theme.value = nextTheme
-
     if (import.meta.client) {
       localStorage.setItem('site-theme', nextTheme)
-      document.documentElement.setAttribute('data-theme', nextTheme)
-      // Also re-apply brand scheme to ensure both are always in sync
-      const scheme = localStorage.getItem('site-brand-scheme')
-      if (scheme) {
-        document.documentElement.setAttribute('data-brand-scheme', scheme)
-      }
     }
   }
 
@@ -29,9 +22,5 @@ export const useTheme = () => {
     initialized.value = true
   }
 
-  return {
-    theme,
-    toggleTheme,
-    applyTheme
-  }
+  return { theme, toggleTheme, applyTheme }
 }

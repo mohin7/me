@@ -1,171 +1,172 @@
 <template>
-  <section id="case-studies" class="relative py-24 md:py-36 overflow-hidden">
-    <!-- Geometric Background Structure -->
-
+  <section id="case-studies" class="relative py-24 md:py-40 bg-page overflow-visible">
+    <!-- Section Decorative Elements -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-subtle to-transparent"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Section header + nav controls -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
-        <div class="max-w-2xl">
-          <div class="cs-label mb-5">
-            <Icon name="lucide:search" class="h-3.5 w-3.5 text-brand-a" />
-            <span>Real Outcomes · Real Clients</span>
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-12 mb-20">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-subtle mb-8">
+            <div class="h-2 w-2 rounded-full bg-brand-a animate-pulse"></div>
+            <span class="text-brand-a text-[0.65rem] font-black uppercase tracking-[0.2em]">Evidence Gallery</span>
           </div>
-          <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-[0.9] mb-4">
-            <span class="metallic-text">Problems I Solved,</span><br>
-            <span class="brand-text-gradient">Results That Speak</span>
+          <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8 text-main">
+            Problems Solved, <br> <span class="text-brand-a italic">Outcomes Delivered.</span>
           </h2>
-          <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
-            How I diagnose, design, and deliver solutions that move the needle — with measurable outcomes.
+          <p class="text-soft text-xl font-medium leading-relaxed opacity-70 max-w-2xl">
+            A selective collection of complex product challenges resolved through disciplined design and engineering.
           </p>
         </div>
 
-        <!-- Carousel nav -->
-        <div class="flex items-center gap-4 shrink-0">
-          <!-- Slide counter -->
-          <span class="cs-counter">
-            <span class="text-brand-a font-black">{{ String(active + 1).padStart(2, '0') }}</span>
-            <span class="text-muted">&nbsp;/&nbsp;{{ String(caseStudies.length).padStart(2, '0') }}</span>
-          </span>
-          <!-- Arrows -->
-          <button @click="prev" class="cs-nav-btn" aria-label="Previous">
-            <Icon name="lucide:arrow-left" class="h-5 w-5" />
+        <!-- Carousel Navigation -->
+        <div class="flex items-center gap-6 shrink-0 bg-panel border border-subtle p-2 rounded-full shadow-sm">
+          <button @click="prev" class="cs-nav-btn-v2" aria-label="Previous">
+            <Icon name="lucide:chevron-left" class="h-5 w-5" />
           </button>
-          <button @click="next" class="cs-nav-btn" aria-label="Next">
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+          <div class="flex flex-col items-center min-w-[60px]">
+            <span class="text-main text-sm font-black tracking-tighter tabular-nums">{{ String(active + 1).padStart(2, '0') }}</span>
+            <span class="text-muted text-[0.6rem] font-bold uppercase opacity-40">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
+          </div>
+          <button @click="next" class="cs-nav-btn-v2" aria-label="Next">
+            <Icon name="lucide:chevron-right" class="h-5 w-5" />
           </button>
         </div>
       </div>
 
-      <!-- Carousel track -->
-      <div class="cs-carousel-wrap">
+      <!-- Main Case Study Display -->
+      <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[24px] bg-panel border border-subtle shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-gray-300">
+          <div :key="active" class="group relative overflow-hidden rounded-[32px] bg-panel border border-subtle p-8 md:p-16 transition-all duration-700">
+            
+            <!-- Abstract Blueprint Background -->
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03] grayscale invert dark:invert-0" 
+                 style="background-image: radial-gradient(var(--brand-a) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-            <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-14 items-start p-8 md:p-12">
+            <div class="relative z-10 grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-24">
 
-              <!-- LEFT: narrative -->
-              <div class="md:col-span-7 flex flex-col gap-7">
-                <!-- Tags -->
-                <div class="flex flex-wrap items-center gap-2">
-                  <span class="cs-tag" v-for="tag in caseStudies[active].tags" :key="tag">{{ tag }}</span>
-                </div>
-
-                <!-- Title + context -->
-                <div>
-                  <h3 class="text-main text-2xl md:text-[1.75rem] font-black tracking-tight leading-tight mb-3">
-                    {{ caseStudies[active].title }}
-                  </h3>
-                  <p class="text-soft text-base font-medium leading-relaxed opacity-75">
-                    {{ caseStudies[active].context }}
-                  </p>
-                </div>
-
-                <!-- Problem / Solution -->
-                <div class="grid sm:grid-cols-2 gap-4">
-                  <div class="cs-block cs-block--problem">
-                    <div class="cs-block-label">
-                      <Icon name="lucide:alert-triangle" class="h-3.5 w-3.5" />
-                      The Problem
-                    </div>
-                    <p class="text-main/80 text-sm leading-relaxed">{{ caseStudies[active].problem }}</p>
-                  </div>
-                  <div class="cs-block cs-block--solution">
-                    <div class="cs-block-label">
-                      <Icon name="lucide:lightbulb" class="h-3.5 w-3.5" />
-                      My Approach
-                    </div>
-                    <p class="text-main/80 text-sm leading-relaxed">{{ caseStudies[active].solution }}</p>
-                  </div>
-                </div>
-
-                <!-- Process steps -->
-                <div>
-                  <p class="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Design Process</p>
-                  <div class="flex flex-wrap gap-2">
-                    <span v-for="(step, si) in caseStudies[active].process" :key="si" class="cs-process-step">
-                      <span class="cs-process-num">{{ si + 1 }}</span>
-                      {{ step }}
+              <!-- NARRATIVE SIDE -->
+              <div class="flex flex-col gap-10">
+                <!-- Industry & Tags -->
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="bg-brand-a/10 text-brand-a text-[0.6rem] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-brand-a/20">
+                    {{ caseStudies[active].tags[0] }}
+                  </span>
+                  <div class="h-px w-8 bg-subtle"></div>
+                  <div class="flex gap-2">
+                    <span v-for="tag in caseStudies[active].tags.slice(1)" :key="tag" class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-60">
+                      {{ tag }}
                     </span>
                   </div>
                 </div>
 
-                <!-- CTA -->
-                <div class="flex items-center gap-4 pt-1">
-                  <a :href="caseStudies[active].href" target="_blank" class="cs-cta-link group/cta">
-                    View Case Details
-                    <Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
-                  </a>
-                </div>
-              </div>
+                <!-- Strategic Title -->
+                <h3 class="text-main text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] group-hover:text-brand-a transition-colors">
+                  {{ caseStudies[active].title }}
+                </h3>
 
-              <!-- RIGHT: metrics + tools + impact -->
-              <div class="md:col-span-5 flex flex-col gap-4">
-                <!-- Metrics -->
-                <div class="grid grid-cols-2 gap-3">
-                  <div
-                    v-for="(metric, mi) in caseStudies[active].metrics"
-                    :key="mi"
-                    class="cs-metric"
-                    :class="mi === 0 ? 'col-span-2' : ''"
-                  >
-                    <div class="flex items-center gap-2 mb-1">
-                      <Icon :name="metric.icon" class="h-4 w-4 text-brand-a shrink-0" />
-                      <span class="text-[10px] font-black uppercase tracking-[0.15em] text-muted">{{ metric.label }}</span>
+                <!-- Problem vs Solution Split -->
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                       <div class="h-8 w-8 rounded-lg bg-soft flex items-center justify-center border border-subtle">
+                         <Icon name="lucide:target" class="h-4 w-4 text-muted" />
+                       </div>
+                       <span class="text-main text-[0.65rem] font-black uppercase tracking-widest italic outline-text">The Challenge</span>
                     </div>
-                    <p class="cs-metric-value">{{ metric.value }}</p>
-                    <p class="text-soft text-xs leading-snug opacity-60 mt-1">{{ metric.sub }}</p>
+                    <p class="text-soft text-base font-medium leading-relaxed opacity-80">
+                      {{ caseStudies[active].problem }}
+                    </p>
+                  </div>
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                       <div class="h-8 w-8 rounded-lg bg-brand-a/10 flex items-center justify-center border border-brand-a/20">
+                         <Icon name="lucide:zap" class="h-4 w-4 text-brand-a" />
+                       </div>
+                       <span class="text-brand-a text-[0.65rem] font-black uppercase tracking-widest italic">The Intervention</span>
+                    </div>
+                    <p class="text-soft text-base font-medium leading-relaxed opacity-80">
+                      {{ caseStudies[active].solution }}
+                    </p>
                   </div>
                 </div>
 
-                <!-- Tools -->
-                <div class="cs-tools-box">
-                  <p class="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Tools & Stack</p>
-                  <div class="flex flex-wrap gap-2">
-                    <span v-for="tool in caseStudies[active].tools" :key="tool" class="cs-tool-chip">{{ tool }}</span>
-                  </div>
-                </div>
-
-                <!-- Impact -->
-                <div class="cs-impact-badge">
-                  <Icon name="lucide:trending-up" class="h-5 w-5 text-brand-a shrink-0 mt-0.5" />
-                  <div>
-                    <p class="text-main text-sm font-black leading-tight mb-0.5">{{ caseStudies[active].impact.headline }}</p>
-                    <p class="text-soft text-xs leading-snug opacity-70">{{ caseStudies[active].impact.detail }}</p>
+                <!-- Process Sequence -->
+                <div class="pt-8 border-t border-subtle/50">
+                  <p class="text-[0.6rem] font-black uppercase tracking-[0.3em] text-muted mb-6">Execution Protocol</p>
+                  <div class="flex flex-wrap gap-4">
+                    <div v-for="(step, si) in caseStudies[active].process" :key="si" class="flex items-center gap-3 group/step">
+                      <span class="text-main text-sm font-black opacity-30 group-hover/step:opacity-100 group-hover/step:text-brand-a transition-all tabular-nums">0{{ si + 1 }}</span>
+                      <span class="text-soft text-xs font-bold tracking-tight opacity-60">{{ step }}</span>
+                      <span v-if="si < caseStudies[active].process.length - 1" class="text-subtle opacity-30 mt-0.5 md:mx-1 font-mono">→</span>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <!-- DATA & OUTCOME SIDE -->
+              <div class="flex flex-col gap-6">
+                <!-- Primary Outcome Metric -->
+                <div class="bg-panel-strong border border-subtle rounded-[24px] p-8 space-y-4 relative overflow-hidden group/metric">
+                  <div class="absolute -right-4 -bottom-4 opacity-[0.03] group-hover/metric:opacity-[0.06] transition-opacity">
+                    <Icon :name="caseStudies[active].metrics[0].icon" class="h-40 w-40 text-main" />
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <Icon :name="caseStudies[active].metrics[0].icon" class="h-5 w-5 text-brand-a" />
+                    <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">{{ caseStudies[active].metrics[0].label }}</span>
+                  </div>
+                  <div class="text-6xl font-black text-main tracking-tighter leading-none">{{ caseStudies[active].metrics[0].value }}</div>
+                  <p class="text-soft text-sm font-medium opacity-60 leading-snug">{{ caseStudies[active].metrics[0].sub }}</p>
+                </div>
+
+                <!-- Supporting Metrics Grid -->
+                <div class="grid grid-cols-2 gap-6">
+                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel border border-subtle rounded-[20px] p-6 space-y-3">
+                    <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest block">{{ metric.label }}</span>
+                    <div class="text-2xl font-black text-main tracking-tight">{{ metric.value }}</div>
+                    <p class="text-muted text-[0.65rem] font-medium leading-tight opacity-60">{{ metric.sub }}</p>
+                  </div>
+                </div>
+
+                <!-- Tools Stack -->
+                <div class="bg-soft/30 border border-subtle/50 rounded-[20px] p-6">
+                  <p class="text-[0.6rem] font-black uppercase tracking-widest text-muted mb-4">Crafting Stack</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span v-for="tool in caseStudies[active].tools" :key="tool" class="px-3 py-1 bg-panel border border-subtle rounded-md text-[0.65rem] font-bold text-soft">
+                      {{ tool }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Final Impact Statement -->
+                <div class="bg-brand-a text-white rounded-[24px] p-8 shadow-xl shadow-brand-a/20">
+                  <div class="flex items-center gap-3 mb-4">
+                    <Icon name="lucide:check-circle-2" class="h-5 w-5" />
+                    <span class="text-[0.65rem] font-black uppercase tracking-widest opacity-80">Strategic Impact</span>
+                  </div>
+                  <p class="text-lg font-black leading-tight mb-2 italic">"{{ caseStudies[active].impact.headline }}"</p>
+                  <p class="text-white/70 text-sm font-medium leading-relaxed">{{ caseStudies[active].impact.detail }}</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </Transition>
-
-        <!-- Dot indicators -->
-        <div class="flex items-center justify-center gap-2.5 mt-8">
-          <button
-            v-for="(_, i) in caseStudies"
-            :key="i"
-            @click="goTo(i)"
-            class="cs-dot"
-            :class="i === active ? 'cs-dot--active' : ''"
-            :aria-label="`Go to case study ${i + 1}`"
-          ></button>
-        </div>
       </div>
 
-      <!-- Bottom CTA strip -->
-      <div class="mt-16 rounded-[24px] bg-panel border border-subtle overflow-hidden p-8 md:p-12">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 class="text-main text-2xl md:text-3xl font-black tracking-tight mb-2">Have a problem worth solving?</h3>
-            <p class="text-soft text-base leading-relaxed opacity-70 max-w-lg">I work with founders and product teams to turn messy challenges into clean, scalable solutions. Let's build something people love.</p>
-          </div>
-          <div class="flex shrink-0 items-center gap-3">
-            <SharedButton tag="a" href="#contact" variant="primary" size="md">
-              <template #left><Icon name="lucide:calendar" class="h-4 w-4" /></template>
-              Start a Conversation
-            </SharedButton>
-          </div>
+      <!-- Quick Conversation CTA -->
+      <div class="mt-16 flex flex-col md:flex-row items-center gap-8 bg-panel border border-subtle p-8 md:px-12 md:py-14 rounded-[40px] shadow-sm">
+        <div class="max-w-xl text-center md:text-left">
+          <h4 class="text-main text-3xl font-black tracking-tighter mb-4">Facing a complex product barrier?</h4>
+          <p class="text-soft text-lg font-medium opacity-70">I help transition products from "working" to "winning" through high-impact design and architectural clarity.</p>
+        </div>
+        <div class="h-px w-full md:w-16 bg-subtle hidden md:block"></div>
+        <div class="shrink-0">
+          <SharedButton tag="a" href="#contact" variant="primary" size="lg">
+            Discuss Case Studies
+            <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
+          </SharedButton>
         </div>
       </div>
 
@@ -254,207 +255,42 @@ function goTo(i: number) {
 </script>
 
 <style scoped>
-/* ─── Label ─── */
-.cs-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  border-radius: 100px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent, var(--text-soft));
-}
-
-/* ─── Slide counter ─── */
-.cs-counter {
-  font-size: 0.8rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.05em;
-}
-
-/* ─── Nav buttons ─── */
-.cs-nav-btn {
+/* ─── Nav Buttons V2 ─── */
+.cs-nav-btn-v2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 9999px;            /* PILL */
-  background: var(--bg-panel);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-soft);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.cs-nav-btn:hover {
+  width: 48px;
+  height: 48px;
+  border-radius: 99px;
   background: var(--bg-soft);
-  border-color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
   color: var(--text-main);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cs-nav-btn-v2:hover {
+  background: var(--brand-a);
+  border-color: var(--brand-a);
+  color: white;
+  transform: scale(1.05);
 }
 
-/* ─── Carousel wrapper ─── */
-.cs-carousel-wrap { position: relative; }
-
-/* ─── Slide transitions ─── */
+/* ─── Transitions ─── */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: opacity 0.32s ease, transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.slide-left-enter-from  { opacity: 0; transform: translateX(40px); }
-.slide-left-leave-to    { opacity: 0; transform: translateX(-40px); }
-.slide-right-enter-from { opacity: 0; transform: translateX(-40px); }
-.slide-right-leave-to   { opacity: 0; transform: translateX(40px); }
+.slide-left-enter-from  { opacity: 0; transform: translateX(60px) scale(0.98); }
+.slide-left-leave-to    { opacity: 0; transform: translateX(-60px) scale(0.98); }
+.slide-right-enter-from { opacity: 0; transform: translateX(-60px) scale(0.98); }
+.slide-right-leave-to   { opacity: 0; transform: translateX(60px) scale(0.98); }
 
-/* ─── Dot indicators ─── */
-.cs-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border-subtle);
-  border: 1px solid var(--border-subtle);
-  cursor: pointer;
-  transition: background 0.25s, width 0.3s cubic-bezier(0.4,0,0.2,1), border-radius 0.3s;
-}
-.cs-dot--active {
-  width: 28px;
-  border-radius: 100px;
-  background: var(--accent, var(--text-main));
-  border-color: var(--accent, var(--text-main));
-}
-
-/* ─── Tags ─── */
-.cs-tag {
-  display: inline-block;
-  padding: 3px 12px;
-  border-radius: 9999px;            /* PILL */
-  background: var(--bg-soft);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-}
-
-/* ─── Problem/Solution blocks ─── */
-.cs-block {
-  padding: 16px;
-  border-radius: 20px;              /* 20px — secondary block */
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-soft);
-}
-.cs-block-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.62rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-/* ─── Process steps ─── */
-.cs-process-step {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px 4px 6px;
-  border-radius: 9999px;            /* PILL */
-  background: var(--bg-panel);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-soft);
-  transition: all 0.2s;
-}
-.cs-process-step:hover {
-  border-color: var(--text-muted);
-  color: var(--text-main);
-}
-.cs-process-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  background: var(--border-subtle);
-  color: var(--text-soft);
-  font-size: 0.6rem;
-  font-weight: 900;
-}
-
-/* ─── CTA link ─── */
-.cs-cta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--brand-a);
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.cs-cta-link:hover { gap: 10px; }
-
-/* ─── Metric cards ─── */
-.cs-metric {
-  padding: 16px;
-  border-radius: 20px;              /* 20px — secondary block */
-  background: var(--bg-panel);
-  border: 1px solid var(--border-subtle);
-  transition: all 0.25s;
-}
-.cs-metric:hover { border-color: var(--text-muted); }
-.cs-metric-value {
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--text-main);
-  line-height: 1;
-}
-
-/* ─── Tools box ─── */
-.cs-tools-box {
-  padding: 16px;
-  border-radius: 20px;              /* 20px — secondary block */
-  background: var(--bg-panel);
-  border: 1px solid var(--border-subtle);
-}
-.cs-tool-chip {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 9999px;            /* PILL */
-  background: var(--bg-soft);
-  border: 1px solid var(--border-subtle);
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-soft);
-  transition: all 0.2s;
-}
-.cs-tool-chip:hover {
-  border-color: var(--text-muted);
-  color: var(--text-main);
-}
-
-/* ─── Impact badge ─── */
-.cs-impact-badge {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 16px;
-  border-radius: 20px;              /* 20px — secondary block */
-  background: var(--bg-soft);
-  border: 1px solid var(--border-subtle);
+/* ─── Typography Accents ─── */
+.outline-text {
+  -webkit-text-stroke: 1px var(--border-subtle);
+  color: transparent;
 }
 </style>
+

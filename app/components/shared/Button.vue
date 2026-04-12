@@ -56,15 +56,15 @@ const variantClasses = computed(() => {
   }
 })
 
-/* ── Unified 8px radius on all sizes ── */
+/* ── Unified Pill radius on all sizes ── */
 const sizeClasses = computed(() => {
   switch (props.size) {
-    case 'xs': return 'h-8 px-3 text-[0.65rem] rounded-full'
-    case 'sm': return 'h-9 px-4 text-xs rounded-full'
-    case 'md': return 'h-11 px-5 text-[0.8rem] rounded-full'
-    case 'lg': return 'h-13 px-6 text-[0.85rem] rounded-full'
-    case 'xl': return 'h-14 px-8 text-sm rounded-full'
-    default:   return 'h-11 px-5 text-[0.8rem] rounded-full'
+    case 'xs': return 'h-8 px-4 text-[0.65rem] rounded-full'
+    case 'sm': return 'h-9 px-4.5 text-xs rounded-full'
+    case 'md': return 'h-12 px-6 text-[0.8rem] rounded-full'
+    case 'lg': return 'h-14 px-8 text-[0.85rem] rounded-full'
+    case 'xl': return 'h-16 px-10 text-sm rounded-full'
+    default:   return 'h-12 px-6 text-[0.8rem] rounded-full'
   }
 })
 </script>

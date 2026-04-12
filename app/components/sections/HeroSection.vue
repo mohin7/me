@@ -81,14 +81,14 @@
           </div>
 
           <!-- CTAs -->
-          <div class="flex items-center gap-4 flex-wrap">
-            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="shadow-lg shadow-brand-a/20">
+          <div class="flex items-center gap-5 flex-wrap">
+            <SharedButton tag="a" href="#contact" variant="primary" size="lg">
               Transform your Idea
               <template #right>
                 <Icon name="zap" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton tag="a" href="#works" variant="outline" size="lg" class="bg-panel/20 border border-subtle">
+            <SharedButton tag="a" href="#works" variant="outline" size="lg" class="bg-panel/20 backdrop-blur-md">
               View Portfolios
             </SharedButton>
           </div>

@@ -1,8 +1,12 @@
 <template>
-  <section id="process" class="py-24 md:py-40 bg-page relative overflow-visible">
+  <section id="process" class="py-24 md:py-40 bg-soft/50 relative overflow-visible border-y border-subtle/50">
     <!-- Schematic Background Grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.05] dark:opacity-[0.03]" 
          style="background-image: linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <!-- Atmospheric Glow -->
+    <div class="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-page to-transparent pointer-events-none"></div>
+    <div class="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-page to-transparent pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-[400px_1fr] gap-20 items-start">

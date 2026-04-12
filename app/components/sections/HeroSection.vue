@@ -83,7 +83,7 @@
             </div>
 
             <!-- Organized Tech Dock (Vertical) -->
-            <div class="absolute -left-5 top-16 md:-left-8 md:top-24 hidden sm:flex flex-col gap-4 p-3.5 rounded-[20px] bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.1),inset_0_1px_rgba(255,255,255,1)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_8s_ease-in-out_infinite] z-20">
+            <div class="absolute -left-5 top-16 md:-left-8 md:top-24 hidden sm:flex flex-col gap-4 p-3.5 rounded-[20px] bg-panel border-subtle backdrop-blur-2xl border shadow-2xl animate-[floatSlow_8s_ease-in-out_infinite] z-20">
               <Icon name="logos:figma" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
               <div class="w-full h-px bg-black/5 dark:bg-white/10"></div>
               <Icon name="logos:vue" class="w-5 h-5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110 transition-all cursor-pointer drop-shadow-md" />
@@ -96,7 +96,7 @@
             </div>
 
             <!-- Floating Premium Badge (Horizontal Pill) -->
-            <div class="absolute -right-4 -top-4 md:-right-8 md:-top-4 hidden sm:flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/60 dark:bg-[#0a0a0a]/80 backdrop-blur-3xl border border-black/5 dark:border-brand-a/20 shadow-[0_16px_32px_rgba(0,0,0,0.1),inset_0_1px_rgba(255,255,255,1)] dark:shadow-[0_16px_32px_rgba(0,0,0,0.4),inset_0_1px_rgba(255,255,255,0.15)] animate-[floatSlow_6s_ease-in-out_1s_infinite_reverse] z-20 group/badge hover:border-brand-a/40 transition-colors cursor-default">
+            <div class="absolute -right-4 -top-4 md:-right-8 md:-top-4 hidden sm:flex items-center gap-3 px-5 py-3 rounded-2xl bg-panel border-subtle backdrop-blur-3xl border shadow-2xl animate-[floatSlow_6s_ease-in-out_1s_infinite_reverse] z-20 group/badge hover:border-brand-a/40 transition-colors cursor-default">
                <div class="relative flex items-center justify-center">
                  <Icon name="lucide:hexagon" class="w-6 h-6 text-brand-a/80 animate-[spin_10s_linear_infinite]" />
                  <div class="absolute w-1.5 h-1.5 bg-brand-a rounded-full animate-pulse shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)]"></div>
@@ -108,7 +108,7 @@
             </div>
 
             <!-- Main glass card -->
-            <div class="group relative w-full rounded-[28px] bg-white/80 dark:bg-white/5 backdrop-blur-2xl backdrop-saturate-[1.8] border border-black/5 dark:border-white/10 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.9),0_32px_80px_-16px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.18),0_32px_80px_-16px_rgba(0,0,0,0.45),0_0_0_1px_rgba(0,0,0,0.08),0_8px_32px_rgba(var(--brand-rgb),0.08)] transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden hover:-translate-y-[6px] hover:scale-[1.012] hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,1),0_40px_100px_-16px_rgba(0,0,0,0.12)] dark:hover:shadow-[inset_0_2px_0_0_rgba(255,255,255,0.22),0_40px_100px_-16px_rgba(0,0,0,0.50),0_0_0_1px_rgba(0,0,0,0.10),0_12px_48px_rgba(var(--brand-rgb),0.15)]">
+            <div class="group relative w-full rounded-[28px] bg-panel border-subtle backdrop-blur-[32px] border shadow-2xl transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden hover:-translate-y-[6px] hover:scale-[1.012] hover:shadow-[0_40px_100px_-16px_rgba(0,0,0,0.3)]">
             <!-- Inner highlight rim -->
             <div class="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full z-10 pointer-events-none" aria-hidden="true"></div>
 
@@ -122,7 +122,7 @@
 
               <!-- Sleek Architectural Photo Frame -->
               <div class="relative flex items-center justify-center mb-6">
-                <div class="relative w-[116px] h-[116px] rounded-[1.75rem] overflow-hidden bg-white/[0.03] border border-white/10 shadow-[inset_0_2px_4px_rgba(255,255,255,0.05),0_16px_32px_rgba(0,0,0,0.4)] backdrop-blur-md flex items-center justify-center p-1.5 transition-transform duration-500 group-hover:scale-105">
+                <div class="relative w-[116px] h-[116px] rounded-[1.75rem] overflow-hidden bg-panel border border-subtle shadow-xl backdrop-blur-md flex items-center justify-center p-1.5 transition-transform duration-500 group-hover:scale-105">
                   <div class="w-full h-full rounded-[1.5rem] overflow-hidden bg-panel relative">
                     <img
                       src="/img/mohin_cutout.png"
@@ -147,24 +147,23 @@
 
 
 
-              <!-- Social links row -->
               <div class="flex items-center gap-3 mb-6">
-                <a href="https://github.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 text-soft transition-all duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a hover:-translate-y-[2px]" aria-label="GitHub">
+                <a href="https://github.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-panel-strong border border-subtle text-soft transition-all duration-200 hover:border-brand-a hover:text-brand-a hover:-translate-y-[2px] shadow-sm" aria-label="GitHub">
                   <Icon name="lucide:github" class="h-4 w-4" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 text-soft transition-all duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a hover:-translate-y-[2px]" aria-label="LinkedIn">
+                <a href="https://linkedin.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-panel-strong border border-subtle text-soft transition-all duration-200 hover:border-brand-a hover:text-brand-a hover:-translate-y-[2px] shadow-sm" aria-label="LinkedIn">
                   <Icon name="lucide:linkedin" class="h-4 w-4" />
                 </a>
-                <a href="https://twitter.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 text-soft transition-all duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a hover:-translate-y-[2px]" aria-label="Twitter/X">
+                <a href="https://twitter.com" target="_blank" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-panel-strong border border-subtle text-soft transition-all duration-200 hover:border-brand-a hover:text-brand-a hover:-translate-y-[2px] shadow-sm" aria-label="Twitter/X">
                   <Icon name="lucide:twitter" class="h-4 w-4" />
                 </a>
-                <a href="mailto:me@mohin.dev" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 text-soft transition-all duration-200 hover:bg-brand-a/10 hover:border-brand-a/30 hover:text-brand-a hover:-translate-y-[2px]" aria-label="Email">
+                <a href="mailto:me@mohin.dev" class="flex items-center justify-center w-9 h-9 rounded-[10px] bg-panel-strong border border-subtle text-soft transition-all duration-200 hover:border-brand-a hover:text-brand-a hover:-translate-y-[2px] shadow-sm" aria-label="Email">
                   <Icon name="lucide:mail" class="h-4 w-4" />
                 </a>
               </div>
 
               <!-- CTA button -->
-              <a href="#works" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-white/[0.03] border border-white/10 text-main font-semibold text-xs tracking-[0.02em] transition-all duration-200 no-underline hover:bg-white/[0.06] hover:border-white/20 hover:text-white hover:-translate-y-[2px] w-full">
+              <a href="#works" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[12px] bg-panel-strong border border-subtle text-main font-semibold text-xs tracking-[0.02em] transition-all duration-200 no-underline hover:border-brand-a hover:text-brand-a hover:-translate-y-[2px] w-full shadow-lg">
                 <Icon name="lucide:layout-grid" class="h-3.5 w-3.5 opacity-70" />
                 View Selected Works
               </a>

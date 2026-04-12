@@ -20,13 +20,25 @@
           <SharedButton tag="a" href="https://github.com/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg">Explore GitHub</SharedButton>
         </div>
       </div>
-      <div>
-        <div class="bg-panel border-subtle aspect-square rounded-2xl border p-8 shadow-2xl shadow-black/15">
-          <div class="text-center">
-            <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)]">
-              <SharedIcon name="user" class="h-10 w-10" />
+      <div class="relative w-full max-w-lg mx-auto lg:max-w-none">
+        <div class="absolute -inset-1 z-0 rounded-[3rem] bg-gradient-to-tr from-orange-500 to-pink-500 opacity-20 blur-3xl transition-opacity duration-500 hover:opacity-40"></div>
+        <div class="bg-panel border-subtle relative z-10 overflow-hidden rounded-[2.5rem] border shadow-2xl shadow-black/40">
+          <img src="/hero-graphic.png" alt="Abstract 3D Art" class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105" />
+          
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between rounded-2xl border border-white/10 bg-black/60 p-4 backdrop-blur-md">
+            <div class="flex items-center gap-3">
+               <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-pink-500 text-white">
+                 <SharedIcon name="ph:star-four-fill" class="h-5 w-5" />
+               </div>
+               <div>
+                  <p class="text-sm font-medium text-white">Design Leader</p>
+                  <p class="text-xs text-gray-300">UI/UX & Systems</p>
+               </div>
             </div>
-            <p class="text-soft">Profile Snapshot</p>
+            <div class="text-right">
+              <p class="text-lg font-bold text-white">10+</p>
+              <p class="text-xs text-gray-300">Years Exp.</p>
+            </div>
           </div>
         </div>
       </div>

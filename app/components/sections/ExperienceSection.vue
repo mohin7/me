@@ -22,7 +22,8 @@
           <div 
             v-for="(job, idx) in experience" 
             :key="idx" 
-            class="group py-12 transition-all"
+            class="group py-12 transition-all reveal-item"
+            :style="{ animationDelay: `${idx * 0.15}s` }"
           >
             <div class="grid md:grid-cols-[160px_1fr] gap-8">
               <!-- Period -->
@@ -85,4 +86,16 @@ const experience = [
   }
 ]
 </script>
+
+<style scoped>
+.reveal-item {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 

@@ -59,12 +59,12 @@ const variantClasses = computed(() => {
 /* ── Unified 8px radius on all sizes ── */
 const sizeClasses = computed(() => {
   switch (props.size) {
-    case 'xs': return 'h-7 px-3 text-[0.65rem] rounded-full'
-    case 'sm': return 'h-8 px-3.5 text-xs rounded-full'
-    case 'md': return 'h-9 px-4 text-[0.8rem] rounded-full'
-    case 'lg': return 'h-10 px-5 text-[0.85rem] rounded-full'
-    case 'xl': return 'h-12 px-6 text-sm rounded-full'
-    default:   return 'h-9 px-4 text-[0.8rem] rounded-full'
+    case 'xs': return 'h-8 px-3 text-[0.65rem] rounded-full'
+    case 'sm': return 'h-9 px-4 text-xs rounded-full'
+    case 'md': return 'h-11 px-5 text-[0.8rem] rounded-full'
+    case 'lg': return 'h-13 px-6 text-[0.85rem] rounded-full'
+    case 'xl': return 'h-14 px-8 text-sm rounded-full'
+    default:   return 'h-11 px-5 text-[0.8rem] rounded-full'
   }
 })
 </script>
@@ -73,37 +73,65 @@ const sizeClasses = computed(() => {
 .btn-primary {
   background: var(--accent);
   color: var(--accent-fg);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+.btn-primary:hover::after {
+  left: 100%;
 }
 .btn-primary:hover {
-  opacity: 0.9;
-  box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(var(--accent-rgb), 0.3);
 }
 
 .btn-outline {
-  border: 1.5px solid var(--border-subtle);
+  border: 1px solid var(--border-subtle);
   color: var(--text-main);
   background: transparent;
+  font-weight: 700;
 }
 .btn-outline:hover {
-  border-color: var(--text-muted);
+  border-color: var(--brand-a);
+  color: var(--brand-a);
   background: var(--bg-soft);
+  transform: translateY(-2px);
 }
 
 .btn-glass {
   background: var(--bg-panel);
+  background-opacity: 0.6;
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border-subtle);
   color: var(--text-main);
 }
 .btn-glass:hover {
-  border-color: var(--text-muted);
+  border-color: var(--brand-a);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
   color: var(--text-soft);
   background: transparent;
+  font-weight: 700;
 }
 .btn-ghost:hover {
-  color: var(--text-main);
+  color: var(--brand-a);
   background: var(--bg-soft);
 }
 </style>
+

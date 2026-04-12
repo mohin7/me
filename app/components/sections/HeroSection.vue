@@ -4,18 +4,18 @@
     <!-- ── Enhanced Visual Texture Layers (Adaptive Theme) ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
       <!-- High-Visibility Grid Pattern (Adaptive Opacity) -->
-      <div class="absolute inset-0 opacity-[0.06] dark:opacity-[0.03] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
+      <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
            style="background-image: radial-gradient(var(--brand-a) 1px, transparent 1px); background-size: 32px 32px;"></div>
       
-      <!-- Vivid Mesh Gradient Glows -->
-      <div class="absolute -left-[15%] top-[5%] h-[600px] w-[600px] rounded-full bg-brand-a/15 dark:bg-brand-a/10 blur-[140px] animate-pulse"></div>
-      <div class="absolute -right-[10%] bottom-[10%] h-[500px] w-[500px] rounded-full bg-brand-a/10 dark:bg-brand-a/5 blur-[120px]"></div>
+      <!-- Vivid Mesh Gradient Glows (Smoky/Ethereal) -->
+      <div class="absolute -left-[10%] top-[0%] h-[700px] w-[700px] rounded-full bg-brand-a/10 dark:bg-brand-a/5 blur-[160px] animate-[pulse_8s_ease-in-out_infinite]"></div>
+      <div class="absolute -right-[5%] bottom-[5%] h-[600px] w-[600px] rounded-full bg-brand-a/8 dark:bg-brand-a/3 blur-[140px] animate-[pulse_10s_ease-in-out_infinite]"></div>
       
       <!-- Architectural Geometric Shapes -->
-      <div class="absolute right-[5%] top-[10%] opacity-[0.1] dark:opacity-[0.05] hidden lg:block">
-        <div class="relative h-80 w-80 border-2 border-brand-a/40 border-dashed rounded-full animate-[spin_80s_linear_infinite]">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-brand-a shadow-[0_0_15px_rgba(var(--brand-rgb),0.4)]"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-3 w-3 rounded-full border-2 border-brand-a bg-panel"></div>
+      <div class="absolute right-[5%] top-[10%] opacity-[0.08] dark:opacity-[0.04] hidden lg:block">
+        <div class="relative h-80 w-80 border-[1px] border-brand-a/30 border-dashed rounded-full animate-[spin_100s_linear_infinite]">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-brand-a/40 shadow-[0_0_20px_rgba(var(--brand-rgb),0.3)]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-brand-a/40 bg-panel"></div>
         </div>
       </div>
 

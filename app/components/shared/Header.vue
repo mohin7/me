@@ -1,15 +1,18 @@
 <template>
-  <header class="fixed left-0 right-0 top-0 z-50 px-4 sm:px-6 lg:px-8 pt-3 md:pt-4">
-    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-3 py-2 md:px-4">
+  <header class="fixed left-0 right-0 top-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 md:pt-6">
+    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-2.5">
 
       <!-- Logo -->
-      <a href="#top" class="group flex items-center gap-2.5 shrink-0">
-        <div class="logo-mark">M</div>
-        <span class="hidden md:block text-[0.85rem] font-semibold text-main">Mohin Uddin</span>
+      <a href="#top" class="group flex items-center gap-3 shrink-0">
+        <div class="logo-mark group-hover:scale-110 transition-transform duration-500">M</div>
+        <div class="flex flex-col md:flex">
+          <span class="text-[0.85rem] font-black text-main leading-none uppercase tracking-tighter">Mohin Uddin</span>
+          <span class="text-[0.6rem] font-bold text-brand-a uppercase tracking-[0.2em] opacity-80">Head of Design</span>
+        </div>
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden md:flex items-center gap-0.5">
+      <div class="hidden md:flex items-center gap-1">
         <a
           v-for="item in navItems"
           :key="item.label"
@@ -21,24 +24,24 @@
       </div>
 
       <!-- Desktop Actions -->
-      <div class="hidden md:flex items-center gap-2">
-        <button type="button" class="icon-btn" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
+      <div class="hidden md:flex items-center gap-3">
+        <button type="button" class="icon-btn-v2" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
-        <SharedButton tag="a" href="#contact" variant="primary" size="sm">
-          Let's talk
+        <SharedButton tag="a" href="#contact" variant="primary" size="sm" class="shadow-sm">
+          Discuss Project
           <template #right>
-            <Icon name="lucide:arrow-up-right" class="h-3.5 w-3.5" />
+            <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
           </template>
         </SharedButton>
       </div>
 
       <!-- Mobile Actions -->
-      <div class="flex md:hidden items-center gap-1.5">
-        <button type="button" class="icon-btn" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
+      <div class="flex md:hidden items-center gap-2">
+        <button type="button" class="icon-btn-v2" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
-        <button type="button" class="icon-btn" @click="isMobileMenuOpen = !isMobileMenuOpen" :aria-expanded="isMobileMenuOpen" aria-label="Menu">
+        <button type="button" class="icon-btn-v2" @click="isMobileMenuOpen = !isMobileMenuOpen" :aria-expanded="isMobileMenuOpen" aria-label="Menu">
           <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" class="h-4 w-4" />
         </button>
       </div>
@@ -46,28 +49,28 @@
 
     <!-- Mobile Menu -->
     <Transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="-translate-y-2 opacity-0"
-      enter-to-class="translate-y-0 opacity-100"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="translate-y-0 opacity-100"
-      leave-to-class="-translate-y-2 opacity-0"
+      enter-active-class="transition duration-300 ease-out"
+      enter-from-class="-translate-y-4 opacity-0 scale-95"
+      enter-to-class="translate-y-0 opacity-100 scale-100"
+      leave-active-class="transition duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100 scale-100"
+      leave-to-class="-translate-y-4 opacity-0 scale-95"
     >
-      <div v-if="isMobileMenuOpen" class="mobile-menu mx-auto mt-1.5 max-w-7xl md:hidden">
+      <div v-if="isMobileMenuOpen" class="mobile-menu-v2 mx-auto mt-3 max-w-7xl md:hidden">
         <a
           v-for="item in navItems"
           :key="`m-${item.label}`"
           :href="item.href"
-          class="mobile-link"
+          class="mobile-link-v2"
           @click="isMobileMenuOpen = false"
         >
           {{ item.label }}
-          <Icon name="lucide:arrow-right" class="h-3.5 w-3.5 opacity-25" />
+          <Icon name="lucide:chevron-right" class="h-4 w-4 opacity-30" />
         </a>
-        <div class="mt-1 pt-2 border-t border-subtle">
+        <div class="mt-2 pt-4 border-t border-subtle/50">
           <SharedButton tag="a" href="#contact" variant="primary" size="md" fullWidth @click="isMobileMenuOpen = false">
-            Let's talk
-            <template #right><Icon name="lucide:arrow-up-right" class="h-4 w-4" /></template>
+            Start a Conversation
+            <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
           </SharedButton>
         </div>
       </div>
@@ -82,89 +85,98 @@ const isMobileMenuOpen = ref(false)
 const { theme, toggleTheme } = useTheme()
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#works' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Methodology', href: '#process' },
   { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Services', href: '#packages' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Testimonials', href: '#testimonials' },
 ]
 </script>
 
 <style scoped>
-/* ── Navbar: 14px radius ── */
+/* ── Navbar: Premium Glass ── */
 .navbar {
   background: var(--bg-panel);
+  background-opacity: 0.7;
+  backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid var(--border-subtle);
   border-radius: 9999px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03), inset 0 0 20px rgba(255,255,255,0.02);
 }
 
 .logo-mark {
-  width: 32px; height: 32px;
+  width: 36px; height: 36px;
   display: grid;
   place-items: center;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent-fg);
-  background: var(--accent);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 950;
+  color: #FFFFFF;
+  background: var(--brand-a);
+  box-shadow: 0 4px 12px rgba(var(--brand-rgb), 0.3);
 }
 
 .nav-link {
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 9999px;
-  font-size: 0.82rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--text-soft);
-  transition: color 0.15s, background 0.15s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 .nav-link:hover {
-  color: var(--text-main);
+  color: var(--brand-a);
   background: var(--bg-soft);
+  transform: translateY(-1px);
 }
 
-.icon-btn {
-  width: 32px; height: 32px;
+.icon-btn-v2 {
+  width: 36px; height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
+  border-radius: 50%;
   border: 1px solid var(--border-subtle);
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: color 0.15s, background 0.15s;
-}
-.icon-btn:hover {
   background: var(--bg-soft);
-  color: var(--text-main);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all 0.2s;
 }
-
-/* ── Mobile menu: 12px radius ── */
-.mobile-menu {
+.icon-btn-v2:hover {
   background: var(--bg-panel);
-  border: 1px solid var(--border-subtle);
-  border-radius: 20px;
-  padding: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  color: var(--brand-a);
+  border-color: var(--brand-a);
 }
 
-.mobile-link {
+/* ── Mobile menu V2 ── */
+.mobile-menu-v2 {
+  background: var(--bg-panel);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.mobile-link-v2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--text-soft);
   text-decoration: none;
-  transition: color 0.12s, background 0.12s;
+  transition: all 0.2s;
 }
-.mobile-link:hover {
+.mobile-link-v2:hover {
   color: var(--text-main);
   background: var(--bg-soft);
+  padding-left: 24px;
 }
 </style>

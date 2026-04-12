@@ -3,8 +3,11 @@
     <SharedHeader />
     <main>
       <SectionsHeroSection />
+      <SectionsTrustBar />
       <SectionsAboutSection />
+      <SectionsExperienceSection />
       <SectionsSpecialtiesSection />
+      <SectionsProcessSection />
       <SectionsSelectedWorksSection />
       <SectionsCaseStudiesSection />
       <SectionsMVPSprintSection />

@@ -28,7 +28,7 @@
         <button type="button" class="icon-btn-v2" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
-        <SharedButton tag="a" href="#contact" variant="primary" size="sm" class="shadow-sm">
+        <SharedButton tag="a" href="#contact" variant="primary" size="sm">
           Discuss Project
           <template #right>
             <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />

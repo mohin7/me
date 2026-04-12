@@ -3,7 +3,6 @@
     <SharedHeader />
     <main>
       <SectionsHeroSection />
-      <SectionsLogoMarqueeSection />
       <SectionsAboutSection />
       <SectionsSpecialtiesSection />
       <SectionsSelectedWorksSection />
@@ -63,20 +62,20 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
 }
 
 /* ───────────────────────────────────────
-   DARK — Inverted, same Indigo family
+   DARK — Inverted, high-contrast minimalist
 ─────────────────────────────────────── */
 .theme-dark {
-  --bg-page:         #111827;
-  --bg-panel:        #1F2937;
-  --bg-panel-strong: #263142;
-  --bg-soft:         #1F2937;
-  --text-main:       #F9FAFB;
-  --text-soft:       #9CA3AF;
-  --text-muted:      #4B5563;
-  --border-subtle:   #374151;
+  --bg-page:         #0D1117;
+  --bg-panel:        #161B22;
+  --bg-panel-strong: #21262D;
+  --bg-soft:         #1C2128;
+  --text-main:       #F0F6FC;
+  --text-soft:       #B1BAC4;
+  --text-muted:      #8B949E;
+  --border-subtle:   rgba(255, 255, 255, 0.08);
   --accent:          #818CF8;
   --accent-rgb:      129 140 248;
-  --accent-fg:       #111827;
+  --accent-fg:       #0D1117;
   --brand-a:         #818CF8;
   --brand-rgb:       129 140 248;
 }

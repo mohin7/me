@@ -59,7 +59,7 @@
 
           <!-- Subtitle -->
           <p class="hero-sub font-medium leading-relaxed">
-            Head of Design with **7+ years** expertise. I help founders bridge the gap between complex vision and **shippable, high-impact** product experiences.
+            Head of Design with <span class="text-main font-bold">7+ years</span> expertise. I help founders bridge the gap between complex vision and <span class="text-main font-bold">shippable, high-impact</span> product experiences.
           </p>
 
           <!-- Metrics Panel (Adaptive theme) -->

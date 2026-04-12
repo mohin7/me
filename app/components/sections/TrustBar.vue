@@ -3,10 +3,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- The Cinematic Hub Container -->
-      <div class="relative overflow-visible rounded-[32px] md:rounded-[48px] border border-subtle bg-panel/30 backdrop-blur-2xl p-8 md:p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] group">
+      <div class="relative overflow-visible rounded-[32px] md:rounded-[48px] border border-glass bg-panel/30 backdrop-blur-2xl p-8 md:p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] group">
         
         <!-- Holographic Background Detail -->
-        <div class="absolute -top-24 -right-24 h-64 w-64 bg-brand-a/10 blur-[100px] rounded-full group-hover:bg-brand-a/20 transition-all duration-1000"></div>
+        <div class="absolute -top-24 -right-24 h-64 w-64 bg-brand-a/10 dark:bg-brand-a/5 blur-[100px] rounded-full group-hover:bg-brand-a/20 transition-all duration-1000"></div>
 
         <div class="relative z-10 grid lg:grid-cols-[400px_1fr] gap-16 items-center">
           

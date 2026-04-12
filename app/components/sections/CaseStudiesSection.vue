@@ -38,10 +38,10 @@
       <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative overflow-hidden rounded-[32px] bg-panel border border-subtle p-8 md:p-16 transition-all duration-700">
+          <div :key="active" class="group relative overflow-hidden rounded-[32px] bg-panel border border-glass p-8 md:p-16 transition-all duration-700">
             
             <!-- Abstract Blueprint Background -->
-            <div class="absolute inset-0 pointer-events-none opacity-[0.03] grayscale invert dark:invert-0" 
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.015] grayscale invert dark:invert-0" 
                  style="background-image: radial-gradient(var(--brand-a) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
             <div class="relative z-10 grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-24">

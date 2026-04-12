@@ -95,12 +95,11 @@ const navItems = [
 <style scoped>
 /* ── Navbar: Premium Glass ── */
 .navbar {
-  background: var(--bg-panel);
-  background-opacity: 0.7;
+  background: var(--bg-glass);
   backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   border-radius: 9999px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03), inset 0 0 20px rgba(255,255,255,0.02);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .logo-mark {

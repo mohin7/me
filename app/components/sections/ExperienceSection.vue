@@ -39,7 +39,7 @@
             <!-- Timeline Node (Desktop) -->
             <div class="absolute left-[-5px] md:left-[91px] top-12 h-3 w-3 rounded-full border-2 border-brand-a bg-page z-20 transition-transform group-hover:scale-150 group-hover:bg-brand-a hidden md:block"></div>
 
-            <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-12 p-8 md:p-12 rounded-[24px] border border-transparent hover:border-subtle hover:bg-panel/40 hover:backdrop-blur-sm transition-all duration-500">
+            <div class="grid md:grid-cols-[200px_1fr] gap-4 md:gap-12 p-8 md:p-12 rounded-[24px] border border-transparent hover:border-glass hover:bg-panel/40 hover:backdrop-blur-sm transition-all duration-500">
               
               <!-- Period Column -->
               <div class="md:text-right pt-1.5 shrink-0">
@@ -72,7 +72,7 @@
 
                  <!-- Tech Skills -->
                  <div class="flex flex-wrap gap-2">
-                    <span v-for="tag in job.tags" :key="tag" class="px-4 py-1.5 rounded-full bg-soft text-muted text-[0.6rem] font-black uppercase tracking-widest border border-subtle group-hover:border-brand-a/30 transition-colors">
+                    <span v-for="tag in job.tags" :key="tag" class="px-4 py-1.5 rounded-full bg-soft text-muted text-[0.6rem] font-black uppercase tracking-widest border border-glass group-hover:border-brand-a/30 transition-colors">
                       {{ tag }}
                     </span>
                  </div>
@@ -130,7 +130,7 @@ const experience = [
 
 <style scoped>
 .bg-gradient-to-down {
-  background: linear-gradient(to bottom, var(--brand-a), var(--border-subtle), transparent);
+  background: linear-gradient(to bottom, var(--brand-a), var(--border-glass), transparent);
 }
 
 .reveal-item {

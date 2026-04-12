@@ -96,12 +96,12 @@
 
         <!-- Right: Profile Card (Frost Effect) -->
         <div class="hero-enter-delayed flex justify-center lg:justify-end">
-          <div class="profile-card relative group p-1 border border-subtle bg-panel/80 backdrop-blur-md">
+          <div class="profile-card relative group p-1 border border-glass bg-glass backdrop-blur-xl">
             
             <!-- Dynamic Gradient Rim -->
             <div class="absolute inset-0 bg-gradient-to-tr from-brand-a/30 via-transparent to-brand-a/5 rounded-[24px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             
-            <div class="relative z-10 w-full flex flex-col items-center bg-panel rounded-[22px] p-6 pb-4 shadow-sm border border-subtle">
+            <div class="relative z-10 w-full flex flex-col items-center bg-panel/60 dark:bg-panel/20 rounded-[22px] p-6 pb-4 shadow-sm border border-glass">
               <div class="photo-frame-v2 group-hover:border-brand-a/40 transition-all duration-500">
                 <img src="/img/mohin_cutout.png" alt="Md Mohin Uddin" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105" />
               </div>

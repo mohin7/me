@@ -42,7 +42,7 @@
             Schedule a Strategy Call
           </SharedButton>
 
-          <a href="mailto:hello.mohin4@gmail.com" class="group flex items-center gap-4 px-8 h-14 rounded-full border border-subtle bg-panel hover:border-brand-a/40 transition-all duration-300">
+          <a href="mailto:hello.mohin4@gmail.com" class="group flex items-center gap-4 px-8 h-14 rounded-full border border-glass bg-panel hover:border-brand-a/40 transition-all duration-300">
              <Icon name="lucide:mail" class="h-5 w-5 text-muted group-hover:text-brand-a transition-colors" />
              <span class="text-soft font-bold tracking-tight">hello.mohin4@gmail.com</span>
           </a>

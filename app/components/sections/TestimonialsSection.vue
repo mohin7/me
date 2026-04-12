@@ -6,7 +6,7 @@
       <!-- Header with Status -->
       <div class="mb-24 text-center md:text-left flex flex-col md:flex-row md:items-end md:justify-between gap-12">
         <div class="max-w-xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-soft border border-subtle mb-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-soft border border-glass mb-6">
             <Icon name="lucide:shield-check" class="h-3.5 w-3.5 text-brand-a" />
             <span class="text-brand-a text-[0.6rem] font-black uppercase tracking-widest">Trust Protocol 1.0</span>
           </div>
@@ -27,7 +27,7 @@
         <div 
           v-for="(testimonial, idx) in testimonials" 
           :key="idx"
-          class="group relative overflow-hidden rounded-[32px] bg-panel border border-subtle p-12 md:p-16 transition-all duration-700 hover:border-brand-a/30 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)]"
+          class="group relative overflow-hidden rounded-[32px] bg-panel border border-glass p-12 md:p-16 transition-all duration-700 hover:border-brand-a/30 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)]"
         >
           <!-- Strategic Badge -->
           <div class="absolute top-8 right-8 flex items-center gap-2 opacity-40 group-hover:opacity-100 transition-opacity">
@@ -36,7 +36,7 @@
           </div>
 
           <div class="mb-12 flex items-center gap-6">
-            <div class="h-20 w-20 shrink-0 overflow-hidden rounded-[24px] border border-subtle group-hover:border-brand-a/40 transition-colors p-1 bg-soft shadow-inner">
+            <div class="h-20 w-20 shrink-0 overflow-hidden rounded-[24px] border border-glass group-hover:border-brand-a/40 transition-colors p-1 bg-soft shadow-inner">
               <img :src="testimonial.avatar" :alt="testimonial.author" class="h-full w-full object-cover rounded-[20px] grayscale group-hover:grayscale-0 transition-all duration-700">
             </div>
             <div>
@@ -54,7 +54,7 @@
           </blockquote>
           
           <!-- Partnership Metrics -->
-          <div class="mt-12 flex items-center gap-8 pt-8 border-t border-subtle/50">
+          <div class="mt-12 flex items-center gap-8 pt-8 border-t border-glass">
              <div v-for="metric in testimonial.stats" :key="metric.label" class="flex flex-col">
                 <span class="text-main text-lg font-black tracking-tighter leading-none">{{ metric.value }}</span>
                 <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest mt-1 opacity-60">{{ metric.label }}</span>
@@ -64,7 +64,7 @@
       </div>
 
       <!-- Trusted By Bar -->
-      <div class="border-t border-subtle pt-16 mt-16 text-center">
+      <div class="border-t border-glass pt-16 mt-16 text-center">
          <p class="text-muted text-[0.65rem] font-black uppercase tracking-[0.4em] mb-12 opacity-50">TRUSTED BY LEADERS AT</p>
          <div class="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
            <div v-for="brand in ['LUMOS HEALTH', 'DATAVAULT', 'COMMAND HUB', 'ORBITAL', 'NUXT LABS']" :key="brand" class="text-main text-sm font-black tracking-[0.3em] font-mono whitespace-nowrap">

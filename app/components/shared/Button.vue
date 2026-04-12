@@ -103,7 +103,7 @@ const sizeClasses = computed(() => {
 }
 
 .btn-outline {
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   color: var(--text-main);
   background: transparent;
   font-weight: 700;
@@ -121,14 +121,14 @@ const sizeClasses = computed(() => {
 }
 
 .btn-glass {
-  background: var(--bg-panel);
-  background-opacity: 0.6;
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border-subtle);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--border-glass);
   color: var(--text-main);
 }
 .btn-glass:hover {
   border-color: var(--brand-a);
+  background: var(--bg-soft);
   transform: translateY(-2px);
 }
 

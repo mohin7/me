@@ -43,7 +43,7 @@
             class="process-block group relative"
           >
             <!-- Stage Card -->
-            <div class="relative overflow-hidden rounded-[32px] border border-subtle bg-panel p-10 md:p-16 transition-all duration-700 hover:border-brand-a/30 hover:shadow-[0_40px_120px_-20px_rgba(0,0,0,0.1)]">
+            <div class="relative overflow-hidden rounded-[32px] border border-glass bg-panel p-10 md:p-16 transition-all duration-700 hover:border-brand-a/30 hover:shadow-[0_40px_120px_-20px_rgba(0,0,0,0.1)]">
               
               <!-- Content Header -->
               <div class="grid md:grid-cols-[1fr_auto] gap-8 mb-16 items-start">

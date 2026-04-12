@@ -51,6 +51,8 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
   --text-soft:       #374151;
   --text-muted:      #9CA3AF;
   --border-subtle:   #E5E7EB;
+  --border-glass:    rgba(0, 0, 0, 0.05);
+  --bg-glass:        rgba(255, 255, 255, 0.7);
   --accent:          #4338CA;
   --accent-rgb:      67 56 202;
   --accent-fg:       #FFFFFF;
@@ -62,17 +64,19 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
    DARK — Inverted, high-contrast minimalist
 ─────────────────────────────────────── */
 .theme-dark {
-  --bg-page:         #0D1117;
-  --bg-panel:        #161B22;
-  --bg-panel-strong: #21262D;
-  --bg-soft:         #1C2128;
-  --text-main:       #F0F6FC;
-  --text-soft:       #B1BAC4;
-  --text-muted:      #8B949E;
+  --bg-page:         #0A0D12;
+  --bg-panel:        #121820;
+  --bg-panel-strong: #1B2129;
+  --bg-soft:         #151B23;
+  --text-main:       #F9FAFB;
+  --text-soft:       #94A3B8;
+  --text-muted:      #64748B;
   --border-subtle:   rgba(255, 255, 255, 0.08);
+  --border-glass:    rgba(255, 255, 255, 0.12);
+  --bg-glass:        rgba(15, 23, 42, 0.8);
   --accent:          #818CF8;
   --accent-rgb:      129 140 248;
-  --accent-fg:       #0D1117;
+  --accent-fg:       #0A0D12;
   --brand-a:         #818CF8;
   --brand-rgb:       129 140 248;
 }
@@ -86,6 +90,8 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
 .bg-panel-strong  { background: var(--bg-panel-strong); }
 .bg-soft          { background: var(--bg-soft); }
 .border-subtle    { border-color: var(--border-subtle); }
+.bg-glass         { background-color: var(--bg-glass); }
+.border-glass     { border-color: var(--border-glass); }
 
 /* ── Backward-compat aliases ── */
 .brand-text-gradient { color: var(--accent); font-weight: 900; }

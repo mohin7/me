@@ -5,7 +5,7 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <div class="relative bg-panel/30 border border-accent/10 rounded-[64px] p-8 md:p-16 backdrop-blur-3xl overflow-hidden">
+      <div class="relative bg-panel/30 border border-accent/10 rounded-[32px] md:rounded-[64px] p-6 md:p-16 backdrop-blur-3xl overflow-hidden">
         
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
              style="background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px); background-size: 30px 30px;">
@@ -13,7 +13,7 @@
 
         <div class="relative z-10">
           
-          <div class="grid lg:grid-cols-[1fr_400px] gap-20 items-start mb-24">
+          <div class="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-20 items-start mb-16 md:mb-24">
             <div>
               <div class="mb-8">
                  <span class="section-label">Strategic Advantage Matrix</span>
@@ -31,7 +31,7 @@
             <div class="space-y-8 bg-accent/5 p-10 rounded-[40px] border border-accent/10">
                <div class="flex items-baseline justify-between mb-4">
                   <span class="text-[0.65rem] font-bold uppercase tracking-widest text-muted">Strategic Model</span>
-                  <span class="text-main font-black text-xs">v.2024.Q2</span>
+                  <span class="text-main font-black text-xs">v.2026.Q2</span>
                </div>
                
                <div class="grid grid-cols-1 gap-6">

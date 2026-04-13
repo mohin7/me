@@ -118,10 +118,16 @@ const updateCache = () => {
 const updateSidebarSticky = (virtualY: number) => {
   if (!containerRef.value || !sidebarRef.value) return
   
+  // Disable sticky on mobile
+  if (window.innerWidth < 1024) {
+    sidebarOffset.value = 0
+    return
+  }
+  
   const viewportHeight = window.innerHeight
   const containerTop = cachedContainerTop
   const containerHeight = cachedContainerHeight
-  const sidebarHeight = sidebarRef.value.offsetHeight // Re-read just in case
+  const sidebarHeight = sidebarRef.value.offsetHeight
   
   // The 'Goal' is to have the sidebar centered in the viewport
   // Viewport Center = viewportHeight / 2

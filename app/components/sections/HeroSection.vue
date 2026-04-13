@@ -26,7 +26,7 @@
       <div class="flex flex-col items-center text-center">
 
         <!-- Content Stack -->
-        <div class="hero-enter flex flex-col items-center">
+        <div class="hero-enter flex flex-col items-center w-full">
           <!-- Designation -->
           <div class="mb-10 flex flex-col items-center">
              <span class="section-label">Product Design Engineer • Nuxt & Vue Expert</span>
@@ -35,17 +35,15 @@
           <!-- Title with Clipless Vector Reveal -->
           <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center">
             <span class="text-main block">Designing & coding the</span>
-            <span class="text-main flex flex-wrap justify-center items-center gap-[0em] mt-2">
-              <span>next-generation of</span>
-              <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center">
-                <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-2">platforms.</span>
-                <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
-                   <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
-                     <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
-                   </div>
-                   <span class="h-[0.8em] w-[3px] bg-black dark:bg-white rounded-full ml-[1px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
-                </div>
-              </span>
+            <span class="text-main block mt-2">next-generation of</span>
+            <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
+              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-2">platforms.</span>
+              <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
+                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
+                   <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
+                 </div>
+                 <span class="h-[0.8em] w-[3px] bg-black dark:bg-white rounded-full ml-[1px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
+              </div>
             </span>
           </h1>
 
@@ -54,23 +52,25 @@
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-2 mb-20">
-            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-14 px-10 rounded-full">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 mb-16 md:mb-20 w-full sm:w-auto px-4">
+            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto">
               Book Strategy Call
               <template #right>
                 <Icon name="lucide:arrow-right" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <a href="#works" class="group flex items-center gap-2 text-sm font-bold tracking-tight text-main border border-accent/10 hover:border-accent/20 px-8 h-14 rounded-full transition-all">
+            <a href="#works" class="group flex items-center justify-center gap-2 text-sm font-bold tracking-tight text-main border border-accent/10 hover:border-accent/20 px-8 h-14 rounded-full transition-all w-full sm:w-auto">
               Explore Portfolio
               <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform group-hover:translate-y-1" />
             </a>
           </div>
 
           <!-- Integrated Precision Proof Bar -->
-          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-4">
-            <div class="relative flex flex-col md:flex-row items-stretch md:items-center bg-panel/40 backdrop-blur-3xl border border-accent/10 rounded-[32px] md:rounded-full overflow-hidden">
-              <div class="flex items-center gap-4 px-8 py-4 border-b md:border-b-0 md:border-r border-accent/10 whitespace-nowrap">
+          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-2 sm:px-4">
+            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/40 backdrop-blur-3xl border border-accent/10 rounded-[32px] lg:rounded-full overflow-hidden">
+              
+              <!-- Social Proof -->
+              <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-accent/10 whitespace-nowrap">
                 <div class="flex -space-x-3">
                   <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
                      <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />
@@ -82,18 +82,20 @@
                 </div>
               </div>
 
-              <div class="flex-1 w-full overflow-hidden relative px-4 py-4 min-h-[4rem] flex items-center">
-                 <div class="flex gap-12 md:gap-16 animate-ticker grayscale opacity-20 hover:opacity-100 transition-opacity duration-700">
-                   <div v-for="i in 3" :key="i" class="flex gap-12 md:gap-16">
+              <!-- Brand Stream -->
+              <div class="flex-1 w-full overflow-hidden relative px-4 py-6 lg:py-4 min-h-[4rem] flex items-center">
+                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-20 hover:opacity-100 transition-opacity duration-700">
+                   <div v-for="i in 3" :key="i" class="flex gap-12 lg:gap-16">
                      <div v-for="l in logos" :key="l.name" class="flex items-center gap-3">
                        <Icon :name="l.icon" class="h-4 w-4 text-main" />
-                       <span class="text-main font-bold tracking-widest text-[0.65rem] uppercase opacity-60">{{ l.name }}</span>
+                       <span class="text-main font-bold tracking-widest text-[0.6rem] uppercase opacity-60">{{ l.name }}</span>
                      </div>
                    </div>
                  </div>
               </div>
 
-              <div class="flex items-center gap-8 px-10 py-4 bg-accent text-accent-fg shrink-0">
+              <!-- Metrics Block -->
+              <div class="flex items-center justify-center lg:justify-end gap-10 px-10 py-5 lg:py-4 bg-accent text-accent-fg shrink-0">
                  <div class="flex items-baseline gap-2">
                    <span class="text-2xl font-black italic serif-font leading-none">07</span>
                    <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Year_Craft</span>
@@ -105,8 +107,9 @@
                  </div>
               </div>
             </div>
-            <div class="mt-4 flex justify-center">
-               <span class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-30">Verified Technical Expertise & Structural Logic</span>
+            
+            <div class="mt-4 flex justify-center text-center">
+               <span class="text-[0.5rem] font-black uppercase tracking-[0.2em] text-muted opacity-30 px-4">Verified Technical Expertise & Structural Logic</span>
             </div>
           </div>
         </div>
@@ -169,14 +172,14 @@ const logos = [
 .serif-font { font-family: 'Playfair Display', serif; }
 
 .hero-title {
-  font-size: clamp(2.6rem, 8vw, 5rem);
+  font-size: clamp(2.2rem, 10vw, 5rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
 .hero-sub {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 3vw, 1.125rem);
   color: var(--text-soft);
   letter-spacing: -0.01em;
 }

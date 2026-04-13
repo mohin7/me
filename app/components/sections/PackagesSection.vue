@@ -67,37 +67,37 @@
       </div>
 
       <!-- Strategic Equity / Custom Section -->
-      <div class="relative p-10 md:p-20 rounded-[64px] border border-accent/10 bg-accent/[0.01] overflow-hidden">
+      <div class="relative p-8 md:p-20 rounded-[48px] md:rounded-[64px] border border-accent/10 bg-accent/[0.01] overflow-hidden">
         <div class="absolute inset-0 opacity-[0.02] pointer-events-none" 
              style="background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px); background-size: 40px 40px;">
         </div>
 
-        <div class="relative z-10 grid lg:grid-cols-[1fr_420px] gap-20 items-center">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-20 items-center">
           <div>
             <div class="mb-8 flex items-center gap-3">
                <Icon name="lucide:sparkles" class="h-5 w-5 text-accent" />
                <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Alternative Protocol</span>
             </div>
-            <h2 class="text-main text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-8">
+            <h2 class="text-main text-3xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-8">
               Strategic <br />
               <span class="italic serif-font lowercase" style="color: #52525B">equity partnership.</span>
             </h2>
-            <p class="text-soft text-lg md:text-xl font-medium leading-relaxed max-w-2xl opacity-80 mb-10">
+            <p class="text-soft text-lg font-medium leading-relaxed max-w-2xl opacity-80 mb-10">
               For high-conviction founders with a world-changing vision but limited initial capital. I design your full MVP in exchange for <span class="text-main font-bold">1% Equity</span> — same velocity, same premium engineering.
             </p>
-            <div class="flex flex-wrap gap-8">
+            <div class="flex flex-wrap gap-6 md:gap-8">
                <div class="flex items-center gap-3">
                   <div class="h-1.5 w-1.5 rounded-full bg-accent"></div>
-                  <span class="text-soft text-[0.7rem] font-bold uppercase tracking-widest">7-Day Sprint Delivery</span>
+                  <span class="text-soft text-[0.65rem] font-bold uppercase tracking-widest">7-Day Sprint Delivery</span>
                </div>
                <div class="flex items-center gap-3">
                   <div class="h-1.5 w-1.5 rounded-full bg-accent"></div>
-                  <span class="text-soft text-[0.7rem] font-bold uppercase tracking-widest">Global Executive Standards</span>
+                  <span class="text-soft text-[0.65rem] font-bold uppercase tracking-widest">Global Executive Standards</span>
                </div>
             </div>
           </div>
 
-          <div class="flex flex-col gap-6 p-10 md:p-12 rounded-[48px] border border-accent/10 bg-page/50 backdrop-blur-3xl shadow-sm">
+          <div class="flex flex-col gap-6 p-8 md:p-12 rounded-[40px] md:rounded-[48px] border border-accent/10 bg-page/50 backdrop-blur-3xl shadow-sm w-full">
              <p class="text-soft text-sm font-medium leading-relaxed text-center mb-4">
                 Not every startup fits in a box. Let's discuss a custom redesign or 1% partnership.
              </p>

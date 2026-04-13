@@ -1,7 +1,7 @@
 <template>
   <section id="experience" class="py-24 md:py-44 bg-page relative overflow-visible">
     <!-- Sophisticated Technical Grid -->
-    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" 
+    <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 64px 64px;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -18,7 +18,7 @@
             <div class="flex items-baseline gap-4 mb-4">
               <span class="text-accent text-8xl font-black tracking-tighter leading-none italic serif-font">07</span>
               <div class="flex flex-col">
-                <span class="text-main text-xl font-black italic serif-font leading-none opacity-20 mt-2">Years</span>
+                <span class="text-xl font-black italic serif-font leading-none mt-2" style="color: #52525B">Years</span>
                 <span class="text-soft text-[0.65rem] font-black uppercase tracking-widest mt-2">Executive Craft</span>
               </div>
             </div>
@@ -28,7 +28,7 @@
 
           <h2 class="text-main mb-8 text-4xl font-black tracking-tighter md:text-6xl leading-[0.85]">
             Career <br />
-            <span class="text-soft italic serif-font lowercase opacity-40">timeline.</span>
+            <span class="italic serif-font lowercase" style="color: #52525B">timeline.</span>
           </h2>
           <p class="text-soft text-lg font-medium leading-relaxed max-w-[320px]">
             A documented history of building and leading high-impact digital products at scale.

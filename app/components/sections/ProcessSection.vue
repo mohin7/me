@@ -19,7 +19,7 @@
               </div>
               <h2 class="text-main text-4xl font-black tracking-tighter md:text-7xl leading-[0.85]">
                 Systematic <br />
-                <span class="text-soft italic serif-font lowercase opacity-40">delivery.</span>
+                <span class="italic serif-font lowercase" style="color: #52525B">delivery.</span>
               </h2>
             </div>
             <p class="text-soft text-lg font-medium leading-relaxed max-w-[360px] pb-2">

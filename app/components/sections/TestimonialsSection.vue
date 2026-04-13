@@ -1,77 +1,71 @@
 <template>
-  <section id="testimonials" class="relative py-24 md:py-40 overflow-hidden bg-page">
-    
+  <section id="testimonials" class="relative py-24 md:py-40 bg-page overflow-hidden">
+    <!-- Schematic Grid -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
+         style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Header with Status -->
-      <div class="mb-24 text-center md:text-left flex flex-col md:flex-row md:items-end md:justify-between gap-12">
-        <div class="max-w-xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-soft border border-glass mb-6">
-            <Icon name="lucide:shield-check" class="h-3.5 w-3.5 text-brand-a" />
-            <span class="text-brand-a text-[0.6rem] font-black uppercase tracking-widest">Trust Protocol 1.0</span>
-          </div>
-          <h2 class="mb-8 text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] text-main">
-            Founder <span class="text-brand-a italic">Validation.</span>
-          </h2>
-          <p class="text-soft text-xl font-medium opacity-70 leading-relaxed">
-            Peer-reviewed results from technology leaders and venture partners.
-          </p>
+      <!-- Center Aligned Section Header -->
+      <div class="flex flex-col items-center text-center mb-20 md:mb-32">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-px w-8 bg-accent/20"></div>
+          <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.5em]">Social Proof</span>
+          <div class="h-px w-8 bg-accent/20"></div>
         </div>
-        <div class="pb-2 hidden md:block">
-           <div class="text-main font-black text-6xl opacity-[0.05] italic select-none tracking-tighter">SUCCESS STORIES</div>
-        </div>
+        <h2 class="text-4xl md:text-7xl font-black tracking-tighter leading-none mb-8">
+          Founder <span class="italic serif-font lowercase" style="color: #52525B">validation.</span>
+        </h2>
+        <p class="text-soft text-lg font-medium opacity-60 max-w-2xl">
+          Surgical product intervention. Documented success logs from partners and technology founders.
+        </p>
       </div>
 
-      <!-- Testimonial Grid -->
-      <div class="grid md:grid-cols-2 gap-8 mb-24">
+      <!-- Bento-style Grid (Executive Density) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
         <div 
           v-for="(testimonial, idx) in testimonials" 
           :key="idx"
-          class="group relative overflow-hidden rounded-[32px] bg-panel border border-glass p-12 md:p-16 transition-all duration-700 hover:border-brand-a/30 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)]"
+          class="group relative p-8 rounded-[40px] border border-glass bg-panel/20 transition-all duration-700 hover:bg-panel/40 hover:border-accent/30 hover:shadow-2xl flex flex-col justify-between overflow-hidden"
+          :class="{
+            'md:col-span-2 lg:col-span-2': idx === 0,
+            'lg:row-span-2': idx === 2
+          }"
         >
-          <!-- Strategic Badge -->
-          <div class="absolute top-8 right-8 flex items-center gap-2 opacity-40 group-hover:opacity-100 transition-opacity">
-            <span class="text-[0.6rem] font-black uppercase tracking-widest text-muted">Strategic Partner</span>
-            <div class="h-1.5 w-1.5 rounded-full bg-brand-a"></div>
-          </div>
+          <!-- Internal Data Identifier -->
+          <div class="absolute top-8 right-8 text-[0.55rem] font-black uppercase tracking-widest text-muted opacity-20">ID_0{{ idx + 1 }}</div>
 
-          <div class="mb-12 flex items-center gap-6">
-            <div class="h-20 w-20 shrink-0 overflow-hidden rounded-[24px] border border-glass group-hover:border-brand-a/40 transition-colors p-1 bg-soft shadow-inner">
-              <img :src="testimonial.avatar" :alt="testimonial.author" class="h-full w-full object-cover rounded-[20px] grayscale group-hover:grayscale-0 transition-all duration-700">
+          <div class="relative z-10">
+            <!-- Author Header -->
+            <div class="flex items-center gap-4 mb-8">
+              <div class="h-12 w-12 shrink-0 rounded-2xl overflow-hidden border border-glass p-0.5 bg-accent/5">
+                <img :src="testimonial.avatar" :alt="testimonial.author" class="h-full w-full object-cover rounded-[14px] grayscale group-hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col">
+                <span class="text-main font-black tracking-tighter italic serif-font leading-none">{{ testimonial.author }}</span>
+                <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-40 mt-1.5">{{ testimonial.role }}</span>
+              </div>
             </div>
-            <div>
-              <p class="text-main text-2xl font-black tracking-tighter italic leading-none">{{ testimonial.author }}</p>
-              <p class="text-muted mt-2 text-xs font-black uppercase tracking-[0.2em] opacity-60">{{ testimonial.role }}</p>
-            </div>
-          </div>
-          
-          <blockquote class="relative">
-            <!-- Giant Quote Mark -->
-            <Icon name="lucide:quote" class="absolute -top-6 -left-8 h-12 w-12 text-brand-a opacity-[0.05]" />
-            <p class="text-soft text-xl md:text-2xl font-medium leading-[1.4] relative z-10 italic">
+
+            <!-- Quote -->
+            <p 
+              class="text-soft font-medium leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity"
+              :class="idx === 0 ? 'text-xl md:text-2xl' : 'text-base md:text-lg'"
+            >
               "{{ testimonial.quote }}"
             </p>
-          </blockquote>
-          
-          <!-- Partnership Metrics -->
-          <div class="mt-12 flex items-center gap-8 pt-8 border-t border-glass">
-             <div v-for="metric in testimonial.stats" :key="metric.label" class="flex flex-col">
-                <span class="text-main text-lg font-black tracking-tighter leading-none">{{ metric.value }}</span>
-                <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest mt-1 opacity-60">{{ metric.label }}</span>
-             </div>
+          </div>
+
+          <!-- Bottom Meta (Only for some cards) -->
+          <div v-if="testimonial.stat" class="mt-8 pt-8 border-t border-accent/5 flex items-baseline gap-3">
+             <span class="text-accent text-2xl font-black italic serif-font leading-none">{{ testimonial.stat.value }}</span>
+             <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-30">{{ testimonial.stat.label }}</span>
           </div>
         </div>
+
       </div>
 
-      <!-- Trusted By Bar -->
-      <div class="border-t border-glass pt-16 mt-16 text-center">
-         <p class="text-muted text-[0.65rem] font-black uppercase tracking-[0.4em] mb-12 opacity-50">TRUSTED BY LEADERS AT</p>
-         <div class="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-           <div v-for="brand in ['LUMOS HEALTH', 'DATAVAULT', 'COMMAND HUB', 'ORBITAL', 'NUXT LABS']" :key="brand" class="text-main text-sm font-black tracking-[0.3em] font-mono whitespace-nowrap">
-             {{ brand }}
-           </div>
-         </div>
-      </div>
     </div>
   </section>
 </template>
@@ -82,23 +76,44 @@ const testimonials = [
     author: 'Alex Rivera',
     role: 'CEO at Lumos Health',
     avatar: 'https://i.pravatar.cc/150?u=alex',
-    quote: 'Mohin turned our vague product idea into a stunning, high-fidelity prototype in just one week. It helped us secure our pre-seed round with zero friction.',
-    stats: [
-      { label: 'Funding', value: '$2.5M+' },
-      { label: 'Time-to-Market', value: '3 Weeks' }
-    ]
+    quote: 'Mohin transitioned our vision from a napkin sketch to a stunning, high-fidelity MVP in just one week. Helped us close our pre-seed round with zero friction.',
+    stat: { label: 'ROUND_SECURED', value: '$2.5M+' }
   },
   {
     author: 'Sarah Chen',
     role: 'CTO at DataVault',
     avatar: 'https://i.pravatar.cc/150?u=sarah',
-    quote: 'Rare to find a design partner who understands technical constraints. Mohin is that hybrid talent every venture-scale startup needs.',
-    stats: [
-      { label: 'Dev Efficiency', value: '+40%' },
-      { label: 'Active Users', value: '1.2M+' }
-    ]
+    quote: 'Rare to find a design partner who deeply understands technical infrastructure.',
+    stat: { label: 'DEV_EFFICIENCY', value: '+40%' }
+  },
+  {
+    author: 'Marcus Thorne',
+    role: 'Founder of Orbital',
+    avatar: 'https://i.pravatar.cc/150?u=marcus',
+    quote: 'The surgical precision in the UI execution is unlike anything we have seen from a traditional design agency. Truly a product engineer at heart.',
+    stat: { label: 'SHIPPED_TIME', value: '14 Days' }
+  },
+  {
+    author: 'Elena Glass',
+    role: 'Product Lead at Nuxt Labs',
+    avatar: 'https://i.pravatar.cc/150?u=elena',
+    quote: 'Clean, modular, and built for scale. Exactly what high-momentum teams need.',
+  },
+  {
+    author: 'David Kim',
+    role: 'CEO at Command Hub',
+    avatar: 'https://i.pravatar.cc/150?u=david',
+    quote: 'He did not just design a UI; he built a logical system that works.',
+  },
+  {
+    author: 'Jordon Smith',
+    role: 'Founder of ByteBuilders',
+    avatar: 'https://i.pravatar.cc/150?u=jordon',
+    quote: 'High-speed delivery without compromising on architectural integrity.',
   }
 ]
 </script>
 
-
+<style scoped>
+.serif-font { font-family: 'Playfair Display', serif; }
+</style>

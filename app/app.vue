@@ -20,7 +20,11 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,900&family=Caveat:wght@400;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
 
 *, *::before, *::after {
   -webkit-font-smoothing: antialiased;
@@ -35,8 +39,8 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 250ms ease, color 250ms ease;
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.015em;
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 /* ───────────────────────────────────────
@@ -47,38 +51,34 @@ const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme
   --bg-panel:        #FFFFFF;
   --bg-panel-strong: #F3F4F6;
   --bg-soft:         #F3F4F6;
-  --text-main:       #111827;
-  --text-soft:       #374151;
-  --text-muted:      #9CA3AF;
-  --border-subtle:   #E5E7EB;
+  --text-main:       #0A0A0A;
+  --text-soft:       #52525B;
+  --text-muted:      #A1A1AA;
+  --border-subtle:   rgba(0,0,0,0.06);
   --border-glass:    rgba(0, 0, 0, 0.05);
   --bg-glass:        rgba(255, 255, 255, 0.7);
-  --accent:          #4338CA;
-  --accent-rgb:      67 56 202;
+  --accent:          #111111;
+  --accent-rgb:      17 17 17;
   --accent-fg:       #FFFFFF;
-  --brand-a:         #4338CA;
-  --brand-rgb:       67 56 202;
 }
 
 /* ───────────────────────────────────────
    DARK — Inverted, high-contrast minimalist
 ─────────────────────────────────────── */
 .theme-dark {
-  --bg-page:         #0A0D12;
-  --bg-panel:        #121820;
-  --bg-panel-strong: #1B2129;
-  --bg-soft:         #151B23;
-  --text-main:       #F9FAFB;
-  --text-soft:       #94A3B8;
-  --text-muted:      #64748B;
+  --bg-page:         #0A0A0A;
+  --bg-panel:        #121212;
+  --bg-panel-strong: #1A1A1A;
+  --bg-soft:         #1A1A1A;
+  --text-main:       #FAFAFA;
+  --text-soft:       #A1A1AA;
+  --text-muted:      #71717A;
   --border-subtle:   rgba(255, 255, 255, 0.08);
   --border-glass:    rgba(255, 255, 255, 0.12);
-  --bg-glass:        rgba(15, 23, 42, 0.8);
-  --accent:          #818CF8;
-  --accent-rgb:      129 140 248;
-  --accent-fg:       #0A0D12;
-  --brand-a:         #818CF8;
-  --brand-rgb:       129 140 248;
+  --bg-glass:        rgba(10, 10, 10, 0.8);
+  --accent:          #FFFFFF;
+  --accent-rgb:      255 255 255;
+  --accent-fg:       #111111;
 }
 
 /* ── Utilities ── */

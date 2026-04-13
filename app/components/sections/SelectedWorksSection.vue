@@ -6,7 +6,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
         <div>
           <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl max-w-4xl text-main leading-tight">
-            Selected <span class="text-brand-a">Works</span> <br> & Experiments
+            Selected <span class="text-accent">Works</span> <br> & Experiments
           </h2>
           <p class="text-soft max-w-2xl text-lg font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
         </div>
@@ -27,7 +27,7 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-brand-a/30"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-accent/30"
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
@@ -63,7 +63,7 @@
               </span>
             </div>
 
-            <h3 class="text-main mb-4 text-2xl font-bold tracking-tight group-hover:text-brand-a transition-colors">
+            <h3 class="text-main mb-4 text-2xl font-bold tracking-tight group-hover:text-accent transition-colors">
               {{ project.name }}
             </h3>
             
@@ -74,7 +74,7 @@
             <div class="mt-auto pt-6 border-t border-subtle flex items-center justify-between">
                <a :href="project.href" target="_blank" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
                  Live Preview
-                 <Icon name="lucide:arrow-right" class="h-4 w-4 text-brand-a transition-transform group-hover/link:translate-x-1" />
+                 <Icon name="lucide:arrow-right" class="h-4 w-4 text-accent transition-transform group-hover/link:translate-x-1" />
                </a>
                <div class="h-2 w-2 rounded-full bg-emerald-500/40"></div>
             </div>
@@ -84,18 +84,18 @@
       
       <!-- Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-brand-a/40">
+        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-accent/40">
           <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             
             <!-- Left Side: Content -->
             <div class="md:col-span-7">
               <div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-subtle">
-                <Icon name="lucide:shield-check" class="h-4 w-4 text-brand-a" />
+                <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
                 <span class="text-[0.6rem] font-bold uppercase tracking-widest text-muted">Secured via Protocol</span>
               </div>
               
               <h3 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl leading-tight">
-                 Production-Grade <br> <span class="text-brand-a">Private Solutions</span>
+                 Production-Grade <br> <span class="text-accent">Private Solutions</span>
               </h3>
               
               <p class="text-soft mb-10 max-w-xl text-lg font-medium leading-relaxed opacity-80">
@@ -136,17 +136,17 @@
                 <!-- Central Core -->
                 <div class="absolute inset-8 rounded-full bg-soft border border-subtle shadow-sm flex items-center justify-center">
                    <div class="text-center">
-                     <Icon name="lucide:lock" class="h-10 w-10 text-brand-a opacity-80" />
+                     <Icon name="lucide:lock" class="h-10 w-10 text-accent opacity-80" />
                      <p class="mt-3 text-[0.5rem] font-bold uppercase tracking-widest text-muted">Locked IP</p>
                    </div>
                 </div>
 
                 <!-- Floating Accents -->
                 <div class="absolute -top-4 -right-4 h-12 w-12 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
-                   <Icon name="lucide:database" class="h-5 w-5 text-brand-a opacity-40" />
+                   <Icon name="lucide:database" class="h-5 w-5 text-accent opacity-40" />
                 </div>
                 <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
-                   <Icon name="lucide:layers" class="h-4 w-4 text-brand-a opacity-40" />
+                   <Icon name="lucide:layers" class="h-4 w-4 text-accent opacity-40" />
                 </div>
               </div>
             </div>

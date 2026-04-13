@@ -2,7 +2,7 @@
   <section id="contact" class="relative py-32 md:py-56 bg-page overflow-hidden">
     
     <!-- Luminous Brand Aura -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-a/10 blur-[120px] rounded-full pointer-events-none opacity-40"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none opacity-40"></div>
     
     <!-- Architectural Background Details -->
     <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-subtle to-transparent"></div>
@@ -11,20 +11,20 @@
     <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       
       <!-- Availability Badge -->
-      <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-brand-a/30 bg-brand-a/[0.03] mb-12 animate-bounce-slow">
+      <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-subtle bg-panel mb-12 animate-bounce-slow">
         <div class="relative h-2 w-2">
-          <div class="absolute inset-0 rounded-full bg-brand-a animate-ping opacity-75"></div>
-          <div class="relative rounded-full h-2 w-2 bg-brand-a"></div>
+          <div class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75"></div>
+          <div class="relative rounded-full h-2 w-2 bg-green-500"></div>
         </div>
-        <span class="text-brand-a text-[0.65rem] font-black uppercase tracking-[0.3em]">Currently accepting new projects</span>
+        <span class="text-main text-[0.65rem] font-black uppercase tracking-[0.3em]">Currently accepting new projects</span>
       </div>
       
       <!-- The Final Word -->
-      <h2 class="mb-16 text-main text-6xl md:text-9xl font-black tracking-tighter leading-[0.85]">
+      <h2 class="mb-16 text-main text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85]">
         Let's bring your <br> 
         <span class="relative inline-block">
-          <span class="text-brand-a italic">ideas to life.</span>
-          <div class="absolute -bottom-4 left-0 w-full h-1.5 bg-brand-a/10 rounded-full"></div>
+          <span class="text-accent italic">vision to life.</span>
+          <div class="absolute -bottom-4 left-0 w-full h-1.5 bg-accent/10 rounded-full"></div>
         </span>
       </h2>
       
@@ -36,15 +36,15 @@
             href="mailto:hello.mohin4@gmail.com" 
             size="xl" 
             variant="primary"
-            class="shadow-2xl shadow-brand-a/30 hover:scale-105 transition-transform"
+            class="shadow-2xl shadow-accent/10 hover:scale-105 transition-transform"
           >
             <template #left><Icon name="lucide:calendar-check" class="h-5 w-5" /></template>
             Schedule a Strategy Call
           </SharedButton>
 
-          <a href="mailto:hello.mohin4@gmail.com" class="group flex items-center gap-4 px-8 h-14 rounded-full border border-glass bg-panel hover:border-brand-a/40 transition-all duration-300">
-             <Icon name="lucide:mail" class="h-5 w-5 text-muted group-hover:text-brand-a transition-colors" />
-             <span class="text-soft font-bold tracking-tight">hello.mohin4@gmail.com</span>
+          <a href="mailto:hello.mohin4@gmail.com" class="group flex items-center gap-4 px-8 h-14 rounded-full border border-subtle bg-panel hover:border-accent transition-all duration-300">
+             <Icon name="lucide:mail" class="h-5 w-5 text-muted group-hover:text-accent transition-colors" />
+             <span class="text-soft font-bold tracking-tight lowercase">hello.mohin4@gmail.com</span>
           </a>
         </div>
         

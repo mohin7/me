@@ -1,7 +1,7 @@
 <template>
   <div 
-    class="border border-subtle overflow-hidden relative transition-all duration-200"
-    :class="[paddingClasses, radiusClass, hover ? 'hover:shadow-md hover:-translate-y-0.5' : '']"
+    class="overflow-hidden relative transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none border border-black/[0.04] dark:border-white/[0.06]"
+    :class="[paddingClasses, radiusClass, hover ? 'hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)] hover:-translate-y-[2px] dark:hover:border-white/10' : '']"
     style="background: var(--bg-panel);"
   >
     <slot />
@@ -30,8 +30,8 @@ const paddingClasses = computed(() => {
   }
 })
 
-/* 12px for normal, 14px for large — matches the design scale */
+/* 16px for normal, 24px for large to match highly rounded aesthetics */
 const radiusClass = computed(() => {
-  return props.radius === 'large' ? 'rounded-[14px]' : 'rounded-xl'
+  return props.radius === 'large' ? 'rounded-[24px]' : 'rounded-2xl'
 })
 </script>

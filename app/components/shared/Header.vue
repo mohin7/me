@@ -4,10 +4,12 @@
 
       <!-- Logo -->
       <a href="#top" class="group flex items-center gap-3 shrink-0">
-        <div class="logo-mark group-hover:scale-110 transition-transform duration-500">M</div>
-        <div class="flex flex-col md:flex">
-          <span class="text-[0.85rem] font-black text-main leading-none uppercase tracking-tighter">Mohin Uddin</span>
-          <span class="text-[0.6rem] font-bold text-brand-a uppercase tracking-[0.2em] opacity-80">Head of Design</span>
+        <div class="logo-mark overflow-hidden group-hover:scale-110 transition-transform duration-500 ring-1 ring-black/[0.05] dark:ring-white/[0.1]">
+          <img src="https://ui-avatars.com/api/?name=Mohin+Uddin&background=111111&color=fff" alt="Mohin" class="h-full w-full object-cover" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[0.95rem] font-extrabold text-main leading-none tracking-tight">Mohin Uddin</span>
+          <span class="text-[0.6rem] font-bold text-soft uppercase tracking-[0.1em] mt-1">Head of Design</span>
         </div>
       </a>
 

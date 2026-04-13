@@ -1,5 +1,5 @@
 <template>
-  <section id="strategic-advantage" class="py-24 md:py-48 bg-page relative overflow-hidden">
+  <section id="strategic-advantage" class="py-20 md:py-32 bg-page relative overflow-hidden">
     <!-- Sophisticated Technical Backdrop -->
     <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent"></div>
     

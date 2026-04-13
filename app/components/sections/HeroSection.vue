@@ -1,34 +1,24 @@
 <template>
   <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-page">
     
-    <!-- ── Dynamic Life Background Layers ── -->
+    <!-- ── Dynamic Life Background Layers ── ... (Background content remains same) -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
-      
-      <!-- Technical Fragments (Floating Life) -->
       <div class="absolute inset-0 overflow-hidden opacity-40">
         <div class="fragment absolute h-24 w-24 border border-accent/10 rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
         <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-accent/20 to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
         <div class="fragment absolute h-16 w-16 border border-accent/10 top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
         <div class="fragment absolute h-32 w-px bg-gradient-to-b from-accent/20 to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
       </div>
-
-      <!-- High-Visibility Grid Pattern -->
       <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
            style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>
-      
-      <!-- Vivid Mesh Gradient Glows (Pulsing) -->
       <div class="absolute -left-[10%] top-[0%] h-[700px] w-[700px] rounded-full bg-accent/5 dark:bg-accent/3 blur-[160px] animate-glow-slow"></div>
       <div class="absolute -right-[5%] bottom-[5%] h-[600px] w-[600px] rounded-full bg-accent/10 dark:bg-accent/5 blur-[140px] animate-glow-reverse"></div>
-      
-      <!-- Architectural Geometric Shapes -->
       <div class="absolute right-[5%] top-[10%] opacity-[0.08] dark:opacity-[0.04] hidden lg:block">
         <div class="relative h-80 w-80 border-[1px] border-accent/20 border-dashed rounded-full animate-rotate-slow">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-accent/20"></div>
           <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-accent/20 bg-panel"></div>
         </div>
       </div>
-
-      <!-- Noise Overlay -->
       <div class="absolute inset-0 opacity-[0.025] dark:opacity-[0.05] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
     </div>
 
@@ -44,18 +34,38 @@
              <div class="h-px w-8 bg-accent/20"></div>
           </div>
 
-          <!-- Title -->
-          <h1 class="hero-title max-w-5xl mx-auto mb-8">
+          <!-- Title with Clipless Vector Reveal -->
+          <h1 class="hero-title max-w-5xl mx-auto mb-8 text-center">
             <span class="text-main block">Designing & coding the</span>
-            <span class="text-main block mt-2">next generation of <span class="text-soft italic serif-font lowercase">products.</span></span>
+            <span class="text-main flex flex-wrap justify-center items-center gap-[0em] mt-2">
+              <span>next-generation of</span>
+              <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center">
+                
+                <!-- Phantom (Preserves space centered) -->
+                <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-2">platforms.</span>
+                
+                <!-- Vector Reveal Container with extra headroom for descenders and slants -->
+                <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
+                   <!-- The Text (Clipped Container) -->
+                   <div 
+                     class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1"
+                     :style="{ width: revealWidth }"
+                   >
+                     <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
+                   </div>
+                   
+                   <!-- The Cursor -->
+                   <span class="h-[0.8em] w-[3px] bg-black rounded-full shadow-[0_0_10px_rgba(0,0,0,0.2)] ml-[1px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
+                </div>
+              </span>
+            </span>
           </h1>
 
-          <!-- Subtitle -->
+          <!-- Subtitle ... rest unchanged -->
           <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-12">
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
-          <!-- CTAs -->
           <div class="flex items-center justify-center gap-8 mt-2 mb-20">
             <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-14 px-10">
               Book a Strategy Call
@@ -63,13 +73,13 @@
                 <Icon name="lucide:arrow-right" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <a href="#works" class="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-main hover:text-soft transition-colors mt-1">
+            <a href="#works" class="group flex items-center gap-2 text-sm font-bold tracking-tight text-main border border-accent/10 hover:border-accent/20 px-8 h-14 rounded-full transition-all">
               Explore Portfolio
               <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform group-hover:translate-y-1" />
             </a>
           </div>
 
-          <!-- Integrated Precision Proof Bar (Compact & Elite) -->
+          <!-- Integrated Precision Proof Bar -->
           <div class="w-full max-w-5xl animate-bar-up translate-y-4">
             <div class="relative flex flex-col md:flex-row items-stretch md:items-center bg-panel/40 backdrop-blur-3xl border border-glass rounded-[32px] md:rounded-full overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.05)]">
               
@@ -101,7 +111,7 @@
                  </div>
               </div>
 
-              <!-- Metrics Block (The Anchor) -->
+              <!-- Metrics Block -->
               <div class="flex items-center gap-8 px-10 py-4 bg-accent text-accent-fg shrink-0">
                  <div class="flex items-baseline gap-2">
                    <span class="text-2xl font-black italic serif-font leading-none">07</span>
@@ -119,7 +129,6 @@
                <span class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-30">Verified Technical Expertise & Structural Logic</span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -127,6 +136,32 @@
 </template>
 
 <script setup lang="ts">
+const words = ['products.', 'MVPs.', 'SaaS.', 'platforms.', 'systems.']
+const wordIndex = ref(0)
+const revealWidth = ref('0px')
+const isPaused = ref(false)
+
+const cycleReveal = () => {
+  isPaused.value = false
+  revealWidth.value = '100%'
+  
+  setTimeout(() => {
+    isPaused.value = true
+    setTimeout(() => {
+      isPaused.value = false
+      revealWidth.value = '0px'
+      setTimeout(() => {
+        wordIndex.value = (wordIndex.value + 1) % words.length
+        cycleReveal()
+      }, 1300)
+    }, 2500)
+  }, 1300)
+}
+
+onMounted(() => {
+  setTimeout(cycleReveal, 1000)
+})
+
 const logos = [
   { name: 'AppsCode', icon: 'lucide:box' },
   { name: 'KubeDB', icon: 'lucide:database' },
@@ -146,40 +181,16 @@ const logos = [
   to { opacity: 1; transform: translateY(0); } 
 }
 
-.animate-glow-slow { animation: pulse 12s ease-in-out infinite; }
-.animate-glow-reverse { animation: pulse 15s ease-in-out infinite reverse; }
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
+@keyframes smooth-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
 }
 
-.animate-rotate-slow { animation: rotate 120s linear infinite; }
-@keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-
-.animate-drift-slow { animation: drift 20s ease-in-out infinite; }
-.animate-drift-normal { animation: drift 15s ease-in-out infinite reverse; }
-.animate-drift-reverse { animation: drift 25s ease-in-out infinite; }
-
-@keyframes drift {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(20px, -20px); }
+.animate-smooth-blink {
+  animation: smooth-blink 1s ease-in-out infinite;
 }
 
-.animate-ticker {
-  animation: ticker 45s linear infinite;
-}
-
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-ticker:hover {
-  animation-play-state: paused;
-}
-
-/* ── Typography ── */
+/* ── Typography and others ... ── */
 .serif-font { font-family: 'Playfair Display', serif; }
 
 .hero-title {
@@ -194,5 +205,18 @@ const logos = [
   color: var(--text-soft);
   max-width: 720px;
   letter-spacing: -0.01em;
+}
+
+.animate-ticker {
+  animation: ticker 45s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
 }
 </style>

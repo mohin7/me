@@ -73,51 +73,62 @@ const sizeClasses = computed(() => {
 .btn-primary {
   background: var(--accent);
   color: var(--accent-fg);
+  border: 1px solid var(--accent);
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ── Refracted Light Beam ── */
 .btn-primary::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -150%;
   width: 100%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
     transparent
   );
-  transition: 0.5s;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: skewX(-20deg);
 }
-.btn-primary:hover::after {
-  left: 100%;
-}
+
 .btn-primary:not(.sm-no-jump):hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(var(--accent-rgb), 0.3);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.05);
 }
-.btn-primary.sm-no-jump:hover {
-  opacity: 0.9;
+
+.btn-primary:hover::after {
+  left: 150%;
+}
+
+.theme-dark .btn-primary {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.theme-dark .btn-primary:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
 
 .btn-outline {
-  border: 1px solid var(--border-glass);
+  border: 1px solid var(--border-subtle);
   color: var(--text-main);
   background: transparent;
   font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-outline:not(.sm-no-jump):hover {
-  border-color: var(--brand-a);
-  color: var(--brand-a);
+  border-color: var(--accent);
   background: var(--bg-soft);
   transform: translateY(-2px);
-}
-.btn-outline.sm-no-jump:hover {
-  border-color: var(--brand-a);
-  color: var(--brand-a);
-  background: var(--bg-soft);
 }
 
 .btn-glass {
@@ -125,9 +136,10 @@ const sizeClasses = computed(() => {
   backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid var(--border-glass);
   color: var(--text-main);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-glass:hover {
-  border-color: var(--brand-a);
+  border-color: var(--accent);
   background: var(--bg-soft);
   transform: translateY(-2px);
 }
@@ -136,9 +148,10 @@ const sizeClasses = computed(() => {
   color: var(--text-soft);
   background: transparent;
   font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-ghost:hover {
-  color: var(--brand-a);
+  color: var(--text-main);
   background: var(--bg-soft);
 }
 </style>

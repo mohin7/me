@@ -3,7 +3,7 @@
     <SharedHeader />
     <main>
       <SectionsHeroSection />
-      <SectionsTrustBar />
+      <SectionsStrategicAdvantage />
       <SectionsExperienceSection />
       <SectionsProcessSection />
       <SectionsCaseStudiesSection />

@@ -8,8 +8,8 @@
           <img src="https://ui-avatars.com/api/?name=Mohin+Uddin&background=111111&color=fff" alt="Mohin" class="h-full w-full object-cover" />
         </div>
         <div class="flex flex-col">
-          <span class="text-[0.95rem] font-extrabold text-main leading-none tracking-tight">Mohin Uddin</span>
-          <span class="text-[0.6rem] font-bold text-soft uppercase tracking-[0.1em] mt-1">Head of Design</span>
+          <span class="text-[0.9rem] font-extrabold text-main leading-none tracking-tight">Mohin Uddin</span>
+          <span class="text-[0.6rem] font-bold text-soft mt-1.5 uppercase tracking-widest">Design Engineer</span>
         </div>
       </a>
 
@@ -30,10 +30,10 @@
         <button type="button" class="icon-btn-v2" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
-        <SharedButton tag="a" href="#contact" variant="primary" size="sm">
-          Discuss Project
+        <SharedButton tag="a" href="#contact" variant="primary" size="sm" class="px-5">
+          Let's Talk
           <template #right>
-            <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
+            <Icon name="lucide:arrow-up-right" class="h-3.5 w-3.5" />
           </template>
         </SharedButton>
       </div>
@@ -87,9 +87,9 @@ const isMobileMenuOpen = ref(false)
 const { theme, toggleTheme } = useTheme()
 
 const navItems = [
+  { label: 'Work', href: '#works' },
   { label: 'Experience', href: '#experience' },
   { label: 'Methodology', href: '#process' },
-  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Testimonials', href: '#testimonials' },
 ]
 </script>
@@ -98,43 +98,34 @@ const navItems = [
 /* ── Navbar: Premium Glass ── */
 .navbar {
   background: var(--bg-glass);
-  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--border-glass);
   border-radius: 9999px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.04);
 }
 
 .logo-mark {
-  width: 36px; height: 36px;
-  display: grid;
-  place-items: center;
+  width: 32px; height: 32px;
   border-radius: 50%;
-  font-size: 0.85rem;
-  font-weight: 950;
-  color: #FFFFFF;
-  background: var(--brand-a);
-  box-shadow: 0 4px 12px rgba(var(--brand-rgb), 0.3);
+  background: var(--accent);
 }
 
 .nav-link {
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-soft);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 .nav-link:hover {
-  color: var(--brand-a);
+  color: var(--text-main);
   background: var(--bg-soft);
-  transform: translateY(-1px);
 }
 
 .icon-btn-v2 {
-  width: 36px; height: 36px;
+  width: 32px; height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -147,8 +138,8 @@ const navItems = [
 }
 .icon-btn-v2:hover {
   background: var(--bg-panel);
-  color: var(--brand-a);
-  border-color: var(--brand-a);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ── Mobile menu V2 ── */

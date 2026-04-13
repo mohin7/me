@@ -1,40 +1,84 @@
 <template>
-  <footer class="border-t border-subtle mt-20" style="background: var(--bg-soft);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <h3 class="text-main mb-3 font-bold">Md Mohin Uddin</h3>
-          <p class="text-muted text-sm leading-relaxed">Head of Design, UI/UX Specialist, and Frontend Developer.</p>
+  <footer class="pt-24 pb-12 bg-page border-t border-accent/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- High-Resolution Minimal Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <!-- Brand Signature -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+             <div class="h-8 w-8 bg-accent text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base">M</div>
+             <span class="text-main font-black tracking-tighter">Mohin Uddin</span>
+          </div>
+          <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px]">
+            Executive Design Lead specializing in high-performance digital products and systems.
+          </p>
         </div>
-        <div>
-          <h4 class="text-main mb-4 font-semibold text-sm uppercase tracking-wider">Work</h4>
-          <ul class="text-muted space-y-2 text-sm">
-            <li><a href="#about" class="hover:text-main transition">About</a></li>
-            <li><a href="#works" class="hover:text-main transition">Projects</a></li>
-            <li><a href="#case-studies" class="hover:text-main transition">Case Studies</a></li>
-            <li><a href="#packages" class="hover:text-main transition">Services</a></li>
+
+        <!-- Links Groups -->
+        <div v-for="(group, idx) in footerGroups" :key="idx">
+          <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">{{ group.title }}</h4>
+          <ul class="space-y-4">
+            <li v-for="link in group.links" :key="link.name">
+              <a :href="link.href" target="_blank" class="text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-2">
+                {{ link.name }}
+              </a>
+            </li>
           </ul>
         </div>
-        <div>
-          <h4 class="text-main mb-4 font-semibold text-sm uppercase tracking-wider">Social</h4>
-          <ul class="text-muted space-y-2 text-sm">
-            <li><a href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noreferrer" class="hover:text-main transition">LinkedIn</a></li>
-            <li><a href="https://github.com/mohin7" target="_blank" rel="noreferrer" class="hover:text-main transition">GitHub</a></li>
-            <li><a href="https://dribbble.com/mohin7" target="_blank" rel="noreferrer" class="hover:text-main transition">Dribbble</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-main mb-4 font-semibold text-sm uppercase tracking-wider">Contact</h4>
-          <a href="mailto:hello.mohin4@gmail.com" class="text-muted text-sm hover:text-main transition block">hello.mohin4@gmail.com</a>
-          <p class="text-muted mt-2 text-sm">Dhaka, Bangladesh</p>
+
+        <!-- System Intelligence -->
+        <div class="flex flex-col md:items-end text-left md:text-right">
+          <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">Base Terminal</h4>
+          <div class="space-y-2">
+            <p class="text-main text-sm font-black">Dhaka, Bangladesh</p>
+            <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-60">GMT+6 // Active Now</p>
+          </div>
+          <div class="mt-auto pt-8 flex items-center gap-2 text-accent/40">
+             <div class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></div>
+             <span class="text-[0.55rem] font-black uppercase tracking-widest">Available for Q2 {{ currentYear }}</span>
+          </div>
         </div>
       </div>
-      <div class="border-t border-subtle pt-8">
-        <p class="text-muted text-sm text-center">© 2026 Md Mohin Uddin. All rights reserved.</p>
+
+      <!-- Legal Footnote -->
+      <div class="pt-12 border-t border-accent/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-40">
+          © {{ currentYear }} Md Mohin Uddin. All rights reserved.
+        </p>
+        <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-40">
+           <span class="hover:text-main cursor-pointer transition-colors">Privacy</span>
+           <span class="hover:text-main cursor-pointer transition-colors">Terms</span>
+        </div>
       </div>
+
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
+const currentYear = new Date().getFullYear()
+
+const footerGroups = [
+  {
+    title: 'Archive',
+    links: [
+      { name: 'Architecture', href: '#strategic-advantage' },
+      { name: 'Experience', href: '#experience' },
+      { name: 'Methodology', href: '#process' }
+    ]
+  },
+  {
+    title: 'Ecosystem',
+    links: [
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mohin7/' },
+      { name: 'GitHub', href: 'https://github.com/mohin7' },
+      { name: 'Dribbble', href: 'https://dribbble.com/mohin7' }
+    ]
+  }
+]
 </script>
+
+<style scoped>
+.serif-font { font-family: 'Playfair Display', serif; }
+</style>

@@ -1,9 +1,14 @@
 <template>
   <div ref="containerRef" class="relative">
     <!-- Scroll Spacer -->
-    <div :style="{ height: `${(steps.length * 60) + 100}vh` }" class="relative">
+    <div :style="{ height: `${(steps.length * 75) + 100}vh` }" class="relative">
       
-      <section id="process" class="sticky top-0 h-screen flex flex-col justify-center bg-page overflow-hidden">
+      <!-- Manually Sticky Section (Moved via sectionOffset since native sticky is broken in fixed wrappers) -->
+      <section 
+        id="process" 
+        class="absolute top-0 left-0 w-full h-screen flex flex-col justify-center bg-page overflow-hidden"
+        :style="{ transform: `translate3d(0, ${sectionOffset}px, 0)` }"
+      >
         <!-- Subtle Grid Background -->
         <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
              style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
@@ -11,18 +16,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           
           <!-- Section Header -->
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
-            <div class="max-w-2xl">
-              <div class="flex items-center gap-3 mb-6">
-                <div class="h-px w-8 bg-accent/20"></div>
-                <span class="text-[0.65rem] font-bold uppercase tracking-[0.5em] text-soft">The Methodology</span>
-              </div>
-              <h2 class="text-main text-4xl font-black tracking-tighter md:text-7xl leading-[0.85]">
-                Systematic <br />
-                <span class="italic serif-font lowercase" style="color: #52525B">delivery.</span>
-              </h2>
+          <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
+            <div class="mb-10">
+               <span class="section-label flex justify-center">The Methodology</span>
             </div>
-            <p class="text-soft text-lg font-medium leading-relaxed max-w-[360px] pb-2">
+            <h2 class="text-main text-4xl font-black tracking-tighter md:text-7xl leading-[0.85]">
+              Systematic <br />
+              <span class="italic serif-font lowercase" style="color: #52525B">delivery.</span>
+            </h2>
+            <p class="text-soft text-lg font-medium leading-relaxed max-w-[480px] mt-8">
               Design treated as a core engineering discipline: results-driven, scalable, and built for speed.
             </p>
           </div>
@@ -40,7 +42,7 @@
             <!-- Light & Minimalist Cards -->
             <div 
               class="flex gap-8 md:gap-12 will-change-transform"
-              :style="{ transform: `translateX(-${translateX}px)` }"
+              :style="{ transform: `translate3d(-${translateX}px, 0, 0)` }"
             >
               <div 
                 v-for="(step, idx) in steps" 
@@ -49,15 +51,12 @@
               >
                 <!-- Minimalist Card -->
                 <div class="relative group rounded-[32px] border border-accent/10 bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[480px] hover:border-accent/30 transition-all duration-500">
-                  
-                  <!-- Phase & Category -->
                   <div class="flex items-center gap-3 mb-10">
                      <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.3em] font-mono">Phase_0{{ idx + 1 }}</span>
                      <div class="h-1 w-1 rounded-full bg-accent/20"></div>
                      <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-40">{{ step.category }}</span>
                   </div>
 
-                  <!-- Title & Icon -->
                   <div class="flex justify-between items-start gap-6 mb-8">
                     <h3 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors">
                        {{ step.title }}
@@ -68,17 +67,13 @@
                      {{ step.description }}
                   </p>
 
-                  <!-- Delivery Details -->
                   <div class="mt-auto space-y-8 pt-8 border-t border-accent/5">
-                    <!-- Outputs -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div v-for="output in step.outputs" :key="output" class="flex items-center gap-3">
                          <div class="h-1 w-1 rounded-full bg-accent/40"></div>
                          <span class="text-soft text-[0.75rem] font-bold tracking-tight">{{ output }}</span>
                       </div>
                     </div>
-
-                    <!-- Strategic Note -->
                     <p class="text-muted text-xs font-medium leading-relaxed italic opacity-60">
                       {{ step.strategy }}
                     </p>
@@ -95,36 +90,64 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const containerRef = ref<HTMLElement | null>(null)
 const translateX = ref(0)
 const scrollPercent = ref(0)
+const sectionOffset = ref(0)
 
-const handleScroll = () => {
+let cachedSectionTop = 0
+let cachedSectionHeight = 0
+
+const updateCache = () => {
+  if (containerRef.value) {
+    cachedSectionTop = containerRef.value.offsetTop
+    cachedSectionHeight = containerRef.value.offsetHeight
+  }
+}
+
+const updateScrollLogic = (virtualY: number) => {
   if (!containerRef.value) return
-  const rect = containerRef.value.getBoundingClientRect()
-  const sectionTop = window.scrollY + rect.top
-  const sectionHeight = containerRef.value.offsetHeight
+  
   const viewportHeight = window.innerHeight
   
-  let distance = window.scrollY - sectionTop
-  let maxDistance = sectionHeight - viewportHeight
-  if (distance < 0) distance = 0
-  if (distance > maxDistance) distance = maxDistance
+  const start = cachedSectionTop
+  const end = cachedSectionTop + cachedSectionHeight - viewportHeight
+  
+  let distance = virtualY - start
+  if (distance < 0) {
+    distance = 0
+    sectionOffset.value = 0
+  } else if (distance > (cachedSectionHeight - viewportHeight)) {
+    distance = cachedSectionHeight - viewportHeight
+    sectionOffset.value = cachedSectionHeight - viewportHeight
+  } else {
+    sectionOffset.value = distance
+  }
   
   const stepCount = steps.length
   const cardWidth = window.innerWidth >= 1024 ? 560 + 48 : window.innerWidth >= 768 ? 500 + 32 : window.innerWidth * 0.85 + 32
   const maxTranslate = (cardWidth * (stepCount - 1))
   
-  const progress = distance / maxDistance
+  const progress = distance / (cachedSectionHeight - viewportHeight)
   translateX.value = progress * maxTranslate
   scrollPercent.value = progress * 100
 }
 
+const handleSmoothScroll = (e: any) => {
+  updateScrollLogic(e.detail)
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  updateCache()
+  setTimeout(updateCache, 1000)
+  window.addEventListener('smooth-scroll', handleSmoothScroll)
+  window.addEventListener('resize', updateCache)
 })
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('smooth-scroll', handleSmoothScroll)
+  window.removeEventListener('resize', updateCache)
 })
 
 const steps = [
@@ -161,8 +184,5 @@ const steps = [
 
 <style scoped>
 .serif-font { font-family: 'Playfair Display', serif; }
-
-#process {
-  z-index: 50;
-}
+#process { z-index: 50; }
 </style>

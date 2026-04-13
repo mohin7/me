@@ -5,24 +5,20 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Combined Executive Technical Module (One Unified Balanced Structure) -->
-      <div class="relative bg-panel/30 border border-glass rounded-[64px] p-8 md:p-16 backdrop-blur-3xl shadow-2xl overflow-hidden">
+      <div class="relative bg-panel/30 border border-accent/10 rounded-[64px] p-8 md:p-16 backdrop-blur-3xl overflow-hidden">
         
-        <!-- Decoration / Background Pattern for the Module -->
         <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
              style="background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px); background-size: 30px 30px;">
         </div>
 
         <div class="relative z-10">
           
-          <!-- Header Split: Balanced Narrative & Specs -->
           <div class="grid lg:grid-cols-[1fr_400px] gap-20 items-start mb-24">
             <div>
-              <div class="flex items-center gap-3 mb-8">
-                <div class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></div>
-                <span class="text-[0.6rem] font-black uppercase tracking-[0.5em] text-muted">Strategic Advantage Matrix</span>
+              <div class="mb-8">
+                 <span class="section-label">Strategic Advantage Matrix</span>
               </div>
-              <h2 class="text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] mb-10 max-w-2xl">
+              <h2 class="text-main text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] mb-10 max-w-2xl">
                 I bridge the gap for <br />
                 founders demanding <span class="text-soft italic serif-font lowercase">momentum.</span>
               </h2>

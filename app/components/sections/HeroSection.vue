@@ -1,7 +1,7 @@
 <template>
-  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-page">
+  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden bg-page">
     
-    <!-- ── Dynamic Life Background Layers ── ... (Background content remains same) -->
+    <!-- ── Dynamic Life Background Layers ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
       <div class="absolute inset-0 overflow-hidden opacity-40">
         <div class="fragment absolute h-24 w-24 border border-accent/10 rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
@@ -28,47 +28,35 @@
         <!-- Content Stack -->
         <div class="hero-enter flex flex-col items-center">
           <!-- Designation -->
-          <div class="mb-6 flex items-center gap-3">
-             <div class="h-px w-8 bg-accent/20"></div>
-             <span class="text-[0.65rem] font-black uppercase tracking-[0.4em] text-soft">Product Design Engineer • Nuxt & Vue Expert</span>
-             <div class="h-px w-8 bg-accent/20"></div>
+          <div class="mb-10 flex flex-col items-center">
+             <span class="section-label">Product Design Engineer • Nuxt & Vue Expert</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-5xl mx-auto mb-8 text-center">
+          <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center">
             <span class="text-main block">Designing & coding the</span>
             <span class="text-main flex flex-wrap justify-center items-center gap-[0em] mt-2">
               <span>next-generation of</span>
               <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center">
-                
-                <!-- Phantom (Preserves space centered) -->
                 <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-2">platforms.</span>
-                
-                <!-- Vector Reveal Container with extra headroom for descenders and slants -->
                 <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
-                   <!-- The Text (Clipped Container) -->
-                   <div 
-                     class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1"
-                     :style="{ width: revealWidth }"
-                   >
+                   <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
                      <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
                    </div>
-                   
-                   <!-- The Cursor -->
-                   <span class="h-[0.8em] w-[3px] bg-black rounded-full shadow-[0_0_10px_rgba(0,0,0,0.2)] ml-[1px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
+                   <span class="h-[0.8em] w-[3px] bg-black dark:bg-white rounded-full ml-[1px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
                 </div>
               </span>
             </span>
           </h1>
 
-          <!-- Subtitle ... rest unchanged -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-12">
+          <!-- Subtitle -->
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-16 px-4">
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
-          <div class="flex items-center justify-center gap-8 mt-2 mb-20">
-            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-14 px-10">
-              Book a Strategy Call
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-2 mb-20">
+            <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-14 px-10 rounded-full">
+              Book Strategy Call
               <template #right>
                 <Icon name="lucide:arrow-right" class="h-4 w-4" />
               </template>
@@ -80,10 +68,8 @@
           </div>
 
           <!-- Integrated Precision Proof Bar -->
-          <div class="w-full max-w-5xl animate-bar-up translate-y-4">
-            <div class="relative flex flex-col md:flex-row items-stretch md:items-center bg-panel/40 backdrop-blur-3xl border border-glass rounded-[32px] md:rounded-full overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.05)]">
-              
-              <!-- Social Proof -->
+          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-4">
+            <div class="relative flex flex-col md:flex-row items-stretch md:items-center bg-panel/40 backdrop-blur-3xl border border-accent/10 rounded-[32px] md:rounded-full overflow-hidden">
               <div class="flex items-center gap-4 px-8 py-4 border-b md:border-b-0 md:border-r border-accent/10 whitespace-nowrap">
                 <div class="flex -space-x-3">
                   <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
@@ -96,11 +82,7 @@
                 </div>
               </div>
 
-              <!-- Brand Stream -->
-              <div class="flex-1 w-full overflow-hidden relative px-4 py-4">
-                 <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-panel to-transparent z-10"></div>
-                 <div class="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-panel to-transparent z-10"></div>
-                 
+              <div class="flex-1 w-full overflow-hidden relative px-4 py-4 min-h-[4rem] flex items-center">
                  <div class="flex gap-12 md:gap-16 animate-ticker grayscale opacity-20 hover:opacity-100 transition-opacity duration-700">
                    <div v-for="i in 3" :key="i" class="flex gap-12 md:gap-16">
                      <div v-for="l in logos" :key="l.name" class="flex items-center gap-3">
@@ -111,7 +93,6 @@
                  </div>
               </div>
 
-              <!-- Metrics Block -->
               <div class="flex items-center gap-8 px-10 py-4 bg-accent text-accent-fg shrink-0">
                  <div class="flex items-baseline gap-2">
                    <span class="text-2xl font-black italic serif-font leading-none">07</span>
@@ -124,7 +105,6 @@
                  </div>
               </div>
             </div>
-            
             <div class="mt-4 flex justify-center">
                <span class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-30">Verified Technical Expertise & Structural Logic</span>
             </div>
@@ -144,7 +124,6 @@ const isPaused = ref(false)
 const cycleReveal = () => {
   isPaused.value = false
   revealWidth.value = '100%'
-  
   setTimeout(() => {
     isPaused.value = true
     setTimeout(() => {
@@ -172,7 +151,6 @@ const logos = [
 </script>
 
 <style scoped>
-/* ── Animations ── */
 .hero-enter { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .animate-bar-up { animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
 
@@ -186,37 +164,34 @@ const logos = [
   50% { opacity: 0.2; }
 }
 
-.animate-smooth-blink {
-  animation: smooth-blink 1s ease-in-out infinite;
-}
+.animate-smooth-blink { animation: smooth-blink 1s ease-in-out infinite; }
 
-/* ── Typography and others ... ── */
 .serif-font { font-family: 'Playfair Display', serif; }
 
 .hero-title {
-  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-size: clamp(2.6rem, 8vw, 5rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
 .hero-sub {
-  font-size: 1.35rem;
+  font-size: 1.125rem;
   color: var(--text-soft);
-  max-width: 720px;
   letter-spacing: -0.01em;
 }
 
-.animate-ticker {
-  animation: ticker 45s linear infinite;
-}
-
+.animate-ticker { animation: ticker 45s linear infinite; }
 @keyframes ticker {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.animate-ticker:hover { animation-play-state: paused; }
 
-.animate-ticker:hover {
-  animation-play-state: paused;
+.animate-glow-slow { animation: glow 8s ease-in-out infinite alternate; }
+.animate-glow-reverse { animation: glow 10s ease-in-out infinite alternate-reverse; }
+@keyframes glow {
+  from { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  to { transform: translate(20px, 20px) scale(1.1); opacity: 0.5; }
 }
 </style>

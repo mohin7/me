@@ -1,5 +1,5 @@
 <template>
-  <section id="case-studies" class="relative py-24 md:py-44 bg-page overflow-visible">
+  <section id="case-studies" class="relative py-20 md:py-32 bg-page overflow-visible">
     <!-- Sophisticated Section Border -->
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
 

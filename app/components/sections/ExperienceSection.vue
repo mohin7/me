@@ -1,18 +1,21 @@
 <template>
-  <section id="experience" class="py-24 md:py-44 bg-page relative overflow-visible">
+  <section id="experience" ref="containerRef" class="py-20 md:py-32 bg-page relative overflow-visible">
     <!-- Sophisticated Technical Grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 64px 64px;"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
       <div class="grid lg:grid-cols-[380px_1fr] gap-20 lg:gap-32 items-start">
         
-        <!-- Sticky Sidebar: The Authority Anchor -->
-        <div class="lg:sticky lg:top-40 h-fit">
+        <!-- Manually Sticky Sidebar (Synchronized with virtual scroll) -->
+        <div 
+          ref="sidebarRef"
+          class="lg:relative h-fit will-change-transform"
+          :style="{ transform: `translate3d(0, ${sidebarOffset}px, 0)` }"
+        >
           <div class="inline-flex flex-col mb-16">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="h-px w-8 bg-accent/20"></div>
-              <span class="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-soft">Technical Archive</span>
+            <div class="mb-8">
+               <span class="section-label">Technical Archive</span>
             </div>
             
             <div class="flex items-baseline gap-4 mb-4">
@@ -37,7 +40,6 @@
 
         <!-- The Timeline Content -->
         <div class="relative">
-          <!-- Central Timeline Line (Matches Hero's subtle UI lines) -->
           <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px bg-gradient-to-b from-accent/20 via-accent/5 to-transparent hidden md:block"></div>
 
           <div class="space-y-12">
@@ -45,16 +47,11 @@
               v-for="(job, idx) in experience" 
               :key="idx" 
               class="experience-card group relative reveal-item"
-              :style="{ animationDelay: `${idx * 0.15}s` }"
             >
-              <!-- Timeline Node -->
-              <div class="absolute left-[-5px] md:left-[26px] top-12 h-3.5 w-3.5 rounded-full border-2 border-accent bg-page z-20 transition-all duration-500 group-hover:scale-150 group-hover:bg-accent group-hover:shadow-[0_0_15px_var(--accent)] hidden md:block"></div>
+              <div class="absolute left-[-5px] md:left-[26px] top-12 h-3.5 w-3.5 rounded-full border-2 border-accent bg-page z-20 transition-all duration-500 group-hover:scale-150 group-hover:bg-accent hidden md:block"></div>
 
-              <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-glass/5 bg-panel/10 hover:border-accent/10 hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700 hover:shadow-2xl">
-                
-                <!-- Main Content Column -->
+              <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-accent/5 bg-panel/10 hover:border-accent/10 hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700">
                 <div>
-                  <!-- Period (Matches Hero Accent Colors) -->
                   <div class="flex items-center gap-4 mb-5">
                     <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.4em] font-mono">
                        {{ job.period }}
@@ -71,12 +68,10 @@
                     <span class="text-soft font-bold text-sm tracking-tight italic">@ {{ job.company }}</span>
                   </div>
                   
-                  <!-- Description (Matches Hero Subtitle Contrast) -->
                   <p class="text-soft text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-2xl">
                      {{ job.description }}
                   </p>
 
-                  <!-- Impact Points (Matches Hero Subtitle Contrast) -->
                   <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                      <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-4">
                         <div class="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0"></div>
@@ -84,14 +79,12 @@
                      </div>
                   </div>
 
-                  <!-- Technical Tags -->
                   <div class="flex flex-wrap gap-2 pt-10 border-t border-accent/5">
                      <span v-for="tag in job.tags" :key="tag" class="px-5 py-2 rounded-full bg-accent/5 text-soft text-[0.65rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/30 transition-all cursor-default">
                        {{ tag }}
                      </span>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -103,6 +96,73 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const containerRef = ref<HTMLElement | null>(null)
+const sidebarRef = ref<HTMLElement | null>(null)
+const sidebarOffset = ref(0)
+const stickyTopPadding = 160 
+
+let cachedContainerTop = 0
+let cachedContainerHeight = 0
+let cachedSidebarHeight = 0
+
+const updateCache = () => {
+  if (containerRef.value && sidebarRef.value) {
+    cachedContainerTop = containerRef.value.offsetTop
+    cachedContainerHeight = containerRef.value.offsetHeight
+    cachedSidebarHeight = sidebarRef.value.offsetHeight
+  }
+}
+
+const updateSidebarSticky = (virtualY: number) => {
+  if (!containerRef.value || !sidebarRef.value) return
+  
+  const viewportHeight = window.innerHeight
+  const containerTop = cachedContainerTop
+  const containerHeight = cachedContainerHeight
+  const sidebarHeight = sidebarRef.value.offsetHeight // Re-read just in case
+  
+  // The 'Goal' is to have the sidebar centered in the viewport
+  // Viewport Center = viewportHeight / 2
+  // Sidebar Center = sidebarHeight / 2
+  // We want: Sidebar_Screen_Pos = Viewport_Center - Sidebar_Center
+  
+  // When wrapper is at virtualY, the section's screen pos is (containerTop - virtualY)
+  // We want the sidebar's screen pos to be (viewportHeight/2 - sidebarHeight/2)
+  // Sidebar_Local_Offset = Screen_Goal - Section_Screen_Pos
+  
+  const screenGoal = (viewportHeight / 2) - (sidebarHeight / 2)
+  let localOffset = virtualY - containerTop + screenGoal
+  
+  // Clamp localOffset so it stays within container boundaries
+  const maxLocalOffset = containerHeight - sidebarHeight
+  
+  if (localOffset < 0) {
+    localOffset = 0
+  } else if (localOffset > maxLocalOffset) {
+    localOffset = maxLocalOffset
+  }
+  
+  sidebarOffset.value = localOffset
+}
+
+const handleSmoothScroll = (e: any) => {
+  updateSidebarSticky(e.detail)
+}
+
+onMounted(() => {
+  updateCache()
+  setTimeout(updateCache, 1000)
+  window.addEventListener('smooth-scroll', handleSmoothScroll)
+  window.addEventListener('resize', updateCache)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('smooth-scroll', handleSmoothScroll)
+  window.removeEventListener('resize', updateCache)
+})
+
 const experience = [
   {
     role: 'Product Design Engineer',
@@ -145,21 +205,4 @@ const experience = [
 
 <style scoped>
 .serif-font { font-family: 'Playfair Display', serif; }
-
-.reveal-item {
-  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.experience-card {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.experience-card:hover {
-  transform: translateY(-8px);
-}
 </style>

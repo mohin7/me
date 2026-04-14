@@ -24,6 +24,26 @@ export default {
           'monospace',
         ],
       },
+      textColor: {
+        main: "var(--text-main)",
+        soft: "var(--text-soft)",
+        muted: "var(--text-muted)",
+        accent: "var(--accent)",
+      },
+      backgroundColor: {
+        page: "var(--bg-page)",
+        panel: "var(--bg-panel)",
+        soft: "var(--bg-soft)",
+        glass: "var(--bg-glass)",
+      },
+      borderColor: {
+        accent: "var(--accent)",
+
+        glass: "var(--border-glass)",
+        subtle: "var(--border-subtle)",
+        accent: "var(--accent)",
+      },
+
       colors: {
         brand: {
           DEFAULT: '#FF5C00', // Your main orange

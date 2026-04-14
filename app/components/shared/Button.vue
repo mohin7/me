@@ -15,14 +15,14 @@
     @mouseleave="isHovered = false"
     v-bind="$attrs"
   >
-    <div class="relative h-[1.1em] overflow-hidden">
+    <div class="relative h-[1.6em] overflow-hidden">
       <div v-if="hoverText" class="flex flex-col items-center transition-transform duration-500 ease-in-out group-hover/btn:-translate-y-1/2">
-         <div class="h-[1.1em] flex items-center justify-center gap-2">
+         <div class="h-[1.6em] flex items-center justify-center gap-2">
            <slot name="left"></slot>
            <slot />
            <slot name="right"></slot>
          </div>
-         <div class="h-[1.1em] flex items-center justify-center text-accent italic font-bold">
+         <div class="h-[1.6em] flex items-center justify-center text-accent italic font-bold">
            {{ hoverText }}
          </div>
       </div>

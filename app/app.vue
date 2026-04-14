@@ -226,14 +226,14 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 
 .theme-dark {
   --bg-page: #080808;
-  --bg-panel: #101010;
+  --bg-panel: #0B0B0B;
   --bg-panel-strong: #1A1A1A;
   --bg-soft: #181818;
   --text-main: #FAFAFA;
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
-  --border-subtle: #12121A;
-  --border-glass: #1A1A22;
+  --border-subtle: #0A0A0F;
+  --border-glass: #0D0D12;
   --bg-glass: rgba(10,10,12,0.7);
   --accent-rgb: 200, 210, 255;
   --accent-spotlight: rgba(var(--accent-rgb), 0.05);
@@ -242,6 +242,13 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 /* ── Global Section Standards ── */
+.theme-dark .border-glass {
+  border-color: var(--border-glass);
+}
+.theme-dark .border-glass:hover {
+  border-color: rgba(var(--accent-rgb), 0.12) !important;
+}
+
 .section-label {
   font-size: 0.65rem;
   font-weight: 900;
@@ -254,6 +261,13 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 @media (min-width: 768px) {
+.theme-dark .border-glass {
+  border-color: var(--border-glass);
+}
+.theme-dark .border-glass:hover {
+  border-color: rgba(var(--accent-rgb), 0.12) !important;
+}
+
   .section-label {
     letter-spacing: 0.4em;
     gap: 0.75rem;

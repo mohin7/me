@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxt/content'
   ],
   components: true,
   ssr: true,
@@ -49,6 +50,14 @@ export default defineNuxtConfig({
         '@vue/devtools-core',
         '@vue/devtools-kit',
       ]
+    }
+  },
+  content: {
+    collections: {
+      blog: {
+        type: 'page',
+        source: 'blog/**'
+      }
     }
   }
 })

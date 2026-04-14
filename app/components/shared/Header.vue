@@ -128,11 +128,9 @@ const scrollThreshold = 10
 
 const navItems = [
   { label: 'Strategy', href: '/#strategic-advantage', icon: 'lucide:binary' },
-  { label: 'Methodology', href: '/#process', icon: 'lucide:workflow' },
   { label: 'Work', href: '/#case-studies', icon: 'lucide:projector' },
-  { label: 'Blog', href: '/blog', icon: 'lucide:book-open' },
-  { label: 'Experience', href: '/#experience', icon: 'lucide:badge-check' },
   { label: 'Investment', href: '/#packages', icon: 'lucide:bar-chart-3' },
+  { label: 'Blog', href: '/blog', icon: 'lucide:book-open' },
 ]
 
 const scrollProgress = ref(0)

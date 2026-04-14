@@ -24,6 +24,20 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
+      script: [
+        {
+          children: `
+            (function() {
+              const stored = localStorage.getItem("portal-theme");
+              const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+              const theme = stored || preferred;
+              document.documentElement.classList.remove("theme-light", "theme-dark"); document.documentElement.classList.add("theme-" + theme);
+            })();
+          `,
+          type: "text/javascript"
+        }
+      ],
+
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]

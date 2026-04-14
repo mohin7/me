@@ -27,7 +27,7 @@ export const useBrandScheme = () => {
       localStorage.setItem('site-brand-scheme', nextScheme)
       document.documentElement.setAttribute('data-brand-scheme', nextScheme)
       // Also re-apply theme to ensure both are always in sync
-      const theme = localStorage.getItem('site-theme')
+      const theme = localStorage.getItem('portal-theme')
       if (theme) {
         document.documentElement.setAttribute('data-theme', theme)
       }

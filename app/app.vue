@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { onMounted, ref, computed, onUnmounted } from 'vue'
 
-const { theme } = useTheme()
+const { theme, applyTheme } = useTheme()
 const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme-light')
 
 // ── SEO & Metadata Implementation ──
@@ -110,6 +110,12 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
+  if (document.documentElement.className.includes("theme-dark")) {
+    applyTheme("dark");
+  } else if (document.documentElement.className.includes("theme-light")) {
+    applyTheme("light");
+  }
+
   window.addEventListener('mousemove', handleMouseMove)
   // Simple touch detection
   isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window

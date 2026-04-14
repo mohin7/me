@@ -1,89 +1,101 @@
 <template>
-  <div class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen">
+  <div class="relative pt-32 pb-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen">
     
+    <!-- Sophisticated Technical Aura -->
+    <div class="absolute top-[10%] right-[-10%] w-[50%] h-[40%] bg-accent/[0.03] blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-[20%] left-[-10%] w-[40%] h-[30%] bg-accent/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+
     <!-- Blog Header: Strategic Context -->
-    <div class="mb-20 md:mb-32">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="h-px w-8 bg-accent/20"></div>
-        <span class="text-accent text-[0.65rem] font-bold uppercase tracking-[0.5em]">The Journal</span>
+    <div class="relative z-10 mb-20 md:mb-32">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-accent/20"></div>
+        <span class="text-accent text-[0.65rem] font-bold uppercase tracking-[0.5em] font-mono">The_Archive_Feed</span>
       </div>
-      <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] text-main mb-8">
+      <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] text-main mb-10">
         Design <br />
-        <span class="italic serif-font lowercase" style="color: var(--text-soft)">intelligence.</span>
+        <span class="serif-font font-black" style="color: var(--text-soft)">intelligence.</span>
       </h1>
-      <p class="text-soft text-xl font-medium max-w-2xl opacity-80">
+      <p class="text-soft text-xl md:text-2xl font-medium max-w-2xl opacity-80 leading-relaxed pl-8 border-l-2 border-accent/10">
         Archived thoughts on scaling UX architecture, cloud infrastructure design, and the intersection of engineering and intent.
       </p>
     </div>
 
-    <div class="max-w-[700px] mx-auto pb-32">
-      <!-- Medium-Style Feed -->
-      <div class="space-y-0">
-         <NuxtLink v-for="post in posts" :key="post.id" :to="post.path" class="group block py-10 border-b border-glass hover:bg-black/[0.01] transition-all px-4 -mx-4 rounded-xl">
-            <div class="flex gap-8 md:gap-16 justify-between items-start">
-              
-              <!-- Story Text -->
-              <div class="flex-1 space-y-3">
-                <!-- Author Info -->
-                <div class="flex items-center gap-2 mb-2">
-                  <div class="h-5 w-5 rounded-full bg-accent flex items-center justify-center text-[0.45rem] text-accent-fg font-black">M</div>
-                  <span class="text-main text-xs font-bold">Md Mohin Uddin</span>
-                  <span class="text-soft opacity-30 text-xs px-1">in</span>
-                  <span class="text-main text-xs font-bold">{{ post.tags?.[0] || 'Technical' }}</span>
-                  <span class="text-soft opacity-20 text-xs px-1">·</span>
-                  <span class="text-soft text-xs font-medium opacity-50">{{ post.date }}</span>
+    <!-- Featured Post Architecture -->
+    <div v-if="featuredPost" class="relative z-10 mb-20 md:mb-32">
+       <span class="section-label mb-10">Featured Protocol</span>
+       <NuxtLink :to="featuredPost.path" class="group relative block p-8 md:p-16 rounded-[48px] border border-glass bg-panel/20 hover:bg-panel/40 transition-all duration-700 overflow-hidden shadow-2xl">
+          <!-- Abstract Grid Overlay -->
+          <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
+               style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 48px 48px;"></div>
+          
+          <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+             <div class="space-y-10">
+                <div class="flex items-center gap-6">
+                   <span class="text-accent text-[0.7rem] font-black uppercase tracking-[0.4em] font-mono">{{ featuredPost.date }}</span>
+                   <div class="h-1 w-1 rounded-full bg-accent/30"></div>
+                   <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-40">{{ featuredPost.readingTime }}</span>
                 </div>
-
-                <!-- Title & Excerpt -->
-                <h2 class="text-xl md:text-2xl font-black tracking-tight text-main group-hover:text-accent transition-colors duration-300 leading-tight">
-                  {{ post.title }}
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-main leading-[1.05] group-hover:text-accent transition-colors">
+                  {{ featuredPost.title }}
                 </h2>
-                <p class="text-soft text-sm md:text-base font-medium leading-[1.6] line-clamp-2 md:line-clamp-3 opacity-60">
-                  {{ post.excerpt }}
+                <p class="text-soft text-lg md:text-xl font-medium leading-relaxed opacity-60">
+                   {{ featuredPost.excerpt }}
                 </p>
-
-                <!-- Footer Meta -->
-                <div class="pt-6 flex items-center justify-between">
-                   <div class="flex items-center gap-4">
-                     <span class="px-2.5 py-1 bg-glass rounded-full text-soft text-[0.65rem] font-medium">{{ post.tags?.[0] }}</span>
-                     <span class="text-[0.65rem] font-medium text-soft opacity-40">{{ post.readingTime }}</span>
-                   </div>
-                   
-                   <div class="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all">
-                      <Icon name="lucide:bookmark" class="h-4 w-4 text-soft hover:text-accent cursor-pointer" />
-                      <Icon name="lucide:minus-circle" class="h-4 w-4 text-soft hover:text-accent cursor-pointer" />
-                      <Icon name="lucide:more-horizontal" class="h-4 w-4 text-soft hover:text-accent cursor-pointer" />
+                <div class="flex items-center gap-4 pt-4">
+                   <div class="h-12 px-8 rounded-full bg-accent text-accent-fg flex items-center justify-center font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                      Read Protocol
                    </div>
                 </div>
-              </div>
+             </div>
+             <!-- Visual Anchor -->
+             <div class="relative aspect-[4/3] rounded-[32px] overflow-hidden bg-accent/5 border border-glass flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-1000">
+                <Icon name="lucide:layout" class="h-32 w-32 text-accent opacity-10 group-hover:opacity-30 transition-opacity" />
+                <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/20 to-transparent">
+                   <div class="flex gap-3">
+                      <span v-for="tag in featuredPost.tags" :key="tag" class="px-4 py-2 rounded-full bg-glass backdrop-blur-md text-main text-[0.65rem] font-black uppercase tracking-widest border border-white/5">
+                        {{ tag }}
+                      </span>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </NuxtLink>
+    </div>
 
-              <!-- Compact Visual Anchor (Medium-Style) -->
-              <div class="w-24 md:w-32 lg:w-40 shrink-0 aspect-square md:aspect-[4/3] rounded-sm overflow-hidden bg-panel/30 border border-glass relative">
-                 <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent"></div>
-                 <div class="absolute inset-0 flex items-center justify-center opacity-10 group-hover:scale-110 transition-transform duration-1000">
-                    <Icon name="lucide:layout" class="h-10 w-10 text-accent" />
-                 </div>
-              </div>
+    <!-- Search / Filter Protocols -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <BlogPostCard 
+         v-for="(post, idx) in otherPosts" 
+         :key="post.id" 
+         :post="post" 
+         :id="idx + 1"
+         class="reveal"
+       />
+    </div>
 
-            </div>
-         </NuxtLink>
-      </div>
+    <!-- Empty State Optimization -->
+    <div v-if="!posts || posts.length === 0" class="py-40 text-center relative z-10">
+       <p class="text-soft text-xl font-medium italic opacity-40">Searching the visual archive...</p>
     </div>
 
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 useSeoMeta({
   title: 'Journal — Md Mohin Uddin',
   description: 'Technical insights on Design Engineering, Kubernetes UX, and Scalable Design Systems.'
 })
 
 const { data: posts } = await useAsyncData('blog-posts', () => 
-  queryCollection('blog').all()
+  queryCollection('blog').order('date', 'DESC').all()
 )
+
+const featuredPost = computed(() => posts.value?.[0])
+const otherPosts = computed(() => posts.value?.slice(1) || [])
 </script>
 
 <style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
 </style>

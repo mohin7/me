@@ -27,7 +27,7 @@
 }
 
 :deep(blockquote) {
-  @apply border-l-4 border-accent pl-8 py-2 my-12 italic text-2xl text-main rounded-r-3xl pr-8 font-extrabold;
+  @apply border-l-4 border-accent pl-8 py-2 my-12 text-2xl text-main rounded-r-3xl pr-8 font-black;
   background-color: color-mix(in srgb, var(--accent), transparent 97%);
 }
 

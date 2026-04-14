@@ -7,7 +7,7 @@
         <!-- Brand Signature -->
         <div class="space-y-6">
           <div class="flex items-center gap-3 text-left">
-             <div class="h-8 w-8 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base border border-glass">M</div>
+             <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
              <span class="text-main font-black tracking-tighter">Mohin Uddin</span>
           </div>
           <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px] text-left">
@@ -82,6 +82,3 @@ const footerGroups = [
 ]
 </script>
 
-<style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
-</style>

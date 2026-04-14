@@ -147,7 +147,7 @@ onUnmounted(() => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
 
 /* ── Core Scroll Architecture ── */
 html, body {
@@ -207,6 +207,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   font-family: 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
+  caret-color: var(--accent);
 }
 
 .light {
@@ -291,7 +292,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 .text-soft { color: var(--text-soft); }
 .text-muted { color: var(--text-muted); }
 .bg-page { background: var(--bg-page); }
-.serif-font { font-family: 'Playfair Display', serif; }
+.serif-font { font-family: 'Plus Jakarta Sans', sans-serif; }
 
 /* ── Transitions ── */
 .fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }

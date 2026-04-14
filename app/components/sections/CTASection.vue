@@ -18,7 +18,7 @@
       <!-- The Final Launch Word: Balanced Scale -->
       <h2 class="mb-16 text-main text-5xl md:text-8xl font-black tracking-tighter leading-[0.85]">
         Let's bring your <br /> 
-        <span class="serif-font lowercase italic" style="color: var(--text-soft)">vision to life.</span>
+        <span class="serif-font font-black" style="color: var(--text-soft)">vision to life.</span>
       </h2>
       
       <!-- Higher Density Consistent Buttons -->
@@ -57,7 +57,7 @@
 
     <!-- Minimalist Trace Watermark -->
     <div class="absolute bottom-6 left-0 w-full overflow-hidden opacity-[0.01] pointer-events-none select-none">
-      <h3 class="whitespace-nowrap font-black italic serif-font lowercase text-main text-[12rem] leading-none tracking-tighter">
+      <h3 class="whitespace-nowrap font-black serif-font text-main text-[12rem] leading-none tracking-tighter">
         design architecture scale design architecture scale
       </h3>
     </div>
@@ -71,6 +71,3 @@ const currentQuarter = Math.floor((now.getMonth() + 3) / 3)
 const availabilityTag = `Available for Strategic Partnership // ${currentYear}.Q${currentQuarter}`
 </script>
 
-<style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
-</style>

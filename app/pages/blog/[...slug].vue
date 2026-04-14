@@ -98,5 +98,4 @@ if (post.value) {
 </script>
 
 <style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
 </style>

@@ -14,7 +14,7 @@
 
       <!-- Logo Signature -->
       <a href="/" class="group flex items-center gap-2 md:gap-3 shrink-0">
-        <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black italic serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
+        <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
         <div class="flex flex-col">
           <span class="text-sm md:text-[0.9rem] font-black text-main leading-none tracking-tighter">mohin<span class="text-soft">.design</span></span>
           <span class="text-[0.5rem] md:text-[0.55rem] font-black text-muted mt-0.5 md:mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>

@@ -11,7 +11,7 @@
           <span class="section-label flex justify-center">Strategic Advantage Matrix</span>
         </div>
         <h2 class="text-main text-4xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-8 max-w-4xl mx-auto">
-          I bridge the gap for founders demanding <span class="text-soft italic serif-font lowercase">velocity.</span>
+          I bridge the gap for founders demanding <span class="text-soft serif-font">velocity.</span>
         </h2>
         <p class="text-soft text-lg md:text-xl font-medium leading-relaxed max-w-2xl opacity-80 mx-auto">
           Engineering high-performance MVPs with surgical precision. By fusing expert UI/UX design with technical engineering, I ensure your product launches faster, cleaner, and investor-ready.
@@ -109,6 +109,3 @@ const pillars = [
 ]
 </script>
 
-<style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
-</style>

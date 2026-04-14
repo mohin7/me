@@ -29,12 +29,14 @@ export default {
         soft: "var(--text-soft)",
         muted: "var(--text-muted)",
         accent: "var(--accent)",
+        "accent-fg": "var(--accent-fg)",
       },
       backgroundColor: {
         page: "var(--bg-page)",
         panel: "var(--bg-panel)",
         soft: "var(--bg-soft)",
         glass: "var(--bg-glass)",
+        accent: "var(--accent)",
       },
       borderColor: {
         accent: "var(--accent)",

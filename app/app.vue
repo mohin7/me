@@ -137,7 +137,7 @@ onUnmounted(() => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
 /* ── Core Scroll Architecture ── */
 html, body {
@@ -280,7 +280,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 .text-soft { color: var(--text-soft); }
 .text-muted { color: var(--text-muted); }
 .bg-page { background: var(--bg-page); }
-.serif-font { font-family: 'Playfair Display', serif; }
+.serif-font { font-family: 'Instrument Serif', serif; }
 
 /* ── Transitions ── */
 .fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }

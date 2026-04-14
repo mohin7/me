@@ -47,8 +47,8 @@
           © {{ currentYear }} Md Mohin Uddin. All rights reserved.
         </p>
         <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-40">
-           <a href="/img/uiux-specialist.pdf" target="_blank" class="hover:text-accent transition-colors">Resume</a><span class="hover:text-main cursor-pointer transition-colors">Privacy</span>
-           <span class="hover:text-main cursor-pointer transition-colors">Terms</span>
+           <a href="/img/uiux-specialist.pdf" target="_blank" class="hover:text-accent transition-colors">Resume</a><NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
+           <NuxtLink to="/terms" class="hover:text-main transition-colors">Terms</NuxtLink>
         </div>
       </div>
 

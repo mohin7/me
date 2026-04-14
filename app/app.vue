@@ -15,16 +15,7 @@
       class="smooth-wrapper"
       :class="{ 'is-smooth': !isTouchDevice }"
     >
-      <main>
-        <SectionsHeroSection />
-        <SectionsStrategicAdvantage />
-        <SectionsProcessSection />
-        <SectionsCaseStudiesSection />
-        <SectionsExperienceSection />
-        <SectionsTestimonialsSection />
-        <SectionsPackagesSection />
-        <SectionsCTASection />
-      </main>
+      <NuxtPage />
       <SharedFooter />
     </div>
 

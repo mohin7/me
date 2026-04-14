@@ -16,7 +16,7 @@
       <a href="#top" class="group flex items-center gap-2 md:gap-3 shrink-0">
         <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black italic serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
         <div class="flex flex-col">
-          <span class="text-sm md:text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
+          <span class="text-sm md:text-[0.9rem] font-black text-main leading-none tracking-tighter">mohin<span class="text-soft">.design</span></span>
           <span class="text-[0.5rem] md:text-[0.55rem] font-black text-muted mt-0.5 md:mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
         </div>
       </a>
@@ -127,11 +127,11 @@ let lastScrollY = 0
 const scrollThreshold = 10
 
 const navItems = [
-  { label: 'Strategy', href: '#strategic-advantage', icon: 'lucide:binary' },
-  { label: 'Methodology', href: '#process', icon: 'lucide:workflow' },
-  { label: 'Work', href: '#case-studies', icon: 'lucide:projector' },
-  { label: 'Experience', href: '#experience', icon: 'lucide:badge-check' },
-  { label: 'Investment', href: '#packages', icon: 'lucide:bar-chart-3' },
+  { label: 'Strategy', href: '/#strategic-advantage', icon: 'lucide:binary' },
+  { label: 'Methodology', href: '/#process', icon: 'lucide:workflow' },
+  { label: 'Work', href: '/#case-studies', icon: 'lucide:projector' },
+  { label: 'Experience', href: '/#experience', icon: 'lucide:badge-check' },
+  { label: 'Investment', href: '/#packages', icon: 'lucide:bar-chart-3' },
 ]
 
 const scrollProgress = ref(0)
@@ -173,7 +173,17 @@ const handleScroll = (e: any) => {
   lastScrollY = currentY
 }
 
+const route = useRoute()
+const router = useRouter()
+
 const scrollToSection = (e: Event, href: string) => {
+  if (route.path !== '/') {
+    // If we are on a different page, just let the link handle it (which will navigate to /#id)
+    // or manually push if preferred. Let's redirect to home with hash
+    isMobileMenuOpen.value = false
+    return 
+  }
+
   e.preventDefault()
   const targetId = href.replace('#', '')
   const element = document.getElementById(targetId)

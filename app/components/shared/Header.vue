@@ -3,12 +3,19 @@
     class="fixed left-0 right-0 top-0 z-[60] px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
     :style="{ transform: isNavbarVisible ? 'translateY(0)' : 'translateY(-120%)' }"
   >
-    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3">
+    <!-- System Progress Horizon -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-8 pointer-events-none">
+       <div class="h-[2px] w-full bg-accent/5 overflow-hidden rounded-full">
+          <div class="h-full bg-accent transition-all duration-300 ease-out shadow-[0_0_10px_var(--accent)]" :style="{ width: `${scrollProgress}%` }"></div>
+       </div>
+    </div>
+
+    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3 relative">
 
       <!-- Logo Signature -->
       <a href="#top" class="group flex items-center gap-3 shrink-0">
         <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-accent/20">M</div>
-        <div class="flex flex-col">
+        <div class="flex flex-col items-center">
           <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
           <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
         </div>
@@ -33,18 +40,7 @@
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
         <div class="h-8 w-px bg-accent/10"></div>
-        <a 
-          href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="shimmer-btn group"
-        >
-          <span class="relative z-10 flex items-center gap-2">
-            Start Project
-            <Icon name="lucide:arrow-right" class="h-3 w-3 transition-transform group-hover:translate-x-1" />
-          </span>
-          <div class="shimmer-bg"></div>
-        </a>
+        <a href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false"><div class="relative z-10 h-[1.1em] overflow-hidden flex flex-col items-center"><div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center"><span class="h-[1.1em] flex items-center justify-center gap-2">Start Project <Icon name="lucide:arrow-right" class="h-3 w-3" /></span><span class="h-[1.1em] flex items-center justify-center gap-2 italic text-accent">Go Live <Icon name="lucide:zap" class="h-3 w-3" /></span></div></div><div class="shimmer-bg"></div></a>
       </div>
 
       <!-- Mobile Actions -->
@@ -120,6 +116,8 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const isMobileMenuOpen = ref(false)
+const isProjectHovered = ref(false)
+
 const isNavbarVisible = ref(true)
 const { theme, toggleTheme } = useTheme()
 
@@ -136,8 +134,16 @@ const navItems = [
   { label: 'Investment', href: '#packages' },
 ]
 
+const scrollProgress = ref(0)
+
 const handleScroll = (e: any) => {
   const currentY = e.detail || 0
+  
+  // Update Progress
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight
+  if (scrollable > 0) {
+    scrollProgress.value = (currentY / scrollable) * 100
+  }
   
   // Prevent hiding when mobile menu is open
   if (isMobileMenuOpen.value) {

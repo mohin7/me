@@ -39,7 +39,7 @@
       <!-- Main Case Study Display: The High-Resolution Card -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[48px] bg-panel/20 border border-glass p-8 md:p-16 transition-all duration-700 hover:bg-panel/40 hover:shadow-2xl overflow-hidden">
+          <div :key="active" class="group relative rounded-[48px] bg-panel/20 border border-glass p-8 md:p-16 transition-all duration-700 hover:bg-panel/40 hover:shadow-2xl overflow-hidden reveal">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
@@ -137,7 +137,7 @@
         </div>
         <div class="h-px w-full md:flex-1 bg-accent/5 hidden md:block"></div>
         <div class="shrink-0">
-          <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-16 px-12">
+          <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-16 px-12" hover-text="Let's Solve It">
             Discuss Case Strategy
             <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
           </SharedButton>

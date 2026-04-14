@@ -3,6 +3,13 @@
     <SharedHeader />
     
     <!-- Smooth Scroll Wrapper -->
+    <!-- ── Dynamic Spotlight Node ── -->
+    <div 
+      v-if="!isTouchDevice"
+      class="pointer-events-none fixed inset-0 z-[1] will-change-transform"
+      :style="{ background: `radial-gradient(600px circle at ${mouseX}px ${mouseY}px, var(--accent-spotlight), transparent 80%)` }"
+    ></div>
+
     <div 
       ref="smoothWrapper" 
       class="smooth-wrapper"
@@ -58,10 +65,17 @@ useSeoMeta({
 const smoothWrapper = ref<HTMLElement | null>(null)
 const virtualHeight = ref(0)
 const currentOffset = ref(0)
+const mouseX = ref(0)
+const mouseY = ref(0)
 const scrollSpeed = 0.08
 const isTouchDevice = ref(false)
 let targetOffset = 0
 let rafId: number | null = null
+
+const handleMouseMove = (e: MouseEvent) => {
+  mouseX.value = e.clientX
+  mouseY.value = e.clientY
+}
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -96,6 +110,7 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
+  window.addEventListener('mousemove', handleMouseMove)
   // Simple touch detection
   isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
   
@@ -106,12 +121,26 @@ onMounted(() => {
     window.addEventListener('resize', updateHeight)
   }
   
+  // ── Scroll Reveal System ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed')
+        // Optional: unobserve after reveal for performance
+        // revealObserver.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
+  
   rafId = requestAnimationFrame(smoothLoop)
 })
 
 onUnmounted(() => {
   if (rafId) cancelAnimationFrame(rafId)
   window.removeEventListener('resize', updateHeight)
+  window.removeEventListener('mousemove', handleMouseMove)
 })
 </script>
 
@@ -124,6 +153,25 @@ html, body {
   overflow-x: hidden;
   background: var(--bg-page);
 }
+
+/* ── Kinetic Reveal System ── */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Stagger Helpers */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 html::-webkit-scrollbar { display: none; }
 html { scrollbar-width: none; -ms-overflow-style: none; }
@@ -170,6 +218,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --border-subtle: rgba(0,0,0,0.06);
   --border-glass: rgba(0,0,0,0.05);
   --bg-glass: rgba(255,255,255,0.7);
+  --accent-rgb: 17, 17, 17;
+  --accent-spotlight: rgba(var(--accent-rgb), 0.03);
   --accent: #111111;
   --accent-fg: #FFFFFF;
 }
@@ -184,7 +234,9 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --text-muted: #71717A;
   --border-subtle: rgba(255,255,255,0.08);
   --border-glass: rgba(255,255,255,0.12);
-  --bg-glass: rgba(10,10,10,0.8);
+  --bg-glass: rgba(10,10,12,0.7);
+  --accent-rgb: 255, 255, 255;
+  --accent-spotlight: rgba(var(--accent-rgb), 0.07);
   --accent: #FFFFFF;
   --accent-fg: #111111;
 }

@@ -33,7 +33,7 @@
       <!-- The Balanced Grid Pillars -->
       <div class="grid md:grid-cols-3 gap-6 text-left">
         <div v-for="(pillar, idx) in pillars" :key="idx" 
-             class="relative p-10 rounded-[40px] bg-panel/20 border border-accent/5 hover:border-accent/20 transition-all duration-700 flex flex-col h-full overflow-hidden group">
+             :class="[`reveal reveal-delay-${idx+1}`, 'relative p-10 rounded-[40px] bg-panel/20 border border-accent/5 hover:border-accent/20 transition-all duration-700 flex flex-col h-full overflow-hidden group']">
            
            <!-- Minimalist Icon -->
            <div class="h-12 w-12 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">
@@ -67,7 +67,8 @@
          <div class="h-1 px-8 mb-10 overflow-hidden opacity-40">
             <div class="h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
          </div>
-         <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="px-16 h-16 rounded-full group">
+         <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="px-16 h-16 rounded-full group" hover-text="Let's Grow">
+
           Initiate Partnership
           <template #right>
             <Icon name="lucide:arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform" />

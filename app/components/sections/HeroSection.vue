@@ -26,7 +26,7 @@
       <div class="flex flex-col items-center text-center">
 
         <!-- Content Stack -->
-        <div class="hero-enter flex flex-col items-center w-full">
+        <div class="hero-enter flex flex-col items-center w-full reveal">
           <!-- Designation -->
           <div class="mb-10 flex flex-col items-center px-4">
              <span class="section-label">Head of Design • Nuxt & Vue Expert</span>
@@ -59,22 +59,15 @@
               target="_blank"
               variant="primary" 
               size="lg" 
-              class="h-14 px-10 rounded-full w-full sm:w-auto"
+              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Discuss Roadmap"
             >
+
               Schedule Strategy Call
               <template #right>
                 <Icon name="lucide:calendar" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <a 
-              href="https://wa.me/8801634419564" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="group flex items-center justify-center gap-3 text-sm font-bold tracking-tight text-main border border-accent/10 hover:border-accent/30 px-8 h-14 rounded-full transition-all w-full sm:w-auto bg-accent/[0.02]"
-            >
-              <Icon name="logos:whatsapp-icon" class="h-5 w-5" />
-              WhatsApp Me
-            </a>
+            <SharedButton  tag="a" href="https://wa.me/8801634419564" target="_blank" variant="outline" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Say Hello"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>WhatsApp Me</SharedButton>
           </div>
 
           <!-- Integrated Precision Proof Bar -->

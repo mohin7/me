@@ -22,7 +22,7 @@
       <!-- Pricing Matrix -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-accent/10 rounded-[32px] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
         <div v-for="(pkg, idx) in packages" :key="idx" 
-             class="group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-accent/10 last:border-0 hover:bg-accent/[0.02] transition-colors duration-500">
+             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-accent/10 last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
           <!-- State Indicator -->
           <div v-if="pkg.popular" class="absolute top-0 right-0 p-4">
@@ -79,8 +79,9 @@
             href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" 
             :variant="pkg.popular ? 'primary' : 'secondary'"
             size="lg" 
-            class="w-full h-14 rounded-full"
+            class="w-full h-14 rounded-full" hover-text="Get Started"
           >
+
             Initiate Project
             <template #right>
               <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
@@ -117,7 +118,8 @@
                     <span class="text-main font-bold text-sm">Full MVP 1.0</span>
                  </div>
               </div>
-              <SharedButton variant="primary" class="h-14 w-full rounded-full">Explore Deal</SharedButton>
+
+              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="See Value">Explore Deal</SharedButton>
               <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
            </div>
          </div>

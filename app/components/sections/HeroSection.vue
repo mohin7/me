@@ -5,9 +5,9 @@
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
       <div class="absolute inset-0 overflow-hidden opacity-40">
         <div class="fragment absolute h-24 w-24 border border-glass rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
-        <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-accent/20 to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
+        <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-glass to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
         <div class="fragment absolute h-16 w-16 border border-glass top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
-        <div class="fragment absolute h-32 w-px bg-gradient-to-b from-accent/20 to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
+        <div class="fragment absolute h-32 w-px bg-gradient-to-b from-glass to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
       </div>
       <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
            style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>

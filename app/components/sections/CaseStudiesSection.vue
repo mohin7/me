@@ -1,7 +1,7 @@
 <template>
   <section id="case-studies" class="relative py-20 md:py-32 bg-page overflow-visible">
     <!-- Sophisticated Section Border -->
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

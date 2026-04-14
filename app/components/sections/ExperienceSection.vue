@@ -40,7 +40,7 @@
 
         <!-- The Timeline Content -->
         <div class="relative">
-          <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px bg-gradient-to-b from-accent/20 via-accent/5 to-transparent hidden md:block"></div>
+          <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px bg-gradient-to-b from-glass via-glass to-transparent hidden md:block"></div>
 
           <div class="space-y-12">
             <div 

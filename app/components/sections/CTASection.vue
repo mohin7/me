@@ -5,7 +5,7 @@
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
     
     <!-- Section Border -->
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent"></div>
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       

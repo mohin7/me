@@ -1,7 +1,7 @@
 <template>
   <section id="packages" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
     <!-- Sophisticated Technical Backdrop -->
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent"></div>
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       

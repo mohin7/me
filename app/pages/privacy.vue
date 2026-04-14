@@ -64,8 +64,8 @@
         </p>
       </section>
 
-      <section class="pt-12 border-t border-glass text-sm opacity-50">
-        <p>For any inquiries regarding these protocols, please contact me directly at mohinuddin.net@gmail.com</p>
+      <section class="py-12 border-t border-glass text-sm opacity-50">
+        <p>For any inquiries regarding these protocols, please contact me directly at hello.mohin4@gmail.com</p>
       </section>
     </div>
   </div>

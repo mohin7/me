@@ -52,7 +52,7 @@
         </p>
       </section>
 
-      <section class="pt-12 border-t border-glass text-sm opacity-50">
+      <section class="py-12 border-t border-glass text-sm opacity-50">
         <p>Terms subject to technical evolution. Agreement to these terms is implicit in any formal project initiation.</p>
       </section>
     </div>

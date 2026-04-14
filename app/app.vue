@@ -181,11 +181,18 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   font-size: 0.65rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.2em;
   color: var(--text-soft);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-label {
+    letter-spacing: 0.4em;
+    gap: 0.75rem;
+  }
 }
 
 .section-label::before {

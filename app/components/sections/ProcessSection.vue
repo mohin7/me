@@ -1,19 +1,25 @@
 <template>
   <div ref="containerRef" class="relative">
-    <!-- Scroll Spacer -->
-    <div :style="{ height: `${(steps.length * 75) + 100}vh` }" class="relative">
+    <!-- Scroll Spacer (Only active on Desktop) -->
+    <div 
+      :style="{ height: isLargeScreen ? `${(steps.length * 75) + 100}vh` : 'auto' }" 
+      class="relative"
+    >
       
-      <!-- Manually Sticky Section (Moved via sectionOffset since native sticky is broken in fixed wrappers) -->
+      <!-- Sticky Section Logic -->
       <section 
         id="process" 
-        class="absolute top-0 left-0 w-full h-screen flex flex-col justify-center bg-page overflow-hidden"
-        :style="{ transform: `translate3d(0, ${sectionOffset}px, 0)` }"
+        :class="[
+          isLargeScreen ? 'absolute top-0 left-0 w-full h-screen flex flex-col justify-center overflow-hidden' : 'relative py-20 px-4 flex flex-col',
+          'bg-page transition-colors duration-500'
+        ]"
+        :style="isLargeScreen ? { transform: `translate3d(0, ${sectionOffset}px, 0)` } : {}"
       >
         <!-- Subtle Grid Background -->
         <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
              style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="max-w-7xl mx-auto md:px-6 lg:px-8 relative z-10 w-full">
           
           <!-- Section Header -->
           <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
@@ -29,28 +35,30 @@
             </p>
           </div>
 
-          <!-- Horizontal Slide Wrapper -->
-          <div class="relative">
-            <!-- Simple Progress Line -->
-            <div class="absolute -top-12 left-0 right-0 h-px bg-accent/10">
+          <!-- Slide/List Wrapper -->
+          <div class="relative w-full">
+            <!-- Progress Line (Desktop only) -->
+            <div v-if="isLargeScreen" class="absolute -top-12 left-0 right-0 h-px bg-accent/10">
               <div 
                 class="h-full bg-accent transition-all duration-150" 
                 :style="{ width: `${scrollPercent}%` }"
               ></div>
             </div>
 
-            <!-- Light & Minimalist Cards -->
+            <!-- Cards Matrix -->
             <div 
-              class="flex gap-8 md:gap-12 will-change-transform"
-              :style="{ transform: `translate3d(-${translateX}px, 0, 0)` }"
+              :class="[
+                isLargeScreen ? 'flex gap-12 will-change-transform' : 'flex flex-col gap-8'
+              ]"
+              :style="isLargeScreen ? { transform: `translate3d(-${translateX}px, 0, 0)` } : {}"
             >
               <div 
                 v-for="(step, idx) in steps" 
                 :key="idx"
-                class="shrink-0 w-[85vw] md:w-[500px] lg:w-[560px]"
+                class="shrink-0 w-full lg:w-[560px]"
               >
                 <!-- Minimalist Card -->
-                <div class="relative group rounded-[32px] border border-accent/10 bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[480px] hover:border-accent/30 transition-all duration-500">
+                <div class="relative group rounded-[32px] border border-accent/10 bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[380px] hover:border-accent/30 transition-all duration-500">
                   <div class="flex items-center gap-3 mb-10">
                      <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.3em] font-mono">Phase_0{{ idx + 1 }}</span>
                      <div class="h-1 w-1 rounded-full bg-accent/20"></div>
@@ -63,7 +71,7 @@
                     </h3>
                   </div>
 
-                  <p class="text-soft text-lg font-medium leading-relaxed mb-10 opacity-80">
+                  <p class="text-soft text-base md:text-lg font-medium leading-relaxed mb-10 opacity-80">
                      {{ step.description }}
                   </p>
 
@@ -96,11 +104,13 @@ const containerRef = ref<HTMLElement | null>(null)
 const translateX = ref(0)
 const scrollPercent = ref(0)
 const sectionOffset = ref(0)
+const isLargeScreen = ref(false)
 
 let cachedSectionTop = 0
 let cachedSectionHeight = 0
 
 const updateCache = () => {
+  isLargeScreen.value = window.innerWidth >= 1024
   if (containerRef.value) {
     cachedSectionTop = containerRef.value.offsetTop
     cachedSectionHeight = containerRef.value.offsetHeight
@@ -108,7 +118,7 @@ const updateCache = () => {
 }
 
 const updateScrollLogic = (virtualY: number) => {
-  if (!containerRef.value) return
+  if (!containerRef.value || !isLargeScreen.value) return
   
   const viewportHeight = window.innerHeight
   
@@ -127,7 +137,7 @@ const updateScrollLogic = (virtualY: number) => {
   }
   
   const stepCount = steps.length
-  const cardWidth = window.innerWidth >= 1024 ? 560 + 48 : window.innerWidth >= 768 ? 500 + 32 : window.innerWidth * 0.85 + 32
+  const cardWidth = 560 + 48
   const maxTranslate = (cardWidth * (stepCount - 1))
   
   const progress = distance / (cachedSectionHeight - viewportHeight)

@@ -1,5 +1,5 @@
 <template>
-  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden bg-page">
+  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-page">
     
     <!-- ── Dynamic Life Background Layers ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
@@ -28,16 +28,16 @@
         <!-- Content Stack -->
         <div class="hero-enter flex flex-col items-center w-full">
           <!-- Designation -->
-          <div class="mb-10 flex flex-col items-center">
+          <div class="mb-10 flex flex-col items-center px-4">
              <span class="section-label">Product Design Engineer • Nuxt & Vue Expert</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center">
-            <span class="text-main block">Designing & coding the</span>
-            <span class="text-main block mt-2">next-generation of</span>
-            <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
-              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-2">platforms.</span>
+          <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center px-4 md:px-0">
+            <span class="text-main block whitespace-nowrap leading-[1.05]">Designing & coding</span>
+            <span class="text-main block mt-1 whitespace-nowrap leading-[1.05]">the next-generation of</span>
+            <span class="text-soft italic serif-font lowercase relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.2em]">
+              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
               <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
                  <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
                    <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
@@ -48,7 +48,7 @@
           </h1>
 
           <!-- Subtitle -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-16 px-4">
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-16 px-2 md:px-4">
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
@@ -66,8 +66,8 @@
           </div>
 
           <!-- Integrated Precision Proof Bar -->
-          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-2 sm:px-4">
-            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/40 backdrop-blur-3xl border border-accent/10 rounded-[32px] lg:rounded-full overflow-hidden">
+          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-1 sm:px-4">
+            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/60 backdrop-blur-3xl border border-accent/10 rounded-[24px] lg:rounded-full overflow-hidden">
               
               <!-- Social Proof -->
               <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-accent/10 whitespace-nowrap">
@@ -84,7 +84,7 @@
 
               <!-- Brand Stream -->
               <div class="flex-1 w-full overflow-hidden relative px-4 py-6 lg:py-4 min-h-[4rem] flex items-center">
-                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-20 hover:opacity-100 transition-opacity duration-700">
+                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-40 hover:opacity-100 transition-opacity duration-700">
                    <div v-for="i in 3" :key="i" class="flex gap-12 lg:gap-16">
                      <div v-for="l in logos" :key="l.name" class="flex items-center gap-3">
                        <Icon :name="l.icon" class="h-4 w-4 text-main" />
@@ -106,10 +106,6 @@
                    <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Ships</span>
                  </div>
               </div>
-            </div>
-            
-            <div class="mt-4 flex justify-center text-center">
-               <span class="text-[0.5rem] font-black uppercase tracking-[0.2em] text-muted opacity-30 px-4">Verified Technical Expertise & Structural Logic</span>
             </div>
           </div>
         </div>
@@ -172,9 +168,9 @@ const logos = [
 .serif-font { font-family: 'Playfair Display', serif; }
 
 .hero-title {
-  font-size: clamp(2.2rem, 10vw, 5rem);
+  font-size: clamp(1.6rem, 8vw, 5rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.04em;
 }
 

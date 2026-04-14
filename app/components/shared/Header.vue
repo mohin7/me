@@ -49,39 +49,72 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu Matrix -->
-    <Transition name="menu-fade">
-      <div v-if="isMobileMenuOpen" class="mobile-menu-overlay fixed inset-0 z-40 bg-page/95 backdrop-blur-2xl lg:hidden flex flex-col p-8 pt-24">
-        <div class="space-y-4">
-          <a
-            v-for="item in navItems"
-            :key="`m-${item.label}`"
-            :href="item.href"
-            @click="scrollToSection($event, item.href)"
-            class="block text-4xl font-black tracking-tighter text-main hover:text-accent transition-colors py-4 border-b border-accent/5"
-          >
-            {{ item.label }}
-          </a>
-        </div>
-        <div class="mt-auto pb-12">
-          <SharedButton tag="a" href="#contact" variant="primary" size="lg" fullWidth @click="isMobileMenuOpen = false">
-            Start a Conversation
-          </SharedButton>
-          <div class="mt-12 text-center">
-             <p class="text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em]">© {{ new Date().getFullYear() }} MD MOHIN UDDIN</p>
+    <!-- Mobile Menu Matrix (Teleported for absolute isolation) -->
+    <Teleport to="body">
+      <Transition name="menu-fade">
+        <div v-if="isMobileMenuOpen" 
+             class="mobile-menu-overlay fixed inset-0 z-[200] bg-page flex flex-col p-6 sm:p-10 overflow-hidden"
+             :class="themeClass"
+        >
+          
+          <!-- Menu Top Bar -->
+          <div class="flex items-center justify-between mb-16">
+             <div class="flex items-center gap-3">
+                <div class="h-10 w-10 bg-accent text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl">M</div>
+                <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
+             </div>
+             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-accent/10 flex items-center justify-center bg-accent/5 text-main">
+                <Icon name="lucide:x" class="h-6 w-6" />
+             </button>
           </div>
+
+          <!-- Nav Links Grid -->
+          <div class="flex flex-col gap-2">
+            <a
+              v-for="(item, idx) in navItems"
+              :key="`m-${item.label}`"
+              :href="item.href"
+              @click="scrollToSection($event, item.href)"
+              class="group relative block"
+            >
+              <div class="flex items-baseline gap-4 py-4 border-b border-accent/5">
+                <span class="text-[0.6rem] font-black font-mono text-accent opacity-40">0{{ idx + 1 }}</span>
+                <span class="text-5xl sm:text-7xl font-black tracking-tighter text-main group-hover:text-accent transition-colors">
+                  {{ item.label }}
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Footer -->
+          <div class="mt-auto pt-12 space-y-8">
+            <SharedButton tag="a" href="#contact" variant="primary" size="lg" fullWidth @click="isMobileMenuOpen = false">
+              Start a Conversation
+            </SharedButton>
+            
+            <div class="flex items-center justify-between border-t border-accent/5 pt-8">
+               <div class="flex gap-4">
+                  <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">Twitter</span>
+                  <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">LinkedIn</span>
+               </div>
+               <p class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-40 text-right">© 2026 MD MOHIN UDDIN</p>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </Transition>
+      </Transition>
+    </Teleport>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const isMobileMenuOpen = ref(false)
 const isNavbarVisible = ref(true)
 const { theme, toggleTheme } = useTheme()
+
+const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme-light')
 
 let lastScrollY = 0
 const scrollThreshold = 10
@@ -96,6 +129,12 @@ const navItems = [
 
 const handleScroll = (e: any) => {
   const currentY = e.detail || 0
+  
+  // Prevent hiding when mobile menu is open
+  if (isMobileMenuOpen.value) {
+    isNavbarVisible.value = true
+    return
+  }
   
   // Show at very top
   if (currentY < 50) {

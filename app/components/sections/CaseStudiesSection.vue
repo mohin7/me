@@ -81,7 +81,7 @@
                 </div>
 
                 <!-- Execution Protocol: Steps -->
-                <div class="pt-12 border-t border-accent/5">
+                <div class="pt-12 border-t border-subtle">
                   <span class="text-[0.6rem] font-black uppercase tracking-[0.5em] text-soft opacity-30 mb-8 block">Execution_Protocol</span>
                   <div class="flex flex-wrap gap-x-12 gap-y-6">
                     <div v-for="(step, si) in caseStudies[active].process" :key="si" class="flex items-center gap-4 group/step">

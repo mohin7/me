@@ -27,7 +27,7 @@
         <div 
           v-for="(testimonial, idx) in testimonials" 
           :key="idx"
-          class="group relative p-8 rounded-[40px] border border-glass bg-panel/20 transition-all duration-700 hover:bg-panel/40 hover:border-accent/30 hover:shadow-2xl flex flex-col justify-between overflow-hidden"
+          class="group relative p-8 rounded-[40px] border border-glass bg-panel/20 transition-all duration-700 hover:bg-panel/40 hover:border-glass hover:shadow-2xl flex flex-col justify-between overflow-hidden"
           :class="{
             'md:col-span-2 lg:col-span-2': idx === 0,
             'lg:row-span-2': idx === 2
@@ -58,7 +58,7 @@
           </div>
 
           <!-- Bottom Meta (Only for some cards) -->
-          <div v-if="testimonial.stat" class="mt-8 pt-8 border-t border-accent/5 flex items-baseline gap-3">
+          <div v-if="testimonial.stat" class="mt-8 pt-8 border-t border-subtle flex items-baseline gap-3">
              <span class="text-accent text-2xl font-black italic serif-font leading-none">{{ testimonial.stat.value }}</span>
              <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-30">{{ testimonial.stat.label }}</span>
           </div>

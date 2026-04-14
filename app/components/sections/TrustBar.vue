@@ -29,7 +29,7 @@
           
           <!-- Left side: Content Node -->
           <div class="flex flex-col gap-8">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-accent/10 bg-soft/40 w-fit backdrop-blur-md">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-glass bg-soft/40 w-fit backdrop-blur-md">
               <div class="relative flex h-1.5 w-1.5">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span>

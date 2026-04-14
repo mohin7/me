@@ -58,7 +58,7 @@
                 class="shrink-0 w-full lg:w-[560px]"
               >
                 <!-- Minimalist Card -->
-                <div class="relative group rounded-[32px] border border-accent/10 bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[380px] hover:border-accent/30 transition-all duration-500">
+                <div class="relative group rounded-[32px] border border-glass bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[380px] hover:border-glass transition-all duration-500">
                   <div class="flex items-center gap-3 mb-10">
                      <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.3em] font-mono">Phase_0{{ idx + 1 }}</span>
                      <div class="h-1 w-1 rounded-full bg-accent/20"></div>
@@ -75,7 +75,7 @@
                      {{ step.description }}
                   </p>
 
-                  <div class="mt-auto space-y-8 pt-8 border-t border-accent/5">
+                  <div class="mt-auto space-y-8 pt-8 border-t border-subtle">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div v-for="output in step.outputs" :key="output" class="flex items-center gap-3">
                          <div class="h-1 w-1 rounded-full bg-accent/40"></div>

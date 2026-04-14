@@ -53,7 +53,7 @@
           </div>
 
           <!-- Technical Specs -->
-          <div class="space-y-4 mb-12 flex-1 pt-8 border-t border-accent/5">
+          <div class="space-y-4 mb-12 flex-1 pt-8 border-t border-subtle">
              <div v-for="feature in pkg.features" :key="feature" class="flex items-start gap-4">
                 <Icon name="lucide:check-circle-2" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span class="text-soft text-[0.85rem] font-medium leading-tight group-hover:text-main transition-colors">{{ feature }}</span>
@@ -61,7 +61,7 @@
           </div>
 
           <!-- Execution spec -->
-          <div class="mb-10 p-5 rounded-2xl bg-panel/20 border border-accent/5">
+          <div class="mb-10 p-5 rounded-2xl bg-panel/20 border border-subtle">
              <div class="flex flex-col gap-3">
                 <div class="flex justify-between items-center">
                    <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-40">Dev_Target</span>
@@ -109,11 +109,11 @@
            
            <div class="bg-panel/20 border border-glass p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
-                 <div class="flex justify-between items-center border-b border-accent/5 pb-4">
+                 <div class="flex justify-between items-center border-b border-subtle pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
                     <span class="text-main font-bold text-sm">1.0% Equity</span>
                  </div>
-                 <div class="flex justify-between items-center border-b border-accent/5 pb-4">
+                 <div class="flex justify-between items-center border-b border-subtle pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
                     <span class="text-main font-bold text-sm">Full MVP 1.0</span>
                  </div>

@@ -232,13 +232,13 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --text-main: #FAFAFA;
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
-  --border-subtle: rgba(255,255,255,0.03);
-  --border-glass: rgba(255,255,255,0.04);
+  --border-subtle: #12121A;
+  --border-glass: #1A1A22;
   --bg-glass: rgba(10,10,12,0.7);
-  --accent-rgb: 255, 255, 255;
+  --accent-rgb: 200, 210, 255;
   --accent-spotlight: rgba(var(--accent-rgb), 0.05);
   --accent: #FFFFFF;
-  --accent-fg: #111111; --hover-brightness: 0.9; --specular: inset 0 1px 0 0 rgba(255,255,255,0.05);
+  --accent-fg: #111111; --hover-brightness: 0.9; --specular: inset 0 1px 0 0 rgba(255,255,255,0.02);
 }
 
 /* ── Global Section Standards ── */

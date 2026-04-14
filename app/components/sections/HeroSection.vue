@@ -4,9 +4,9 @@
     <!-- ── Dynamic Life Background Layers ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
       <div class="absolute inset-0 overflow-hidden opacity-40">
-        <div class="fragment absolute h-24 w-24 border border-accent/10 rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
+        <div class="fragment absolute h-24 w-24 border border-glass rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
         <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-accent/20 to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
-        <div class="fragment absolute h-16 w-16 border border-accent/10 top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
+        <div class="fragment absolute h-16 w-16 border border-glass top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
         <div class="fragment absolute h-32 w-px bg-gradient-to-b from-accent/20 to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
       </div>
       <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
@@ -14,9 +14,9 @@
       <div class="absolute -left-[10%] top-[0%] h-[700px] w-[700px] rounded-full bg-accent/5 dark:bg-accent/3 blur-[160px] animate-glow-slow"></div>
       <div class="absolute -right-[5%] bottom-[5%] h-[600px] w-[600px] rounded-full bg-accent/10 dark:bg-accent/5 blur-[140px] animate-glow-reverse"></div>
       <div class="absolute right-[5%] top-[10%] opacity-[0.08] dark:opacity-[0.04] hidden lg:block">
-        <div class="relative h-80 w-80 border-[1px] border-accent/20 border-dashed rounded-full animate-rotate-slow">
+        <div class="relative h-80 w-80 border-[1px] border-glass border-dashed rounded-full animate-rotate-slow">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-accent/20"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-accent/20 bg-panel"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-glass bg-panel"></div>
         </div>
       </div>
       <div class="absolute inset-0 opacity-[0.025] dark:opacity-[0.05] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
@@ -72,10 +72,10 @@
 
           <!-- Integrated Precision Proof Bar -->
           <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-1 sm:px-4">
-            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/60 backdrop-blur-3xl border border-accent/10 rounded-[24px] lg:rounded-full overflow-hidden">
+            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/60 backdrop-blur-3xl border border-glass rounded-[24px] lg:rounded-full overflow-hidden">
               
               <!-- Social Proof -->
-              <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-accent/10 whitespace-nowrap">
+              <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
                 <div class="flex -space-x-3">
                   <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
                      <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />

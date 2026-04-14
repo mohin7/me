@@ -63,7 +63,7 @@
               Clear, predictable investment. No hidden costs, no scope creep, just results.
             </p>
             <!-- Progress Detail -->
-            <div class="mt-12 pt-8 border-t border-accent/10">
+            <div class="mt-12 pt-8 border-t border-glass">
                <span class="text-[0.6rem] font-bold uppercase tracking-widest opacity-40">Founder Guarantee</span>
                <p class="text-xs font-bold mt-2 uppercase tracking-tight">"No fluff, no layers, no missed deadlines."</p>
             </div>

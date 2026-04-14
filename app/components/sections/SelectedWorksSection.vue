@@ -27,7 +27,7 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-accent/30"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-glass"
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
@@ -84,7 +84,7 @@
       
       <!-- Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-accent/40">
+        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-glass">
           <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             
             <!-- Left Side: Content -->

@@ -42,7 +42,7 @@
            href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
            size="lg" 
            variant="ghost"
-           class="w-full md:w-auto px-10 h-14 rounded-full border border-accent/10 hover:border-accent text-soft hover:text-main" hover-text="Send Message"
+           class="w-full md:w-auto px-10 h-14 rounded-full border border-glass hover:border-accent text-soft hover:text-main" hover-text="Send Message"
          >
            hello.mohin4@gmail.com
          </SharedButton>

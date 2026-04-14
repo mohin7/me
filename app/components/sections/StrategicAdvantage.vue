@@ -21,7 +21,7 @@
       <!-- Compact Technical Specification Row -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 max-w-4xl mx-auto">
          <div v-for="spec in specs" :key="spec.label" 
-              class="flex flex-col items-center p-6 rounded-3xl bg-panel/30 border border-accent/5 backdrop-blur-3xl transition-transform hover:-translate-y-1 duration-500">
+              class="flex flex-col items-center p-6 rounded-3xl bg-panel/30 border border-subtle backdrop-blur-3xl transition-transform hover:-translate-y-1 duration-500">
             <div class="h-10 w-10 rounded-xl bg-accent text-accent-fg flex items-center justify-center mb-4 shadow-lg shadow-accent/10">
                <Icon :name="spec.icon" class="h-4 w-4" />
             </div>
@@ -33,10 +33,10 @@
       <!-- The Balanced Grid Pillars -->
       <div class="grid md:grid-cols-3 gap-6 text-left">
         <div v-for="(pillar, idx) in pillars" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'relative p-10 rounded-[40px] bg-panel/20 border border-accent/5 hover:border-accent/20 shadow-[var(--specular)] transition-all duration-700 flex flex-col h-full overflow-hidden group']">
+             :class="[`reveal reveal-delay-${idx+1}`, 'relative p-10 rounded-[40px] bg-panel/20 border border-subtle hover:border-glass shadow-[var(--specular)] transition-all duration-700 flex flex-col h-full overflow-hidden group']">
            
            <!-- Minimalist Icon -->
-           <div class="h-12 w-12 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">
+           <div class="h-12 w-12 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">
               <Icon :name="pillar.icon" class="h-6 w-6" />
            </div>
 

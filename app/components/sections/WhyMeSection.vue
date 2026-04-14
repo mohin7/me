@@ -30,8 +30,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Pillar 01: Product Bridge -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-accent/30 transition-all duration-700">
-          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
+        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:cable" class="h-7 w-7" />
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Design-to-Code</h3>
@@ -41,8 +41,8 @@
         </div>
 
         <!-- Pillar 02: Venture Scale -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-accent/30 transition-all duration-700">
-          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
+        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:layers" class="h-7 w-7" />
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Venture Scale</h3>
@@ -52,8 +52,8 @@
         </div>
 
         <!-- Pillar 03: Performance First -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-accent/30 transition-all duration-700">
-          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
+        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:zap" class="h-7 w-7" />
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Performance First</h3>
@@ -63,8 +63,8 @@
         </div>
 
         <!-- Pillar 04: Full Lifecycle -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-accent/30 transition-all duration-700">
-          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
+        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+          <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:refresh-ccw" class="h-7 w-7" />
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Full Lifecycle Craft</h3>
@@ -78,7 +78,7 @@
       <!-- Conceptual Footer Overlay -->
       <div class="mt-20 flex flex-col md:flex-row items-center justify-between gap-10 p-10 border border-glass rounded-[40px] bg-accent/5">
         <div class="flex items-center gap-6">
-          <div class="h-12 w-12 rounded-full border-2 border-accent/20 flex items-center justify-center">
+          <div class="h-12 w-12 rounded-full border-2 border-glass flex items-center justify-center">
              <Icon name="lucide:binary" class="h-5 w-5 text-accent" />
           </div>
           <span class="text-main text-lg font-bold tracking-tight">Engineering design with mathematical precision.</span>

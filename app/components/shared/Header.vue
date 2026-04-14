@@ -14,7 +14,7 @@
 
       <!-- Logo Signature -->
       <a href="#top" class="group flex items-center gap-3 shrink-0">
-        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-accent/20">M</div>
+        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
         <div class="flex flex-col">
           <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
           <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
@@ -69,7 +69,7 @@
                 <div class="h-10 w-10 bg-accent text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl">M</div>
                 <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
              </div>
-             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-accent/10 flex items-center justify-center bg-accent/5 text-main">
+             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-glass flex items-center justify-center bg-accent/5 text-main">
                 <Icon name="lucide:x" class="h-6 w-6" />
              </button>
           </div>
@@ -83,7 +83,7 @@
               @click="scrollToSection($event, item.href)"
               class="group relative block"
             >
-              <div class="flex items-baseline gap-4 py-4 border-b border-accent/5">
+              <div class="flex items-baseline gap-4 py-4 border-b border-subtle">
                 <span class="text-[0.6rem] font-black font-mono text-accent opacity-40">0{{ idx + 1 }}</span>
                 <span class="text-5xl sm:text-7xl font-black tracking-tighter text-main group-hover:text-accent transition-colors">
                   {{ item.label }}
@@ -98,7 +98,7 @@
               Start a Conversation
             </SharedButton>
             
-            <div class="flex items-center justify-between border-t border-accent/5 pt-8">
+            <div class="flex items-center justify-between border-t border-subtle pt-8">
                <div class="flex gap-4">
                   <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">Twitter</span>
                   <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">LinkedIn</span>

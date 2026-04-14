@@ -1,7 +1,7 @@
 <template>
   <div 
-    class="overflow-hidden relative transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none border border-black/[0.04] dark:border-white/[0.06]"
-    :class="[paddingClasses, radiusClass, hover ? 'hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)] hover:-translate-y-[2px] dark:hover:border-white/10' : '']"
+    class="overflow-hidden relative transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none border border-subtle[0.04] dark:border-glass[0.06]"
+    :class="[paddingClasses, radiusClass, hover ? 'hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)] hover:-translate-y-[2px] dark:hover:border-glass' : '']"
     style="background: var(--bg-panel);"
   >
     <slot />

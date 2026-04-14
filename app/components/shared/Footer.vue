@@ -1,5 +1,5 @@
 <template>
-  <footer class="pt-24 pb-12 bg-page border-t border-accent/5">
+  <footer class="pt-24 pb-12 bg-page border-t border-subtle">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- High-Resolution Minimal Grid -->
@@ -7,7 +7,7 @@
         <!-- Brand Signature -->
         <div class="space-y-6">
           <div class="flex items-center gap-3 text-left">
-             <div class="h-8 w-8 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base border border-accent/20">M</div>
+             <div class="h-8 w-8 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base border border-glass">M</div>
              <span class="text-main font-black tracking-tighter">Mohin Uddin</span>
           </div>
           <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px] text-left">
@@ -42,7 +42,7 @@
       </div>
 
       <!-- Legal Footnote -->
-      <div class="pt-12 border-t border-accent/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="pt-12 border-t border-subtle flex flex-col sm:flex-row justify-between items-center gap-6">
         <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-40">
           © {{ currentYear }} Md Mohin Uddin. All rights reserved.
         </p>

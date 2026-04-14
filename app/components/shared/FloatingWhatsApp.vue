@@ -11,7 +11,7 @@
       aria-label="Contact on WhatsApp"
     >
       <!-- Label on Hover -->
-      <div class="absolute right-full mr-4 px-4 py-2 bg-page border border-accent/10 rounded-xl whitespace-nowrap opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 pointer-events-none hidden md:block">
+      <div class="absolute right-full mr-4 px-4 py-2 bg-page border border-glass rounded-xl whitespace-nowrap opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 pointer-events-none hidden md:block">
         <span class="text-main text-xs font-black uppercase tracking-widest">Catch me on WhatsApp</span>
       </div>
 

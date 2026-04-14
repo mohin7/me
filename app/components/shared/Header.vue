@@ -210,7 +210,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
 
 .navbar {
   background: var(--bg-glass);

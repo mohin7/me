@@ -215,7 +215,6 @@ function prev() {
 </script>
 
 <style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
 
 .cs-nav-btn {
   display: flex;

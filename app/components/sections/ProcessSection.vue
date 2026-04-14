@@ -193,6 +193,5 @@ const steps = [
 </script>
 
 <style scoped>
-.serif-font { font-family: 'Playfair Display', serif; }
 #process { z-index: 50; }
 </style>

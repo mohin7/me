@@ -94,5 +94,4 @@ const logos = [
   animation-play-state: paused;
 }
 
-.serif-font { font-family: 'Playfair Display', serif; }
 </style>

@@ -40,7 +40,7 @@
             
             <!-- Metadata Badge -->
             <div class="absolute top-6 left-6 flex items-center gap-2">
-               <span class="bg-white/10 backdrop-blur-md border border-white/20 text-white text-[0.6rem] font-bold px-2 py-1 rounded-full uppercase tracking-widest">{{ project.year }}</span>
+               <span class="bg-accent/10 backdrop-blur-md border border-glass text-main text-[0.6rem] font-bold px-2 py-1 rounded-full uppercase tracking-widest">{{ project.year }}</span>
             </div>
 
             <!-- Absolute Hover Button -->
@@ -48,7 +48,7 @@
                <a 
                  :href="project.href" 
                  target="_blank" 
-                 class="px-6 py-2 rounded-full bg-white text-black text-[0.8rem] font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"
+                 class="px-6 py-2 rounded-full bg-accent text-accent-fg text-[0.8rem] font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"
                >
                  View Project ↗
                </a>

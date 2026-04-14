@@ -12,7 +12,7 @@
         </div>
         <h2 class="text-main text-4xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
           The Strategic <br />
-          <span class="italic serif-font lowercase" style="color: #52525B">matrix.</span>
+          <span class="italic serif-font lowercase" style="color: var(--text-soft)">matrix.</span>
         </h2>
         <p class="text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
           Engineering-grade design solutions priced for velocity. No hourly drift, just performance.
@@ -20,13 +20,13 @@
       </div>
 
       <!-- Pricing Matrix -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-accent/10 rounded-[32px] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-glass rounded-[32px] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
         <div v-for="(pkg, idx) in packages" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-accent/10 last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
+             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
           <!-- State Indicator -->
           <div v-if="pkg.popular" class="absolute top-0 right-0 p-4">
-             <div class="px-3 py-1 border border-accent/10 text-soft text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full">
+             <div class="px-3 py-1 border border-glass text-soft text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full">
                System_Recommended
              </div>
           </div>
@@ -91,7 +91,7 @@
       </div>
 
       <!-- Strategic Equity Section -->
-      <div class="mt-8 relative p-1 md:p-1 overflow-hidden rounded-[32px] md:rounded-[48px] border border-accent/10">
+      <div class="mt-8 relative p-1 md:p-1 overflow-hidden rounded-[32px] md:rounded-[48px] border border-glass">
          <div class="bg-page/90 backdrop-blur-3xl rounded-[31px] md:rounded-[47px] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
            <div class="max-w-xl text-center lg:text-left">
               <div class="flex items-center justify-center lg:justify-start gap-3 mb-8">
@@ -100,14 +100,14 @@
               </div>
               <h2 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-8">
                 Building for <br />
-                <span class="italic serif-font lowercase" style="color: #52525B">strategic equity.</span>
+                <span class="italic serif-font lowercase" style="color: var(--text-soft)">strategic equity.</span>
               </h2>
               <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
                 For visionaries with world-changing logic but early-stage capital. I trade top-tier engineering for <span class="text-main font-bold">1% Stake</span> — dedicated to your long-term momentum.
               </p>
            </div>
            
-           <div class="bg-panel/20 border border-accent/10 p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
+           <div class="bg-panel/20 border border-glass p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
                  <div class="flex justify-between items-center border-b border-accent/5 pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>

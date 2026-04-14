@@ -14,7 +14,7 @@
           <div class="h-px w-8 bg-accent/20"></div>
         </div>
         <h2 class="text-4xl md:text-7xl font-black tracking-tighter leading-none mb-8">
-          Founder <span class="italic serif-font lowercase" style="color: #52525B">validation.</span>
+          Founder <span class="italic serif-font lowercase" style="color: var(--text-soft)">validation.</span>
         </h2>
         <p class="text-soft text-lg font-medium opacity-60 max-w-2xl">
           Surgical product intervention. Documented success logs from partners and technology founders.

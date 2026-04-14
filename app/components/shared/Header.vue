@@ -36,6 +36,7 @@
 
       <!-- Desktop Actions -->
       <div class="hidden md:flex items-center gap-4">
+
         <button type="button" class="theme-toggle" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>

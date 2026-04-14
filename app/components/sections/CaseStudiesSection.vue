@@ -14,7 +14,7 @@
           </div>
           <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8 text-main">
             Problems solved, <br />
-            <span class="italic serif-font lowercase" style="color: #52525B">outcomes delivered.</span>
+            <span class="italic serif-font lowercase" style="color: var(--text-soft)">outcomes delivered.</span>
           </h2>
           <p class="text-soft text-xl font-medium leading-relaxed max-w-2xl">
             A selective collection of complex product challenges resolved through disciplined design and engineering protocols.
@@ -114,7 +114,7 @@
 
                 <!-- Impact Statement: Final Validation -->
                 <div class="bg-accent text-accent-fg rounded-[32px] p-10 shadow-2xl shadow-accent/20 relative overflow-hidden group/impact">
-                  <div class="absolute top-0 right-0 h-24 w-24 bg-white/5 rounded-bl-full translate-x-4 -translate-y-4 group-hover/impact:scale-110 transition-transform"></div>
+                  <div class="absolute top-0 right-0 h-24 w-24 bg-accent/5 rounded-bl-full translate-x-4 -translate-y-4 group-hover/impact:scale-110 transition-transform"></div>
                   <div class="flex items-center gap-3 mb-6">
                     <Icon name="lucide:award" class="h-5 w-5" />
                     <span class="text-[0.65rem] font-black uppercase tracking-widest opacity-80">Strategic Outcome</span>

@@ -19,7 +19,7 @@
       <Icon name="logos:whatsapp-icon" class="w-7 h-7 md:w-8 md:h-8 group-hover/btn:scale-110 transition-transform duration-500" />
       
       <!-- Subtle Glint -->
-      <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+      <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-accent/20 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
     </a>
   </div>
 </template>

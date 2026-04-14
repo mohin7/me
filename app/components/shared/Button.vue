@@ -98,7 +98,7 @@ const sizeClasses = computed(() => {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  filter: brightness(1.1);
+  filter: brightness(var(--hover-brightness));
 }
 
 .btn-outline {

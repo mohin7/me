@@ -221,24 +221,24 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --accent-rgb: 17, 17, 17;
   --accent-spotlight: rgba(var(--accent-rgb), 0.03);
   --accent: #111111;
-  --accent-fg: #FFFFFF;
+  --accent-fg: #FFFFFF; --hover-brightness: 1.1;
 }
 
 .theme-dark {
-  --bg-page: #0A0A0A;
-  --bg-panel: #121212;
+  --bg-page: #080808;
+  --bg-panel: #111111;
   --bg-panel-strong: #1A1A1A;
   --bg-soft: #1A1A1A;
   --text-main: #FAFAFA;
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
   --border-subtle: rgba(255,255,255,0.08);
-  --border-glass: rgba(255,255,255,0.12);
+  --border-glass: rgba(255,255,255,0.08);
   --bg-glass: rgba(10,10,12,0.7);
   --accent-rgb: 255, 255, 255;
   --accent-spotlight: rgba(var(--accent-rgb), 0.07);
   --accent: #FFFFFF;
-  --accent-fg: #111111;
+  --accent-fg: #111111; --hover-brightness: 0.9;
 }
 
 /* ── Global Section Standards ── */

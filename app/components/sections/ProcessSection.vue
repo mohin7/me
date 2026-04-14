@@ -28,7 +28,7 @@
             </div>
             <h2 class="text-main text-4xl font-black tracking-tighter md:text-7xl leading-[0.85]">
               Systematic <br />
-              <span class="italic serif-font lowercase" style="color: #52525B">delivery.</span>
+              <span class="italic serif-font lowercase" style="color: var(--text-soft)">delivery.</span>
             </h2>
             <p class="text-soft text-lg font-medium leading-relaxed max-w-[480px] mt-8">
               Design treated as a core engineering discipline: results-driven, scalable, and built for speed.

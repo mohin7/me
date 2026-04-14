@@ -21,7 +21,7 @@
             <div class="flex items-baseline gap-4 mb-4">
               <span class="text-accent text-8xl font-black tracking-tighter leading-none italic serif-font">07</span>
               <div class="flex flex-col">
-                <span class="text-xl font-black italic serif-font leading-none mt-2" style="color: #52525B">Years</span>
+                <span class="text-xl font-black italic serif-font leading-none mt-2" style="color: var(--text-soft)">Years</span>
                 <span class="text-soft text-[0.65rem] font-black uppercase tracking-widest mt-2">Executive Craft</span>
               </div>
             </div>
@@ -31,7 +31,7 @@
 
           <h2 class="text-main mb-8 text-4xl font-black tracking-tighter md:text-6xl leading-[0.85]">
             Career <br />
-            <span class="italic serif-font lowercase" style="color: #52525B">timeline.</span>
+            <span class="italic serif-font lowercase" style="color: var(--text-soft)">timeline.</span>
           </h2>
           <p class="text-soft text-lg font-medium leading-relaxed max-w-[320px]">
             A documented history of building and leading high-impact digital products at scale.

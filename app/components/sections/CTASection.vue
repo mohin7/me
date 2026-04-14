@@ -18,7 +18,7 @@
       <!-- The Final Launch Word: Balanced Scale -->
       <h2 class="mb-16 text-main text-5xl md:text-8xl font-black tracking-tighter leading-[0.85]">
         Let's bring your <br /> 
-        <span class="serif-font lowercase italic" style="color: #52525B">vision to life.</span>
+        <span class="serif-font lowercase italic" style="color: var(--text-soft)">vision to life.</span>
       </h2>
       
       <!-- Higher Density Consistent Buttons -->

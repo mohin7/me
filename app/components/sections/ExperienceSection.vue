@@ -164,16 +164,17 @@ onUnmounted(() => {
 
 const experience = [
   {
-    role: 'Product Design Engineer',
+    role: 'Head of Design',
     company: 'AppsCode Ltd',
     period: '2021 — Present',
-    description: 'Leading the design and development of end-to-end cloud infrastructure platforms and complex database interfaces.',
+    description: 'Directing product-wide UI/UX strategy and engineering execution for massive Kubernetes infrastructure and database platforms.',
     impacts: [
-      'Scale design systems for 6+ products.',
-      'Reduce dev cycles by 40%.',
-      'Lead core KubeDB features.'
+      'Scale design systems for KubeDB, KubeVault, and Stash.',
+      'Architected 8+ high-scale cloud management products.',
+      'Engineered unified design-to-code Nuxt 3 workflows.',
+      'Leading a multi-disciplinary technical design team.'
     ],
-    tags: ['Design Systems', 'Nuxt.js', 'Vue.js', 'Product Strategy']
+    tags: ['Design Leadership', 'Product Architecture', 'Nuxt 3', 'Kubernetes UI']
   },
   {
     role: 'Frontend Architect',

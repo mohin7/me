@@ -41,6 +41,19 @@ import { onMounted, ref, computed, onUnmounted } from 'vue'
 const { theme } = useTheme()
 const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme-light')
 
+// ── SEO & Metadata Implementation ──
+useSeoMeta({
+  title: 'Md Mohin Uddin — Head of Design & AI Architect | Kubernetes & Cloud UX Specialist',
+  ogTitle: 'Md Mohin Uddin — Design Lead & Architect for High-Scale Cloud Systems',
+  description: 'Head of Design at AppsCode. Specializing in high-performance UI/UX for Kubernetes, Cloud Infrastructure, and Scalable SaaS Platforms. Directed design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt 3 & Vue.js engineering.',
+  ogDescription: 'Engineering executive-grade UI/UX for complex cloud ecosystems and high-concurrency platforms. specialized in developer-centric product strategy.',
+  ogImage: 'https://mohin.design/og-banner.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Md Mohin Uddin — Leading the Design of Kubernetes-Native Platforms',
+  twitterDescription: 'Surgical design execution for enterprise cloud infrastructure. From Figma to high-performance Nuxt 3 architecture.',
+  keywords: 'Kubernetes UX, Cloud Infrastructure Design, Product Design Engineering, Head of Design AppsCode, Nuxt.js Expert, Vue.js Specialist, SaaS Architecture, KubeDB UX',
+})
+
 // ── Fixed Wrapper Smooth Scroll ──
 const smoothWrapper = ref<HTMLElement | null>(null)
 const virtualHeight = ref(0)

@@ -7,10 +7,10 @@
 
       <!-- Logo Signature -->
       <a href="#top" class="group flex items-center gap-3 shrink-0">
-        <div class="h-10 w-10 bg-accent text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-transform group-hover:rotate-12">M</div>
+        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-accent/20">M</div>
         <div class="flex flex-col">
           <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
-          <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Executive Lead</span>
+          <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
         </div>
       </a>
 
@@ -233,8 +233,8 @@ onUnmounted(() => {
   color: var(--accent-fg);
   font-size: 0.75rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
   text-decoration: none;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);

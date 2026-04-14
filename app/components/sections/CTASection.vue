@@ -12,7 +12,7 @@
       <!-- System Status Line: Minimalist -->
       <div class="flex items-center justify-center gap-4 mb-14">
         <div class="h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_var(--accent)]"></div>
-        <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.4em]">Available for Strategic Partnership // 2024.Q2</span>
+        <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.4em]">{{ availabilityTag }}</span>
       </div>
       
       <!-- The Final Launch Word: Balanced Scale -->
@@ -65,6 +65,10 @@
 </template>
 
 <script setup lang="ts">
+const now = new Date()
+const currentYear = now.getFullYear()
+const currentQuarter = Math.floor((now.getMonth() + 3) / 3)
+const availabilityTag = `Available for Strategic Partnership // ${currentYear}.Q${currentQuarter}`
 </script>
 
 <style scoped>

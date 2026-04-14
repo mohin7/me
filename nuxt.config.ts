@@ -14,6 +14,21 @@ export default defineNuxtConfig({
       autoprefixer: {},
     }
   },
+  app: {
+    head: {
+      title: 'Md Mohin Uddin - Head of Design & Product Architect',
+      htmlAttrs: {
+        lang: 'en'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+      ]
+    }
+  },
   vite: {
     optimizeDeps: {
       include: [

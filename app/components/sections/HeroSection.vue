@@ -29,7 +29,7 @@
         <div class="hero-enter flex flex-col items-center w-full">
           <!-- Designation -->
           <div class="mb-10 flex flex-col items-center px-4">
-             <span class="section-label">Product Design Engineer • Nuxt & Vue Expert</span>
+             <span class="section-label">Head of Design • Nuxt & Vue Expert</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->

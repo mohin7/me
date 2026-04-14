@@ -6,12 +6,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
         <!-- Brand Signature -->
         <div class="space-y-6">
-          <div class="flex items-center gap-3">
-             <div class="h-8 w-8 bg-accent text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base">M</div>
+          <div class="flex items-center gap-3 text-left">
+             <div class="h-8 w-8 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-lg font-black italic serif-font text-base border border-accent/20">M</div>
              <span class="text-main font-black tracking-tighter">Mohin Uddin</span>
           </div>
-          <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px]">
-            Executive Design Lead specializing in high-performance digital products and systems.
+          <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px] text-left">
+            Head of Design specializing in high-performance cloud infrastructure and design systems.
           </p>
         </div>
 
@@ -36,7 +36,7 @@
           </div>
           <div class="mt-auto pt-8 flex items-center gap-2 text-accent/40">
              <div class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></div>
-             <span class="text-[0.55rem] font-black uppercase tracking-widest">Available for Q2 {{ currentYear }}</span>
+             <span class="text-[0.55rem] font-black uppercase tracking-widest">Available for Q{{ currentQuarter }} {{ currentYear }}</span>
           </div>
         </div>
       </div>
@@ -57,7 +57,9 @@
 </template>
 
 <script setup lang="ts">
-const currentYear = new Date().getFullYear()
+const now = new Date()
+const currentYear = now.getFullYear()
+const currentQuarter = Math.floor((now.getMonth() + 3) / 3)
 
 const footerGroups = [
   {

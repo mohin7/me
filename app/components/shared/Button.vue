@@ -26,7 +26,7 @@
            {{ hoverText }}
          </div>
       </div>
-      <div v-else class="flex items-center justify-center gap-2">
+      <div v-else class="h-[1.6em] flex items-center justify-center gap-2">
          <slot name="left"></slot>
          <slot />
          <slot name="right"></slot>

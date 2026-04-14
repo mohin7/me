@@ -6,11 +6,10 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header: Strategic Direction -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-12 mb-20 md:mb-32">
-        <div class="max-w-3xl">
-          <div class="flex items-center gap-3 mb-8">
-            <div class="h-px w-8 bg-accent/20"></div>
-            <span class="text-accent text-[0.65rem] font-bold uppercase tracking-[0.5em]">Evidence Gallery</span>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-20 md:mb-32">
+        <div class="max-w-3xl flex flex-col items-center text-center md:items-start md:text-left">
+          <div class="mb-10 lg:mb-12">
+            <span class="section-label flex justify-center md:justify-start">Evidence Gallery</span>
           </div>
           <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8 text-main">
             Problems solved, <br />
@@ -22,7 +21,7 @@
         </div>
 
         <!-- High-Precision Carousel Navigation -->
-        <div class="flex items-center gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm">
+        <div class="flex items-center w-fit mx-auto md:mx-0 gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm">
           <button @click="prev" class="cs-nav-btn" aria-label="Previous">
             <Icon name="lucide:arrow-left" class="h-5 w-5" />
           </button>
@@ -39,7 +38,7 @@
       <!-- Main Case Study Display: The High-Resolution Card -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[48px] bg-panel/20 border border-glass p-8 md:p-16 transition-all duration-700 hover:bg-panel/40 hover:shadow-2xl overflow-hidden reveal">
+          <div :key="active" class="group relative rounded-[32px] md:rounded-[48px] bg-panel/20 border border-glass p-6 md:p-16 transition-all duration-700 hover:bg-panel/40 hover:shadow-2xl overflow-hidden reveal">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
@@ -51,17 +50,17 @@
               <div class="flex flex-col gap-12">
                 <!-- Meta Info -->
                 <div class="flex items-center gap-4">
-                  <span class="text-accent text-[0.65rem] font-bold uppercase tracking-[0.3em] font-mono whitespace-nowrap">Industry: {{ caseStudies[active].industry }}</span>
+                  <span class="text-accent text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.3em] font-mono">Industry: {{ caseStudies[active].industry }}</span>
                   <div class="h-px w-full bg-accent/5"></div>
                 </div>
 
                 <!-- Strategic Title -->
-                <h3 class="text-main text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors duration-500">
+                <h3 class="text-main text-3xl md:text-6xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors duration-500">
                   {{ caseStudies[active].title }}
                 </h3>
 
                 <!-- Problem vs Solution: The Logical Split -->
-                <div class="grid md:grid-cols-2 gap-12 pt-4">
+                <div class="grid md:grid-cols-2 gap-10 lg:gap-12 pt-0 md:pt-4">
                   <div class="space-y-6">
                     <div class="flex items-center gap-3">
                        <span class="text-main text-[0.6rem] font-black uppercase tracking-[0.4em] text-soft">The Crisis</span>
@@ -95,17 +94,17 @@
               <!-- DATA & OUTCOME ARCHIVE -->
               <div class="flex flex-col gap-8">
                 <!-- Primary Metric Widget -->
-                <div class="bg-accent/5 border border-glass rounded-[40px] p-10 space-y-4 relative overflow-hidden">
+                <div class="bg-accent/5 border border-glass rounded-[24px] md:rounded-[40px] p-8 md:p-10 space-y-4 relative overflow-hidden">
                   <div class="flex items-center gap-3">
                     <span class="text-accent text-[0.65rem] font-black uppercase tracking-widest">{{ caseStudies[active].metrics[0].label }}</span>
                   </div>
-                  <div class="text-7xl font-black text-main tracking-tighter leading-none italic serif-font">{{ caseStudies[active].metrics[0].value }}</div>
+                  <div class="text-6xl lg:text-7xl font-black text-main tracking-tighter leading-none italic serif-font">{{ caseStudies[active].metrics[0].value }}</div>
                   <p class="text-soft text-sm font-medium opacity-60 leading-snug">{{ caseStudies[active].metrics[0].sub }}</p>
                 </div>
 
                 <!-- Supporting Metrics Grid -->
-                <div class="grid grid-cols-2 gap-8">
-                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel/40 border border-glass rounded-[32px] p-8 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel/40 border border-glass rounded-[24px] md:rounded-[32px] p-6 md:p-8 space-y-4">
                     <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest block opacity-40">{{ metric.label }}</span>
                     <div class="text-3xl font-black text-main tracking-tight">{{ metric.value }}</div>
                     <p class="text-muted text-[0.65rem] font-medium leading-tight opacity-60">{{ metric.sub }}</p>
@@ -113,7 +112,7 @@
                 </div>
 
                 <!-- Impact Statement: Final Validation -->
-                <div class="bg-accent text-accent-fg rounded-[32px] p-10 shadow-2xl shadow-accent/20 relative overflow-hidden group/impact">
+                <div class="bg-accent text-accent-fg rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-2xl shadow-accent/20 relative overflow-hidden group/impact">
                   <div class="absolute top-0 right-0 h-24 w-24 bg-accent/5 rounded-bl-full translate-x-4 -translate-y-4 group-hover/impact:scale-110 transition-transform"></div>
                   <div class="flex items-center gap-3 mb-6">
                     <Icon name="lucide:award" class="h-5 w-5" />
@@ -130,8 +129,8 @@
       </div>
 
       <!-- Conversion Bridge: Architectural CTA -->
-      <div class="mt-20 md:mt-32 flex flex-col md:flex-row items-center gap-12 bg-panel/20 border border-glass p-8 md:p-16 rounded-[56px]">
-        <div class="max-w-xl text-center md:text-left">
+      <div class="mt-20 md:mt-32 flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-panel/20 border border-glass p-6 md:p-16 rounded-[32px] md:rounded-[56px]">
+        <div class="max-w-xl text-center md:text-left w-full">
           <h4 class="text-main text-3xl md:text-5xl font-black tracking-tighter mb-6 leading-none">Facing a complex <br /> product barrier?</h4>
           <p class="text-soft text-lg font-medium opacity-70">I transition enterprise products from "functional" to "authoritative" through surgical design execution.</p>
         </div>

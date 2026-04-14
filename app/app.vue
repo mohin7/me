@@ -232,8 +232,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --text-main: #FAFAFA;
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
-  --border-subtle: #0F0F14;
-  --border-glass: #14141A;
+  --border-subtle: #1C1C22;
+  --border-glass: #262630;
   --bg-glass: rgba(10,10,12,0.7);
   --accent-rgb: 200, 210, 255;
   --accent-spotlight: rgba(var(--accent-rgb), 0.05);

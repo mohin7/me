@@ -30,8 +30,8 @@ export default defineNuxtConfig({
             (function() {
               const stored = localStorage.getItem("portal-theme");
               const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-              const theme = stored || preferred;
-              document.documentElement.classList.remove("theme-light", "theme-dark"); document.documentElement.classList.add("theme-" + theme);
+              const theme = stored || 'light';
+              document.documentElement.classList.remove("light", "dark"); document.documentElement.classList.add(theme); document.documentElement.dataset.theme = theme;
             })();
           `,
           type: "text/javascript"

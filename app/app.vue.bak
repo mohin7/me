@@ -21,7 +21,7 @@
 const { theme } = useTheme()
 const { scheme } = useBrandScheme()
 
-const themeClass = computed(() => (theme.value === 'dark' ? 'theme-dark' : 'theme-light'))
+const themeClass = computed(() => (theme.value === 'dark' ? 'dark' : 'light'))
 const schemeClass = computed(() => `scheme-${scheme.value}`)
 </script>
 
@@ -33,7 +33,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   transition: background-color 240ms ease, color 240ms ease;
 }
 
-.theme-dark {
+.dark {
   --bg-page: #080b10;
   --bg-panel: rgba(255, 255, 255, 0.04);
   --bg-panel-strong: #10151e;
@@ -44,7 +44,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --border-subtle: rgba(255, 255, 255, 0.12);
 }
 
-.theme-light {
+.light {
   --bg-page: #f7fafc;
   --bg-panel: rgba(255, 255, 255, 0.9);
   --bg-panel-strong: #ffffff;
@@ -62,7 +62,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --brand-rgb: 190 242 100;
 }
 
-.theme-light.scheme-futuristic {
+.light.scheme-futuristic {
   --brand-a: #65a30d;
   --brand-b: #15803d;
   --brand-c: #84cc16;
@@ -76,7 +76,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --brand-rgb: 167 139 250;
 }
 
-.theme-light.scheme-premium {
+.light.scheme-premium {
   --brand-a: #7c3aed;
   --brand-b: #4f46e5;
   --brand-c: #8b5cf6;
@@ -90,7 +90,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --brand-rgb: 251 146 60;
 }
 
-.theme-light.scheme-energetic {
+.light.scheme-energetic {
   --brand-a: #ea580c;
   --brand-b: #dc2626;
   --brand-c: #f59e0b;
@@ -104,7 +104,7 @@ const schemeClass = computed(() => `scheme-${scheme.value}`)
   --brand-rgb: 251 113 133;
 }
 
-.theme-light.scheme-editorial {
+.light.scheme-editorial {
   --brand-a: #e11d48;
   --brand-b: #be123c;
   --brand-c: #9f1239;

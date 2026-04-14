@@ -74,7 +74,7 @@
 
                   <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                      <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-4">
-                        <div class="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0"></div>
+                        <Icon name="lucide:check-circle" class="h-4 w-4 text-accent/20 mt-1 shrink-0 group-hover:text-accent transition-colors duration-500" />
                         <span class="text-soft text-sm font-medium leading-relaxed">{{ impact }}</span>
                      </div>
                   </div>

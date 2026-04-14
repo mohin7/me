@@ -46,7 +46,7 @@
 import { onMounted, ref, computed, onUnmounted } from 'vue'
 
 const { theme, applyTheme } = useTheme()
-const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme-light')
+const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 // ── SEO & Metadata Implementation ──
 useSeoMeta({
@@ -110,11 +110,6 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
-  if (document.documentElement.className.includes("theme-dark")) {
-    applyTheme("dark");
-  } else if (document.documentElement.className.includes("theme-light")) {
-    applyTheme("light");
-  }
 
   window.addEventListener('mousemove', handleMouseMove)
   // Simple touch detection
@@ -213,7 +208,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   -webkit-font-smoothing: antialiased;
 }
 
-.theme-light {
+.light {
   --bg-page: #F9FAFB;
   --bg-panel: #FFFFFF;
   --bg-panel-strong: #F3F4F6;
@@ -230,7 +225,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --accent-fg: #FFFFFF; --hover-brightness: 1.1;
 }
 
-.theme-dark {
+.dark {
   --bg-page: #080808;
   --bg-panel: #0B0B0B;
   --bg-panel-strong: #1A1A1A;
@@ -248,10 +243,10 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 /* ── Global Section Standards ── */
-.theme-dark .border-glass {
+.dark .border-glass {
   border-color: var(--border-glass);
 }
-.theme-dark .border-glass:hover {
+.dark .border-glass:hover {
   border-color: rgba(var(--accent-rgb), 0.12) !important;
 }
 
@@ -267,10 +262,10 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 }
 
 @media (min-width: 768px) {
-.theme-dark .border-glass {
+.dark .border-glass {
   border-color: var(--border-glass);
 }
-.theme-dark .border-glass:hover {
+.dark .border-glass:hover {
   border-color: rgba(var(--accent-rgb), 0.12) !important;
 }
 

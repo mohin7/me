@@ -14,7 +14,7 @@
 
       <!-- Logo Signature -->
       <a href="#top" class="group flex items-center gap-3 shrink-0">
-        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
+        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
         <div class="flex flex-col">
           <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
           <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
@@ -28,9 +28,9 @@
           :key="item.label"
           :href="item.href"
           @click="scrollToSection($event, item.href)"
-          class="nav-link"
+          class="nav-link flex items-center gap-2 group/nav"
         >
-          {{ item.label }}
+          <Icon v-if="item && item.icon" :name="item.icon" class="h-3 w-3 opacity-30 group-hover/nav:opacity-100 transition-opacity" /> {{ item.label }}
         </a>
       </div>
 
@@ -41,7 +41,7 @@
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
         <div class="h-8 w-px bg-accent/10"></div>
-        <a href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false"><div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center"><div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center"><span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Start Project <Icon name="lucide:arrow-right" class="h-3 w-3" /></span><span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent">Go Live <Icon name="lucide:zap" class="h-3 w-3" /></span></div></div><div class="shimmer-bg"></div></a>
+        <a href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false"><div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center"><div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center"><span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Start Project <Icon name="lucide:arrow-right" class="h-3 w-3" /></span><span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent-fg">Go Live <Icon name="lucide:zap" class="h-3 w-3" /></span></div></div><div class="shimmer-bg"></div></a>
       </div>
 
       <!-- Mobile Actions -->
@@ -66,7 +66,7 @@
           <!-- Menu Top Bar -->
           <div class="flex items-center justify-between mb-16">
              <div class="flex items-center gap-3">
-                <div class="h-10 w-10 bg-accent text-accent-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl">M</div>
+                <div class="h-10 w-10 bg-accent text-accent-fg-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl">M</div>
                 <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
              </div>
              <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-glass flex items-center justify-center bg-accent/5 text-main">
@@ -84,9 +84,9 @@
               class="group relative block"
             >
               <div class="flex items-baseline gap-4 py-4 border-b border-subtle">
-                <span class="text-[0.6rem] font-black font-mono text-accent opacity-40">0{{ idx + 1 }}</span>
-                <span class="text-5xl sm:text-7xl font-black tracking-tighter text-main group-hover:text-accent transition-colors">
-                  {{ item.label }}
+                <span class="text-[0.6rem] font-black font-mono text-accent-fg opacity-40">0{{ idx + 1 }}</span>
+                <span class="text-5xl sm:text-7xl font-black tracking-tighter text-main group-hover:text-accent-fg transition-colors">
+                  <Icon v-if="item && item.icon" :name="item.icon" class="h-3 w-3 opacity-30 group-hover/nav:opacity-100 transition-opacity" /> {{ item.label }}
                 </span>
               </div>
             </a>
@@ -122,17 +122,17 @@ const isProjectHovered = ref(false)
 const isNavbarVisible = ref(true)
 const { theme, toggleTheme } = useTheme()
 
-const themeClass = computed(() => theme.value === 'dark' ? 'theme-dark' : 'theme-light')
+const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 let lastScrollY = 0
 const scrollThreshold = 10
 
 const navItems = [
-  { label: 'Strategy', href: '#strategic-advantage' },
-  { label: 'Methodology', href: '#process' },
-  { label: 'Work', href: '#case-studies' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Investment', href: '#packages' },
+  { label: 'Strategy', href: '#strategic-advantage', icon: 'lucide:binary' },
+  { label: 'Methodology', href: '#process', icon: 'lucide:workflow' },
+  { label: 'Work', href: '#case-studies', icon: 'lucide:projector' },
+  { label: 'Experience', href: '#experience', icon: 'lucide:badge-check' },
+  { label: 'Investment', href: '#packages', icon: 'lucide:bar-chart-3' },
 ]
 
 const scrollProgress = ref(0)
@@ -220,10 +220,10 @@ onUnmounted(() => {
 }
 .nav-link:hover {
   color: var(--text-main);
-  background: white;
+  background: var(--accent);
 }
-.theme-dark .nav-link:hover {
-  background: rgba(255,255,255,0.05);
+.dark .nav-link:hover {
+  background: rgba(var(--accent-rgb), 0.05);
 }
 
 .menu-toggle:hover { color: var(--text-main); background: var(--bg-soft); }

@@ -1,14 +1,14 @@
 type Theme = 'light' | 'dark'
 
 export const useTheme = () => {
-  const theme = useState<Theme>('portal-theme', () => 'dark')
+  const theme = useState<Theme>('portal-theme', () => 'light')
   const initialized = useState('portal-theme-initialized', () => false)
 
   const applyTheme = (nextTheme: Theme) => {
     theme.value = nextTheme
     if (import.meta.client) {
       localStorage.setItem('portal-theme', nextTheme)
-      document.documentElement.classList.remove('theme-light', 'theme-dark'); document.documentElement.classList.add(`theme-${nextTheme}`)
+      document.documentElement.classList.remove('light', 'dark'); document.documentElement.classList.add(nextTheme)
     }
   }
 
@@ -20,11 +20,11 @@ export const useTheme = () => {
     const init = () => {
       const storedTheme = localStorage.getItem('portal-theme') as Theme | null
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-      
+
       const getPreferred = () => mediaQuery.matches ? 'dark' : 'light'
-      
+
       if (!initialized.value) {
-        applyTheme(storedTheme ?? getPreferred())
+        applyTheme(storedTheme ?? "light")
         initialized.value = true
       }
 
@@ -35,7 +35,7 @@ export const useTheme = () => {
         }
       })
     }
-    
+
     init()
   }
 

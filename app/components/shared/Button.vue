@@ -22,7 +22,7 @@
            <slot />
            <slot name="right"></slot>
          </div>
-         <div class="h-[1.6em] flex items-center justify-center text-accent italic font-bold">
+         <div :class="['h-[1.6em] flex items-center justify-center italic font-bold ', variant === 'primary' ? 'text-accent-fg' : 'text-accent' ]">
            {{ hoverText }}
          </div>
       </div>
@@ -98,7 +98,7 @@ const sizeClasses = computed(() => {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  filter: brightness(var(--hover-brightness));
+  filter: brightness(var(--hover-brightness)); box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.1);
 }
 
 .btn-outline {
@@ -108,8 +108,8 @@ const sizeClasses = computed(() => {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-outline:hover {
-  border-color: var(--accent);
-  background: var(--bg-soft);
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: rgba(var(--accent-rgb), 0.05);
   transform: translateY(-2px);
 }
 
@@ -121,8 +121,8 @@ const sizeClasses = computed(() => {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-glass:hover {
-  border-color: var(--accent);
-  background: var(--bg-soft);
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: rgba(var(--accent-rgb), 0.05);
   transform: translateY(-2px);
 }
 
@@ -133,6 +133,6 @@ const sizeClasses = computed(() => {
 }
 .btn-ghost:hover {
   color: var(--text-main);
-  background: var(--bg-soft);
+  background: rgba(var(--accent-rgb), 0.05);
 }
 </style>

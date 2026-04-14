@@ -38,9 +38,8 @@
                <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-40">{{ pkg.tag }}</span>
             </div>
 
-            <h3 class="text-main text-3xl md:text-4xl font-black tracking-tighter leading-none mb-4">
-              {{ pkg.name }}
-            </h3>
+            <div class="flex justify-between items-start mb-4"><h3 class="text-main text-3xl md:text-4xl font-black tracking-tighter leading-none">
+              {{ pkg.name }}</h3><Icon v-if="pkg && pkg.icon" :name="pkg.icon" class="h-8 w-8 text-accent/20 group-hover:text-accent transition-colors duration-500" /></div>
             
             <div class="flex items-baseline gap-2 mb-8">
               <span class="text-main text-4xl font-black tracking-tighter">{{ pkg.price }}</span>
@@ -55,7 +54,7 @@
           <!-- Technical Specs -->
           <div class="space-y-4 mb-12 flex-1 pt-8 border-t border-glass">
              <div v-for="feature in pkg.features" :key="feature" class="flex items-start gap-4">
-                <Icon name="lucide:check-circle-2" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                <Icon name="lucide:check-circle" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span class="text-soft text-[0.85rem] font-medium leading-tight group-hover:text-main transition-colors">{{ feature }}</span>
              </div>
           </div>
@@ -109,11 +108,11 @@
            
            <div class="bg-panel/20 border border-glass p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
-                 <div class="flex justify-between items-center border-b border-subtle pb-4">
+                 <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
                     <span class="text-main font-bold text-sm">1.0% Equity</span>
                  </div>
-                 <div class="flex justify-between items-center border-b border-subtle pb-4">
+                 <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
                     <span class="text-main font-bold text-sm">Full MVP 1.0</span>
                  </div>
@@ -132,7 +131,7 @@
 <script setup lang="ts">
 const packages = [
   {
-    name: 'Pitch MVP',
+    name: 'Pitch MVP', icon: 'lucide:cpu',
     tag: 'Early_Stage',
     price: '$1,450',
     unit: 'One-time',
@@ -149,7 +148,7 @@ const packages = [
     ]
   },
   {
-    name: 'Production MVP',
+    name: 'Production MVP', icon: 'lucide:rocket',
     tag: 'Market_Entry',
     price: '$3,200',
     unit: 'One-time',
@@ -166,7 +165,7 @@ const packages = [
     ]
   },
   {
-    name: 'Full Partnership',
+    name: 'Full Partnership', icon: 'lucide:crown',
     tag: 'Embedded_Lead',
     price: '$5,900',
     unit: '/ Month',

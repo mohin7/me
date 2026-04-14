@@ -1,5 +1,5 @@
 export default {
-  darkMode: ['class', '.theme-dark'],
+  darkMode: ['class', '.dark'],
   content: [],
   // tailwind.config.ts
   theme: {

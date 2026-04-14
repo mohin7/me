@@ -66,9 +66,9 @@
                   </div>
 
                   <div class="flex justify-between items-start gap-6 mb-8">
-                    <h3 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors">
+                    <h3 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors flex-1">
                        {{ step.title }}
-                    </h3>
+                    </h3><div class="h-12 w-12 rounded-xl bg-accent/5 border border-glass flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500"><Icon v-if="step && step.icon" :name="step.icon" class="h-6 w-6" /></div>
                   </div>
 
                   <p class="text-soft text-base md:text-lg font-medium leading-relaxed mb-10 opacity-80">
@@ -162,28 +162,28 @@ onUnmounted(() => {
 
 const steps = [
   {
-    title: 'Strategy & Analysis',
+    title: 'Strategy & Analysis', icon: 'lucide:search',
     category: 'Protocol 01',
     description: 'Deconstructing technical requirements and business variables into a battle-hardened product roadmap.',
     strategy: 'Mapping product logic to venture-scale goals to identify market advantages.',
     outputs: ['Competitive Audit', 'Conversion Roadmap', 'Project Strategy'],
   },
   {
-    title: 'Architectural UX',
+    title: 'Architectural UX', icon: 'lucide:layout',
     category: 'Protocol 02',
     description: 'Building the structural logic of your product. Defining clear user paths before a single pixel is moved.',
     strategy: 'Ensuring high-momentum performance through logic-first IA.',
     outputs: ['Experience Flows', 'Site Hierarchy', 'Logic Maps'],
   },
   {
-    title: 'Visual Engineering',
+    title: 'Visual Engineering', icon: 'lucide:palette',
     category: 'Protocol 03',
     description: 'Scaling high-performance design systems from core primitives to complex enterprise interfaces.',
     strategy: 'Crafting a visual identity that balances authority with modular scalability.',
     outputs: ['Design System 1.0', 'High-Fidelity UI', 'Prototyping'],
   },
   {
-    title: 'Delivery & Scale',
+    title: 'Delivery & Scale', icon: 'lucide:rocket',
     category: 'Protocol 04',
     description: 'Bridging the gap between code and design to ensure your product launches perfectly into production.',
     strategy: 'Protecting design integrity during deployment through rigorous QA.',

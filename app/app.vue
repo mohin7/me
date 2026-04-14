@@ -3,7 +3,11 @@
     <SharedHeader />
     
     <!-- Smooth Scroll Wrapper -->
-    <div ref="smoothWrapper" class="smooth-wrapper">
+    <div 
+      ref="smoothWrapper" 
+      class="smooth-wrapper"
+      :class="{ 'is-smooth': !isTouchDevice }"
+    >
       <main>
         <SectionsHeroSection />
         <SectionsStrategicAdvantage />
@@ -42,6 +46,7 @@ const smoothWrapper = ref<HTMLElement | null>(null)
 const virtualHeight = ref(0)
 const currentOffset = ref(0)
 const scrollSpeed = 0.08
+const isTouchDevice = ref(false)
 let targetOffset = 0
 let rafId: number | null = null
 
@@ -50,10 +55,22 @@ const scrollToTop = () => {
 }
 
 const updateHeight = () => {
-  if (smoothWrapper.value) virtualHeight.value = smoothWrapper.value.scrollHeight
+  if (smoothWrapper.value && !isTouchDevice.value) {
+    virtualHeight.value = smoothWrapper.value.scrollHeight
+  } else {
+    virtualHeight.value = 0
+  }
 }
 
 const smoothLoop = () => {
+  if (isTouchDevice.value) {
+    // On touch, send native scroll position for UI components like Header
+    currentOffset.value = window.pageYOffset
+    window.dispatchEvent(new CustomEvent('smooth-scroll', { detail: currentOffset.value }))
+    rafId = requestAnimationFrame(smoothLoop)
+    return
+  }
+
   targetOffset = window.pageYOffset
   currentOffset.value += (targetOffset - currentOffset.value) * scrollSpeed
   if (smoothWrapper.value) {
@@ -66,11 +83,17 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
-  updateHeight()
-  setTimeout(updateHeight, 500)
-  setTimeout(updateHeight, 1500)
+  // Simple touch detection
+  isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
+  
+  if (!isTouchDevice.value) {
+    updateHeight()
+    setTimeout(updateHeight, 500)
+    setTimeout(updateHeight, 1500)
+    window.addEventListener('resize', updateHeight)
+  }
+  
   rafId = requestAnimationFrame(smoothLoop)
-  window.addEventListener('resize', updateHeight)
 })
 
 onUnmounted(() => {
@@ -99,11 +122,15 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(128, 128, 128, 0.4); }
 
 .smooth-wrapper {
-  position: fixed;
-  top: 0; left: 0;
+  position: relative;
   width: 100%;
   will-change: transform;
   backface-visibility: hidden;
+}
+
+.smooth-wrapper.is-smooth {
+  position: fixed;
+  top: 0; left: 0;
 }
 
 .scroll-spacer { width: 100%; pointer-events: none; }

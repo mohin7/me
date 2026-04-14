@@ -33,7 +33,7 @@
       <!-- The Balanced Grid Pillars -->
       <div class="grid md:grid-cols-3 gap-6 text-left">
         <div v-for="(pillar, idx) in pillars" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'relative p-10 rounded-[40px] bg-panel/20 border border-accent/5 hover:border-accent/20 transition-all duration-700 flex flex-col h-full overflow-hidden group']">
+             :class="[`reveal reveal-delay-${idx+1}`, 'relative p-10 rounded-[40px] bg-panel/20 border border-accent/5 hover:border-accent/20 shadow-[var(--specular)] transition-all duration-700 flex flex-col h-full overflow-hidden group']">
            
            <!-- Minimalist Icon -->
            <div class="h-12 w-12 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">

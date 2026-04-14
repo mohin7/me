@@ -226,19 +226,19 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 
 .theme-dark {
   --bg-page: #080808;
-  --bg-panel: #111111;
+  --bg-panel: #101010;
   --bg-panel-strong: #1A1A1A;
-  --bg-soft: #1A1A1A;
+  --bg-soft: #181818;
   --text-main: #FAFAFA;
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
-  --border-subtle: rgba(255,255,255,0.08);
-  --border-glass: rgba(255,255,255,0.08);
+  --border-subtle: rgba(255,255,255,0.03);
+  --border-glass: rgba(255,255,255,0.04);
   --bg-glass: rgba(10,10,12,0.7);
   --accent-rgb: 255, 255, 255;
-  --accent-spotlight: rgba(var(--accent-rgb), 0.07);
+  --accent-spotlight: rgba(var(--accent-rgb), 0.05);
   --accent: #FFFFFF;
-  --accent-fg: #111111; --hover-brightness: 0.9;
+  --accent-fg: #111111; --hover-brightness: 0.9; --specular: inset 0 1px 0 0 rgba(255,255,255,0.05);
 }
 
 /* ── Global Section Standards ── */

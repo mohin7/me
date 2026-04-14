@@ -20,7 +20,7 @@
       </div>
 
       <!-- Pricing Matrix -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-glass rounded-[32px] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-glass rounded-[32px] shadow-[var(--specular)] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
         <div v-for="(pkg, idx) in packages" :key="idx" 
              :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           

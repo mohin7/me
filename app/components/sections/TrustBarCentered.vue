@@ -6,7 +6,7 @@
       <div class="relative flex flex-col md:flex-row items-stretch md:items-center bg-panel/40 backdrop-blur-3xl border border-glass rounded-3xl md:rounded-full overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.05)]">
         
         <!-- Social Proof Column (Compact) -->
-        <div class="flex items-center gap-4 px-8 py-5 border-b md:border-b-0 md:border-r border-accent/10">
+        <div class="flex items-center gap-4 px-8 py-5 border-b md:border-b-0 md:border-r border-glass">
           <div class="flex -space-x-3">
             <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
                <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />

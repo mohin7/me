@@ -67,7 +67,7 @@
                 <Icon name="lucide:calendar" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton  tag="a" href="https://wa.me/8801634419564" target="_blank" variant="outline" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Say Hello"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>WhatsApp Me</SharedButton>
+            <SharedButton  tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Say Hello"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>WhatsApp Me</SharedButton>
           </div>
 
           <!-- Integrated Precision Proof Bar -->

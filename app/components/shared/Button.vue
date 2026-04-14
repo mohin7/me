@@ -40,7 +40,7 @@ import { computed, ref } from 'vue'
 
 const isHovered = ref(false)
 
-type Variant = 'primary' | 'solid' | 'outline' | 'ghost' | 'glass'
+type Variant = 'primary' | 'solid' | 'outline' | 'ghost' | 'glass' | 'liquid'
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 const props = withDefaults(defineProps<{
@@ -71,6 +71,7 @@ const variantClasses = computed(() => {
     case 'solid':   return 'btn-primary'
     case 'outline': return 'btn-outline'
     case 'glass':   return 'btn-glass'
+    case 'liquid':  return 'btn-liquid'
     case 'ghost':   return 'btn-ghost'
     default:        return 'btn-primary'
   }
@@ -93,12 +94,40 @@ const sizeClasses = computed(() => {
   background: var(--accent);
   color: var(--accent-fg);
   border: 1px solid var(--accent);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  filter: brightness(var(--hover-brightness)); box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.1);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+    0 12px 24px -5px rgba(var(--accent-rgb), 0.2);
+  filter: brightness(var(--hover-brightness));
+}
+
+.btn-primary:hover::after {
+  left: 100%;
 }
 
 .btn-outline {
@@ -134,5 +163,64 @@ const sizeClasses = computed(() => {
 .btn-ghost:hover {
   color: var(--text-main);
   background: rgba(var(--accent-rgb), 0.05);
+}
+
+/* ── Liquid Glass Variant (Clear Transparent) ── */
+.btn-liquid {
+  background: var(--bg-glass);
+  backdrop-filter: blur(32px) saturate(140%);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 10px 30px -10px rgba(0, 0, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-liquid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(var(--accent-rgb), 0.05),
+    rgba(var(--accent-rgb), 0.15),
+    rgba(var(--accent-rgb), 0.05),
+    transparent
+  );
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-liquid:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  background: rgba(var(--accent-rgb), 0.08);
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.2),
+    0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-liquid:hover::before {
+  left: 100%;
+}
+
+.btn-liquid:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Update Glass variant to be more premium too */
+.btn-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 </style>

@@ -25,8 +25,18 @@
     <!-- Back to Top System -->
     <Transition name="fade">
       <div v-if="currentOffset > 800" class="fixed bottom-12 right-12 z-[100]">
-        <button @click="scrollToTop" class="h-14 w-14 rounded-full bg-accent text-accent-fg flex items-center justify-center border-2 border-accent/20 hover:scale-110 active:scale-95 transition-all duration-300 group">
-          <Icon name="lucide:arrow-up" class="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
+        <button 
+          @click="scrollToTop" 
+          class="relative h-14 w-14 rounded-full flex items-center justify-center overflow-hidden transition-all duration-500 group active:scale-90"
+          style="background: var(--bg-glass); backdrop-filter: blur(24px) saturate(150%); border: 1px solid var(--border-glass); box-shadow: inset 0 1px 1px 0 rgba(255,255,255,0.05), 0 20px 40px -10px rgba(0,0,0,0.3);"
+        >
+          <!-- Surface Sheen -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+          
+          <Icon name="lucide:arrow-up" class="h-6 w-6 text-main group-hover:-translate-y-1 transition-transform relative z-10" />
+          
+          <!-- Liquid Core Glow -->
+          <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </button>
       </div>
     </Transition>
@@ -208,8 +218,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --text-soft: #52525B;
   --text-muted: #A1A1AA;
   --border-subtle: rgba(0,0,0,0.06);
-  --border-glass: rgba(0,0,0,0.05);
-  --bg-glass: rgba(255,255,255,0.7);
+  --border-glass: rgba(0,0,0,0.06);
+  --bg-glass: rgba(255,255,255,0.1);
   --accent-rgb: 17, 17, 17;
   --accent-spotlight: rgba(var(--accent-rgb), 0.03);
   --accent: #111111;
@@ -225,8 +235,8 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   --text-soft: #A1A1AA;
   --text-muted: #71717A;
   --border-subtle: #1C1C22;
-  --border-glass: #262630;
-  --bg-glass: rgba(10,10,12,0.7);
+  --border-glass: rgba(255,255,255,0.08);
+  --bg-glass: rgba(10,10,12,0.15);
   --accent-rgb: 200, 210, 255;
   --accent-spotlight: rgba(var(--accent-rgb), 0.05);
   --accent: #FFFFFF;
@@ -273,6 +283,7 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   width: 2rem;
   background: currentColor;
   opacity: 0.2;
+  @apply md:block hidden;
 }
 
 /* ── Utilities ── */

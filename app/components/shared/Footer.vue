@@ -65,9 +65,10 @@ const footerGroups = [
   {
     title: 'Archive',
     links: [
-      { name: 'Architecture', href: '#strategic-advantage' },
-      { name: 'Experience', href: '#experience' },
-      { name: 'Methodology', href: '#process' }
+      { name: 'Architecture', href: '/#strategic-advantage' },
+      { name: 'Experience', href: '/#experience' },
+      { name: 'Methodology', href: '/#process' },
+      { name: 'Journal', href: '/blog' }
     ]
   },
   {

@@ -130,6 +130,7 @@ const navItems = [
   { label: 'Strategy', href: '/#strategic-advantage', icon: 'lucide:binary' },
   { label: 'Methodology', href: '/#process', icon: 'lucide:workflow' },
   { label: 'Work', href: '/#case-studies', icon: 'lucide:projector' },
+  { label: 'Blog', href: '/blog', icon: 'lucide:book-open' },
   { label: 'Experience', href: '/#experience', icon: 'lucide:badge-check' },
   { label: 'Investment', href: '/#packages', icon: 'lucide:bar-chart-3' },
 ]
@@ -177,15 +178,21 @@ const route = useRoute()
 const router = useRouter()
 
 const scrollToSection = (e: Event, href: string) => {
+  isMobileMenuOpen.value = false
+
+  // If it's a full page link (no hash), let standard navigation occur
+  if (!href.includes('#')) {
+    return
+  }
+
+  // If we are not on home, let standard navigation to home + hash occur
   if (route.path !== '/') {
-    // If we are on a different page, just let the link handle it (which will navigate to /#id)
-    // or manually push if preferred. Let's redirect to home with hash
-    isMobileMenuOpen.value = false
     return 
   }
 
+  // Smooth scroll for home page fragments
   e.preventDefault()
-  const targetId = href.replace('#', '')
+  const targetId = href.split('#')[1]
   const element = document.getElementById(targetId)
   if (element) {
     window.scrollTo({
@@ -193,7 +200,6 @@ const scrollToSection = (e: Event, href: string) => {
       behavior: 'smooth'
     })
   }
-  isMobileMenuOpen.value = false
 }
 
 onMounted(() => {

@@ -59,5 +59,11 @@ export default defineNuxtConfig({
         source: 'blog/**'
       }
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/blog'],
+      crawlLinks: true
+    }
   }
 })

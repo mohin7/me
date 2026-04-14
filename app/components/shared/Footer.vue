@@ -1,5 +1,5 @@
 <template>
-  <footer class="pt-24 pb-12 bg-page border-t border-subtle">
+  <footer class="pt-24 pb-12 bg-page border-t border-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- High-Resolution Minimal Grid -->
@@ -42,7 +42,7 @@
       </div>
 
       <!-- Legal Footnote -->
-      <div class="pt-12 border-t border-subtle flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="pt-12 border-t border-glass flex flex-col sm:flex-row justify-between items-center gap-6">
         <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-40">
           © {{ currentYear }} Md Mohin Uddin. All rights reserved.
         </p>

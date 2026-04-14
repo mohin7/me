@@ -102,7 +102,7 @@ const sizeClasses = computed(() => {
 }
 
 .btn-outline {
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   color: var(--text-main);
   background: transparent;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);

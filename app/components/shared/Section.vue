@@ -1,5 +1,5 @@
 <template>
-  <section :id="id" class="py-24" :class="{ 'border-t border-subtle': hasTopBorder }">
+  <section :id="id" class="py-24" :class="{ 'border-t border-glass': hasTopBorder }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <slot />
     </div>

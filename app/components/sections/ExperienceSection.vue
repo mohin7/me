@@ -50,7 +50,7 @@
             >
               <div class="absolute left-[-5px] md:left-[26px] top-12 h-3.5 w-3.5 rounded-full border-2 border-accent bg-page z-20 transition-all duration-500 group-hover:scale-150 group-hover:bg-accent hidden md:block"></div>
 
-              <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-subtle bg-panel/10 hover:border-glass hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700">
+              <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-glass bg-panel/10 hover:border-accent/20 hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700">
                 <div>
                   <div class="flex items-center gap-4 mb-5">
                     <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.4em] font-mono">
@@ -79,8 +79,8 @@
                      </div>
                   </div>
 
-                  <div class="flex flex-wrap gap-2 pt-10 border-t border-subtle">
-                     <span v-for="tag in job.tags" :key="tag" class="px-5 py-2 rounded-full bg-accent/5 text-soft text-[0.65rem] font-bold uppercase tracking-widest border border-glass hover:border-glass transition-all cursor-default">
+                  <div class="flex flex-wrap gap-2 pt-10 border-t border-glass">
+                     <span v-for="tag in job.tags" :key="tag" class="px-5 py-2 rounded-full bg-accent/5 text-soft text-[0.65rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/20 transition-all cursor-default">
                        {{ tag }}
                      </span>
                   </div>

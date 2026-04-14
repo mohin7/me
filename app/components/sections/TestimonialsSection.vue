@@ -58,7 +58,7 @@
           </div>
 
           <!-- Bottom Meta (Only for some cards) -->
-          <div v-if="testimonial.stat" class="mt-8 pt-8 border-t border-subtle flex items-baseline gap-3">
+          <div v-if="testimonial.stat" class="mt-8 pt-8 border-t border-glass flex items-baseline gap-3">
              <span class="text-accent text-2xl font-black italic serif-font leading-none">{{ testimonial.stat.value }}</span>
              <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-30">{{ testimonial.stat.label }}</span>
           </div>

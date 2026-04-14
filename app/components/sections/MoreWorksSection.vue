@@ -10,7 +10,7 @@
         <!-- Featured project showcase -->
         <div v-for="(feature, idx) in features" :key="idx" class="group">
           <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div :order="`${idx % 2 === 0 ? '1' : '2'}`" class="bg-panel border-subtle hover:border-[color:var(--brand-a)]/60 flex aspect-video items-center justify-center overflow-hidden rounded-xl border transition">
+            <div :order="`${idx % 2 === 0 ? '1' : '2'}`" class="bg-panel border-glass hover:border-[color:var(--brand-a)]/60 flex aspect-video items-center justify-center overflow-hidden rounded-xl border transition">
               <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-[color:var(--brand-a)]/10 text-[color:var(--brand-a)]">
                 <SharedIcon :name="feature.icon" class="h-12 w-12" />
               </div>

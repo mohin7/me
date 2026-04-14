@@ -64,7 +64,7 @@
 
           <!-- Right side: Infinite Ticker + Technical Detail -->
           <div class="relative pt-4">
-            <div class="relative w-full overflow-hidden rounded-2xl bg-soft/10 border border-subtle/10 p-4 md:p-8">
+            <div class="relative w-full overflow-hidden rounded-2xl bg-soft/10 border border-glass/10 p-4 md:p-8">
               <!-- Fade Masks -->
               <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-panel/40 to-transparent z-10"></div>
               <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-panel/40 to-transparent z-10"></div>
@@ -72,7 +72,7 @@
               <div class="flex gap-12 md:gap-20 animate-ticker whitespace-nowrap">
                 <div v-for="i in 3" :key="i" class="flex gap-12 md:gap-20">
                   <div v-for="l in logos" :key="l.name" class="flex items-center gap-5 group/logo">
-                    <div class="h-10 w-10 rounded-full bg-panel border border-subtle flex items-center justify-center group-hover/logo:border-accent transition-all duration-500 shadow-sm">
+                    <div class="h-10 w-10 rounded-full bg-panel border border-glass flex items-center justify-center group-hover/logo:border-accent transition-all duration-500 shadow-sm">
                       <Icon :name="l.icon" class="h-5 w-5 text-muted group-hover/logo:text-accent" />
                     </div>
                     <div class="flex flex-col">

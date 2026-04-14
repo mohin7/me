@@ -75,7 +75,7 @@
                      {{ step.description }}
                   </p>
 
-                  <div class="mt-auto space-y-8 pt-8 border-t border-subtle">
+                  <div class="mt-auto space-y-8 pt-8 border-t border-glass">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div v-for="output in step.outputs" :key="output" class="flex items-center gap-3">
                          <div class="h-1 w-1 rounded-full bg-accent/40"></div>

@@ -13,10 +13,10 @@
 
         <!-- Carousel Navigation -->
         <div class="flex items-center gap-4 shrink-0">
-          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Previous work">
+          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-glass bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Previous work">
             <Icon name="lucide:arrow-left" class="h-5 w-5" />
           </button>
-          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-subtle bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Next work">
+          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-glass bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Next work">
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </button>
         </div>
@@ -27,7 +27,7 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-subtle transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-glass"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-glass transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-glass"
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
@@ -58,7 +58,7 @@
           <!-- Project Content -->
           <div class="flex-1 p-8 flex flex-col">
             <div class="flex flex-wrap gap-2 mb-6">
-              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-muted bg-soft px-3 py-1 rounded-full border border-subtle">
+              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-muted bg-soft px-3 py-1 rounded-full border border-glass">
                 {{ tag }}
               </span>
             </div>
@@ -71,7 +71,7 @@
               {{ project.description }}
             </p>
 
-            <div class="mt-auto pt-6 border-t border-subtle flex items-center justify-between">
+            <div class="mt-auto pt-6 border-t border-glass flex items-center justify-between">
                <a :href="project.href" target="_blank" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
                  Live Preview
                  <Icon name="lucide:arrow-right" class="h-4 w-4 text-accent transition-transform group-hover/link:translate-x-1" />
@@ -84,12 +84,12 @@
       
       <!-- Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 md:p-14 transition-all duration-500 hover:border-glass">
+        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-glass p-10 md:p-14 transition-all duration-500 hover:border-glass">
           <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             
             <!-- Left Side: Content -->
             <div class="md:col-span-7">
-              <div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-subtle">
+              <div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-glass">
                 <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
                 <span class="text-[0.6rem] font-bold uppercase tracking-widest text-muted">Secured via Protocol</span>
               </div>
@@ -131,10 +131,10 @@
             <div class="md:col-span-5 relative">
               <div class="relative aspect-square max-w-[280px] mx-auto">
                 <!-- Architectural Visual -->
-                <div class="absolute inset-0 border border-subtle rounded-full opacity-20"></div>
+                <div class="absolute inset-0 border border-glass rounded-full opacity-20"></div>
                 
                 <!-- Central Core -->
-                <div class="absolute inset-8 rounded-full bg-soft border border-subtle shadow-sm flex items-center justify-center">
+                <div class="absolute inset-8 rounded-full bg-soft border border-glass shadow-sm flex items-center justify-center">
                    <div class="text-center">
                      <Icon name="lucide:lock" class="h-10 w-10 text-accent opacity-80" />
                      <p class="mt-3 text-[0.5rem] font-bold uppercase tracking-widest text-muted">Locked IP</p>
@@ -142,10 +142,10 @@
                 </div>
 
                 <!-- Floating Accents -->
-                <div class="absolute -top-4 -right-4 h-12 w-12 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
+                <div class="absolute -top-4 -right-4 h-12 w-12 rounded-2xl bg-panel border border-glass shadow-lg flex items-center justify-center">
                    <Icon name="lucide:database" class="h-5 w-5 text-accent opacity-40" />
                 </div>
-                <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-2xl bg-panel border border-subtle shadow-lg flex items-center justify-center">
+                <div class="absolute -bottom-2 -left-6 h-10 w-10 rounded-2xl bg-panel border border-glass shadow-lg flex items-center justify-center">
                    <Icon name="lucide:layers" class="h-4 w-4 text-accent opacity-40" />
                 </div>
               </div>

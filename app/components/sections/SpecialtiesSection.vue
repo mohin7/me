@@ -18,13 +18,13 @@
         <div 
           v-for="(specialty, idx) in specialties" 
           :key="idx"
-          class="group relative overflow-hidden rounded-[24px] bg-panel border border-subtle p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+          class="group relative overflow-hidden rounded-[24px] bg-panel border border-glass p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
         >
           <!-- Hover Highlight Rim -->
           <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           
           <!-- Icon Container: Rounded 16px (matches frame scale) -->
-          <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-[16px] bg-soft border border-subtle text-brand-a transition-all duration-500 group-hover:scale-110 group-hover:border-brand-a/30">
+          <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-[16px] bg-soft border border-glass text-brand-a transition-all duration-500 group-hover:scale-110 group-hover:border-brand-a/30">
             <Icon :name="`lucide:${specialty.icon}`" class="h-6 w-6" />
           </div>
           

@@ -1,5 +1,5 @@
 <template>
-  <section id="strategic-advantage" class="py-20 md:py-28 bg-page relative overflow-hidden">
+  <section id="strategic-advantage" class="py-16 md:py-24 bg-page relative overflow-hidden">
     <!-- Sophisticated Technical Backdrop -->
     <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent"></div>
     
@@ -67,7 +67,7 @@
          <div class="h-1 px-8 mb-10 overflow-hidden opacity-40">
             <div class="h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
          </div>
-         <SharedButton variant="primary" size="lg" class="px-16 h-16 rounded-full group">
+         <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="px-16 h-16 rounded-full group">
           Initiate Partnership
           <template #right>
             <Icon name="lucide:arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform" />

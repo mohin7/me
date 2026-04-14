@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" ref="containerRef" class="py-20 md:py-32 bg-page relative overflow-visible">
+  <section id="experience" ref="containerRef" class="py-16 md:py-24 bg-page relative overflow-visible">
     <!-- Sophisticated Technical Grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 64px 64px;"></div>
@@ -124,24 +124,17 @@ const updateSidebarSticky = (virtualY: number) => {
     return
   }
   
-  const viewportHeight = window.innerHeight
   const containerTop = cachedContainerTop
   const containerHeight = cachedContainerHeight
   const sidebarHeight = sidebarRef.value.offsetHeight
   
-  // The 'Goal' is to have the sidebar centered in the viewport
-  // Viewport Center = viewportHeight / 2
-  // Sidebar Center = sidebarHeight / 2
-  // We want: Sidebar_Screen_Pos = Viewport_Center - Sidebar_Center
+  // Sticky Top Padding (Distance from top of screen when sticky)
+  const topPadding = 120 
   
-  // When wrapper is at virtualY, the section's screen pos is (containerTop - virtualY)
-  // We want the sidebar's screen pos to be (viewportHeight/2 - sidebarHeight/2)
-  // Sidebar_Local_Offset = Screen_Goal - Section_Screen_Pos
+  // How much we've scrolled past the section start
+  let localOffset = virtualY - containerTop + topPadding
   
-  const screenGoal = (viewportHeight / 2) - (sidebarHeight / 2)
-  let localOffset = virtualY - containerTop + screenGoal
-  
-  // Clamp localOffset so it stays within container boundaries
+  // Clamp localOffset
   const maxLocalOffset = containerHeight - sidebarHeight
   
   if (localOffset < 0) {

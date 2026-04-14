@@ -137,7 +137,7 @@
         </div>
         <div class="h-px w-full md:flex-1 bg-accent/5 hidden md:block"></div>
         <div class="shrink-0">
-          <SharedButton tag="a" href="#contact" variant="primary" size="lg" class="h-16 px-12">
+          <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-16 px-12">
             Discuss Case Strategy
             <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
           </SharedButton>

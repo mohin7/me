@@ -26,19 +26,20 @@
          <!-- Primary Action: Shared Component -->
          <SharedButton 
            tag="a" 
-           href="mailto:hello.mohin4@gmail.com" 
+           href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
+           target="_blank"
            size="lg" 
            variant="primary"
            class="w-full md:w-auto px-10 h-14 rounded-full"
          >
            Schedule Strategy Call
-           <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
+           <template #right><Icon name="lucide:calendar" class="h-4 w-4" /></template>
          </SharedButton>
 
          <!-- Consistent Secondary Action -->
          <SharedButton 
            tag="a" 
-           href="mailto:hello.mohin4@gmail.com" 
+           href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
            size="lg" 
            variant="ghost"
            class="w-full md:w-auto px-10 h-14 rounded-full border border-accent/10 hover:border-accent text-soft hover:text-main"

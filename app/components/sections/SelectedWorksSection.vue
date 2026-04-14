@@ -1,5 +1,5 @@
 <template>
-  <section id="works" class="relative py-24 md:py-32 overflow-hidden bg-page">
+  <section id="works" class="relative py-16 md:py-24 overflow-hidden bg-page">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
@@ -118,7 +118,7 @@
                 
                 <SharedButton 
                   tag="a" 
-                  href="mailto:hello.mohin4@gmail.com"
+                  href="https://cal.com/md-mohin-uddin-8gpn95/30min"
                   variant="outline" 
                   size="md"
                 >

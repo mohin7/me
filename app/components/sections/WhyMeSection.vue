@@ -1,5 +1,5 @@
 <template>
-  <section id="why-me" class="py-24 md:py-40 bg-page relative overflow-hidden">
+  <section id="why-me" class="py-16 md:py-24 bg-page relative overflow-hidden">
     <!-- Architectural Subtle Grid -->
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
@@ -83,10 +83,10 @@
           </div>
           <span class="text-main text-lg font-bold tracking-tight">Engineering design with mathematical precision.</span>
         </div>
-        <SharedButton variant="outline" size="lg" class="px-12">
-          Download PDF Guide
+        <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="outline" size="lg" class="px-12">
+          Discuss Your Roadmap
           <template #right>
-            <Icon name="lucide:download" class="h-4 w-4" />
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </template>
         </SharedButton>
       </div>

@@ -33,9 +33,18 @@
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
         <div class="h-8 w-px bg-accent/10"></div>
-        <SharedButton tag="a" href="#contact" variant="primary" size="sm" class="px-6 h-10 rounded-full font-bold">
-          Start Project
-        </SharedButton>
+        <a 
+          href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shimmer-btn group"
+        >
+          <span class="relative z-10 flex items-center gap-2">
+            Start Project
+            <Icon name="lucide:arrow-right" class="h-3 w-3 transition-transform group-hover:translate-x-1" />
+          </span>
+          <div class="shimmer-bg"></div>
+        </a>
       </div>
 
       <!-- Mobile Actions -->
@@ -210,6 +219,51 @@ onUnmounted(() => {
   background: rgba(255,255,255,0.05);
 }
 
+.menu-toggle:hover { color: var(--text-main); background: var(--bg-soft); }
+
+.shimmer-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 40px;
+  border-radius: 9999px;
+  background: var(--text-main);
+  color: var(--accent-fg);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-glass);
+}
+
+.shimmer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shimmer-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: none;
+}
+
+.shimmer-btn:hover .shimmer-bg {
+  transform: translateX(100%);
+  transition: transform 0.8s ease-in-out;
+}
+
 .theme-toggle, .menu-toggle {
   height: 40px; width: 40px;
   display: flex; 
@@ -221,6 +275,22 @@ onUnmounted(() => {
   cursor: pointer;
 }
 .theme-toggle:hover { color: var(--text-main); background: var(--bg-soft); }
+
+.whatsapp-btn-header, .whatsapp-btn-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #25D366;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-btn-header:hover, .whatsapp-btn-mobile:hover {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
 
 .menu-fade-enter-active, .menu-fade-leave-active { transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .menu-fade-enter-from, .menu-fade-leave-to { opacity: 0; transform: translateY(-20px); }

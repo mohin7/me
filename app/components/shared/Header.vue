@@ -1,6 +1,6 @@
 <template>
   <header 
-    class="fixed left-0 right-0 top-0 z-[60] px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
+    class="fixed left-0 right-0 top-0 z-[60] px-3 sm:px-6 lg:px-8 pt-3 md:pt-6 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
     :style="{ transform: isNavbarVisible ? 'translateY(0)' : 'translateY(-120%)' }"
   >
     <!-- System Progress Horizon -->
@@ -10,14 +10,14 @@
        </div>
     </div>
 
-    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-3 relative">
+    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-2 md:gap-4 px-4 py-2 md:px-6 md:py-3 relative">
 
       <!-- Logo Signature -->
-      <a href="#top" class="group flex items-center gap-3 shrink-0">
-        <div class="h-10 w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
+      <a href="#top" class="group flex items-center gap-2 md:gap-3 shrink-0">
+        <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black italic serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
         <div class="flex flex-col">
-          <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
-          <span class="text-[0.55rem] font-black text-muted mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
+          <span class="text-sm md:text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
+          <span class="text-[0.5rem] md:text-[0.55rem] font-black text-muted mt-0.5 md:mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
         </div>
       </a>
 
@@ -75,7 +75,7 @@
           </div>
 
           <!-- Nav Links Grid -->
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1 mt-4">
             <a
               v-for="(item, idx) in navItems"
               :key="`m-${item.label}`"
@@ -83,10 +83,9 @@
               @click="scrollToSection($event, item.href)"
               class="group relative block"
             >
-              <div class="flex items-baseline gap-4 py-4 border-b border-subtle">
-                <span class="text-[0.6rem] font-black font-mono text-accent-fg opacity-40">0{{ idx + 1 }}</span>
-                <span class="text-5xl sm:text-7xl font-black tracking-tighter text-main group-hover:text-accent-fg transition-colors">
-                  <Icon v-if="item && item.icon" :name="item.icon" class="h-3 w-3 opacity-30 group-hover/nav:opacity-100 transition-opacity" /> {{ item.label }}
+              <div class="flex items-center py-4 border-b border-glass/40">
+                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main group-hover:text-accent transition-colors duration-300">
+                  {{ item.label }}
                 </span>
               </div>
             </a>
@@ -220,9 +219,6 @@ onUnmounted(() => {
 }
 .nav-link:hover {
   color: var(--text-main);
-  background: var(--accent);
-}
-.dark .nav-link:hover {
   background: rgba(var(--accent-rgb), 0.05);
 }
 

@@ -62,4 +62,19 @@ const { theme } = useTheme()
     radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.12), transparent 38%),
     linear-gradient(180deg, #fdfefe 0%, #f2f5f9 90%);
 }
+
+/* Smooth out the typing caret transition */
+.typing-caret {
+  background: var(--accent);
+  border-radius: 9999px;
+  height: 0.9em;
+  left: 0;
+  margin-left: 3px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(var(--caret-x), -50%, 0);
+  transition: transform 100ms ease-out, opacity 0.15s ease !important;
+  width: 3px;
+  will-change: transform;
+}
 </style>

@@ -13,28 +13,23 @@
           class="lg:relative h-fit will-change-transform"
           :style="{ transform: `translate3d(0, ${sidebarOffset}px, 0)` }"
         >
-          <div class="inline-flex flex-col mb-16">
-            <div class="mb-8">
-               <span class="section-label">Technical Archive</span>
-            </div>
-            
-            <div class="flex items-baseline gap-4 mb-4">
-              <span class="text-accent text-8xl font-black tracking-tighter leading-none italic serif-font">07</span>
+          <div class="inline-flex flex-col mb-12">
+            <span class="section-label mb-8">Experience</span>
+
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="text-accent text-7xl font-semibold tracking-tight leading-none serif-font">07</span>
               <div class="flex flex-col">
-                <span class="text-xl font-black italic serif-font leading-none mt-2" style="color: var(--text-soft)">Years</span>
-                <span class="text-soft text-[0.65rem] font-black uppercase tracking-widest mt-2">Executive Craft</span>
+                <span class="text-lg serif-font italic leading-none mt-1" style="color: var(--text-soft)">years</span>
               </div>
             </div>
-            
-            <div class="h-px w-24 bg-accent/20 mt-2"></div>
+            <div class="h-px w-16 bg-accent/40 mt-4"></div>
           </div>
 
-          <h2 class="text-main mb-8 text-4xl font-black tracking-tighter md:text-6xl leading-[0.85]">
-            Career <br />
-            <span class="italic serif-font lowercase" style="color: var(--text-soft)">timeline.</span>
+          <h2 class="text-main mb-6 text-4xl font-semibold tracking-tight md:text-5xl leading-[1]">
+            Building products <span class="serif-font italic text-accent">at scale.</span>
           </h2>
-          <p class="text-soft text-lg font-medium leading-relaxed max-w-[320px]">
-            A documented history of building and leading high-impact digital products at scale.
+          <p class="text-soft text-base leading-relaxed max-w-[320px]">
+            Selected roles leading design and engineering on high-impact products.
           </p>
         </div>
 
@@ -52,35 +47,30 @@
 
               <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-glass bg-panel/10 hover:border-accent/20 hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700">
                 <div>
-                  <div class="flex items-center gap-4 mb-5">
-                    <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.4em] font-mono">
-                       {{ job.period }}
-                    </span>
-                    <div class="h-px w-8 bg-accent/20"></div>
-                    <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-40">Entry_{{ idx + 1 }}</span>
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="mono-font text-accent text-sm tracking-tight">{{ job.period }}</span>
                   </div>
 
-                  <div class="flex flex-wrap items-baseline gap-4 mb-8">
-                    <h3 class="text-main text-2xl md:text-4xl font-black tracking-tighter group-hover:text-accent transition-colors">
+                  <div class="flex flex-wrap items-baseline gap-3 mb-6">
+                    <h3 class="text-main text-2xl md:text-3xl font-semibold tracking-tight group-hover:text-accent transition-colors">
                        {{ job.role }}
                     </h3>
-                    <div class="h-px w-4 bg-accent/20 mt-auto mb-4"></div>
-                    <span class="text-soft font-bold text-sm tracking-tight italic">@ {{ job.company }}</span>
+                    <span class="text-soft text-sm tracking-tight serif-font italic">@ {{ job.company }}</span>
                   </div>
-                  
-                  <p class="text-soft text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-2xl">
+
+                  <p class="text-soft text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
                      {{ job.description }}
                   </p>
 
-                  <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                     <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-4">
-                        <Icon name="lucide:check-circle" class="h-4 w-4 text-accent/20 mt-1 shrink-0 group-hover:text-accent transition-colors duration-500" />
-                        <span class="text-soft text-sm font-medium leading-relaxed">{{ impact }}</span>
+                  <div class="grid sm:grid-cols-2 gap-x-10 gap-y-4 mb-8">
+                     <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-3">
+                        <Icon name="lucide:check" class="h-4 w-4 text-accent mt-1 shrink-0" />
+                        <span class="text-soft text-sm leading-relaxed">{{ impact }}</span>
                      </div>
                   </div>
 
-                  <div class="flex flex-wrap gap-2 pt-10 border-t border-glass">
-                     <span v-for="tag in job.tags" :key="tag" class="px-5 py-2 rounded-full bg-accent/5 text-soft text-[0.65rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/20 transition-all cursor-default">
+                  <div class="flex flex-wrap gap-2 pt-6 border-t border-glass">
+                     <span v-for="tag in job.tags" :key="tag" class="px-3 py-1 rounded-full bg-accent/[0.06] text-soft text-xs font-medium">
                        {{ tag }}
                      </span>
                   </div>

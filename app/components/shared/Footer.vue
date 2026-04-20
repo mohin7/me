@@ -2,52 +2,46 @@
   <footer class="pt-24 pb-12 bg-page border-t border-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- High-Resolution Minimal Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-        <!-- Brand Signature -->
-        <div class="space-y-6">
-          <div class="flex items-center gap-3 text-left">
-             <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
-             <span class="text-main font-black tracking-tighter">Mohin Uddin</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <div class="space-y-5">
+          <div class="flex items-center gap-2.5">
+             <div class="h-9 w-9 bg-accent text-accent-fg flex items-center justify-center rounded-lg serif-font text-lg">M</div>
+             <span class="text-main font-semibold tracking-tight">Mohin Uddin</span>
           </div>
-          <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px] text-left">
-            Head of Design specializing in high-performance cloud infrastructure and design systems.
+          <p class="text-soft text-sm leading-relaxed max-w-[260px]">
+            Product design &amp; engineering for high-performance teams.
           </p>
         </div>
 
-        <!-- Links Groups -->
         <div v-for="(group, idx) in footerGroups" :key="idx">
-          <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">{{ group.title }}</h4>
-          <ul class="space-y-4">
+          <h4 class="text-muted text-xs font-medium mb-5">{{ group.title }}</h4>
+          <ul class="space-y-3">
             <li v-for="link in group.links" :key="link.name">
-              <a :href="link.href" target="_blank" class="text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-2">
+              <a :href="link.href" target="_blank" class="text-main text-sm hover:text-accent transition-colors">
                 {{ link.name }}
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- System Intelligence -->
         <div class="flex flex-col md:items-end text-left md:text-right">
-          <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">Base Terminal</h4>
-          <div class="space-y-2">
-            <p class="text-main text-sm font-black">Dhaka, Bangladesh</p>
-            <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-60">GMT+6 // Active Now</p>
-          </div>
-          <div class="mt-auto pt-8 flex items-center gap-2 text-accent/40">
-             <div class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></div>
-             <span class="text-[0.55rem] font-black uppercase tracking-widest">Available for Q{{ currentQuarter }} {{ currentYear }}</span>
+          <h4 class="text-muted text-xs font-medium mb-5">Based in</h4>
+          <p class="text-main text-sm font-medium">Dhaka, Bangladesh</p>
+          <p class="text-muted text-sm mt-1">GMT+6 · active now</p>
+          <div class="mt-6 inline-flex items-center gap-2 text-soft text-sm">
+             <span class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></span>
+             Open for Q{{ currentQuarter }} {{ currentYear }}
           </div>
         </div>
       </div>
 
-      <!-- Legal Footnote -->
-      <div class="pt-12 border-t border-glass flex flex-col sm:flex-row justify-between items-center gap-6">
-        <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-40">
-          © {{ currentYear }} Md Mohin Uddin. All rights reserved.
+      <div class="pt-8 border-t border-glass flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-muted text-xs">
+          © {{ currentYear }} Md Mohin Uddin
         </p>
-        <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-40">
-           <a href="/img/uiux-specialist.pdf" target="_blank" class="hover:text-accent transition-colors">Resume</a><NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
+        <div class="flex items-center gap-6 text-soft text-xs">
+           <a href="/img/uiux-specialist.pdf" target="_blank" class="hover:text-accent transition-colors">Resume</a>
+           <NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
            <NuxtLink to="/terms" class="hover:text-main transition-colors">Terms</NuxtLink>
         </div>
       </div>

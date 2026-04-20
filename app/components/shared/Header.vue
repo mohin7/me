@@ -1,6 +1,6 @@
 <template>
-  <header 
-    class="fixed left-0 right-0 top-0 z-[60] px-3 sm:px-6 lg:px-8 pt-3 md:pt-6 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
+  <header
+    class="fixed left-0 right-0 top-0 z-[60] px-3 sm:px-6 lg:px-8 pt-3 md:pt-6 transition-transform duration-500 ease-out"
     :style="{ transform: isNavbarVisible ? 'translateY(0)' : 'translateY(-120%)' }"
   >
     <!-- System Progress Horizon -->
@@ -13,12 +13,9 @@
     <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-2 md:gap-4 px-4 py-2 md:px-6 md:py-3 relative">
 
       <!-- Logo Signature -->
-      <a href="/" class="group flex items-center gap-2 md:gap-3 shrink-0">
-        <div class="h-8 w-8 md:h-10 md:w-10 bg-gradient-to-br from-accent to-accent/80 text-accent-fg-fg flex items-center justify-center rounded-lg md:rounded-xl font-black serif-font text-lg md:text-xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 border border-glass">M</div>
-        <div class="flex flex-col">
-          <span class="text-sm md:text-[0.9rem] font-black text-main leading-none tracking-tighter">mohin<span class="text-soft">.design</span></span>
-          <span class="text-[0.5rem] md:text-[0.55rem] font-black text-muted mt-0.5 md:mt-1 uppercase tracking-[0.3em] opacity-60">Head of Design</span>
-        </div>
+      <a href="/" class="group flex items-center gap-2.5 shrink-0">
+        <div class="h-9 w-9 bg-accent text-accent-fg flex items-center justify-center rounded-lg serif-font text-lg transition-transform duration-300 group-hover:-rotate-6">M</div>
+        <span class="text-[0.95rem] font-bold text-main leading-none tracking-tight">mohin<span class="text-soft font-medium">.design</span></span>
       </a>
 
       <!-- Desktop Nav Matrix -->
@@ -28,9 +25,10 @@
           :key="item.label"
           :href="item.href"
           @click="scrollToSection($event, item.href)"
-          class="nav-link flex items-center gap-2 group/nav"
+          class="nav-link"
+          :class="{ 'is-active': activeSection === item.id }"
         >
-          <Icon v-if="item && item.icon" :name="item.icon" class="h-3 w-3 opacity-30 group-hover/nav:opacity-100 transition-opacity" /> {{ item.label }}
+          {{ item.label }}
         </a>
       </div>
 
@@ -41,7 +39,7 @@
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
         <div class="h-8 w-px bg-accent/10"></div>
-        <a href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false"><div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center"><div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center"><span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Start Project <Icon name="lucide:arrow-right" class="h-3 w-3" /></span><span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent-fg">Go Live <Icon name="lucide:zap" class="h-3 w-3" /></span></div></div><div class="shimmer-bg"></div></a>
+        <a href="/#contact" @click="scrollToSection($event, '/#contact')" class="shimmer-btn group"><span class="relative z-10 flex items-center gap-2 whitespace-nowrap">Start a project <Icon name="lucide:arrow-up-right" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span><div class="shimmer-bg"></div></a>
       </div>
 
       <!-- Mobile Actions -->
@@ -66,8 +64,8 @@
           <!-- Menu Top Bar -->
           <div class="flex items-center justify-between mb-16">
              <div class="flex items-center gap-3">
-                <div class="h-10 w-10 bg-accent text-accent-fg-fg flex items-center justify-center rounded-xl font-black italic serif-font text-xl">M</div>
-                <span class="text-[0.9rem] font-black text-main leading-none tracking-tighter">Mohin<span class="text-soft">.design</span></span>
+                <div class="h-10 w-10 bg-accent text-accent-fg flex items-center justify-center rounded-lg serif-font text-xl">M</div>
+                <span class="text-[0.95rem] font-bold text-main leading-none tracking-tight">mohin<span class="text-soft font-medium">.design</span></span>
              </div>
              <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-glass flex items-center justify-center bg-accent/5 text-main">
                 <Icon name="lucide:x" class="h-6 w-6" />
@@ -98,11 +96,11 @@
             </SharedButton>
             
             <div class="flex items-center justify-between border-t border-glass pt-8">
-               <div class="flex gap-4">
-                  <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">Twitter</span>
-                  <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest">LinkedIn</span>
+               <div class="flex gap-6">
+                  <a href="https://www.linkedin.com/in/mohin7/" class="text-soft text-sm hover:text-main transition-colors">LinkedIn</a>
+                  <a href="https://github.com/mohin7" class="text-soft text-sm hover:text-main transition-colors">GitHub</a>
                </div>
-               <p class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-40 text-right">© 2026 MD MOHIN UDDIN</p>
+               <p class="text-muted text-xs">© 2026</p>
             </div>
           </div>
 
@@ -116,21 +114,19 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const isMobileMenuOpen = ref(false)
-const isProjectHovered = ref(false)
-
 const isNavbarVisible = ref(true)
+const activeSection = ref<string>('')
 const { theme, toggleTheme } = useTheme()
 
 const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 let lastScrollY = 0
-const scrollThreshold = 10
 
 const navItems = [
-  { label: 'Strategy', href: '/#strategic-advantage', icon: 'lucide:binary' },
-  { label: 'Work', href: '/#case-studies', icon: 'lucide:projector' },
-  { label: 'Investment', href: '/#packages', icon: 'lucide:bar-chart-3' },
-  { label: 'Blog', href: '/blog', icon: 'lucide:book-open' },
+  { label: 'Work', href: '/#case-studies', id: 'case-studies' },
+  { label: 'Process', href: '/#process', id: 'process' },
+  { label: 'Pricing', href: '/#packages', id: 'packages' },
+  { label: 'Blog', href: '/blog', id: 'blog' },
 ]
 
 const scrollProgress = ref(0)
@@ -159,7 +155,7 @@ const handleScroll = (e: any) => {
 
   // Directional logic
   const diff = currentY - lastScrollY
-  if (Math.abs(diff) < 15) return
+  if (Math.abs(diff) < 8) return
 
   if (diff > 0) {
     // Scrolling Down
@@ -200,12 +196,30 @@ const scrollToSection = (e: Event, href: string) => {
   }
 }
 
+let sectionObserver: IntersectionObserver | null = null
+
+const observeSections = () => {
+  if (typeof window === 'undefined') return
+  const ids = navItems.map(n => n.id).filter(id => id && id !== 'blog')
+  const els = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
+  if (!els.length) return
+  sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+    if (visible) activeSection.value = (visible.target as HTMLElement).id
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] })
+  els.forEach(el => sectionObserver!.observe(el))
+}
+
 onMounted(() => {
   window.addEventListener('smooth-scroll', handleScroll)
+  setTimeout(observeSections, 400)
 })
 
 onUnmounted(() => {
   window.removeEventListener('smooth-scroll', handleScroll)
+  sectionObserver?.disconnect()
 })
 </script>
 
@@ -220,48 +234,55 @@ onUnmounted(() => {
 }
 
 .nav-link {
-  padding: 8px 18px;
+  position: relative;
+  padding: 8px 16px;
   border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   color: var(--text-soft);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.25s ease;
   text-decoration: none;
 }
-.nav-link:hover {
-  color: var(--text-main);
-  background: rgba(var(--accent-rgb), 0.05);
+.nav-link:hover { color: var(--text-main); }
+.nav-link.is-active { color: var(--text-main); }
+.nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 
 .menu-toggle:hover { color: var(--text-main); background: var(--bg-soft); }
 
 .shimmer-btn {
   white-space: nowrap;
-
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
-  height: 40px;
+  padding: 0 20px;
+  height: 38px;
   border-radius: 9999px;
-  background: var(--text-main);
+  background: var(--accent);
   color: var(--accent-fg);
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: capitalize;
-  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   text-decoration: none;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid var(--border-glass);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .shimmer-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  filter: brightness(var(--hover-brightness));
+  box-shadow: 0 10px 24px -8px oklch(from var(--accent) l c h / 0.4);
 }
 
 .shimmer-bg {

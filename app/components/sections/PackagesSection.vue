@@ -1,127 +1,98 @@
 <template>
-  <section id="packages" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
-    <!-- Sophisticated Technical Backdrop -->
+  <section id="packages" class="py-24 md:py-32 bg-page relative overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
-        <div class="mb-10">
-          <span class="section-label flex justify-center">Investment Models</span>
+
+      <!-- Asymmetric header: label+title + description right -->
+      <div class="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-end mb-16 md:mb-20">
+        <div>
+          <span class="section-label mb-6">Pricing</span>
+          <h2 class="text-main mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95]">
+            Fixed scope. <span class="serif-font italic text-accent">Fixed price.</span>
+          </h2>
         </div>
-        <h2 class="text-main text-4xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
-          The Strategic <br />
-          <span class="italic serif-font lowercase" style="color: var(--text-soft)">matrix.</span>
-        </h2>
-        <p class="text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
-          Engineering-grade design solutions priced for velocity. No hourly drift, just performance.
+        <p class="text-soft text-base md:text-lg leading-relaxed max-w-sm">
+          No hourly drift. Pick the engagement that matches where you are.
         </p>
       </div>
 
-      <!-- Pricing Matrix -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-glass rounded-[32px] shadow-[var(--specular)] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
-        <div v-for="(pkg, idx) in packages" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
-          
-          <!-- State Indicator -->
-          <div v-if="pkg.popular" class="absolute top-0 right-0 p-4">
-             <div class="px-3 py-1 border border-glass text-soft text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full">
-               System_Recommended
-             </div>
+      <!-- Pricing grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div
+          v-for="(pkg, idx) in packages"
+          :key="idx"
+          :class="[
+            `reveal reveal-delay-${Math.min(idx, 3)}`,
+            'group relative flex flex-col p-8 md:p-10 rounded-3xl border transition-all duration-300',
+            pkg.popular
+              ? 'border-accent bg-accent/[0.03] shadow-[0_12px_40px_-16px_oklch(from_var(--accent)_l_c_h_/_0.35)]'
+              : 'border-glass bg-panel/40 hover:border-accent/30'
+          ]"
+        >
+          <div v-if="pkg.popular" class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="px-3 py-1 bg-accent text-accent-fg text-xs font-medium rounded-full">
+              Most popular
+            </span>
           </div>
 
-          <div class="mb-12">
-            <div class="flex items-center gap-3 mb-8">
-               <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.3em] font-mono">pkg_0{{ idx + 1 }}</span>
-               <div class="h-px w-8 bg-accent/20"></div>
-               <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-40">{{ pkg.tag }}</span>
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-main text-xl font-semibold tracking-tight">{{ pkg.name }}</h3>
+              <Icon v-if="pkg.icon" :name="pkg.icon" class="h-5 w-5 text-muted" />
             </div>
 
-            <div class="flex justify-between items-start mb-4"><h3 class="text-main text-3xl md:text-4xl font-black tracking-tighter leading-none">
-              {{ pkg.name }}</h3><Icon v-if="pkg && pkg.icon" :name="pkg.icon" class="h-8 w-8 text-accent/20 group-hover:text-accent transition-colors duration-500" /></div>
-            
-            <div class="flex items-baseline gap-2 mb-8">
-              <span class="text-main text-4xl font-black tracking-tighter">{{ pkg.price }}</span>
-              <span class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
+            <div class="flex items-baseline gap-2 mb-4">
+              <span class="text-main text-4xl font-semibold tracking-tight serif-font">{{ pkg.price }}</span>
+              <span class="text-soft text-sm">{{ pkg.unit }}</span>
             </div>
 
-            <p class="text-soft text-sm font-medium leading-relaxed opacity-60">
+            <p class="text-soft text-sm leading-relaxed">
               {{ pkg.description }}
             </p>
           </div>
 
-          <!-- Technical Specs -->
-          <div class="space-y-4 mb-12 flex-1 pt-8 border-t border-glass">
-             <div v-for="feature in pkg.features" :key="feature" class="flex items-start gap-4">
-                <Icon name="lucide:check-circle" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
-                <span class="text-soft text-[0.85rem] font-medium leading-tight group-hover:text-main transition-colors">{{ feature }}</span>
-             </div>
-          </div>
+          <ul class="space-y-3 mb-8 flex-1 pt-6 border-t border-glass">
+            <li v-for="feature in pkg.features" :key="feature" class="flex items-start gap-3 text-soft text-sm leading-snug">
+              <Icon name="lucide:check" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
+              {{ feature }}
+            </li>
+          </ul>
 
-          <!-- Execution spec -->
-          <div class="mb-10 p-5 rounded-2xl bg-panel/20 border border-glass">
-             <div class="flex flex-col gap-3">
-                <div class="flex justify-between items-center">
-                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-40">Dev_Target</span>
-                   <span class="text-main text-[0.65rem] font-bold">{{ pkg.target }}</span>
-                </div>
-                <div class="flex justify-between items-center">
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-40">Velocity</span>
-                   <span class="text-accent text-[0.6rem] font-bold uppercase tracking-widest">{{ pkg.velocity }}</span>
-                </div>
-             </div>
-          </div>
-
-          <SharedButton 
-            tag="a" 
-            href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" 
-            :variant="pkg.popular ? 'primary' : 'secondary'"
-            size="lg" 
-            class="w-full h-14 rounded-full" hover-text="Get Started"
+          <a
+            href="#contact"
+            @click="jumpToContact"
+            :class="[
+              'w-full h-11 rounded-full flex items-center justify-center gap-2 font-medium text-sm transition-all',
+              pkg.popular
+                ? 'bg-accent text-accent-fg hover:brightness-[var(--hover-brightness)]'
+                : 'bg-panel border border-glass text-main hover:border-accent'
+            ]"
           >
-
-            Initiate Project
-            <template #right>
-              <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
-            </template>
-          </SharedButton>
+            Start here
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </a>
         </div>
       </div>
 
-      <!-- Strategic Equity Section -->
-      <div class="mt-8 relative p-1 md:p-1 overflow-hidden rounded-[32px] md:rounded-[48px] border border-glass">
-         <div class="bg-page/90 backdrop-blur-3xl rounded-[31px] md:rounded-[47px] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
-           <div class="max-w-xl text-center lg:text-left">
-              <div class="flex items-center justify-center lg:justify-start gap-3 mb-8">
-                 <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
-                 <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Venture Partnership Protocol</span>
-              </div>
-              <h2 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-8">
-                Building for <br />
-                <span class="italic serif-font lowercase" style="color: var(--text-soft)">strategic equity.</span>
-              </h2>
-              <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
-                For visionaries with world-changing logic but early-stage capital. I trade top-tier engineering for <span class="text-main font-bold">1% Stake</span> — dedicated to your long-term momentum.
-              </p>
-           </div>
-           
-           <div class="bg-panel/20 border border-glass p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
-              <div class="space-y-4">
-                 <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
-                    <span class="text-main font-bold text-sm">1.0% Equity</span>
-                 </div>
-                 <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
-                    <span class="text-main font-bold text-sm">Full MVP 1.0</span>
-                 </div>
-              </div>
-
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="See Value">Explore Deal</SharedButton>
-              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
-           </div>
-         </div>
+      <!-- Equity partnership -->
+      <div class="mt-10 rounded-3xl border border-glass bg-panel/40 p-8 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <div class="flex items-center gap-2 mb-4">
+            <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
+            <span class="mono-font text-accent text-xs font-medium">Equity partnership</span>
+          </div>
+          <h3 class="text-main text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-3">
+            Build with me for <span class="serif-font italic text-accent">1% equity</span>.
+          </h3>
+          <p class="text-soft text-base leading-relaxed">
+            Reserved for founders with strong conviction and early-stage capital. Two slots a year.
+          </p>
+        </div>
+        <a href="#contact" @click="jumpToContact" class="inline-flex items-center gap-2 px-6 h-11 rounded-full hover:brightness-[var(--hover-brightness)] transition font-medium text-sm" style="background: var(--text-main); color: var(--bg-page);">
+          Explore partnership
+          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        </a>
       </div>
 
     </div>
@@ -129,58 +100,57 @@
 </template>
 
 <script setup lang="ts">
+const jumpToContact = (e: Event) => {
+  e.preventDefault()
+  const el = document.getElementById('contact')
+  if (el) window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+}
+
 const packages = [
   {
-    name: 'Pitch MVP', icon: 'lucide:cpu',
-    tag: 'Early_Stage',
+    name: 'Pitch MVP',
+    icon: 'lucide:cpu',
     price: '$1,450',
-    unit: 'One-time',
-    description: 'Precision-engineered prototype for rapid investor validation and early brand scaling.',
-    target: 'Figma / High-Fi Proto',
-    velocity: 'Rapid_Sprint',
+    unit: 'one-time',
+    description: 'A precision-engineered prototype for rapid investor validation.',
     popular: false,
     features: [
-      'Core Brand Identity',
-      'High-Conversion Landing Page',
-      'Upto 10 Strategic App Screens',
-      '3-Day Accelerated Delivery',
-      'Investor-Ready Prototype'
-    ]
+      'Core brand identity',
+      'High-conversion landing page',
+      'Up to 10 key app screens',
+      '3-day accelerated delivery',
+      'Investor-ready prototype',
+    ],
   },
   {
-    name: 'Production MVP', icon: 'lucide:rocket',
-    tag: 'Market_Entry',
+    name: 'Production MVP',
+    icon: 'lucide:rocket',
     price: '$3,200',
-    unit: 'One-time',
-    description: 'The foundation of your market presence. High-fidelity systems ready for production deployment.',
-    target: 'Nuxt 3 / Vue 3 / GSAP',
-    velocity: 'Standard_Batch',
+    unit: 'one-time',
+    description: 'A shippable foundation for your market entry — built in production code.',
     popular: true,
     features: [
-      'Full Brand System',
-      '4-Page High-Momentum Web',
-      'Upto 20 Advanced UI Screens',
-      '7-Day Engineering Sprint',
-      'Full Pitch Deck Design'
-    ]
+      'Full design system',
+      '4-page high-momentum site',
+      'Up to 20 advanced UI screens',
+      '7-day engineering sprint',
+      'Pitch deck design',
+    ],
   },
   {
-    name: 'Full Partnership', icon: 'lucide:crown',
-    tag: 'Embedded_Lead',
+    name: 'Design partner',
+    icon: 'lucide:crown',
     price: '$5,900',
-    unit: '/ Month',
-    description: 'Long-term architectural commitment. Embedding as your strategic design engineering lead.',
-    target: 'Full Ecosystem Control',
-    velocity: 'Continuous_Ops',
+    unit: '/ month',
+    description: 'Long-term architectural commitment. Embedded as your design engineering lead.',
     popular: false,
     features: [
-      'Unlimited Functional Design',
-      'Full SaaS / Web App Ecosystem',
-      '4 Weeks Dedicated Support',
-      'Strategic Decision Partner',
-      'Mid-Level Support included'
-    ]
-  }
+      'Unlimited functional design',
+      'Full SaaS / web app ecosystem',
+      '4 weeks dedicated support',
+      'Strategic decision partner',
+      'Mid-level support included',
+    ],
+  },
 ]
 </script>
-

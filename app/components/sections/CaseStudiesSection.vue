@@ -5,32 +5,27 @@
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Section Header: Strategic Direction -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-20 md:mb-32">
-        <div class="max-w-3xl flex flex-col items-center text-center md:items-start md:text-left">
-          <div class="mb-10 lg:mb-12">
-            <span class="section-label flex justify-center md:justify-start">Evidence Gallery</span>
-          </div>
-          <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8 text-main">
-            Problems solved, <br />
-            <span class="italic serif-font lowercase" style="color: var(--text-soft)">outcomes delivered.</span>
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-16 md:mb-24">
+        <div class="max-w-3xl flex flex-col items-start text-left">
+          <span class="section-label mb-6">Selected work</span>
+          <h2 class="text-4xl md:text-6xl font-semibold tracking-tight leading-[1] text-main">
+            Shipped outcomes, not <span class="serif-font italic text-accent">decks.</span>
           </h2>
-          <p class="text-soft text-xl font-medium leading-relaxed max-w-2xl">
-            A selective collection of complex product challenges resolved through disciplined design and engineering protocols.
+          <p class="text-soft text-lg leading-relaxed max-w-2xl mt-6">
+            Three product interventions that moved metrics worth measuring.
           </p>
         </div>
 
-        <!-- High-Precision Carousel Navigation -->
-        <div class="flex items-center w-fit mx-auto md:mx-0 gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm">
+        <div class="flex items-center gap-3 bg-panel/40 backdrop-blur-xl border border-glass p-2 rounded-full">
           <button @click="prev" class="cs-nav-btn" aria-label="Previous">
-            <Icon name="lucide:arrow-left" class="h-5 w-5" />
+            <Icon name="lucide:arrow-left" class="h-4 w-4" />
           </button>
-          <div class="flex flex-col items-center min-w-[64px]">
-            <span class="text-main text-lg font-black tracking-tighter tabular-nums leading-none">{{ String(active + 1).padStart(2, '0') }}</span>
-            <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-30 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
-          </div>
+          <span class="mono-font text-main text-sm font-medium tabular-nums px-2">
+            {{ String(active + 1).padStart(2, '0') }}<span class="text-muted"> / {{ String(caseStudies.length).padStart(2, '0') }}</span>
+          </span>
           <button @click="next" class="cs-nav-btn" aria-label="Next">
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </button>
         </div>
       </div>
@@ -44,103 +39,67 @@
             <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
                  style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-            <div class="relative z-10 grid lg:grid-cols-[1fr_420px] gap-16 lg:gap-32">
+            <div class="relative z-10 grid lg:grid-cols-[1fr_420px] gap-12 lg:gap-24">
 
-              <!-- NARRATIVE ARCHITECTURE -->
-              <div class="flex flex-col gap-12">
-                <!-- Meta Info -->
-                <div class="flex items-center gap-4">
-                  <span class="text-accent text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.3em] font-mono">Industry: {{ caseStudies[active].industry }}</span>
-                  <div class="h-px w-full bg-accent/5"></div>
-                </div>
+              <!-- Narrative -->
+              <div class="flex flex-col gap-10">
+                <span class="mono-font text-accent text-xs font-medium tracking-wide">{{ caseStudies[active].industry }}</span>
 
-                <!-- Strategic Title -->
-                <h3 class="text-main text-3xl md:text-6xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors duration-500">
+                <h3 class="text-main text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                   {{ caseStudies[active].title }}
                 </h3>
 
-                <!-- Problem vs Solution: The Logical Split -->
-                <div class="grid md:grid-cols-2 gap-10 lg:gap-12 pt-0 md:pt-4">
-                  <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                       <span class="text-main text-[0.6rem] font-black uppercase tracking-[0.4em] text-soft">The Crisis</span>
-                    </div>
-                    <p class="text-soft text-lg font-medium leading-relaxed">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-10 pt-2">
+                  <div class="space-y-3">
+                    <span class="text-muted text-xs font-medium uppercase tracking-widest">Problem</span>
+                    <p class="text-soft text-base md:text-lg leading-relaxed">
                       {{ caseStudies[active].problem }}
                     </p>
                   </div>
-                  <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                       <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.4em]">The Intervention</span>
-                    </div>
-                    <p class="text-soft text-lg font-medium leading-relaxed">
+                  <div class="space-y-3">
+                    <span class="text-accent text-xs font-medium uppercase tracking-widest">Approach</span>
+                    <p class="text-soft text-base md:text-lg leading-relaxed">
                       {{ caseStudies[active].solution }}
                     </p>
                   </div>
                 </div>
 
-                <!-- Execution Protocol: Steps -->
-                <div class="pt-12 border-t border-glass">
-                  <span class="text-[0.6rem] font-black uppercase tracking-[0.5em] text-soft opacity-30 mb-8 block">Execution_Protocol</span>
-                  <div class="flex flex-wrap gap-x-12 gap-y-6">
-                    <div v-for="(step, si) in caseStudies[active].process" :key="si" class="flex items-center gap-4 group/step">
-                      <span class="text-accent text-sm font-black italic serif-font opacity-20 group-hover/step:opacity-100 transition-all tabular-nums">0{{ si + 1 }}</span>
-                      <span class="text-soft text-sm font-bold tracking-tight">{{ step }}</span>
+                <div class="pt-8 border-t border-glass">
+                  <div class="flex flex-wrap gap-x-8 gap-y-3">
+                    <div v-for="(step, si) in caseStudies[active].process" :key="si" class="flex items-center gap-3">
+                      <span class="mono-font text-accent/60 text-xs tabular-nums">0{{ si + 1 }}</span>
+                      <span class="text-soft text-sm">{{ step }}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- DATA & OUTCOME ARCHIVE -->
-              <div class="flex flex-col gap-8">
-                <!-- Primary Metric Widget -->
-                <div class="bg-accent/5 border border-glass rounded-[24px] md:rounded-[40px] p-8 md:p-10 space-y-4 relative overflow-hidden">
-                  <div class="flex items-center gap-3">
-                    <span class="text-accent text-[0.65rem] font-black uppercase tracking-widest">{{ caseStudies[active].metrics[0].label }}</span>
-                  </div>
-                  <div class="text-6xl lg:text-7xl font-black text-main tracking-tighter leading-none italic serif-font">{{ caseStudies[active].metrics[0].value }}</div>
-                  <p class="text-soft text-sm font-medium opacity-60 leading-snug">{{ caseStudies[active].metrics[0].sub }}</p>
+              <!-- Metrics -->
+              <div class="flex flex-col gap-5">
+                <div class="bg-accent/[0.04] border border-accent/10 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                  <span class="text-accent text-xs font-medium uppercase tracking-widest">{{ caseStudies[active].metrics[0].label }}</span>
+                  <div class="text-6xl lg:text-7xl font-semibold text-main tracking-tight leading-none serif-font mt-3 mb-3">{{ caseStudies[active].metrics[0].value }}</div>
+                  <p class="text-soft text-sm leading-snug">{{ caseStudies[active].metrics[0].sub }}</p>
                 </div>
 
-                <!-- Supporting Metrics Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
-                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel/40 border border-glass rounded-[24px] md:rounded-[32px] p-6 md:p-8 space-y-4">
-                    <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest block opacity-40">{{ metric.label }}</span>
-                    <div class="text-3xl font-black text-main tracking-tight">{{ metric.value }}</div>
-                    <p class="text-muted text-[0.65rem] font-medium leading-tight opacity-60">{{ metric.sub }}</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel/60 border border-glass rounded-2xl p-6 space-y-2">
+                    <span class="text-muted text-xs font-medium">{{ metric.label }}</span>
+                    <div class="text-2xl font-semibold text-main tracking-tight">{{ metric.value }}</div>
+                    <p class="text-muted text-xs leading-snug">{{ metric.sub }}</p>
                   </div>
                 </div>
 
-                <!-- Impact Statement: Final Validation -->
-                <div class="bg-accent text-accent-fg rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-2xl shadow-accent/20 relative overflow-hidden group/impact">
-                  <div class="absolute top-0 right-0 h-24 w-24 bg-accent/5 rounded-bl-full translate-x-4 -translate-y-4 group-hover/impact:scale-110 transition-transform"></div>
-                  <div class="flex items-center gap-3 mb-6">
-                    <Icon name="lucide:award" class="h-5 w-5" />
-                    <span class="text-[0.65rem] font-black uppercase tracking-widest opacity-80">Strategic Outcome</span>
-                  </div>
-                  <p class="text-xl font-black leading-tight mb-3 italic serif-font">"{{ caseStudies[active].impact.headline }}"</p>
-                  <p class="text-accent-fg/70 text-sm font-medium leading-relaxed">{{ caseStudies[active].impact.detail }}</p>
+                <div class="bg-accent text-accent-fg rounded-3xl p-8 relative overflow-hidden">
+                  <Icon name="lucide:sparkles" class="h-5 w-5 mb-4 opacity-80" />
+                  <p class="text-lg md:text-xl font-medium leading-snug mb-2 serif-font italic">"{{ caseStudies[active].impact.headline }}"</p>
+                  <p class="text-accent-fg/80 text-sm leading-relaxed">{{ caseStudies[active].impact.detail }}</p>
                 </div>
               </div>
 
             </div>
           </div>
         </Transition>
-      </div>
-
-      <!-- Conversion Bridge: Architectural CTA -->
-      <div class="mt-20 md:mt-32 flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-panel/20 border border-glass p-6 md:p-16 rounded-[32px] md:rounded-[56px]">
-        <div class="max-w-xl text-center md:text-left w-full">
-          <h4 class="text-main text-3xl md:text-5xl font-black tracking-tighter mb-6 leading-none">Facing a complex <br /> product barrier?</h4>
-          <p class="text-soft text-lg font-medium opacity-70">I transition enterprise products from "functional" to "authoritative" through surgical design execution.</p>
-        </div>
-        <div class="h-px w-full md:flex-1 bg-accent/5 hidden md:block"></div>
-        <div class="shrink-0">
-          <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-16 px-12" hover-text="Let's Solve It">
-            Discuss Case Strategy
-            <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
-          </SharedButton>
-        </div>
       </div>
 
     </div>
@@ -220,19 +179,15 @@ function prev() {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 99px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border-glass);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
   color: var(--text-main);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 .cs-nav-btn:hover {
   background: var(--accent);
-  border-color: var(--accent);
   color: var(--accent-fg);
-  transform: scale(1.1);
 }
 
 /* ─── Transitions ─── */

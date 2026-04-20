@@ -1,115 +1,81 @@
 <template>
-  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-page">
-    
-    <!-- ── Dynamic Life Background Layers ── -->
+  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-page">
+
+    <!-- Soft ambient background -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
-      <div class="absolute inset-0 overflow-hidden opacity-40">
-        <div class="fragment absolute h-24 w-24 border border-glass rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
-        <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-glass to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
-        <div class="fragment absolute h-16 w-16 border border-glass top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
-        <div class="fragment absolute h-32 w-px bg-gradient-to-b from-glass to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
-      </div>
-      <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" 
-           style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>
-      <div class="absolute -left-[10%] top-[0%] h-[700px] w-[700px] rounded-full bg-accent/5 dark:bg-accent/3 blur-[160px] animate-glow-slow"></div>
-      <div class="absolute -right-[5%] bottom-[5%] h-[600px] w-[600px] rounded-full bg-accent/10 dark:bg-accent/5 blur-[140px] animate-glow-reverse"></div>
-      <div class="absolute right-[5%] top-[10%] opacity-[0.08] dark:opacity-[0.04] hidden lg:block">
-        <div class="relative h-80 w-80 border-[1px] border-glass border-dashed rounded-full animate-rotate-slow">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-accent/20"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-glass bg-panel"></div>
-        </div>
-      </div>
-      <div class="absolute inset-0 opacity-[0.025] dark:opacity-[0.05] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      <div class="absolute inset-0 opacity-[0.035] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+           style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 28px 28px;"></div>
+      <div class="absolute -left-[10%] top-[5%] h-[600px] w-[600px] rounded-full bg-accent/[0.06] blur-[140px] animate-glow-slow"></div>
+      <div class="absolute -right-[8%] bottom-[10%] h-[500px] w-[500px] rounded-full bg-accent/[0.04] blur-[120px] animate-glow-reverse"></div>
     </div>
 
     <div class="relative z-10 mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col items-center text-center">
+      <div class="flex flex-col items-start text-left">
 
-        <!-- Content Stack -->
-        <div class="hero-enter flex flex-col items-center w-full reveal">
-          <!-- Designation -->
-          <div class="mb-10 flex flex-col items-center px-4">
-             <span class="section-label">Head of Design • Nuxt & Vue Expert</span>
-          </div>
+        <div class="hero-enter flex flex-col items-start w-full">
+          <span class="section-label mb-10">Head of Design · Nuxt & Vue</span>
 
-          <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center px-4 md:px-0">
-            <span class="text-main block whitespace-nowrap leading-[1.05]">Designing & coding</span>
-            <span class="text-main block mt-1 whitespace-nowrap leading-[1.05]">the next-generation of</span>
-            <span class="text-soft serif-font relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.2em] font-black">
-              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
-              <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
-                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
-                   <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
-                 </div>
-                  <span class="h-[0.9em] w-[3px] bg-accent rounded-full ml-[3px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
-              </div>
+          <h1 class="hero-title max-w-5xl mb-10 text-left">
+            <span class="text-main block leading-[1.02]">Designing &amp; coding</span>
+            <span class="text-main block leading-[1.02]">the next wave of</span>
+            <span class="relative inline-flex items-baseline mt-1">
+              <span class="serif-font italic text-accent relative">
+                <span class="invisible pointer-events-none select-none">platforms.</span>
+                <span class="absolute inset-0 flex items-center">
+                  <span class="overflow-hidden transition-[width] duration-[650ms] ease-out" :style="{ width: revealWidth }">
+                    <span class="whitespace-nowrap pr-1 block">{{ words[wordIndex] }}</span>
+                  </span>
+                  <span class="h-[0.7em] w-[3px] bg-accent rounded-full ml-[2px] self-center" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
+                </span>
+              </span>
             </span>
           </h1>
 
-          <!-- Subtitle -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-16 px-2 md:px-4">
-            I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
+          <p class="hero-sub font-medium leading-relaxed max-w-2xl mb-12">
+            I bridge <span class="text-main font-semibold">product UI/UX</span> and <span class="text-main font-semibold">Nuxt &amp; Vue engineering</span> — shipping shippable, performant experiences that move as fast as the teams that use them.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 mb-16 md:mb-20 w-full sm:w-auto px-4">
-            <SharedButton 
-              tag="a" 
-              href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16 w-full sm:w-auto">
+            <SharedButton
+              tag="a"
+              href="https://cal.com/md-mohin-uddin-8gpn95/30min"
               target="_blank"
-              variant="primary" 
-              size="lg" 
-              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Discuss Roadmap"
+              variant="primary"
+              size="lg"
+              class="h-12 px-8 rounded-full w-full sm:w-auto"
+              hover-text="Talk for 30 min"
             >
-
-              Schedule Strategy Call
+              Book a call
               <template #right>
-                <Icon name="lucide:calendar" class="h-4 w-4" />
+                <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton  tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Say Hello"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>WhatsApp Me</SharedButton>
+            <a href="#case-studies" class="hero-ghost-btn" @click="smoothJump($event, 'case-studies')">
+              <span>See selected work</span>
+              <Icon name="lucide:arrow-down" class="h-4 w-4 opacity-60" />
+            </a>
           </div>
 
-          <!-- Integrated Precision Proof Bar -->
-          <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-1 sm:px-4">
-            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center bg-panel/60 backdrop-blur-3xl border border-glass rounded-[24px] lg:rounded-full overflow-hidden">
-              
-              <!-- Social Proof -->
-              <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
-                <div class="flex -space-x-3">
-                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
-                     <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />
+          <!-- Proof row -->
+          <div class="w-full mt-4 pt-10 border-t border-glass">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 items-center">
+              <div class="flex flex-col">
+                <span class="text-main text-3xl font-semibold tracking-tight serif-font">7 yrs</span>
+                <span class="text-soft text-sm mt-1">leading product design</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-main text-3xl font-semibold tracking-tight serif-font">24+</span>
+                <span class="text-soft text-sm mt-1">products shipped</span>
+              </div>
+              <div class="col-span-2 md:col-span-2 flex items-center gap-5 overflow-hidden">
+                <span class="text-muted text-sm shrink-0">Trusted by</span>
+                <div class="flex-1 overflow-hidden relative">
+                  <div class="flex gap-10 animate-ticker">
+                    <div v-for="i in 2" :key="i" class="flex gap-10 shrink-0">
+                      <span v-for="l in logos" :key="l.name + i" class="text-soft text-sm font-medium whitespace-nowrap">{{ l.name }}</span>
+                    </div>
                   </div>
                 </div>
-                <div class="flex flex-col text-left">
-                  <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none serif-font">Elite Collaboration</span>
-                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-40 mt-1">Venture-scale Partners</span>
-                </div>
-              </div>
-
-              <!-- Brand Stream -->
-              <div class="flex-1 w-full overflow-hidden relative px-4 py-6 lg:py-4 min-h-[4rem] flex items-center">
-                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-40 hover:opacity-100 transition-opacity duration-700">
-                   <div v-for="i in 3" :key="i" class="flex gap-12 lg:gap-16">
-                     <div v-for="l in logos" :key="l.name" class="flex items-center gap-3">
-                       <Icon :name="l.icon" class="h-4 w-4 text-main" />
-                       <span class="text-main font-bold tracking-widest text-[0.6rem] uppercase opacity-60">{{ l.name }}</span>
-                     </div>
-                   </div>
-                 </div>
-              </div>
-
-              <!-- Metrics Block -->
-              <div class="flex items-center justify-center lg:justify-end gap-10 px-10 py-5 lg:py-4 shrink-0">
-                 <div class="flex items-baseline gap-2">
-                   <span class="text-2xl font-black serif-font leading-none">07</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Year_Craft</span>
-                 </div>
-                 <div class="h-6 w-px bg-accent-fg/20"></div>
-                 <div class="flex items-baseline gap-2">
-                   <span class="text-2xl font-black serif-font leading-none">24+</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Ships</span>
-                 </div>
               </div>
             </div>
           </div>
@@ -125,6 +91,7 @@ const wordIndex = ref(0)
 const revealWidth = ref('0px')
 const isPaused = ref(false)
 
+// 2.6s cycle: 650ms reveal + 1300ms hold + 650ms retract
 const cycleReveal = () => {
   isPaused.value = false
   revealWidth.value = '100%'
@@ -136,64 +103,87 @@ const cycleReveal = () => {
       setTimeout(() => {
         wordIndex.value = (wordIndex.value + 1) % words.length
         cycleReveal()
-      }, 1300)
-    }, 2500)
-  }, 1300)
+      }, 650)
+    }, 1300)
+  }, 650)
 }
 
 onMounted(() => {
-  setTimeout(cycleReveal, 1000)
+  setTimeout(cycleReveal, 400)
 })
 
+const smoothJump = (e: Event, id: string) => {
+  e.preventDefault()
+  const el = document.getElementById(id)
+  if (el) window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+}
+
 const logos = [
-  { name: 'AppsCode', icon: 'lucide:box' },
-  { name: 'KubeDB', icon: 'lucide:database' },
-  { name: 'Stash', icon: 'lucide:shield-check' },
-  { name: 'ByteBuilders', icon: 'lucide:cpu' },
-  { name: 'CloudSoft', icon: 'lucide:cloud' },
+  { name: 'AppsCode' },
+  { name: 'KubeDB' },
+  { name: 'Stash' },
+  { name: 'ByteBuilders' },
+  { name: 'CloudSoft' },
 ]
 </script>
 
 <style scoped>
-.hero-enter { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-bar-up { animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+.hero-enter { animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
-@keyframes slideUp { 
-  from { opacity: 0; transform: translateY(32px); } 
-  to { opacity: 1; transform: translateY(0); } 
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes smooth-blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+  50% { opacity: 0.25; }
 }
-
-.animate-smooth-blink { animation: smooth-blink 1s ease-in-out infinite; }
+.animate-smooth-blink { animation: smooth-blink 0.9s ease-in-out infinite; }
 
 .hero-title {
-  font-size: clamp(1.6rem, 8vw, 5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.25rem, 8.5vw, 5.25rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
 }
 
 .hero-sub {
-  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   color: var(--text-soft);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
-.animate-ticker { animation: ticker 45s linear infinite; }
+.hero-ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: 48px;
+  padding: 0 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-glass);
+  color: var(--text-soft);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.hero-ghost-btn:hover {
+  color: var(--text-main);
+  border-color: var(--text-soft);
+  background: var(--bg-panel);
+}
+
+.animate-ticker { animation: ticker 30s linear infinite; width: max-content; }
 @keyframes ticker {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-ticker:hover { animation-play-state: paused; }
 
 .animate-glow-slow { animation: glow 8s ease-in-out infinite alternate; }
 .animate-glow-reverse { animation: glow 10s ease-in-out infinite alternate-reverse; }
 @keyframes glow {
-  from { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  to { transform: translate(20px, 20px) scale(1.1); opacity: 0.5; }
+  from { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  to { transform: translate(20px, 20px) scale(1.08); opacity: 0.6; }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <SharedSectionWrapper section-id="experience" pattern="grid">
-    <div class="grid lg:grid-cols-[380px_1fr] gap-16 lg:gap-24 items-start">
+    <div class="grid lg:grid-cols-[380px_1fr] gap-16 lg:gap-26 items-start">
         
         <!-- Sticky Sidebar -->
         <div 
@@ -8,27 +8,26 @@
           class="lg:sticky lg:top-0 will-change-transform"
           :style="sidebarStyle"
         >
-          <div class="inline-flex flex-col mb-10">
-            <div class="reveal mb-8">
-               <span class="section-label">Technical Archive</span>
-            </div>
-            
-            <div class="flex items-center gap-6">
-              <span class="text-accent text-7xl font-black tracking-tighter leading-none">07</span>
-              <div class="flex flex-col border-l border-glass pl-6">
-                <span class="text-lg font-black leading-none" style="color: var(--text-soft)">Years of</span>
-                <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Executive Craft</span>
-              </div>
-            </div>
-          </div>
-
-          <h2 class="reveal mb-8">
+        <!-- Standardized Section Header -->
+        <SharedSectionHeader 
+          label="Technical Archive"
+          description="A documented history of building and leading high-impact digital products at scale."
+          class="max-w-[340px]"
+        >
+          <template #title>
             Career <br />
             <span style="color: var(--text-soft)">timeline.</span>
-          </h2>
-          <p class="reveal text-soft text-lg font-medium leading-relaxed max-w-[320px]">
-            A documented history of building and leading high-impact digital products at scale.
-          </p>
+          </template>
+        </SharedSectionHeader>
+
+        <!-- Authority Badge -->
+        <div class="flex items-center gap-6 mt-12 mb-10 reveal reveal-delay-2">
+          <span class="text-accent text-7xl font-black tracking-tighter leading-none">07</span>
+          <div class="flex flex-col border-l border-glass pl-6">
+            <span class="text-lg font-black leading-none" style="color: var(--text-soft)">Years of</span>
+            <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Executive Craft</span>
+          </div>
+        </div>
         </div>
 
         <!-- Scrollable Timeline Content -->
@@ -47,8 +46,8 @@
 
               <!-- Job Card -->
               <SharedGlassCard 
-                padding="p-8 md:p-12 md:pl-24" 
-                rounded="rounded-[32px]" 
+                padding="p-10 md:p-16 md:pl-26" 
+                rounded="rounded-[40px]" 
                 class="group"
               >
                 <div>

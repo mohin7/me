@@ -1,12 +1,12 @@
 <template>
-  <div :class="['flex flex-col', centered ? 'items-center text-center' : '', wrapperClass]" class="mb-16 md:mb-24">
+  <div :class="['flex flex-col', centered ? 'items-center text-center' : 'items-start', wrapperClass]" class="mb-10 md:mb-12">
     <!-- Section Label -->
-    <div v-if="label" class="reveal mb-8" :class="centered && 'flex justify-center'">
+    <div v-if="label" class="reveal mb-6" :class="centered && 'flex justify-center'">
       <span class="section-label" :class="centered && 'flex justify-center'">{{ label }}</span>
     </div>
 
     <!-- Title -->
-    <h2 v-if="$slots.title || title" class="reveal mb-8" :class="[titleClass, maxWidth && `max-w-${maxWidth} mx-auto`]">
+    <h2 v-if="$slots.title || title" class="reveal mb-6" :class="[titleClass, maxWidth && `max-w-${maxWidth} mx-auto`]">
       <slot name="title">{{ title }}</slot>
     </h2>
 

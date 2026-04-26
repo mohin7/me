@@ -1,20 +1,21 @@
 <template>
-  <SharedSectionWrapper section-id="process" bg="soft" pattern="dots">
+  <SharedSectionWrapper section-id="process" bg="page" pattern="dots">
 
     <!-- Compact Header -->
-    <div class="flex flex-col md:flex-row md:items-end items-center justify-between gap-8 mb-12 md:mb-16">
-      <SharedSectionHeader label="Execution Framework" wrapper-class="mb-0">
-        <template #title>
-          Systematic <span style="color: var(--text-soft)">delivery.</span>
-        </template>
-      </SharedSectionHeader>
-      <p class="reveal text-soft text-base font-medium max-w-[320px] md:text-right">
-        A high-velocity engineering protocol designed for founders who value precision over process.
-      </p>
-    </div>
+    <!-- Standardized Section Header -->
+    <SharedSectionHeader 
+      label="Execution Framework"
+      description="A high-velocity engineering protocol designed for founders who value precision over process."
+      :centered="true"
+      class="max-w-4xl mx-auto"
+    >
+      <template #title>
+        Systematic <span style="color: var(--text-soft)">delivery.</span>
+      </template>
+    </SharedSectionHeader>
 
     <!-- Pipeline Grid: 4 Columns -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div 
         v-for="(step, idx) in steps" 
         :key="idx"
@@ -22,22 +23,22 @@
         :class="`reveal-delay-${idx + 1}`"
       >
         <!-- Connection Line (Desktop) -->
-        <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-1/2 -right-2 w-4 h-px bg-glass z-0"></div>
+        <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-[40px] -right-3 w-6 h-px bg-glass z-0"></div>
 
         <!-- Compact Architectural Card -->
-        <SharedGlassCard padding="p-6 md:p-8" rounded="rounded-[24px]" :bg-opacity="5" class="h-full flex flex-col">
+        <SharedGlassCard padding="p-6 md:p-10" rounded="rounded-[24px]" :bg-opacity="5" class="h-full flex flex-col">
           
           <!-- Phase Badge -->
-          <div class="flex justify-between items-center mb-10">
-             <span class="text-accent text-[0.6rem] font-bold tracking-[0.2em] font-mono opacity-80">PHASE_0{{ idx + 1 }}</span>
-             <SharedIconBox size="sm">
+          <div class="flex justify-between items-center mb-4">
+             <span class="text-accent text-[0.7rem] font-bold tracking-[0.3em] font-mono opacity-80">PHASE_0{{ idx + 1 }}</span>
+             <SharedIconBox size="md">
                <Icon v-if="step && step.icon" :name="step.icon" class="h-4 w-4" />
              </SharedIconBox>
           </div>
 
           <!-- Content -->
           <div class="mb-8">
-            <h3 class="group-hover:text-accent transition-colors">
+            <h3 class="group-hover:text-accent transition-colors mb-4">
                {{ step.title }}
             </h3>
             <p class="text-muted text-sm font-medium leading-relaxed">

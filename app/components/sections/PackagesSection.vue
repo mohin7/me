@@ -1,25 +1,24 @@
 <template>
-  <SharedSectionWrapper section-id="packages">
+  <SharedSectionWrapper section-id="packages" bg="soft">
 
       
-      <!-- Section Header -->
-      <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 md:mb-16">
-        <div class="reveal mb-6">
-          <span class="section-label flex justify-center">Investment Models</span>
-        </div>
-        <h2 class="reveal mb-6">
+      <!-- Standardized Section Header -->
+      <SharedSectionHeader 
+        label="Investment Models"
+        description="Engineering-grade design solutions priced for velocity. No hourly drift, just performance."
+        :centered="true"
+        class="max-w-4xl mx-auto"
+      >
+        <template #title>
           The Strategic <br />
           <span style="color: var(--text-soft)">matrix.</span>
-        </h2>
-        <p class="reveal text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
-          Engineering-grade design solutions priced for velocity. No hourly drift, just performance.
-        </p>
-      </div>
+        </template>
+      </SharedSectionHeader>
 
       <!-- Pricing Matrix -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-glass rounded-[32px] shadow-[var(--specular)] md:rounded-[48px] overflow-hidden bg-panel/5 backdrop-blur-3xl">
         <div v-for="(pkg, idx) in packages" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
+             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
           <!-- State Indicator -->
           <div v-if="pkg.popular" class="absolute top-0 right-0 p-4">
@@ -88,7 +87,7 @@
 
       <!-- Strategic Equity Section -->
       <div class="mt-8 relative p-1 md:p-1 overflow-hidden rounded-[32px] md:rounded-[48px] border border-glass">
-         <div class="bg-page/90 backdrop-blur-3xl rounded-[31px] md:rounded-[47px] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+         <div class="bg-page/90 backdrop-blur-3xl rounded-[31px] md:rounded-[47px] p-10 md:p-20 flex flex-col lg:flex-row items-center justify-between gap-12">
            <div class="max-w-xl text-center lg:text-left">
               <div class="flex items-center justify-center lg:justify-start gap-3 mb-8">
                  <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
@@ -103,7 +102,7 @@
               </p>
            </div>
            
-           <div class="bg-panel/20 border border-glass p-8 md:p-12 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
+           <div class="bg-panel/20 border border-glass p-10 md:p-16 rounded-[32px] md:rounded-[40px] w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>

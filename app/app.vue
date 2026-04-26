@@ -200,10 +200,10 @@ h1, h2, h3, h4, h5, h6, .display-font, .hero-title {
   color: var(--text-main);
 }
 
-h1 { font-size: clamp(3rem, 10vw, 6.5rem); }
-h2 { font-size: clamp(2.25rem, 8vw, 4.5rem); }
-h3 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
-h4 { font-size: clamp(1.25rem, 4vw, 1.75rem); }
+h1 { font-size: clamp(3.5rem, 12vw, 6.8rem); } /* φ^4 */
+h2 { font-size: clamp(2.5rem, 8vw, 4.2rem); }  /* φ^3 */
+h3 { font-size: clamp(1.5rem, 4vw, 1.6rem); }   /* φ^1 - Ideal for Card Titles */
+h4 { font-size: clamp(1.1rem, 3vw, 1.25rem); }  /* Base+ */
 
 p, .prose {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
@@ -213,35 +213,41 @@ p, .prose {
 }
 
 .light {
-  --bg-page: #F9FAFB;
-  --bg-panel: #FFFFFF;
-  --bg-glass: rgba(255, 255, 255, 0.7);
-  --bg-soft: #F3F4F6;
-  --text-main: #18181B;
-  --text-soft: #3F3F46;
-  --text-muted: #52525B;
-  --accent: #18181B;
-  --accent-fg: #FFFFFF;
-  --accent-spotlight: rgba(24, 24, 27, 0.03);
-  --border-glass: rgba(24, 24, 27, 0.08);
-  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.03);
-  --section-shadow: 0 20px 60px -15px rgba(0,0,0,0.05);
+  /* Obsidian & Ether: High-Authority Monochromatic */
+  --bg-page: hsl(0, 0%, 99%);           /* Crisp White */
+  --bg-panel: hsl(0, 0%, 100%);
+  --bg-glass: hsla(0, 0%, 100%, 0.618);
+  --bg-soft: hsl(240, 5%, 94%);         /* φ step */
+  --text-main: hsl(240, 10%, 8%);       /* φ step (Deep Obsidian) */
+  --text-soft: hsl(240, 8%, 38%);       /* φ step */
+  --text-muted: hsl(240, 5%, 62%);      /* φ step */
+  
+  --accent: hsl(240, 10%, 8%);          /* Obsidian Accent */
+  --accent-fg: hsl(0, 0%, 100%);
+  --accent-spotlight: hsla(240, 10%, 8%, 0.03);
+  --border-glass: hsla(240, 10%, 8%, 0.09);
+  
+  --card-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.03);
+  --section-shadow: 0 20px 60px -15px hsla(0, 0%, 0%, 0.05);
 }
 
 .dark {
-  --bg-page: #09090B;
-  --bg-panel: #121214;
-  --bg-glass: rgba(18, 18, 20, 0.8);
-  --bg-soft: #18181B;
-  --text-main: #FAFAFA;
-  --text-soft: #D4D4D8;
-  --text-muted: #A1A1AA;
-  --accent: #FAFAFA;
-  --accent-fg: #09090B;
-  --accent-spotlight: rgba(250, 250, 250, 0.03);
-  --border-glass: rgba(250, 250, 250, 0.08);
-  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.25);
-  --section-shadow: 0 30px 80px -20px rgba(0,0,0,0.4);
+  /* Obsidian & Ether: High-Authority Monochromatic */
+  --bg-page: hsl(240, 10%, 3.5%);      /* Deep Space Obsidian */
+  --bg-panel: hsl(240, 8%, 7%);        /* φ step */
+  --bg-glass: hsla(240, 8%, 12%, 0.618);
+  --bg-soft: hsl(240, 6%, 15%);        /* φ step */
+  --text-main: hsl(0, 0%, 98%);        /* Ether White */
+  --text-soft: hsl(240, 5%, 72%);       /* φ step */
+  --text-muted: hsl(240, 5%, 62%);      /* φ step */
+  
+  --accent: hsl(0, 0%, 100%);          /* Pure Light Accent */
+  --accent-fg: hsl(240, 10%, 3.5%);
+  --accent-spotlight: hsla(0, 0%, 100%, 0.03);
+  --border-glass: hsla(0, 0%, 100%, 0.09);
+  
+  --card-shadow: 0 10px 50px -10px hsla(0, 0%, 0%, 0.382);
+  --section-shadow: 0 30px 100px -20px hsla(0, 0%, 0%, 0.618);
 }
 
 :root {
@@ -274,10 +280,12 @@ p, .prose {
 
 /* ── Micro-interaction Utilities ── */
 .hover-lift {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -12px hsla(0, 0%, 0%, 0.12), var(--inner-glow) !important;
+  border-color: hsla(0, 0%, 100%, 0.1) !important;
 }
 
 /* ── Section Divider ── */

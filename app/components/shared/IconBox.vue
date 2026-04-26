@@ -26,9 +26,9 @@ const props = withDefaults(defineProps<{
 
 const sizeClass = computed(() => {
   switch (props.size) {
-    case 'sm': return 'h-8 w-8'
-    case 'md': return 'h-10 w-10'
-    case 'lg': return 'h-12 w-12'
+    case 'sm': return 'h-8 w-8'      /* Base */
+    case 'md': return 'h-10 w-10'    /* φ Step 1 */
+    case 'lg': return 'h-16 w-16'    /* φ Step 2 (approx 1.6 * 40px) */
     default: return 'h-10 w-10'
   }
 })
@@ -37,7 +37,7 @@ const roundedClass = computed(() => {
   switch (props.size) {
     case 'sm': return 'rounded-lg'
     case 'md': return 'rounded-xl'
-    case 'lg': return 'rounded-2xl'
+    case 'lg': return 'rounded-3xl'  /* More radius for larger box */
     default: return 'rounded-xl'
   }
 })

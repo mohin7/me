@@ -1,5 +1,5 @@
 <template>
-  <SharedSectionWrapper section-id="strategic-advantage" :centered="true">
+  <SharedSectionWrapper section-id="strategic-advantage" bg="soft" :centered="true">
     
     <!-- Section Header -->
     <SharedSectionHeader 
@@ -13,7 +13,7 @@
     </SharedSectionHeader>
 
     <!-- Compact Technical Specification Row -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
        <SharedGlassCard
          v-for="(spec, idx) in specs" :key="spec.label" 
          :class="`reveal reveal-delay-${idx+1}`"
@@ -29,7 +29,7 @@
     </div>
 
     <!-- The Balanced Grid Pillars -->
-    <div class="grid md:grid-cols-3 gap-6 text-left">
+    <div class="grid md:grid-cols-3 gap-10 text-left">
       <SharedGlassCard 
         v-for="(pillar, idx) in pillars" :key="idx"
         :class="`reveal reveal-delay-${idx+1}`"

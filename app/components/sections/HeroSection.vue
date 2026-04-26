@@ -1,5 +1,5 @@
 <template>
-  <section id="top" ref="heroRef" class="relative min-h-[90dvh] flex items-center pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden bg-page">
+  <section id="top" ref="heroRef" class="relative min-h-screen flex items-center pt-28 pb-8 md:pt-32 md:pb-12 overflow-hidden bg-page">
     
     <!-- ── Cinematic Background Layers ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
@@ -47,13 +47,13 @@
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-6xl mx-auto mb-8 text-center px-4 md:px-0">
+          <h1 class="hero-title max-w-6xl mx-auto mb-10 text-center px-4 md:px-0">
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
-            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.1em]">
+            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.3em]">
               <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
-              <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
-                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out" :style="{ width: revealWidth }">
+              <div class="col-start-1 row-start-1 relative flex items-center justify-center py-4 px-1">
+                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-2" :style="{ width: revealWidth }">
                    <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
                  </div>
                   <span class="h-[0.8em] w-[3px] bg-accent rounded-full ml-[2px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
@@ -61,12 +61,12 @@
             </span>
           </h1>
 
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl mb-14 px-2 md:px-4">
-            Solving real user problems by bridging <span class="text-main font-bold">Psychological UX</span> with high-performance <span class="text-main font-bold">Engineering</span>. From idea to product, I craft experiences using Vue, Nuxt, and a deep understanding of human behavior.
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-4xl mb-12 px-2 md:px-4 opacity-90">
+            Software Engineer evolved into a <span class="text-main font-bold">Hybrid UI/UX Architect</span>. I bridge Psychological UX with technical mastery in Vue & Nuxt to architect products that connect and scale.
           </p>
 
           <!-- CTA Row -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2 mb-14 w-full sm:w-auto px-4">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2 mb-12 w-full sm:w-auto px-4">
             <SharedButton 
               tag="a" 
               href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
@@ -149,9 +149,9 @@ const cycleReveal = () => {
       setTimeout(() => {
         wordIndex.value = (wordIndex.value + 1) % words.length
         cycleReveal()
-      }, 1300)
-    }, 2500)
-  }, 1300)
+      }, 1600)
+    }, 2560)
+  }, 1600)
 }
 
 onMounted(() => {
@@ -185,14 +185,14 @@ const logos = [
 
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2rem, 9vw, 6rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 8vw, 5rem);
+  line-height: 1.05;
 }
 
 .hero-sub {
-  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
   color: var(--text-soft);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 .animate-ticker { animation: ticker 45s linear infinite; }

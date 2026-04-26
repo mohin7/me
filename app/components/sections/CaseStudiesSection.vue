@@ -1,35 +1,20 @@
 <template>
-  <SharedSectionWrapper section-id="case-studies">
+  <SharedSectionWrapper section-id="case-studies" bg="soft">
 
 
-      <!-- Section Header: Strategic Direction -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-8 md:mb-12">
-        <div class="max-w-3xl">
-          <div class="reveal mb-6">
-            <span class="section-label">Evidence Gallery</span>
-          </div>
-          <h2 class="reveal mb-8">
-            Impact <span style="color: var(--text-soft)">architected.</span>
-          </h2>
-          <p class="text-soft text-lg font-medium leading-relaxed max-w-2xl opacity-80">
-            Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to stakeholders.
-          </p>
-        </div>
+      <!-- Standardized Section Header -->
+      <SharedSectionHeader 
+        label="Evidence Gallery"
+        description="Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to stakeholders."
+        :centered="true"
+        class="max-w-4xl mx-auto"
+      >
+        <template #title>
+          Impact <span style="color: var(--text-soft)">architected.</span>
+        </template>
+      </SharedSectionHeader>
 
-        <!-- High-Precision Carousel Navigation -->
-        <div class="flex items-center w-fit mx-auto md:mx-0 gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm">
-          <button @click="prev" class="cs-nav-btn" aria-label="Previous">
-            <Icon name="lucide:arrow-left" class="h-5 w-5" />
-          </button>
-          <div class="flex flex-col items-center min-w-[64px]">
-            <span class="text-main text-lg font-black tracking-tighter tabular-nums leading-none">{{ String(active + 1).padStart(2, '0') }}</span>
-            <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
-          </div>
-          <button @click="next" class="cs-nav-btn" aria-label="Next">
-            <Icon name="lucide:arrow-right" class="h-5 w-5" />
-          </button>
-        </div>
-      </div>
+
 
       <!-- Main Case Study Display -->
       <div class="relative">
@@ -124,7 +109,21 @@
             </div>
           </div>
         </Transition>
-    </div>
+      </div>
+
+      <!-- High-Precision Carousel Navigation (Moved to Bottom) -->
+      <div class="flex items-center w-fit mx-auto gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm mt-16">
+        <button @click="prev" class="cs-nav-btn" aria-label="Previous">
+          <Icon name="lucide:arrow-left" class="h-5 w-5" />
+        </button>
+        <div class="flex flex-col items-center min-w-[64px]">
+          <span class="text-main text-lg font-black tracking-tighter tabular-nums leading-none">{{ String(active + 1).padStart(2, '0') }}</span>
+          <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
+        </div>
+        <button @click="next" class="cs-nav-btn" aria-label="Next">
+          <Icon name="lucide:arrow-right" class="h-5 w-5" />
+        </button>
+      </div>
   </SharedSectionWrapper>
 </template>
 

@@ -44,10 +44,10 @@ const props = withDefaults(defineProps<{
 
 const paddingClass = computed(() => {
   switch (props.padding) {
-    case 'sm': return 'py-16 md:py-20'
-    case 'md': return 'py-24 md:py-36'
-    case 'lg': return 'py-32 md:py-48'
-    default: return 'py-24 md:py-36'
+    case 'sm': return 'py-12 md:py-16'
+    case 'md': return 'py-16 md:py-24' /* Reduced from py-40 */
+    case 'lg': return 'py-24 md:py-32'
+    default: return 'py-16 md:py-24'
   }
 })
 </script>

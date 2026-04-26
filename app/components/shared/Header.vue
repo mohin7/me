@@ -10,7 +10,7 @@
        </div>
     </div>
 
-    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-2 md:gap-4 px-4 py-2 md:px-6 md:py-3 relative">
+    <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 md:gap-6 px-6 py-3 md:px-10 md:py-4 relative">
 
       <!-- Logo Signature -->
       <SharedLogo />
@@ -236,7 +236,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 0 24px;
-  height: 40px;
+  height: 48px;  /* φ derived */
   border-radius: 9999px;
   background: var(--text-main);
   color: var(--accent-fg);

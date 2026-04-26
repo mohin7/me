@@ -83,7 +83,7 @@ const sizeClasses = computed(() => {
     case 'sm': return 'h-9 px-5 text-xs rounded-full'
     case 'md': return 'h-10 px-6 text-[0.8rem] rounded-full'
     case 'lg': return 'h-12 px-8 text-[0.85rem] rounded-full'
-    case 'xl': return 'h-14 px-10 text-sm rounded-full'
+    case 'xl': return 'h-16 px-12 text-sm rounded-full'
     default:   return 'h-10 px-6 text-[0.8rem] rounded-full'
   }
 })

@@ -83,7 +83,10 @@
                 <Icon name="lucide:map" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Instant Reply"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>Direct Message</SharedButton>
+            <SharedButton tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Instant Reply">
+              <template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>
+              WhatsApp Now
+            </SharedButton>
           </div>
 
           <!-- Integrated Precision Proof Bar -->

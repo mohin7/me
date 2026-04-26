@@ -27,28 +27,33 @@
 
         <!-- Content Stack -->
         <div class="hero-enter flex flex-col items-center w-full reveal">
+          <!-- Social Proof Stars -->
+          <div class="flex items-center gap-1 mb-8">
+            <Icon v-for="i in 5" :key="i" name="lucide:star" class="h-3 w-3 text-accent fill-accent" />
+          </div>
+
           <!-- Designation -->
           <div class="mb-10 flex flex-col items-center px-4">
-             <span class="section-label">Head of Design • Nuxt & Vue Expert</span>
+             <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em] opacity-60">Architectural Design & Vue Engineering</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-5xl mx-auto mb-10 text-center px-4 md:px-0">
-            <span class="text-main block whitespace-nowrap leading-[1.05]">Designing & coding</span>
-            <span class="text-main block mt-1 whitespace-nowrap leading-[1.05]">the next-generation of</span>
-            <span class="text-soft serif-font relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.2em] font-black">
+          <h1 class="hero-title max-w-6xl mx-auto mb-10 text-center px-4 md:px-0">
+            <span class="text-main block leading-[1.05]">Designing & coding</span>
+            <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
+            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.1em]">
               <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
               <div class="col-start-1 row-start-1 relative flex items-center justify-center py-2 px-1">
-                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1 px-1" :style="{ width: revealWidth }">
+                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out" :style="{ width: revealWidth }">
                    <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
                  </div>
-                  <span class="h-[0.9em] w-[3px] bg-accent rounded-full ml-[3px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
+                  <span class="h-[0.8em] w-[3px] bg-accent rounded-full ml-[2px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
               </div>
             </span>
           </h1>
 
           <!-- Subtitle -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl opacity-80 mb-16 px-2 md:px-4">
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl mb-16 px-2 md:px-4">
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
@@ -61,7 +66,6 @@
               size="lg" 
               class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Discuss Roadmap"
             >
-
               Schedule Strategy Call
               <template #right>
                 <Icon name="lucide:calendar" class="h-4 w-4" />
@@ -78,22 +82,22 @@
               <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
                 <div class="flex -space-x-3">
                   <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
-                     <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />
+                     <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent opacity-40" />
                   </div>
                 </div>
                 <div class="flex flex-col text-left">
-                  <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none serif-font">Elite Collaboration</span>
-                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-40 mt-1">Venture-scale Partners</span>
+                  <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none">Elite Collaboration</span>
+                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-70 mt-1">Venture-scale Partners</span>
                 </div>
               </div>
 
               <!-- Brand Stream -->
               <div class="flex-1 w-full overflow-hidden relative px-4 py-6 lg:py-4 min-h-[4rem] flex items-center">
-                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-40 hover:opacity-100 transition-opacity duration-700">
+                 <div class="flex gap-12 lg:gap-16 animate-ticker grayscale opacity-70 hover:opacity-100 transition-opacity duration-700">
                    <div v-for="i in 3" :key="i" class="flex gap-12 lg:gap-16">
                      <div v-for="l in logos" :key="l.name" class="flex items-center gap-3">
                        <Icon :name="l.icon" class="h-4 w-4 text-main" />
-                       <span class="text-main font-bold tracking-widest text-[0.6rem] uppercase opacity-60">{{ l.name }}</span>
+                       <span class="text-main font-bold tracking-widest text-[0.6rem] uppercase opacity-80">{{ l.name }}</span>
                      </div>
                    </div>
                  </div>
@@ -102,13 +106,13 @@
               <!-- Metrics Block -->
               <div class="flex items-center justify-center lg:justify-end gap-10 px-10 py-5 lg:py-4 shrink-0">
                  <div class="flex items-baseline gap-2">
-                   <span class="text-2xl font-black serif-font leading-none">07</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Year_Craft</span>
+                   <span class="text-2xl font-black leading-none">07</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Year_Craft</span>
                  </div>
                  <div class="h-6 w-px bg-accent-fg/20"></div>
                  <div class="flex items-baseline gap-2">
-                   <span class="text-2xl font-black serif-font leading-none">24+</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Ships</span>
+                   <span class="text-2xl font-black leading-none">24+</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Ships</span>
                  </div>
               </div>
             </div>
@@ -171,10 +175,9 @@ const logos = [
 .animate-smooth-blink { animation: smooth-blink 1s ease-in-out infinite; }
 
 .hero-title {
-  font-size: clamp(1.6rem, 8vw, 5rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-family: 'Clash Display', sans-serif;
+  font-size: clamp(2rem, 9vw, 6rem);
+  line-height: 1.1;
 }
 
 .hero-sub {

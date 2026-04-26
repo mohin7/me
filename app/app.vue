@@ -54,12 +54,9 @@ useSeoMeta({
   title: 'Md Mohin Uddin — Head of Design & AI Architect | Kubernetes & Cloud UX Specialist',
   ogTitle: 'Md Mohin Uddin — Design Lead & Architect for High-Scale Cloud Systems',
   description: 'Head of Design at AppsCode. Specializing in high-performance UI/UX for Kubernetes, Cloud Infrastructure, and Scalable SaaS Platforms. Directed design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt 3 & Vue.js engineering.',
-  ogDescription: 'Engineering executive-grade UI/UX for complex cloud ecosystems and high-concurrency platforms. specialized in developer-centric product strategy.',
+  ogDescription: 'Engineering executive-grade UI/UX for complex cloud ecosystems and high-concurrency platforms. Specialized in developer-centric product strategy.',
   ogImage: 'https://mohin.design/og-banner.png',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Md Mohin Uddin — Leading the Design of Kubernetes-Native Platforms',
-  twitterDescription: 'Surgical design execution for enterprise cloud infrastructure. From Figma to high-performance Nuxt 3 architecture.',
-  keywords: 'Kubernetes UX, Cloud Infrastructure Design, Product Design Engineering, Head of Design AppsCode, Nuxt.js Expert, Vue.js Specialist, SaaS Architecture, KubeDB UX',
 })
 
 // ── Fixed Wrapper Smooth Scroll ──
@@ -92,7 +89,6 @@ const updateHeight = () => {
 
 const smoothLoop = () => {
   if (isTouchDevice.value) {
-    // On touch, send native scroll position for UI components like Header
     currentOffset.value = window.pageYOffset
     window.dispatchEvent(new CustomEvent('smooth-scroll', { detail: currentOffset.value }))
     rafId = requestAnimationFrame(smoothLoop)
@@ -111,38 +107,23 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
-
   window.addEventListener('mousemove', handleMouseMove)
-  // Simple touch detection
   isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
   
   if (!isTouchDevice.value) {
     updateHeight()
-    setTimeout(updateHeight, 500)
-    setTimeout(updateHeight, 1500)
     window.addEventListener('resize', updateHeight)
+    // Mutation observer to handle dynamic content height changes
+    const observer = new MutationObserver(updateHeight)
+    observer.observe(document.body, { childList: true, subtree: true })
+    smoothLoop()
   }
-  
-  // ── Scroll Reveal System ──
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed')
-        // Optional: unobserve after reveal for performance
-        // revealObserver.unobserve(entry.target)
-      }
-    })
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
-
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
-  
-  rafId = requestAnimationFrame(smoothLoop)
 })
 
 onUnmounted(() => {
-  if (rafId) cancelAnimationFrame(rafId)
-  window.removeEventListener('resize', updateHeight)
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('resize', updateHeight)
+  if (rafId) cancelAnimationFrame(rafId)
 })
 </script>
 
@@ -151,54 +132,31 @@ onUnmounted(() => {
 
 /* ── Core Scroll Architecture ── */
 html, body {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
   background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
 }
-
-/* ── Kinetic Reveal System ── */
-.reveal {
-  opacity: 0;
-  transform: translate3d(0, 30px, 0);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
-}
-
-.reveal.is-revealed {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-/* Stagger Helpers */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-html::-webkit-scrollbar { display: none; }
-html { scrollbar-width: none; -ms-overflow-style: none; }
-
-/* ── Native Scrollbar Styling (Fallback) ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(128, 128, 128, 0.2); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(128, 128, 128, 0.4); }
 
 .smooth-wrapper {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   will-change: transform;
-  backface-visibility: hidden;
+  z-index: 2;
 }
 
-.smooth-wrapper.is-smooth {
-  position: fixed;
-  top: 0; left: 0;
+.is-smooth {
+  pointer-events: auto;
 }
 
-.scroll-spacer { width: 100%; pointer-events: none; }
+.scroll-spacer {
+  width: 100%;
+  pointer-events: none;
+}
 
-/* ── Original Theme System ── */
 .site-shell {
   min-height: 100vh;
   background: var(--bg-page);
@@ -210,91 +168,63 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
   caret-color: var(--accent);
 }
 
+/* ── Explicit Typographic Separation ── */
+h1, h2, h3, h4, h5, h6, .display-font, .hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+h1 { font-size: clamp(2.5rem, 10vw, 6.5rem); }
+h2 { font-size: clamp(2rem, 8vw, 4.5rem); }
+h3 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+h4 { font-size: clamp(1.25rem, 4vw, 1.75rem); }
+
+p, .prose {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 .light {
   --bg-page: #F9FAFB;
   --bg-panel: #FFFFFF;
-  --bg-panel-strong: #F3F4F6;
-  --bg-soft: #F3F4F6;
-  --text-main: #0A0A0A;
-  --text-soft: #52525B;
-  --text-muted: #A1A1AA;
-  --border-subtle: rgba(0,0,0,0.06);
-  --border-glass: rgba(0,0,0,0.06);
-  --bg-glass: rgba(255,255,255,0.1);
-  --accent-rgb: 17, 17, 17;
-  --accent-spotlight: rgba(var(--accent-rgb), 0.03);
-  --accent: #111111;
-  --accent-fg: #FFFFFF; --hover-brightness: 1.1;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --text-main: #18181B;
+  --text-soft: #3F3F46;
+  --text-muted: #71717A;
+  --accent: #18181B;
+  --accent-fg: #FFFFFF;
+  --accent-spotlight: rgba(24, 24, 27, 0.03);
+  --border-glass: rgba(24, 24, 27, 0.08);
 }
 
 .dark {
-  --bg-page: #080808;
-  --bg-panel: #0B0B0B;
-  --bg-panel-strong: #1A1A1A;
-  --bg-soft: #181818;
+  --bg-page: #09090B;
+  --bg-panel: #121214;
+  --bg-glass: rgba(18, 18, 20, 0.8);
   --text-main: #FAFAFA;
-  --text-soft: #A1A1AA;
-  --text-muted: #71717A;
-  --border-subtle: #1C1C22;
-  --border-glass: rgba(255,255,255,0.08);
-  --bg-glass: rgba(10,10,12,0.15);
-  --accent-rgb: 200, 210, 255;
-  --accent-spotlight: rgba(var(--accent-rgb), 0.05);
-  --accent: #FFFFFF;
-  --accent-fg: #111111; --hover-brightness: 0.9; --specular: inset 0 1px 0 0 rgba(255,255,255,0.02);
+  --text-soft: #D4D4D8;
+  --text-muted: #A1A1AA;
+  --accent: #FAFAFA;
+  --accent-fg: #09090B;
+  --accent-spotlight: rgba(250, 250, 250, 0.03);
+  --border-glass: rgba(250, 250, 250, 0.08);
 }
 
-/* ── Global Section Standards ── */
-.dark .border-glass {
-  border-color: var(--border-glass);
+:root {
+  --accent: #18181B;
+  --specular: 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.2);
 }
-.dark .border-glass:hover {
-  border-color: rgba(var(--accent-rgb), 0.12) !important;
-}
+
+.fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
 
 .section-label {
-  font-size: 0.65rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--text-soft);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  @apply text-[0.65rem] font-black uppercase tracking-[0.4em];
+  color: color-mix(in srgb, var(--accent), transparent 60%);
 }
-
-@media (min-width: 768px) {
-.dark .border-glass {
-  border-color: var(--border-glass);
-}
-.dark .border-glass:hover {
-  border-color: rgba(var(--accent-rgb), 0.12) !important;
-}
-
-  .section-label {
-    letter-spacing: 0.4em;
-    gap: 0.75rem;
-  }
-}
-
-.section-label::before {
-  content: '';
-  display: block;
-  height: 1px;
-  width: 2rem;
-  background: currentColor;
-  opacity: 0.2;
-  @apply md:block hidden;
-}
-
-/* ── Utilities ── */
-.text-main { color: var(--text-main); }
-.text-soft { color: var(--text-soft); }
-.text-muted { color: var(--text-muted); }
-.bg-page { background: var(--bg-page); }
-.serif-font { font-family: 'Plus Jakarta Sans', sans-serif; }
-
-/* ── Transitions ── */
-.fade-enter-active, .fade-leave-active { transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.fade-enter-from, .fade-leave-to { opacity: 0; transform: scale(0.8) translateY(20px); }
 </style>

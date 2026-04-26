@@ -1,5 +1,5 @@
 <template>
-  <section id="case-studies" class="relative py-20 md:py-32 bg-page overflow-visible">
+  <section id="case-studies" class="relative py-24 md:py-44 bg-page overflow-visible">
     <!-- Sophisticated Section Border -->
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
 
@@ -7,16 +7,16 @@
 
       <!-- Section Header: Strategic Direction -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-20 md:mb-32">
-        <div class="max-w-3xl flex flex-col items-center text-center md:items-start md:text-left">
+        <div class="max-w-3xl">
           <div class="mb-10 lg:mb-12">
-            <span class="section-label flex justify-center md:justify-start">Evidence Gallery</span>
+            <span class="section-label">Evidence Gallery</span>
           </div>
-          <h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.85] mb-8 text-main">
-            Problems solved, <br />
-            <span class="italic serif-font lowercase" style="color: var(--text-soft)">outcomes delivered.</span>
+          <h2 class="italic serif-font lowercase">
+            Impact <br />
+            <span style="color: var(--text-soft)">architected.</span>
           </h2>
-          <p class="text-soft text-xl font-medium leading-relaxed max-w-2xl">
-            A selective collection of complex product challenges resolved through disciplined design and engineering protocols.
+          <p class="text-soft text-xl font-medium leading-relaxed max-w-2xl opacity-80">
+            Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to users and stakeholders.
           </p>
         </div>
 
@@ -27,7 +27,7 @@
           </button>
           <div class="flex flex-col items-center min-w-[64px]">
             <span class="text-main text-lg font-black tracking-tighter tabular-nums leading-none">{{ String(active + 1).padStart(2, '0') }}</span>
-            <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-30 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
+            <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
           </div>
           <button @click="next" class="cs-nav-btn" aria-label="Next">
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
@@ -35,112 +35,99 @@
         </div>
       </div>
 
-      <!-- Main Case Study Display: The High-Resolution Card -->
+      <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[32px] md:rounded-[48px] bg-panel/20 border border-glass p-6 md:p-16 transition-all duration-700 hover:bg-panel/40 hover:shadow-2xl overflow-hidden reveal">
+          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-8 md:p-20 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden">
             
             <!-- Abstract Logic Grid Background -->
-            <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
+            <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
                  style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-            <div class="relative z-10 grid lg:grid-cols-[1fr_420px] gap-16 lg:gap-32">
+            <div class="relative z-10 flex flex-col gap-16 lg:gap-24">
 
-              <!-- NARRATIVE ARCHITECTURE -->
-              <div class="flex flex-col gap-12">
-                <!-- Meta Info -->
-                <div class="flex items-center gap-4">
-                  <span class="text-accent text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.3em] font-mono">Industry: {{ caseStudies[active].industry }}</span>
-                  <div class="h-px w-full bg-accent/5"></div>
-                </div>
-
-                <!-- Strategic Title -->
-                <h3 class="text-main text-3xl md:text-6xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors duration-500">
-                  {{ caseStudies[active].title }}
-                </h3>
-
-                <!-- Problem vs Solution: The Logical Split -->
-                <div class="grid md:grid-cols-2 gap-10 lg:gap-12 pt-0 md:pt-4">
-                  <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                       <span class="text-main text-[0.6rem] font-black uppercase tracking-[0.4em] text-soft">The Crisis</span>
-                    </div>
-                    <p class="text-soft text-lg font-medium leading-relaxed">
-                      {{ caseStudies[active].problem }}
-                    </p>
-                  </div>
-                  <div class="space-y-6">
-                    <div class="flex items-center gap-3">
-                       <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.4em]">The Intervention</span>
-                    </div>
-                    <p class="text-soft text-lg font-medium leading-relaxed">
-                      {{ caseStudies[active].solution }}
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Execution Protocol: Steps -->
-                <div class="pt-12 border-t border-glass">
-                  <span class="text-[0.6rem] font-black uppercase tracking-[0.5em] text-soft opacity-30 mb-8 block">Execution_Protocol</span>
-                  <div class="flex flex-wrap gap-x-12 gap-y-6">
-                    <div v-for="(step, si) in caseStudies[active].process" :key="si" class="flex items-center gap-4 group/step">
-                      <span class="text-accent text-sm font-black italic serif-font opacity-20 group-hover/step:opacity-100 transition-all tabular-nums">0{{ si + 1 }}</span>
-                      <span class="text-soft text-sm font-bold tracking-tight">{{ step }}</span>
-                    </div>
-                  </div>
-                </div>
+              <!-- Top Tier: Title & Industry -->
+              <div class="flex flex-col gap-8 max-w-4xl">
+                 <div class="flex items-center gap-4">
+                   <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em] font-mono">Case_Archive_0{{ active + 1 }}</span>
+                   <div class="h-px w-24 bg-accent/20"></div>
+                   <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-60">{{ caseStudies[active].industry }}</span>
+                 </div>
+                 <h3 class="group-hover:text-accent transition-colors duration-500">
+                   {{ caseStudies[active].title }}
+                 </h3>
               </div>
 
-              <!-- DATA & OUTCOME ARCHIVE -->
-              <div class="flex flex-col gap-8">
-                <!-- Primary Metric Widget -->
-                <div class="bg-accent/5 border border-glass rounded-[24px] md:rounded-[40px] p-8 md:p-10 space-y-4 relative overflow-hidden">
-                  <div class="flex items-center gap-3">
-                    <span class="text-accent text-[0.65rem] font-black uppercase tracking-widest">{{ caseStudies[active].metrics[0].label }}</span>
-                  </div>
-                  <div class="text-6xl lg:text-7xl font-black text-main tracking-tighter leading-none italic serif-font">{{ caseStudies[active].metrics[0].value }}</div>
-                  <p class="text-soft text-sm font-medium opacity-60 leading-snug">{{ caseStudies[active].metrics[0].sub }}</p>
+              <!-- Content Pillars: Problem, Impact, Value -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+                
+                <!-- Pillar 1: The Problem -->
+                <div class="space-y-8">
+                   <div class="flex items-center gap-3">
+                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                       <Icon name="lucide:alert-circle" class="h-5 w-5" />
+                     </div>
+                     <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Problem_Solved</span>
+                   </div>
+                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                     {{ caseStudies[active].problem }}
+                   </p>
                 </div>
 
-                <!-- Supporting Metrics Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
-                  <div v-for="(metric, mi) in caseStudies[active].metrics.slice(1)" :key="mi" class="bg-panel/40 border border-glass rounded-[24px] md:rounded-[32px] p-6 md:p-8 space-y-4">
-                    <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest block opacity-40">{{ metric.label }}</span>
-                    <div class="text-3xl font-black text-main tracking-tight">{{ metric.value }}</div>
-                    <p class="text-muted text-[0.65rem] font-medium leading-tight opacity-60">{{ metric.sub }}</p>
-                  </div>
+                <!-- Pillar 2: User Impact -->
+                <div class="space-y-8">
+                   <div class="flex items-center gap-3">
+                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                       <Icon name="lucide:users" class="h-5 w-5" />
+                     </div>
+                     <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">User_Experience_Impact</span>
+                   </div>
+                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                     {{ caseStudies[active].userImpact }}
+                   </p>
                 </div>
 
-                <!-- Impact Statement: Final Validation -->
-                <div class="bg-accent text-accent-fg rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-2xl shadow-accent/20 relative overflow-hidden group/impact">
-                  <div class="absolute top-0 right-0 h-24 w-24 bg-accent/5 rounded-bl-full translate-x-4 -translate-y-4 group-hover/impact:scale-110 transition-transform"></div>
-                  <div class="flex items-center gap-3 mb-6">
-                    <Icon name="lucide:award" class="h-5 w-5" />
-                    <span class="text-[0.65rem] font-black uppercase tracking-widest opacity-80">Strategic Outcome</span>
-                  </div>
-                  <p class="text-xl font-black leading-tight mb-3 italic serif-font">"{{ caseStudies[active].impact.headline }}"</p>
-                  <p class="text-accent-fg/70 text-sm font-medium leading-relaxed">{{ caseStudies[active].impact.detail }}</p>
+                <!-- Pillar 3: Business Value -->
+                <div class="space-y-8">
+                   <div class="flex items-center gap-3">
+                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                       <Icon name="lucide:trending-up" class="h-5 w-5" />
+                     </div>
+                     <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Business_Outcome</span>
+                   </div>
+                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                     {{ caseStudies[active].businessValue }}
+                   </p>
                 </div>
+
+              </div>
+
+              <!-- Bottom Tier: Strategy Quote -->
+              <div class="pt-16 border-t border-glass">
+                 <div class="flex flex-col md:flex-row md:items-center gap-8 justify-between">
+                    <div class="flex items-center gap-6">
+                      <div class="h-16 w-16 rounded-full border-2 border-glass bg-soft overflow-hidden p-2 flex items-center justify-center">
+                         <Icon name="lucide:shield-check" class="h-8 w-8 text-accent opacity-40" />
+                      </div>
+                      <div>
+                        <p class="text-main text-xl font-bold italic serif-font">"{{ caseStudies[active].impactHeadline }}"</p>
+                        <p class="text-muted text-[0.65rem] font-black uppercase tracking-widest opacity-60 mt-1">Strategic Architecture validation</p>
+                      </div>
+                    </div>
+                    <SharedButton 
+                      tag="a" 
+                      href="#" 
+                      variant="liquid" 
+                      class="h-12 px-8 rounded-full"
+                    >
+                      View Logic Archive
+                    </SharedButton>
+                 </div>
               </div>
 
             </div>
           </div>
         </Transition>
-      </div>
-
-      <!-- Conversion Bridge: Architectural CTA -->
-      <div class="mt-20 md:mt-32 flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-panel/20 border border-glass p-6 md:p-16 rounded-[32px] md:rounded-[56px]">
-        <div class="max-w-xl text-center md:text-left w-full">
-          <h4 class="text-main text-3xl md:text-5xl font-black tracking-tighter mb-6 leading-none">Facing a complex <br /> product barrier?</h4>
-          <p class="text-soft text-lg font-medium opacity-70">I transition enterprise products from "functional" to "authoritative" through surgical design execution.</p>
-        </div>
-        <div class="h-px w-full md:flex-1 bg-accent/5 hidden md:block"></div>
-        <div class="shrink-0">
-          <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-16 px-12" hover-text="Let's Solve It">
-            Discuss Case Strategy
-            <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
-          </SharedButton>
-        </div>
       </div>
 
     </div>
@@ -155,52 +142,28 @@ const direction = ref<'next' | 'prev'>('next')
 
 const caseStudies = [
   {
-    title: "Rebuilding KubeDB's Enterprise Core",
-    industry: "DevOps & Cloud Infrastructure",
-    problem: "A high-concurrency interface that suffered from cognitive overload, causing a >45% user drop-off during critical database scaling operations.",
-    solution: "Simplified the complexity through progressive disclosure and a unified role-based navigation system geared for elite operators.",
-    process: ["IA Audit", "Design Protocol", "Component Build", "User Logic Lab"],
-    metrics: [
-      { label: "Completion Rate", value: "+52%", sub: "Reduction in task abandonment across primary operator journeys" },
-      { label: "Action Velocity", value: "3.2×", sub: "Operators completed complex deployments 3.2× faster post-launch" },
-      { label: "Design Units", value: "120+", sub: "Production-ready components shipped into the unified UI library" },
-    ],
-    impact: {
-      headline: "Standardized across 6 enterprise products",
-      detail: "The protocol became the single source of authority for AppsCode's entire multi-product cloud ecosystem."
-    }
+    title: "Enterprise Database Core",
+    industry: "Cloud Infrastructure",
+    problem: "Operators were struggling with cognitive overload in high-concurrency environments, leading to costly deployment errors.",
+    userImpact: "Reduced operational friction by 60%, allowing engineers to execute complex scaling tasks with zero task-abandonment.",
+    businessValue: "Standardized the UI across 6 global products, cutting multi-product design debt and accelerating time-to-market by 3.2x.",
+    impactHeadline: "Consolidated AppsCode's entire multi-cloud ecosystem under one unified design protocol.",
   },
   {
-    title: "Zero-to-MVP: High-Frequency Reader",
+    title: "High-Frequency Reader",
     industry: "Linguistics & PWA",
-    problem: "Existing religious applications were fragmented, ad-heavy, and lacked the typographical precision required for deep concentration.",
-    solution: "Engineered a lightweight, offline-first PWA focused on distraction-free reading modes and modular typography systems.",
-    process: ["Typography Audit", "Offline Protocol", "PWA Launch", "Global Beta"],
-    metrics: [
-      { label: "Load Velocity", value: "1.2s", sub: "Average First Contentful Paint delivered on legacy 3G connections" },
-      { label: "Performance", value: "98/100", sub: "Lighthouse audit score for Accessibility and Technical Best Practices" },
-      { label: "Beta Traction", value: "200+", sub: "Verified active users within the first 14 days of the PWA pilot" },
-    ],
-    impact: {
-      headline: "Recognized as a Vue 3 reference system",
-      detail: "100% open-source success. Attracted 8 international developers as core contributors within 30 days."
-    }
+    problem: "Religious applications were historically fragmented and ad-heavy, failing to provide the typographic focus required for study.",
+    userImpact: "Created a distraction-free environment that increased average session duration by 150% and daily active users during the pilot.",
+    businessValue: "Established a reference system for Vue 3 PWAs that attracted international contributors and validated offline-first scaling.",
+    impactHeadline: "Redefined digital concentration through surgical typography and distraction-free logic.",
   },
   {
-    title: "Systemic Scaling for Cloud Teams",
+    title: "Systemic Team Scaling",
     industry: "Workflow Productivity",
-    problem: "Five independent product teams were rebuilding UI primitives in silos, wasting 30% of each sprint on visual debt and correction.",
-    solution: "Developed and deployed a central Design Token System and living component library to unify the entire development cycle.",
-    process: ["Silo Audit", "Token Strategy", "Component Sprint", "Team Adoption"],
-    metrics: [
-      { label: "Sprint Efficiency", value: "+30%", sub: "Elimination of UI re-work across all global product engineering teams" },
-      { label: "Library Depth", value: "85+", sub: "Atomic components and tokens integrated into the shared ecosystem" },
-      { label: "Consistency", value: "100%", sub: "Universal visual alignment achieved across the brand portfolio" },
-    ],
-    impact: {
-      headline: "Reduced QA cycles by 40% globally",
-      detail: "Predictable component behavior halved the onboarding time for new front-end engineering hires."
-    }
+    problem: "Siloed engineering teams were duplicating UI primitives, resulting in inconsistent products and wasted development cycles.",
+    userImpact: "Provided a single source of authority, reducing UI confusion and onboarding time for new front-end hires by 50%.",
+    businessValue: "Eliminated 30% of sprint waste caused by visual debt, achieving 100% brand consistency across the entire portfolio.",
+    impactHeadline: "Optimized global sprint efficiency and unified five independent product lifecycles.",
   }
 ]
 
@@ -215,7 +178,6 @@ function prev() {
 </script>
 
 <style scoped>
-
 .cs-nav-btn {
   display: flex;
   align-items: center;

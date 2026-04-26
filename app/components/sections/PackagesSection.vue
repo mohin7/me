@@ -10,9 +10,9 @@
         <div class="mb-10">
           <span class="section-label flex justify-center">Investment Models</span>
         </div>
-        <h2 class="text-main text-4xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
+        <h2 class="italic serif-font lowercase">
           The Strategic <br />
-          <span class="italic serif-font lowercase" style="color: var(--text-soft)">matrix.</span>
+          <span style="color: var(--text-soft)">matrix.</span>
         </h2>
         <p class="text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
           Engineering-grade design solutions priced for velocity. No hourly drift, just performance.
@@ -38,12 +38,12 @@
                <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-40">{{ pkg.tag }}</span>
             </div>
 
-            <div class="flex justify-between items-start mb-4"><h3 class="text-main text-3xl md:text-4xl font-black tracking-tighter leading-none">
+            <div class="flex justify-between items-start mb-4"><h3>
               {{ pkg.name }}</h3><Icon v-if="pkg && pkg.icon" :name="pkg.icon" class="h-8 w-8 text-accent/20 group-hover:text-accent transition-colors duration-500" /></div>
             
             <div class="flex items-baseline gap-2 mb-8">
-              <span class="text-main text-4xl font-black tracking-tighter">{{ pkg.price }}</span>
-              <span class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
+              <span class="text-main text-2xl md:text-3xl font-black tracking-tighter">{{ pkg.price }}</span>
+              <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
             </div>
 
             <p class="text-soft text-sm font-medium leading-relaxed opacity-60">
@@ -97,7 +97,7 @@
                  <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
                  <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Venture Partnership Protocol</span>
               </div>
-              <h2 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-8">
+              <h2 class="mb-8">
                 Building for <br />
                 <span class="italic serif-font lowercase" style="color: var(--text-soft)">strategic equity.</span>
               </h2>
@@ -133,52 +133,52 @@ const packages = [
   {
     name: 'Pitch MVP', icon: 'lucide:cpu',
     tag: 'Early_Stage',
-    price: '$1,450',
-    unit: 'One-time',
-    description: 'Precision-engineered prototype for rapid investor validation and early brand scaling.',
+    price: '$800 — $1.5k',
+    unit: 'Investment',
+    description: 'High-fidelity prototypes engineered for rapid investor validation and early brand scaling.',
     target: 'Figma / High-Fi Proto',
     velocity: 'Rapid_Sprint',
     popular: false,
     features: [
       'Core Brand Identity',
-      'High-Conversion Landing Page',
-      'Upto 10 Strategic App Screens',
+      'Strategic Landing Page',
+      'Upto 10 App Screens',
       '3-Day Accelerated Delivery',
-      'Investor-Ready Prototype'
+      'Investor-Ready Assets'
     ]
   },
   {
     name: 'Production MVP', icon: 'lucide:rocket',
     tag: 'Market_Entry',
-    price: '$3,200',
-    unit: 'One-time',
-    description: 'The foundation of your market presence. High-fidelity systems ready for production deployment.',
+    price: '$1.8k — $3k',
+    unit: 'Investment',
+    description: 'The architectural foundation for your market presence. High-performance systems built for scale.',
     target: 'Nuxt 3 / Vue 3 / GSAP',
     velocity: 'Standard_Batch',
     popular: true,
     features: [
-      'Full Brand System',
-      '4-Page High-Momentum Web',
+      'Full Design System',
+      '4-Page High-Velocity Web',
       'Upto 20 Advanced UI Screens',
       '7-Day Engineering Sprint',
-      'Full Pitch Deck Design'
+      'Conversion Optimization'
     ]
   },
   {
     name: 'Full Partnership', icon: 'lucide:crown',
     tag: 'Embedded_Lead',
-    price: '$5,900',
+    price: 'Starting at $3k',
     unit: '/ Month',
-    description: 'Long-term architectural commitment. Embedding as your strategic design engineering lead.',
+    description: 'Long-term strategic commitment. Embedding as your fractional Head of Design & Engineering.',
     target: 'Full Ecosystem Control',
     velocity: 'Continuous_Ops',
     popular: false,
     features: [
-      'Unlimited Functional Design',
-      'Full SaaS / Web App Ecosystem',
-      '4 Weeks Dedicated Support',
-      'Strategic Decision Partner',
-      'Mid-Level Support included'
+      'Unlimited High-End Design',
+      'Full SaaS / Web Ecosystem',
+      'Dedicated Engineering Lead',
+      'Strategic Product Partner',
+      'Direct WhatsApp Access'
     ]
   }
 ]

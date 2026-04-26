@@ -1,197 +1,108 @@
 <template>
-  <div ref="containerRef" class="relative">
-    <!-- Scroll Spacer (Only active on Desktop) -->
-    <div 
-      :style="{ height: isLargeScreen ? `${(steps.length * 75) + 100}vh` : 'auto' }" 
-      class="relative"
-    >
+  <section id="process" class="py-20 md:py-32 bg-page relative overflow-hidden transition-colors duration-500">
+    <!-- Fine Grid Blueprint -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
+         style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Sticky Section Logic -->
-      <section 
-        id="process" 
-        :class="[
-          isLargeScreen ? 'absolute top-0 left-0 w-full h-screen flex flex-col justify-center overflow-hidden' : 'relative py-20 px-4 flex flex-col',
-          'bg-page transition-colors duration-500'
-        ]"
-        :style="isLargeScreen ? { transform: `translate3d(0, ${sectionOffset}px, 0)` } : {}"
-      >
-        <!-- Subtle Grid Background -->
-        <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
-             style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
-
-        <div class="max-w-7xl mx-auto md:px-6 lg:px-8 relative z-10 w-full">
-          
-          <!-- Section Header -->
-          <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
-            <div class="mb-10">
-               <span class="section-label flex justify-center">The Methodology</span>
-            </div>
-            <h2 class="text-main text-4xl font-black tracking-tighter md:text-7xl leading-[0.85]">
-              Systematic <br />
-              <span class="italic serif-font lowercase" style="color: var(--text-soft)">delivery.</span>
-            </h2>
-            <p class="text-soft text-lg font-medium leading-relaxed max-w-[480px] mt-8">
-              Design treated as a core engineering discipline: results-driven, scalable, and built for speed.
-            </p>
+      <!-- Compact Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
+        <div class="max-w-2xl">
+          <div class="reveal mb-6">
+             <span class="section-label">Execution Framework</span>
           </div>
+          <h2 class="reveal italic serif-font lowercase">
+            Systematic <span style="color: var(--text-soft)">delivery.</span>
+          </h2>
+        </div>
+        <p class="reveal text-soft text-base font-medium max-w-[320px] md:text-right">
+          A high-velocity engineering protocol designed for founders who value precision over process.
+        </p>
+      </div>
 
-          <!-- Slide/List Wrapper -->
-          <div class="relative w-full">
-            <!-- Progress Line (Desktop only) -->
-            <div v-if="isLargeScreen" class="absolute -top-12 left-0 right-0 h-px bg-accent/10">
-              <div 
-                class="h-full bg-accent transition-all duration-150" 
-                :style="{ width: `${scrollPercent}%` }"
-              ></div>
+      <!-- Pipeline Grid: 4 Columns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div 
+          v-for="(step, idx) in steps" 
+          :key="idx"
+          class="reveal group relative"
+          :class="`reveal-delay-${idx + 1}`"
+        >
+          <!-- Connection Line (Desktop) -->
+          <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-1/2 -right-2 w-4 h-px bg-glass z-0"></div>
+
+          <!-- Compact Architectural Card -->
+          <div class="relative h-full flex flex-col p-6 md:p-8 rounded-[24px] bg-panel/5 border border-glass transition-all duration-500 hover:bg-panel/10 hover:border-accent/30 group-hover:shadow-2xl group-hover:shadow-accent/5">
+            
+            <!-- Phase Badge -->
+            <div class="flex justify-between items-center mb-10">
+               <span class="text-accent text-[0.6rem] font-bold tracking-[0.2em] font-mono opacity-60">PHASE_0{{ idx + 1 }}</span>
+               <div class="h-8 w-8 rounded-lg bg-accent/5 flex items-center justify-center text-main group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">
+                 <Icon v-if="step && step.icon" :name="step.icon" class="h-4 w-4" />
+               </div>
             </div>
 
-            <!-- Cards Matrix -->
-            <div 
-              :class="[
-                isLargeScreen ? 'flex gap-12 will-change-transform' : 'flex flex-col gap-8'
-              ]"
-              :style="isLargeScreen ? { transform: `translate3d(-${translateX}px, 0, 0)` } : {}"
-            >
-              <div 
-                v-for="(step, idx) in steps" 
-                :key="idx"
-                class="shrink-0 w-full lg:w-[560px]"
-              >
-                <!-- Minimalist Card -->
-                <div class="relative group rounded-[32px] border border-glass bg-panel/10 p-8 md:p-12 h-full flex flex-col min-h-[380px] hover:border-glass transition-all duration-500">
-                  <div class="flex items-center gap-3 mb-10">
-                     <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.3em] font-mono">Phase_0{{ idx + 1 }}</span>
-                     <div class="h-1 w-1 rounded-full bg-accent/20"></div>
-                     <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-40">{{ step.category }}</span>
-                  </div>
+            <!-- Content -->
+            <div class="mb-8">
+              <h3 class="group-hover:text-accent transition-colors">
+                 {{ step.title }}
+              </h3>
+              <p class="text-muted text-sm font-medium leading-relaxed">
+                 {{ step.description }}
+              </p>
+            </div>
 
-                  <div class="flex justify-between items-start gap-6 mb-8">
-                    <h3 class="text-main text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] group-hover:text-accent transition-colors flex-1">
-                       {{ step.title }}
-                    </h3><div class="h-12 w-12 rounded-xl bg-accent/5 border border-glass flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500"><Icon v-if="step && step.icon" :name="step.icon" class="h-6 w-6" /></div>
-                  </div>
-
-                  <p class="text-soft text-base md:text-lg font-medium leading-relaxed mb-10 opacity-80">
-                     {{ step.description }}
-                  </p>
-
-                  <div class="mt-auto space-y-8 pt-8 border-t border-glass">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div v-for="output in step.outputs" :key="output" class="flex items-center gap-3">
-                         <div class="h-1 w-1 rounded-full bg-accent/40"></div>
-                         <span class="text-soft text-[0.75rem] font-bold tracking-tight">{{ output }}</span>
-                      </div>
-                    </div>
-                    <p class="text-muted text-xs font-medium leading-relaxed italic opacity-60">
-                      {{ step.strategy }}
-                    </p>
-                  </div>
-                </div>
+            <!-- Compact Outputs List -->
+            <div class="mt-auto pt-6 border-t border-glass space-y-2">
+              <div v-for="output in step.outputs" :key="output" class="flex items-center gap-2">
+                 <div class="h-1 w-1 rounded-full bg-accent/30 group-hover:bg-accent transition-colors"></div>
+                 <span class="text-soft text-[0.7rem] font-bold">{{ output }}</span>
               </div>
             </div>
           </div>
-
         </div>
-      </section>
+      </div>
+
+      <!-- Strategy Footer Note -->
+      <div class="reveal mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-full bg-panel/20 border border-glass w-fit mx-auto">
+         <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
+         <span class="text-muted text-[0.65rem] font-bold uppercase tracking-widest">Protocol-Driven Consistency Guaranteed</span>
+      </div>
+
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const containerRef = ref<HTMLElement | null>(null)
-const translateX = ref(0)
-const scrollPercent = ref(0)
-const sectionOffset = ref(0)
-const isLargeScreen = ref(false)
-
-let cachedSectionTop = 0
-let cachedSectionHeight = 0
-
-const updateCache = () => {
-  isLargeScreen.value = window.innerWidth >= 1024
-  if (containerRef.value) {
-    cachedSectionTop = containerRef.value.offsetTop
-    cachedSectionHeight = containerRef.value.offsetHeight
-  }
-}
-
-const updateScrollLogic = (virtualY: number) => {
-  if (!containerRef.value || !isLargeScreen.value) return
-  
-  const viewportHeight = window.innerHeight
-  
-  const start = cachedSectionTop
-  const end = cachedSectionTop + cachedSectionHeight - viewportHeight
-  
-  let distance = virtualY - start
-  if (distance < 0) {
-    distance = 0
-    sectionOffset.value = 0
-  } else if (distance > (cachedSectionHeight - viewportHeight)) {
-    distance = cachedSectionHeight - viewportHeight
-    sectionOffset.value = cachedSectionHeight - viewportHeight
-  } else {
-    sectionOffset.value = distance
-  }
-  
-  const stepCount = steps.length
-  const cardWidth = 560 + 48
-  const maxTranslate = (cardWidth * (stepCount - 1))
-  
-  const progress = distance / (cachedSectionHeight - viewportHeight)
-  translateX.value = progress * maxTranslate
-  scrollPercent.value = progress * 100
-}
-
-const handleSmoothScroll = (e: any) => {
-  updateScrollLogic(e.detail)
-}
-
-onMounted(() => {
-  updateCache()
-  setTimeout(updateCache, 1000)
-  window.addEventListener('smooth-scroll', handleSmoothScroll)
-  window.addEventListener('resize', updateCache)
-})
-onUnmounted(() => {
-  window.removeEventListener('smooth-scroll', handleSmoothScroll)
-  window.removeEventListener('resize', updateCache)
-})
-
 const steps = [
   {
-    title: 'Strategy & Analysis', icon: 'lucide:search',
-    category: 'Protocol 01',
-    description: 'Deconstructing technical requirements and business variables into a battle-hardened product roadmap.',
-    strategy: 'Mapping product logic to venture-scale goals to identify market advantages.',
+    title: 'Strategy', 
+    icon: 'lucide:search',
+    description: 'Deconstructing technical requirements into a battle-hardened roadmap.',
     outputs: ['Competitive Audit', 'Conversion Roadmap', 'Project Strategy'],
   },
   {
-    title: 'Architectural UX', icon: 'lucide:layout',
-    category: 'Protocol 02',
-    description: 'Building the structural logic of your product. Defining clear user paths before a single pixel is moved.',
-    strategy: 'Ensuring high-momentum performance through logic-first IA.',
-    outputs: ['Experience Flows', 'Site Hierarchy', 'Logic Maps'],
+    title: 'Structure', 
+    icon: 'lucide:layout',
+    description: 'Building structural logic and clear user paths before design begins.',
+    outputs: ['Experience Flows', 'Hierarchy Maps', 'Logic Audits'],
   },
   {
-    title: 'Visual Engineering', icon: 'lucide:palette',
-    category: 'Protocol 03',
-    description: 'Scaling high-performance design systems from core primitives to complex enterprise interfaces.',
-    strategy: 'Crafting a visual identity that balances authority with modular scalability.',
-    outputs: ['Design System 1.0', 'High-Fidelity UI', 'Prototyping'],
+    title: 'Visuals', 
+    icon: 'lucide:palette',
+    description: 'Scaling high-performance design systems for enterprise interfaces.',
+    outputs: ['Design System 1.0', 'High-Fi UI', 'Interactive Proto'],
   },
   {
-    title: 'Delivery & Scale', icon: 'lucide:rocket',
-    category: 'Protocol 04',
-    description: 'Bridging the gap between code and design to ensure your product launches perfectly into production.',
-    strategy: 'Protecting design integrity during deployment through rigorous QA.',
-    outputs: ['Production Code', 'Quality Assurance', 'Launch Report'],
+    title: 'Scale', 
+    icon: 'lucide:rocket',
+    description: 'Bridging the gap between code and design for a perfect launch.',
+    outputs: ['Production Code', 'QA Report', 'Scale Roadmap'],
   }
 ]
 </script>
 
 <style scoped>
-#process { z-index: 50; }
+#process { z-index: 10; }
 </style>

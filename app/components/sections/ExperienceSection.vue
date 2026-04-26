@@ -29,7 +29,7 @@
             <div class="h-px w-24 bg-accent/20 mt-2"></div>
           </div>
 
-          <h2 class="text-main mb-8 text-4xl font-black tracking-tighter md:text-6xl leading-[0.85]">
+          <h2 class="mb-8">
             Career <br />
             <span class="italic serif-font lowercase" style="color: var(--text-soft)">timeline.</span>
           </h2>
@@ -61,7 +61,7 @@
                   </div>
 
                   <div class="flex flex-wrap items-baseline gap-4 mb-8">
-                    <h3 class="text-main text-2xl md:text-4xl font-black tracking-tighter group-hover:text-accent transition-colors">
+                    <h3 class="group-hover:text-accent transition-colors">
                        {{ job.role }}
                     </h3>
                     <div class="h-px w-4 bg-accent/20 mt-auto mb-4"></div>

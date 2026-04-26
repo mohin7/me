@@ -47,12 +47,12 @@
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-6xl mx-auto mb-4 text-center px-4 md:px-0">
+          <h1 class="hero-title max-w-6xl mx-auto mb-2 text-center px-4 md:px-0">
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
-            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.3em]">
+            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
               <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
-              <div class="col-start-1 row-start-1 relative flex items-center justify-center py-4 px-1">
+              <div class="col-start-1 row-start-1 relative flex items-center justify-center px-1">
                  <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-2" :style="{ width: revealWidth }">
                    <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
                  </div>

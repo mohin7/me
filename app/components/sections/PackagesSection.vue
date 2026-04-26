@@ -74,10 +74,10 @@
             href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" 
             :variant="pkg.popular ? 'primary' : 'secondary'"
             size="lg" 
-            class="w-full h-14 rounded-full" hover-text="Get Started"
+            class="w-full h-14 rounded-full" :hover-text="pkg.hoverText"
           >
 
-            Initiate Project
+            Begin Partnership
             <template #right>
               <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
             </template>
@@ -114,7 +114,7 @@
                  </div>
               </div>
 
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="See Value">Explore Deal</SharedButton>
+              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="View Potential">Secure Strategic Equity</SharedButton>
               <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
            </div>
          </div>
@@ -134,6 +134,7 @@ const packages = [
     target: 'Figma / High-Fi Proto',
     velocity: 'Rapid_Sprint',
     popular: false,
+    hoverText: 'Secure Roadmap',
     features: [
       'Core Brand Identity',
       'Strategic Landing Page',
@@ -151,6 +152,7 @@ const packages = [
     target: 'Nuxt 3 / Vue 3 / SCSS',
     velocity: 'Standard_Batch',
     popular: true,
+    hoverText: 'Start Sprint',
     features: [
       'Full Design System',
       '4-Page High-Velocity Web',
@@ -168,6 +170,7 @@ const packages = [
     target: 'Full Ecosystem Control',
     velocity: 'Continuous_Ops',
     popular: false,
+    hoverText: 'Let\'s Discuss',
     features: [
       'Unlimited High-End Design',
       'Full SaaS / Web Ecosystem',

@@ -73,14 +73,14 @@
               target="_blank"
               variant="primary" 
               size="lg" 
-              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Discuss Roadmap"
+              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Secure Roadmap"
             >
-              Schedule Strategy Call
+              Book 30-Min Strategy
               <template #right>
                 <Icon name="lucide:calendar" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Say Hello"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>WhatsApp Me</SharedButton>
+            <SharedButton tag="a" href="https://wa.me/8801634419564" target="_blank" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Instant Reply"><template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>Direct Message</SharedButton>
           </div>
 
           <!-- Integrated Precision Proof Bar -->

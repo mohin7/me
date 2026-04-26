@@ -17,7 +17,8 @@
           <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">{{ group.title }}</h4>
           <ul class="space-y-4">
             <li v-for="link in group.links" :key="link.name">
-              <a :href="link.href" target="_blank" class="text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-2">
+              <a :href="link.href" target="_blank" class="group/footer-link text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-3">
+                <Icon v-if="link.icon" :name="link.icon" class="h-4 w-4 opacity-40 group-hover/footer-link:opacity-100 transition-opacity" />
                 {{ link.name }}
               </a>
             </li>
@@ -71,9 +72,9 @@ const footerGroups = [
   {
     title: 'Ecosystem',
     links: [
-      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mohin7/' },
-      { name: 'GitHub', href: 'https://github.com/mohin7' },
-      { name: 'Dribbble', href: 'https://dribbble.com/mohin7' }
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mohin7/', icon: 'lucide:linkedin' },
+      { name: 'GitHub', href: 'https://github.com/mohin7', icon: 'lucide:github' },
+      { name: 'Dribbble', href: 'https://dribbble.com/mohin7', icon: 'lucide:dribbble' }
     ]
   }
 ]

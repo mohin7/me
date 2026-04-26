@@ -1,10 +1,10 @@
 <template>
-  <div class="site-shell" :class="themeClass">
+  <div class="site-shell" :class="[themeClass, { 'is-touch': isTouchDevice }]">
     <SharedHeader />
     
     <!-- Smooth Scroll Wrapper -->
     <!-- ── Liquid Bubble Cursor (Zero-Lag Core) ── -->
-    <div v-if="!isTouchDevice" class="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+    <div v-if="!isTouchDevice" class="custom-cursor-container pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
       
       <!-- Lagged Bubble Aura / Focus Lens -->
       <div 
@@ -141,10 +141,16 @@ const smoothLoop = () => {
 }
 
 onMounted(() => {
-  window.addEventListener('mousemove', handleMouseMove)
-  isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window
-  
+  // Enhanced Touch Detection
+  const checkTouch = () => {
+    isTouchDevice.value = window.matchMedia('(pointer: coarse)').matches || 
+                         'ontouchstart' in window || 
+                         navigator.maxTouchPoints > 0
+  }
+  checkTouch()
+
   if (!isTouchDevice.value) {
+    window.addEventListener('mousemove', handleMouseMove)
     updateHeight()
     window.addEventListener('resize', updateHeight)
     // Mutation observer to handle dynamic content height changes
@@ -219,7 +225,7 @@ html, body {
 
 .site-shell {
   min-height: 100vh;
-  cursor: none; /* Hide default cursor */
+  cursor: auto; 
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 300ms ease, color 300ms ease;
@@ -229,9 +235,34 @@ html, body {
   caret-color: var(--accent);
 }
 
+.site-shell:not(.is-touch) {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+  .site-shell {
+    cursor: auto !important;
+  }
+}
+
 /* ── Explicit Typographic Separation ── */
-h1, h2, h3, h4, h5, h6, .display-font, .hero-title, a, button, [role="button"] {
+.site-shell:not(.is-touch) h1, 
+.site-shell:not(.is-touch) h2, 
+.site-shell:not(.is-touch) h3, 
+.site-shell:not(.is-touch) h4, 
+.site-shell:not(.is-touch) h5, 
+.site-shell:not(.is-touch) h6, 
+.site-shell:not(.is-touch) .display-font, 
+.site-shell:not(.is-touch) .hero-title, 
+.site-shell:not(.is-touch) a, 
+.site-shell:not(.is-touch) button, 
+.site-shell:not(.is-touch) [role="button"] {
   cursor: none !important;
+}
+h1, h2, h3, h4, h5, h6, .display-font, .hero-title, a, button, [role="button"] {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 800 !important;
   letter-spacing: -0.04em !important;

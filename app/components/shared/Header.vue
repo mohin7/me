@@ -29,21 +29,56 @@
       </div>
 
       <!-- Desktop Actions -->
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Social Ecosystem (Pill) -->
+        <div class="flex items-center h-10 px-1.5 rounded-full border border-accent/10 bg-accent/[0.02] backdrop-blur-sm">
+          <a href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noopener" 
+             class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
+            <Icon name="lucide:linkedin" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
+            <!-- Tooltip -->
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">LinkedIn</span>
+          </a>
+          <a href="https://github.com/mohin7" target="_blank" rel="noopener" 
+             class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
+            <Icon name="lucide:github" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">GitHub</span>
+          </a>
+          <a href="https://dribbble.com/mohin7" target="_blank" rel="noopener" 
+             class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
+            <Icon name="lucide:dribbble" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">Dribbble</span>
+          </a>
+        </div>
 
-        <button type="button" class="theme-toggle" @click="toggleTheme" :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
-          <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
+        <div class="h-4 w-px bg-accent/10"></div>
+        
+        <!-- Theme Utility -->
+        <button type="button" 
+                class="group/theme relative flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/15 hover:border-accent/20 transition-all duration-300 active:scale-90" 
+                @click="toggleTheme" 
+                :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
+          <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4 group-hover/theme:scale-125 transition-transform duration-300" />
+          <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/theme:opacity-100 group-hover/theme:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">{{ theme === 'dark' ? 'Light' : 'Dark' }}</span>
         </button>
-        <div class="h-8 w-px bg-accent/10"></div>
-        <a href="/img/uiux-specialist.pdf" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false">
-          <div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center">
-            <div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center">
-              <span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Resume <Icon name="lucide:file-text" class="h-3 w-3" /></span>
-              <span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent-fg">Download <Icon name="lucide:download" class="h-3 w-3" /></span>
-            </div>
-          </div>
-          <div class="shimmer-bg"></div>
-        </a>
+
+        <div class="h-4 w-px bg-accent/10"></div>
+
+        <!-- Primary Action -->
+        <SharedButton 
+          tag="a" 
+          href="/img/uiux-specialist.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="primary"
+          size="lg"
+          class="h-10 px-8 rounded-full"
+          hover-text="Download"
+        >
+          Resume
+          <template #right>
+            <Icon name="lucide:file-text" class="h-3.5 w-3.5" />
+          </template>
+        </SharedButton>
       </div>
 
       <!-- Mobile Actions -->
@@ -92,8 +127,20 @@
 
           <!-- Mobile Menu Footer -->
           <div class="mt-auto pt-12 space-y-8">
-            <SharedButton tag="a" href="/img/uiux-specialist.pdf" target="_blank" variant="primary" size="lg" fullWidth @click="isMobileMenuOpen = false">
+            <SharedButton 
+              tag="a" 
+              href="/img/uiux-specialist.pdf" 
+              target="_blank" 
+              variant="primary" 
+              size="lg" 
+              fullWidth 
+              hover-text="Download"
+              @click="isMobileMenuOpen = false"
+            >
               Resume
+              <template #right>
+                <Icon name="lucide:file-text" class="h-4 w-4" />
+              </template>
             </SharedButton>
             
             <div class="flex items-center justify-between border-t border-glass pt-8">

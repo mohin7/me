@@ -22,7 +22,10 @@
            <slot />
            <slot name="right"></slot>
          </div>
-         <div :class="['h-[2em] w-full flex items-center justify-center italic font-bold px-1', variant === 'primary' ? 'text-accent-fg' : 'text-accent' ]">
+         <div :class="[
+           'h-[2em] w-full flex items-center justify-center italic font-bold px-1 transition-colors duration-300', 
+           (['primary', 'solid'].includes(variant)) ? 'text-accent-fg' : 'text-accent' 
+         ]">
            {{ hoverText }}
          </div>
       </div>
@@ -69,6 +72,7 @@ const variantClasses = computed(() => {
   switch (props.variant) {
     case 'primary':
     case 'solid':   return 'btn-primary'
+    case 'secondary':
     case 'outline': return 'btn-outline'
     case 'glass':   return 'btn-glass'
     case 'liquid':  return 'btn-liquid'
@@ -130,13 +134,13 @@ const sizeClasses = computed(() => {
   left: 100%;
 }
 
-.btn-outline {
+.btn-outline, .btn-secondary {
   border: 1px solid var(--border-glass);
   color: var(--text-main);
   background: transparent;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-outline:hover {
+.btn-outline:hover, .btn-secondary:hover {
   border-color: rgba(var(--accent-rgb), 0.4);
   background: rgba(var(--accent-rgb), 0.05);
   transform: translateY(-2px);

@@ -28,9 +28,9 @@
            target="_blank"
            size="lg" 
            variant="primary"
-           class="w-full md:w-auto px-10 h-14 rounded-full" hover-text="Unlock Growth"
+           class="w-full md:w-auto px-10 h-14 rounded-full" hover-text="Secure Roadmap"
          >
-           Schedule Strategy Call
+           Book 30-Min Strategy
            <template #right><Icon name="lucide:calendar" class="h-4 w-4" /></template>
          </SharedButton>
 

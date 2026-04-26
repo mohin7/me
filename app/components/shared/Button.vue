@@ -47,7 +47,7 @@ import { computed, ref } from 'vue'
 
 const isHovered = ref(false)
 
-type Variant = 'primary' | 'solid' | 'outline' | 'ghost' | 'glass' | 'liquid'
+type Variant = 'primary' | 'solid' | 'secondary' | 'outline' | 'ghost' | 'glass' | 'liquid'
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 const props = withDefaults(defineProps<{

@@ -43,7 +43,7 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.3em]">Available for new projects</span>
+            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em]">Capacity: 1 Slot Open for Q2 Partnership</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->

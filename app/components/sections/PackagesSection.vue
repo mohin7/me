@@ -21,9 +21,9 @@
              :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
           <!-- State Indicator -->
-          <div v-if="pkg.popular" class="absolute top-0 right-0 p-4">
-             <div class="px-3 py-1 border border-glass text-soft text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full">
-               System_Recommended
+          <div v-if="pkg.popular" class="absolute top-0 right-0 p-6">
+             <div class="px-4 py-1.5 border border-accent/20 bg-accent/5 text-accent text-[0.55rem] font-black uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(var(--accent-rgb),0.1)]">
+               Enterprise_Choice
              </div>
           </div>
 

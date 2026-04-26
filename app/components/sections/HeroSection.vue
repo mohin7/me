@@ -47,7 +47,7 @@
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-6xl mx-auto mb-10 text-center px-4 md:px-0">
+          <h1 class="hero-title max-w-6xl mx-auto mb-4 text-center px-4 md:px-0">
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
             <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.3em]">
@@ -185,12 +185,12 @@ const logos = [
 
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-size: clamp(2.25rem, 8vw, 5rem);
   line-height: 1.05;
 }
 
 .hero-sub {
-  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   color: var(--text-soft);
   letter-spacing: -0.005em;
 }

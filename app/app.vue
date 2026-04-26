@@ -91,15 +91,11 @@ const updateHeight = () => {
 }
 
 const smoothLoop = () => {
-  if (isTouchDevice.value) {
-    currentOffset.value = window.pageYOffset
-    window.dispatchEvent(new CustomEvent('smooth-scroll', { detail: currentOffset.value }))
-    rafId = requestAnimationFrame(smoothLoop)
-    return
-  }
+  if (isTouchDevice.value) return;
 
   targetOffset = window.pageYOffset
   currentOffset.value += (targetOffset - currentOffset.value) * scrollSpeed
+  
   if (smoothWrapper.value) {
     // @ts-ignore
     window.__SMOOTH_SCROLL_OFFSET__ = currentOffset.value
@@ -120,6 +116,12 @@ onMounted(() => {
     const observer = new MutationObserver(updateHeight)
     observer.observe(document.body, { childList: true, subtree: true })
     smoothLoop()
+  } else {
+    // Native scroll tracking for mobile
+    window.addEventListener('scroll', () => {
+      currentOffset.value = window.pageYOffset
+      window.dispatchEvent(new CustomEvent('smooth-scroll', { detail: currentOffset.value }))
+    }, { passive: true })
   }
 
   // Scroll-triggered reveal animations
@@ -163,15 +165,15 @@ html, body {
 }
 
 .smooth-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   will-change: transform;
   z-index: 2;
 }
 
 .is-smooth {
+  position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: auto;
 }
 
@@ -201,8 +203,13 @@ h1, h2, h3, h4, h5, h6, .display-font, .hero-title {
 }
 
 h1 { font-size: clamp(3.5rem, 12vw, 6.8rem); } /* φ^4 */
-h2 { font-size: clamp(2.5rem, 8vw, 4.2rem); }  /* φ^3 */
-h3 { font-size: clamp(1.5rem, 4vw, 1.6rem); }   /* φ^1 - Ideal for Card Titles */
+h2 {
+  font-size: clamp(1.85rem, 6vw, 4.2rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 4vw, 1.6rem);
+}   /* φ^1 - Ideal for Card Titles */
 h4 { font-size: clamp(1.1rem, 3vw, 1.25rem); }  /* Base+ */
 
 p, .prose {

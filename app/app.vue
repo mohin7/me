@@ -3,12 +3,28 @@
     <SharedHeader />
     
     <!-- Smooth Scroll Wrapper -->
-    <!-- ── Dynamic Spotlight Node ── -->
-    <div 
-      v-if="!isTouchDevice"
-      class="pointer-events-none fixed inset-0 z-[1] will-change-transform"
-      :style="{ background: `radial-gradient(600px circle at ${mouseX}px ${mouseY}px, var(--accent-spotlight), transparent 80%)` }"
-    ></div>
+    <!-- ── Liquid Bubble Cursor (Zero-Lag Core) ── -->
+    <div v-if="!isTouchDevice" class="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+      
+      <!-- Lagged Bubble Aura / Focus Lens -->
+      <div 
+        class="absolute rounded-full border border-accent/20 will-change-transform"
+        :class="isHovering ? 'h-24 w-24 bg-accent/[0.02] border-accent/40 backdrop-blur-none shadow-xl' : 'h-8 w-8 bg-accent/5 backdrop-blur-[4px]'"
+        :style="{ 
+          transform: `translate3d(var(--aura-x), var(--aura-y), 0) translate(-50%, -50%)`,
+          transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s, border 0.5s, backdrop-filter 0.5s'
+        }"
+      ></div>
+
+      <!-- Zero-Lag Precision Core -->
+      <div 
+        class="absolute h-1.5 w-1.5 bg-accent rounded-full will-change-transform"
+        :style="{ 
+          transform: `translate3d(var(--m-x), var(--m-y), 0) translate(-50%, -50%)`,
+          opacity: isHovering ? 0 : 0.8
+        }"
+      ></div>
+    </div>
 
     <div 
       ref="smoothWrapper" 
@@ -68,14 +84,26 @@ const virtualHeight = ref(0)
 const currentOffset = ref(0)
 const mouseX = ref(0)
 const mouseY = ref(0)
+const auraX = ref(0)
+const auraY = ref(0)
+const isHovering = ref(false)
+
 const scrollSpeed = 0.08
 const isTouchDevice = ref(false)
 let targetOffset = 0
 let rafId: number | null = null
 
 const handleMouseMove = (e: MouseEvent) => {
+  // Direct CSS variable injection (Zero-Lag)
+  document.documentElement.style.setProperty('--m-x', `${e.clientX}px`)
+  document.documentElement.style.setProperty('--m-y', `${e.clientY}px`)
+
   mouseX.value = e.clientX
   mouseY.value = e.clientY
+  
+  // Check if hovering over interactive element
+  const target = e.target as HTMLElement
+  isHovering.value = !!target.closest('a, button, .hover-lift, .cs-nav-btn, [role="button"]')
 }
 
 const scrollToTop = () => {
@@ -91,6 +119,13 @@ const updateHeight = () => {
 }
 
 const smoothLoop = () => {
+  // Snappier Bubble Lerping
+  auraX.value += (mouseX.value - auraX.value) * 0.3
+  auraY.value += (mouseY.value - auraY.value) * 0.3
+
+  document.documentElement.style.setProperty('--aura-x', `${auraX.value}px`)
+  document.documentElement.style.setProperty('--aura-y', `${auraY.value}px`)
+
   if (isTouchDevice.value) return;
 
   targetOffset = window.pageYOffset
@@ -184,6 +219,7 @@ html, body {
 
 .site-shell {
   min-height: 100vh;
+  cursor: none; /* Hide default cursor */
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 300ms ease, color 300ms ease;
@@ -194,7 +230,8 @@ html, body {
 }
 
 /* ── Explicit Typographic Separation ── */
-h1, h2, h3, h4, h5, h6, .display-font, .hero-title {
+h1, h2, h3, h4, h5, h6, .display-font, .hero-title, a, button, [role="button"] {
+  cursor: none !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 800 !important;
   letter-spacing: -0.04em !important;
@@ -231,7 +268,7 @@ p, .prose {
   
   --accent: hsl(240, 10%, 8%);          /* Obsidian Accent */
   --accent-fg: hsl(0, 0%, 100%);
-  --accent-spotlight: hsla(240, 10%, 8%, 0.03);
+  --accent-spotlight: hsla(240, 10%, 8%, 0.06);
   --border-glass: hsla(240, 10%, 8%, 0.09);
   
   --card-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.03);
@@ -250,7 +287,7 @@ p, .prose {
   
   --accent: hsl(0, 0%, 100%);          /* Pure Light Accent */
   --accent-fg: hsl(240, 10%, 3.5%);
-  --accent-spotlight: hsla(0, 0%, 100%, 0.03);
+  --accent-spotlight: hsla(0, 0%, 100%, 0.07);
   --border-glass: hsla(0, 0%, 100%, 0.09);
   
   --card-shadow: 0 10px 50px -10px hsla(0, 0%, 0%, 0.382);

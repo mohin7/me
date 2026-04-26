@@ -23,10 +23,14 @@
            <slot name="right"></slot>
          </div>
          <div :class="[
-           'h-[2em] w-full flex items-center justify-center italic font-bold px-1 transition-colors duration-300', 
+           'h-[2em] w-full flex items-center justify-center gap-2 italic font-bold px-1 transition-colors duration-300', 
            (['primary', 'solid'].includes(variant)) ? 'text-accent-fg' : 'text-accent' 
          ]">
+           <slot v-if="$slots.hoverLeft" name="hoverLeft"></slot>
+           <slot v-else name="left"></slot>
            {{ hoverText }}
+           <slot v-if="$slots.hoverRight" name="hoverRight"></slot>
+           <slot v-else name="right"></slot>
          </div>
       </div>
       <div v-else class="h-[2em] w-full flex items-center justify-center gap-2 px-1">

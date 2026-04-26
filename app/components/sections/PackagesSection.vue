@@ -81,6 +81,9 @@
             <template #right>
               <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
             </template>
+            <template #hoverRight>
+              <Icon :name="pkg.hoverIcon" class="h-4 w-4" />
+            </template>
           </SharedButton>
         </div>
       </div>
@@ -114,7 +117,11 @@
                  </div>
               </div>
 
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="View Potential">Secure Strategic Equity</SharedButton>
+              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="View Potential">
+                Secure Strategic Equity
+                <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
+                <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>
+              </SharedButton>
               <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
            </div>
          </div>
@@ -135,6 +142,7 @@ const packages = [
     velocity: 'Rapid_Sprint',
     popular: false,
     hoverText: 'Secure Roadmap',
+    hoverIcon: 'lucide:map',
     features: [
       'Core Brand Identity',
       'Strategic Landing Page',
@@ -153,6 +161,7 @@ const packages = [
     velocity: 'Standard_Batch',
     popular: true,
     hoverText: 'Start Sprint',
+    hoverIcon: 'lucide:zap',
     features: [
       'Full Design System',
       '4-Page High-Velocity Web',
@@ -171,6 +180,7 @@ const packages = [
     velocity: 'Continuous_Ops',
     popular: false,
     hoverText: 'Let\'s Discuss',
+    hoverIcon: 'lucide:crown',
     features: [
       'Unlimited High-End Design',
       'Full SaaS / Web Ecosystem',

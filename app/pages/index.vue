@@ -5,7 +5,6 @@
     <SectionsProcessSection />
     <SectionsCaseStudiesSection />
     <SectionsExperienceSection />
-    <SectionsTestimonialsSection />
     <SectionsPackagesSection />
     <SectionsCTASection />
   </main>

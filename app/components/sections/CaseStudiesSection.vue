@@ -1,9 +1,6 @@
 <template>
-  <section id="case-studies" class="relative py-16 md:py-24 bg-page overflow-visible">
-    <!-- Section Divider -->
-    <div class="section-divider absolute inset-x-0 top-0"></div>
+  <SharedSectionWrapper section-id="case-studies">
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header: Strategic Direction -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-8 md:mb-12">
@@ -11,12 +8,11 @@
           <div class="reveal mb-6">
             <span class="section-label">Evidence Gallery</span>
           </div>
-          <h2 class="reveal mb-6">
-            Impact <br />
-            <span style="color: var(--text-soft)">architected.</span>
+          <h2 class="reveal mb-8">
+            Impact <span style="color: var(--text-soft)">architected.</span>
           </h2>
-          <p class="text-soft text-xl font-medium leading-relaxed max-w-2xl opacity-80">
-            Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to users and stakeholders.
+          <p class="text-soft text-lg font-medium leading-relaxed max-w-2xl opacity-80">
+            Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to stakeholders.
           </p>
         </div>
 
@@ -64,9 +60,9 @@
                 <!-- Pillar 1: The Problem -->
                 <div class="space-y-8">
                    <div class="flex items-center gap-3">
-                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                     <SharedIconBox :interactive="false">
                        <Icon name="lucide:alert-circle" class="h-5 w-5" />
-                     </div>
+                     </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Problem_Solved</span>
                    </div>
                    <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
@@ -77,9 +73,9 @@
                 <!-- Pillar 2: User Impact -->
                 <div class="space-y-8">
                    <div class="flex items-center gap-3">
-                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                     <SharedIconBox :interactive="false">
                        <Icon name="lucide:users" class="h-5 w-5" />
-                     </div>
+                     </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">User_Experience_Impact</span>
                    </div>
                    <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
@@ -90,9 +86,9 @@
                 <!-- Pillar 3: Business Value -->
                 <div class="space-y-8">
                    <div class="flex items-center gap-3">
-                     <div class="h-10 w-10 rounded-xl flex items-center justify-center text-accent" style="background-color: color-mix(in srgb, var(--accent), transparent 95%)">
+                     <SharedIconBox :interactive="false">
                        <Icon name="lucide:trending-up" class="h-5 w-5" />
-                     </div>
+                     </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Business_Outcome</span>
                    </div>
                    <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
@@ -128,10 +124,8 @@
             </div>
           </div>
         </Transition>
-      </div>
-
     </div>
-  </section>
+  </SharedSectionWrapper>
 </template>
 
 <script setup lang="ts">

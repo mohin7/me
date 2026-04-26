@@ -1,167 +1,148 @@
 <template>
-  <section id="experience" ref="containerRef" class="py-16 md:py-24 bg-page relative overflow-visible">
-    <!-- Section Divider -->
-    <div class="section-divider absolute inset-x-0 top-0"></div>
-    <!-- Sophisticated Technical Grid -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
-         style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 64px 64px;"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
-      <div class="grid lg:grid-cols-[380px_1fr] gap-20 lg:gap-32 items-start">
+  <SharedSectionWrapper section-id="experience" pattern="grid">
+    <div class="grid lg:grid-cols-[380px_1fr] gap-16 lg:gap-24 items-start">
         
-        <!-- Manually Sticky Sidebar (Synchronized with virtual scroll) -->
+        <!-- Sticky Sidebar -->
         <div 
           ref="sidebarRef"
-          class="lg:relative h-fit will-change-transform"
-          :style="{ transform: `translate3d(0, ${sidebarOffset}px, 0)` }"
+          class="lg:sticky lg:top-0 will-change-transform"
+          :style="sidebarStyle"
         >
           <div class="inline-flex flex-col mb-10">
-            <div class="mb-8">
+            <div class="reveal mb-8">
                <span class="section-label">Technical Archive</span>
             </div>
             
-            <div class="flex items-baseline gap-4 mb-4">
-              <span class="text-accent text-8xl font-black tracking-tighter leading-none italic serif-font">07</span>
-              <div class="flex flex-col">
-                <span class="text-xl font-black italic serif-font leading-none mt-2" style="color: var(--text-soft)">Years</span>
-                <span class="text-soft text-[0.65rem] font-black uppercase tracking-widest mt-2">Executive Craft</span>
+            <div class="flex items-center gap-6">
+              <span class="text-accent text-7xl font-black tracking-tighter leading-none">07</span>
+              <div class="flex flex-col border-l border-glass pl-6">
+                <span class="text-lg font-black leading-none" style="color: var(--text-soft)">Years of</span>
+                <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Executive Craft</span>
               </div>
             </div>
-            
-            <div class="h-px w-24 bg-accent/20 mt-2"></div>
           </div>
 
-          <h2 class="mb-8">
+          <h2 class="reveal mb-8">
             Career <br />
-            <span class="italic serif-font lowercase" style="color: var(--text-soft)">timeline.</span>
+            <span style="color: var(--text-soft)">timeline.</span>
           </h2>
-          <p class="text-soft text-lg font-medium leading-relaxed max-w-[320px]">
+          <p class="reveal text-soft text-lg font-medium leading-relaxed max-w-[320px]">
             A documented history of building and leading high-impact digital products at scale.
           </p>
         </div>
 
-        <!-- The Timeline Content -->
+        <!-- Scrollable Timeline Content -->
         <div class="relative">
           <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px bg-gradient-to-b from-glass via-glass to-transparent hidden md:block"></div>
 
-          <div class="space-y-12">
+          <div class="space-y-10">
             <div 
               v-for="(job, idx) in experience" 
               :key="idx" 
-              class="experience-card group relative reveal-item"
+              class="reveal group relative"
+              :class="`reveal-delay-${Math.min(idx + 1, 4)}`"
             >
+              <!-- Timeline Dot -->
               <div class="absolute left-[-5px] md:left-[26px] top-12 h-3.5 w-3.5 rounded-full border-2 border-accent bg-page z-20 transition-all duration-500 group-hover:scale-150 group-hover:bg-accent hidden md:block"></div>
 
-              <div class="p-8 md:p-14 md:pl-28 rounded-[40px] border border-glass bg-panel/10 hover:border-accent/20 hover:bg-panel/40 hover:backdrop-blur-3xl transition-all duration-700">
+              <!-- Job Card -->
+              <SharedGlassCard 
+                padding="p-8 md:p-12 md:pl-24" 
+                rounded="rounded-[32px]" 
+                class="group"
+              >
                 <div>
+                  <!-- Period -->
                   <div class="flex items-center gap-4 mb-5">
                     <span class="text-accent text-[0.7rem] font-bold uppercase tracking-[0.4em] font-mono">
                        {{ job.period }}
                     </span>
-                    <div class="h-px w-8 bg-accent/20"></div>
-                    <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-40">Entry_{{ idx + 1 }}</span>
+                    <div class="h-px w-8" style="background: color-mix(in srgb, var(--accent), transparent 80%)"></div>
+                    <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-60">Entry_{{ idx + 1 }}</span>
                   </div>
 
-                  <div class="flex flex-wrap items-baseline gap-4 mb-8">
+                  <!-- Role & Company -->
+                  <div class="flex flex-wrap items-baseline gap-4 mb-6">
                     <h3 class="group-hover:text-accent transition-colors">
                        {{ job.role }}
                     </h3>
-                    <div class="h-px w-4 bg-accent/20 mt-auto mb-4"></div>
+                    <div class="h-px w-4" style="background: color-mix(in srgb, var(--accent), transparent 80%)"></div>
                     <span class="text-soft font-bold text-sm tracking-tight italic">@ {{ job.company }}</span>
                   </div>
                   
-                  <p class="text-soft text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-2xl">
+                  <!-- Description -->
+                  <p class="text-soft text-lg font-medium leading-relaxed mb-8 max-w-2xl">
                      {{ job.description }}
                   </p>
 
-                  <div class="grid sm:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                     <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-4">
-                        <Icon name="lucide:check-circle" class="h-4 w-4 text-accent/20 mt-1 shrink-0 group-hover:text-accent transition-colors duration-500" />
+                  <!-- Impacts -->
+                  <div class="grid sm:grid-cols-2 gap-x-10 gap-y-4 mb-10">
+                     <div v-for="(impact, ii) in job.impacts" :key="ii" class="flex items-start gap-3">
+                        <Icon name="lucide:check-circle" class="h-4 w-4 mt-1 shrink-0 text-accent group-hover:scale-110 transition-all duration-500" />
                         <span class="text-soft text-sm font-medium leading-relaxed">{{ impact }}</span>
                      </div>
                   </div>
 
-                  <div class="flex flex-wrap gap-2 pt-10 border-t border-glass">
-                     <span v-for="tag in job.tags" :key="tag" class="px-5 py-2 rounded-full bg-accent/5 text-soft text-[0.65rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/20 transition-all cursor-default">
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2 pt-8 border-t border-glass">
+                     <span v-for="tag in job.tags" :key="tag" class="px-4 py-1.5 rounded-full text-soft text-[0.6rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/20 transition-all cursor-default" style="background: color-mix(in srgb, var(--accent), transparent 95%)">
                        {{ tag }}
                      </span>
                   </div>
                 </div>
-              </div>
+              </SharedGlassCard>
             </div>
           </div>
         </div>
 
-      </div>
     </div>
-  </section>
+  </SharedSectionWrapper>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-const containerRef = ref<HTMLElement | null>(null)
 const sidebarRef = ref<HTMLElement | null>(null)
 const sidebarOffset = ref(0)
-const stickyTopPadding = 160 
 
-let cachedContainerTop = 0
-let cachedContainerHeight = 0
-let cachedSidebarHeight = 0
-
-const updateCache = () => {
-  if (containerRef.value && sidebarRef.value) {
-    cachedContainerTop = containerRef.value.offsetTop
-    cachedContainerHeight = containerRef.value.offsetHeight
-    cachedSidebarHeight = sidebarRef.value.offsetHeight
-  }
-}
-
+// JS-powered sticky for the virtual smooth scroll system
 const updateSidebarSticky = (virtualY: number) => {
-  if (!containerRef.value || !sidebarRef.value) return
-  
-  // Disable sticky on mobile
-  if (window.innerWidth < 1024) {
+  if (!sidebarRef.value || window.innerWidth < 1024) {
     sidebarOffset.value = 0
     return
   }
-  
-  const containerTop = cachedContainerTop
-  const containerHeight = cachedContainerHeight
+
+  const section = sidebarRef.value.closest('section')
+  if (!section) return
+
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
   const sidebarHeight = sidebarRef.value.offsetHeight
-  
-  // Sticky Top Padding (Distance from top of screen when sticky)
-  const topPadding = 120 
-  
-  // How much we've scrolled past the section start
-  let localOffset = virtualY - containerTop + topPadding
-  
-  // Clamp localOffset
-  const maxLocalOffset = containerHeight - sidebarHeight
-  
-  if (localOffset < 0) {
-    localOffset = 0
-  } else if (localOffset > maxLocalOffset) {
-    localOffset = maxLocalOffset
-  }
-  
-  sidebarOffset.value = localOffset
+  const topPadding = 120
+
+  let offset = virtualY - sectionTop + topPadding
+  const maxOffset = sectionHeight - sidebarHeight - topPadding
+
+  if (offset < 0) offset = 0
+  else if (offset > maxOffset) offset = maxOffset
+
+  sidebarOffset.value = offset
 }
+
+const sidebarStyle = computed(() => ({
+  transform: `translate3d(0, ${sidebarOffset.value}px, 0)`
+}))
 
 const handleSmoothScroll = (e: any) => {
   updateSidebarSticky(e.detail)
 }
 
 onMounted(() => {
-  updateCache()
-  setTimeout(updateCache, 1000)
   window.addEventListener('smooth-scroll', handleSmoothScroll)
-  window.addEventListener('resize', updateCache)
 })
 
 onUnmounted(() => {
   window.removeEventListener('smooth-scroll', handleSmoothScroll)
-  window.removeEventListener('resize', updateCache)
 })
 
 const experience = [
@@ -169,39 +150,40 @@ const experience = [
     role: 'Head of Design',
     company: 'AppsCode Ltd',
     period: '2021 — Present',
-    description: 'Directing product-wide UI/UX strategy and engineering execution for massive Kubernetes infrastructure and database platforms.',
+    description: 'Directing product-wide UI/UX strategy and engineering execution. Leading multi-disciplinary teams to take complex cloud infrastructure ideas from concept to final product.',
     impacts: [
       'Scale design systems for KubeDB, KubeVault, and Stash.',
-      'Architected 8+ high-scale cloud management products.',
-      'Engineered unified design-to-code Nuxt 3 workflows.',
-      'Leading a multi-disciplinary technical design team.'
+      'Manage cross-functional engineering & design teams.',
+      'Engineered unified design-to-code Nuxt 3 & Vue workflows.',
+      'Bridging human behavior with high-density technical UIs.'
     ],
-    tags: ['Design Leadership', 'Product Architecture', 'Nuxt 3', 'Kubernetes UI']
+    tags: ['Team Management', 'Idea to Product', 'NuxtJS', 'Psychological UX']
   },
   {
-    role: 'Frontend Architect',
+    role: 'Frontend Architect & UI Designer',
     company: 'Cloud Software Solutions',
     period: '2017 — 2021',
-    description: 'Specialized in building high-performance web applications with a focus on UI/UX fidelity and component architecture.',
+    description: 'Transitioning into a hybrid role, I specialized in both designing interfaces and building high-performance web applications using modern JavaScript frameworks.',
     impacts: [
-      'Vue 2/3 ecosystem lead.',
-      'Reusable UI global libraries.',
-      'Data-heavy dashboard optimization.'
+      'Vue ecosystem lead & component architecture.',
+      'Applied psychological UX principles to dashboards.',
+      'Developed static sites using Hugo and SCSS.',
+      'Executed occasional print design & branding.'
     ],
-    tags: ['Frontend Architecture', 'Vue.js', 'Performance Opt']
+    tags: ['Vuejs', 'Hugo', 'SCSS', 'Print Design', 'UX Strategy']
   },
   {
-    role: 'Startup Launch Specialist',
+    role: 'Software Engineer',
     company: 'Independent Partners',
     period: '2015 — 2017',
-    description: 'Partnered with early-stage founders to launch their initial products and define their visual brand identities.',
+    description: 'My journey started as a pure Software Engineer. This foundational logic and problem-solving mindset now powers my ability to understand and serve user problems deeply.',
     impacts: [
-      'Launched 12+ MVPS in 24 months.',
-      'Interactive prototype expert.',
-      'Zero-to-One strategy lead.'
+      'Built core application logic with JavaScript.',
+      'Developed responsive layouts using HTML5 & CSS3.',
+      'Managed version control strictly via GitHub.',
+      'Shifted focus toward solving user problems visually.'
     ],
-    tags: ['MVP Launch', 'UX Research', 'Visual Identity']
+    tags: ['Software Engineering', 'JavaScript', 'HTML5 & CSS3', 'GitHub']
   }
 ]
 </script>
-

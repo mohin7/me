@@ -1,9 +1,6 @@
 <template>
-  <section id="packages" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
-    <!-- Section Divider -->
-    <div class="section-divider absolute inset-x-0 top-0"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <SharedSectionWrapper section-id="packages">
+
       
       <!-- Section Header -->
       <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 md:mb-16">
@@ -124,8 +121,7 @@
          </div>
       </div>
 
-    </div>
-  </section>
+  </SharedSectionWrapper>
 </template>
 
 <script setup lang="ts">
@@ -143,7 +139,7 @@ const packages = [
       'Core Brand Identity',
       'Strategic Landing Page',
       'Upto 10 App Screens',
-      '3-Day Accelerated Delivery',
+      '1-2 Weeks Delivery',
       'Investor-Ready Assets'
     ]
   },
@@ -153,14 +149,14 @@ const packages = [
     price: '$1.8k — $3k',
     unit: 'Investment',
     description: 'The architectural foundation for your market presence. High-performance systems built for scale.',
-    target: 'Nuxt 3 / Vue 3 / GSAP',
+    target: 'Nuxt 3 / Vue 3 / SCSS',
     velocity: 'Standard_Batch',
     popular: true,
     features: [
       'Full Design System',
       '4-Page High-Velocity Web',
       'Upto 20 Advanced UI Screens',
-      '7-Day Engineering Sprint',
+      '3-4 Weeks Engineering Sprint',
       'Conversion Optimization'
     ]
   },

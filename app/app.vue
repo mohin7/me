@@ -195,21 +195,21 @@ html, body {
 h1, h2, h3, h4, h5, h6, .display-font, .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 800 !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.1;
+  letter-spacing: -0.04em !important;
+  line-height: 1.05;
   color: var(--text-main);
 }
 
-h1 { font-size: clamp(2.5rem, 10vw, 6.5rem); }
-h2 { font-size: clamp(2rem, 8vw, 4.5rem); }
-h3 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+h1 { font-size: clamp(3rem, 10vw, 6.5rem); }
+h2 { font-size: clamp(2.25rem, 8vw, 4.5rem); }
+h3 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
 h4 { font-size: clamp(1.25rem, 4vw, 1.75rem); }
 
 p, .prose {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.7;
   font-weight: 400;
-  line-height: 1.6;
 }
 
 .light {
@@ -224,6 +224,8 @@ p, .prose {
   --accent-fg: #FFFFFF;
   --accent-spotlight: rgba(24, 24, 27, 0.03);
   --border-glass: rgba(24, 24, 27, 0.08);
+  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.03);
+  --section-shadow: 0 20px 60px -15px rgba(0,0,0,0.05);
 }
 
 .dark {
@@ -238,11 +240,12 @@ p, .prose {
   --accent-fg: #09090B;
   --accent-spotlight: rgba(250, 250, 250, 0.03);
   --border-glass: rgba(250, 250, 250, 0.08);
+  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.25);
+  --section-shadow: 0 30px 80px -20px rgba(0,0,0,0.4);
 }
 
 :root {
   --accent: #18181B;
-  --specular: 0 0 0 1px rgba(255,255,255,0.05), 0 1px 1px 0 rgba(0,0,0,0.1), 0 20px 40px -10px rgba(0,0,0,0.2);
   --inner-glow: inset 0 1px 1px 0 rgba(255,255,255,0.05);
 }
 

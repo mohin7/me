@@ -61,9 +61,8 @@
             </span>
           </h1>
 
-          <!-- Subtitle -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-2xl mb-10 px-2 md:px-4">
-            I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl mb-14 px-2 md:px-4">
+            Solving real user problems by bridging <span class="text-main font-bold">Psychological UX</span> with high-performance <span class="text-main font-bold">Engineering</span>. From idea to product, I craft experiences using Vue, Nuxt, and a deep understanding of human behavior.
           </p>
 
           <!-- CTA Row -->

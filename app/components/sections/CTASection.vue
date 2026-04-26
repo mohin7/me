@@ -1,14 +1,10 @@
 <template>
-  <section id="contact" class="relative py-20 md:py-32 bg-page overflow-hidden">
-    
-    <!-- Section Divider -->
-    <div class="section-divider absolute inset-x-0 top-0"></div>
+  <SharedSectionWrapper section-id="contact" padding="lg">
 
     <!-- Subtle Technical Aura -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[120px] rounded-full pointer-events-none" style="background: color-mix(in srgb, var(--accent), transparent 98%)"></div>
 
-    <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      
+    <div class="relative z-10 text-center">
       <!-- System Status Line -->
       <div class="reveal flex items-center justify-center gap-4 mb-10">
         <span class="relative flex h-2 w-2">
@@ -18,10 +14,10 @@
         <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.4em]">{{ availabilityTag }}</span>
       </div>
       
-      <!-- The Final Launch Word -->
+      <!-- Title -->
       <h2 class="reveal mb-12">
-        Let's bring your <br /> 
-        <span style="color: var(--text-soft)">vision to life.</span>
+        Stop losing users to friction. <br /> 
+        <span style="color: var(--text-soft)">Let's engineer their loyalty.</span>
       </h2>
       
       <!-- CTA Buttons -->
@@ -32,7 +28,7 @@
            target="_blank"
            size="lg" 
            variant="primary"
-           class="w-full md:w-auto px-10 h-14 rounded-full" hover-text="Let's Talk"
+           class="w-full md:w-auto px-10 h-14 rounded-full" hover-text="Unlock Growth"
          >
            Schedule Strategy Call
            <template #right><Icon name="lucide:calendar" class="h-4 w-4" /></template>
@@ -53,14 +49,14 @@
       <p class="reveal mt-10 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-80">
         Responses within <span class="text-main">24 hours</span>
       </p>
-
     </div>
-  </section>
+
+  </SharedSectionWrapper>
 </template>
 
 <script setup lang="ts">
 const now = new Date()
 const currentYear = now.getFullYear()
 const currentQuarter = Math.floor((now.getMonth() + 3) / 3)
-const availabilityTag = `Available for Strategic Partnership // ${currentYear}.Q${currentQuarter}`
+const availabilityTag = `Accepting High-Growth Partnerships // ${currentYear}.Q${currentQuarter}`
 </script>

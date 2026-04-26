@@ -35,7 +35,15 @@
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4" />
         </button>
         <div class="h-8 w-px bg-accent/10"></div>
-        <a href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false"><div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center"><div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center"><span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Start Project <Icon name="lucide:arrow-right" class="h-3 w-3" /></span><span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent-fg">Go Live <Icon name="lucide:zap" class="h-3 w-3" /></span></div></div><div class="shimmer-bg"></div></a>
+        <a href="/img/uiux-specialist.pdf" target="_blank" rel="noopener noreferrer" class="shimmer-btn group" @mouseenter="isProjectHovered = true" @mouseleave="isProjectHovered = false">
+          <div class="relative z-10 h-[1.6em] overflow-hidden flex flex-col items-center">
+            <div class="transition-transform duration-500 group-hover:-translate-y-1/2 flex flex-col items-center">
+              <span class="h-[1.6em] flex items-center justify-center gap-2 whitespace-nowrap">Resume <Icon name="lucide:file-text" class="h-3 w-3" /></span>
+              <span class="h-[1.6em] flex items-center justify-center gap-2 italic text-accent-fg">Download <Icon name="lucide:download" class="h-3 w-3" /></span>
+            </div>
+          </div>
+          <div class="shimmer-bg"></div>
+        </a>
       </div>
 
       <!-- Mobile Actions -->
@@ -84,8 +92,8 @@
 
           <!-- Mobile Menu Footer -->
           <div class="mt-auto pt-12 space-y-8">
-            <SharedButton tag="a" href="#contact" variant="primary" size="lg" fullWidth @click="isMobileMenuOpen = false">
-              Start a Conversation
+            <SharedButton tag="a" href="/img/uiux-specialist.pdf" target="_blank" variant="primary" size="lg" fullWidth @click="isMobileMenuOpen = false">
+              Resume
             </SharedButton>
             
             <div class="flex items-center justify-between border-t border-glass pt-8">

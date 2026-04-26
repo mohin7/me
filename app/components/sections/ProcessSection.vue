@@ -1,5 +1,5 @@
 <template>
-  <section id="process" class="py-20 md:py-32 bg-page relative overflow-hidden transition-colors duration-500">
+  <section id="process" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
     <!-- Fine Grid Blueprint -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
          style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>
@@ -7,7 +7,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Compact Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
         <div class="max-w-2xl">
           <div class="reveal mb-6">
              <span class="section-label">Execution Framework</span>
@@ -33,11 +33,11 @@
           <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-1/2 -right-2 w-4 h-px bg-glass z-0"></div>
 
           <!-- Compact Architectural Card -->
-          <div class="relative h-full flex flex-col p-6 md:p-8 rounded-[24px] bg-panel/5 border border-glass transition-all duration-500 hover:bg-panel/10 hover:border-accent/30 group-hover:shadow-2xl group-hover:shadow-accent/5">
+          <div class="relative h-full flex flex-col p-6 md:p-8 rounded-[24px] bg-panel/5 border border-glass transition-all duration-500 hover:bg-panel/10 hover:border-accent/30 group-hover:shadow-2xl group-hover:shadow-accent/5" style="box-shadow: var(--inner-glow), var(--specular);">
             
             <!-- Phase Badge -->
             <div class="flex justify-between items-center mb-10">
-               <span class="text-accent text-[0.6rem] font-bold tracking-[0.2em] font-mono opacity-60">PHASE_0{{ idx + 1 }}</span>
+               <span class="text-accent text-[0.6rem] font-bold tracking-[0.2em] font-mono opacity-80">PHASE_0{{ idx + 1 }}</span>
                <div class="h-8 w-8 rounded-lg bg-accent/5 flex items-center justify-center text-main group-hover:bg-accent group-hover:text-accent-fg transition-all duration-500">
                  <Icon v-if="step && step.icon" :name="step.icon" class="h-4 w-4" />
                </div>

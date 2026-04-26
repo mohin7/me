@@ -49,7 +49,7 @@
       </div>
 
       <!-- Protocol Timeline -->
-      <p class="mt-12 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-30">
+      <p class="mt-12 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-80">
         Responses within <span class="text-main">24 hours</span>
       </p>
 

@@ -1,5 +1,5 @@
 <template>
-  <section id="top" ref="heroRef" class="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-page">
+  <section id="top" ref="heroRef" class="relative min-h-[90dvh] flex items-center pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden bg-page">
     
     <!-- ── Dynamic Life Background Layers ── -->
     <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
@@ -34,11 +34,11 @@
 
           <!-- Designation -->
           <div class="mb-10 flex flex-col items-center px-4">
-             <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em] opacity-60">Architectural Design & Vue Engineering</span>
+             <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em] opacity-80">Architectural Design & Vue Engineering</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
-          <h1 class="hero-title max-w-6xl mx-auto mb-10 text-center px-4 md:px-0">
+          <h1 class="hero-title max-w-6xl mx-auto mb-6 text-center px-4 md:px-0">
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
             <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2 min-h-[1.1em]">
@@ -53,11 +53,11 @@
           </h1>
 
           <!-- Subtitle -->
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl mb-16 px-2 md:px-4">
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-3xl mb-10 px-2 md:px-4">
             I bridge the gap between high-end <span class="text-main font-bold">UI/UX Design</span> and high-performance <span class="text-main font-bold">Nuxt & Vue</span> development to deliver seamless, shippable experiences.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 mb-16 md:mb-20 w-full sm:w-auto px-4">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 mb-12 md:mb-14 w-full sm:w-auto px-4">
             <SharedButton 
               tag="a" 
               href="https://cal.com/md-mohin-uddin-8gpn95/30min" 

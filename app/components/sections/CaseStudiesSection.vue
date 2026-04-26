@@ -1,12 +1,12 @@
 <template>
-  <section id="case-studies" class="relative py-24 md:py-44 bg-page overflow-visible">
+  <section id="case-studies" class="relative py-16 md:py-28 bg-soft/30 overflow-visible">
     <!-- Sophisticated Section Border -->
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header: Strategic Direction -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-20 md:mb-32">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-12 md:mb-20">
         <div class="max-w-3xl">
           <div class="mb-10 lg:mb-12">
             <span class="section-label">Evidence Gallery</span>
@@ -38,7 +38,7 @@
       <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-8 md:p-20 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden">
+          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-8 md:p-20 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden shadow-[var(--specular)]" style="box-shadow: var(--inner-glow), var(--specular);">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 

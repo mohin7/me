@@ -40,6 +40,9 @@
         </button>
       </div>
     </Transition>
+    <!-- ── Aesthetic Layering ── -->
+    <div class="pointer-events-none fixed inset-0 z-[999] opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+    <div class="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent"></div>
   </div>
 </template>
 
@@ -193,9 +196,10 @@ p, .prose {
   --bg-page: #F9FAFB;
   --bg-panel: #FFFFFF;
   --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-soft: #F3F4F6;
   --text-main: #18181B;
   --text-soft: #3F3F46;
-  --text-muted: #71717A;
+  --text-muted: #52525B;
   --accent: #18181B;
   --accent-fg: #FFFFFF;
   --accent-spotlight: rgba(24, 24, 27, 0.03);
@@ -206,6 +210,7 @@ p, .prose {
   --bg-page: #09090B;
   --bg-panel: #121214;
   --bg-glass: rgba(18, 18, 20, 0.8);
+  --bg-soft: #18181B;
   --text-main: #FAFAFA;
   --text-soft: #D4D4D8;
   --text-muted: #A1A1AA;
@@ -217,7 +222,8 @@ p, .prose {
 
 :root {
   --accent: #18181B;
-  --specular: 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.2);
+  --specular: 0 0 0 1px rgba(255,255,255,0.05), 0 1px 1px 0 rgba(0,0,0,0.1), 0 20px 40px -10px rgba(0,0,0,0.2);
+  --inner-glow: inset 0 1px 1px 0 rgba(255,255,255,0.05);
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
@@ -225,6 +231,6 @@ p, .prose {
 
 .section-label {
   @apply text-[0.65rem] font-black uppercase tracking-[0.4em];
-  color: color-mix(in srgb, var(--accent), transparent 60%);
+  color: color-mix(in srgb, var(--accent), transparent 30%);
 }
 </style>

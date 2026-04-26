@@ -1,5 +1,7 @@
 <template>
-  <section id="experience" ref="containerRef" class="py-12 md:py-20 bg-page relative overflow-visible">
+  <section id="experience" ref="containerRef" class="py-16 md:py-24 bg-page relative overflow-visible">
+    <!-- Section Divider -->
+    <div class="section-divider absolute inset-x-0 top-0"></div>
     <!-- Sophisticated Technical Grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.02]" 
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 64px 64px;"></div>

@@ -1,17 +1,17 @@
 <template>
-  <section id="case-studies" class="relative py-16 md:py-28 bg-soft/30 overflow-visible">
-    <!-- Sophisticated Section Border -->
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
+  <section id="case-studies" class="relative py-16 md:py-24 bg-page overflow-visible">
+    <!-- Section Divider -->
+    <div class="section-divider absolute inset-x-0 top-0"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header: Strategic Direction -->
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-12 md:mb-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-12 mb-8 md:mb-12">
         <div class="max-w-3xl">
-          <div class="mb-10 lg:mb-12">
+          <div class="reveal mb-6">
             <span class="section-label">Evidence Gallery</span>
           </div>
-          <h2 class="italic serif-font lowercase">
+          <h2 class="reveal mb-6">
             Impact <br />
             <span style="color: var(--text-soft)">architected.</span>
           </h2>
@@ -38,13 +38,13 @@
       <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-8 md:p-20 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden shadow-[var(--specular)]" style="box-shadow: var(--inner-glow), var(--specular);">
+          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-6 md:p-12 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden shadow-[var(--specular)]" style="box-shadow: var(--inner-glow), var(--specular);">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
                  style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-            <div class="relative z-10 flex flex-col gap-16 lg:gap-24">
+            <div class="relative z-10 flex flex-col gap-10 lg:gap-14">
 
               <!-- Top Tier: Title & Industry -->
               <div class="flex flex-col gap-8 max-w-4xl">
@@ -59,7 +59,7 @@
               </div>
 
               <!-- Content Pillars: Problem, Impact, Value -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 
                 <!-- Pillar 1: The Problem -->
                 <div class="space-y-8">
@@ -103,7 +103,7 @@
               </div>
 
               <!-- Bottom Tier: Strategy Quote -->
-              <div class="pt-16 border-t border-glass">
+              <div class="pt-10 border-t border-glass">
                  <div class="flex flex-col md:flex-row md:items-center gap-8 justify-between">
                     <div class="flex items-center gap-6">
                       <div class="h-16 w-16 rounded-full border-2 border-glass bg-soft overflow-hidden p-2 flex items-center justify-center">

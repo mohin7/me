@@ -121,6 +121,26 @@ onMounted(() => {
     observer.observe(document.body, { childList: true, subtree: true })
     smoothLoop()
   }
+
+  // Scroll-triggered reveal animations
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+      }
+    })
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' })
+
+  // Observe all reveal elements (including dynamically added ones)
+  const observeReveals = () => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => {
+      revealObserver.observe(el)
+    })
+  }
+  observeReveals()
+  // Re-observe when DOM changes
+  const revealMutationObserver = new MutationObserver(observeReveals)
+  revealMutationObserver.observe(document.body, { childList: true, subtree: true })
 })
 
 onUnmounted(() => {
@@ -232,5 +252,34 @@ p, .prose {
 .section-label {
   @apply text-[0.65rem] font-black uppercase tracking-[0.4em];
   color: color-mix(in srgb, var(--accent), transparent 30%);
+}
+
+/* ── Global Scroll Reveal Animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Micro-interaction Utilities ── */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Section Divider ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-glass), transparent);
 }
 </style>

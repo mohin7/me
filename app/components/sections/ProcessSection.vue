@@ -1,5 +1,7 @@
 <template>
-  <section id="process" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
+  <section id="process" class="py-16 md:py-24 bg-soft/30 relative overflow-hidden transition-colors duration-500">
+    <!-- Section Divider -->
+    <div class="section-divider absolute inset-x-0 top-0"></div>
     <!-- Fine Grid Blueprint -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
          style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>

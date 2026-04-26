@@ -2,7 +2,7 @@
   <component
     :is="tag"
     :class="[
-      'inline-flex items-center justify-center gap-2 font-semibold leading-none whitespace-nowrap active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none outline-none cursor-pointer transition-all duration-300 group/btn',
+      'inline-flex items-center justify-center gap-2 font-semibold leading-normal whitespace-nowrap active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none outline-none cursor-pointer transition-all duration-300 group/btn',
       variantClasses,
       sizeClasses,
       fullWidth && 'w-full'
@@ -15,18 +15,18 @@
     @mouseleave="isHovered = false"
     v-bind="$attrs"
   >
-    <div class="relative h-[1.6em] overflow-hidden">
-      <div v-if="hoverText" class="flex flex-col items-center transition-transform duration-500 ease-in-out group-hover/btn:-translate-y-1/2">
-         <div class="h-[1.6em] flex items-center justify-center gap-2">
+    <div class="relative h-[2em] w-full overflow-hidden">
+      <div v-if="hoverText" class="flex flex-col items-center w-full transition-transform duration-500 ease-in-out group-hover/btn:-translate-y-1/2">
+         <div class="h-[2em] w-full flex items-center justify-center gap-2 px-1">
            <slot name="left"></slot>
            <slot />
            <slot name="right"></slot>
          </div>
-         <div :class="['h-[1.6em] flex items-center justify-center italic font-bold ', variant === 'primary' ? 'text-accent-fg' : 'text-accent' ]">
+         <div :class="['h-[2em] w-full flex items-center justify-center italic font-bold px-1', variant === 'primary' ? 'text-accent-fg' : 'text-accent' ]">
            {{ hoverText }}
          </div>
       </div>
-      <div v-else class="h-[1.6em] flex items-center justify-center gap-2">
+      <div v-else class="h-[2em] w-full flex items-center justify-center gap-2 px-1">
          <slot name="left"></slot>
          <slot />
          <slot name="right"></slot>

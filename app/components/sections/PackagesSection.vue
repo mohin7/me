@@ -1,20 +1,20 @@
 <template>
   <section id="packages" class="py-16 md:py-24 bg-page relative overflow-hidden transition-colors duration-500">
-    <!-- Sophisticated Technical Backdrop -->
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
+    <!-- Section Divider -->
+    <div class="section-divider absolute inset-x-0 top-0"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
-        <div class="mb-10">
+      <div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 md:mb-16">
+        <div class="reveal mb-6">
           <span class="section-label flex justify-center">Investment Models</span>
         </div>
-        <h2 class="italic serif-font lowercase">
+        <h2 class="reveal mb-6">
           The Strategic <br />
           <span style="color: var(--text-soft)">matrix.</span>
         </h2>
-        <p class="text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
+        <p class="reveal text-soft text-lg font-medium leading-relaxed opacity-80 max-w-[480px]">
           Engineering-grade design solutions priced for velocity. No hourly drift, just performance.
         </p>
       </div>

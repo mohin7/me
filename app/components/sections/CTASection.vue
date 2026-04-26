@@ -1,29 +1,31 @@
 <template>
-  <section id="contact" class="relative py-24 md:py-40 bg-page overflow-hidden">
+  <section id="contact" class="relative py-20 md:py-32 bg-page overflow-hidden">
     
+    <!-- Section Divider -->
+    <div class="section-divider absolute inset-x-0 top-0"></div>
+
     <!-- Subtle Technical Aura -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
-    
-    <!-- Section Border -->
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-glass to-transparent"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[120px] rounded-full pointer-events-none" style="background: color-mix(in srgb, var(--accent), transparent 98%)"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       
-      <!-- System Status Line: Minimalist -->
-      <div class="flex items-center justify-center gap-4 mb-14">
-        <div class="h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_var(--accent)]"></div>
+      <!-- System Status Line -->
+      <div class="reveal flex items-center justify-center gap-4 mb-10">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
         <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.4em]">{{ availabilityTag }}</span>
       </div>
       
-      <!-- The Final Launch Word: Balanced Scale -->
-      <h2 class="mb-16 text-main text-5xl md:text-8xl font-black tracking-tighter leading-[0.85]">
+      <!-- The Final Launch Word -->
+      <h2 class="reveal mb-12">
         Let's bring your <br /> 
-        <span class="serif-font font-black" style="color: var(--text-soft)">vision to life.</span>
+        <span style="color: var(--text-soft)">vision to life.</span>
       </h2>
       
-      <!-- Higher Density Consistent Buttons -->
-      <div class="flex flex-col md:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
-         <!-- Primary Action: Shared Component -->
+      <!-- CTA Buttons -->
+      <div class="reveal flex flex-col md:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
          <SharedButton 
            tag="a" 
            href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
@@ -36,30 +38,22 @@
            <template #right><Icon name="lucide:calendar" class="h-4 w-4" /></template>
          </SharedButton>
 
-         <!-- Consistent Secondary Action -->
          <SharedButton 
            tag="a" 
-           href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
+           href="mailto:hello.mohin4@gmail.com" 
            size="lg" 
-           variant="ghost"
-           class="w-full md:w-auto px-10 h-14 rounded-full border border-glass hover:border-accent text-soft hover:text-main" hover-text="Send Message"
+           variant="liquid"
+           class="w-full md:w-auto px-10 h-14 rounded-full" hover-text="Send Message"
          >
            hello.mohin4@gmail.com
          </SharedButton>
       </div>
 
       <!-- Protocol Timeline -->
-      <p class="mt-12 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-80">
+      <p class="reveal mt-10 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-80">
         Responses within <span class="text-main">24 hours</span>
       </p>
 
-    </div>
-
-    <!-- Minimalist Trace Watermark -->
-    <div class="absolute bottom-6 left-0 w-full overflow-hidden opacity-[0.01] pointer-events-none select-none">
-      <h3 class="whitespace-nowrap font-black serif-font text-main text-[12rem] leading-none tracking-tighter">
-        design architecture scale design architecture scale
-      </h3>
     </div>
   </section>
 </template>
@@ -70,4 +64,3 @@ const currentYear = now.getFullYear()
 const currentQuarter = Math.floor((now.getMonth() + 3) / 3)
 const availabilityTag = `Available for Strategic Partnership // ${currentYear}.Q${currentQuarter}`
 </script>
-

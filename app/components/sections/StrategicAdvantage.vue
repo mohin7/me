@@ -5,7 +5,7 @@
     <SharedSectionHeader 
       label="Strategic Advantage Matrix" 
       :centered="true"
-      description="My journey began as a Software Engineer before evolving into a hybrid UI/UX architect. By fusing Psychological UX, deep human behavior insights, and technical mastery (Vue, Nuxt, SCSS), I don't just design interfaces—I solve critical user problems to ensure your product connects and scales."
+      description="Software Engineer evolved into a Hybrid UI/UX Architect. I bridge Psychological UX with technical mastery to architect high-scale products that connect and scale."
     >
       <template #title>
         I engineer products that <span class="text-soft">serve users.</span>

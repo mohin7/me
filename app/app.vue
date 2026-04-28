@@ -5,7 +5,7 @@
     <!-- Smooth Scroll Wrapper -->
     <!-- ── Liquid Bubble Cursor (Zero-Lag Core) ── -->
     <div v-if="!isTouchDevice" class="custom-cursor-container pointer-events-none fixed inset-0 z-[9999] overflow-hidden" :style="{ opacity: isCursorVisible ? 1 : 0 }">
-      
+
       <!-- Lagged Bubble Aura / Focus Lens -->
       <div
         class="cursor-aura absolute rounded-full border border-accent/20 will-change-transform"
@@ -17,6 +17,9 @@
         class="cursor-dot absolute rounded-full will-change-transform"
         :class="isHovering ? 'is-hovering' : ''"
       ></div>
+
+      <!-- Click Spark Canvas -->
+      <canvas ref="sparkCanvas" class="absolute inset-0 w-full h-full pointer-events-none" />
     </div>
 
     <div 
@@ -73,6 +76,7 @@ useSeoMeta({
 
 // ── Fixed Wrapper Smooth Scroll ──
 const smoothWrapper = ref<HTMLElement | null>(null)
+const sparkCanvas = ref<HTMLCanvasElement | null>(null)
 const virtualHeight = ref(0)
 const currentOffset = ref(0)
 const isHovering = ref(false)
@@ -83,6 +87,80 @@ const isTouchDevice = ref(false)
 let targetOffset = 0
 let rafId: number | null = null
 let hoverCheckFrame: number | null = null
+
+// ── Click Spark System ──
+interface Spark {
+  x: number; y: number
+  vx: number; vy: number
+  life: number; maxLife: number
+  size: number; color: string
+}
+
+let sparks: Spark[] = []
+let sparkRaf: number | null = null
+
+const SPARK_COLORS_DARK = ['#ffffff', '#e2e8f0', '#cbd5e1', '#94a3b8']
+const SPARK_COLORS_LIGHT = ['#18181b', '#3f3f46', '#52525b', '#71717a']
+
+const getSparkColors = () =>
+  document.documentElement.classList.contains('dark') ? SPARK_COLORS_DARK : SPARK_COLORS_LIGHT
+
+const spawnSparks = (x: number, y: number) => {
+  const colors = getSparkColors()
+  const count = 12 + Math.floor(Math.random() * 6)
+  for (let i = 0; i < count; i++) {
+    const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.8
+    const speed = 1.5 + Math.random() * 3.5
+    sparks.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 1,
+      maxLife: 0.6 + Math.random() * 0.4,
+      size: 1.5 + Math.random() * 2,
+      color: colors[Math.floor(Math.random() * colors.length)] ?? '#ffffff'
+    })
+  }
+  if (!sparkRaf) tickSparks()
+}
+
+const tickSparks = () => {
+  const canvas = sparkCanvas.value
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  sparks = sparks.filter(s => s.life > 0)
+  for (const s of sparks) {
+    s.x += s.vx
+    s.y += s.vy
+    s.vy += 0.12  // gravity
+    s.vx *= 0.96  // friction
+    s.life -= 0.03 / s.maxLife
+
+    const alpha = Math.max(0, s.life)
+    ctx.globalAlpha = alpha * alpha
+    ctx.fillStyle = s.color
+    ctx.beginPath()
+    ctx.arc(s.x, s.y, s.size * alpha, 0, Math.PI * 2)
+    ctx.fill()
+  }
+
+  ctx.globalAlpha = 1
+  sparkRaf = sparks.length > 0 ? requestAnimationFrame(tickSparks) : null
+}
+
+const handleClick = (e: MouseEvent) => {
+  spawnSparks(e.clientX, e.clientY)
+}
+
+const resizeSparkCanvas = () => {
+  if (!sparkCanvas.value) return
+  sparkCanvas.value.width = window.innerWidth
+  sparkCanvas.value.height = window.innerHeight
+}
 
 const handleMouseMove = (e: MouseEvent) => {
   document.documentElement.style.setProperty('--m-x', `${e.clientX}px`)
@@ -138,8 +216,11 @@ onMounted(() => {
 
   if (!isTouchDevice.value) {
     window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('click', handleClick)
+    window.addEventListener('resize', resizeSparkCanvas)
     document.documentElement.addEventListener('mouseleave', handleMouseLeave)
     document.documentElement.addEventListener('mouseenter', handleMouseEnter)
+    resizeSparkCanvas()
     updateHeight()
     window.addEventListener('resize', updateHeight)
     // Mutation observer to handle dynamic content height changes
@@ -177,9 +258,12 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('click', handleClick)
+  window.removeEventListener('resize', resizeSparkCanvas)
   document.documentElement.removeEventListener('mouseleave', handleMouseLeave)
   document.documentElement.removeEventListener('mouseenter', handleMouseEnter)
   window.removeEventListener('resize', updateHeight)
+  if (sparkRaf) cancelAnimationFrame(sparkRaf)
   if (rafId) cancelAnimationFrame(rafId)
 })
 </script>

@@ -7,22 +7,15 @@
     <div v-if="!isTouchDevice" class="custom-cursor-container pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
       
       <!-- Lagged Bubble Aura / Focus Lens -->
-      <div 
-        class="absolute rounded-full border border-accent/20 will-change-transform"
-        :class="isHovering ? 'h-24 w-24 bg-accent/[0.02] border-accent/40 backdrop-blur-none shadow-xl' : 'h-8 w-8 bg-accent/5 backdrop-blur-[4px]'"
-        :style="{ 
-          transform: `translate3d(var(--aura-x), var(--aura-y), 0) translate(-50%, -50%)`,
-          transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s, border 0.5s, backdrop-filter 0.5s'
-        }"
+      <div
+        class="cursor-aura absolute rounded-full border border-accent/20 will-change-transform"
+        :class="isHovering ? 'is-hovering' : ''"
       ></div>
 
       <!-- Zero-Lag Precision Core -->
-      <div 
-        class="absolute h-1.5 w-1.5 bg-accent rounded-full will-change-transform"
-        :style="{ 
-          transform: `translate3d(var(--m-x), var(--m-y), 0) translate(-50%, -50%)`,
-          opacity: isHovering ? 0 : 0.8
-        }"
+      <div
+        class="cursor-dot absolute rounded-full will-change-transform"
+        :class="isHovering ? 'is-hovering' : ''"
       ></div>
     </div>
 
@@ -82,28 +75,25 @@ useSeoMeta({
 const smoothWrapper = ref<HTMLElement | null>(null)
 const virtualHeight = ref(0)
 const currentOffset = ref(0)
-const mouseX = ref(0)
-const mouseY = ref(0)
-const auraX = ref(0)
-const auraY = ref(0)
 const isHovering = ref(false)
 
 const scrollSpeed = 0.08
 const isTouchDevice = ref(false)
 let targetOffset = 0
 let rafId: number | null = null
+let hoverCheckFrame: number | null = null
 
 const handleMouseMove = (e: MouseEvent) => {
-  // Direct CSS variable injection (Zero-Lag)
   document.documentElement.style.setProperty('--m-x', `${e.clientX}px`)
   document.documentElement.style.setProperty('--m-y', `${e.clientY}px`)
 
-  mouseX.value = e.clientX
-  mouseY.value = e.clientY
-  
-  // Check if hovering over interactive element
-  const target = e.target as HTMLElement
-  isHovering.value = !!target.closest('a, button, .hover-lift, .cs-nav-btn, [role="button"]')
+  // Throttle hover detection to avoid layout thrashing every frame
+  if (hoverCheckFrame) return
+  hoverCheckFrame = requestAnimationFrame(() => {
+    const target = e.target as HTMLElement
+    isHovering.value = !!target.closest('a, button, .hover-lift, .cs-nav-btn, [role="button"]')
+    hoverCheckFrame = null
+  })
 }
 
 const scrollToTop = () => {
@@ -119,13 +109,6 @@ const updateHeight = () => {
 }
 
 const smoothLoop = () => {
-  // Snappier Bubble Lerping
-  auraX.value += (mouseX.value - auraX.value) * 0.3
-  auraY.value += (mouseY.value - auraY.value) * 0.3
-
-  document.documentElement.style.setProperty('--aura-x', `${auraX.value}px`)
-  document.documentElement.style.setProperty('--aura-y', `${auraY.value}px`)
-
   if (isTouchDevice.value) return;
 
   targetOffset = window.pageYOffset
@@ -367,5 +350,39 @@ p, .prose {
 .section-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border-glass), transparent);
+}
+
+/* ── Custom Cursor ── */
+.cursor-aura {
+  width: 2rem;
+  height: 2rem;
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  transform: translate3d(var(--m-x), var(--m-y), 0) translate(-50%, -50%);
+  transition:
+    transform 0.18s cubic-bezier(0.23, 1, 0.32, 1),
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.4s,
+    border-color 0.4s;
+}
+.cursor-aura.is-hovering {
+  width: 6rem;
+  height: 6rem;
+  background: color-mix(in srgb, var(--accent) 2%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: 0 8px 32px -8px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.cursor-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  background: var(--accent);
+  opacity: 0.8;
+  transform: translate3d(var(--m-x), var(--m-y), 0) translate(-50%, -50%);
+  transition: opacity 0.2s, transform 0s;
+}
+.cursor-dot.is-hovering {
+  opacity: 0;
 }
 </style>

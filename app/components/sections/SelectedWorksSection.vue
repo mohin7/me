@@ -31,10 +31,10 @@
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
-            <img 
-              :src="project.image" 
-              :alt="project.name" 
-              class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            <img
+              :src="project.image"
+              :alt="project.name"
+              class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
             
@@ -63,13 +63,19 @@
               </span>
             </div>
 
-            <h3 class="text-main mb-4 text-2xl font-bold tracking-tight group-hover:text-accent transition-colors">
+            <h3 class="text-main mb-3 text-2xl font-bold tracking-tight group-hover:text-accent transition-colors">
               {{ project.name }}
             </h3>
-            
-            <p class="text-soft mb-8 text-sm font-medium leading-relaxed opacity-80 line-clamp-2">
+
+            <p class="text-soft mb-4 text-sm font-medium leading-relaxed opacity-80 line-clamp-2">
               {{ project.description }}
             </p>
+
+            <!-- Problem Solved -->
+            <div v-if="project.problem" class="mb-6 flex items-start gap-2.5 px-3.5 py-2.5 rounded-xl bg-soft border border-glass">
+              <Icon name="lucide:zap" class="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />
+              <p class="text-[0.68rem] font-semibold text-soft leading-snug">{{ project.problem }}</p>
+            </div>
 
             <div class="mt-auto pt-6 border-t border-glass flex items-center justify-between">
                <a :href="project.href" target="_blank" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
@@ -179,22 +185,34 @@ const scrollPrev = () => {
   carouselRef.value.scrollBy({ left: -(cardWidth + 32), behavior: 'smooth' })
 }
 
-const projects = [
-  {
-    name: "AppsCode.com Platform",
-    year: "2024",
-    description: "Designed and engineered the central cloud platform for AppsCode, streamlining Kubernetes-native deployments and toolchains for enterprise clients.",
-    tags: ["UI/UX Design", "Vue.js", "Cloud Platform"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
-    href: "https://appscode.com"
-  },
+interface Project {
+  name: string
+  year: string
+  description: string
+  tags: string[]
+  image: string
+  href: string
+  problem?: string
+}
+
+const projects: Project[] = [
   {
     name: "KubeDB — Database Ops",
-    year: "2023",
-    description: "Built the comprehensive product website and user dashboard for KubeDB, simplifying production-grade database management on Kubernetes.",
+    year: "2025",
+    description: "Full redesign of KubeDB's marketing site — a Kubernetes-native database platform serving production PostgreSQL, MySQL, Redis, and 10+ more engines at enterprise scale.",
     tags: ["Product Design", "Nuxt", "Kubernetes"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
-    href: "https://kubedb.com"
+    image: "/kubedb-preview.png",
+    href: "https://kubedb.com",
+    problem: "Engineers couldn't quickly evaluate capabilities across 10+ database engines — redesigned information architecture cut time-to-clarity for technical buyers."
+  },
+  {
+    name: "AppsCode.com Platform",
+    year: "2025",
+    description: "Redesigned the central product hub for AppsCode — a Kubernetes-native cloud platform — unifying messaging across a fragmented ecosystem of 15+ products.",
+    tags: ["UI/UX Design", "Vue.js", "Cloud Platform"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
+    href: "https://appscode.com",
+    problem: "15+ products with no unified story made enterprise evaluation painful — redesigned hub creates a single narrative from infra to application layer."
   },
   {
     name: "E-commerce Storefront",

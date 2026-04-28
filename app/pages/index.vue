@@ -1,6 +1,7 @@
 <template>
   <main>
     <SectionsHeroSection />
+    <SectionsAppscodeShowcase />
     <SectionsStrategicAdvantage />
     <SectionsProcessSection />
     <SectionsCaseStudiesSection />

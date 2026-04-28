@@ -3,12 +3,6 @@
     class="fixed left-0 right-0 top-0 z-[60] px-3 sm:px-6 lg:px-8 pt-3 md:pt-6 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
     :style="{ transform: isNavbarVisible ? 'translateY(0)' : 'translateY(-120%)' }"
   >
-    <!-- System Progress Horizon -->
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl px-8 pointer-events-none">
-       <div class="h-[2px] w-full bg-accent/5 overflow-hidden rounded-full">
-          <div class="h-full bg-accent transition-all duration-300 ease-out shadow-[0_0_10px_var(--accent)]" :style="{ width: `${scrollProgress}%` }"></div>
-       </div>
-    </div>
 
     <nav class="navbar mx-auto flex w-full max-w-7xl items-center justify-between gap-4 md:gap-6 px-6 py-3 md:px-10 md:py-4 relative">
 

@@ -4,7 +4,7 @@
     
     <!-- Smooth Scroll Wrapper -->
     <!-- ── Liquid Bubble Cursor (Zero-Lag Core) ── -->
-    <div v-if="!isTouchDevice" class="custom-cursor-container pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+    <div v-if="!isTouchDevice" class="custom-cursor-container pointer-events-none fixed inset-0 z-[9999] overflow-hidden" :style="{ opacity: isCursorVisible ? 1 : 0 }">
       
       <!-- Lagged Bubble Aura / Focus Lens -->
       <div
@@ -76,6 +76,7 @@ const smoothWrapper = ref<HTMLElement | null>(null)
 const virtualHeight = ref(0)
 const currentOffset = ref(0)
 const isHovering = ref(false)
+const isCursorVisible = ref(false)
 
 const scrollSpeed = 0.08
 const isTouchDevice = ref(false)
@@ -86,8 +87,8 @@ let hoverCheckFrame: number | null = null
 const handleMouseMove = (e: MouseEvent) => {
   document.documentElement.style.setProperty('--m-x', `${e.clientX}px`)
   document.documentElement.style.setProperty('--m-y', `${e.clientY}px`)
+  isCursorVisible.value = true
 
-  // Throttle hover detection to avoid layout thrashing every frame
   if (hoverCheckFrame) return
   hoverCheckFrame = requestAnimationFrame(() => {
     const target = e.target as HTMLElement
@@ -95,6 +96,9 @@ const handleMouseMove = (e: MouseEvent) => {
     hoverCheckFrame = null
   })
 }
+
+const handleMouseLeave = () => { isCursorVisible.value = false }
+const handleMouseEnter = () => { isCursorVisible.value = true }
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -134,6 +138,8 @@ onMounted(() => {
 
   if (!isTouchDevice.value) {
     window.addEventListener('mousemove', handleMouseMove)
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave)
+    document.documentElement.addEventListener('mouseenter', handleMouseEnter)
     updateHeight()
     window.addEventListener('resize', updateHeight)
     // Mutation observer to handle dynamic content height changes
@@ -171,6 +177,8 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
+  document.documentElement.removeEventListener('mouseleave', handleMouseLeave)
+  document.documentElement.removeEventListener('mouseenter', handleMouseEnter)
   window.removeEventListener('resize', updateHeight)
   if (rafId) cancelAnimationFrame(rafId)
 })

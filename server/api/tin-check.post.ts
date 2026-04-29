@@ -1,15 +1,12 @@
-import { createHash } from 'node:crypto'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { createHash } from 'crypto'
 
 let auditCache: Record<string, object> | null = null
 
-async function getAudit() {
+async function getAudit(): Promise<Record<string, object>> {
   if (auditCache) return auditCache
-  const filePath = join(process.cwd(), 'public', 'audit.json')
-  const raw = await readFile(filePath, 'utf-8')
-  auditCache = JSON.parse(raw)
-  return auditCache!
+  const storage = useStorage('assets:data')
+  auditCache = await storage.getItem<Record<string, object>>('audit.json') ?? {}
+  return auditCache
 }
 
 export default defineEventHandler(async (event) => {
@@ -20,8 +17,13 @@ export default defineEventHandler(async (event) => {
   }
 
   const config = useRuntimeConfig()
-  const hash = createHash('sha256').update(config.tinSalt + tin).digest('hex')
+  const salt = config.tinSalt as string
 
+  if (!salt) {
+    throw createError({ statusCode: 500, message: 'Server misconfiguration' })
+  }
+
+  const hash = createHash('sha256').update(salt + tin).digest('hex')
   const audit = await getAudit()
   const entry = audit[hash]
 

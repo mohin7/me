@@ -100,7 +100,7 @@
           </Transition>
           <!-- Recent searches -->
           <Transition name="hint-fade">
-            <div v-if="recentSearches.length && !result && !tin.length" class="mt-3 px-1">
+            <div v-if="isMounted && recentSearches.length && !result && !tin.length" class="mt-3 px-1">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[0.58rem] font-black uppercase tracking-[0.3em]" style="color: var(--text-muted);">Recent</span>
                 <button @click="clearHistory" class="text-[0.58rem] font-bold hover:underline" style="color: var(--text-muted);">Clear all</button>
@@ -280,11 +280,13 @@ const HISTORY_KEY = 'tin-check-history'
 const MAX_HISTORY = 15
 
 const recentSearches = ref<RecentSearch[]>([])
+const isMounted = ref(false)
 
 onMounted(async () => {
   try {
     recentSearches.value = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]')
   } catch {}
+  isMounted.value = true
   await nextTick()
   inputEl.value?.focus()
 })

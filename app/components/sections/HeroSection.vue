@@ -38,12 +38,12 @@
         <div class="hero-enter flex flex-col items-center w-full reveal">
 
           <!-- Availability badge -->
-          <div class="mb-8 flex items-center gap-3 px-5 py-2.5 rounded-full border border-glass bg-panel/30 backdrop-blur-xl">
+          <div class="mb-4 mt-0 md:mt-4 flex items-center gap-3 px-5 py-2.5 rounded-full border border-glass bg-panel/30 backdrop-blur-xl">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em]">Capacity: 1 Slot Open for Q2 Partnership</span>
+            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em]">Available · 1 Slot Open</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
@@ -51,9 +51,9 @@
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
             <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
-              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms.</span>
+              <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms</span>
               <div class="col-start-1 row-start-1 relative flex items-center justify-center px-1">
-                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-2" :style="{ width: revealWidth }">
+                 <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1" :style="{ width: revealWidth }">
                    <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
                  </div>
                   <span class="h-[0.8em] w-[3px] bg-accent rounded-full ml-[2px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
@@ -61,8 +61,8 @@
             </span>
           </h1>
 
-          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-4xl mb-12 px-2 md:px-4 opacity-90">
-            Software Engineer evolved into a <span class="text-main font-bold">Hybrid UI/UX Architect</span>. I bridge Psychological UX with technical mastery in Vue & Nuxt to architect products that connect and scale.
+          <p class="hero-sub font-medium leading-relaxed mx-auto max-w-4xl pt-2 mb-12 px-2 md:px-4 opacity-90">
+            Software Engineer evolved into a <span class="text-main font-bold">Hybrid UI/UX Architect</span>. I bridge Psychological UX with technical mastery in Vue & Nuxt to architect products that connect and scale
           </p>
 
           <!-- CTA Row -->
@@ -139,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-const words = ['products.', 'MVPs.', 'SaaS.', 'platforms.', 'systems.']
+const words = ['products', 'MVPs', 'SaaS', 'platforms', 'systems']
 const wordIndex = ref(0)
 const revealWidth = ref('0px')
 const isPaused = ref(false)
@@ -191,12 +191,16 @@ const logos = [
 
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.25rem, 8vw, 5rem);
-  line-height: 1.05;
+  font-size: clamp(1.75rem, 6vw, 5rem);
+  line-height: 1.08;
+}
+
+@media (min-width: 640px) {
+  .hero-title { font-size: clamp(2rem, 7vw, 5rem); }
 }
 
 .hero-sub {
-  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
   color: var(--text-soft);
   letter-spacing: -0.005em;
 }

@@ -77,13 +77,22 @@
               class="search-btn m-2 h-11 sm:h-12 px-4 sm:px-6 rounded-2xl text-sm font-black flex items-center gap-2 flex-shrink-0 disabled:opacity-30 disabled:cursor-not-allowed"
               style="background: var(--accent); color: var(--accent-fg);"
             >
-              <Transition name="icon-swap" mode="out-in">
-                <svg v-if="dataLoading" key="spinner" class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+              <!-- Fixed-size icon slot — never collapses so button width is stable -->
+              <span class="relative flex items-center justify-center h-4 w-4 flex-shrink-0">
+                <svg
+                  class="absolute inset-0 h-4 w-4 animate-spin transition-opacity duration-200"
+                  :style="{ opacity: dataLoading ? 1 : 0 }"
+                  viewBox="0 0 24 24" fill="none"
+                >
                   <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" stroke-dasharray="31.4" stroke-dashoffset="10" stroke-linecap="round" />
                 </svg>
-                <Icon v-else key="search" name="lucide:search" class="h-4 w-4" />
-              </Transition>
-              <span class="hidden sm:inline">{{ dataLoading ? 'Checking…' : 'Search' }}</span>
+                <Icon
+                  name="lucide:search"
+                  class="absolute inset-0 h-4 w-4 transition-opacity duration-200"
+                  :style="{ opacity: dataLoading ? 0 : 1 }"
+                />
+              </span>
+              <span class="hidden sm:inline transition-opacity duration-200">{{ dataLoading ? 'Checking…' : 'Search' }}</span>
             </button>
           </div>
 

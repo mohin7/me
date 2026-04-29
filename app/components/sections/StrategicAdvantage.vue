@@ -5,7 +5,7 @@
     <SharedSectionHeader 
       label="Strategic Advantage Matrix" 
       :centered="true"
-      description="Software Engineer evolved into a Hybrid UI/UX Architect. I bridge Psychological UX with technical mastery to architect high-scale products that connect and scale."
+      description="Software Engineer evolved into a Hybrid UI/UX Architect. I bridge Psychological UX with technical mastery to architect high-scale products that connect and scale"
     >
       <template #title>
         I engineer products that <span class="text-soft">serve users.</span>

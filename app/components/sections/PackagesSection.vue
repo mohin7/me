@@ -71,7 +71,7 @@
 
           <SharedButton 
             tag="a" 
-            href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" 
+            href="https://cal.com/md-mohin-uddin-8gpn95/30min" 
             :variant="pkg.popular ? 'primary' : 'secondary'"
             size="lg" 
             class="w-full h-14 rounded-full" :hover-text="pkg.hoverText"

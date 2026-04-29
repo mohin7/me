@@ -16,8 +16,8 @@
           UI/UX specialist, UI designer, and developer based in Dhaka, Bangladesh. I lead design at AppsCode and bring a mix of product thinking, front-end execution, and open-source experience.
         </p>
         <div class="flex flex-wrap gap-4">
-          <SharedButton tag="a" href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noreferrer" size="lg">View LinkedIn</SharedButton>
-          <SharedButton tag="a" href="https://github.com/mohin7" target="_blank" rel="noreferrer" variant="outline" size="lg">Explore GitHub</SharedButton>
+          <SharedButton tag="a" href="https://www.linkedin.com/in/mohin7/" rel="noreferrer" size="lg">View LinkedIn</SharedButton>
+          <SharedButton tag="a" href="https://github.com/mohin7" rel="noreferrer" variant="outline" size="lg">Explore GitHub</SharedButton>
         </div>
       </div>
       <div class="relative w-full max-w-lg mx-auto lg:max-w-none">

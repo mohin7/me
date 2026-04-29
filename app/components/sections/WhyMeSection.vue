@@ -83,7 +83,7 @@
           </div>
           <span class="text-main text-lg font-bold tracking-tight">Engineering design with mathematical precision.</span>
         </div>
-        <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="outline" size="lg" class="px-12">
+        <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" variant="outline" size="lg" class="px-12">
           Discuss Your Roadmap
           <template #right>
             <Icon name="lucide:arrow-right" class="h-4 w-4" />

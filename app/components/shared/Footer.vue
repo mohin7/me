@@ -17,7 +17,7 @@
           <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">{{ group.title }}</h4>
           <ul class="space-y-4">
             <li v-for="link in group.links" :key="link.name">
-              <a :href="link.href" target="_blank" class="group/footer-link text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-3">
+              <a :href="link.href" class="group/footer-link text-main text-sm font-bold hover:text-accent transition-colors flex items-center gap-3">
                 <Icon v-if="link.icon" :name="link.icon" class="h-4 w-4 opacity-40 group-hover/footer-link:opacity-100 transition-opacity" />
                 {{ link.name }}
               </a>
@@ -45,7 +45,7 @@
           © {{ currentYear }} Md Mohin Uddin. All rights reserved.
         </p>
         <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-40">
-           <a href="/img/uiux-specialist.pdf" target="_blank" class="hover:text-accent transition-colors">Resume</a><NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
+           <a href="/img/uiux-specialist.pdf" class="hover:text-accent transition-colors">Resume</a><NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
            <NuxtLink to="/terms" class="hover:text-main transition-colors">Terms</NuxtLink>
         </div>
       </div>
@@ -66,7 +66,8 @@ const footerGroups = [
       { name: 'Architecture', href: '/#strategic-advantage' },
       { name: 'Experience', href: '/#experience' },
       { name: 'Methodology', href: '/#process' },
-      { name: 'Journal', href: '/blog' }
+      { name: 'Journal', href: '/blog' },
+      { name: 'TIN Check', href: '/tin-check' }
     ]
   },
   {

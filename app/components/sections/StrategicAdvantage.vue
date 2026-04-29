@@ -55,7 +55,7 @@
 
     <!-- Bottom CTA -->
     <div class="reveal mt-12 flex flex-col items-center">
-       <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="px-16 h-14 rounded-full group" hover-text="Let's Grow">
+       <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" variant="primary" size="lg" class="px-16 h-14 rounded-full group" hover-text="Let's Grow">
         Initiate Partnership
         <template #right>
           <Icon name="lucide:arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform" />

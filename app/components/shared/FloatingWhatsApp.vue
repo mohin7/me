@@ -5,7 +5,7 @@
     
     <a 
       href="https://wa.me/8801634419564" 
-      target="_blank" 
+      
       rel="noopener noreferrer"
       class="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-2xl shadow-[#25D366]/30 hover:shadow-[#25D366]/50 transition-all duration-500 overflow-hidden group/btn"
       aria-label="Contact on WhatsApp"

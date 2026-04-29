@@ -47,7 +47,7 @@
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                <a 
                  :href="project.href" 
-                 target="_blank" 
+                 
                  class="px-6 py-2 rounded-full bg-accent text-accent-fg text-[0.8rem] font-bold shadow-xl hover:scale-105 active:scale-95 transition-all"
                >
                  View Project ↗
@@ -78,7 +78,7 @@
             </div>
 
             <div class="mt-auto pt-6 border-t border-glass flex items-center justify-between">
-               <a :href="project.href" target="_blank" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
+               <a :href="project.href" class="text-main text-[0.7rem] font-bold uppercase tracking-widest flex items-center gap-2 group/link">
                  Live Preview
                  <Icon name="lucide:arrow-right" class="h-4 w-4 text-accent transition-transform group-hover/link:translate-x-1" />
                </a>
@@ -112,7 +112,7 @@
                 <SharedButton 
                   tag="a" 
                   href="https://github.com/mohin7" 
-                  target="_blank" 
+                  
                   variant="primary" 
                   size="md"
                 >

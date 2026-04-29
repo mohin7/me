@@ -161,7 +161,7 @@
                     <p class="text-[0.55rem] font-black uppercase tracking-widest text-muted mt-2">— Design rationale</p>
                   </div>
 
-                  <a :href="work.href" target="_blank" rel="noopener"
+                  <a :href="work.href" rel="noopener"
                      class="group/link flex items-center justify-between px-5 py-4 rounded-xl border border-glass bg-soft hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
                      @click.stop>
                     <div>
@@ -198,12 +198,12 @@
             </p>
           </div>
           <div class="flex flex-col gap-3 shrink-0 min-w-[200px]">
-            <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" size="lg" class="h-14 px-10 rounded-full" hover-text="Let's Talk">
+            <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" variant="primary" size="lg" class="h-14 px-10 rounded-full" hover-text="Let's Talk">
               Work With Me
               <template #right><Icon name="lucide:arrow-right" class="h-4 w-4" /></template>
               <template #hoverRight><Icon name="lucide:calendar" class="h-4 w-4" /></template>
             </SharedButton>
-            <SharedButton tag="a" href="https://appscode.com" target="_blank" variant="outline" size="md" class="rounded-full">
+            <SharedButton tag="a" href="https://appscode.com" variant="outline" size="md" class="rounded-full">
               See AppsCode Live ↗
             </SharedButton>
           </div>

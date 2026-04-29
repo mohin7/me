@@ -26,18 +26,18 @@
       <div class="hidden md:flex items-center gap-3">
         <!-- Social Ecosystem (Pill) -->
         <div class="flex items-center h-10 px-1.5 rounded-full border border-accent/10 bg-accent/[0.02] backdrop-blur-sm">
-          <a href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noopener" 
+          <a href="https://www.linkedin.com/in/mohin7/" rel="noopener" 
              class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
             <Icon name="lucide:linkedin" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
             <!-- Tooltip -->
             <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">LinkedIn</span>
           </a>
-          <a href="https://github.com/mohin7" target="_blank" rel="noopener" 
+          <a href="https://github.com/mohin7" rel="noopener" 
              class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
             <Icon name="lucide:github" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
             <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">GitHub</span>
           </a>
-          <a href="https://dribbble.com/mohin7" target="_blank" rel="noopener" 
+          <a href="https://dribbble.com/mohin7" rel="noopener" 
              class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
             <Icon name="lucide:dribbble" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
             <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-accent text-accent-fg text-[0.6rem] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 transition-all duration-300 pointer-events-none whitespace-nowrap z-[100] shadow-xl">Dribbble</span>
@@ -61,7 +61,7 @@
         <SharedButton 
           tag="a" 
           href="/img/uiux-specialist.pdf" 
-          target="_blank" 
+          
           rel="noopener noreferrer" 
           variant="primary"
           size="lg"
@@ -127,7 +127,7 @@
             <SharedButton 
               tag="a" 
               href="/img/uiux-specialist.pdf" 
-              target="_blank" 
+              
               variant="primary" 
               size="lg" 
               fullWidth 
@@ -147,15 +147,15 @@
                <div class="flex items-center justify-between">
                  <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.4em]">Ecosystem</span>
                  <div class="flex items-center gap-3">
-                   <a href="https://www.linkedin.com/in/mohin7/" target="_blank" rel="noopener" 
+                   <a href="https://www.linkedin.com/in/mohin7/" rel="noopener" 
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:linkedin" class="h-4 w-4" />
                    </a>
-                   <a href="https://github.com/mohin7" target="_blank" rel="noopener" 
+                   <a href="https://github.com/mohin7" rel="noopener" 
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:github" class="h-4 w-4" />
                    </a>
-                   <a href="https://dribbble.com/mohin7" target="_blank" rel="noopener" 
+                   <a href="https://dribbble.com/mohin7" rel="noopener" 
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:dribbble" class="h-4 w-4" />
                    </a>

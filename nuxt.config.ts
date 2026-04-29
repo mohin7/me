@@ -64,9 +64,6 @@ export default defineNuxtConfig({
     tinSalt: process.env.TIN_SALT
   },
   nitro: {
-    serverAssets: [
-      { baseName: 'data', dir: './server/assets' }
-    ],
     prerender: {
       routes: ['/blog'],
       crawlLinks: true

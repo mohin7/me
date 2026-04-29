@@ -1,14 +1,5 @@
 import { createHash } from 'crypto'
 
-let auditCache: Record<string, object> | null = null
-
-async function getAudit(): Promise<Record<string, object>> {
-  if (auditCache) return auditCache
-  const storage = useStorage('assets:data')
-  auditCache = await storage.getItem<Record<string, object>>('audit.json') ?? {}
-  return auditCache
-}
-
 export default defineEventHandler(async (event) => {
   const { tin } = await readBody<{ tin: string }>(event)
 
@@ -20,12 +11,18 @@ export default defineEventHandler(async (event) => {
   const salt = config.tinSalt as string
 
   if (!salt) {
-    throw createError({ statusCode: 500, message: 'Server misconfiguration' })
+    throw createError({ statusCode: 500, message: 'Server misconfiguration: missing TIN_SALT' })
+  }
+
+  const storage = useStorage('assets:server')
+  const audit = await storage.getItem<Record<string, { zone: string; circle: string; type: string }>>('audit.json')
+
+  if (!audit) {
+    throw createError({ statusCode: 500, message: 'Audit data unavailable' })
   }
 
   const hash = createHash('sha256').update(salt + tin).digest('hex')
-  const audit = await getAudit()
   const entry = audit[hash]
 
-  return { found: !!entry, ...(entry ? (entry as object) : {}) }
+  return { found: !!entry, ...(entry ?? {}) }
 })

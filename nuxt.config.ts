@@ -60,6 +60,9 @@ export default defineNuxtConfig({
       }
     }
   },
+  runtimeConfig: {
+    tinSalt: process.env.TIN_SALT
+  },
   nitro: {
     prerender: {
       routes: ['/blog'],

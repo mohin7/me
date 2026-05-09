@@ -2,9 +2,6 @@
   <main>
     <SectionsHeroSection />
     <SectionsAppscodeShowcase />
-    <SectionsStrategicAdvantage />
-    <SectionsProcessSection />
-    <SectionsCaseStudiesSection />
     <SectionsExperienceSection />
     <SectionsPackagesSection />
     <SectionsCTASection />

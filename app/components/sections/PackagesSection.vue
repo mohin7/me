@@ -4,14 +4,14 @@
       
       <!-- Standardized Section Header -->
       <SharedSectionHeader 
-        label="Investment Models"
-        description="Engineering-grade design solutions priced for velocity. No hourly drift, just performance."
+        label="Services & Pricing"
+        description="Every week without a great interface costs you users."
         :centered="true"
         class="max-w-4xl mx-auto"
       >
         <template #title>
-          The Strategic <br />
-          <span style="color: var(--text-soft)">matrix.</span>
+          Stop losing users. <br />
+          <span style="color: var(--text-soft)">Start shipping.</span>
         </template>
       </SharedSectionHeader>
 
@@ -59,11 +59,11 @@
           <div class="mb-10 p-5 rounded-2xl bg-panel/20 border border-glass">
              <div class="flex flex-col gap-3">
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-40">Dev_Target</span>
+                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-40">Deliverables</span>
                    <span class="text-main text-[0.65rem] font-bold">{{ pkg.target }}</span>
                 </div>
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-40">Velocity</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-40">Timeline</span>
                    <span class="text-accent text-[0.6rem] font-bold uppercase tracking-widest">{{ pkg.velocity }}</span>
                 </div>
              </div>
@@ -77,7 +77,7 @@
             class="w-full h-14 rounded-full" :hover-text="pkg.hoverText"
           >
 
-            Begin Partnership
+            Get Started
             <template #right>
               <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
             </template>
@@ -94,14 +94,14 @@
            <div class="max-w-xl text-center lg:text-left">
               <div class="flex items-center justify-center lg:justify-start gap-3 mb-8">
                  <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
-                 <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Venture Partnership Protocol</span>
+                 <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Equity Partnership</span>
               </div>
               <h2 class="mb-8">
-                Building for <br />
-                <span class="italic serif-font lowercase" style="color: var(--text-soft)">strategic equity.</span>
+                Your idea deserves <br />
+                <span class="italic serif-font lowercase" style="color: var(--text-soft)">better than a template.</span>
               </h2>
               <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
-                For visionaries with world-changing logic but early-stage capital. I trade top-tier engineering for <span class="text-main font-bold">1% Stake</span> — dedicated to your long-term momentum.
+                Pre-revenue but building something people need? I'll invest my time for <span class="text-main font-bold">equity</span>. I only pick projects I believe in.
               </p>
            </div>
            
@@ -117,12 +117,12 @@
                  </div>
               </div>
 
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="View Potential">
-                Secure Strategic Equity
+              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="Let's Talk">
+                Let's Discuss
                 <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
                 <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>
               </SharedButton>
-              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
+              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited availability</span>
            </div>
          </div>
       </div>
@@ -133,60 +133,60 @@
 <script setup lang="ts">
 const packages = [
   {
-    name: 'Pitch MVP', icon: 'lucide:cpu',
-    tag: 'Early_Stage',
+    name: 'Starter', icon: 'lucide:cpu',
+    tag: 'Quick Start',
     price: '$800 — $1.5k',
-    unit: 'Investment',
-    description: 'High-fidelity prototypes engineered for rapid investor validation and early brand scaling.',
-    target: 'Figma / High-Fi Proto',
-    velocity: 'Rapid_Sprint',
+    unit: 'fixed price',
+    description: 'Perfect for landing pages, prototypes, or getting your brand identity off the ground.',
+    target: 'Figma + assets',
+    velocity: '1–2 weeks',
     popular: false,
-    hoverText: 'Secure Roadmap',
+    hoverText: 'Get Started',
     hoverIcon: 'lucide:map',
     features: [
-      'Core Brand Identity',
-      'Strategic Landing Page',
-      'Upto 10 App Screens',
-      '1-2 Weeks Delivery',
-      'Investor-Ready Assets'
+      'Brand identity and logo',
+      'Landing page design',
+      'Up to 10 app screens',
+      '1–2 weeks delivery',
+      'Source files included'
     ]
   },
   {
-    name: 'Production MVP', icon: 'lucide:rocket',
-    tag: 'Market_Entry',
+    name: 'Full Build', icon: 'lucide:rocket',
+    tag: 'Most Popular',
     price: '$1.8k — $3k',
-    unit: 'Investment',
-    description: 'The architectural foundation for your market presence. High-performance systems built for scale.',
-    target: 'Nuxt 3 / Vue 3 / SCSS',
-    velocity: 'Standard_Batch',
+    unit: 'fixed price',
+    description: 'A complete website or web app — designed and built, ready to launch.',
+    target: 'Nuxt / Vue / Hugo',
+    velocity: '3–4 weeks',
     popular: true,
-    hoverText: 'Start Sprint',
+    hoverText: 'Let\'s Build',
     hoverIcon: 'lucide:zap',
     features: [
-      'Full Design System',
-      '4-Page High-Velocity Web',
-      'Upto 20 Advanced UI Screens',
-      '3-4 Weeks Engineering Sprint',
-      'Conversion Optimization'
+      'Full design system',
+      'Up to 4-page responsive website',
+      'Up to 20 app screens',
+      '3–4 weeks delivery',
+      'Production-ready code'
     ]
   },
   {
-    name: 'Full Partnership', icon: 'lucide:crown',
-    tag: 'Embedded_Lead',
-    price: 'Starting at $3k',
-    unit: '/ Month',
-    description: 'Long-term strategic commitment. Embedding as your fractional Head of Design & Engineering.',
-    target: 'Full Ecosystem Control',
-    velocity: 'Continuous_Ops',
+    name: 'Monthly Retainer', icon: 'lucide:crown',
+    tag: 'Ongoing',
+    price: 'From $3k',
+    unit: '/ month',
+    description: 'I become your dedicated designer and frontend developer — available whenever you need me.',
+    target: 'Ongoing design + dev',
+    velocity: 'Continuous',
     popular: false,
-    hoverText: 'Let\'s Discuss',
+    hoverText: 'Let\'s Talk',
     hoverIcon: 'lucide:crown',
     features: [
-      'Unlimited High-End Design',
-      'Full SaaS / Web Ecosystem',
-      'Dedicated Engineering Lead',
-      'Strategic Product Partner',
-      'Direct WhatsApp Access'
+      'Unlimited design requests',
+      'Full website or SaaS development',
+      'Dedicated point of contact',
+      'Priority turnaround',
+      'Direct WhatsApp access'
     ]
   }
 ]

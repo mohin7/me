@@ -10,22 +10,22 @@
         >
         <!-- Standardized Section Header -->
         <SharedSectionHeader 
-          label="Technical Archive"
-          description="A documented history of building and leading high-impact digital products at scale."
+          label="Experience"
+          description="Most designers jump ship every 18 months. I stayed."
           class="max-w-[340px]"
         >
           <template #title>
-            Career <br />
-            <span style="color: var(--text-soft)">timeline.</span>
+            Built over time, <br />
+            <span style="color: var(--text-soft)">not overnight.</span>
           </template>
         </SharedSectionHeader>
 
         <!-- Authority Badge -->
         <div class="flex items-center gap-6 mt-12 mb-10 reveal reveal-delay-2">
-          <span class="text-accent text-7xl font-black tracking-tighter leading-none">07</span>
+          <span class="text-accent text-7xl font-black tracking-tighter leading-none">6+</span>
           <div class="flex flex-col border-l border-glass pl-6">
             <span class="text-lg font-black leading-none" style="color: var(--text-soft)">Years of</span>
-            <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Executive Craft</span>
+            <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Compound Growth</span>
           </div>
         </div>
         </div>
@@ -149,40 +149,40 @@ const experience = [
     role: 'Head of Design',
     company: 'AppsCode Ltd',
     period: '2021 — Present',
-    description: 'Directing product-wide UI/UX strategy and engineering execution. Leading multi-disciplinary teams to take complex cloud infrastructure ideas from concept to final product.',
+    description: 'Leading the design and frontend development for all AppsCode products. I own the full process — from wireframes to production code — across the entire product suite.',
     impacts: [
-      'Scale design systems for KubeDB, KubeVault, and Stash.',
-      'Manage cross-functional engineering & design teams.',
-      'Engineered unified design-to-code Nuxt 3 & Vue workflows.',
-      'Bridging human behavior with high-density technical UIs.'
+      'Built and maintained design systems for KubeDB, KubeVault, and Stash.',
+      'Designed and developed product websites and the KubeDB UI platform.',
+      'Created the AppsCode Design System used across all frontend properties.',
+      'Shipped production code with Vue.js, Nuxt.js, and Hugo.'
     ],
-    tags: ['Team Management', 'Idea to Product', 'NuxtJS', 'Psychological UX']
+    tags: ['UI/UX Design', 'Vue.js', 'Nuxt.js', 'Hugo', 'Design Systems']
   },
   {
-    role: 'Frontend Architect & UI Designer',
-    company: 'Cloud Software Solutions',
-    period: '2017 — 2021',
-    description: 'Transitioning into a hybrid role, I specialized in both designing interfaces and building high-performance web applications using modern JavaScript frameworks.',
+    role: 'UI Developer & Designer',
+    company: 'AppsCode Ltd',
+    period: '2018 — 2021',
+    description: 'Joined as the first UI developer and designer. Built the initial product websites and started shaping the visual identity across all AppsCode properties.',
     impacts: [
-      'Vue ecosystem lead & component architecture.',
-      'Applied psychological UX principles to dashboards.',
-      'Developed static sites using Hugo and SCSS.',
-      'Executed occasional print design & branding.'
+      'Built product websites using Hugo, HTML, CSS, and JavaScript.',
+      'Designed interfaces for cloud infrastructure management tools.',
+      'Created responsive layouts and reusable component patterns.',
+      'Handled graphic design for events, banners, and marketing materials.'
     ],
-    tags: ['Vuejs', 'Hugo', 'SCSS', 'Print Design', 'UX Strategy']
+    tags: ['Hugo', 'JavaScript', 'CSS', 'Graphic Design']
   },
   {
-    role: 'Software Engineer',
-    company: 'Independent Partners',
-    period: '2015 — 2017',
-    description: 'My journey started as a pure Software Engineer. This foundational logic and problem-solving mindset now powers my ability to understand and serve user problems deeply.',
+    role: 'Frontend Developer',
+    company: 'Freelance',
+    period: '2016 — 2018',
+    description: 'Started my career building websites and web applications for clients. This is where I developed my foundation in frontend development and grew an eye for good design.',
     impacts: [
-      'Built core application logic with JavaScript.',
-      'Developed responsive layouts using HTML5 & CSS3.',
-      'Managed version control strictly via GitHub.',
-      'Shifted focus toward solving user problems visually.'
+      'Built client websites with HTML, CSS, and JavaScript.',
+      'Learned responsive design and cross-browser compatibility.',
+      'Started exploring UI/UX design alongside development.',
+      'Worked with version control and collaborative workflows.'
     ],
-    tags: ['Software Engineering', 'JavaScript', 'HTML5 & CSS3', 'GitHub']
+    tags: ['HTML', 'CSS', 'JavaScript', 'Freelance']
   }
 ]
 </script>

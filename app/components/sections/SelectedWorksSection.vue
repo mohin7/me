@@ -197,24 +197,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "KubeDB — Database Ops",
-    year: "2025",
-    description: "Full redesign of KubeDB's marketing site — a Kubernetes-native database platform serving production PostgreSQL, MySQL, Redis, and 10+ more engines at enterprise scale.",
-    tags: ["Product Design", "Nuxt", "Kubernetes"],
-    image: "/kubedb-preview.png",
-    href: "https://kubedb.com",
-    problem: "Engineers couldn't quickly evaluate capabilities across 10+ database engines — redesigned information architecture cut time-to-clarity for technical buyers."
-  },
-  {
-    name: "AppsCode.com Platform",
-    year: "2025",
-    description: "Redesigned the central product hub for AppsCode — a Kubernetes-native cloud platform — unifying messaging across a fragmented ecosystem of 15+ products.",
-    tags: ["UI/UX Design", "Vue.js", "Cloud Platform"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
-    href: "https://appscode.com",
-    problem: "15+ products with no unified story made enterprise evaluation painful — redesigned hub creates a single narrative from infra to application layer."
-  },
-  {
     name: "E-commerce Storefront",
     year: "2024",
     description: "A high-performance e-commerce storefront built with Nuxt 3, featuring a modern shopping experience and responsive UI.",

@@ -23,6 +23,10 @@ No linter or test runner is configured.
 - `app/components/sections/` — One component per page section (Hero, About, Experience, CaseStudies, etc.).
 - `app/components/shared/` — Reusable primitives: Button, Card, GlassCard, Badge, IconBox, SectionHeader, Section, SectionWrapper, Header, Footer, Logo, FloatingWhatsApp.
 - `app/composables/useTheme.ts` — Theme composable persisting `light`/`dark` to `localStorage` under the key `portal-theme`. Theme is applied as a class on `<html>`.
+- `app/composables/useBrandScheme.ts` — Brand scheme composable with 6 schemes (`futuristic`, `premium`, `energetic`, `editorial`, `neutral`, `monochrome`). Persists to `localStorage` under `site-brand-scheme` and applies as `data-brand-scheme` attribute on `<html>`. Default scheme is `premium`.
+- `app/pages/tin-check.vue` — TIN audit checker page for Bangladesh tax (2023–24 AY). Posts to `/api/tin-check` and checks against `server/assets/audit.json` (bundled as a Nitro server asset).
+- `app/pages/privacy.vue`, `app/pages/terms.vue` — Static legal pages.
+- `server/api/tin-check.post.ts` — Server API route that reads audit data from Nitro storage key `assets:server/audit.json` and hashes TINs with `TIN_SALT` env var (set in `runtimeConfig.tinSalt`).
 
 ## Design System
 

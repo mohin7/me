@@ -9,13 +9,13 @@
           :style="sidebarStyle"
         >
         <!-- Standardized Section Header -->
-        <SharedSectionHeader 
-          label="Technical Archive"
-          description="A documented history of building and leading high-impact digital products at scale."
+        <SharedSectionHeader
+          label="Experience"
+          description="Seven years. Three roles. One consistent outcome — products that work."
           class="max-w-[340px]"
         >
           <template #title>
-            Career <br />
+            The <br />
             <span style="color: var(--text-soft)">timeline.</span>
           </template>
         </SharedSectionHeader>
@@ -25,7 +25,7 @@
           <span class="text-accent text-7xl font-black tracking-tighter leading-none">07</span>
           <div class="flex flex-col border-l border-glass pl-6">
             <span class="text-lg font-black leading-none" style="color: var(--text-soft)">Years of</span>
-            <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Executive Craft</span>
+            <span class="text-soft text-[0.65rem] font-black uppercase tracking-[0.2em] mt-1.5">Years of craft</span>
           </div>
         </div>
         </div>
@@ -149,25 +149,25 @@ const experience = [
     role: 'Head of Design',
     company: 'AppsCode Ltd',
     period: '2021 — Present',
-    description: 'Directing product-wide UI/UX strategy and engineering execution. Leading multi-disciplinary teams to take complex cloud infrastructure ideas from concept to final product.',
+    description: 'Leading design and frontend engineering at AppsCode. Every product, every screen — strategy to shipped code.',
     impacts: [
-      'Scale design systems for KubeDB, KubeVault, and Stash.',
-      'Manage cross-functional engineering & design teams.',
-      'Engineered unified design-to-code Nuxt 3 & Vue workflows.',
-      'Bridging human behavior with high-density technical UIs.'
+      'Built and scaled design systems for KubeDB, KubeVault, and Stash.',
+      'Managed cross-functional design and engineering teams.',
+      'Unified design-to-code workflow across Nuxt and Vue.',
+      'Designed for complex technical audiences without losing clarity.'
     ],
-    tags: ['Team Management', 'Idea to Product', 'NuxtJS', 'Psychological UX']
+    tags: ['Team Management', 'Idea to Product', 'NuxtJS', 'UX Strategy']
   },
   {
     role: 'Frontend Architect & UI Designer',
     company: 'Cloud Software Solutions',
     period: '2017 — 2021',
-    description: 'Transitioning into a hybrid role, I specialized in both designing interfaces and building high-performance web applications using modern JavaScript frameworks.',
+    description: 'Moved into a hybrid design-and-build role. Designed the interfaces, then built them.',
     impacts: [
-      'Vue ecosystem lead & component architecture.',
-      'Applied psychological UX principles to dashboards.',
-      'Developed static sites using Hugo and SCSS.',
-      'Executed occasional print design & branding.'
+      'Led Vue component architecture.',
+      'Designed dashboards with user behaviour in mind.',
+      'Built static sites with Hugo and SCSS.',
+      'Occasional print design and branding.'
     ],
     tags: ['Vuejs', 'Hugo', 'SCSS', 'Print Design', 'UX Strategy']
   },
@@ -175,12 +175,12 @@ const experience = [
     role: 'Software Engineer',
     company: 'Independent Partners',
     period: '2015 — 2017',
-    description: 'My journey started as a pure Software Engineer. This foundational logic and problem-solving mindset now powers my ability to understand and serve user problems deeply.',
+    description: 'Started as a software engineer. The technical foundation shapes everything I design today.',
     impacts: [
-      'Built core application logic with JavaScript.',
-      'Developed responsive layouts using HTML5 & CSS3.',
-      'Managed version control strictly via GitHub.',
-      'Shifted focus toward solving user problems visually.'
+      'Built application logic with JavaScript.',
+      'Responsive layouts with HTML5 and CSS3.',
+      'Version control with GitHub.',
+      'Shifted toward solving user problems through visual design.'
     ],
     tags: ['Software Engineering', 'JavaScript', 'HTML5 & CSS3', 'GitHub']
   }

@@ -3,15 +3,15 @@
 
       
       <!-- Standardized Section Header -->
-      <SharedSectionHeader 
-        label="Investment Models"
-        description="Engineering-grade design solutions priced for velocity. No hourly drift, just performance."
+      <SharedSectionHeader
+        label="Pricing"
+        description="Straightforward pricing. Clear scope. No surprises."
         :centered="true"
         class="max-w-4xl mx-auto"
       >
         <template #title>
-          The Strategic <br />
-          <span style="color: var(--text-soft)">matrix.</span>
+          Pick your <br />
+          <span style="color: var(--text-soft)">package.</span>
         </template>
       </SharedSectionHeader>
 
@@ -77,7 +77,7 @@
             class="w-full h-14 rounded-full" :hover-text="pkg.hoverText"
           >
 
-            Begin Partnership
+            Get Started
             <template #right>
               <Icon name="lucide:arrow-up-right" class="h-4 w-4" />
             </template>
@@ -94,14 +94,14 @@
            <div class="max-w-xl text-center lg:text-left">
               <div class="flex items-center justify-center lg:justify-start gap-3 mb-8">
                  <Icon name="lucide:zap" class="h-4 w-4 text-accent" />
-                 <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Venture Partnership Protocol</span>
+                 <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em]">Equity Model</span>
               </div>
               <h2 class="mb-8">
-                Building for <br />
-                <span class="italic serif-font lowercase" style="color: var(--text-soft)">strategic equity.</span>
+                Open to <br />
+                <span class="italic serif-font lowercase" style="color: var(--text-soft)">equity partnerships.</span>
               </h2>
               <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
-                For visionaries with world-changing logic but early-stage capital. I trade top-tier engineering for <span class="text-main font-bold">1% Stake</span> — dedicated to your long-term momentum.
+                For early-stage founders with a strong idea but limited runway. I'll trade full MVP design and development for a <span class="text-main font-bold">1% equity stake</span>.
               </p>
            </div>
            
@@ -109,7 +109,7 @@
               <div class="space-y-4">
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
-                    <span class="text-main font-bold text-sm">1.0% Equity</span>
+                    <span class="text-main font-bold text-sm">1% Equity</span>
                  </div>
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
@@ -117,12 +117,12 @@
                  </div>
               </div>
 
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="View Potential">
-                Secure Strategic Equity
+              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="Explore Options">
+                Let's Talk Equity
                 <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
                 <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>
               </SharedButton>
-              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">Limited to 2 slots / Year</span>
+              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">2 slots per year</span>
            </div>
          </div>
       </div>
@@ -134,14 +134,14 @@
 const packages = [
   {
     name: 'Pitch MVP', icon: 'lucide:cpu',
-    tag: 'Early_Stage',
+    tag: 'Early Stage',
     price: '$800 — $1.5k',
     unit: 'Investment',
-    description: 'High-fidelity prototypes engineered for rapid investor validation and early brand scaling.',
+    description: 'A high-fidelity prototype ready for investor decks and early user testing.',
     target: 'Figma / High-Fi Proto',
     velocity: 'Rapid_Sprint',
     popular: false,
-    hoverText: 'Secure Roadmap',
+    hoverText: 'Let\'s Talk',
     hoverIcon: 'lucide:map',
     features: [
       'Core Brand Identity',
@@ -153,14 +153,14 @@ const packages = [
   },
   {
     name: 'Production MVP', icon: 'lucide:rocket',
-    tag: 'Market_Entry',
+    tag: 'Market Entry',
     price: '$1.8k — $3k',
     unit: 'Investment',
-    description: 'The architectural foundation for your market presence. High-performance systems built for scale.',
+    description: 'A production-ready web presence — designed, built, and optimised for real users.',
     target: 'Nuxt 3 / Vue 3 / SCSS',
     velocity: 'Standard_Batch',
     popular: true,
-    hoverText: 'Start Sprint',
+    hoverText: 'Get Started',
     hoverIcon: 'lucide:zap',
     features: [
       'Full Design System',
@@ -172,10 +172,10 @@ const packages = [
   },
   {
     name: 'Full Partnership', icon: 'lucide:crown',
-    tag: 'Embedded_Lead',
+    tag: 'Ongoing Partnership',
     price: 'Starting at $3k',
     unit: '/ Month',
-    description: 'Long-term strategic commitment. Embedding as your fractional Head of Design & Engineering.',
+    description: 'Your fractional Head of Design and Engineering. Long-term, embedded, accountable.',
     target: 'Full Ecosystem Control',
     velocity: 'Continuous_Ops',
     popular: false,

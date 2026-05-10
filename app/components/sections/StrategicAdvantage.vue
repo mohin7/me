@@ -2,13 +2,13 @@
   <SharedSectionWrapper section-id="strategic-advantage" bg="soft" :centered="true">
     
     <!-- Section Header -->
-    <SharedSectionHeader 
-      label="Strategic Advantage Matrix" 
+    <SharedSectionHeader
+      label="Why It Works"
       :centered="true"
-      description="Software Engineer evolved into a Hybrid UI/UX Architect. I bridge Psychological UX with technical mastery to architect high-scale products that connect and scale"
+      description="Most designers hand off files. Most developers receive them. I do both — which means nothing gets lost between the two."
     >
       <template #title>
-        I engineer products that <span class="text-soft">serve users.</span>
+        Built different. <span class="text-soft">Intentionally.</span>
       </template>
     </SharedSectionHeader>
 
@@ -55,8 +55,8 @@
 
     <!-- Bottom CTA -->
     <div class="reveal mt-12 flex flex-col items-center">
-       <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" variant="primary" size="lg" class="px-16 h-14 rounded-full group" hover-text="Let's Grow">
-        Initiate Partnership
+       <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" variant="primary" size="lg" class="px-16 h-14 rounded-full group" hover-text="Let's Build">
+        Start a Project
         <template #right>
           <Icon name="lucide:arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </template>
@@ -68,29 +68,29 @@
 
 <script setup lang="ts">
 const specs = [
-  { title: '2-4 Wk Sprint', label: 'Rapid Launch', icon: 'lucide:zap' },
-  { title: 'Fixed Budget', label: 'Zero Creep', icon: 'lucide:shield-check' },
-  { title: '1-on-1 Lead', label: 'Direct Flow', icon: 'lucide:fingerprint' }
+  { title: '2-4 Wk Sprint', label: 'Fast to market', icon: 'lucide:zap' },
+  { title: 'Fixed Budget', label: 'Fixed price', icon: 'lucide:shield-check' },
+  { title: '1-on-1 Lead', label: 'One point of contact', icon: 'lucide:fingerprint' }
 ]
 
 const pillars = [
   {
-    title: 'Cognitive Friction Removal',
-    description: 'I eliminate the mental load for your users. By mapping out behavioral patterns, I design interfaces that feel effortlessly intuitive, drastically increasing your conversion and retention rates.',
+    title: 'Interfaces that just work',
+    description: 'Good design removes the thinking. Users move faster, convert better, and come back.',
     icon: 'lucide:brain-circuit',
-    stat: 'High-Conversion Architecture'
+    stat: 'Conversion-focused'
   },
   {
-    title: 'Trust-Binding UI',
-    description: 'Users buy with emotion and justify with logic. I engineer micro-interactions and color psychology to subconsciously build profound trust the exact moment a user lands on your platform.',
+    title: 'Design that earns trust',
+    description: 'First impressions happen in milliseconds. The right visual language builds credibility before a word is read.',
     icon: 'lucide:shield-check',
-    stat: 'Authority-Driven Design'
+    stat: 'Credibility by design'
   },
   {
-    title: 'Addictive Product Loops',
-    description: 'Beyond aesthetics, I focus on the dopamine mechanics of your product. I map the psychological journey from discovery to loyalty, turning casual visitors into deeply invested advocates.',
+    title: 'Products people return to',
+    description: 'Beyond the launch. I design for the long session — the second visit, the third, the habit.',
     icon: 'lucide:infinity',
-    stat: 'Behavioral Hook Implementation'
+    stat: 'Habit-forming UX'
   }
 ]
 </script>

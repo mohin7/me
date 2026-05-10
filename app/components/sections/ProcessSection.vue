@@ -3,14 +3,14 @@
 
     <!-- Compact Header -->
     <!-- Standardized Section Header -->
-    <SharedSectionHeader 
-      label="Execution Framework"
-      description="A high-velocity engineering protocol designed for founders who value precision over process."
+    <SharedSectionHeader
+      label="How I Work"
+      description="A clear, repeatable process. No surprises."
       :centered="true"
       class="max-w-4xl mx-auto"
     >
       <template #title>
-        Systematic <span style="color: var(--text-soft)">delivery.</span>
+        From brief <span style="color: var(--text-soft)">to launch.</span>
       </template>
     </SharedSectionHeader>
 
@@ -60,7 +60,7 @@
     <!-- Strategy Footer Note -->
     <div class="reveal mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-full bg-panel/20 border border-glass w-fit mx-auto">
        <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
-       <span class="text-muted text-[0.65rem] font-bold uppercase tracking-widest">Protocol-Driven Consistency Guaranteed</span>
+       <span class="text-muted text-[0.65rem] font-bold uppercase tracking-widest">Consistent, every time.</span>
     </div>
 
   </SharedSectionWrapper>
@@ -69,28 +69,28 @@
 <script setup lang="ts">
 const steps = [
   {
-    title: 'Behavioral Audit', 
+    title: 'Discovery',
     icon: 'lucide:brain',
-    description: 'Deconstructing your audience\'s psychological drivers into a battle-hardened conversion roadmap.',
-    outputs: ['Psychological Profiling', 'Friction Analysis', 'Trigger Strategy'],
+    description: 'Understanding who uses it, what they need, and where current experiences fall short.',
+    outputs: ['User Research', 'Friction Mapping', 'Strategy Brief'],
   },
   {
-    title: 'Cognitive Mapping', 
+    title: 'Structure',
     icon: 'lucide:git-branch',
-    description: 'Building structural logic that aligns perfectly with human intuition and decision-making.',
-    outputs: ['Dopamine Loops', 'Hierarchy Maps', 'Decision Flows'],
+    description: 'Building the information architecture and flows that feel natural to navigate.',
+    outputs: ['IA Maps', 'User Flows', 'Navigation Logic'],
   },
   {
-    title: 'Emotional UI', 
+    title: 'Design',
     icon: 'lucide:palette',
-    description: 'Designing high-performance visual systems mathematically proven to build trust and demand action.',
-    outputs: ['Color Psychology', 'High-Fi Interfaces', 'Micro-Interactions'],
+    description: 'High-fidelity interfaces. Consistent, detailed, and ready for development.',
+    outputs: ['Visual System', 'High-Fidelity UI', 'Motion Details'],
   },
   {
-    title: 'Neurological Scale', 
+    title: 'Build & Ship',
     icon: 'lucide:rocket',
-    description: 'Bridging behavior-driven design with flawless Vue/Nuxt code for an addictive product launch.',
-    outputs: ['Production Engine', 'QA Physics Check', 'Scale Protocols'],
+    description: 'Clean Vue/Nuxt implementation. QA\'d, optimised, and deployed.',
+    outputs: ['Production Code', 'QA Review', 'Launch'],
   }
 ]
 </script>

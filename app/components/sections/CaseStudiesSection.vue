@@ -3,14 +3,14 @@
 
 
       <!-- Standardized Section Header -->
-      <SharedSectionHeader 
-        label="Evidence Gallery"
-        description="Moving beyond metrics to highlight the complex structural problems resolved and the long-term value delivered to stakeholders."
+      <SharedSectionHeader
+        label="Case Studies"
+        description="Three projects. Three different problems. One approach that works."
         :centered="true"
         class="max-w-4xl mx-auto"
       >
         <template #title>
-          Impact <span style="color: var(--text-soft)">architected.</span>
+          Real work. <span style="color: var(--text-soft)">Real results.</span>
         </template>
       </SharedSectionHeader>
 
@@ -137,26 +137,26 @@ const caseStudies = [
   {
     title: "Enterprise Database Core",
     industry: "Cloud Infrastructure",
-    problem: "Operators were struggling with cognitive overload in high-concurrency environments, leading to costly deployment errors.",
-    userImpact: "Reduced operational friction by 60%, allowing engineers to execute complex scaling tasks with zero task-abandonment.",
-    businessValue: "Standardized the UI across 6 global products, cutting multi-product design debt and accelerating time-to-market by 3.2x.",
-    impactHeadline: "Consolidated AppsCode's entire multi-cloud ecosystem under one unified design protocol.",
+    problem: "Operators were making costly errors in high-concurrency environments — the interface wasn't built for that level of complexity.",
+    userImpact: "Reduced operational friction by 60%. Engineers now complete complex scaling tasks without stopping.",
+    businessValue: "One unified UI across 6 global products. Design debt eliminated. Time-to-market improved 3.2×.",
+    impactHeadline: "Unified AppsCode's entire multi-cloud ecosystem under a single design system.",
   },
   {
     title: "High-Frequency Reader",
     industry: "Linguistics & PWA",
-    problem: "Religious applications were historically fragmented and ad-heavy, failing to provide the typographic focus required for study.",
-    userImpact: "Created a distraction-free environment that increased average session duration by 150% and daily active users during the pilot.",
-    businessValue: "Established a reference system for Vue 3 PWAs that attracted international contributors and validated offline-first scaling.",
-    impactHeadline: "Redefined digital concentration through surgical typography and distraction-free logic.",
+    problem: "Religious apps were fragmented and ad-heavy — the opposite of what deep reading requires.",
+    userImpact: "Session duration up 150%. Daily active users grew during the pilot.",
+    businessValue: "Became a reference implementation for offline-first Vue 3 PWAs.",
+    impactHeadline: "Set a new standard for distraction-free reading apps.",
   },
   {
     title: "Systemic Team Scaling",
     industry: "Workflow Productivity",
-    problem: "Siloed engineering teams were duplicating UI primitives, resulting in inconsistent products and wasted development cycles.",
-    userImpact: "Provided a single source of authority, reducing UI confusion and onboarding time for new front-end hires by 50%.",
-    businessValue: "Eliminated 30% of sprint waste caused by visual debt, achieving 100% brand consistency across the entire portfolio.",
-    impactHeadline: "Optimized global sprint efficiency and unified five independent product lifecycles.",
+    problem: "Engineering teams were building the same UI components independently — creating inconsistency and wasted sprints.",
+    userImpact: "One source of truth. Onboarding time for new frontend hires cut by 50%.",
+    businessValue: "30% of sprint waste eliminated. 100% brand consistency across the portfolio.",
+    impactHeadline: "Unified five product teams under one shared design system.",
   }
 ]
 

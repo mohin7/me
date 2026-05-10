@@ -16,10 +16,10 @@
         class="max-w-3xl mx-auto mb-14"
       >
         <template #title>
-          Six years. One designer. <span style="color: var(--text-soft)">Every pixel.</span>
+          Six years. One designer. <span style="color: var(--text-soft)">Every product.</span>
         </template>
         <template #description>
-          When a company trusts one person with every interface for 6 years, that's not a job title — it's proof. Here's everything I designed and built at AppsCode.
+          Six years as the only designer at a Kubernetes infrastructure company. I owned every product, every screen, every release.
         </template>
       </SharedSectionHeader>
 
@@ -97,9 +97,9 @@
         <div class="pointer-events-none absolute -right-32 -top-32 w-96 h-96 rounded-full blur-[100px] opacity-[0.06]" style="background: var(--accent)"></div>
         <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8 justify-between p-8 md:p-12">
           <div class="max-w-lg">
-            <h3 class="mb-3 leading-tight text-main">What you see is what I built.<br><span style="color:var(--text-soft)">No middlemen. No surprises.</span></h3>
+            <h3 class="mb-3 leading-tight text-main">Everything you see, I built.<br><span style="color:var(--text-soft)">Alone.</span></h3>
             <p class="text-soft text-sm leading-relaxed">
-              When the same person designs and codes, nothing gets lost in translation. That's why teams keep coming back.
+              No handoffs. No miscommunication. Just clean, consistent work — shipped.
             </p>
           </div>
           <div class="flex flex-col gap-3 shrink-0">
@@ -121,10 +121,10 @@
 
 <script setup lang="ts">
 const ownershipStats = [
-  { value: '1',   label: 'Solo designer & UI developer' },
-  { value: '6yr+', label: 'At AppsCode, uninterrupted' },
+  { value: '1',   label: 'Solo designer and developer' },
+  { value: '6yr+', label: 'Uninterrupted tenure' },
   { value: '10+', label: 'Live products shipped' },
-  { value: '0',   label: 'Handoff gaps or design debt' },
+  { value: '0',   label: 'Design handoff gaps' },
 ]
 
 const works = [
@@ -132,10 +132,10 @@ const works = [
     title: 'KubeDB Website',
     type: 'Web Design · Hugo · JS',
     contributions: [
-      'Designed and developed the KubeDB public website to drive user acquisition',
-      'Built with the shared product theme for unified brand experience',
-      'Optimized information architecture for complex database lifecycle documentation',
-      'Integrated comparison matrices for 25+ database engines',
+      'Built the public site for KubeDB from scratch.',
+      'Designed for clarity across 25+ database engines.',
+      'Unified brand with the rest of the product suite.',
+      'Structured complex docs for fast navigation.',
     ],
     href: 'https://kubedb.com',
     domain: 'kubedb.com',
@@ -145,10 +145,10 @@ const works = [
     title: 'Hugo Product Theme',
     type: 'Web Design · Hugo · JS',
     contributions: [
-      'Architected the core Hugo theme powering all AppsCode product properties',
-      'Engineered for performance and consistent branding across high-traffic documentation sites',
-      'Clean HTML, CSS, and vanilla JS base optimized for Core Web Vitals',
-      'Reusable components for product features, case studies, and documentation',
+      'The theme powering every AppsCode product site.',
+      'Built once, deployed across a fleet of high-traffic properties.',
+      'Optimized for Core Web Vitals out of the box.',
+      'Every team uses it. I built it solo.',
     ],
     href: 'https://github.com/appscode/hugo-product-theme',
     domain: 'github.com/appscode/hugo-product-theme',
@@ -158,10 +158,10 @@ const works = [
     title: 'AppsCode.com — Platform Hub',
     type: 'Platform Web · Hugo · JS',
     contributions: [
-      'Designed and built the central hub for AppsCode\'s Kubernetes-native products',
-      'Crafted a cohesive narrative for infrastructure, security, and data solutions',
-      'Responsive design ensuring a premium experience on all devices',
-      'Performance-tuned architecture using Hugo and optimized assets',
+      'The central hub for all AppsCode products.',
+      'Designed the narrative for infrastructure, security, and data tools.',
+      'Responsive, fast, and on-brand across every breakpoint.',
+      'Hugo-based, performance-tuned.',
     ],
     href: 'https://appscode.com',
     domain: 'appscode.com',
@@ -171,10 +171,10 @@ const works = [
     title: 'AppsCode Design System',
     type: 'Design System · Vue.js',
     contributions: [
-      'Developed a comprehensive design system for all AppsCode frontend applications',
-      'Documented components and patterns at design.appscode.com',
-      'Engineered reusable Vue.js components with consistent styling and behavior',
-      'Used across mission-critical products like KubeDB UI and ACE Platform',
+      'The design system behind every AppsCode product UI.',
+      'Documented at design.appscode.com.',
+      'Vue components used in production across KubeDB UI and ACE.',
+      'One system. Zero drift.',
     ],
     href: 'https://design.appscode.com/components/button',
     domain: 'design.appscode.com',
@@ -184,10 +184,10 @@ const works = [
     title: 'KubeDB UI — Management Platform',
     type: 'Product UI · Vue.js · Nuxt.js',
     contributions: [
-      'UI/UX design for the KubeDB Database-as-a-Service management interface',
-      'Built a complex, interactive frontend with Vue.js and Nuxt.js',
-      'Visualized database provisioning, scaling, and day-2 operations',
-      'Streamlined Kubernetes database management for platform engineers',
+      'The management interface for KubeDB.',
+      'Complex database workflows, made navigable.',
+      'Built with Vue 3 and Nuxt.',
+      'Designed for platform engineers who move fast.',
     ],
     href: 'https://appscode.com/db',
     domain: 'appscode.com/db',
@@ -197,10 +197,10 @@ const works = [
     title: 'Event Visuals & Brand Graphics',
     type: 'Graphic Design · Print & Digital',
     contributions: [
-      'Large-format banners and booth graphics for AppsCode conference appearances',
-      'Presentation slide templates aligned to the AppsCode brand',
-      'Social media graphics and promotional assets for events and webinars',
-      'Print-ready and digital assets for public-facing brand moments',
+      'Conference banners, booth graphics, slide decks.',
+      'Print-ready and digital. On-brand every time.',
+      'From Figma to the venue floor.',
+      'Every public moment, designed.',
     ],
     href: 'https://appscode.com',
     domain: 'appscode.com',

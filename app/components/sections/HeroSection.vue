@@ -43,7 +43,7 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em]">Available · 1 Slot Open</span>
+            <span class="text-main text-[0.65rem] font-bold uppercase tracking-[0.4em]">Available · 1 Opening</span>
           </div>
 
           <!-- Title with Clipless Vector Reveal -->
@@ -62,7 +62,7 @@
           </h1>
 
           <p class="hero-sub font-medium leading-relaxed mx-auto max-w-4xl pt-2 mb-12 px-2 md:px-4 opacity-90">
-            Software Engineer evolved into a <span class="text-main font-bold">Hybrid UI/UX Architect</span>. I bridge Psychological UX with technical mastery in Vue & Nuxt to architect products that connect and scale
+            Designer who codes. Engineer who thinks in systems. I make products people actually want to use.
           </p>
 
           <!-- CTA Row -->
@@ -73,9 +73,9 @@
               target="_blank"
               variant="primary" 
               size="lg" 
-              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Secure Roadmap"
+              class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Let's Talk"
             >
-              Book 30-Min Strategy
+              Book a 30-Min Call
               <template #right>
                 <Icon name="lucide:calendar" class="h-4 w-4" />
               </template>
@@ -83,9 +83,9 @@
                 <Icon name="lucide:map" class="h-4 w-4" />
               </template>
             </SharedButton>
-            <SharedButton tag="a" href="https://wa.me/8801634419564" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Instant Reply">
+            <SharedButton tag="a" href="https://wa.me/8801634419564" variant="liquid" size="lg" class="h-14 px-10 rounded-full w-full sm:w-auto" hover-text="Quick Reply">
               <template #left><Icon name="logos:whatsapp-icon" class="h-5 w-5" /></template>
-              WhatsApp Now
+              WhatsApp
             </SharedButton>
           </div>
 
@@ -101,8 +101,8 @@
                   </div>
                 </div>
                 <div class="flex flex-col text-left">
-                  <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none">Elite Collaboration</span>
-                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-70 mt-1">Venture-scale Partners</span>
+                  <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none">Trusted by</span>
+                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-70 mt-1">Product Teams</span>
                 </div>
               </div>
 
@@ -122,12 +122,12 @@
               <div class="flex items-center justify-center lg:justify-end gap-10 px-10 py-5 lg:py-4 shrink-0 border-t lg:border-t-0 lg:border-l border-glass">
                  <div class="flex items-baseline gap-2">
                    <span class="text-2xl font-black leading-none">07</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Year_Craft</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Years</span>
                  </div>
                  <div class="h-6 w-px bg-glass"></div>
                  <div class="flex items-baseline gap-2">
                    <span class="text-2xl font-black leading-none">24+</span>
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Ships</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-80">Products Shipped</span>
                  </div>
               </div>
             </div>

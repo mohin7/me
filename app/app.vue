@@ -300,7 +300,7 @@ html, body {
 
 .site-shell {
   min-height: 100vh;
-  cursor: auto; 
+  cursor: auto;
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 300ms ease, color 300ms ease;
@@ -309,6 +309,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   caret-color: var(--accent);
 }
+
 
 .site-shell:not(.is-touch) {
   cursor: none;
@@ -363,46 +364,55 @@ p, .prose {
 }
 
 .light {
-  /* Obsidian & Ether: High-Authority Monochromatic */
-  --bg-page: hsl(0, 0%, 99%);           /* Crisp White */
+  /* Linktree-inspired: clean off-white, green accent */
+  --bg-page:  hsl(150, 12%, 97%);
   --bg-panel: hsl(0, 0%, 100%);
-  --bg-glass: hsla(0, 0%, 100%, 0.618);
-  --bg-soft: hsl(240, 5%, 94%);         /* φ step */
-  --text-main: hsl(240, 10%, 8%);       /* φ step (Deep Obsidian) */
-  --text-soft: hsl(240, 8%, 38%);       /* φ step */
-  --text-muted: hsl(240, 5%, 62%);      /* φ step */
-  
-  --accent: hsl(240, 10%, 8%);          /* Obsidian Accent */
-  --accent-fg: hsl(0, 0%, 100%);
-  --accent-spotlight: hsla(240, 10%, 8%, 0.06);
-  --border-glass: hsla(240, 10%, 8%, 0.09);
-  
-  --card-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.03);
-  --section-shadow: 0 20px 60px -15px hsla(0, 0%, 0%, 0.05);
+  --bg-glass: hsla(0, 0%, 100%, 0.75);
+  --bg-soft:  hsl(150, 10%, 93%);
+  --text-main: hsl(160, 25%, 8%);
+  --text-soft: hsl(160, 10%, 36%);
+  --text-muted: hsl(160, 6%, 56%);
+
+  --accent:        hsl(152, 68%, 42%);   /* Linktree green */
+  --accent-fg:     hsl(0, 0%, 100%);
+  --accent-rgb:    39, 174, 96;
+  --accent-glow:   hsla(152, 68%, 42%, 0.22);
+  --accent-tint:   hsla(152, 68%, 42%, 0.07);
+  --border-glass:  hsla(160, 20%, 10%, 0.08);
+
+  --card-shadow:    0 4px 24px -4px hsla(152, 40%, 20%, 0.08);
+  --card-shadow-lg: 0 16px 48px -8px hsla(152, 40%, 20%, 0.14);
+  --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.9);
+  --hover-brightness: 1.08;
 }
 
 .dark {
-  /* Obsidian & Ether: High-Authority Monochromatic */
-  --bg-page: hsl(240, 10%, 3.5%);      /* Deep Space Obsidian */
-  --bg-panel: hsl(240, 8%, 7%);        /* φ step */
-  --bg-glass: hsla(240, 8%, 12%, 0.618);
-  --bg-soft: hsl(240, 6%, 15%);        /* φ step */
-  --text-main: hsl(0, 0%, 98%);        /* Ether White */
-  --text-soft: hsl(240, 5%, 72%);       /* φ step */
-  --text-muted: hsl(240, 5%, 62%);      /* φ step */
-  
-  --accent: hsl(0, 0%, 100%);          /* Pure Light Accent */
-  --accent-fg: hsl(240, 10%, 3.5%);
-  --accent-spotlight: hsla(0, 0%, 100%, 0.07);
-  --border-glass: hsla(0, 0%, 100%, 0.09);
-  
-  --card-shadow: 0 10px 50px -10px hsla(0, 0%, 0%, 0.382);
-  --section-shadow: 0 30px 100px -20px hsla(0, 0%, 0%, 0.618);
+  /* Linktree-inspired: deep green-tinted dark, lime accent */
+  --bg-page:  hsl(160, 18%, 6%);        /* #0D1712 — deep forest */
+  --bg-panel: hsl(160, 14%, 10%);       /* #121E18 — card surface */
+  --bg-glass: hsla(160, 14%, 14%, 0.72);
+  --bg-soft:  hsl(160, 12%, 13%);       /* #182119 — section alt */
+  --text-main: hsl(140, 25%, 96%);      /* near-white with green tint */
+  --text-soft: hsl(150, 12%, 66%);
+  --text-muted: hsl(150, 8%, 48%);
+
+  --accent:        hsl(145, 75%, 52%);  /* #28E882 — Linktree lime */
+  --accent-fg:     hsl(160, 30%, 6%);   /* dark on lime */
+  --accent-rgb:    40, 232, 130;
+  --accent-glow:   hsla(145, 75%, 52%, 0.28);
+  --accent-tint:   hsla(145, 75%, 52%, 0.08);
+  --border-glass:  hsla(145, 30%, 80%, 0.07);
+
+  --card-shadow:    0 4px 28px -4px hsla(0, 0%, 0%, 0.45);
+  --card-shadow-lg: 0 20px 60px -10px hsla(0, 0%, 0%, 0.65);
+  --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.05);
+  --hover-brightness: 1.12;
 }
 
 :root {
-  --accent: #18181B;
-  --inner-glow: inset 0 1px 1px 0 rgba(255,255,255,0.05);
+  --accent:     hsl(152, 68%, 42%);
+  --accent-rgb: 39, 174, 96;
+  --inner-glow: inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
@@ -410,7 +420,7 @@ p, .prose {
 
 .section-label {
   @apply text-[0.65rem] font-black uppercase tracking-[0.4em];
-  color: color-mix(in srgb, var(--accent), transparent 30%);
+  color: color-mix(in srgb, var(--accent), transparent 25%);
 }
 
 /* ── Global Scroll Reveal Animations ── */

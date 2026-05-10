@@ -38,10 +38,13 @@
       <p class="text-[0.65rem] font-black uppercase tracking-[0.4em] text-muted mb-12 text-center">AppsCode · Flagship Projects</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div
+        <a
           v-for="(work, idx) in works"
           :key="idx"
-          class="group relative flex flex-col rounded-3xl border border-glass bg-panel overflow-hidden transition-all duration-500 hover:border-accent/20 hover:shadow-[0_20px_60px_-16px_rgba(0,0,0,0.2)]"
+          :href="work.href"
+          target="_blank"
+          rel="noopener"
+          class="group relative flex flex-col rounded-3xl border border-glass bg-panel overflow-hidden transition-all duration-500 hover:border-accent/20 hover:shadow-[0_20px_60px_-16px_rgba(0,0,0,0.2)] cursor-pointer"
         >
           <!-- Image Preview -->
           <div class="relative h-44 overflow-hidden bg-soft/30 border-b border-glass">
@@ -56,7 +59,7 @@
             </div>
             <!-- Type Badge Overlay -->
             <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border border-glass text-muted bg-panel/80 backdrop-blur-lg">
+              <span class="px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest border border-white/20 text-white bg-black/60 backdrop-blur-lg">
                 {{ work.type }}
               </span>
             </div>
@@ -80,15 +83,13 @@
 
             <!-- Link -->
             <div class="mt-auto pt-4 border-t border-glass">
-              <a :href="work.href" target="_blank" rel="noopener"
-                 class="flex items-center justify-between text-[11px] font-bold text-soft hover:text-accent transition-colors"
-                 @click.stop>
+              <div class="flex items-center justify-between text-[11px] font-bold text-soft group-hover:text-accent transition-colors">
                 <span class="truncate mr-3">{{ work.domain }}</span>
                 <Icon name="lucide:arrow-up-right" class="h-3.5 w-3.5 shrink-0" />
-              </a>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- ── Closing CTA ── -->

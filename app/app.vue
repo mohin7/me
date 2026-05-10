@@ -364,47 +364,45 @@ p, .prose {
 }
 
 .light {
-  /* Linktree-inspired: clean off-white, green accent */
-  --bg-page:  hsl(150, 12%, 97%);
+  --bg-page:  hsl(0, 0%, 99%);
   --bg-panel: hsl(0, 0%, 100%);
-  --bg-glass: hsla(0, 0%, 100%, 0.75);
-  --bg-soft:  hsl(150, 10%, 93%);
-  --text-main: hsl(160, 25%, 8%);
-  --text-soft: hsl(160, 10%, 36%);
-  --text-muted: hsl(160, 6%, 56%);
+  --bg-glass: hsla(0, 0%, 100%, 0.72);
+  --bg-soft:  hsl(150, 8%, 95%);
+  --text-main: hsl(160, 20%, 8%);
+  --text-soft: hsl(160, 6%, 42%);
+  --text-muted: hsl(160, 4%, 60%);
 
-  --accent:        hsl(152, 68%, 42%);   /* Linktree green */
+  --accent:        hsl(152, 60%, 38%);
   --accent-fg:     hsl(0, 0%, 100%);
-  --accent-rgb:    39, 174, 96;
-  --accent-glow:   hsla(152, 68%, 42%, 0.22);
-  --accent-tint:   hsla(152, 68%, 42%, 0.07);
-  --border-glass:  hsla(160, 20%, 10%, 0.08);
+  --accent-rgb:    35, 160, 85;
+  --accent-glow:   hsla(152, 60%, 38%, 0.18);
+  --accent-tint:   hsla(152, 60%, 38%, 0.06);
+  --border-glass:  hsla(160, 15%, 10%, 0.09);
 
-  --card-shadow:    0 4px 24px -4px hsla(152, 40%, 20%, 0.08);
-  --card-shadow-lg: 0 16px 48px -8px hsla(152, 40%, 20%, 0.14);
+  --card-shadow:    0 4px 20px -4px hsla(0, 0%, 0%, 0.06);
+  --card-shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.10);
   --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.9);
   --hover-brightness: 1.08;
 }
 
 .dark {
-  /* Linktree-inspired: deep green-tinted dark, lime accent */
-  --bg-page:  hsl(160, 18%, 6%);        /* #0D1712 — deep forest */
-  --bg-panel: hsl(160, 14%, 10%);       /* #121E18 — card surface */
-  --bg-glass: hsla(160, 14%, 14%, 0.72);
-  --bg-soft:  hsl(160, 12%, 13%);       /* #182119 — section alt */
-  --text-main: hsl(140, 25%, 96%);      /* near-white with green tint */
-  --text-soft: hsl(150, 12%, 66%);
-  --text-muted: hsl(150, 8%, 48%);
+  --bg-page:  hsl(160, 14%, 7%);
+  --bg-panel: hsl(160, 12%, 11%);
+  --bg-glass: hsla(160, 12%, 16%, 0.70);
+  --bg-soft:  hsl(160, 10%, 14%);
+  --text-main: hsl(0, 0%, 97%);
+  --text-soft: hsl(150, 8%, 65%);
+  --text-muted: hsl(150, 5%, 46%);
 
-  --accent:        hsl(145, 75%, 52%);  /* #28E882 — Linktree lime */
-  --accent-fg:     hsl(160, 30%, 6%);   /* dark on lime */
-  --accent-rgb:    40, 232, 130;
-  --accent-glow:   hsla(145, 75%, 52%, 0.28);
-  --accent-tint:   hsla(145, 75%, 52%, 0.08);
-  --border-glass:  hsla(145, 30%, 80%, 0.07);
+  --accent:        hsl(145, 65%, 50%);
+  --accent-fg:     hsl(160, 25%, 6%);
+  --accent-rgb:    42, 210, 115;
+  --accent-glow:   hsla(145, 65%, 50%, 0.24);
+  --accent-tint:   hsla(145, 65%, 50%, 0.07);
+  --border-glass:  hsla(0, 0%, 100%, 0.09);
 
-  --card-shadow:    0 4px 28px -4px hsla(0, 0%, 0%, 0.45);
-  --card-shadow-lg: 0 20px 60px -10px hsla(0, 0%, 0%, 0.65);
+  --card-shadow:    0 4px 24px -4px hsla(0, 0%, 0%, 0.40);
+  --card-shadow-lg: 0 20px 60px -10px hsla(0, 0%, 0%, 0.60);
   --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.05);
   --hover-brightness: 1.12;
 }

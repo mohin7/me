@@ -16,7 +16,7 @@
       
       <!-- Title -->
       <h3 class="reveal mb-12 text-2xl md:text-3xl font-bold">
-        Great products don't happen by accident. <br />
+        Looking for the best UI/UX designer in Bangladesh? <br />
         <span style="color: var(--text-soft)">Let's build something worth using.</span>
       </h3>
       

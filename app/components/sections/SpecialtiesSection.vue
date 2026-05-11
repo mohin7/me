@@ -4,8 +4,8 @@
       
       <!-- Section Header -->
       <div class="mb-16 relative">
-        <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl text-main">Specialties</h2>
-        <p class="text-soft max-w-2xl text-lg font-medium opacity-80">High-performance design and development for modern products.</p>
+        <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl text-main">UI/UX Design Services in Bangladesh</h2>
+        <p class="text-soft max-w-2xl text-lg font-medium opacity-80">Freelance UI/UX design and frontend development for startups and SaaS products — based in Dhaka, Bangladesh, working globally.</p>
         
         <!-- Handwriting Accent -->
         <div class="absolute -right-4 top-0 md:right-1/4 pointer-events-none">
@@ -40,18 +40,18 @@
 const specialties = [
   {
     icon: 'code',
-    title: 'Interface Engineering',
-    description: 'Bridging the design gap by building high-performance, pixel-perfect interfaces with NuxtJS and VueJS.'
+    title: 'UI/UX Design & Frontend Development',
+    description: 'Pixel-perfect, high-performance web interfaces built with Nuxt.js and Vue.js. From Figma design to production code — one person, zero handoff friction.'
   },
   {
     icon: 'palette',
-    title: 'Visual Systems',
-    description: 'Crafting scalable design systems that maintain consistency across large-scale enterprise applications.'
+    title: 'Product & SaaS Design',
+    description: 'End-to-end product design for SaaS, web apps, and mobile apps. Scalable design systems used by teams across Bangladesh and globally.'
   },
   {
     icon: 'layers',
-    title: 'Architecture & UX',
-    description: 'Focusing on product logic and user journeys to create tools that are as functional as they are beautiful.'
+    title: 'Freelance Design Consulting',
+    description: 'Available for freelance UI/UX projects, startup MVPs, and ongoing product partnerships. Based in Dhaka, Bangladesh — working with clients worldwide.'
   }
 ]
 </script>

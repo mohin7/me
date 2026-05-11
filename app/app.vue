@@ -61,23 +61,24 @@
 <script setup lang="ts">
 import { onMounted, ref, computed, onUnmounted } from 'vue'
 
-const { theme, applyTheme } = useTheme()
+const { theme } = useTheme()
 const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 // ── SEO & Metadata Implementation ──
 useSeoMeta({
-  title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
-  description: 'Md Mohin Uddin is one of the best UI/UX designers in Bangladesh, based in Dhaka. Head of Design at AppsCode with 7+ years building SaaS, cloud, and Kubernetes products. Expert in Nuxt, Vue.js & scalable design systems.',
+  title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Freelance Product Designer Dhaka',
+  description: 'Md Mohin Uddin — top UI/UX designer & freelance product designer in Bangladesh, Dhaka. 7+ years designing SaaS, web apps, mobile apps & design systems. Hire the best UX designer in Bangladesh for your startup or product.',
+  keywords: 'UI UX designer Bangladesh, best UI UX designer in Bangladesh, freelance UI designer Dhaka, product designer Bangladesh, UX designer Dhaka, hire UI designer Bangladesh, web designer Bangladesh, SaaS designer Bangladesh, Nuxt Vue designer, design system expert Bangladesh, Md Mohin Uddin',
   ogType: 'website',
   ogUrl: 'https://mohin.design',
-  ogTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
-  ogDescription: 'Md Mohin Uddin is one of the best UI/UX designers in Bangladesh, based in Dhaka. Head of Design at AppsCode with 7+ years building SaaS, cloud, and Kubernetes products.',
+  ogTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Freelance Product Designer Dhaka',
+  ogDescription: 'Top UI/UX designer & freelance product designer in Bangladesh, Dhaka. 7+ years designing SaaS, web apps & design systems. Hire the best UX designer in Bangladesh.',
   ogImage: 'https://mohin.design/og-banner.png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh',
-  twitterDescription: 'Head of Design at AppsCode, Dhaka. 7+ years building world-class SaaS & cloud products. Nuxt, Vue.js, design systems.',
+  twitterDescription: 'Top UI/UX & freelance product designer in Dhaka, Bangladesh. 7+ years. SaaS, web apps, design systems. Available for hire.',
   twitterImage: 'https://mohin.design/og-banner.png',
 })
 

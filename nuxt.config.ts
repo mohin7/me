@@ -45,6 +45,13 @@ export default defineNuxtConfig({
           type: 'text/javascript',
         },
         {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-EKZEKVJBRP',
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EKZEKVJBRP');`,
+        },
+        {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
@@ -52,16 +59,27 @@ export default defineNuxtConfig({
             name: 'Md Mohin Uddin',
             url: 'https://mohin.design',
             image: 'https://mohin.design/og-banner.png',
-            jobTitle: 'Head of Design',
-            description: 'Best UI/UX Designer in Bangladesh. Head of Design at AppsCode, Dhaka. 7+ years designing SaaS, cloud, and Kubernetes products.',
+            jobTitle: 'UI/UX Designer & Product Architect',
+            description: 'Best UI/UX designer in Bangladesh. Freelance product designer based in Dhaka with 7+ years designing SaaS, web apps, and design systems for global clients.',
             worksFor: {
               '@type': 'Organization',
               name: 'AppsCode',
               url: 'https://appscode.com',
             },
+            hasOccupation: {
+              '@type': 'Occupation',
+              name: 'UI/UX Designer',
+              occupationLocation: {
+                '@type': 'City',
+                name: 'Dhaka',
+              },
+              description: 'Freelance UI/UX designer and product architect in Bangladesh specializing in SaaS, web apps, and design systems.',
+              skills: 'UI/UX Design, Product Design, Figma, Nuxt.js, Vue.js, Design Systems, SaaS, Web App Design, Mobile App Design',
+            },
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Dhaka',
+              addressRegion: 'Dhaka Division',
               addressCountry: 'BD',
             },
             sameAs: [
@@ -69,13 +87,30 @@ export default defineNuxtConfig({
               'https://github.com/mohin7',
               'https://dribbble.com/mohin7',
             ],
-            knowsAbout: ['UI/UX Design', 'Nuxt.js', 'Vue.js', 'Design Systems', 'Kubernetes', 'SaaS', 'Bangladesh'],
+            knowsAbout: [
+              'UI/UX Design',
+              'Product Design',
+              'Freelance UI Designer',
+              'Web Design Bangladesh',
+              'SaaS Design',
+              'Mobile App Design',
+              'Design Systems',
+              'Nuxt.js',
+              'Vue.js',
+              'Figma',
+              'Kubernetes',
+              'Bangladesh',
+              'Dhaka',
+            ],
           }),
         },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'canonical', href: 'https://mohin.design' },
+      ],
+      noscript: [
+        { innerHTML: 'Please enable JavaScript to use this site.' }
       ],
     }
   },

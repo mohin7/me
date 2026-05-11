@@ -117,7 +117,7 @@
                  </div>
               </div>
 
-              <SharedButton variant="primary" class="h-14 w-full rounded-full" hover-text="Explore Options">
+              <SharedButton tag="a" href="mailto:hello.mohin4@gmail.com?subject=Equity Partnership Inquiry" variant="primary" class="h-14 w-full rounded-full" hover-text="Explore Options">
                 Let's Talk Equity
                 <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
                 <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>

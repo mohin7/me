@@ -95,10 +95,10 @@
                         <p class="text-muted text-[0.65rem] font-black uppercase tracking-widest opacity-60 mt-1">Strategic Architecture validation</p>
                       </div>
                     </div>
-                    <SharedButton 
-                      tag="a" 
-                      href="#" 
-                      variant="liquid" 
+                    <SharedButton
+                      tag="a"
+                      href="/blog"
+                      variant="liquid"
                       class="h-12 px-8 rounded-full"
                     >
                       View Logic Archive

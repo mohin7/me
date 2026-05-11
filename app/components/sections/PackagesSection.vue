@@ -135,7 +135,7 @@ const packages = [
   {
     name: 'Pitch MVP', icon: 'lucide:cpu',
     tag: 'Early Stage',
-    price: '$800 — $1.5k',
+    price: '$500 — $800',
     unit: 'Investment',
     description: 'A high-fidelity prototype ready for investor decks and early user testing.',
     target: 'Figma / High-Fi Proto',
@@ -154,7 +154,7 @@ const packages = [
   {
     name: 'Production MVP', icon: 'lucide:rocket',
     tag: 'Market Entry',
-    price: '$1.8k — $3k',
+    price: '$1k — $2k',
     unit: 'Investment',
     description: 'A production-ready web presence — designed, built, and optimised for real users.',
     target: 'Nuxt 3 / Vue 3 / SCSS',
@@ -173,7 +173,7 @@ const packages = [
   {
     name: 'Full Partnership', icon: 'lucide:crown',
     tag: 'Ongoing Partnership',
-    price: 'Starting at $3k',
+    price: 'Starting at $2k',
     unit: '/ Month',
     description: 'Your fractional Head of Design and Engineering. Long-term, embedded, accountable.',
     target: 'Full Ecosystem Control',

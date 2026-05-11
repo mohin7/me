@@ -8,7 +8,7 @@
         <!-- Social Proof Column (Compact) -->
         <div class="flex items-center gap-4 px-8 py-5 border-b md:border-b-0 md:border-r border-glass">
           <div class="flex -space-x-3">
-            <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#111111] bg-soft flex items-center justify-center overflow-hidden">
+            <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#0a0a0a] bg-soft flex items-center justify-center overflow-hidden">
                <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent/40" />
             </div>
           </div>

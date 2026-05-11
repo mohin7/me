@@ -96,7 +96,7 @@
               <!-- Social Proof -->
               <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
                 <div class="flex -space-x-3">
-                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#111111] bg-soft flex items-center justify-center overflow-hidden">
+                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#0a0a0a] bg-soft flex items-center justify-center overflow-hidden">
                      <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent opacity-40" />
                   </div>
                 </div>

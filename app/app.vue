@@ -387,26 +387,27 @@ p, .prose {
 }
 
 .dark {
-  --bg-page:   #111111;
-  --bg-panel:  #1a1a1a;
-  --bg-glass:  rgba(26, 26, 26, 0.92);
-  --bg-soft:   #222222;
-  --text-main: #f0f0f0;
-  --text-soft: #999999;
-  --text-muted: #666666;
+  --bg-page:   #0a0a0a;
+  --bg-panel:  #141414;
+  --bg-glass:  rgba(20, 20, 20, 0.95);
+  --bg-soft:   #1c1c1c;
+
+  --text-main: #f2f2f2;
+  --text-soft: #a0a0a0;
+  --text-muted: #5a5a5a;
 
   --accent:        #22c55e;
-  --accent-fg:     #0a1a10;
+  --accent-fg:     #051a0d;
   --accent-rgb:    34, 197, 94;
-  --accent-glow:   rgba(34, 197, 94, 0.20);
-  --accent-tint:   rgba(34, 197, 94, 0.07);
-  --border-glass:  #2a2a2a;
-  --border-subtle: #222222;
+  --accent-glow:   rgba(34, 197, 94, 0.15);
+  --accent-tint:   rgba(34, 197, 94, 0.06);
+  --border-glass:  #242424;
+  --border-subtle: #1c1c1c;
 
-  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.4);
-  --card-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  --hover-brightness: 1.1;
+  --card-shadow:    0 1px 3px rgba(0, 0, 0, 0.6);
+  --card-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --hover-brightness: 1.08;
 }
 
 :root {

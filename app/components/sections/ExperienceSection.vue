@@ -32,7 +32,7 @@
 
         <!-- Scrollable Timeline Content -->
         <div class="relative">
-          <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px bg-gradient-to-b from-glass via-glass to-transparent hidden md:block"></div>
+          <div class="absolute left-0 md:left-[32px] top-4 bottom-0 w-px hidden md:block" style="background: var(--border-glass);"></div>
 
           <div class="space-y-10">
             <div 
@@ -45,9 +45,9 @@
               <div class="absolute left-[-5px] md:left-[26px] top-12 h-3.5 w-3.5 rounded-full border-2 border-accent bg-page z-20 transition-all duration-500 group-hover:scale-150 group-hover:bg-accent hidden md:block"></div>
 
               <!-- Job Card -->
-              <SharedGlassCard 
-                padding="p-10 md:p-16 md:pl-26" 
-                rounded="rounded-[40px]" 
+              <SharedGlassCard
+                padding="p-10 md:p-16 md:pl-26"
+                rounded="rounded-2xl"
                 class="group"
               >
                 <div>
@@ -83,8 +83,8 @@
                   </div>
 
                   <!-- Tags -->
-                  <div class="flex flex-wrap gap-2 pt-8 border-t border-glass">
-                     <span v-for="tag in job.tags" :key="tag" class="px-4 py-1.5 rounded-full text-soft text-[0.6rem] font-bold uppercase tracking-widest border border-glass hover:border-accent/20 transition-all cursor-default" style="background: color-mix(in srgb, var(--accent), transparent 95%)">
+                  <div class="flex flex-wrap gap-2 pt-8 border-t border-[var(--border-subtle)]">
+                     <span v-for="tag in job.tags" :key="tag" class="px-4 py-1.5 rounded-full text-soft text-[0.6rem] font-bold uppercase tracking-widest border border-[var(--border-glass)] bg-soft hover:border-accent/30 hover:text-accent transition-all cursor-default">
                        {{ tag }}
                      </span>
                   </div>

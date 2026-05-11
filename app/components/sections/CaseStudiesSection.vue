@@ -19,7 +19,7 @@
       <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-[40px] md:rounded-[64px] bg-panel/10 border border-glass p-6 md:p-12 transition-all duration-700 hover:bg-panel/20 hover:shadow-2xl overflow-hidden shadow-[var(--specular)]" style="box-shadow: var(--inner-glow), var(--specular);">
+          <div :key="active" class="group relative rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-12 transition-all duration-500 overflow-hidden" style="box-shadow: var(--card-shadow);">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
@@ -112,7 +112,7 @@
       </div>
 
       <!-- High-Precision Carousel Navigation (Moved to Bottom) -->
-      <div class="flex items-center w-fit mx-auto gap-6 bg-panel/40 backdrop-blur-xl border border-glass p-2.5 rounded-full shadow-sm mt-16">
+      <div class="flex items-center w-fit mx-auto gap-6 bg-panel border border-[var(--border-glass)] p-2.5 rounded-full mt-16" style="box-shadow: var(--card-shadow);">
         <button @click="prev" class="cs-nav-btn" aria-label="Previous">
           <Icon name="lucide:arrow-left" class="h-5 w-5" />
         </button>

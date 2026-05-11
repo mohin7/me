@@ -38,7 +38,7 @@
         <div class="hero-enter flex flex-col items-center w-full reveal">
 
           <!-- Availability badge -->
-          <div class="mb-4 mt-0 md:mt-4 flex items-center gap-3 px-5 py-2.5 rounded-full border border-glass bg-panel/30 backdrop-blur-xl">
+          <div class="mb-4 mt-0 md:mt-4 flex items-center gap-3 px-5 py-2.5 rounded-full border border-[var(--border-glass)] bg-panel">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -91,12 +91,12 @@
 
           <!-- Integrated Precision Proof Bar -->
           <div class="w-full max-w-5xl animate-bar-up translate-y-4 px-1 sm:px-4">
-            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center border border-glass rounded-[24px] lg:rounded-full overflow-hidden" style="background: var(--bg-glass); backdrop-filter: blur(32px) saturate(150%); box-shadow: var(--inner-glow), var(--specular);">
+            <div class="relative flex flex-col lg:flex-row items-stretch lg:items-center border border-[var(--border-glass)] rounded-2xl lg:rounded-full overflow-hidden bg-panel" style="box-shadow: var(--card-shadow);">
               
               <!-- Social Proof -->
               <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
                 <div class="flex -space-x-3">
-                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-page bg-soft flex items-center justify-center overflow-hidden">
+                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#111111] bg-soft flex items-center justify-center overflow-hidden">
                      <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent opacity-40" />
                   </div>
                 </div>

@@ -23,10 +23,10 @@
         :class="`reveal-delay-${idx + 1}`"
       >
         <!-- Connection Line (Desktop) -->
-        <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-[40px] -right-3 w-6 h-px bg-glass z-0"></div>
+        <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-[40px] -right-3 w-6 h-px z-0" style="background: var(--border-glass);"></div>
 
         <!-- Compact Architectural Card -->
-        <SharedGlassCard padding="p-6 md:p-10" rounded="rounded-[24px]" :bg-opacity="5" class="h-full flex flex-col">
+        <SharedGlassCard padding="p-6 md:p-10" rounded="rounded-2xl" :bg-opacity="100" class="h-full flex flex-col">
           
           <!-- Phase Badge -->
           <div class="flex justify-between items-center mb-4">
@@ -47,7 +47,7 @@
           </div>
 
           <!-- Compact Outputs List -->
-          <div class="mt-auto pt-6 border-t border-glass space-y-2">
+          <div class="mt-auto pt-6 border-t border-[var(--border-subtle)] space-y-2">
             <div v-for="output in step.outputs" :key="output" class="flex items-center gap-2">
                <div class="h-1 w-1 rounded-full group-hover:bg-accent transition-colors bg-[color-mix(in_srgb,var(--accent),transparent_70%)]"></div>
                <span class="text-soft text-[0.7rem] font-bold">{{ output }}</span>
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Strategy Footer Note -->
-    <div class="reveal mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-full bg-panel/20 border border-glass w-fit mx-auto">
+    <div class="reveal mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-full bg-panel border border-[var(--border-glass)] w-fit mx-auto" style="box-shadow: var(--card-shadow);">
        <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
        <span class="text-muted text-[0.65rem] font-bold uppercase tracking-widest">Consistent, every time.</span>
     </div>

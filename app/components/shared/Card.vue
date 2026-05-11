@@ -1,8 +1,8 @@
 <template>
-  <div 
-    class="overflow-hidden relative transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none border border-glass[0.04] dark:border-glass[0.06]"
-    :class="[paddingClasses, radiusClass, hover ? 'hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)] hover:-translate-y-[2px] dark:hover:border-glass' : '']"
-    style="background: var(--bg-panel);"
+  <div
+    class="overflow-hidden relative transition-all duration-300"
+    :class="[paddingClasses, radiusClass, hover ? 'hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]' : '']"
+    style="background: var(--bg-panel); border: 1px solid var(--border-glass); box-shadow: var(--card-shadow);"
   >
     <slot />
   </div>
@@ -30,8 +30,7 @@ const paddingClasses = computed(() => {
   }
 })
 
-/* 16px for normal, 24px for large to match highly rounded aesthetics */
 const radiusClass = computed(() => {
-  return props.radius === 'large' ? 'rounded-[24px]' : 'rounded-2xl'
+  return props.radius === 'large' ? 'rounded-xl' : 'rounded-lg'
 })
 </script>

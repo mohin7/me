@@ -17,8 +17,8 @@
        <SharedGlassCard
          v-for="(spec, idx) in specs" :key="spec.label" 
          :class="`reveal reveal-delay-${idx+1}`"
-         padding="p-6" rounded="rounded-3xl" :bg-opacity="30"
-         class="flex flex-col items-center backdrop-blur-3xl"
+         padding="p-6" rounded="rounded-xl" :bg-opacity="100"
+         class="flex flex-col items-center"
        >
          <SharedIconBox size="md" class="mb-4">
             <Icon v-if="spec && spec.icon" :name="spec.icon" class="h-4 w-4" />

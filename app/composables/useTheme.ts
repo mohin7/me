@@ -1,7 +1,7 @@
 type Theme = 'light' | 'dark'
 
 export const useTheme = () => {
-  const theme = useState<Theme>('portal-theme', () => 'light')
+  const theme = useState<Theme>('portal-theme', () => 'dark')
   const initialized = useState('portal-theme-initialized', () => false)
 
   const applyTheme = (nextTheme: Theme) => {
@@ -24,7 +24,7 @@ export const useTheme = () => {
       const getPreferred = () => mediaQuery.matches ? 'dark' : 'light'
 
       if (!initialized.value) {
-        applyTheme(storedTheme ?? "light")
+        applyTheme(storedTheme ?? 'dark')
         initialized.value = true
       }
 

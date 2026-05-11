@@ -25,12 +25,12 @@
           }
         ]"
         class="flex flex-col justify-between group"
-        shadow="var(--inner-glow)"
+        shadow="var(--card-shadow)"
       >
         <div class="relative z-10">
           <!-- Author Header -->
           <div class="flex items-center gap-4 mb-6">
-            <div class="h-11 w-11 shrink-0 rounded-xl overflow-hidden border border-glass p-0.5" style="background: color-mix(in srgb, var(--accent), transparent 95%)">
+            <div class="h-11 w-11 shrink-0 rounded-xl overflow-hidden border border-[var(--border-glass)] p-0.5 bg-soft">
               <img :src="testimonial.avatar" :alt="testimonial.author" class="h-full w-full object-cover rounded-[10px] grayscale group-hover:grayscale-0 transition-all duration-700">
             </div>
             <div class="flex flex-col">

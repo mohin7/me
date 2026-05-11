@@ -22,6 +22,7 @@ No linter or test runner is configured.
 - `app/pages/blog/` — Blog routes using `@nuxt/content` v3. Content lives in `content/blog/**/index.md`.
 - `app/components/sections/` — One component per page section (Hero, About, Experience, CaseStudies, etc.).
 - `app/components/shared/` — Reusable primitives: Button, Card, GlassCard, Badge, IconBox, SectionHeader, Section, SectionWrapper, Header, Footer, Logo, FloatingWhatsApp.
+- `app/components/blog/` — Blog-specific components: PostCard, PostHeader, Reader, Tag.
 - `app/composables/useTheme.ts` — Theme composable persisting `light`/`dark` to `localStorage` under the key `portal-theme`. Theme is applied as a class on `<html>`.
 - `app/composables/useBrandScheme.ts` — Brand scheme composable with 6 schemes (`futuristic`, `premium`, `energetic`, `editorial`, `neutral`, `monochrome`). Persists to `localStorage` under `site-brand-scheme` and applies as `data-brand-scheme` attribute on `<html>`. Default scheme is `premium`.
 - `app/pages/tin-check.vue` — TIN audit checker page for Bangladesh tax (2023–24 AY). Posts to `/api/tin-check` and checks against `server/assets/audit.json` (bundled as a Nitro server asset).
@@ -43,7 +44,14 @@ Tailwind utility aliases map to these vars: `bg-page`, `bg-panel`, `bg-glass`, `
 
 Dark mode is toggled via `.dark` / `.light` class on `<html>` (not `prefers-color-scheme` media query at runtime). Tailwind is configured with `darkMode: ['class', '.dark']`.
 
-**Typography**: Plus Jakarta Sans (loaded from Google Fonts) for all headings and body. Headings use `font-weight: 800`, `letter-spacing: -0.04em`.
+**Typography**: Roboto/Inter (`font-sans`) for body; Inconsolata (`font-mono`) for code. Headings use `font-weight: 800`, `letter-spacing: -0.04em`.
+
+**Additional Tailwind color scales** (defined in `tailwind.config.js`, use sparingly — prefer CSS vars above):
+- `brand.DEFAULT / brand.light / brand.dark` — orange `#FF5C00` scale
+- `surface.900 / .800 / .700` — near-black surface ramp
+- `accent.purple`, `accent.blue` — secondary accent tints
+
+**Theme FOUC prevention**: an inline `<script>` in `nuxt.config.ts`'s `app.head` reads `portal-theme` from localStorage and sets the class on `<html>` before hydration.
 
 ## Scroll System
 

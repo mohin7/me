@@ -13,10 +13,10 @@
 
         <!-- Carousel Navigation -->
         <div class="flex items-center gap-4 shrink-0">
-          <button @click="scrollPrev" class="h-12 w-12 flex items-center justify-center rounded-full border border-glass bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Previous work">
-            <Icon name="lucide:arrow-left" class="h-5 w-5" />
+          <button @click="scrollPrev" class="h-10 w-10 flex items-center justify-center rounded-full border border-[var(--border-glass)] bg-panel text-soft transition-all hover:bg-soft hover:text-main hover:border-[var(--border-glass)]" aria-label="Previous work">
+            <Icon name="lucide:arrow-left" class="h-4 w-4" />
           </button>
-          <button @click="scrollNext" class="h-12 w-12 flex items-center justify-center rounded-full border border-glass bg-panel text-soft transition-all hover:bg-soft hover:text-main" aria-label="Next work">
+          <button @click="scrollNext" class="h-10 w-10 flex items-center justify-center rounded-full border border-[var(--border-glass)] bg-panel text-soft transition-all hover:bg-soft hover:text-main hover:border-[var(--border-glass)]" aria-label="Next work">
             <Icon name="lucide:arrow-right" class="h-5 w-5" />
           </button>
         </div>
@@ -27,7 +27,7 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-[24px] bg-panel border border-glass transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-glass"
+          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
@@ -90,7 +90,7 @@
       
       <!-- Private Work Showcase -->
       <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-[24px] bg-panel border border-glass p-10 md:p-14 transition-all duration-500 hover:border-glass">
+        <div class="relative group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 md:p-14 transition-all duration-300" style="box-shadow: var(--card-shadow);">
           <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             
             <!-- Left Side: Content -->

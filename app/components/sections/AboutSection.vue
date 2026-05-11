@@ -10,14 +10,14 @@
 
       <div class="grid gap-6 md:grid-cols-12">
         <!-- Main Bento Card -->
-        <div class="relative overflow-hidden md:col-span-8 md:row-span-2 rounded-[24px] border border-glass bg-panel p-10 md:p-14 transition-all duration-500 hover:border-brand-a/40 group cursor-default">
+        <div class="relative overflow-hidden md:col-span-8 md:row-span-2 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 md:p-14 transition-all duration-300 hover:border-accent/30 group cursor-default" style="box-shadow: var(--card-shadow);">
           <div class="relative z-10">
-            <div class="mb-12 inline-flex h-14 w-14 items-center justify-center rounded-[16px] bg-soft border border-glass text-brand-a group-hover:scale-110 transition-transform">
+            <div class="mb-12 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-soft border border-[var(--border-glass)] text-accent group-hover:scale-110 transition-transform">
               <Icon name="lucide:palette" class="h-7 w-7" />
             </div>
             
             <h3 class="text-main mb-6 text-4xl font-black tracking-tight leading-tight">
-              Design Leadership <br> <span class="text-brand-a">& Technical Craft</span>
+              Design Leadership <br> <span class="text-accent">& Technical Craft</span>
             </h3>
             
             <p class="text-soft max-w-xl text-lg font-medium leading-relaxed mb-12 opacity-80 group-hover:opacity-100 transition-opacity">
@@ -25,7 +25,7 @@
             </p>
             
             <div class="flex flex-wrap gap-2">
-               <span v-for="skill in ['NuxtJS', 'VueJS', 'Tailwind', 'Design Systems', 'UI/UX Strategy']" :key="skill" class="bg-soft border-glass px-4 py-2 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest text-muted transition hover:border-brand-a/30 hover:text-brand-a">{{ skill }}</span>
+               <span v-for="skill in ['NuxtJS', 'VueJS', 'Tailwind', 'Design Systems', 'UI/UX Strategy']" :key="skill" class="bg-soft border-glass px-4 py-2 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest text-muted transition hover:border-brand-a/30 hover:text-accent">{{ skill }}</span>
             </div>
           </div>
           
@@ -36,11 +36,11 @@
         </div>
 
         <!-- Metric Card: Years -->
-        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-[24px] border border-glass bg-panel p-10 text-center transition-all duration-500 hover:border-brand-a/40 group cursor-default">
+        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
            <div class="relative z-10">
               <div class="relative inline-block mb-4">
-                <p class="text-brand-a text-6xl font-black tracking-tighter group-hover:scale-110 transition-transform">7+</p>
-                <span class="handwriting absolute -right-16 top-0 text-brand-a text-2xl rotate-12 whitespace-nowrap opacity-60">Proven Results</span>
+                <p class="text-accent text-6xl font-black tracking-tighter group-hover:scale-110 transition-transform">7+</p>
+                <span class="handwriting absolute -right-16 top-0 text-accent text-2xl rotate-12 whitespace-nowrap opacity-60">Proven Results</span>
               </div>
               <p class="text-main text-xl font-bold tracking-tight">Years of Craft</p>
               <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60">Industry Veteran</p>
@@ -48,8 +48,8 @@
         </div>
 
         <!-- Location Card -->
-        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-[24px] border border-glass bg-panel p-10 text-center transition-all duration-500 hover:border-brand-a/40 group cursor-default">
-           <div class="relative z-10 h-14 w-14 mb-6 flex items-center justify-center rounded-full bg-soft border border-glass text-brand-a group-hover:scale-110 transition-transform">
+        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
+           <div class="relative z-10 h-14 w-14 mb-6 flex items-center justify-center rounded-full bg-soft border border-glass text-accent group-hover:scale-110 transition-transform">
              <Icon name="lucide:map-pin" class="h-6 w-6" />
            </div>
            <p class="text-main text-2xl font-black tracking-tight mb-1">Dhaka, BD</p>

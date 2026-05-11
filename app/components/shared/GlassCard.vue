@@ -29,12 +29,12 @@ const props = withDefaults(defineProps<{
   shadow?: string
   className?: string
 }>(), {
-  rounded: 'rounded-[40px]',
+  rounded: 'rounded-xl',
   padding: 'p-6 md:p-10',
-  bgOpacity: 10,
-  hoverOpacity: 35,
+  bgOpacity: 100,
+  hoverOpacity: 100,
   hover: true,
-  shadow: 'var(--inner-glow), var(--card-shadow)',
+  shadow: 'var(--card-shadow)',
   className: ''
 })
 </script>

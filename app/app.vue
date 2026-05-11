@@ -364,53 +364,57 @@ p, .prose {
 }
 
 .light {
-  --bg-page:  hsl(0, 0%, 99%);
-  --bg-panel: hsl(0, 0%, 100%);
-  --bg-glass: hsla(0, 0%, 100%, 0.72);
-  --bg-soft:  hsl(150, 8%, 95%);
-  --text-main: hsl(160, 20%, 8%);
-  --text-soft: hsl(160, 6%, 42%);
-  --text-muted: hsl(160, 4%, 60%);
+  --bg-page:   #F8F8F8;
+  --bg-panel:  #ffffff;
+  --bg-glass:  rgba(255, 255, 255, 0.9);
+  --bg-soft:   #f0f0f0;
+  --text-main: #111111;
+  --text-soft: #444444;
+  --text-muted: #888888;
 
-  --accent:        hsl(152, 60%, 38%);
-  --accent-fg:     hsl(0, 0%, 100%);
-  --accent-rgb:    35, 160, 85;
-  --accent-glow:   hsla(152, 60%, 38%, 0.18);
-  --accent-tint:   hsla(152, 60%, 38%, 0.06);
-  --border-glass:  hsla(160, 15%, 10%, 0.09);
+  --accent:        #1a9e5c;
+  --accent-fg:     #ffffff;
+  --accent-rgb:    26, 158, 92;
+  --accent-glow:   rgba(26, 158, 92, 0.15);
+  --accent-tint:   rgba(26, 158, 92, 0.06);
+  --border-glass:  #e2e2e2;
+  --border-subtle: #ebebeb;
 
-  --card-shadow:    0 4px 20px -4px hsla(0, 0%, 0%, 0.06);
-  --card-shadow-lg: 0 16px 48px -8px hsla(0, 0%, 0%, 0.10);
-  --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.9);
-  --hover-brightness: 1.08;
+  --card-shadow:    0 1px 3px rgba(0, 0, 0, 0.06);
+  --card-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 1);
+  --hover-brightness: 1.04;
 }
 
 .dark {
-  --bg-page:  hsl(160, 14%, 7%);
-  --bg-panel: hsl(160, 12%, 11%);
-  --bg-glass: hsla(160, 12%, 16%, 0.70);
-  --bg-soft:  hsl(160, 10%, 14%);
-  --text-main: hsl(0, 0%, 97%);
-  --text-soft: hsl(150, 8%, 65%);
-  --text-muted: hsl(150, 5%, 46%);
+  --bg-page:   #111111;
+  --bg-panel:  #1a1a1a;
+  --bg-glass:  rgba(26, 26, 26, 0.92);
+  --bg-soft:   #222222;
+  --text-main: #f0f0f0;
+  --text-soft: #999999;
+  --text-muted: #666666;
 
-  --accent:        hsl(145, 65%, 50%);
-  --accent-fg:     hsl(160, 25%, 6%);
-  --accent-rgb:    42, 210, 115;
-  --accent-glow:   hsla(145, 65%, 50%, 0.24);
-  --accent-tint:   hsla(145, 65%, 50%, 0.07);
-  --border-glass:  hsla(0, 0%, 100%, 0.09);
+  --accent:        #22c55e;
+  --accent-fg:     #0a1a10;
+  --accent-rgb:    34, 197, 94;
+  --accent-glow:   rgba(34, 197, 94, 0.20);
+  --accent-tint:   rgba(34, 197, 94, 0.07);
+  --border-glass:  #2a2a2a;
+  --border-subtle: #222222;
 
-  --card-shadow:    0 4px 24px -4px hsla(0, 0%, 0%, 0.40);
-  --card-shadow-lg: 0 20px 60px -10px hsla(0, 0%, 0%, 0.60);
-  --inner-glow:     inset 0 1px 0 rgba(255,255,255,0.05);
-  --hover-brightness: 1.12;
+  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.4);
+  --card-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --hover-brightness: 1.1;
 }
 
 :root {
-  --accent:     hsl(152, 68%, 42%);
-  --accent-rgb: 39, 174, 96;
-  --inner-glow: inset 0 1px 0 rgba(255,255,255,0.06);
+  --accent:     #1a9e5c;
+  --accent-rgb: 26, 158, 92;
+  --inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --border-glass: #e2e2e2;
+  --border-subtle: #ebebeb;
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
@@ -438,18 +442,18 @@ p, .prose {
 
 /* ── Micro-interaction Utilities ── */
 .hover-lift {
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hover-lift:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 40px -12px hsla(0, 0%, 0%, 0.12), var(--inner-glow) !important;
-  border-color: hsla(0, 0%, 100%, 0.1) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--border-glass) !important;
 }
 
 /* ── Section Divider ── */
 .section-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--border-glass), transparent);
+  background: var(--border-subtle);
 }
 
 /* ── Custom Cursor ── */

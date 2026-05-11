@@ -9,7 +9,7 @@
         
         <!-- Handwriting Accent -->
         <div class="absolute -right-4 top-0 md:right-1/4 pointer-events-none">
-           <p class="handwriting text-brand-a text-3xl rotate-6 opacity-80">Built for scale</p>
+           <p class="handwriting text-accent text-3xl rotate-6 opacity-80">Built for scale</p>
         </div>
       </div>
       
@@ -18,17 +18,17 @@
         <div 
           v-for="(specialty, idx) in specialties" 
           :key="idx"
-          class="group relative overflow-hidden rounded-[24px] bg-panel border border-glass p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+          class="group relative overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <!-- Hover Highlight Rim -->
           <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           
           <!-- Icon Container: Rounded 16px (matches frame scale) -->
-          <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-[16px] bg-soft border border-glass text-brand-a transition-all duration-500 group-hover:scale-110 group-hover:border-brand-a/30">
+          <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-soft border border-[var(--border-glass)] text-accent transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/5">
             <Icon :name="`lucide:${specialty.icon}`" class="h-6 w-6" />
           </div>
           
-          <h3 class="text-main mb-4 text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-brand-a">{{ specialty.title }}</h3>
+          <h3 class="text-main mb-4 text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:text-accent" style="font-size: 1.25rem;">{{ specialty.title }}</h3>
           <p class="text-soft text-sm font-medium leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity duration-300">{{ specialty.description }}</p>
         </div>
       </div>

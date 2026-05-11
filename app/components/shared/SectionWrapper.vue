@@ -4,7 +4,7 @@
     :ref="sectionRef"
     class="relative overflow-hidden transition-colors duration-500"
     :class="[
-      bg === 'soft' ? 'bg-soft/30' : 'bg-page',
+      bg === 'soft' ? 'bg-soft' : 'bg-page',
       paddingClass
     ]"
   >

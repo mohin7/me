@@ -226,7 +226,7 @@ const logos = [
 
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.2rem, 7.5vw, 6rem);
+  font-size: clamp(1.7rem, 7.5vw, 6rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }

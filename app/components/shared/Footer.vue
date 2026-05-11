@@ -75,7 +75,8 @@ const footerGroups = [
     links: [
       { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mohin7/', icon: 'lucide:linkedin' },
       { name: 'GitHub', href: 'https://github.com/mohin7', icon: 'lucide:github' },
-      { name: 'Dribbble', href: 'https://dribbble.com/mohin7', icon: 'lucide:dribbble' }
+      { name: 'Dribbble', href: 'https://dribbble.com/mohin7', icon: 'lucide:dribbble' },
+      { name: 'Freelancer', href: 'https://www.freelancer.com/u/mohincse', icon: 'lucide:briefcase' }
     ]
   }
 ]

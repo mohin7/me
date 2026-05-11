@@ -3,12 +3,12 @@
 
     <SharedSectionHeader
       label="How I Work"
-      description="A clear, repeatable process. No surprises."
+      description="A clear, repeatable process. No surprises"
       :centered="true"
       class="max-w-4xl mx-auto"
     >
       <template #title>
-        From brief <span class="text-gradient">to launch.</span>
+        From brief <span class="text-gradient">to launch</span>
       </template>
     </SharedSectionHeader>
 
@@ -73,25 +73,25 @@ const steps = [
   {
     title: 'Discovery',
     icon: 'lucide:brain',
-    description: 'Understanding who uses it, what they need, and where current experiences fall short.',
+    description: 'Understanding who uses it, what they need, and where current experiences fall short',
     outputs: ['User Research', 'Friction Mapping', 'Strategy Brief'],
   },
   {
     title: 'Structure',
     icon: 'lucide:git-branch',
-    description: 'Building the information architecture and flows that feel natural to navigate.',
+    description: 'Building the information architecture and flows that feel natural to navigate',
     outputs: ['IA Maps', 'User Flows', 'Navigation Logic'],
   },
   {
     title: 'Design',
     icon: 'lucide:palette',
-    description: 'High-fidelity interfaces. Consistent, detailed, and ready for development.',
+    description: 'High-fidelity interfaces. Consistent, detailed, and ready for development',
     outputs: ['Visual System', 'High-Fidelity UI', 'Motion Details'],
   },
   {
     title: 'Build & Ship',
     icon: 'lucide:rocket',
-    description: 'Clean Vue/Nuxt implementation. QA\'d, optimised, and deployed.',
+    description: 'Clean Vue/Nuxt implementation. QA\'d, optimised, and deployed',
     outputs: ['Production Code', 'QA Review', 'Launch'],
   },
 ]

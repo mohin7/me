@@ -8,7 +8,7 @@
       description="Most designers hand off files. Most developers receive them. I do both — which means nothing gets lost between the two."
     >
       <template #title>
-        Built different. <span class="text-gradient">Intentionally.</span>
+        Built different. <span class="text-gradient">Intentionally</span>
       </template>
     </SharedSectionHeader>
 
@@ -76,19 +76,19 @@ const specs = [
 const pillars = [
   {
     title: 'Interfaces that just work',
-    description: 'Good design removes the thinking. Users move faster, convert better, and come back.',
+    description: 'Good design removes the thinking. Users move faster, convert better, and come back',
     icon: 'lucide:brain-circuit',
     stat: 'Conversion-focused'
   },
   {
     title: 'Design that earns trust',
-    description: 'First impressions happen in milliseconds. The right visual language builds credibility before a word is read.',
+    description: 'First impressions happen in milliseconds. The right visual language builds credibility before a word is read',
     icon: 'lucide:shield-check',
     stat: 'Credibility by design'
   },
   {
     title: 'Products people return to',
-    description: 'Beyond the launch. I design for the long session — the second visit, the third, the habit.',
+    description: 'Beyond the launch. I design for the long session — the second visit, the third, the habit',
     icon: 'lucide:infinity',
     stat: 'Habit-forming UX'
   }

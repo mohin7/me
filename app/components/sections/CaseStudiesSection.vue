@@ -10,7 +10,7 @@
         class="max-w-4xl mx-auto"
       >
         <template #title>
-          Real work. <span class="text-gradient">Real results.</span>
+          Real work. <span class="text-gradient">Real results</span>
         </template>
       </SharedSectionHeader>
 

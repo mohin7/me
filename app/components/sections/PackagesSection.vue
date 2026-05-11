@@ -5,13 +5,13 @@
       <!-- Standardized Section Header -->
       <SharedSectionHeader
         label="Pricing"
-        description="Straightforward pricing. Clear scope. No surprises."
+        description="Straightforward pricing. Clear scope. No surprises"
         :centered="true"
         class="max-w-4xl mx-auto"
       >
         <template #title>
           Pick your <br />
-          <span class="text-gradient">package.</span>
+          <span class="text-gradient">package</span>
         </template>
       </SharedSectionHeader>
 
@@ -101,7 +101,7 @@
                 <span class="italic serif-font lowercase text-gradient">equity partnerships.</span>
               </h2>
               <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
-                For early-stage founders with a strong idea but limited runway. I'll trade full MVP design and development for a <span class="text-main font-bold">1% equity stake</span>.
+                For early-stage founders with a strong idea but limited runway. I'll trade full MVP design and development for a <span class="text-main font-bold">contractual equity arrangement</span>.
               </p>
            </div>
            
@@ -109,7 +109,7 @@
               <div class="space-y-4">
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
-                    <span class="text-main font-bold text-sm">1% Equity</span>
+                    <span class="text-main font-bold text-sm">Equity · By Agreement</span>
                  </div>
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
@@ -137,7 +137,7 @@ const packages = [
     tag: 'Early Stage',
     price: '$800 — $1.2k',
     unit: 'Investment',
-    description: 'A high-fidelity prototype ready for investor decks and early user testing.',
+    description: 'A high-fidelity prototype ready for investor decks and early user testing',
     target: 'Figma / High-Fi Proto',
     velocity: 'Rapid_Sprint',
     popular: false,
@@ -156,7 +156,7 @@ const packages = [
     tag: 'Market Entry',
     price: '$1.5k — $2.5k',
     unit: 'Investment',
-    description: 'A production-ready web presence — designed, built, and optimised for real users.',
+    description: 'A production-ready web presence — designed, built, and optimised for real users',
     target: 'Nuxt 3 / Vue 3 / SCSS',
     velocity: 'Standard_Batch',
     popular: true,
@@ -173,9 +173,9 @@ const packages = [
   {
     name: 'Full Partnership', icon: 'lucide:crown',
     tag: 'Ongoing Partnership',
-    price: 'Starting at $2.5k',
-    unit: '/ Month',
-    description: 'Your fractional Head of Design and Engineering. Long-term, embedded, accountable.',
+    price: 'Let\'s Discuss',
+    unit: 'Based on Scope',
+    description: 'Your fractional Head of Design and Engineering. Long-term, embedded, accountable',
     target: 'Full Ecosystem Control',
     velocity: 'Continuous_Ops',
     popular: false,

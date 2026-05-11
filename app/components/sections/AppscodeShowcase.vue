@@ -16,7 +16,7 @@
         class="max-w-3xl mx-auto mb-14"
       >
         <template #title>
-          Six years. One designer. <span class="text-gradient">Every product.</span>
+          Six years. One designer. <span class="text-gradient">Every product</span>
         </template>
         <template #description>
           Six years as the only designer at a Kubernetes infrastructure company. I owned every product, every screen, every release.
@@ -132,10 +132,10 @@ const works = [
     title: 'KubeDB Website',
     type: 'Web Design · Hugo · JS',
     contributions: [
-      'Built the public site for KubeDB from scratch.',
-      'Designed for clarity across 25+ database engines.',
-      'Unified brand with the rest of the product suite.',
-      'Structured complex docs for fast navigation.',
+      'Built the public site for KubeDB from scratch',
+      'Designed for clarity across 25+ database engines',
+      'Unified brand with the rest of the product suite',
+      'Structured complex docs for fast navigation',
     ],
     href: 'https://kubedb.com',
     domain: 'kubedb.com',
@@ -145,10 +145,10 @@ const works = [
     title: 'Hugo Product Theme',
     type: 'Web Design · Hugo · JS',
     contributions: [
-      'The theme powering every AppsCode product site.',
-      'Built once, deployed across a fleet of high-traffic properties.',
-      'Optimized for Core Web Vitals out of the box.',
-      'Every team uses it. I built it solo.',
+      'The theme powering every AppsCode product site',
+      'Built once, deployed across a fleet of high-traffic properties',
+      'Optimized for Core Web Vitals out of the box',
+      'Every team uses it. I built it solo',
     ],
     href: 'https://github.com/appscode/hugo-product-theme',
     domain: 'github.com/appscode/hugo-product-theme',
@@ -158,10 +158,10 @@ const works = [
     title: 'AppsCode.com — Platform Hub',
     type: 'Platform Web · Hugo · JS',
     contributions: [
-      'The central hub for all AppsCode products.',
-      'Designed the narrative for infrastructure, security, and data tools.',
-      'Responsive, fast, and on-brand across every breakpoint.',
-      'Hugo-based, performance-tuned.',
+      'The central hub for all AppsCode products',
+      'Designed the narrative for infrastructure, security, and data tools',
+      'Responsive, fast, and on-brand across every breakpoint',
+      'Hugo-based, performance-tuned',
     ],
     href: 'https://appscode.com',
     domain: 'appscode.com',
@@ -171,10 +171,10 @@ const works = [
     title: 'AppsCode Design System',
     type: 'Design System · Vue.js',
     contributions: [
-      'The design system behind every AppsCode product UI.',
-      'Documented at design.appscode.com.',
-      'Vue components used in production across KubeDB UI and ACE.',
-      'One system. Zero drift.',
+      'The design system behind every AppsCode product UI',
+      'Documented at design.appscode.com',
+      'Vue components used in production across KubeDB UI and ACE',
+      'One system. Zero drift',
     ],
     href: 'https://design.appscode.com/components/button',
     domain: 'design.appscode.com',
@@ -184,10 +184,10 @@ const works = [
     title: 'KubeDB UI — Management Platform',
     type: 'Product UI · Vue.js · Nuxt.js',
     contributions: [
-      'The management interface for KubeDB.',
-      'Complex database workflows, made navigable.',
-      'Built with Vue 3 and Nuxt.',
-      'Designed for platform engineers who move fast.',
+      'The management interface for KubeDB',
+      'Complex database workflows, made navigable',
+      'Built with Vue 3 and Nuxt',
+      'Designed for platform engineers who move fast',
     ],
     href: 'https://appscode.com/db',
     domain: 'appscode.com/db',
@@ -197,10 +197,10 @@ const works = [
     title: 'Event Visuals & Brand Graphics',
     type: 'Graphic Design · Print & Digital',
     contributions: [
-      'Conference banners, booth graphics, slide decks.',
-      'Print-ready and digital. On-brand every time.',
-      'From Figma to the venue floor.',
-      'Every public moment, designed.',
+      'Conference banners, booth graphics, slide decks',
+      'Print-ready and digital. On-brand every time',
+      'From Figma to the venue floor',
+      'Every public moment, designed',
     ],
     href: 'https://appscode.com',
     domain: 'appscode.com',

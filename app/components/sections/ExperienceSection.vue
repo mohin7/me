@@ -16,7 +16,7 @@
         >
           <template #title>
             The <br />
-            <span class="text-gradient">timeline.</span>
+            <span class="text-gradient">timeline</span>
           </template>
         </SharedSectionHeader>
 
@@ -151,10 +151,10 @@ const experience = [
     period: '2021 — Present',
     description: 'Leading design and frontend engineering at AppsCode. Every product, every screen — strategy to shipped code.',
     impacts: [
-      'Built and scaled design systems for KubeDB, KubeVault, and Stash.',
-      'Managed cross-functional design and engineering teams.',
-      'Unified design-to-code workflow across Nuxt and Vue.',
-      'Designed for complex technical audiences without losing clarity.'
+      'Built and scaled design systems for KubeDB, KubeVault, and Stash',
+      'Managed cross-functional design and engineering teams',
+      'Unified design-to-code workflow across Nuxt and Vue',
+      'Designed for complex technical audiences without losing clarity'
     ],
     tags: ['Team Management', 'Idea to Product', 'NuxtJS', 'UX Strategy']
   },
@@ -164,10 +164,10 @@ const experience = [
     period: '2017 — 2021',
     description: 'Moved into a hybrid design-and-build role. Designed the interfaces, then built them.',
     impacts: [
-      'Led Vue component architecture.',
-      'Designed dashboards with user behaviour in mind.',
-      'Built static sites with Hugo and SCSS.',
-      'Occasional print design and branding.'
+      'Led Vue component architecture',
+      'Designed dashboards with user behaviour in mind',
+      'Built static sites with Hugo and SCSS',
+      'Occasional print design and branding'
     ],
     tags: ['Vuejs', 'Hugo', 'SCSS', 'Print Design', 'UX Strategy']
   },
@@ -177,10 +177,10 @@ const experience = [
     period: '2015 — 2017',
     description: 'Started as a software engineer. The technical foundation shapes everything I design today.',
     impacts: [
-      'Built application logic with JavaScript.',
-      'Responsive layouts with HTML5 and CSS3.',
-      'Version control with GitHub.',
-      'Shifted toward solving user problems through visual design.'
+      'Built application logic with JavaScript',
+      'Responsive layouts with HTML5 and CSS3',
+      'Version control with GitHub',
+      'Shifted toward solving user problems through visual design'
     ],
     tags: ['Software Engineering', 'JavaScript', 'HTML5 & CSS3', 'GitHub']
   }

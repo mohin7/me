@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SharedSectionHeader 
         title="Career Highlights"
-        description="A quick read on the roles, communities, and open-source work shaping my profile."
+        description="A quick read on the roles, communities, and open-source work shaping my profile"
       />
       
       <div class="space-y-12">
@@ -47,19 +47,19 @@ const features: Feature[] = [
   {
     icon: 'briefcase',
     title: 'Leading design at AppsCode',
-    description: 'I currently work at AppsCode as Head of Design, shaping product experiences and visual direction while contributing inside a strong open-source ecosystem.',
+    description: 'I currently work at AppsCode as Head of Design, shaping product experiences and visual direction while contributing inside a strong open-source ecosystem',
     tags: ['Design Leadership', 'Product Thinking', 'Open Source']
   },
   {
     icon: 'code',
     title: 'Front-end foundation',
-    description: 'Before moving fully into design leadership, I worked as a front-end developer. That engineering background still helps me design interfaces developers can actually build.',
+    description: 'Before moving fully into design leadership, I worked as a front-end developer. That engineering background still helps me design interfaces developers can actually build',
     tags: ['Vue', 'Nuxt', 'JavaScript']
   },
   {
     icon: 'chart',
     title: 'Consistent GitHub activity',
-    description: 'My public profile shows 714 contributions over the last year, activity across AppsCode repositories, and a steady rhythm of pull requests, reviews, and design-driven implementation work.',
+    description: 'My public profile shows 714 contributions over the last year, activity across AppsCode repositories, and a steady rhythm of pull requests, reviews, and design-driven implementation work',
     tags: ['714 Contributions', 'Code Reviews', 'Pull Requests']
   }
 ]

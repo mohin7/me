@@ -8,7 +8,7 @@
       :centered="true"
     >
       <template #title>
-        Founder <span class="text-gradient">validation.</span>
+        Founder <span class="text-gradient">validation</span>
       </template>
     </SharedSectionHeader>
 

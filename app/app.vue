@@ -37,18 +37,34 @@
     <!-- Back to Top System -->
     <Transition name="fade">
       <div v-if="currentOffset > 800" class="fixed bottom-12 right-12 z-[100]">
-        <button 
-          @click="scrollToTop" 
+        <button
+          @click="scrollToTop"
           class="relative h-14 w-14 rounded-full flex items-center justify-center overflow-hidden transition-all duration-500 group active:scale-90"
-          style="background: var(--bg-glass); backdrop-filter: blur(24px) saturate(150%); border: 1px solid var(--border-glass); box-shadow: inset 0 1px 1px 0 rgba(255,255,255,0.05), 0 20px 40px -10px rgba(0,0,0,0.3);"
+          style="background: var(--bg-glass); backdrop-filter: blur(24px) saturate(150%); box-shadow: inset 0 1px 1px 0 rgba(255,255,255,0.05), 0 20px 40px -10px rgba(0,0,0,0.3);"
         >
+          <!-- Progress Ring -->
+          <svg class="absolute inset-0 h-full w-full -rotate-90" viewBox="0 0 56 56" fill="none">
+            <!-- Track -->
+            <circle cx="28" cy="28" r="26" stroke="var(--border-glass)" stroke-width="1.5" />
+            <!-- Progress -->
+            <circle
+              cx="28" cy="28" r="26"
+              stroke="var(--accent)"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              :stroke-dasharray="163.36"
+              :stroke-dashoffset="163.36 * (1 - scrollProgress)"
+              style="transition: stroke-dashoffset 0.1s linear;"
+            />
+          </svg>
+
           <!-- Surface Sheen -->
           <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-          
-          <Icon name="lucide:arrow-up" class="h-6 w-6 text-main group-hover:-translate-y-1 transition-transform relative z-10" />
-          
+
+          <Icon name="lucide:arrow-up" class="h-5 w-5 text-main group-hover:-translate-y-1 transition-transform relative z-10" />
+
           <!-- Liquid Core Glow -->
-          <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
         </button>
       </div>
     </Transition>
@@ -90,6 +106,12 @@ const virtualHeight = ref(0)
 const currentOffset = ref(0)
 const isHovering = ref(false)
 const isCursorVisible = ref(false)
+
+const scrollProgress = computed(() => {
+  const maxScroll = virtualHeight.value - window.innerHeight
+  if (maxScroll <= 0) return 0
+  return Math.min(currentOffset.value / maxScroll, 1)
+})
 
 const scrollSpeed = 0.08
 const isTouchDevice = ref(false)

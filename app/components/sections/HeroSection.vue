@@ -50,11 +50,11 @@
           <h1 class="hero-title max-w-6xl mx-auto mb-2 text-center px-4 md:px-0">
             <span class="text-main block leading-[1.05]">Designing & coding</span>
             <span class="text-main block mt-1 leading-[1.05]">the next-generation of</span>
-            <span class="text-soft relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
+            <span class="relative inline-grid grid-cols-1 grid-rows-1 place-items-center mt-2">
               <span class="invisible pointer-events-none select-none col-start-1 row-start-1 px-1">platforms</span>
               <div class="col-start-1 row-start-1 relative flex items-center justify-center px-1">
                  <div class="overflow-hidden transition-all duration-[1200ms] ease-in-out py-1" :style="{ width: revealWidth }">
-                   <span class="whitespace-nowrap pr-2 block">{{ words[wordIndex] }}</span>
+                   <span class="whitespace-nowrap pr-2 block text-gradient">{{ words[wordIndex] }}</span>
                  </div>
                   <span class="h-[0.8em] w-[3px] bg-accent rounded-full ml-[2px]" :class="isPaused ? 'animate-smooth-blink' : 'opacity-100'"></span>
               </div>

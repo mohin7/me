@@ -10,7 +10,7 @@
       class="max-w-4xl mx-auto"
     >
       <template #title>
-        From brief <span style="color: var(--text-soft)">to launch.</span>
+        From brief <span class="text-gradient">to launch.</span>
       </template>
     </SharedSectionHeader>
 

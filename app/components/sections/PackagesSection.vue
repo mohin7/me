@@ -11,7 +11,7 @@
       >
         <template #title>
           Pick your <br />
-          <span style="color: var(--text-soft)">package.</span>
+          <span class="text-gradient">package.</span>
         </template>
       </SharedSectionHeader>
 
@@ -98,7 +98,7 @@
               </div>
               <h2 class="mb-8">
                 Open to <br />
-                <span class="italic serif-font lowercase" style="color: var(--text-soft)">equity partnerships.</span>
+                <span class="italic serif-font lowercase text-gradient">equity partnerships.</span>
               </h2>
               <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
                 For early-stage founders with a strong idea but limited runway. I'll trade full MVP design and development for a <span class="text-main font-bold">1% equity stake</span>.

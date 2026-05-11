@@ -39,7 +39,7 @@
             
             <div class="space-y-6">
               <h2 class="text-main text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.1]">
-                End-to-end delivery <br> for <span class="text-soft italic serif-font lowercase">visionary teams.</span>
+                End-to-end delivery <br> for <span class="text-gradient italic serif-font lowercase">visionary teams.</span>
               </h2>
               
               <div class="flex items-center gap-10">

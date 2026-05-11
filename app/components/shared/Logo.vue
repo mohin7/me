@@ -14,6 +14,6 @@ const props = withDefaults(defineProps<{
   subtitle?: string
 }>(), {
   link: true,
-  subtitle: 'Head of Design'
+  subtitle: 'Design Engineer'
 })
 </script>

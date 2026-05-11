@@ -8,7 +8,7 @@
       description="Most designers hand off files. Most developers receive them. I do both — which means nothing gets lost between the two."
     >
       <template #title>
-        Built different. <span class="text-soft">Intentionally.</span>
+        Built different. <span class="text-gradient">Intentionally.</span>
       </template>
     </SharedSectionHeader>
 

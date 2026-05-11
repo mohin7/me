@@ -12,7 +12,7 @@
             <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.5em]">The Strategic Edge</span>
           </div>
           <h2 class="text-main text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-8">
-            Why partner with <br /> <span class="text-soft italic serif-font lowercase">Md Mohin Uddin?</span>
+            Why partner with <br /> <span class="text-gradient italic serif-font lowercase">Md Mohin Uddin?</span>
           </h2>
           <p class="text-soft text-xl font-medium leading-relaxed opacity-80">
             I don't just design interfaces; I engineer high-performance products that bridge the critical gap between visionary design and scalable code.

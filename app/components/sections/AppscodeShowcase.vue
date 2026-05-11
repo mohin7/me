@@ -16,7 +16,7 @@
         class="max-w-3xl mx-auto mb-14"
       >
         <template #title>
-          Six years. One designer. <span style="color: var(--text-soft)">Every product.</span>
+          Six years. One designer. <span class="text-gradient">Every product.</span>
         </template>
         <template #description>
           Six years as the only designer at a Kubernetes infrastructure company. I owned every product, every screen, every release.
@@ -97,7 +97,7 @@
         <div class="pointer-events-none absolute -right-32 -top-32 w-96 h-96 rounded-full blur-[100px] opacity-[0.06]" style="background: var(--accent)"></div>
         <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8 justify-between p-8 md:p-12">
           <div class="max-w-lg">
-            <h3 class="mb-3 leading-tight text-main">Everything you see, I built.<br><span style="color:var(--text-soft)">Alone.</span></h3>
+            <h3 class="mb-3 leading-tight text-main">Everything you see, I built.<br><span class="text-gradient">Alone.</span></h3>
             <p class="text-soft text-sm leading-relaxed">
               No handoffs. No miscommunication. Just clean, consistent work — shipped.
             </p>

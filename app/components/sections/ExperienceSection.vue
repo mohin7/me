@@ -16,7 +16,7 @@
         >
           <template #title>
             The <br />
-            <span style="color: var(--text-soft)">timeline.</span>
+            <span class="text-gradient">timeline.</span>
           </template>
         </SharedSectionHeader>
 

@@ -434,6 +434,28 @@ p, .prose {
   color: color-mix(in srgb, var(--accent), transparent 25%);
 }
 
+/* ── Gradient heading text ── */
+.text-gradient {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 60%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 60%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .text-gradient {
+  background: linear-gradient(135deg, #1a9e5c 0%, #16a34a 60%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Global Scroll Reveal Animations ── */
 .reveal {
   opacity: 0;

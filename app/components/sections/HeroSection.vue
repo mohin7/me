@@ -1,34 +1,17 @@
 <template>
   <section id="top" ref="heroRef" class="relative min-h-screen flex items-center pt-28 pb-8 md:pt-32 md:pb-12 overflow-hidden bg-page">
     
-    <!-- ── Cinematic Background Layers ── -->
-    <div class="pointer-events-none absolute inset-0 z-0 h-full w-full">
-      <!-- Animated orbital ring -->
-      <div class="absolute right-[5%] top-[10%] opacity-[0.06] hidden lg:block">
-        <div class="relative h-80 w-80 border-[1px] border-glass border-dashed rounded-full animate-rotate-slow">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-accent/20"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-2 w-2 rounded-full border border-glass bg-panel"></div>
-        </div>
-      </div>
-
-      <!-- Floating geometric fragments -->
-      <div class="absolute inset-0 overflow-hidden opacity-30">
-        <div class="fragment absolute h-24 w-24 border border-glass rounded-full top-[15%] left-[10%] animate-drift-slow"></div>
-        <div class="fragment absolute h-1 w-32 bg-gradient-to-r from-glass to-transparent top-[45%] right-[5%] animate-drift-reverse"></div>
-        <div class="fragment absolute h-16 w-16 border border-glass top-[70%] left-[20%] rotate-45 animate-drift-normal"></div>
-        <div class="fragment absolute h-32 w-px bg-gradient-to-b from-glass to-transparent bottom-[10%] right-[30%] animate-drift-slow"></div>
-      </div>
-
-      <!-- Dot matrix with radial mask -->
-      <div class="absolute inset-0 opacity-[0.035] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" 
-           style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 32px 32px;"></div>
-      
-      <!-- Ambient glow orbs -->
-      <div class="absolute -left-[10%] top-[0%] h-[700px] w-[700px] rounded-full blur-[160px] animate-glow-slow" style="background: color-mix(in srgb, var(--accent), transparent 95%)"></div>
-      <div class="absolute -right-[5%] bottom-[5%] h-[600px] w-[600px] rounded-full blur-[140px] animate-glow-reverse" style="background: color-mix(in srgb, var(--accent), transparent 90%)"></div>
-
-      <!-- Radial vignette -->
-      <div class="absolute inset-0 bg-gradient-to-b from-page via-transparent to-page opacity-60"></div>
+    <!-- ── Stripe-style gradient mesh background ── -->
+    <div class="hero-bg pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      <!-- Mesh blobs -->
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="blob blob-4"></div>
+      <!-- Noise overlay -->
+      <div class="hero-noise"></div>
+      <!-- Bottom fade into next section -->
+      <div class="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-page to-transparent"></div>
     </div>
 
     <div class="relative z-10 mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">
@@ -96,7 +79,7 @@
               <!-- Social Proof -->
               <div class="flex items-center justify-center lg:justify-start gap-4 px-6 py-4 border-b lg:border-b-0 lg:border-r border-glass whitespace-nowrap">
                 <div class="flex -space-x-3">
-                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#F8F8F8] dark:border-[#0a0a0a] bg-soft flex items-center justify-center overflow-hidden">
+                  <div v-for="i in 3" :key="i" class="h-8 w-8 rounded-full border-2 border-[#f5f5f0] dark:border-[#0d0d0f] bg-soft flex items-center justify-center overflow-hidden">
                      <Icon name="lucide:user" class="h-3.5 w-3.5 text-accent opacity-40" />
                   </div>
                 </div>
@@ -189,14 +172,67 @@ const logos = [
 
 .animate-smooth-blink { animation: smooth-blink 1s ease-in-out infinite; }
 
+/* ── Stripe-style gradient mesh ── */
+.hero-bg {
+  background: var(--bg-page);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.blob-1 {
+  width: 800px; height: 600px;
+  top: -20%; left: -15%;
+  background: radial-gradient(ellipse, rgba(16,185,129,0.2) 0%, rgba(5,150,105,0.07) 50%, transparent 70%);
+  animation: blob-drift 14s ease-in-out infinite alternate;
+}
+.blob-2 {
+  width: 650px; height: 600px;
+  top: -15%; right: -10%;
+  background: radial-gradient(ellipse, rgba(34,197,94,0.13) 0%, rgba(16,185,129,0.05) 50%, transparent 70%);
+  animation: blob-drift 18s ease-in-out infinite alternate-reverse;
+}
+.blob-3 {
+  width: 500px; height: 420px;
+  bottom: 8%; left: 18%;
+  background: radial-gradient(ellipse, rgba(52,211,153,0.09) 0%, transparent 65%);
+  animation: blob-drift 22s ease-in-out infinite alternate;
+}
+.blob-4 {
+  width: 320px; height: 320px;
+  top: 35%; right: 18%;
+  background: radial-gradient(ellipse, rgba(6,78,59,0.28) 0%, transparent 65%);
+  animation: blob-drift 16s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes blob-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.06); }
+}
+
+/* Noise grain on top of mesh */
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+}
+
 .hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.75rem, 6vw, 5rem);
-  line-height: 1.08;
+  font-size: clamp(2.2rem, 7.5vw, 6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 @media (min-width: 640px) {
-  .hero-title { font-size: clamp(2rem, 7vw, 5rem); }
+  .hero-title { font-size: clamp(2.8rem, 8vw, 6.5rem); }
 }
 
 .hero-sub {
@@ -212,10 +248,4 @@ const logos = [
 }
 .animate-ticker:hover { animation-play-state: paused; }
 
-.animate-glow-slow { animation: glow 8s ease-in-out infinite alternate; }
-.animate-glow-reverse { animation: glow 10s ease-in-out infinite alternate-reverse; }
-@keyframes glow {
-  from { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  to { transform: translate(20px, 20px) scale(1.1); opacity: 0.5; }
-}
 </style>

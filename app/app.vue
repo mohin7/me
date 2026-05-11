@@ -53,8 +53,9 @@
       </div>
     </Transition>
     <!-- ── Aesthetic Layering ── -->
-    <div class="pointer-events-none fixed inset-0 z-[999] opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-    <div class="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent"></div>
+
+    <!-- Noise Grain Texture -->
+    <div class="pointer-events-none fixed inset-0 z-[999] opacity-[0.04] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
   </div>
 </template>
 
@@ -318,6 +319,14 @@ html, body {
   caret-color: var(--accent);
 }
 
+.dark.site-shell {
+  background: radial-gradient(ellipse at 50% 0%, #16161e 0%, #0d0d0f 60%);
+}
+
+.light.site-shell {
+  background: radial-gradient(ellipse at 50% 0%, #ffffff 0%, #f5f5f0 60%);
+}
+
 
 .site-shell:not(.is-touch) {
   cursor: none;
@@ -372,58 +381,58 @@ p, .prose {
 }
 
 .light {
-  --bg-page:   #F8F8F8;
-  --bg-panel:  #ffffff;
-  --bg-glass:  rgba(255, 255, 255, 0.9);
-  --bg-soft:   #f0f0f0;
-  --text-main: #111111;
-  --text-soft: #444444;
-  --text-muted: #888888;
+  --bg-page:   #f5f5f0;
+  --bg-panel:  #fafaf8;
+  --bg-glass:  rgba(250, 250, 248, 0.92);
+  --bg-soft:   #eeede8;
+  --text-main: #18181a;
+  --text-soft: #52525e;
+  --text-muted: #9898a6;
 
-  --accent:        #1a9e5c;
+  --accent:        #16a34a;
   --accent-fg:     #ffffff;
-  --accent-rgb:    26, 158, 92;
-  --accent-glow:   rgba(26, 158, 92, 0.15);
-  --accent-tint:   rgba(26, 158, 92, 0.06);
-  --border-glass:  #e2e2e2;
-  --border-subtle: #ebebeb;
+  --accent-rgb:    22, 163, 74;
+  --accent-glow:   rgba(22, 163, 74, 0.15);
+  --accent-tint:   rgba(22, 163, 74, 0.06);
+  --border-glass:  #e4e4dc;
+  --border-subtle: #ececea;
 
-  --card-shadow:    0 1px 3px rgba(0, 0, 0, 0.06);
-  --card-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 1);
-  --hover-brightness: 1.04;
+  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0,0,0,0.03);
+  --card-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0,0,0,0.03);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --hover-brightness: 1.03;
 }
 
 .dark {
-  --bg-page:   #0a0a0a;
-  --bg-panel:  #141414;
-  --bg-glass:  rgba(20, 20, 20, 0.95);
-  --bg-soft:   #1c1c1c;
+  --bg-page:   #0d0d0f;
+  --bg-panel:  #16161a;
+  --bg-glass:  rgba(22, 22, 26, 0.97);
+  --bg-soft:   #1e1e24;
 
-  --text-main: #f2f2f2;
-  --text-soft: #a0a0a0;
-  --text-muted: #5a5a5a;
+  --text-main: #ededf0;
+  --text-soft: #9898a8;
+  --text-muted: #52525e;
 
   --accent:        #22c55e;
-  --accent-fg:     #051a0d;
+  --accent-fg:     #052410;
   --accent-rgb:    34, 197, 94;
-  --accent-glow:   rgba(34, 197, 94, 0.15);
-  --accent-tint:   rgba(34, 197, 94, 0.06);
-  --border-glass:  #242424;
-  --border-subtle: #1c1c1c;
+  --accent-glow:   rgba(34, 197, 94, 0.12);
+  --accent-tint:   rgba(34, 197, 94, 0.05);
+  --border-glass:  #26262e;
+  --border-subtle: #1e1e24;
 
-  --card-shadow:    0 1px 3px rgba(0, 0, 0, 0.6);
-  --card-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
-  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  --hover-brightness: 1.08;
+  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.02);
+  --card-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.02);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --hover-brightness: 1.06;
 }
 
 :root {
-  --accent:     #1a9e5c;
-  --accent-rgb: 26, 158, 92;
-  --inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --border-glass: #e2e2e2;
-  --border-subtle: #ebebeb;
+  --accent:        #16a34a;
+  --accent-rgb:    22, 163, 74;
+  --inner-glow:    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --border-glass:  #e4e4dc;
+  --border-subtle: #ececea;
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
@@ -450,11 +459,21 @@ p, .prose {
 }
 
 .light .text-gradient {
-  background: linear-gradient(135deg, #1a9e5c 0%, #16a34a 60%, #22c55e 100%);
+  background: linear-gradient(135deg, #15803d 0%, #16a34a 60%, #15803d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ── Card Hover Glow ── */
+.card-glow {
+  transition: box-shadow 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
+}
+.card-glow:hover {
+  border-color: color-mix(in srgb, var(--accent), transparent 72%);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 85%), 0 12px 40px -8px color-mix(in srgb, var(--accent), transparent 82%), var(--card-shadow-lg);
+}
+
 
 /* ── Global Scroll Reveal Animations ── */
 .reveal {

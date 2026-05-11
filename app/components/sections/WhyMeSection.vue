@@ -30,7 +30,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Pillar 01: Product Bridge -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:cable" class="h-7 w-7" />
           </div>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Pillar 02: Venture Scale -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:layers" class="h-7 w-7" />
           </div>
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Pillar 03: Performance First -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:zap" class="h-7 w-7" />
           </div>
@@ -63,7 +63,7 @@
         </div>
 
         <!-- Pillar 04: Full Lifecycle -->
-        <div class="group p-10 rounded-[32px] border border-glass bg-panel/30 backdrop-blur-3xl hover:border-glass transition-all duration-700">
+        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="h-14 w-14 rounded-2xl bg-accent/5 border border-glass flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-accent-fg transition-all">
             <Icon name="lucide:refresh-ccw" class="h-7 w-7" />
           </div>

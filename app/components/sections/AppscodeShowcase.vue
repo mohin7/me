@@ -121,10 +121,10 @@
 
 <script setup lang="ts">
 const ownershipStats = [
-  { value: '1',   label: 'Solo designer and developer' },
+  { value: '1',    label: 'Solo designer and developer' },
   { value: '6yr+', label: 'Uninterrupted tenure' },
-  { value: '10+', label: 'Live products shipped' },
-  { value: '0',   label: 'Design handoff gaps' },
+  { value: '10+',  label: 'Live products shipped' },
+  { value: '0',    label: 'Design handoff gaps' },
 ]
 
 const works = [
@@ -208,7 +208,3 @@ const works = [
   },
 ]
 </script>
-
-<style scoped>
-/* No specific transitions needed for static grid */
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="post.path" class="post-card group relative block p-8 rounded-[32px] bg-panel/10 border border-glass hover:bg-panel/20 transition-all duration-700 overflow-hidden">
+  <NuxtLink :to="post.path" class="post-card group relative block p-8 rounded-[32px] bg-panel border border-glass hover:bg-soft transition-all duration-700 overflow-hidden">
     <!-- Liquid Glow Interaction -->
     <div class="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
     <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.01] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

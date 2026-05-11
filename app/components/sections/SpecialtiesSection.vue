@@ -21,7 +21,7 @@
           class="group relative overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <!-- Hover Highlight Rim -->
-          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-brand-a/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           
           <!-- Icon Container: Rounded 16px (matches frame scale) -->
           <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-soft border border-[var(--border-glass)] text-accent transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/5">

@@ -16,19 +16,19 @@
         <div 
           v-for="(item, idx) in faqs" 
           :key="idx"
-          class="group overflow-hidden rounded-2xl bg-panel/20 backdrop-blur-xl border border-glass transition-all duration-300 hover:border-brand-a/40 shadow-[inset_0_1px_0_0_var(--border-glass)]"
+          class="group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] transition-all duration-300 hover:border-accent/30"
         >
           <button
             @click="toggleFaq(idx)"
             class="hover:bg-soft flex w-full items-center justify-between px-6 py-4 transition"
           >
             <h4 class="text-main text-left text-lg font-semibold">{{ item.question }}</h4>
-            <span class="text-2xl text-[color:var(--brand-a)] transition-transform" :style="{ transform: activeFaq === idx ? 'rotate(180deg)' : 'rotate(0)' }">
+            <span class="text-2xl text-accent transition-transform" :style="{ transform: activeFaq === idx ? 'rotate(180deg)' : 'rotate(0)' }">
               ↓
             </span>
           </button>
           <transition name="expand">
-            <div v-if="activeFaq === idx" class="border-glass bg-panel/40 border-t px-6 pb-6 pt-2">
+            <div v-if="activeFaq === idx" class="border-[var(--border-glass)] bg-soft border-t px-6 pb-6 pt-2">
               <p class="text-soft leading-relaxed text-sm">{{ item.answer }}</p>
             </div>
           </transition>

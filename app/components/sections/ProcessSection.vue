@@ -1,8 +1,6 @@
 <template>
   <SharedSectionWrapper section-id="process" bg="page" pattern="dots">
 
-    <!-- Compact Header -->
-    <!-- Standardized Section Header -->
     <SharedSectionHeader
       label="How I Work"
       description="A clear, repeatable process. No surprises."
@@ -14,53 +12,57 @@
       </template>
     </SharedSectionHeader>
 
-    <!-- Pipeline Grid: 4 Columns -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div 
-        v-for="(step, idx) in steps" 
+    <!-- Steps grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+      <div
+        v-for="(step, idx) in steps"
         :key="idx"
-        class="reveal group relative"
+        class="reveal group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-glass)] bg-panel transition-all duration-500 hover:border-accent/30 hover:-translate-y-1"
         :class="`reveal-delay-${idx + 1}`"
+        style="box-shadow: var(--card-shadow);"
       >
-        <!-- Connection Line (Desktop) -->
-        <div v-if="idx < steps.length - 1" class="hidden lg:block absolute top-[40px] -right-3 w-6 h-px z-0" style="background: var(--border-glass);"></div>
+        <!-- Watermark number -->
+        <span class="absolute -bottom-4 -right-2 text-[7rem] font-black leading-none select-none pointer-events-none transition-colors duration-500" style="color: var(--border-glass);">{{ idx + 1 }}</span>
 
-        <!-- Compact Architectural Card -->
-        <SharedGlassCard padding="p-6 md:p-10" rounded="rounded-2xl" :bg-opacity="100" class="h-full flex flex-col">
-          
-          <!-- Phase Badge -->
-          <div class="flex justify-between items-center mb-4">
-             <span class="text-accent text-[0.7rem] font-bold tracking-[0.3em] font-mono opacity-80">PHASE_0{{ idx + 1 }}</span>
-             <SharedIconBox size="md">
-               <Icon v-if="step && step.icon" :name="step.icon" class="h-4 w-4" />
-             </SharedIconBox>
-          </div>
 
-          <!-- Content -->
-          <div class="mb-8">
-            <h3 class="group-hover:text-accent transition-colors mb-4">
-               {{ step.title }}
-            </h3>
-            <p class="text-muted text-sm font-medium leading-relaxed">
-               {{ step.description }}
-            </p>
-          </div>
+        <div class="relative z-10 p-7 md:p-8 flex flex-col h-full">
 
-          <!-- Compact Outputs List -->
-          <div class="mt-auto pt-6 border-t border-[var(--border-subtle)] space-y-2">
-            <div v-for="output in step.outputs" :key="output" class="flex items-center gap-2">
-               <div class="h-1 w-1 rounded-full group-hover:bg-accent transition-colors bg-[color-mix(in_srgb,var(--accent),transparent_70%)]"></div>
-               <span class="text-soft text-[0.7rem] font-bold">{{ output }}</span>
+          <!-- Phase + Icon -->
+          <div class="flex items-center justify-between mb-8">
+            <span class="text-accent text-[0.6rem] font-black tracking-[0.35em] font-mono">PHASE_0{{ idx + 1 }}</span>
+            <div class="h-9 w-9 rounded-xl flex items-center justify-center transition-colors duration-300" style="background: color-mix(in srgb, var(--accent), transparent 90%); border: 1px solid color-mix(in srgb, var(--accent), transparent 75%);">
+              <Icon :name="step.icon" class="h-4 w-4 text-accent" />
             </div>
           </div>
-        </SharedGlassCard>
+
+          <!-- Title + Description -->
+          <div class="flex-1 mb-8">
+            <h3 class="text-lg font-black tracking-tight mb-3 group-hover:text-accent transition-colors duration-300">{{ step.title }}</h3>
+            <p class="text-soft text-sm font-medium leading-relaxed opacity-75">{{ step.description }}</p>
+          </div>
+
+          <!-- Deliverables -->
+          <div class="space-y-2 pt-5 border-t border-[var(--border-subtle)]">
+            <p class="text-[0.5rem] font-black uppercase tracking-[0.25em] text-muted opacity-50 mb-3">Deliverables</p>
+            <div v-for="output in step.outputs" :key="output" class="flex items-center gap-2.5">
+              <div class="h-1 w-1 rounded-full bg-accent opacity-60 shrink-0"></div>
+              <span class="text-soft text-[0.7rem] font-bold">{{ output }}</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <!-- Strategy Footer Note -->
-    <div class="reveal mt-12 flex items-center justify-center gap-4 py-4 px-6 rounded-full bg-panel border border-[var(--border-glass)] w-fit mx-auto" style="box-shadow: var(--card-shadow);">
-       <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
-       <span class="text-muted text-[0.65rem] font-bold uppercase tracking-widest">Consistent, every time.</span>
+    <!-- Footer -->
+    <div class="reveal mt-10 flex items-center justify-center">
+      <div class="flex items-center gap-3 py-3 px-6 rounded-full border border-[var(--border-glass)] bg-panel" style="box-shadow: var(--card-shadow);">
+        <div class="relative flex h-1.5 w-1.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span>
+        </div>
+        <span class="text-muted text-[0.6rem] font-black uppercase tracking-widest">Consistent, every time.</span>
+      </div>
     </div>
 
   </SharedSectionWrapper>
@@ -91,6 +93,6 @@ const steps = [
     icon: 'lucide:rocket',
     description: 'Clean Vue/Nuxt implementation. QA\'d, optimised, and deployed.',
     outputs: ['Production Code', 'QA Review', 'Launch'],
-  }
+  },
 ]
 </script>

@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- The Cinematic Hub Container -->
-      <div class="relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel/40 backdrop-blur-2xl p-8 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
+      <div class="relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel p-8 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
         
         <!-- Technical Background Noise -->
         <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.015] pointer-events-none" 

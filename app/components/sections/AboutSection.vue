@@ -25,7 +25,7 @@
             </p>
             
             <div class="flex flex-wrap gap-2">
-               <span v-for="skill in ['NuxtJS', 'VueJS', 'Tailwind', 'Design Systems', 'UI/UX Strategy']" :key="skill" class="bg-soft border-glass px-4 py-2 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest text-muted transition hover:border-brand-a/30 hover:text-accent">{{ skill }}</span>
+               <span v-for="skill in ['NuxtJS', 'VueJS', 'Tailwind', 'Design Systems', 'UI/UX Strategy']" :key="skill" class="bg-soft border-glass px-4 py-2 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest text-muted transition hover:border-accent/30 hover:text-accent">{{ skill }}</span>
             </div>
           </div>
           

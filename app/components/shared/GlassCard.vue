@@ -1,7 +1,7 @@
 <template>
-  <div 
+  <div
     :class="[
-      'relative border border-glass transition-all duration-700 overflow-hidden',
+      'relative border border-glass transition-all duration-700 overflow-hidden card-glow',
       'bg-[var(--card-bg)]',
       hover && 'hover-lift group',
       hover && 'hover:bg-[var(--card-bg-hover)]',

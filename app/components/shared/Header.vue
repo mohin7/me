@@ -25,7 +25,7 @@
       <!-- Desktop Actions -->
       <div class="hidden md:flex items-center gap-3">
         <!-- Social Ecosystem (Pill) -->
-        <div class="flex items-center h-10 px-1.5 rounded-full border border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800">
+        <div class="flex items-center h-10 px-1.5 rounded-full border border-[var(--border-glass)] bg-[var(--bg-soft)]">
           <a href="https://www.linkedin.com/in/mohin7/" rel="noopener" 
              class="group/icon relative flex items-center justify-center h-8 w-8 rounded-full text-soft hover:text-accent hover:bg-accent/15 transition-all duration-300 active:scale-90">
             <Icon name="lucide:linkedin" class="h-3.5 w-3.5 group-hover/icon:scale-125 transition-transform duration-300" />
@@ -48,7 +48,7 @@
         
         <!-- Theme Utility -->
         <button type="button" 
-                class="group/theme relative flex items-center justify-center h-10 w-10 rounded-full border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-800 text-soft hover:text-accent hover:bg-accent/10 hover:border-accent/30 transition-all duration-300 active:scale-90" 
+                class="group/theme relative flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-glass)] bg-[var(--bg-soft)] text-soft hover:text-accent hover:bg-accent/10 hover:border-accent/30 transition-all duration-300 active:scale-90"
                 @click="toggleTheme" 
                 :aria-label="theme === 'dark' ? 'Light mode' : 'Dark mode'">
           <Icon :name="theme === 'dark' ? 'lucide:sun' : 'lucide:moon'" class="h-4 w-4 group-hover/theme:scale-125 transition-transform duration-300" />
@@ -274,7 +274,7 @@ onUnmounted(() => {
   background: var(--bg-panel);
   border: 1px solid var(--border-glass);
   border-radius: 9999px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 0 0 0.5px rgba(255,255,255,0.04) inset;
 }
 
 .nav-link {

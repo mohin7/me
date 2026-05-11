@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Md Mohin Uddin — Head of Design & Product Architect',
+      title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
       titleTemplate: '%s | mohin.design',
       htmlAttrs: {
         lang: 'en'
@@ -41,29 +41,35 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          children: `(function(){const t=localStorage.getItem("portal-theme")||'dark';document.documentElement.classList.remove("light","dark");document.documentElement.classList.add(t);document.documentElement.dataset.theme=t;})();`,
+          innerHTML: `(function(){const t=localStorage.getItem("portal-theme")||'dark';document.documentElement.classList.remove("light","dark");document.documentElement.classList.add(t);document.documentElement.dataset.theme=t;})();`,
           type: 'text/javascript',
         },
         {
           type: 'application/ld+json',
-          children: JSON.stringify({
+          innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Md Mohin Uddin',
             url: 'https://mohin.design',
             image: 'https://mohin.design/og-banner.png',
             jobTitle: 'Head of Design',
+            description: 'Best UI/UX Designer in Bangladesh. Head of Design at AppsCode, Dhaka. 7+ years designing SaaS, cloud, and Kubernetes products.',
             worksFor: {
               '@type': 'Organization',
               name: 'AppsCode',
               url: 'https://appscode.com',
+            },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Dhaka',
+              addressCountry: 'BD',
             },
             sameAs: [
               'https://www.linkedin.com/in/mohin7/',
               'https://github.com/mohin7',
               'https://dribbble.com/mohin7',
             ],
-            knowsAbout: ['UI/UX Design', 'Nuxt.js', 'Vue.js', 'Design Systems', 'Kubernetes', 'SaaS'],
+            knowsAbout: ['UI/UX Design', 'Nuxt.js', 'Vue.js', 'Design Systems', 'Kubernetes', 'SaaS', 'Bangladesh'],
           }),
         },
       ],
@@ -81,14 +87,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  content: {
-    collections: {
-      blog: {
-        type: 'page',
-        source: 'blog/**'
-      }
-    }
-  },
+  content: {},
   runtimeConfig: {
     tinSalt: process.env.TIN_SALT
   },

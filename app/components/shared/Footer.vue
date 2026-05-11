@@ -8,7 +8,7 @@
         <div class="space-y-6">
           <SharedLogo :link="true" subtitle="" />
           <p class="text-soft text-sm font-medium leading-relaxed max-w-[240px] text-left">
-            Head of Design specializing in high-performance cloud infrastructure and design systems.
+            UI/UX Designer &amp; Product Architect based in Dhaka, Bangladesh. Specializing in SaaS, cloud infrastructure, and design systems.
           </p>
         </div>
 

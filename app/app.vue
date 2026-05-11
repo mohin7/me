@@ -66,18 +66,18 @@ const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 // ── SEO & Metadata Implementation ──
 useSeoMeta({
-  title: 'Md Mohin Uddin — Head of Design & Product Architect',
-  description: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS. Design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt & Vue.js.',
+  title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
+  description: 'Md Mohin Uddin is one of the best UI/UX designers in Bangladesh, based in Dhaka. Head of Design at AppsCode with 7+ years building SaaS, cloud, and Kubernetes products. Expert in Nuxt, Vue.js & scalable design systems.',
   ogType: 'website',
   ogUrl: 'https://mohin.design',
-  ogTitle: 'Md Mohin Uddin — Head of Design & Product Architect',
-  ogDescription: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS. Design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt & Vue.js.',
+  ogTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
+  ogDescription: 'Md Mohin Uddin is one of the best UI/UX designers in Bangladesh, based in Dhaka. Head of Design at AppsCode with 7+ years building SaaS, cloud, and Kubernetes products.',
   ogImage: 'https://mohin.design/og-banner.png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Md Mohin Uddin — Head of Design & Product Architect',
-  twitterDescription: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS.',
+  twitterTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh',
+  twitterDescription: 'Head of Design at AppsCode, Dhaka. 7+ years building world-class SaaS & cloud products. Nuxt, Vue.js, design systems.',
   twitterImage: 'https://mohin.design/og-banner.png',
 })
 

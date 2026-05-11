@@ -21,7 +21,7 @@
             </h3>
             
             <p class="text-soft max-w-xl text-lg font-medium leading-relaxed mb-12 opacity-80 group-hover:opacity-100 transition-opacity">
-               As Head of Design at <span class="text-main font-semibold">AppsCode</span>, I scale product systems from Figma to Production. Formerly built foundations as a Frontend Developer at <span class="text-main font-semibold">Cloud Software Solutions</span>.
+               One of the leading UI/UX designers in Bangladesh, based in Dhaka. As Head of Design at <span class="text-main font-semibold">AppsCode</span>, I scale product systems from Figma to production — designing for Kubernetes, cloud infrastructure, and SaaS platforms used globally. Formerly Frontend Developer at <span class="text-main font-semibold">Cloud Software Solutions</span>.
             </p>
             
             <div class="flex flex-wrap gap-2">
@@ -52,8 +52,8 @@
            <div class="relative z-10 h-14 w-14 mb-6 flex items-center justify-center rounded-full bg-soft border border-glass text-accent group-hover:scale-110 transition-transform">
              <Icon name="lucide:map-pin" class="h-6 w-6" />
            </div>
-           <p class="text-main text-2xl font-black tracking-tight mb-1">Dhaka, BD</p>
-           <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60">Global Operations</p>
+           <p class="text-main text-2xl font-black tracking-tight mb-1">Dhaka, Bangladesh</p>
+           <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60 mt-1">Available Globally</p>
         </div>
 
       </div>

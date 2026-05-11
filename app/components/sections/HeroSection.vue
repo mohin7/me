@@ -62,7 +62,7 @@
           </h1>
 
           <p class="hero-sub font-medium leading-relaxed mx-auto max-w-4xl pt-2 mb-12 px-2 md:px-4 opacity-90">
-            Designer who codes. Engineer who thinks in systems. I make products people actually want to use.
+            UI/UX designer &amp; engineer based in Dhaka, Bangladesh. I design and build products people actually want to use.
           </p>
 
           <!-- CTA Row -->

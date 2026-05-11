@@ -66,12 +66,19 @@ const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 // ── SEO & Metadata Implementation ──
 useSeoMeta({
-  title: 'Md Mohin Uddin — Head of Design & AI Architect | Kubernetes & Cloud UX Specialist',
-  ogTitle: 'Md Mohin Uddin — Design Lead & Architect for High-Scale Cloud Systems',
-  description: 'Head of Design at AppsCode. Specializing in high-performance UI/UX for Kubernetes, Cloud Infrastructure, and Scalable SaaS Platforms. Directed design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt 3 & Vue.js engineering.',
-  ogDescription: 'Engineering executive-grade UI/UX for complex cloud ecosystems and high-concurrency platforms. Specialized in developer-centric product strategy.',
+  title: 'Md Mohin Uddin — Head of Design & Product Architect',
+  description: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS. Design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt & Vue.js.',
+  ogType: 'website',
+  ogUrl: 'https://mohin.design',
+  ogTitle: 'Md Mohin Uddin — Head of Design & Product Architect',
+  ogDescription: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS. Design systems for KubeDB, KubeVault, and Stash. Expert in Nuxt & Vue.js.',
   ogImage: 'https://mohin.design/og-banner.png',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Md Mohin Uddin — Head of Design & Product Architect',
+  twitterDescription: 'Head of Design at AppsCode. UI/UX for Kubernetes, Cloud Infrastructure, and SaaS.',
+  twitterImage: 'https://mohin.design/og-banner.png',
 })
 
 // ── Fixed Wrapper Smooth Scroll ──

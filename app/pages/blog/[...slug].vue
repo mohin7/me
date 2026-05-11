@@ -92,7 +92,15 @@ onUnmounted(() => {
 if (post.value) {
   useSeoMeta({
     title: `${post.value.title} — Md Mohin Uddin`,
-    description: post.value.excerpt
+    description: post.value.excerpt,
+    ogType: 'article',
+    ogUrl: `https://mohin.design${route.path}`,
+    ogTitle: `${post.value.title} — Md Mohin Uddin`,
+    ogDescription: post.value.excerpt,
+    ogImage: 'https://mohin.design/og-banner.png',
+    twitterCard: 'summary_large_image',
+    twitterTitle: `${post.value.title} — Md Mohin Uddin`,
+    twitterDescription: post.value.excerpt,
   })
 }
 </script>

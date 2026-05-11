@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25C55D;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#25C55D;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="accent-glow" cx="15%" cy="80%" r="50%">
+      <stop offset="0%" style="stop-color:#25C55D;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#25C55D;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#accent-glow)"/>
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Top border accent -->
+  <rect x="0" y="0" width="1200" height="3" fill="#25C55D"/>
+
+  <!-- Left decorative vertical line -->
+  <rect x="80" y="80" width="1" height="470" fill="#25C55D" opacity="0.3"/>
+
+  <!-- Dot pattern (top right) -->
+  <g opacity="0.06" fill="#ffffff">
+    <circle cx="900" cy="80" r="2"/><circle cx="940" cy="80" r="2"/><circle cx="980" cy="80" r="2"/><circle cx="1020" cy="80" r="2"/><circle cx="1060" cy="80" r="2"/><circle cx="1100" cy="80" r="2"/>
+    <circle cx="900" cy="120" r="2"/><circle cx="940" cy="120" r="2"/><circle cx="980" cy="120" r="2"/><circle cx="1020" cy="120" r="2"/><circle cx="1060" cy="120" r="2"/><circle cx="1100" cy="120" r="2"/>
+    <circle cx="900" cy="160" r="2"/><circle cx="940" cy="160" r="2"/><circle cx="980" cy="160" r="2"/><circle cx="1020" cy="160" r="2"/><circle cx="1060" cy="160" r="2"/><circle cx="1100" cy="160" r="2"/>
+    <circle cx="900" cy="200" r="2"/><circle cx="940" cy="200" r="2"/><circle cx="980" cy="200" r="2"/><circle cx="1020" cy="200" r="2"/><circle cx="1060" cy="200" r="2"/><circle cx="1100" cy="200" r="2"/>
+  </g>
+
+  <!-- Avatar / Logo mark -->
+  <rect x="112" y="220" width="64" height="64" rx="16" fill="#25C55D"/>
+  <text x="144" y="263" font-family="Georgia, serif" font-weight="900" font-style="italic" font-size="36" fill="#ffffff" text-anchor="middle">M</text>
+
+  <!-- Available badge -->
+  <rect x="112" y="160" width="180" height="32" rx="16" fill="#1a1a1a" stroke="#242424" stroke-width="1"/>
+  <circle cx="130" cy="176" r="5" fill="#25C55D"/>
+  <text x="145" y="181" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#a0a0a0" letter-spacing="2">AVAILABLE NOW</text>
+
+  <!-- Main heading -->
+  <text x="112" y="370" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="72" fill="#f2f2f2" letter-spacing="-2">Md Mohin</text>
+  <text x="112" y="455" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="72" fill="#f2f2f2" letter-spacing="-2">Uddin</text>
+
+  <!-- Accent underline -->
+  <rect x="112" y="468" width="120" height="4" rx="2" fill="#25C55D"/>
+
+  <!-- Role / subtitle -->
+  <text x="112" y="530" font-family="Arial, sans-serif" font-weight="400" font-size="22" fill="#a0a0a0" letter-spacing="0">Head of Design &amp; Product Architect</text>
+
+  <!-- Right side: stats -->
+  <g>
+    <!-- Divider -->
+    <rect x="820" y="160" width="1" height="310" fill="#242424"/>
+
+    <!-- Stat 1 -->
+    <text x="900" y="240" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="56" fill="#f2f2f2" text-anchor="middle">7+</text>
+    <text x="900" y="268" font-family="Arial, sans-serif" font-weight="600" font-size="13" fill="#5a5a5a" text-anchor="middle" letter-spacing="3">YEARS</text>
+
+    <!-- Divider -->
+    <rect x="840" y="300" width="120" height="1" fill="#242424"/>
+
+    <!-- Stat 2 -->
+    <text x="900" y="370" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="56" fill="#f2f2f2" text-anchor="middle">24+</text>
+    <text x="900" y="398" font-family="Arial, sans-serif" font-weight="600" font-size="13" fill="#5a5a5a" text-anchor="middle" letter-spacing="3">PRODUCTS</text>
+
+    <!-- Divider -->
+    <rect x="840" y="430" width="120" height="1" fill="#242424"/>
+
+    <!-- Stat 3 -->
+    <text x="900" y="490" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="24" fill="#25C55D" text-anchor="middle">AppsCode</text>
+    <text x="900" y="516" font-family="Arial, sans-serif" font-weight="600" font-size="13" fill="#5a5a5a" text-anchor="middle" letter-spacing="3">CURRENT ROLE</text>
+  </g>
+
+  <!-- Skills tags -->
+  <g>
+    <rect x="112" y="565" width="90" height="28" rx="14" fill="#1a1a1a" stroke="#242424" stroke-width="1"/>
+    <text x="157" y="584" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#a0a0a0" text-anchor="middle" letter-spacing="1">UI/UX</text>
+
+    <rect x="214" y="565" width="90" height="28" rx="14" fill="#1a1a1a" stroke="#242424" stroke-width="1"/>
+    <text x="259" y="584" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#a0a0a0" text-anchor="middle" letter-spacing="1">NUXT</text>
+
+    <rect x="316" y="565" width="90" height="28" rx="14" fill="#1a1a1a" stroke="#242424" stroke-width="1"/>
+    <text x="361" y="584" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#a0a0a0" text-anchor="middle" letter-spacing="1">VUE.JS</text>
+
+    <rect x="418" y="565" width="130" height="28" rx="14" fill="#1a1a1a" stroke="#242424" stroke-width="1"/>
+    <text x="483" y="584" font-family="Arial, sans-serif" font-weight="700" font-size="11" fill="#a0a0a0" text-anchor="middle" letter-spacing="1">DESIGN SYSTEMS</text>
+  </g>
+
+  <!-- Bottom: URL -->
+  <text x="1188" y="610" font-family="Arial, sans-serif" font-weight="700" font-size="16" fill="#5a5a5a" text-anchor="end" letter-spacing="1">mohin.design</text>
+
+  <!-- Bottom border -->
+  <rect x="0" y="627" width="1200" height="3" fill="#242424"/>
+</svg>

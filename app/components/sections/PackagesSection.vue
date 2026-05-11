@@ -5,13 +5,12 @@
       <!-- Standardized Section Header -->
       <SharedSectionHeader
         label="Pricing"
-        description="Straightforward pricing. Clear scope. No surprises"
+        description="Clear scope, honest pricing — no surprises, no hidden fees"
         :centered="true"
         class="max-w-4xl mx-auto"
       >
         <template #title>
-          Pick your <br />
-          <span class="text-gradient">package</span>
+          Pick your <span class="text-gradient">package</span>
         </template>
       </SharedSectionHeader>
 
@@ -38,7 +37,7 @@
               {{ pkg.name }}</h3><Icon v-if="pkg && pkg.icon" :name="pkg.icon" class="h-8 w-8 text-accent/20 group-hover:text-accent transition-colors duration-500" /></div>
             
             <div class="flex items-baseline gap-2 mb-8">
-              <span class="text-main text-2xl md:text-3xl font-black tracking-tighter">{{ pkg.price }}</span>
+              <span class="text-main font-black tracking-tighter" :class="pkg.price.startsWith('$') ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'">{{ pkg.price }}</span>
               <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
             </div>
 

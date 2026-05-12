@@ -91,17 +91,19 @@
 
     <!-- Mobile Menu Matrix (Teleported for absolute isolation) -->
     <Teleport to="body">
-      <Transition name="menu-fade">
-        <div v-if="isMobileMenuOpen" 
+      <Transition name="menu-clip">
+        <div v-if="isMobileMenuOpen"
              class="mobile-menu-overlay fixed inset-0 z-[200] bg-page flex flex-col p-6 sm:p-10 overflow-hidden"
              :class="themeClass"
         >
-          
+          <!-- Accent corner glow -->
+          <div class="pointer-events-none absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] opacity-10" style="background: var(--accent)"></div>
+
           <!-- Menu Top Bar -->
-          <div class="flex items-center justify-between mb-16">
+          <div class="menu-topbar flex items-center justify-between mb-16">
              <SharedLogo :link="false" subtitle="" />
-             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-[var(--border-subtle)] flex items-center justify-center bg-soft text-main">
-                <Icon name="lucide:x" class="h-6 w-6" />
+             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-[var(--border-subtle)] flex items-center justify-center bg-soft text-main active:scale-90 transition-transform">
+                <Icon name="lucide:x" class="h-5 w-5" />
              </button>
           </div>
 
@@ -112,25 +114,26 @@
               :key="`m-${item.label}`"
               :href="item.href"
               @click="scrollToSection($event, item.href)"
-              class="group relative block"
+              class="menu-item group relative block"
+              :style="{ '--i': idx }"
             >
-              <div class="flex items-center py-4 border-b border-[var(--border-subtle)]">
-                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main group-hover:text-accent transition-colors duration-300">
+              <div class="flex items-center justify-between py-5 border-b border-[var(--border-subtle)]">
+                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main group-hover:text-accent group-hover:translate-x-2 transition-all duration-300">
                   {{ item.label }}
                 </span>
+                <Icon name="lucide:arrow-up-right" class="h-5 w-5 text-soft opacity-0 group-hover:opacity-100 group-hover:text-accent transition-all duration-300" />
               </div>
             </a>
           </div>
 
           <!-- Mobile Menu Footer -->
-          <div class="mt-auto pt-12 space-y-8">
-            <SharedButton 
-              tag="a" 
-              href="/img/uiux-specialist.pdf" 
-              
-              variant="primary" 
-              size="lg" 
-              fullWidth 
+          <div class="menu-footer mt-auto pt-12 space-y-8">
+            <SharedButton
+              tag="a"
+              href="/img/uiux-specialist.pdf"
+              variant="primary"
+              size="lg"
+              fullWidth
               hover-text="Download"
               @click="isMobileMenuOpen = false"
             >
@@ -142,20 +145,20 @@
                 <Icon name="lucide:download" class="h-4 w-4" />
               </template>
             </SharedButton>
-            
+
             <div class="flex flex-col gap-6 border-t border-[var(--border-subtle)] pt-8">
                <div class="flex items-center justify-between">
                  <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.4em]">Ecosystem</span>
                  <div class="flex items-center gap-3">
-                   <a href="https://www.linkedin.com/in/mohin7/" rel="noopener" 
+                   <a href="https://www.linkedin.com/in/mohin7/" rel="noopener"
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:linkedin" class="h-4 w-4" />
                    </a>
-                   <a href="https://github.com/mohin7" rel="noopener" 
+                   <a href="https://github.com/mohin7" rel="noopener"
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:github" class="h-4 w-4" />
                    </a>
-                   <a href="https://dribbble.com/mohin7" rel="noopener" 
+                   <a href="https://dribbble.com/mohin7" rel="noopener"
                       class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:dribbble" class="h-4 w-4" />
                    </a>
@@ -368,6 +371,68 @@ onUnmounted(() => {
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
-.menu-fade-enter-active, .menu-fade-leave-active { transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-.menu-fade-enter-from, .menu-fade-leave-to { opacity: 0; transform: translateY(-20px); }
+/* ── Overlay: clip-path iris from top-right ── */
+.menu-clip-enter-active {
+  transition: clip-path 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+.menu-clip-leave-active {
+  transition: clip-path 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease 0.15s;
+}
+.menu-clip-enter-from {
+  clip-path: circle(0% at calc(100% - 48px) 48px);
+  opacity: 0;
+}
+.menu-clip-enter-to {
+  clip-path: circle(150% at calc(100% - 48px) 48px);
+  opacity: 1;
+}
+.menu-clip-leave-from {
+  clip-path: circle(150% at calc(100% - 48px) 48px);
+  opacity: 1;
+}
+.menu-clip-leave-to {
+  clip-path: circle(0% at calc(100% - 48px) 48px);
+  opacity: 0;
+}
+
+/* ── Top bar: fade + slide down ── */
+.menu-clip-enter-active .menu-topbar {
+  transition: opacity 0.4s ease 0.2s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+.menu-clip-leave-active .menu-topbar {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.menu-clip-enter-from .menu-topbar,
+.menu-clip-leave-to .menu-topbar {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* ── Nav items: staggered slide up ── */
+.menu-clip-enter-active .menu-item {
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(0.25s + var(--i) * 0.07s);
+}
+.menu-clip-leave-active .menu-item {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition-delay: calc(var(--i) * 0.03s);
+}
+.menu-clip-enter-from .menu-item,
+.menu-clip-leave-to .menu-item {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ── Footer: fade up last ── */
+.menu-clip-enter-active .menu-footer {
+  transition: opacity 0.4s ease 0.55s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
+}
+.menu-clip-leave-active .menu-footer {
+  transition: opacity 0.15s ease;
+}
+.menu-clip-enter-from .menu-footer,
+.menu-clip-leave-to .menu-footer {
+  opacity: 0;
+  transform: translateY(20px);
+}
 </style>

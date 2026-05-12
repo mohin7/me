@@ -71,7 +71,7 @@
     <!-- ── Aesthetic Layering ── -->
 
     <!-- Noise Grain Texture -->
-    <div class="pointer-events-none fixed inset-0 z-[999] opacity-[0.04] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+    <div class="noise-global pointer-events-none fixed inset-0 z-[999]"></div>
   </div>
 </template>
 
@@ -301,6 +301,18 @@ onUnmounted(() => {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* ── Global Noise Grain ── */
+.noise-global {
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+.light .noise-global {
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+}
 
 /* ── Core Scroll Architecture ── */
 html, body {

@@ -27,7 +27,7 @@
         <div 
           v-for="(project, idx) in projects" 
           :key="idx" 
-          class="flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+          class="grain-card flex-none w-[85vw] sm:w-[420px] snap-center sm:snap-start group relative flex flex-col overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <!-- Project Image Container -->
           <div class="relative aspect-[16/11] overflow-hidden">
@@ -90,7 +90,7 @@
       
       <!-- Private Work Showcase -->
       <div class="mt-12 md:mt-24 relative">
-        <div class="relative group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-14 transition-all duration-300" style="box-shadow: var(--card-shadow);">
+        <div class="grain-card relative group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-14 transition-all duration-300" style="box-shadow: var(--card-shadow);">
           <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
             
             <!-- Left Side: Content -->
@@ -248,5 +248,18 @@ const projects: Project[] = [
 }
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
 }
 </style>

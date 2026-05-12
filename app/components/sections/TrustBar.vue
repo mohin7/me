@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- The Cinematic Hub Container -->
-      <div class="relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel p-6 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
+      <div class="grain-card relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel p-6 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
         
         <!-- Technical Background Noise -->
         <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.015] pointer-events-none" 
@@ -125,6 +125,18 @@ const logos = [
   animation-play-state: paused;
 }
 
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
 </style>
 
 

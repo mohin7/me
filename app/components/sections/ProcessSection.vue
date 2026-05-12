@@ -1,5 +1,5 @@
 <template>
-  <SharedSectionWrapper section-id="process" bg="page" pattern="dots">
+  <SharedSectionWrapper section-id="process" bg="page" pattern="noise">
 
     <SharedSectionHeader
       label="How I Work"

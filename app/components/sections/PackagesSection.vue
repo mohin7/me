@@ -16,8 +16,8 @@
 
       <!-- Pricing Matrix -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-[var(--border-glass)] rounded-2xl overflow-hidden bg-panel" style="box-shadow: var(--card-shadow);">
-        <div v-for="(pkg, idx) in packages" :key="idx" 
-             :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
+        <div v-for="(pkg, idx) in packages" :key="idx"
+             :class="[`reveal reveal-delay-${idx+1}`, 'pkg-card group relative flex flex-col p-10 md:p-16 overflow-hidden border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
           <div class="mb-12">
             <div class="flex items-center justify-between gap-3 mb-8">
@@ -26,7 +26,7 @@
                 <div class="h-px w-8 bg-accent/20"></div>
                 <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">{{ pkg.tag }}</span>
               </div>
-              <div v-if="pkg.popular" class="px-3 py-1 border border-accent/20 bg-accent/5 text-accent text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full shrink-0">
+              <div v-if="pkg.popular" class="px-3 py-1 border border-accent bg-accent/5 text-accent text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full shrink-0">
                 Enterprise_Choice
               </div>
             </div>
@@ -188,4 +188,18 @@ const packages = [
   }
 ]
 </script>
+
+<style scoped>
+.pkg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  z-index: 0;
+}
+</style>
 

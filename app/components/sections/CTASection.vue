@@ -2,7 +2,7 @@
   <SharedSectionWrapper section-id="contact" padding="lg">
 
     <!-- Subtle Technical Aura -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[120px] rounded-full pointer-events-none" style="background: color-mix(in srgb, var(--accent), transparent 98%)"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[120px] rounded-full pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%)"></div>
 
     <div class="relative z-10 text-center">
       <!-- System Status Line -->

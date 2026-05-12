@@ -12,6 +12,9 @@
       <div class="hero-noise"></div>
       <!-- Bottom fade into next section -->
       <div class="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-page to-transparent"></div>
+      <!-- Accent edge glow at section floor -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[120px] rounded-full blur-[60px] pointer-events-none"
+           style="background: radial-gradient(ellipse at bottom, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%);"></div>
     </div>
 
     <div class="relative z-10 mx-auto max-w-6xl w-full px-4 sm:px-6 lg:px-8">

@@ -18,7 +18,7 @@
         <div 
           v-for="(specialty, idx) in specialties" 
           :key="idx"
-          class="group relative overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+          class="grain-card group relative overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
         >
           <!-- Hover Highlight Rim -->
           <div class="absolute top-0 inset-x-10 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -57,6 +57,19 @@ const specialties = [
 </script>
 
 <style scoped>
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
+
 .group:hover .lucide {
   animation: floatIcon 3s ease-in-out infinite;
 }

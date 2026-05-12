@@ -10,7 +10,7 @@
 
       <div class="grid gap-6 md:grid-cols-12">
         <!-- Main Bento Card -->
-        <div class="relative overflow-hidden md:col-span-8 md:row-span-2 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 md:p-14 transition-all duration-300 hover:border-accent/30 group cursor-default" style="box-shadow: var(--card-shadow);">
+        <div class="grain-card relative overflow-hidden md:col-span-8 md:row-span-2 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 md:p-14 transition-all duration-300 hover:border-accent/30 group cursor-default" style="box-shadow: var(--card-shadow);">
           <div class="relative z-10">
             <div class="mb-12 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-soft border border-[var(--border-glass)] text-accent group-hover:scale-110 transition-transform">
               <Icon name="lucide:palette" class="h-7 w-7" />
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Metric Card: Years -->
-        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
+        <div class="grain-card relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
            <div class="relative z-10">
               <div class="relative inline-block mb-4">
                 <p class="text-accent text-6xl font-black tracking-tighter group-hover:scale-110 transition-transform">7+</p>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Location Card -->
-        <div class="relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
+        <div class="grain-card relative overflow-hidden flex flex-col justify-center items-center md:col-span-4 rounded-2xl border border-[var(--border-glass)] bg-panel p-10 text-center transition-all duration-500 hover:border-accent/30 group cursor-default">
            <div class="relative z-10 h-14 w-14 mb-6 flex items-center justify-center rounded-full bg-soft border border-glass text-accent group-hover:scale-110 transition-transform">
              <Icon name="lucide:map-pin" class="h-6 w-6" />
            </div>
@@ -63,4 +63,19 @@
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
+</style>
 

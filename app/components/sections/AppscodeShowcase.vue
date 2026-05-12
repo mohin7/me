@@ -6,6 +6,9 @@
          style="background: var(--accent)"></div>
     <div class="pointer-events-none absolute inset-0 opacity-[0.016]"
          style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Secondary glow centered on work grid -->
+    <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[120px] opacity-[0.035]"
+         style="background: var(--accent)"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -44,7 +47,7 @@
           :href="work.href"
           target="_blank"
           rel="noopener"
-          class="group relative flex flex-col rounded-3xl border border-glass bg-panel overflow-hidden transition-all duration-500 hover:border-accent/20 hover:shadow-[0_20px_60px_-16px_rgba(0,0,0,0.2)] cursor-pointer"
+          class="grain-card group relative flex flex-col rounded-3xl border border-glass bg-panel overflow-hidden transition-all duration-500 hover:border-accent/20 hover:shadow-[0_20px_60px_-16px_rgba(0,0,0,0.2)] cursor-pointer"
         >
           <!-- Image Preview -->
           <div class="relative h-44 overflow-hidden bg-soft/30 border-b border-glass">
@@ -93,7 +96,7 @@
       </div>
 
       <!-- ── Closing CTA ── -->
-      <div class="mt-16 relative rounded-2xl overflow-hidden border border-glass bg-panel">
+      <div class="grain-card mt-16 relative rounded-2xl overflow-hidden border border-glass bg-panel">
         <div class="pointer-events-none absolute -right-32 -top-32 w-96 h-96 rounded-full blur-[100px] opacity-[0.06]" style="background: var(--accent)"></div>
         <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-8 justify-between p-8 md:p-12">
           <div class="max-w-lg">
@@ -208,3 +211,18 @@ const works = [
   },
 ]
 </script>
+
+<style scoped>
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
+</style>

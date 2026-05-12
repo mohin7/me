@@ -19,7 +19,7 @@
       <!-- Main Case Study Display -->
       <div class="relative">
         <Transition :name="direction === 'next' ? 'slide-left' : 'slide-right'" mode="out-in">
-          <div :key="active" class="group relative rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-12 transition-all duration-500 overflow-hidden" style="box-shadow: var(--card-shadow);">
+          <div :key="active" class="grain-card group relative rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-12 transition-all duration-500 overflow-hidden" style="box-shadow: var(--card-shadow);">
             
             <!-- Abstract Logic Grid Background -->
             <div class="absolute inset-0 pointer-events-none opacity-[0.015]" 
@@ -201,4 +201,17 @@ function prev() {
 .slide-left-leave-to    { opacity: 0; transform: translateX(-80px) scale(0.96); }
 .slide-right-enter-from { opacity: 0; transform: translateX(-80px) scale(0.96); }
 .slide-right-leave-to   { opacity: 0; transform: translateX(80px) scale(0.96); }
+
+.grain-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
 </style>

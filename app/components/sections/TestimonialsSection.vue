@@ -1,5 +1,5 @@
 <template>
-  <SharedSectionWrapper section-id="testimonials" bg="soft">
+  <SharedSectionWrapper section-id="testimonials" bg="soft" pattern="noise">
 
     <!-- Center Aligned Section Header -->
     <SharedSectionHeader 

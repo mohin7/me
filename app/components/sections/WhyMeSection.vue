@@ -1,8 +1,11 @@
 <template>
   <section id="why-me" class="py-16 md:py-24 bg-page relative overflow-hidden">
     <!-- Architectural Subtle Grid -->
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
+    <!-- Accent radial light source — top center -->
+    <div class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] -translate-y-1/2 rounded-full blur-[100px]"
+         style="background: radial-gradient(ellipse, rgba(var(--accent-rgb), 0.07) 0%, transparent 70%);"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 lg:gap-20 items-end mb-12 md:mb-24">
@@ -30,7 +33,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Pillar 01: Design-to-Code -->
-        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
+        <div class="pillar-card group p-10 rounded-[32px] overflow-hidden border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="mb-8 h-14 w-14">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
               <!-- Figma frame -->
@@ -55,7 +58,7 @@
         </div>
 
         <!-- Pillar 02: Venture Scale -->
-        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
+        <div class="pillar-card group p-10 rounded-[32px] overflow-hidden border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="mb-8 h-14 w-14">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
               <!-- Stacked layers -->
@@ -75,7 +78,7 @@
         </div>
 
         <!-- Pillar 03: Performance First -->
-        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
+        <div class="pillar-card group p-10 rounded-[32px] overflow-hidden border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="mb-8 h-14 w-14">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
               <!-- Speedometer arc -->
@@ -100,7 +103,7 @@
         </div>
 
         <!-- Pillar 04: Full Lifecycle -->
-        <div class="group p-10 rounded-[32px] border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
+        <div class="pillar-card group p-10 rounded-[32px] overflow-hidden border border-[var(--border-glass)] bg-panel hover:border-accent/25 transition-all duration-500">
           <div class="mb-8 h-14 w-14">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
               <!-- Circular lifecycle loop -->
@@ -145,3 +148,19 @@
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+.pillar-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  border-radius: inherit;
+  z-index: 0;
+}
+.pillar-card > * { position: relative; z-index: 1; }
+</style>

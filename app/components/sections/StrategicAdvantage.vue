@@ -13,8 +13,8 @@
     </SharedSectionHeader>
 
     <!-- Stats row — bold numbers, not cards -->
-    <div class="reveal grid grid-cols-3 gap-0 mb-20 max-w-2xl mx-auto border border-[var(--border-glass)] rounded-2xl overflow-hidden bg-panel" style="box-shadow: var(--card-shadow);">
-      <div v-for="(spec, idx) in specs" :key="spec.label" class="flex flex-col items-center py-8 px-4 group relative" :class="idx < specs.length - 1 ? 'border-r border-[var(--border-glass)]' : ''">
+    <div class="reveal grid grid-cols-3 gap-0 mb-12 md:mb-20 max-w-2xl mx-auto border border-[var(--border-glass)] rounded-2xl overflow-hidden bg-panel" style="box-shadow: var(--card-shadow);">
+      <div v-for="(spec, idx) in specs" :key="spec.label" class="flex flex-col items-center py-6 md:py-8 px-2 md:px-4 group relative" :class="idx < specs.length - 1 ? 'border-r border-[var(--border-glass)]' : ''">
         <Icon :name="spec.icon" class="h-4 w-4 text-accent mb-3 opacity-70" />
         <span class="text-main text-xl font-black tracking-tight leading-none mb-1.5">{{ spec.title }}</span>
         <span class="text-[0.5rem] font-black uppercase tracking-[0.2em] text-soft opacity-80">{{ spec.label }}</span>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Pillars — asymmetric, editorial layout -->
-    <div class="grid md:grid-cols-3 gap-6 text-left mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left mb-12 md:mb-16">
       <SharedGlassCard
         v-for="(pillar, idx) in pillars" :key="idx"
         :class="`reveal reveal-delay-${idx+1}`"

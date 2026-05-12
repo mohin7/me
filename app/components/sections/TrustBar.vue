@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- The Cinematic Hub Container -->
-      <div class="relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel p-8 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
+      <div class="relative overflow-hidden rounded-[24px] md:rounded-[32px] border border-glass bg-panel p-6 md:p-14 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] group">
         
         <!-- Technical Background Noise -->
         <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.015] pointer-events-none" 
@@ -25,7 +25,7 @@
            </div>
         </div>
 
-        <div class="relative z-10 grid lg:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-center">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 lg:gap-20 items-center">
           
           <!-- Left side: Content Node -->
           <div class="flex flex-col gap-8">
@@ -69,8 +69,8 @@
               <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-panel/40 to-transparent z-10"></div>
               <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-panel/40 to-transparent z-10"></div>
               
-              <div class="flex gap-12 md:gap-20 animate-ticker whitespace-nowrap">
-                <div v-for="i in 3" :key="i" class="flex gap-12 md:gap-20">
+              <div class="flex gap-6 sm:gap-12 md:gap-20 animate-ticker whitespace-nowrap">
+                <div v-for="i in 3" :key="i" class="flex gap-6 sm:gap-12 md:gap-20">
                   <div v-for="l in logos" :key="l.name" class="flex items-center gap-5 group/logo">
                     <div class="h-10 w-10 rounded-full bg-panel border border-glass flex items-center justify-center group-hover/logo:border-accent transition-all duration-500 shadow-sm">
                       <Icon :name="l.icon" class="h-5 w-5 text-muted group-hover/logo:text-accent" />

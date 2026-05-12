@@ -13,16 +13,16 @@
           <span class="text-[0.6rem] font-black uppercase tracking-[0.4em]">Strategic MVP Protocol</span>
         </div>
         
-        <h2 class="text-4xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] md:leading-[0.9] mb-8 md:mb-12">
           Pushing for traction? <br />
           Don’t let <span class="opacity-40 italic serif-font lowercase">slow design</span> hold you back.
         </h2>
-        
-        <div class="grid md:grid-cols-2 gap-12 text-left">
-          <p class="text-lg md:text-xl font-medium leading-relaxed opacity-70">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 text-left">
+          <p class="text-base md:text-xl font-medium leading-relaxed opacity-70">
             As a young founder, you’re pushing hard—pitching to investors, talking to users, and chasing tight deadlines. But when your design isn’t clear, it slows down your momentum.
           </p>
-          <p class="text-lg md:text-xl font-medium leading-relaxed opacity-70 border-l border-accent-fg/10 pl-12">
+          <p class="text-base md:text-xl font-medium leading-relaxed opacity-70 border-l border-accent-fg/10 pl-6 md:pl-12">
             I specialize in <span class="font-black text-accent-fg">Fast-Track MVP Design</span>. From napkin sketches to investor-ready interfaces — I help founders move with clarity, confidence, and conversion.
           </p>
         </div>

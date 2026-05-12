@@ -86,12 +86,12 @@
               <!-- Bottom Tier: Strategy Quote -->
               <div class="pt-10 border-t border-glass">
                  <div class="flex flex-col md:flex-row md:items-center gap-8 justify-between">
-                    <div class="flex items-center gap-6">
-                      <div class="h-16 w-16 rounded-full border-2 border-glass bg-soft overflow-hidden p-2 flex items-center justify-center">
-                         <Icon name="lucide:shield-check" class="h-8 w-8 text-accent opacity-40" />
+                    <div class="flex items-start gap-4">
+                      <div class="h-10 w-10 md:h-16 md:w-16 shrink-0 rounded-full border border-glass bg-soft p-2 flex items-center justify-center">
+                         <Icon name="lucide:shield-check" class="h-5 w-5 md:h-8 md:w-8 text-accent opacity-60" />
                       </div>
                       <div>
-                        <p class="text-main text-xl font-bold italic serif-font">"{{ caseStudies[active].impactHeadline }}"</p>
+                        <p class="text-main text-base md:text-xl font-bold italic serif-font leading-snug">"{{ caseStudies[active].impactHeadline }}"</p>
                         <p class="text-soft text-[0.65rem] font-black uppercase tracking-widest opacity-80 mt-1">Strategic Architecture validation</p>
                       </div>
                     </div>

@@ -3,9 +3,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16 gap-6 md:gap-8">
         <div>
-          <h2 class="mb-4 text-4xl font-black tracking-tight md:text-5xl max-w-4xl text-main leading-tight">
+          <h2 class="mb-4 text-3xl md:text-4xl font-black tracking-tight lg:text-5xl max-w-4xl text-main leading-tight">
             Selected <span class="text-accent">Works</span> <br> & Experiments
           </h2>
           <p class="text-soft max-w-2xl text-lg font-medium opacity-80 mt-6">Design and execution for startups moving at high velocity.</p>
@@ -56,7 +56,7 @@
           </div>
 
           <!-- Project Content -->
-          <div class="flex-1 p-8 flex flex-col">
+          <div class="flex-1 p-5 md:p-8 flex flex-col">
             <div class="flex flex-wrap gap-2 mb-6">
               <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-soft bg-soft px-3 py-1 rounded-full border border-glass">
                 {{ tag }}
@@ -89,9 +89,9 @@
       </div>
       
       <!-- Private Work Showcase -->
-      <div class="mt-24 relative">
-        <div class="relative group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-10 md:p-14 transition-all duration-300" style="box-shadow: var(--card-shadow);">
-          <div class="relative z-10 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <div class="mt-12 md:mt-24 relative">
+        <div class="relative group overflow-hidden rounded-2xl bg-panel border border-[var(--border-glass)] p-6 md:p-14 transition-all duration-300" style="box-shadow: var(--card-shadow);">
+          <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
             
             <!-- Left Side: Content -->
             <div class="md:col-span-7">
@@ -100,7 +100,7 @@
                 <span class="text-[0.6rem] font-bold uppercase tracking-widest text-soft">Secured via Protocol</span>
               </div>
               
-              <h3 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl leading-tight">
+              <h3 class="text-main mb-4 text-2xl md:text-4xl font-black tracking-tight lg:text-5xl leading-tight">
                  Production-Grade <br> <span class="text-accent">Private Solutions</span>
               </h3>
               

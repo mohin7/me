@@ -25,10 +25,10 @@
         <span class="absolute -bottom-4 -right-2 text-[7rem] font-black leading-none select-none pointer-events-none transition-colors duration-500" style="color: var(--border-glass);">{{ idx + 1 }}</span>
 
 
-        <div class="relative z-10 p-7 md:p-8 flex flex-col h-full">
+        <div class="relative z-10 p-5 md:p-8 flex flex-col h-full">
 
           <!-- Phase + Icon -->
-          <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center justify-between mb-5 md:mb-8">
             <span class="text-accent text-[0.6rem] font-black tracking-[0.35em] font-mono">PHASE_0{{ idx + 1 }}</span>
             <div class="h-9 w-9 rounded-xl flex items-center justify-center transition-colors duration-300" style="background: color-mix(in srgb, var(--accent), transparent 90%); border: 1px solid color-mix(in srgb, var(--accent), transparent 75%);">
               <Icon :name="step.icon" class="h-4 w-4 text-accent" />
@@ -36,7 +36,7 @@
           </div>
 
           <!-- Title + Description -->
-          <div class="flex-1 mb-8">
+          <div class="flex-1 mb-5 md:mb-8">
             <h3 class="text-lg font-black tracking-tight mb-3 group-hover:text-accent transition-colors duration-300">{{ step.title }}</h3>
             <p class="text-soft text-sm font-medium leading-relaxed opacity-75">{{ step.description }}</p>
           </div>

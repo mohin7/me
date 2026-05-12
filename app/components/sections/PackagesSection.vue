@@ -19,18 +19,16 @@
         <div v-for="(pkg, idx) in packages" :key="idx" 
              :class="[`reveal reveal-delay-${idx+1}`, 'group relative flex flex-col p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-glass last:border-0 hover:bg-accent/[0.02] transition-colors duration-500']">
           
-          <!-- State Indicator -->
-          <div v-if="pkg.popular" class="absolute top-0 right-0 p-6">
-             <div class="px-4 py-1.5 border border-accent/20 bg-accent/5 text-accent text-[0.55rem] font-black uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(var(--accent-rgb),0.1)]">
-               Enterprise_Choice
-             </div>
-          </div>
-
           <div class="mb-12">
-            <div class="flex items-center gap-3 mb-8">
-               <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.3em] font-mono">pkg_0{{ idx + 1 }}</span>
-               <div class="h-px w-8 bg-accent/20"></div>
-               <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">{{ pkg.tag }}</span>
+            <div class="flex items-center justify-between gap-3 mb-8">
+              <div class="flex items-center gap-3">
+                <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.3em] font-mono">pkg_0{{ idx + 1 }}</span>
+                <div class="h-px w-8 bg-accent/20"></div>
+                <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">{{ pkg.tag }}</span>
+              </div>
+              <div v-if="pkg.popular" class="px-3 py-1 border border-accent/20 bg-accent/5 text-accent text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full shrink-0">
+                Enterprise_Choice
+              </div>
             </div>
 
             <div class="flex justify-between items-start mb-4"><h3>
@@ -41,13 +39,13 @@
               <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
             </div>
 
-            <p class="text-soft text-sm font-medium leading-relaxed opacity-60">
+            <p class="text-soft text-sm font-medium leading-relaxed opacity-90">
               {{ pkg.description }}
             </p>
           </div>
 
           <!-- Technical Specs -->
-          <div class="space-y-4 mb-12 flex-1 pt-8 border-t border-glass">
+          <div class="space-y-4 mb-8 flex-1 pt-6 border-t border-glass">
              <div v-for="feature in pkg.features" :key="feature" class="flex items-start gap-4">
                 <Icon name="lucide:check-circle" class="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <span class="text-soft text-[0.85rem] font-medium leading-tight group-hover:text-main transition-colors">{{ feature }}</span>
@@ -106,9 +104,9 @@
            
            <div class="bg-soft border border-[var(--border-glass)] p-10 md:p-16 rounded-2xl w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
-                 <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60">Investment</span>
-                    <span class="text-main font-bold text-sm">Equity · By Agreement</span>
+                 <div class="flex justify-between items-center gap-4 border-b border-glass pb-4">
+                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60 shrink-0">Investment</span>
+                    <span class="text-main font-bold text-sm text-right">Equity · By Agreement</span>
                  </div>
                  <div class="flex justify-between items-center border-b border-glass pb-4">
                     <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60">Scope</span>

@@ -24,18 +24,18 @@
       </SharedSectionHeader>
 
       <!-- ── Ownership Stats ── -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10 md:mb-20">
         <div v-for="stat in ownershipStats" :key="stat.label"
              class="relative flex flex-col gap-2 p-6 rounded-2xl border border-glass bg-panel overflow-hidden group hover:border-accent/25 transition-all duration-500">
           <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                style="background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent), transparent 93%), transparent 70%)"></div>
           <span class="relative block text-4xl font-black tracking-tighter text-main leading-none">{{ stat.value }}</span>
-          <span class="relative block text-xs font-semibold text-muted leading-snug">{{ stat.label }}</span>
+          <span class="relative block text-xs font-semibold text-soft leading-snug">{{ stat.label }}</span>
         </div>
       </div>
 
       <!-- ── Work Grid ── -->
-      <p class="text-[0.65rem] font-black uppercase tracking-[0.4em] text-muted mb-12 text-center">AppsCode · Flagship Projects</p>
+      <p class="text-[0.65rem] font-black uppercase tracking-[0.4em] text-soft mb-8 md:mb-12 text-center">AppsCode · Flagship Projects</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <a

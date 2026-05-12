@@ -6,10 +6,10 @@
         description="A quick read on the roles, communities, and open-source work shaping my profile"
       />
       
-      <div class="space-y-12">
+      <div class="space-y-10 md:space-y-12">
         <!-- Featured project showcase -->
         <div v-for="(feature, idx) in features" :key="idx" class="group">
-          <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div :order="`${idx % 2 === 0 ? '1' : '2'}`" class="bg-panel border-glass hover:border-[color:var(--accent)]/60 flex aspect-video items-center justify-center overflow-hidden rounded-xl border transition">
               <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-[color:var(--accent)]/10 text-[color:var(--accent)]">
                 <SharedIcon :name="feature.icon" class="h-12 w-12" />
@@ -17,7 +17,7 @@
             </div>
             <div :order="`${idx % 2 === 0 ? '2' : '1'}`">
               <h3 class="text-main mb-4 text-2xl font-bold md:text-3xl">{{ feature.title }}</h3>
-              <p class="text-muted mb-6 leading-relaxed">{{ feature.description }}</p>
+              <p class="text-soft mb-6 leading-relaxed opacity-80">{{ feature.description }}</p>
               <div class="flex flex-wrap gap-2">
                 <span 
                   v-for="tag in feature.tags" 

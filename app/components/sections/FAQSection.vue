@@ -1,5 +1,5 @@
 <template>
-  <section id="faq" class="relative py-20 md:py-28 overflow-hidden">
+  <section id="faq" class="relative py-14 md:py-28 overflow-hidden">
     <!-- Geometric Background Architecture -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.3]">
        <div class="absolute left-[5%] md:left-[15%] top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-glass to-transparent"></div>

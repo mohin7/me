@@ -13,7 +13,7 @@
     </SharedSectionHeader>
 
     <!-- Bento-style Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
       <SharedGlassCard
         v-for="(testimonial, idx) in testimonials" 
         :key="idx"
@@ -42,7 +42,7 @@
           <!-- Quote -->
           <p 
             class="text-soft font-medium leading-[1.6] opacity-80 group-hover:opacity-100 transition-opacity"
-            :class="idx === 0 ? 'text-xl md:text-2xl' : 'text-base md:text-lg'"
+            :class="idx === 0 ? 'text-lg md:text-2xl' : 'text-sm md:text-base'"
           >
             "{{ testimonial.quote }}"
           </p>

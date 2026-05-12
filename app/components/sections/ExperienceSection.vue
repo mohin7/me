@@ -1,18 +1,18 @@
 <template>
   <SharedSectionWrapper section-id="experience" pattern="grid">
-    <div class="grid lg:grid-cols-[380px_1fr] gap-16 lg:gap-26 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 lg:gap-26 items-start">
         
         <!-- Sticky Sidebar -->
         <div 
           ref="sidebarRef"
-          class="lg:sticky lg:top-0 will-change-transform"
+          class="lg:sticky lg:top-0 will-change-transform max-w-full"
           :style="sidebarStyle"
         >
         <!-- Standardized Section Header -->
         <SharedSectionHeader
           label="Experience"
           description="Seven years. Three roles. One consistent outcome — products that work."
-          class="max-w-[340px]"
+          class="max-w-full lg:max-w-[340px]"
         >
           <template #title>
             The <br />

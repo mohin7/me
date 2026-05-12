@@ -5,13 +5,13 @@
          style="background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 80px 80px;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-[1fr_400px] gap-20 items-end mb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 lg:gap-20 items-end mb-12 md:mb-24">
         <div class="max-w-3xl">
           <div class="flex items-center gap-3 mb-6">
             <div class="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
             <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.5em]">The Strategic Edge</span>
           </div>
-          <h2 class="text-main text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-8">
+          <h2 class="text-main text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-[0.95] md:leading-[0.9] mb-6 md:mb-8">
             Why partner with <br /> <span class="text-gradient italic serif-font lowercase">Md Mohin Uddin?</span>
           </h2>
           <p class="text-soft text-xl font-medium leading-relaxed opacity-80">

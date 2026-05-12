@@ -100,7 +100,7 @@
           <!-- Menu Top Bar -->
           <div class="flex items-center justify-between mb-16">
              <SharedLogo :link="false" subtitle="" />
-             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-glass flex items-center justify-center bg-accent/5 text-main">
+             <button @click="isMobileMenuOpen = false" class="h-12 w-12 rounded-full border border-[var(--border-subtle)] flex items-center justify-center bg-soft text-main">
                 <Icon name="lucide:x" class="h-6 w-6" />
              </button>
           </div>
@@ -114,7 +114,7 @@
               @click="scrollToSection($event, item.href)"
               class="group relative block"
             >
-              <div class="flex items-center py-4 border-b border-glass/40">
+              <div class="flex items-center py-4 border-b border-[var(--border-subtle)]">
                 <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main group-hover:text-accent transition-colors duration-300">
                   {{ item.label }}
                 </span>
@@ -143,25 +143,25 @@
               </template>
             </SharedButton>
             
-            <div class="flex flex-col gap-6 border-t border-glass pt-8">
+            <div class="flex flex-col gap-6 border-t border-[var(--border-subtle)] pt-8">
                <div class="flex items-center justify-between">
                  <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.4em]">Ecosystem</span>
                  <div class="flex items-center gap-3">
                    <a href="https://www.linkedin.com/in/mohin7/" rel="noopener" 
-                      class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
+                      class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:linkedin" class="h-4 w-4" />
                    </a>
                    <a href="https://github.com/mohin7" rel="noopener" 
-                      class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
+                      class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:github" class="h-4 w-4" />
                    </a>
                    <a href="https://dribbble.com/mohin7" rel="noopener" 
-                      class="flex items-center justify-center h-10 w-10 rounded-full border border-accent/10 bg-accent/[0.02] text-soft hover:text-accent hover:bg-accent/10 transition-all duration-300">
+                      class="flex items-center justify-center h-10 w-10 rounded-full border border-[var(--border-subtle)] bg-soft text-main hover:text-accent hover:bg-accent/10 transition-all duration-300">
                      <Icon name="lucide:dribbble" class="h-4 w-4" />
                    </a>
                  </div>
                </div>
-               <p class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-40">© 2026 MD MOHIN UDDIN // ALL RIGHTS RESERVED</p>
+               <p class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">© 2026 MD MOHIN UDDIN // ALL RIGHTS RESERVED</p>
             </div>
           </div>
 

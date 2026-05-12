@@ -87,16 +87,16 @@ useSeoMeta({
   description: 'Md Mohin Uddin — top UI/UX designer & freelance product designer in Bangladesh, Dhaka. 7+ years designing SaaS, web apps, mobile apps & design systems. Hire the best UX designer in Bangladesh for your startup or product.',
   keywords: 'UI UX designer Bangladesh, best UI UX designer in Bangladesh, freelance UI designer Dhaka, product designer Bangladesh, UX designer Dhaka, hire UI designer Bangladesh, web designer Bangladesh, SaaS designer Bangladesh, Nuxt Vue designer, design system expert Bangladesh, Md Mohin Uddin',
   ogType: 'website',
-  ogUrl: 'https://mohin.design',
+  ogUrl: 'https://mohin-design.vercel.app',
   ogTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Freelance Product Designer Dhaka',
   ogDescription: 'Top UI/UX designer & freelance product designer in Bangladesh, Dhaka. 7+ years designing SaaS, web apps & design systems. Hire the best UX designer in Bangladesh.',
-  ogImage: 'https://mohin.design/og-banner.png',
+  ogImage: 'https://mohin-design.vercel.app/og-banner.png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh',
   twitterDescription: 'Top UI/UX & freelance product designer in Dhaka, Bangladesh. 7+ years. SaaS, web apps, design systems. Available for hire.',
-  twitterImage: 'https://mohin.design/og-banner.png',
+  twitterImage: 'https://mohin-design.vercel.app/og-banner.png',
 })
 
 // ── Fixed Wrapper Smooth Scroll ──

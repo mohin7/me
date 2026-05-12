@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   ],
 
   site: {
-    url: 'https://mohin.design',
+    url: 'https://mohin-design.vercel.app',
     name: 'Md Mohin Uddin — Head of Design',
   },
 
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
-      titleTemplate: '%s | mohin.design',
+      titleTemplate: '%s | Md Mohin Uddin',
       htmlAttrs: {
         lang: 'en'
       },
@@ -57,8 +57,8 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Md Mohin Uddin',
-            url: 'https://mohin.design',
-            image: 'https://mohin.design/og-banner.png',
+            url: 'https://mohin-design.vercel.app',
+            image: 'https://mohin-design.vercel.app/og-banner.png',
             jobTitle: 'UI/UX Designer & Product Architect',
             description: 'Best UI/UX designer in Bangladesh. Freelance product designer based in Dhaka with 7+ years designing SaaS, web apps, and design systems for global clients.',
             worksFor: {
@@ -107,7 +107,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'canonical', href: 'https://mohin.design' },
+        { rel: 'canonical', href: 'https://mohin-design.vercel.app' },
       ],
       noscript: [
         { innerHTML: 'Please enable JavaScript to use this site.' }

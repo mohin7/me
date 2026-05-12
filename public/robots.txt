@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mohin.design/sitemap.xml
+Sitemap: https://mohin-design.vercel.app/sitemap.xml

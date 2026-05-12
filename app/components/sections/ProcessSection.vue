@@ -43,7 +43,7 @@
 
           <!-- Deliverables -->
           <div class="space-y-2 pt-5 border-t border-[var(--border-subtle)]">
-            <p class="text-[0.5rem] font-black uppercase tracking-[0.25em] text-muted opacity-50 mb-3">Deliverables</p>
+            <p class="text-[0.5rem] font-black uppercase tracking-[0.25em] text-soft opacity-80 mb-3">Deliverables</p>
             <div v-for="output in step.outputs" :key="output" class="flex items-center gap-2.5">
               <div class="h-1 w-1 rounded-full bg-accent opacity-60 shrink-0"></div>
               <span class="text-soft text-[0.7rem] font-bold">{{ output }}</span>
@@ -61,7 +61,7 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
           <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent"></span>
         </div>
-        <span class="text-muted text-[0.6rem] font-black uppercase tracking-widest">Consistent, every time.</span>
+        <span class="text-soft text-[0.6rem] font-black uppercase tracking-widest">Consistent, every time.</span>
       </div>
     </div>
 

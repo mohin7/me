@@ -48,7 +48,7 @@
                      <span class="text-main text-2xl font-black tabular-nums">07</span>
                      <span class="text-accent text-xs font-bold">Years</span>
                    </div>
-                   <span class="text-muted text-[0.5rem] font-bold uppercase tracking-widest opacity-60">Professional Craft</span>
+                   <span class="text-soft text-[0.5rem] font-bold uppercase tracking-widest opacity-80">Professional Craft</span>
                 </div>
                 <div class="h-10 w-px bg-subtle/40"></div>
                 <div class="flex flex-col">
@@ -56,7 +56,7 @@
                      <span class="text-main text-2xl font-black tabular-nums">24+</span>
                      <span class="text-accent text-xs font-bold">Ships</span>
                    </div>
-                   <span class="text-muted text-[0.5rem] font-bold uppercase tracking-widest opacity-60">Products Delivered</span>
+                   <span class="text-soft text-[0.5rem] font-bold uppercase tracking-widest opacity-80">Products Delivered</span>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="flex flex-col">
                       <span class="text-main font-bold tracking-tight text-lg leading-none">{{ l.name }}</span>
-                      <span class="text-[0.5rem] font-bold text-muted uppercase tracking-[0.2em] mt-2 opacity-50">{{ l.role }}</span>
+                      <span class="text-[0.5rem] font-bold text-soft uppercase tracking-[0.2em] mt-2 opacity-80">{{ l.role }}</span>
                     </div>
                   </div>
                 </div>

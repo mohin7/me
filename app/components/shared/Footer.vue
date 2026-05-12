@@ -30,7 +30,7 @@
           <h4 class="text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] mb-8">Base Terminal</h4>
           <div class="space-y-2">
             <p class="text-main text-sm font-black">Dhaka, Bangladesh</p>
-            <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-60">GMT+6 // Active Now</p>
+            <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-80">GMT+6 // Active Now</p>
           </div>
           <div class="mt-auto pt-8 flex items-center gap-2 text-accent/40">
              <div class="h-1.5 w-1.5 rounded-full bg-accent animate-pulse"></div>
@@ -41,10 +41,10 @@
 
       <!-- Legal Footnote -->
       <div class="pt-12 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row justify-between items-center gap-6">
-        <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-40">
+        <p class="text-soft text-[0.6rem] font-bold uppercase tracking-[0.3em] opacity-70">
           © {{ currentYear }} Md Mohin Uddin. All rights reserved.
         </p>
-        <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-40">
+        <div class="flex items-center gap-8 text-soft text-[0.6rem] font-black uppercase tracking-[0.3em] opacity-70">
            <a href="/img/uiux-specialist.pdf" class="hover:text-accent transition-colors">Resume</a><NuxtLink to="/privacy" class="hover:text-main transition-colors">Privacy</NuxtLink>
            <NuxtLink to="/terms" class="hover:text-main transition-colors">Terms</NuxtLink>
         </div>

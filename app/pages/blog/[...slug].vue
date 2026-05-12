@@ -32,7 +32,7 @@
               <div class="h-14 w-14 bg-accent rounded-2xl flex items-center justify-center text-accent-fg font-black text-xl shrink-0">M</div>
               <div>
                 <p class="text-main font-black text-base leading-none mb-1.5">Md Mohin Uddin</p>
-                <p class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-60 mb-2">Design Engineer · Dhaka, Bangladesh</p>
+                <p class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-80 mb-2">Design Engineer · Dhaka, Bangladesh</p>
                 <p class="text-soft text-xs leading-relaxed opacity-70 max-w-xs">Building products at the intersection of design and engineering for 7+ years.</p>
               </div>
             </div>
@@ -52,7 +52,7 @@
         <div v-if="related && related.length > 0" class="mt-16">
           <div class="flex items-center gap-4 mb-8">
             <div class="h-px flex-1 bg-[var(--border-subtle)]"></div>
-            <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-muted opacity-40">More Articles</span>
+            <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-soft opacity-70">More Articles</span>
             <div class="h-px flex-1 bg-[var(--border-subtle)]"></div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -63,7 +63,7 @@
               class="group flex flex-col gap-3 p-6 rounded-2xl border border-[var(--border-glass)] bg-panel transition-all duration-300 hover:border-accent/25 hover:-translate-y-0.5"
               style="box-shadow: var(--card-shadow);"
             >
-              <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-50">{{ item.date }}</span>
+              <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-80">{{ item.date }}</span>
               <h4 class="text-sm font-black tracking-tight text-main group-hover:text-accent transition-colors leading-snug">{{ item.title }}</h4>
               <div class="flex items-center gap-1.5 text-accent text-[0.55rem] font-black uppercase tracking-widest">
                 Read <Icon name="lucide:arrow-right" class="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
@@ -79,7 +79,7 @@
 
           <!-- Share -->
           <div class="p-5 rounded-2xl border border-[var(--border-glass)] bg-panel" style="box-shadow: var(--card-shadow);">
-            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-50 mb-4">Share</p>
+            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-soft opacity-80 mb-4">Share</p>
             <div class="flex flex-col gap-2">
               <a :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent('https://mohin.design' + route.path)}`" target="_blank" rel="noopener"
                 class="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-[var(--border-glass)] bg-[var(--bg-soft)] hover:border-accent/30 hover:text-accent transition-all text-soft text-xs font-bold">
@@ -99,7 +99,7 @@
 
           <!-- Tags -->
           <div class="p-5 rounded-2xl border border-[var(--border-glass)] bg-panel" style="box-shadow: var(--card-shadow);">
-            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-50 mb-4">Tags</p>
+            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-soft opacity-80 mb-4">Tags</p>
             <div class="flex flex-wrap gap-2">
               <BlogTag v-for="tag in post.tags" :key="tag">{{ tag }}</BlogTag>
             </div>
@@ -107,7 +107,7 @@
 
           <!-- CTA -->
           <div class="p-5 rounded-2xl border border-[var(--border-glass)] bg-panel" style="box-shadow: var(--card-shadow);">
-            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-50 mb-3">Working on something?</p>
+            <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-soft opacity-80 mb-3">Working on something?</p>
             <p class="text-soft text-xs leading-relaxed opacity-70 mb-4">I help founders and teams ship better products faster.</p>
             <SharedButton tag="a" href="https://cal.com/md-mohin-uddin-8gpn95/30min" target="_blank" variant="primary" class="rounded-full w-full h-9 text-xs">
               Book a Call

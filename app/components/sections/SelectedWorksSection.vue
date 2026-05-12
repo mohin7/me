@@ -58,7 +58,7 @@
           <!-- Project Content -->
           <div class="flex-1 p-8 flex flex-col">
             <div class="flex flex-wrap gap-2 mb-6">
-              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-muted bg-soft px-3 py-1 rounded-full border border-glass">
+              <span v-for="tag in project.tags" :key="tag" class="text-[0.6rem] font-bold uppercase tracking-wider text-soft bg-soft px-3 py-1 rounded-full border border-glass">
                 {{ tag }}
               </span>
             </div>
@@ -97,7 +97,7 @@
             <div class="md:col-span-7">
               <div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-soft border border-glass">
                 <Icon name="lucide:shield-check" class="h-4 w-4 text-accent" />
-                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-muted">Secured via Protocol</span>
+                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-soft">Secured via Protocol</span>
               </div>
               
               <h3 class="text-main mb-4 text-4xl font-black tracking-tight md:text-5xl leading-tight">
@@ -143,7 +143,7 @@
                 <div class="absolute inset-8 rounded-full bg-soft border border-glass shadow-sm flex items-center justify-center">
                    <div class="text-center">
                      <Icon name="lucide:lock" class="h-10 w-10 text-accent opacity-80" />
-                     <p class="mt-3 text-[0.5rem] font-bold uppercase tracking-widest text-muted">Locked IP</p>
+                     <p class="mt-3 text-[0.5rem] font-bold uppercase tracking-widest text-soft">Locked IP</p>
                    </div>
                 </div>
 

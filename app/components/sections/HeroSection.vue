@@ -85,7 +85,7 @@
                 </div>
                 <div class="flex flex-col text-left">
                   <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none">Trusted by</span>
-                  <span class="text-muted text-[0.5rem] font-black uppercase tracking-widest opacity-70 mt-1">Product Teams</span>
+                  <span class="text-soft text-[0.5rem] font-black uppercase tracking-widest opacity-90 mt-1">Product Teams</span>
                 </div>
               </div>
 

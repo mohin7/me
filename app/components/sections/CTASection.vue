@@ -46,7 +46,7 @@
       </div>
 
       <!-- Protocol Timeline -->
-      <p class="reveal mt-10 text-muted text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-80">
+      <p class="reveal mt-10 text-soft text-[0.6rem] font-bold uppercase tracking-[0.4em] opacity-90">
         Usually replies within <span class="text-main">24 hours</span>
       </p>
     </div>

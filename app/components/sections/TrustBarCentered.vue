@@ -14,7 +14,7 @@
           </div>
           <div class="flex flex-col">
             <span class="text-main text-[0.7rem] font-bold tracking-tight leading-none italic serif-font">Elite Collaboration</span>
-            <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40 mt-1">Founders Selection</span>
+            <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-70 mt-1">Founders Selection</span>
           </div>
         </div>
 
@@ -63,7 +63,7 @@
       
       <!-- Subtle Under-label for UX Context -->
       <div class="mt-4 flex justify-center">
-         <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-muted opacity-30">Verified Technical Expertise & Structural Logic</span>
+         <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-soft opacity-60">Verified Technical Expertise & Structural Logic</span>
       </div>
 
     </div>

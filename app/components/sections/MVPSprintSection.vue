@@ -38,7 +38,7 @@
                <div class="h-14 w-14 rounded-2xl bg-accent-fg/10 flex items-center justify-center text-accent-fg group-hover:bg-accent-fg group-hover:text-accent transition-all duration-500">
                  <Icon name="lucide:zap" class="h-7 w-7" />
                </div>
-               <span class="text-[0.55rem] font-black opacity-30 uppercase tracking-widest">Protocol_01</span>
+               <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest">Protocol_01</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">7-Day Delivery</h3>
             <p class="text-accent-fg/60 text-sm leading-relaxed max-w-[240px]">
@@ -56,7 +56,7 @@
                <div class="h-14 w-14 rounded-2xl bg-accent text-accent-fg flex items-center justify-center transition-all duration-500">
                  <Icon name="lucide:banknote" class="h-7 w-7" />
                </div>
-               <span class="text-[0.55rem] font-black opacity-30 uppercase tracking-widest text-accent">Protocol_02</span>
+               <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest text-accent">Protocol_02</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">Fixed-Budget</h3>
             <p class="opacity-70 text-sm leading-relaxed max-w-[240px]">
@@ -64,7 +64,7 @@
             </p>
             <!-- Progress Detail -->
             <div class="mt-12 pt-8 border-t border-glass">
-               <span class="text-[0.6rem] font-bold uppercase tracking-widest opacity-40">Founder Guarantee</span>
+               <span class="text-[0.6rem] font-bold uppercase tracking-widest opacity-60">Founder Guarantee</span>
                <p class="text-xs font-bold mt-2 uppercase tracking-tight">"No fluff, no layers, no missed deadlines."</p>
             </div>
           </div>
@@ -77,7 +77,7 @@
                <div class="h-14 w-14 rounded-2xl bg-accent-fg/10 flex items-center justify-center text-accent-fg group-hover:bg-accent-fg group-hover:text-accent transition-all duration-500">
                  <Icon name="lucide:infinite" class="h-7 w-7" />
                </div>
-               <span class="text-[0.55rem] font-black opacity-30 uppercase tracking-widest">Protocol_03</span>
+               <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest">Protocol_03</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">Unlimited Iterations</h3>
             <p class="text-accent-fg/60 text-sm leading-relaxed max-w-[240px]">
@@ -94,7 +94,7 @@
 
       <!-- Action Indicator -->
       <div class="mt-24 flex flex-col items-center gap-6">
-         <div class="flex items-center gap-2 text-[0.6rem] font-black uppercase tracking-[0.5em] opacity-40">
+         <div class="flex items-center gap-2 text-[0.6rem] font-black uppercase tracking-[0.5em] opacity-70">
            Available for Q2 Startups
          </div>
          <div class="h-20 w-px bg-gradient-to-b from-accent-fg/40 to-transparent"></div>

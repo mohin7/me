@@ -21,7 +21,7 @@
 
       <!-- Featured Post -->
       <div v-if="featuredPost" class="mb-16">
-        <p class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-muted opacity-50 mb-6">Featured</p>
+        <p class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-soft opacity-80 mb-6">Featured</p>
         <NuxtLink :to="featuredPost.path" class="group grid lg:grid-cols-[1fr_400px] gap-0 rounded-2xl border border-[var(--border-glass)] bg-panel overflow-hidden transition-all duration-500 hover:border-accent/25 hover:-translate-y-0.5" style="box-shadow: var(--card-shadow-lg);">
 
           <!-- Content -->
@@ -30,7 +30,7 @@
               <div class="flex items-center gap-3 mb-8">
                 <span class="text-accent text-[0.6rem] font-black uppercase tracking-widest">{{ featuredPost.date }}</span>
                 <span class="h-1 w-1 rounded-full bg-[var(--border-glass)]"></span>
-                <span class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-60">{{ featuredPost.readingTime }}</span>
+                <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-80">{{ featuredPost.readingTime }}</span>
               </div>
               <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-main leading-[1.05] mb-5 group-hover:text-accent transition-colors duration-400">
                 {{ featuredPost.title }}
@@ -42,7 +42,7 @@
 
             <div class="mt-10 flex items-center justify-between pt-8 border-t border-[var(--border-subtle)]">
               <div class="flex gap-2">
-                <span v-for="tag in featuredPost.tags?.slice(0, 2)" :key="tag" class="px-3 py-1 rounded-full bg-[var(--bg-soft)] text-muted text-[0.55rem] font-black uppercase tracking-widest border border-[var(--border-glass)]">
+                <span v-for="tag in featuredPost.tags?.slice(0, 2)" :key="tag" class="px-3 py-1 rounded-full bg-[var(--bg-soft)] text-soft text-[0.55rem] font-black uppercase tracking-widest border border-[var(--border-glass)]">
                   {{ tag }}
                 </span>
               </div>
@@ -60,7 +60,7 @@
               <div class="h-16 w-16 rounded-2xl flex items-center justify-center" style="background: color-mix(in srgb, var(--accent), transparent 88%); border: 1px solid color-mix(in srgb, var(--accent), transparent 75%);">
                 <Icon name="lucide:pen-line" class="h-7 w-7 text-accent" />
               </div>
-              <span class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-muted opacity-40">Featured Article</span>
+              <span class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-soft opacity-70">Featured Article</span>
             </div>
           </div>
         </NuxtLink>
@@ -69,7 +69,7 @@
       <!-- Divider -->
       <div class="flex items-center gap-4 mb-10" v-if="otherPosts.length">
         <div class="h-px flex-1 bg-[var(--border-subtle)]"></div>
-        <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-muted opacity-40">All Articles</span>
+        <span class="text-[0.55rem] font-black uppercase tracking-[0.4em] text-soft opacity-70">All Articles</span>
         <div class="h-px flex-1 bg-[var(--border-subtle)]"></div>
       </div>
 

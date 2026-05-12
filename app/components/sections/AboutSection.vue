@@ -43,7 +43,7 @@
                 <span class="handwriting absolute -right-16 top-0 text-accent text-2xl rotate-12 whitespace-nowrap opacity-60">Proven Results</span>
               </div>
               <p class="text-main text-xl font-bold tracking-tight">Years of Craft</p>
-              <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60">Industry Veteran</p>
+              <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-80">Industry Veteran</p>
            </div>
         </div>
 
@@ -53,7 +53,7 @@
              <Icon name="lucide:map-pin" class="h-6 w-6" />
            </div>
            <p class="text-main text-2xl font-black tracking-tight mb-1">Dhaka, Bangladesh</p>
-           <p class="text-muted text-[0.65rem] font-bold uppercase tracking-widest opacity-60 mt-1">Available Globally</p>
+           <p class="text-soft text-[0.65rem] font-bold uppercase tracking-widest opacity-80 mt-1">Available Globally</p>
         </div>
 
       </div>

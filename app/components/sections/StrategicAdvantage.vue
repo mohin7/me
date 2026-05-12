@@ -17,7 +17,7 @@
       <div v-for="(spec, idx) in specs" :key="spec.label" class="flex flex-col items-center py-8 px-4 group relative" :class="idx < specs.length - 1 ? 'border-r border-[var(--border-glass)]' : ''">
         <Icon :name="spec.icon" class="h-4 w-4 text-accent mb-3 opacity-70" />
         <span class="text-main text-xl font-black tracking-tight leading-none mb-1.5">{{ spec.title }}</span>
-        <span class="text-[0.5rem] font-black uppercase tracking-[0.2em] text-muted opacity-60">{{ spec.label }}</span>
+        <span class="text-[0.5rem] font-black uppercase tracking-[0.2em] text-soft opacity-80">{{ spec.label }}</span>
       </div>
     </div>
 
@@ -60,7 +60,7 @@
           <Icon name="lucide:arrow-right" class="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </template>
       </SharedButton>
-      <p class="text-muted text-[0.6rem] font-bold uppercase tracking-widest opacity-60">No retainers. No surprises. Fixed scope.</p>
+      <p class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-80">No retainers. No surprises. Fixed scope.</p>
     </div>
 
   </SharedSectionWrapper>

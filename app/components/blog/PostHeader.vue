@@ -7,7 +7,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Back link -->
-      <NuxtLink to="/blog" class="group inline-flex items-center gap-2 text-muted text-[0.6rem] font-black uppercase tracking-[0.4em] hover:text-accent transition-colors duration-300 mb-14">
+      <NuxtLink to="/blog" class="group inline-flex items-center gap-2 text-soft text-[0.6rem] font-black uppercase tracking-[0.4em] hover:text-accent transition-colors duration-300 mb-14">
         <Icon name="lucide:arrow-left" class="h-3 w-3 group-hover:-translate-x-1 transition-transform" />
         All Articles
       </NuxtLink>
@@ -33,10 +33,10 @@
           <div class="h-10 w-10 bg-accent rounded-full flex items-center justify-center text-accent-fg font-black shrink-0">M</div>
           <div>
             <p class="text-main text-sm font-black leading-none">Md Mohin Uddin</p>
-            <p class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-60 mt-1">Design Engineer</p>
+            <p class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-80 mt-1">Design Engineer</p>
           </div>
         </div>
-        <div class="flex items-center gap-6 text-muted text-[0.6rem] font-bold uppercase tracking-widest">
+        <div class="flex items-center gap-6 text-soft text-[0.6rem] font-bold uppercase tracking-widest">
           <div class="flex items-center gap-2">
             <Icon name="lucide:calendar" class="h-3.5 w-3.5 opacity-50" />
             <span>{{ date }}</span>

@@ -30,7 +30,7 @@
             <div class="flex items-center gap-3 mb-8">
                <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.3em] font-mono">pkg_0{{ idx + 1 }}</span>
                <div class="h-px w-8 bg-accent/20"></div>
-               <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-40">{{ pkg.tag }}</span>
+               <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">{{ pkg.tag }}</span>
             </div>
 
             <div class="flex justify-between items-start mb-4"><h3>
@@ -58,11 +58,11 @@
           <div class="mb-10 p-5 rounded-xl bg-soft border border-[var(--border-subtle)]">
              <div class="flex flex-col gap-3">
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-40">Dev_Target</span>
+                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-60">Dev_Target</span>
                    <span class="text-main text-[0.65rem] font-bold">{{ pkg.target }}</span>
                 </div>
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-40">Velocity</span>
+                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Velocity</span>
                    <span class="text-accent text-[0.6rem] font-bold uppercase tracking-widest">{{ pkg.velocity }}</span>
                 </div>
              </div>
@@ -107,11 +107,11 @@
            <div class="bg-soft border border-[var(--border-glass)] p-10 md:p-16 rounded-2xl w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
                  <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Investment</span>
+                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60">Investment</span>
                     <span class="text-main font-bold text-sm">Equity · By Agreement</span>
                  </div>
                  <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-40">Scope</span>
+                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60">Scope</span>
                     <span class="text-main font-bold text-sm">Full MVP 1.0</span>
                  </div>
               </div>
@@ -121,7 +121,7 @@
                 <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
                 <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>
               </SharedButton>
-              <span class="text-center text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-40">2 slots per year</span>
+              <span class="text-center text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-70">2 slots per year</span>
            </div>
          </div>
       </div>

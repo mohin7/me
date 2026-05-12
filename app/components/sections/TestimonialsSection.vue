@@ -35,7 +35,7 @@
             </div>
             <div class="flex flex-col">
               <span class="text-main font-black tracking-tight leading-none">{{ testimonial.author }}</span>
-              <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-70 mt-1.5">{{ testimonial.role }}</span>
+              <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-90 mt-1.5">{{ testimonial.role }}</span>
             </div>
           </div>
 
@@ -51,7 +51,7 @@
         <!-- Bottom Meta -->
         <div v-if="testimonial.stat" class="mt-6 pt-6 border-t border-glass flex items-baseline gap-3">
            <span class="text-accent text-2xl font-black leading-none">{{ testimonial.stat.value }}</span>
-           <span class="text-muted text-[0.55rem] font-black uppercase tracking-widest opacity-60">{{ testimonial.stat.label }}</span>
+           <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-80">{{ testimonial.stat.label }}</span>
         </div>
       </SharedGlassCard>
     </div>

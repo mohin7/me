@@ -4,7 +4,7 @@
     <!-- Top meta bar -->
     <div class="px-7 pt-7 pb-5 flex items-center justify-between border-b border-[var(--border-subtle)]">
       <span class="text-accent text-[0.55rem] font-black uppercase tracking-widest">{{ post.date }}</span>
-      <span class="text-muted text-[0.55rem] font-bold uppercase tracking-widest opacity-50">{{ post.readingTime }}</span>
+      <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-80">{{ post.readingTime }}</span>
     </div>
 
     <!-- Content -->
@@ -19,7 +19,7 @@
       <!-- Footer -->
       <div class="mt-6 pt-5 border-t border-[var(--border-subtle)] flex items-center justify-between">
         <div class="flex gap-1.5">
-          <span v-for="tag in post.tags?.slice(0, 2)" :key="tag" class="px-2.5 py-1 rounded-full bg-[var(--bg-soft)] text-muted text-[0.5rem] font-black uppercase tracking-widest border border-[var(--border-glass)]">
+          <span v-for="tag in post.tags?.slice(0, 2)" :key="tag" class="px-2.5 py-1 rounded-full bg-[var(--bg-soft)] text-soft text-[0.5rem] font-black uppercase tracking-widest border border-[var(--border-glass)]">
             {{ tag }}
           </span>
         </div>

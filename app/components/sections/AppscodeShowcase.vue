@@ -72,7 +72,7 @@
             </h4>
 
             <div class="space-y-3 mb-6">
-              <p class="text-[9px] font-black uppercase tracking-[0.2em] text-muted opacity-50">Contributions</p>
+              <p class="text-[9px] font-black uppercase tracking-[0.2em] text-soft opacity-80">Contributions</p>
               <ul class="space-y-2">
                 <li v-for="item in work.contributions" :key="item" class="flex items-start gap-2.5">
                   <Icon name="lucide:check" class="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />

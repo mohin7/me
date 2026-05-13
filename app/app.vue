@@ -464,7 +464,7 @@ p, .prose {
   --text-muted: #71717a;
 
   --accent:        #10b981;
-  --accent-fg:     #000000;
+  --accent-fg:     #020617;
   --accent-rgb:    16, 185, 129;
   --accent-glow:   rgba(16, 185, 129, 0.15);
   --accent-tint:   rgba(16, 185, 129, 0.08);
@@ -499,7 +499,6 @@ p, .prose {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.15));
 }
 
 .dark .text-gradient {
@@ -507,7 +506,6 @@ p, .prose {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 25px rgba(52, 211, 153, 0.2));
 }
 
 .light .text-gradient {

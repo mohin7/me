@@ -127,12 +127,11 @@ const sizeClasses = computed(() => {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
-    0 0 20px rgba(var(--accent-rgb), 0.4),
-    0 15px 35px -5px rgba(var(--accent-rgb), 0.3);
-  filter: brightness(1.1);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    0 12px 24px -5px rgba(0, 0, 0, 0.12);
+  filter: brightness(var(--hover-brightness));
 }
 
 .btn-primary:hover::after {

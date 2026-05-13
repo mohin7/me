@@ -7,7 +7,20 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    families: {
+      'Plus+Jakarta+Sans': [200, 300, 400, 500, 600, 700, 800, 900]
+    },
+    display: 'swap',
+    prefetch: true,
+    preconnect: true,
+    preload: true,
+    download: true,
+    base64: false
+  },
 
   site: {
     url: 'https://mohin-design.vercel.app',

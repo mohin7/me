@@ -24,7 +24,7 @@
               <div class="flex items-center gap-3">
                 <span class="text-accent text-[0.6rem] font-black uppercase tracking-[0.3em] font-mono">pkg_0{{ idx + 1 }}</span>
                 <div class="h-px w-8 bg-accent/20"></div>
-                <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-70">{{ pkg.tag }}</span>
+                <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest">{{ pkg.tag }}</span>
               </div>
               <div v-if="pkg.popular" class="px-3 py-1 border border-accent bg-accent/5 text-accent text-[0.5rem] font-black uppercase tracking-[0.2em] rounded-full shrink-0">
                 Enterprise_Choice
@@ -36,10 +36,10 @@
             
             <div class="flex items-baseline gap-2 mb-8">
               <span class="text-main font-black tracking-tighter" :class="pkg.price.startsWith('$') ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'">{{ pkg.price }}</span>
-              <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest opacity-60">{{ pkg.unit }}</span>
+              <span class="text-soft text-[0.6rem] font-bold uppercase tracking-widest">{{ pkg.unit }}</span>
             </div>
 
-            <p class="text-soft text-sm font-medium leading-relaxed opacity-90">
+            <p class="text-soft text-sm font-medium leading-relaxed">
               {{ pkg.description }}
             </p>
           </div>
@@ -56,11 +56,11 @@
           <div class="mb-10 p-5 rounded-xl bg-soft border border-[var(--border-subtle)]">
              <div class="flex flex-col gap-3">
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.55rem] font-black uppercase tracking-widest opacity-60">Dev_Target</span>
+                   <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest">Dev_Target</span>
                    <span class="text-main text-[0.65rem] font-bold">{{ pkg.target }}</span>
                 </div>
                 <div class="flex justify-between items-center">
-                   <span class="text-[0.5rem] font-black uppercase tracking-widest opacity-60">Velocity</span>
+                   <span class="text-soft text-[0.5rem] font-black uppercase tracking-widest">Velocity</span>
                    <span class="text-accent text-[0.6rem] font-bold uppercase tracking-widest">{{ pkg.velocity }}</span>
                 </div>
              </div>
@@ -97,7 +97,7 @@
                 Open to <br />
                 <span class="italic serif-font lowercase text-gradient">equity partnerships.</span>
               </h2>
-              <p class="text-soft text-lg font-medium leading-relaxed opacity-80">
+              <p class="text-soft text-lg font-medium leading-relaxed">
                 For early-stage founders with a strong idea but limited runway. I'll trade full MVP design and development for a <span class="text-main font-bold">contractual equity arrangement</span>.
               </p>
            </div>
@@ -105,11 +105,11 @@
            <div class="bg-soft border border-[var(--border-glass)] p-10 md:p-16 rounded-2xl w-full max-w-sm flex flex-col gap-6">
               <div class="space-y-4">
                  <div class="flex justify-between items-center gap-4 border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60 shrink-0">Investment</span>
+                    <span class="text-soft text-[0.6rem] font-black uppercase tracking-widest shrink-0">Investment</span>
                     <span class="text-main font-bold text-sm text-right">Equity · By Agreement</span>
                  </div>
                  <div class="flex justify-between items-center border-b border-glass pb-4">
-                    <span class="text-[0.6rem] font-black uppercase tracking-widest opacity-60">Scope</span>
+                    <span class="text-soft text-[0.6rem] font-black uppercase tracking-widest">Scope</span>
                     <span class="text-main font-bold text-sm">Full MVP 1.0</span>
                  </div>
               </div>
@@ -119,7 +119,7 @@
                 <template #right><Icon name="lucide:zap" class="h-4 w-4" /></template>
                 <template #hoverRight><Icon name="lucide:sparkles" class="h-4 w-4" /></template>
               </SharedButton>
-              <span class="text-center text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-70">2 slots per year</span>
+              <span class="text-center text-soft text-[0.55rem] font-black uppercase tracking-widest">2 slots per year</span>
            </div>
          </div>
       </div>
@@ -189,17 +189,5 @@ const packages = [
 ]
 </script>
 
-<style scoped>
-.pkg-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  z-index: 0;
-}
-</style>
+
 

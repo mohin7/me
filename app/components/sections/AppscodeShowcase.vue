@@ -71,9 +71,9 @@
 
           <!-- Content -->
           <div class="flex-1 p-6 flex flex-col">
-            <h4 class="text-lg font-bold tracking-tight text-main mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
+            <h3 class="text-lg font-bold tracking-tight text-main mb-4 group-hover:text-accent transition-colors duration-300 leading-tight">
               {{ work.title }}
-            </h4>
+            </h3>
 
             <div class="space-y-3 mb-6">
               <p class="text-[9px] font-black uppercase tracking-[0.2em] text-soft opacity-80">Contributions</p>
@@ -213,17 +213,3 @@ const works = [
 ]
 </script>
 
-<style scoped>
-.grain-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  border-radius: inherit;
-  z-index: 0;
-}
-</style>

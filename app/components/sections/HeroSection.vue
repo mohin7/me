@@ -8,8 +8,6 @@
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
       <div class="blob blob-4"></div>
-      <!-- Noise overlay -->
-      <div class="hero-noise"></div>
       <!-- Bottom fade into next section -->
       <div class="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-page to-transparent"></div>
       <!-- Accent edge glow at section floor -->
@@ -21,7 +19,7 @@
       <div class="flex flex-col items-center text-center">
 
         <!-- Content Stack -->
-        <div class="hero-enter flex flex-col items-center w-full reveal">
+        <div class="hero-enter flex flex-col items-center w-full">
 
           <!-- Availability badge -->
           <div class="mb-4 mt-0 md:mt-4 flex items-center gap-3 px-5 py-2.5 rounded-full border border-[var(--border-glass)] bg-panel">
@@ -215,16 +213,6 @@ const logos = [
 @keyframes blob-drift {
   from { transform: translate(0, 0) scale(1); }
   to   { transform: translate(40px, 30px) scale(1.06); }
-}
-
-/* Noise grain on top of mesh */
-.hero-noise {
-  position: absolute;
-  inset: 0;
-  opacity: 0.055;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
-  mix-blend-mode: overlay;
 }
 
 .hero-title {

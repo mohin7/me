@@ -68,10 +68,6 @@
         </button>
       </div>
     </Transition>
-    <!-- ── Aesthetic Layering ── -->
-
-    <!-- Noise Grain Texture -->
-    <div class="noise-global pointer-events-none fixed inset-0 z-[999]"></div>
   </div>
 </template>
 
@@ -307,19 +303,6 @@ onUnmounted(() => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
-
-/* ── Global Noise Grain ── */
-.noise-global {
-  opacity: 0.06;
-  mix-blend-mode: screen;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
-}
-.light .noise-global {
-  opacity: 0.12;
-  mix-blend-mode: multiply;
-}
 
 /* ── Core Scroll Architecture ── */
 html, body {
@@ -360,12 +343,37 @@ html, body {
   caret-color: var(--accent);
 }
 
+.site-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(var(--border-glass) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at 50% 0%, black 20%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at 50% 0%, black 20%, transparent 85%);
+  opacity: 0.4;
+}
+
+.site-shell::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--accent), transparent 88%), transparent 65%);
+}
+
 .dark.site-shell {
-  background: radial-gradient(ellipse at 50% 0%, #16161e 0%, #0d0d0f 60%);
+  background: var(--bg-page);
 }
 
 .light.site-shell {
-  background: radial-gradient(ellipse at 50% 0%, #ffffff 0%, #f5f5f0 60%);
+  background: var(--bg-page);
 }
 
 
@@ -422,58 +430,58 @@ p, .prose {
 }
 
 .light {
-  --bg-page:   #f5f5f0;
-  --bg-panel:  #fafaf8;
-  --bg-glass:  rgba(250, 250, 248, 0.92);
-  --bg-soft:   #eeede8;
-  --text-main: #18181a;
-  --text-soft: #52525e;
-  --text-muted: #9898a6;
+  --bg-page:   #ffffff;
+  --bg-panel:  #fafafa;
+  --bg-glass:  rgba(255, 255, 255, 0.85);
+  --bg-soft:   #f4f4f5;
+  --text-main: #09090b;
+  --text-soft: #52525b;
+  --text-muted: #a1a1aa;
 
-  --accent:        #16a34a;
+  --accent:        #059669;
   --accent-fg:     #ffffff;
-  --accent-rgb:    22, 163, 74;
-  --accent-glow:   rgba(22, 163, 74, 0.15);
-  --accent-tint:   rgba(22, 163, 74, 0.06);
-  --border-glass:  #e4e4dc;
-  --border-subtle: #ececea;
+  --accent-rgb:    5, 150, 105;
+  --accent-glow:   rgba(5, 150, 105, 0.15);
+  --accent-tint:   rgba(5, 150, 105, 0.06);
+  --border-glass:  rgba(0, 0, 0, 0.1);
+  --border-subtle: rgba(0, 0, 0, 0.05);
 
-  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0,0,0,0.03);
-  --card-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0,0,0,0.03);
-  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  --hover-brightness: 1.03;
+  --card-shadow:    0 4px 12px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0,0,0,0.02);
+  --card-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0,0,0,0.02);
+  --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 1);
+  --hover-brightness: 1.02;
 }
 
 .dark {
-  --bg-page:   #0d0d0f;
-  --bg-panel:  #16161a;
-  --bg-glass:  rgba(22, 22, 26, 0.97);
-  --bg-soft:   #1e1e24;
+  --bg-page:   #09090b;
+  --bg-panel:  #18181b;
+  --bg-glass:  rgba(24, 24, 27, 0.7);
+  --bg-soft:   #27272a;
 
-  --text-main: #ededf0;
-  --text-soft: #9898a8;
-  --text-muted: #52525e;
+  --text-main: #f4f4f5;
+  --text-soft: #a1a1aa;
+  --text-muted: #71717a;
 
-  --accent:        #22c55e;
-  --accent-fg:     #052410;
-  --accent-rgb:    34, 197, 94;
-  --accent-glow:   rgba(34, 197, 94, 0.12);
-  --accent-tint:   rgba(34, 197, 94, 0.05);
-  --border-glass:  #26262e;
-  --border-subtle: #1e1e24;
+  --accent:        #10b981;
+  --accent-fg:     #000000;
+  --accent-rgb:    16, 185, 129;
+  --accent-glow:   rgba(16, 185, 129, 0.15);
+  --accent-tint:   rgba(16, 185, 129, 0.08);
+  --border-glass:  rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.04);
 
-  --card-shadow:    0 1px 4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.02);
-  --card-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.02);
+  --card-shadow:    0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.04);
+  --card-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.05);
   --inner-glow:     inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  --hover-brightness: 1.06;
+  --hover-brightness: 1.08;
 }
 
 :root {
-  --accent:        #16a34a;
-  --accent-rgb:    22, 163, 74;
-  --inner-glow:    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --border-glass:  #e4e4dc;
-  --border-subtle: #ececea;
+  --accent:        #10b981;
+  --accent-rgb:    16, 185, 129;
+  --inner-glow:    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --border-glass:  rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.04);
 }
 
 .fade-enter-active, .fade-leave-active { transition: opacity 0.5s ease; }
@@ -486,21 +494,21 @@ p, .prose {
 
 /* ── Gradient heading text ── */
 .text-gradient {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 60%, #4ade80 100%);
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .text-gradient {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 60%, #4ade80 100%);
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .light .text-gradient {
-  background: linear-gradient(135deg, #15803d 0%, #16a34a 60%, #15803d 100%);
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -32,7 +32,7 @@
                  <div class="flex items-center gap-4">
                    <span class="text-accent text-[0.65rem] font-black uppercase tracking-[0.4em] font-mono">Case_Archive_0{{ active + 1 }}</span>
                    <div class="h-px w-24 bg-accent/20"></div>
-                   <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest opacity-80">{{ caseStudies[active].industry }}</span>
+                   <span class="text-soft text-[0.55rem] font-bold uppercase tracking-widest">{{ caseStudies[active].industry }}</span>
                  </div>
                  <h3 class="group-hover:text-accent transition-colors duration-500">
                    {{ caseStudies[active].title }}
@@ -50,7 +50,7 @@
                      </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Problem_Solved</span>
                    </div>
-                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                   <p class="text-soft text-lg font-medium leading-relaxed">
                      {{ caseStudies[active].problem }}
                    </p>
                 </div>
@@ -63,7 +63,7 @@
                      </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">User_Experience_Impact</span>
                    </div>
-                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                   <p class="text-soft text-lg font-medium leading-relaxed">
                      {{ caseStudies[active].userImpact }}
                    </p>
                 </div>
@@ -76,7 +76,7 @@
                      </SharedIconBox>
                      <span class="text-main text-[0.65rem] font-black uppercase tracking-widest">Business_Outcome</span>
                    </div>
-                   <p class="text-soft text-lg font-medium leading-relaxed opacity-90">
+                   <p class="text-soft text-lg font-medium leading-relaxed">
                      {{ caseStudies[active].businessValue }}
                    </p>
                 </div>
@@ -92,7 +92,7 @@
                       </div>
                       <div>
                         <p class="text-main text-base md:text-xl font-bold italic serif-font leading-snug">"{{ caseStudies[active].impactHeadline }}"</p>
-                        <p class="text-soft text-[0.65rem] font-black uppercase tracking-widest opacity-80 mt-1">Strategic Architecture validation</p>
+                        <p class="text-soft text-[0.65rem] font-black uppercase tracking-widest mt-1">Strategic Architecture validation</p>
                       </div>
                     </div>
                     <SharedButton
@@ -118,7 +118,7 @@
         </button>
         <div class="flex flex-col items-center min-w-[64px]">
           <span class="text-main text-lg font-black tracking-tighter tabular-nums leading-none">{{ String(active + 1).padStart(2, '0') }}</span>
-          <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest opacity-70 mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
+          <span class="text-soft text-[0.55rem] font-black uppercase tracking-widest mt-1">OF {{ String(caseStudies.length).padStart(2, '0') }}</span>
         </div>
         <button @click="next" class="cs-nav-btn" aria-label="Next">
           <Icon name="lucide:arrow-right" class="h-5 w-5" />

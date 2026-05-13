@@ -17,7 +17,7 @@
           <h2 class="text-main text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-[0.95] md:leading-[0.9] mb-6 md:mb-8">
             Why partner with <br /> <span class="text-gradient italic serif-font lowercase">Md Mohin Uddin?</span>
           </h2>
-          <p class="text-soft text-xl font-medium leading-relaxed opacity-80">
+          <p class="text-soft text-xl font-medium leading-relaxed">
             I don't just design interfaces; I engineer high-performance products that bridge the critical gap between visionary design and scalable code.
           </p>
         </div>
@@ -52,7 +52,7 @@
             </svg>
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Design-to-Code</h3>
-          <p class="text-soft text-sm leading-relaxed opacity-70">
+          <p class="text-soft text-sm leading-relaxed">
             I eliminate the "lost in translation" friction by delivering production-ready Nuxt & Vue code directly from Figma.
           </p>
         </div>
@@ -72,7 +72,7 @@
             </svg>
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Venture Scale</h3>
-          <p class="text-soft text-sm leading-relaxed opacity-70">
+          <p class="text-soft text-sm leading-relaxed">
             Deep experience leading design systems for complex, high-concurrency cloud infrastructure at AppsCode.
           </p>
         </div>
@@ -97,7 +97,7 @@
             </svg>
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Performance First</h3>
-          <p class="text-soft text-sm leading-relaxed opacity-70">
+          <p class="text-soft text-sm leading-relaxed">
             Optimized for human behavior and technical speed. My products are built to load fast and convert users effectively.
           </p>
         </div>
@@ -119,7 +119,7 @@
             </svg>
           </div>
           <h3 class="text-main text-xl font-black tracking-tight mb-4">Full Lifecycle Craft</h3>
-          <p class="text-soft text-sm leading-relaxed opacity-70">
+          <p class="text-soft text-sm leading-relaxed">
             From initial discovery and strategy to deployment and scale. I own the entire success of the product interface.
           </p>
         </div>

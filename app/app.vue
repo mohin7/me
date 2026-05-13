@@ -365,7 +365,8 @@ html, body {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--accent), transparent 88%), transparent 65%);
+  background: radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--accent), transparent 85%), transparent 70%);
+  filter: blur(100px);
 }
 
 .dark.site-shell {
@@ -498,6 +499,7 @@ p, .prose {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.15));
 }
 
 .dark .text-gradient {
@@ -505,6 +507,7 @@ p, .prose {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 25px rgba(52, 211, 153, 0.2));
 }
 
 .light .text-gradient {
@@ -514,13 +517,45 @@ p, .prose {
   background-clip: text;
 }
 
+.text-glow {
+  text-shadow: 0 0 15px rgba(var(--accent-rgb), 0.35);
+}
+
+.neon-border {
+  position: relative;
+}
+.neon-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.15;
+  filter: blur(5px);
+}
+
 /* ── Card Hover Glow ── */
 .card-glow {
-  transition: box-shadow 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 .card-glow:hover {
-  border-color: color-mix(in srgb, var(--accent), transparent 72%);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 85%), 0 12px 40px -8px color-mix(in srgb, var(--accent), transparent 82%), var(--card-shadow-lg);
+  border-color: color-mix(in srgb, var(--accent), transparent 60%);
+  box-shadow: 
+    0 0 0 1px color-mix(in srgb, var(--accent), transparent 80%),
+    0 20px 40px -12px color-mix(in srgb, var(--accent), transparent 70%),
+    var(--card-shadow-lg);
+  transform: translateY(-4px) scale(1.01);
+}
+.dark .card-glow:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--m-x) var(--m-y), rgba(var(--accent-rgb), 0.05), transparent 80%);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
 }
 
 
@@ -559,22 +594,24 @@ p, .prose {
 .cursor-aura {
   width: 2rem;
   height: 2rem;
-  background: color-mix(in srgb, var(--accent) 5%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   transform: translate3d(var(--m-x), var(--m-y), 0) translate(-50%, -50%);
+  filter: blur(2px);
   transition:
-    transform 0.18s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.15s cubic-bezier(0.23, 1, 0.32, 1),
     width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     background 0.4s,
     border-color 0.4s;
 }
 .cursor-aura.is-hovering {
-  width: 6rem;
-  height: 6rem;
-  background: color-mix(in srgb, var(--accent) 2%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
-  box-shadow: 0 8px 32px -8px color-mix(in srgb, var(--accent) 20%, transparent);
+  width: 6.5rem;
+  height: 6.5rem;
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  box-shadow: 0 0 40px 10px color-mix(in srgb, var(--accent) 25%, transparent);
+  filter: blur(0);
 }
 
 .cursor-dot {

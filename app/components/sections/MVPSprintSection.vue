@@ -19,10 +19,10 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 text-left">
-          <p class="text-base md:text-xl font-medium leading-relaxed opacity-70">
+          <p class="text-base md:text-xl font-medium leading-relaxed">
             As a young founder, you’re pushing hard—pitching to investors, talking to users, and chasing tight deadlines. But when your design isn’t clear, it slows down your momentum.
           </p>
-          <p class="text-base md:text-xl font-medium leading-relaxed opacity-70 border-l border-accent-fg/10 pl-6 md:pl-12">
+          <p class="text-base md:text-xl font-medium leading-relaxed border-l border-accent-fg/10 pl-6 md:pl-12">
             I specialize in <span class="font-black text-accent-fg">Fast-Track MVP Design</span>. From napkin sketches to investor-ready interfaces — I help founders move with clarity, confidence, and conversion.
           </p>
         </div>
@@ -41,7 +41,7 @@
                <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest">Protocol_01</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">7-Day Delivery</h3>
-            <p class="text-accent-fg/60 text-sm leading-relaxed max-w-[240px]">
+            <p class="text-accent-fg text-sm leading-relaxed max-w-[240px]">
               Rapid execution cycles. From concept to shippable MVP in 168 hours or less.
             </p>
           </div>
@@ -59,12 +59,12 @@
                <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest text-accent">Protocol_02</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">Fixed-Budget</h3>
-            <p class="opacity-70 text-sm leading-relaxed max-w-[240px]">
+            <p class="text-sm leading-relaxed max-w-[240px]">
               Clear, predictable investment. No hidden costs, no scope creep, just results.
             </p>
             <!-- Progress Detail -->
             <div class="mt-12 pt-8 border-t border-glass">
-               <span class="text-[0.6rem] font-bold uppercase tracking-widest opacity-60">Founder Guarantee</span>
+               <span class="text-[0.6rem] font-bold uppercase tracking-widest">Founder Guarantee</span>
                <p class="text-xs font-bold mt-2 uppercase tracking-tight">"No fluff, no layers, no missed deadlines."</p>
             </div>
           </div>
@@ -80,7 +80,7 @@
                <span class="text-[0.55rem] font-black opacity-50 uppercase tracking-widest">Protocol_03</span>
             </div>
             <h3 class="text-2xl font-black tracking-tight mb-4">Unlimited Iterations</h3>
-            <p class="text-accent-fg/60 text-sm leading-relaxed max-w-[240px]">
+            <p class="text-accent-fg text-sm leading-relaxed max-w-[240px]">
               We work 1:1 together until your product is investor-perfect and market-ready.
             </p>
           </div>
@@ -94,7 +94,7 @@
 
       <!-- Action Indicator -->
       <div class="mt-24 flex flex-col items-center gap-6">
-         <div class="flex items-center gap-2 text-[0.6rem] font-black uppercase tracking-[0.5em] opacity-70">
+         <div class="flex items-center gap-2 text-[0.6rem] font-black uppercase tracking-[0.5em]">
            Available for Q2 Startups
          </div>
          <div class="h-20 w-px bg-gradient-to-b from-accent-fg/40 to-transparent"></div>

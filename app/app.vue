@@ -82,6 +82,13 @@ const { theme } = useTheme()
 const themeClass = computed(() => theme.value === 'dark' ? 'dark' : 'light')
 
 // ── SEO & Metadata Implementation ──
+const route = useRoute()
+const canonicalUrl = computed(() => `https://mohin-design.vercel.app${route.path}`)
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }]
+})
+
 useSeoMeta({
   title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Freelance Product Designer Dhaka',
   description: 'Md Mohin Uddin — top UI/UX designer & freelance product designer in Bangladesh, Dhaka. 7+ years designing SaaS, web apps, mobile apps & design systems. Hire the best UX designer in Bangladesh for your startup or product.',

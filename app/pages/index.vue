@@ -1,7 +1,5 @@
 <template>
   <main>
-    <!-- SEO: keyword-rich hidden heading for crawlers -->
-    <h1 class="sr-only">Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Freelance Product Designer Dhaka | Top UX Designer for SaaS & Startups</h1>
     <SectionsHeroSection />
     <SectionsAppscodeShowcase />
     <SectionsStrategicAdvantage />

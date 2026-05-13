@@ -34,6 +34,7 @@
             <img
               :src="project.image"
               :alt="project.name"
+              loading="lazy"
               class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>

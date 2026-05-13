@@ -100,7 +100,12 @@ import { computed } from 'vue'
 
 useSeoMeta({
   title: 'Writing — Md Mohin Uddin',
-  description: 'Thoughts on UX architecture, design systems, and building products that work.'
+  description: 'Thoughts on UX architecture, design systems, and building products that work.',
+  ogTitle: 'Writing — Md Mohin Uddin',
+  ogDescription: 'Thoughts on UX architecture, design systems, and building products that work.',
+  ogImage: 'https://mohin-design.vercel.app/og-banner.png',
+  ogUrl: 'https://mohin-design.vercel.app/blog',
+  twitterCard: 'summary_large_image'
 })
 
 const { data: posts } = await useAsyncData('blog-posts', () =>

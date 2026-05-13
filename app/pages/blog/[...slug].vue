@@ -81,11 +81,11 @@
           <div class="p-5 rounded-2xl border border-[var(--border-glass)] bg-panel" style="box-shadow: var(--card-shadow);">
             <p class="text-[0.55rem] font-black uppercase tracking-[0.3em] text-soft opacity-80 mb-4">Share</p>
             <div class="flex flex-col gap-2">
-              <a :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent('https://mohin.design' + route.path)}`" target="_blank" rel="noopener"
+              <a :href="`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent('https://mohin-design.vercel.app' + route.path)}`" target="_blank" rel="noopener"
                 class="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-[var(--border-glass)] bg-[var(--bg-soft)] hover:border-accent/30 hover:text-accent transition-all text-soft text-xs font-bold">
                 <Icon name="lucide:twitter" class="h-3.5 w-3.5 shrink-0" /> Share on X
               </a>
-              <a :href="`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent('https://mohin.design' + route.path)}&title=${encodeURIComponent(post.title)}`" target="_blank" rel="noopener"
+              <a :href="`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent('https://mohin-design.vercel.app' + route.path)}&title=${encodeURIComponent(post.title)}`" target="_blank" rel="noopener"
                 class="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-[var(--border-glass)] bg-[var(--bg-soft)] hover:border-accent/30 hover:text-accent transition-all text-soft text-xs font-bold">
                 <Icon name="lucide:linkedin" class="h-3.5 w-3.5 shrink-0" /> Share on LinkedIn
               </a>
@@ -141,7 +141,7 @@ const { data: related } = await useAsyncData(`related-${route.path}`, () =>
 )
 
 const copyLink = async () => {
-  await navigator.clipboard.writeText(`https://mohin.design${route.path}`)
+  await navigator.clipboard.writeText(`https://mohin-design.vercel.app${route.path}`)
   copied.value = true
   setTimeout(() => copied.value = false, 2000)
 }
@@ -160,13 +160,42 @@ if (post.value) {
     title: `${post.value.title} — Md Mohin Uddin`,
     description: post.value.excerpt,
     ogType: 'article',
-    ogUrl: `https://mohin.design${route.path}`,
+    ogUrl: `https://mohin-design.vercel.app${route.path}`,
     ogTitle: `${post.value.title} — Md Mohin Uddin`,
     ogDescription: post.value.excerpt,
-    ogImage: 'https://mohin.design/og-banner.png',
+    ogImage: 'https://mohin-design.vercel.app/og-banner.png',
     twitterCard: 'summary_large_image',
     twitterTitle: `${post.value.title} — Md Mohin Uddin`,
     twitterDescription: post.value.excerpt,
+  })
+
+  useHead({
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.value.title,
+          description: post.value.excerpt,
+          image: 'https://mohin-design.vercel.app/og-banner.png',
+          author: {
+            '@type': 'Person',
+            name: 'Md Mohin Uddin',
+            url: 'https://mohin-design.vercel.app'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Md Mohin Uddin',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://mohin-design.vercel.app/favicon.svg'
+            }
+          },
+          datePublished: new Date(post.value.date).toISOString()
+        })
+      }
+    ]
   })
 }
 </script>

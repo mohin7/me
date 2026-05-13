@@ -12,14 +12,17 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      'Plus+Jakarta+Sans': [200, 300, 400, 500, 600, 700, 800, 900]
+      'Plus+Jakarta+Sans': [300, 400, 500, 600, 700, 800]
     },
     display: 'swap',
     prefetch: true,
     preconnect: true,
     preload: true,
     download: true,
-    base64: false
+  },
+
+  experimental: {
+    inlineSSRStyles: true,
   },
 
   site: {

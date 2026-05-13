@@ -22,6 +22,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/sitemap": "^8.0.15",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^25.6.0",
     "nuxt-og-image": "^6.5.0"

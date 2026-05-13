@@ -15,16 +15,9 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    strictNuxtContentPaths: true,
   },
   components: true,
   ssr: true,
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    }
-  },
   app: {
     head: {
       title: 'Md Mohin Uddin — Best UI/UX Designer in Bangladesh | Product Architect',
